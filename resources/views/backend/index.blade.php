@@ -6,6 +6,9 @@
     </div>
 
     <!-- Statistics Row -->
+    
+    @livewire('backend.dashboard-listing')
+
     <livewire:backend.dashboard-statistics-component />
 
     <!-- Chart Row -->

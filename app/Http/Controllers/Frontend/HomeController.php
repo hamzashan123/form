@@ -12,8 +12,9 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(): View
+    public function index()
     {
+        return url('/admin');
         $coupon = Coupon::active()->public()->first();
 
         $categories = Category::select('slug', 'cover', 'name')
