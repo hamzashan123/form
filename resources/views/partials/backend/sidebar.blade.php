@@ -21,28 +21,7 @@
     <!-- Nav Item - Pages Collapse Menu -->
     @forelse($admin_side_menu as $link)
         @can($link->permission_title)
-            <!-- <li class="nav-item active ">
-                <a class="nav-link" href="{{ route($link->to) }}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>{{ $link->title }}</span></a>
-            </li> -->
-            <!-- <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse{{ $link->as }}"
-                   aria-expanded="true" aria-controls="collapse{{ $link->as }}">
-                    <i class="{{ $link->icon }}"></i>
-                    <span>{{ $link->title }}</span>
-                </a>
-                <div id="collapse{{ $link->as }}" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        @if(in_array($link->to, $routes_name))
-                            <a class="collapse-item" href="{{ route($link->to) }}">
-                                {{ $link->title }}
-                            </a>
-                        @endif
-                    </div>
-                </div>
-            </li> -->
+            
         @endcan
     @empty
     @endforelse
