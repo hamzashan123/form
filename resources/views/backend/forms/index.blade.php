@@ -57,7 +57,7 @@
           <hr>
         <div class="col-12">
             <div class="card">
-                <div class="card-header"><b>Consultant Forms</b></div>
+                <div class="card-header"><b>User Forms List</b></div>
                 <div class="card-body">
             
                         <div class="row">
@@ -66,13 +66,31 @@
                 <table class="table table-content table-hover">
                     <thead>
                         <tr>
-                            <th>Consultant Name</th>
+                            <th>UserName</th>
                             <th>Total Forms Assigned</th>
                             <th>Action</th>
                         </tr>
                         <tr>
-                            <td>Ricardo Consultant</td>
+                            <td>User1</td>
+                            <td>1</td>
+                            <td>
+                                    <div class="btn-group btn-group-toggle">
+                                        <a href="" title="Show" class="btn-primary btn btn-sm"><i class="fa fa-eye"> View Forms List</i></a>
+                                    </div>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>User2</td>
                             <td>2</td>
+                            <td>
+                                    <div class="btn-group btn-group-toggle">
+                                        <a href="" title="Show" class="btn-primary btn btn-sm"><i class="fa fa-eye"> View Forms List</i></a>
+                                    </div>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>User3</td>
+                            <td>3</td>
                             <td>
                                     <div class="btn-group btn-group-toggle">
                                         <a href="" title="Show" class="btn-primary btn btn-sm"><i class="fa fa-eye"> View Forms List</i></a>
