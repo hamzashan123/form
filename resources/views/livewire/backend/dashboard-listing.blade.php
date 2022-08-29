@@ -1,3 +1,3 @@
 <div>
-    <p>{{$totalUsers}}</p>
+    <!-- <p>{{$totalUsers}}</p> -->
 </div>
