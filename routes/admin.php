@@ -66,7 +66,7 @@ Route::group(['middleware' => ['roles']], function () {
     Route::get('/viewuser/{id}', [ConsultantController::class, 'viewUsers'])->name('consultant.user.list');
     Route::get('/deleteuser/{userid}/{consultantid}', [ConsultantController::class, 'deleteConsultantUser'])->name('consultant.user.delete');
     
-    Route::get('/forms', [ConsultantController::class, 'forms'])->name('forms.index');
+    Route::get('/forms', [ConsultantController::class, 'forms'])->name('form.index');
 
     //new routes here..us
 });
