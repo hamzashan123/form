@@ -14,11 +14,11 @@
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label for="permissions"><b>Select Consultants </b></label>
+                                    <label for="permissions"><b>Select Users </b></label>
                                     <select name="consultant_id" id="consultant" class="form-control" >
                                        <option value="0" selected disabled>  Select </option>
-                                       @if(isset($consultants)) 
-                                       @foreach($consultants as $user)
+                                       @if(isset($users)) 
+                                       @foreach($users as $user)
                                            
                                             <option value="{{ $user->id }}">{{ $user->username }} </option>
                                         @endforeach

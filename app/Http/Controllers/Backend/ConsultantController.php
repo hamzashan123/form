@@ -75,7 +75,7 @@ class ConsultantController extends Controller
     }
 
     public function forms(){
-        $consultants = User::role('consultant')->get();
-        return view('backend.forms.index',compact('consultants'));
+        $users = User::role('user')->get();
+        return view('backend.forms.index',compact('users'));
     }
 }
