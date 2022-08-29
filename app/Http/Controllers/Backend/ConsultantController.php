@@ -73,4 +73,9 @@ class ConsultantController extends Controller
         return redirect()->back();
 
     }
+
+    public function forms(){
+        $consultants = User::role('consultant')->get();
+        return view('backend.forms.index',compact('consultants'));
+    }
 }
