@@ -65,7 +65,7 @@ class SupervisorController extends Controller
             'phone' => $request->phone,
             'password' => bcrypt($request->password),
             'status' => $request->status,
-            'receive_email' => $request->receive_email,
+            'receive_email' => true,
             'email_verified_at' => now(),
             'user_image' => $supervisorImage ?? NULL
         ]);

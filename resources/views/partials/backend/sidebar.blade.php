@@ -21,7 +21,12 @@
     <!-- Nav Item - Pages Collapse Menu -->
     @forelse($admin_side_menu as $link)
         @can($link->permission_title)
-            <li class="nav-item">
+            <li class="nav-item active ">
+                <a class="nav-link" href="{{ route($link->to) }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>{{ $link->title }}</span></a>
+            </li>
+            <!-- <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse{{ $link->as }}"
                    aria-expanded="true" aria-controls="collapse{{ $link->as }}">
                     <i class="{{ $link->icon }}"></i>
@@ -37,7 +42,7 @@
                         @endif
                     </div>
                 </div>
-            </li>
+            </li> -->
         @endcan
     @empty
     @endforelse

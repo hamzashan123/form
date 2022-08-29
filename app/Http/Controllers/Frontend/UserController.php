@@ -7,6 +7,7 @@ use App\Http\Requests\Frontend\ProfileRequest;
 use App\Services\ImageService;
 use Illuminate\Support\Facades\Hash;
 use App\Traits\ImageUploadTrait;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -22,6 +23,18 @@ class UserController extends Controller
         return view('frontend.user.profile');
     }
 
+
+    public function registerUser(Request $request){
+
+        // $user = User::create([
+        //     'first_name' => $request['first_name'],
+        //     'last_name' => $request['last_name'],
+        //     'username' => $request['username'],
+        //     'email' => $request['email'],
+        //     'phone' => $request['phone'],
+        //     'password' => Hash::make($data['password'])
+        // ]);
+    }
     public function updateProfile(ProfileRequest $request)
     {
         $user = auth()->user();

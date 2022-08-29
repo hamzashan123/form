@@ -89,7 +89,7 @@
         @endcan
         @can('access_supervisor')
             <li class="nav-item">
-                <a class="nav-link text-dark" href="{{ route('admin.supervisors.index') }}">Supervisors</a>
+                <a class="nav-link text-dark" href="{{ route('admin.supervisors.index') }}">Consultants</a>
             </li>
         @endcan
         @can('access_setting')

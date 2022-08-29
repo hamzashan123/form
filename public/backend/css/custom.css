@@ -5,3 +5,8 @@
 .rounded-circle {
     border-radius: 50%
 }
+.col-12 {
+    flex: 0 0 100%;
+    margin-top: 16px;
+    max-width: 100%;
+  }

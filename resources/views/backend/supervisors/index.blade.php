@@ -4,7 +4,7 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex">
             <h6 class="m-0 font-weight-bold text-primary">
-                Supervisors
+                Consultants
             </h6>
             <div class="ml-auto">
                 @can('create_supervisor')
@@ -12,7 +12,7 @@
                     <span class="icon text-white-50">
                         <i class="fa fa-plus"></i>
                     </span>
-                        <span class="text">Add supervisor</span>
+                        <span class="text">Add Consultant</span>
                     </a>
                 @endcan
             </div>

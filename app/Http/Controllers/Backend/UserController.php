@@ -27,7 +27,7 @@ class UserController extends Controller
     {
         $this->authorize('access_user');
 
-        $users = User::role(['user'])
+        $users = User::where('id' ,'!=' , auth()->user()->id)->with('roles')
             ->when(\request()->keyword != null, function ($query) {
                 $query->search(\request()->keyword);
             })
@@ -35,8 +35,7 @@ class UserController extends Controller
                 $query->whereStatus(\request()->status);
             })
             ->orderBy(\request()->sortBy ?? 'id', \request()->orderBy ?? 'desc')
-            ->paginate(\request()->limitBy ?? 10);
-
+            ->paginate(\request()->limitBy ?? 5);     
         return view('backend.users.index', compact('users'));
     }
 
@@ -49,6 +48,7 @@ class UserController extends Controller
 
     public function store(UserRequest $request): RedirectResponse
     {
+        
         $this->authorize('create_user');
 
         if ($request->hasFile('user_image')) {

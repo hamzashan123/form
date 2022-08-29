@@ -19,6 +19,7 @@ use App\Http\Controllers\Backend\ShippingCompanyController;
 use App\Http\Controllers\Backend\PaymentMethodController;
 use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\Backend\ConsultantController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,8 +27,11 @@ Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => 'guest'], function () {
     Route::get('/login', [AdminAuthController::class, 'login'])->name('login');
+    Route::get('/register', [AdminAuthController::class, 'login'])->name('register');
     Route::get('/forgot-password', [AdminAuthController::class, 'forgotPassword'])->name('forgot_password');
 });
+
+
 
 Route::group(['middleware' => ['roles']], function () {
     Route::get('/', [BackendController::class, 'index'])->name('index');
@@ -57,7 +61,13 @@ Route::group(['middleware' => ['roles']], function () {
     Route::resource('contacts', ContactController::class)->except('create', 'edit', 'update');
     Route::resource('links', LinkController::class)->except('show');
     Route::resource('pages', PageController::class);
+    Route::get('/consultant', [ConsultantController::class, 'index'])->name('consultant.index');
+    Route::post('/consultant', [ConsultantController::class, 'assignUserToConsultant'])->name('consultant.user.create');
+    Route::get('/viewuser/{id}', [ConsultantController::class, 'viewUsers'])->name('consultant.user.list');
+    Route::get('/deleteuser/{userid}/{consultantid}', [ConsultantController::class, 'deleteConsultantUser'])->name('consultant.user.delete');
+    
+    Route::get('/forms', [ConsultantController::class, 'forms'])->name('forms.index');
 
-    //new routes here..
+    //new routes here..us
 });
 

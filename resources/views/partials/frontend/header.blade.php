@@ -155,7 +155,7 @@
         </div>
     </div>
 </header>
-<div class="breadcrumb-area pt-50">
+<!-- <div class="breadcrumb-area pt-50">
 
     <div class="container-fluid">
         <div class="furniture-bottom-wrapper">
@@ -177,4 +177,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

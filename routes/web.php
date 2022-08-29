@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes(['verify' => true]);
 
+Route::post('registeruser', [UserController::class,'registerUser' ])->name('registeruser');
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/search', [HomeController::class, 'search'])->name('search');
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');

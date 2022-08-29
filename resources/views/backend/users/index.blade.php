@@ -4,7 +4,7 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex">
             <h6 class="m-0 font-weight-bold text-primary">
-                Customers
+                All Users
             </h6>
             <div class="ml-auto">
                 @can('create_user')
@@ -17,7 +17,7 @@
                 @endcan
             </div>
         </div>
-        @include('partials.backend.filter', ['model' => route('admin.users.index')])
+       
 
         <div class="table-responsive">
             <table class="table table-hover">
@@ -27,6 +27,7 @@
                     <th>Image</th>
                     <th>Name & Username</th>
                     <th>Email & Phone</th>
+                    <th>Role</th>
                     <th>Status</th>
                     <th>Created at</th>
                     <th class="text-center" style="width: 30px;">Action</th>
@@ -49,13 +50,21 @@
                             </a><br>
                             <strong>( {{ $user->username }} )</strong>
                         </td>
+                        
                         <td>{{ $user->email }}<br>
                             {{ $user->phone }}
                         </td>
+                        <td>{{ $user->roles[0]->name }}<br>
                         <td>{{ $user->status }}</td>
                         <td>{{ $user->created_at ? $user->created_at->format('Y-m-d') : '' }}</td>
                         <td>
                             <div class="btn-group btn-group-sm">
+                                <!-- <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-sm btn-success">
+                                    Accept
+                                </a>
+                                <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-sm btn-danger">
+                                    Reject
+                                </a> -->
                                 <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-sm btn-primary">
                                     <i class="fa fa-edit"></i>
                                 </a>

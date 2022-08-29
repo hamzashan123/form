@@ -26,11 +26,11 @@
 <body style="background: #ffffff">
     @include('partials.frontend.header')
 
-    @include('partials.frontend.flash')
+    <!-- @include('partials.frontend.flash') -->
 
     @yield('content')
 
-    @include('partials.frontend.footer')
+    <!-- @include('partials.frontend.footer') -->
 
     <livewire:scripts/>
     <script src="{{ asset('vendor/sweetalert/sweetalert.all.js') }}"></script>
@@ -53,7 +53,7 @@
     <script src="{{ asset('frontend/js/alert-message.js') }}"></script>
     <script src="{{ url('https://kit.fontawesome.com/8003f9e0e2.js') }}" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
-    <script>
+    <!-- <script>
         $(document).ready(function() {
             let bloodhound = new Bloodhound({
                 datumTokenizer: Bloodhound.tokenizers.whitespace,
@@ -88,7 +88,7 @@
                 }
             });
         });
-    </script>
+    </script> -->
     @yield('script')
 </body>
 </html>

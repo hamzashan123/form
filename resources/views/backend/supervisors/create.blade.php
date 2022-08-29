@@ -6,14 +6,14 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex">
             <h6 class="m-0 font-weight-bold text-primary">
-                Create supervisor
+                Create Consultant
             </h6>
             <div class="ml-auto">
                 <a href="{{ route('admin.supervisors.index') }}" class="btn btn-primary">
                     <span class="icon text-white-50">
                         <i class="fa fa-home"></i>
                     </span>
-                    <span class="text">Back to supervisors</span>
+                    <span class="text">Back to Consultant</span>
                 </a>
             </div>
         </div>
@@ -114,7 +114,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <label for="user_image">Supervisor image</label>
+                        <label for="user_image">Consultant image</label>
                         <br>
                         <div class="form-group">
                             <input type="file" name="user_image">
