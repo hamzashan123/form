@@ -14,7 +14,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return redirect()->route('admin.login');
+        return url('/admin');
         $coupon = Coupon::active()->public()->first();
 
         $categories = Category::select('slug', 'cover', 'name')
