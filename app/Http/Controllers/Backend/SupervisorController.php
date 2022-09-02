@@ -11,6 +11,8 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\File;
 use Spatie\Permission\Models\Permission;
+use App\Mail\RegisterUser;
+use Illuminate\Support\Facades\Mail;
 
 class SupervisorController extends Controller
 {
@@ -51,7 +53,7 @@ class SupervisorController extends Controller
 
     public function store(SupervisorRequest $request): RedirectResponse
     {
-        $this->authorize('create_supervisor');
+        //$this->authorize('create_supervisor');
 
         if ($request->hasFile('user_image')) {
             $supervisorImage = $this->imageService->storeUserImages($request->username, $request->user_image);
@@ -80,6 +82,25 @@ class SupervisorController extends Controller
         if (isset($request->permissions)) {
             $supervisor->givePermissionTo($request->permissions);
         }
+
+        $adminData = [
+            'username' => $request->username,
+            'email' => $request->email,
+            'usertype' => 'consultant',
+            'messagetype' => "User has been succefully created on your system."
+           
+        ];
+        Mail::to(env('ADMINEMAIL','hamzashan123@gmail.com'))->send(new RegisterUser($adminData));
+
+        $userData = [
+            'username' => $request->username,
+            'email' => $request->email,
+            'usertype' => 'consultant',
+            'messagetype' => "Your email has been register to austrillian legal system by super admin you can login and perform other action."
+           
+        ];
+
+        Mail::to($request->email)->send(new RegisterUser($userData));
 
         return redirect()->route('admin.supervisors.index')->with([
             'message' => 'Created successfully',

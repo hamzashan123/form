@@ -8,6 +8,8 @@ use App\Models\User;
 use App\Models\ConsultantUser;
 use App\Models\UserForms;
 use DB;
+use App\Mail\AssignFormToUser;
+use Illuminate\Support\Facades\Mail;
 
 class FormController extends Controller
 {
@@ -27,23 +29,6 @@ class FormController extends Controller
 
     public function assignFormsToUser(Request $request){
 
-       // dd(array_values($request->user_ids));
-        // $exist = ConsultantUser::where('consultant_id',$request->consultant_id)->exists();
-        // if($exist == true){
-        //     $data = ConsultantUser::where('consultant_id' ,$request->consultant_id)->first(['customer_id']);
-        //     $customers = $data->customer_id;
-        //     //dd($customers);
-        //     foreach($request->user_ids as $cus){
-        //         array_push($customers, $cus);
-        //     }
-            
-        //     $customers= array_unique($customers);
-
-        //     ConsultantUser::where('consultant_id' ,$request->consultant_id)->update([
-        //         'customer_id' => array_values($customers)
-        //     ]);
-        //     return redirect()->back();
-        // }
         foreach($request->form_ids as  $formid){
             $exist = UserForms::where(['user_id' => $request->user_id,'form_id'  => $formid])->exists();
 
@@ -52,7 +37,21 @@ class FormController extends Controller
                     'user_id' => $request->user_id,
                     'form_id'  => $formid,
                 ]);
+                
             }
+        }
+        if(!empty($request->user_id)){
+            $userdetail = User::find($request->user_id);
+                
+                $userData = [
+                    'username' => $userdetail->username,
+                    'email' => $userdetail->email,
+                    'usertype' => 'consultant',
+                    'messagetype' => "You have assign a new form. Please check the system and fill out the form."
+                   
+                ];
+    
+                Mail::to($userdetail->email)->send(new AssignFormToUser($userData));
         }
        
         

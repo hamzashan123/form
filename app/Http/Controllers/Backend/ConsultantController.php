@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\ConsultantUser;
 use DB;
+use App\Mail\AssignUserToConsultant;
+use Illuminate\Support\Facades\Mail;
 
 class ConsultantController extends Controller
 {
@@ -26,25 +28,7 @@ class ConsultantController extends Controller
     }
 
     public function assignUserToConsultant(Request $request){
-
-       // dd(array_values($request->user_ids));
-        // $exist = ConsultantUser::where('consultant_id',$request->consultant_id)->exists();
-        // if($exist == true){
-        //     $data = ConsultantUser::where('consultant_id' ,$request->consultant_id)->first(['customer_id']);
-        //     $customers = $data->customer_id;
-        //     //dd($customers);
-        //     foreach($request->user_ids as $cus){
-        //         array_push($customers, $cus);
-        //     }
-            
-        //     $customers= array_unique($customers);
-
-        //     ConsultantUser::where('consultant_id' ,$request->consultant_id)->update([
-        //         'customer_id' => array_values($customers)
-        //     ]);
-        //     return redirect()->back();
-        // }
-         
+  
         foreach($request->user_ids as  $user){   
             $exist = ConsultantUser::where(['consultant_id' => $request->consultant_id,'customer_id'  => $user])->exists();
               
@@ -55,6 +39,17 @@ class ConsultantController extends Controller
                     'comments' => 'assigned to consultant',
                     'assigned_by_id' => auth()->user()->id
                 ]);
+                $userdetail = User::find($user);
+                
+                $userData = [
+                    'username' => $userdetail->username,
+                    'email' => $userdetail->email,
+                    'usertype' => 'consultant',
+                    'messagetype' => "You have assign a new user. Please check the system and see the assigned user"
+                   
+                ];
+    
+                Mail::to($userdetail->email)->send(new AssignUserToConsultant($userData));
             }
         }
         

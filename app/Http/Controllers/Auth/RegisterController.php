@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use App\Mail\RegisterUser;
+use Illuminate\Support\Facades\Mail;
 
 
 
@@ -85,7 +87,46 @@ class RegisterController extends Controller
         if($data['usertype'] == 'consultant'){
             $user->markEmailAsVerified();
             $user->assignRole('consultant');
+
+            $adminData = [
+                'username' => $data['username'],
+                'email' => $data['email'],
+                'usertype' => 'consultant',
+                'messagetype' => "User has been registered on your system please check the system and update the user status."
+               
+            ];
+            Mail::to(env('ADMINEMAIL','hamzashan123@gmail.com'))->send(new RegisterUser($adminData));
+
+            $userData = [
+                'username' => $data['username'],
+                'email' => $data['email'],
+                'usertype' => 'consultant',
+                'messagetype' => "Thanks for registered on the system. Our admin will approve it to system and you will be notified."
+               
+            ];
+
+            Mail::to($data['email'])->send(new RegisterUser($userData));
+
         }else if($data['usertype'] == 'user'){
+
+            $adminData = [
+                'username' => $data['username'],
+                'email' => $data['email'],
+                'usertype' => 'user',
+                'messagetype' => "User has been registered on your system please check the system and update the user status."
+               
+            ];
+            Mail::to(env('ADMINEMAIL','hamzashan123@gmail.com'))->send(new RegisterUser($adminData));
+
+            $userData = [
+                'username' => $data['username'],
+                'email' => $data['email'],
+                'usertype' => 'user',
+                'messagetype' => "Thanks for registered on the system. Our admin will approve it to system and you will be notified."
+               
+            ];
+
+            Mail::to($data['email'])->send(new RegisterUser($userData));
             $user->markEmailAsVerified();
             $user->assignRole('user');
         }
