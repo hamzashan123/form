@@ -46,6 +46,49 @@
         @endcan
     @empty
     @endforelse
+   
+    @if(Auth::user()->hasRole('consultant'))
+    <li class="nav-item active ">
+                <a class="nav-link" href="{{route('admin.users.index')}}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>My Users</span></a>
+    </li>
+    @endif
+    @if(Auth::user()->hasRole('user'))
+    <li class="nav-item active ">
+                <a class="nav-link" href="{{route('admin.users.index')}}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Form1</span></a>
+    </li>
+    <li class="nav-item active ">
+                <a class="nav-link" href="{{route('admin.users.index')}}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Form2</span></a>
+    </li>
+    <li class="nav-item active ">
+                <a class="nav-link" href="{{route('admin.users.index')}}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Form3</span></a>
+    </li>
+    @endif
+    @if(Auth::user()->hasRole('admin'))
+    <li class="nav-item active ">
+                <a class="nav-link" href="{{route('admin.users.index')}}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Form1</span></a>
+    </li>
+    <li class="nav-item active ">
+                <a class="nav-link" href="{{route('admin.users.index')}}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Form2</span></a>
+    </li>
+    <li class="nav-item active ">
+                <a class="nav-link" href="{{route('admin.users.index')}}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Form3</span></a>
+    </li>
+    @endif
+  
     <!-- Divider -->
     <hr class="sidebar-divider">
     <!-- Heading -->

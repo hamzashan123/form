@@ -42,9 +42,6 @@
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    <a class="small" href="{{ route('register') }}">Dont have an acount? </a>
-                                </div>
-                                <div class="text-center">
                                     <a class="small" href="{{ route('admin.forgot_password') }}">Forgot Password?</a>
                                 </div>
                             </div>

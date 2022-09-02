@@ -24,7 +24,7 @@
     @yield('style')
 </head>
 <body style="background: #ffffff">
-    @include('partials.frontend.header')
+    <!-- @include('partials.frontend.header') -->
 
     <!-- @include('partials.frontend.flash') -->
 

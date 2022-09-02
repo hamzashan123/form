@@ -21,7 +21,7 @@
                 <a href="{{ route('admin.supervisors.index') }}" class="btn btn-primary">
                     <span class="icon text-white-50">
                     </span>
-                    <span class="text">Back to supervisors</span>
+                    <span class="text">Back to consultants</span>
                 </a>
             </div>
         </div>

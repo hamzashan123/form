@@ -20,6 +20,7 @@ use App\Http\Controllers\Backend\PaymentMethodController;
 use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\ConsultantController;
+use App\Http\Controllers\Backend\FormController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -66,7 +67,10 @@ Route::group(['middleware' => ['roles']], function () {
     Route::get('/viewuser/{id}', [ConsultantController::class, 'viewUsers'])->name('consultant.user.list');
     Route::get('/deleteuser/{userid}/{consultantid}', [ConsultantController::class, 'deleteConsultantUser'])->name('consultant.user.delete');
     
-    Route::get('/forms', [ConsultantController::class, 'forms'])->name('forms.index');
+    Route::get('/forms', [FormController::class, 'index'])->name('forms.index');
+    Route::get('/formslist/{id}', [FormController::class, 'getUserForms'])->name('user.formslist');
+    Route::post('/assignforms', [FormController::class, 'assignFormsToUser'])->name('userform.create');
+    Route::get('/deleteform/{userid}/{form_id}', [FormController::class, 'deleteUserForm'])->name('userform.delete');
 
     //new routes here..us
 });

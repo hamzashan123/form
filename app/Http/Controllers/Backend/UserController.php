@@ -25,7 +25,7 @@ class UserController extends Controller
 
     public function index(): View
     {
-        $this->authorize('access_user');
+        //$this->authorize('access_user');
 
         $users = User::where('id' ,'!=' , auth()->user()->id)->with('roles')
             ->when(\request()->keyword != null, function ($query) {
@@ -35,7 +35,7 @@ class UserController extends Controller
                 $query->whereStatus(\request()->status);
             })
             ->orderBy(\request()->sortBy ?? 'id', \request()->orderBy ?? 'desc')
-            ->paginate(\request()->limitBy ?? 5);     
+            ->paginate(\request()->limitBy ?? 10);     
         return view('backend.users.index', compact('users'));
     }
 

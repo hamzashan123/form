@@ -65,6 +65,7 @@
                     <thead>
                         <tr>
                             <th>Consultant Name</th>
+                            <th>Consultant Email</th>
                             <th>Total User Assigned</th>
                             <th>Action</th>
                         </tr>
@@ -78,6 +79,7 @@
                             @endphp
                             <tr>
                                 <td>{{ ucfirst($user->username) }}</td>
+                                <td>{{ ucfirst($user->email) }}</td>
                                 <td>{{count($counts)}}</td>
                                 @if(isset($user->consultant_id))
                                 <td>

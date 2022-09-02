@@ -1,44 +1,36 @@
-@extends('layouts.app')
+@extends('layouts.admin-auth')
 @section('title', 'Registration')
 @section('content')
-
-    <div class="breadcrumb-area pt-5 pb-5" style="background-color: #09c6a2">
-        <div class="container">
-            <div class="breadcrumb-content text-center">
-                <h2>register</h2>
-                <ul>
-                    <li><a href="{{route('login')}}">login</a></li>
-                    <li> register </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="register-area ptb-100">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12 col-12 col-lg-6 col-xl-6 ml-auto mr-auto">
-                    <div class="login">
-                        <div class="login-form-container">
-                            <div class="form-group">
+    <div class="row justify-content-center">
+        <div class="col-xl-10 col-lg-12 col-md-9">
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+                        <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                        <div class="col-lg-6">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                </div>
                                 <form method="POST" action="{{ route('register') }}">
                                     @csrf
                                     <div class="row">
-                                        <div class="col-6">
+                                        <div class="col-12">
                                             <div class="form-group">
                                                 <label for="first_name" class="text-small text-uppercase">{{ __('First Name') }}</label>
                                                 <input id="first_name" type="text" class="form-control form-control-lg" name="first_name" value="{{ old('first_name') }}" placeholder="First Name">
                                                 @error('first_name')<span class="text-danger" role="alert"><strong>{{ $message }}</strong></span>@enderror
                                             </div>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-12">
                                             <div class="form-group">
                                                 <label for="last_name" class="text-small text-uppercase">{{ __('Last Name') }}</label>
                                                 <input id="last_name" type="text" class="form-control form-control-lg" name="last_name" value="{{ old('last_name') }}" placeholder="Last Name">
                                                 @error('last_name')<span class="text-danger" role="alert"><strong>{{ $message }}</strong></span>@enderror
                                             </div>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-12">
                                             <div class="form-group">
                                                 <label for="username" class="text-small text-uppercase">{{ __('Username') }}</label>
                                                 <input id="username" type="text" class="form-control form-control-lg" name="username" value="{{ old('username') }}" placeholder="Username">
@@ -59,14 +51,14 @@
                                                 @error('phone')<span class="text-danger" role="alert"><strong>{{ $message }}</strong></span>@enderror
                                             </div>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-12">
                                             <div class="form-group">
                                                 <label for="password" class="text-small text-uppercase">{{ __('New Password') }}</label>
                                                 <input id="password" type="password" class="form-control form-control-lg" name="password" placeholder="Enter your password">
                                                 @error('password')<span class="text-danger" role="alert"><strong>{{ $message }}</strong></span>@enderror
                                             </div>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-12">
                                             <div class="form-group">
                                                 <label for="password-confirm" class="text-small text-uppercase">{{ __('Confirm Password') }}</label>
                                                 <input id="password-confirm" type="password" class="form-control form-control-lg" name="password_confirmation" placeholder="Confirm Password">
@@ -76,13 +68,18 @@
 
                                         <div class="col-12">
                                            <label for="register-as" class="text-small text-uppercase"> Register As </label>
-                                            <div >
+                                            <div class="userType">
                                                 
-                                                <label for="register-as" class="text-small text-uppercase"> Consultant </label>
+                                                <div class="userTypee">
                                                 <input id="usertype" type="radio" class="" name="usertype" value="consultant" placeholder="User">
+                                                <label for="register-as" class="text-small text-uppercase"> Consultant </label>
                                                 
-                                                <label for="register-as" class="text-small text-uppercase"> User </label>
+
+                                                </div>
+                                                <div class="userTypee">
                                                 <input id="usertype" type="radio" class=" " name="usertype" value="user" placeholder="User">
+                                                <label for="register-as" class="text-small text-uppercase"> User </label>
+                                                </div>
                                             </div>
                                             
                                         </div>
@@ -98,16 +95,20 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-dark">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">
                                             {{ __('Register') }}
                                         </button>
                                         @if(Route::has('login'))
-                                            <a class="btn btn-link text-small" href="{{ route('login') }}">
+                                            <a class="btn btn-primary btn-user btn-block" href="{{ route('admin.login') }}">
                                                 {{ __('Login?') }}
                                             </a>
                                         @endif
                                     </div>
                                 </form>
+                                <hr>
+                                <div class="text-center">
+                                    <a class="small" href="{{ route('admin.forgot_password') }}">Forgot Password?</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -115,5 +116,5 @@
             </div>
         </div>
     </div>
-
 @endsection
+

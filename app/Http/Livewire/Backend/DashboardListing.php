@@ -9,15 +9,11 @@ use Auth;
 class DashboardListing extends Component
 {
 
-    public $totalUsers = 0;
-    // public $currentAnnualEarning = 0;
-    // public $currentMonthOrderNew = 0;
-    // public $currentMonthOrderFinished = 0;
 
 
     public function mount()
     {
-        $this->totalUsers = User::where('id' ,'!=' ,Auth::user()->id)->count();
+       
         
     }
 

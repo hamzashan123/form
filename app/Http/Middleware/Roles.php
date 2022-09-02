@@ -26,8 +26,11 @@ class Roles
             }
             return redirect()->route('login');
         }
-
-        if (auth()->user()->isAdminOrSupervisor()) {
+        //dd(auth()->user()->isAdminOrSupervisor());
+        // if (auth()->user()->isAdminOrSupervisor()) {
+        //     return $next($request);
+        // }
+        if (auth()->user()) {
             return $next($request);
         }
 

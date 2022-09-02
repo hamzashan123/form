@@ -9,13 +9,13 @@
             <div class="card">
                 <div class="card-header"><b>Assign Forms</b></div>
                 <div class="card-body">
-                <form action="{{ route('admin.consultant.user.create') }}" method="POST">
+                <form action="{{ route('admin.userform.create') }}" method="POST">
                         @csrf
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group">
                                     <label for="permissions"><b>Select Users </b></label>
-                                    <select name="consultant_id" id="consultant" class="form-control" >
+                                    <select name="user_id" id="user_id" class="form-control" >
                                        <option value="0" selected disabled>  Select </option>
                                        @if(isset($users)) 
                                        @foreach($users as $user)
@@ -32,12 +32,12 @@
                                 
                                 <div class="form-group">
                                     <label for="permissions"><b>Select Forms </b> </label>
-                                    <select name="user_ids[]" id="permissions" class="form-control select2" multiple="multiple">
+                                    <select name="form_ids[]" id="permissions" class="form-control select2" multiple="multiple">
                                         
                                          
-                                            <option value=""> Form 1</option>
-                                            <option value=""> Form 2</option>
-                                            <option value=""> Form 2</option>
+                                            <option value="1"> Form 1</option>
+                                            <option value="2"> Form 2</option>
+                                            <option value="3"> Form 3</option>
 
                                         
                                     </select>
@@ -67,36 +67,22 @@
                     <thead>
                         <tr>
                             <th>UserName</th>
+                            <th>UserEmail</th>
                             <th>Total Forms Assigned</th>
                             <th>Action</th>
                         </tr>
+                        @foreach($user_forms as $u_form)
                         <tr>
-                            <td>User1</td>
-                            <td>1</td>
+                            <td>{{$u_form->username}}</td>
+                            <td>{{$u_form->email}}</td>
+                            <td>{{$u_form->total}}</td>
                             <td>
                                     <div class="btn-group btn-group-toggle">
-                                        <a href="" title="Show" class="btn-primary btn btn-sm"><i class="fa fa-eye"> View Forms List</i></a>
+                                        <a href="{{route('admin.user.formslist',['id' => $u_form->id])}}" title="Show" class="btn-primary btn btn-sm"><i class="fa fa-eye"> View Forms List</i></a>
                                     </div>
                                 </td>
                         </tr>
-                        <tr>
-                            <td>User2</td>
-                            <td>2</td>
-                            <td>
-                                    <div class="btn-group btn-group-toggle">
-                                        <a href="" title="Show" class="btn-primary btn btn-sm"><i class="fa fa-eye"> View Forms List</i></a>
-                                    </div>
-                                </td>
-                        </tr>
-                        <tr>
-                            <td>User3</td>
-                            <td>3</td>
-                            <td>
-                                    <div class="btn-group btn-group-toggle">
-                                        <a href="" title="Show" class="btn-primary btn btn-sm"><i class="fa fa-eye"> View Forms List</i></a>
-                                    </div>
-                                </td>
-                        </tr>
+                        @endforeach
                     </thead>
                     <tbody>
                   

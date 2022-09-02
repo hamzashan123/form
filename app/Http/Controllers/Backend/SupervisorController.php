@@ -25,9 +25,9 @@ class SupervisorController extends Controller
 
     public function index(): View
     {
-        $this->authorize('access_supervisor');
-
-        $supervisors = User::role(['supervisor'])
+       // $this->authorize('access_supervisor');
+      // $supervisors = User::role(['supervisor'])
+        $supervisors = User::role(['consultant'])
             ->when(\request()->keyword != null, function ($query) {
                 $query->search(\request()->keyword);
             })
@@ -73,7 +73,8 @@ class SupervisorController extends Controller
         $supervisor->markEmailAsVerified();
 
         // Assigning Role supervisor to this user
-        $supervisor->assignRole('supervisor');
+        //$supervisor->assignRole('supervisor');
+        $supervisor->assignRole('consultant');
 
         // Assigning Permissions to this supervisor
         if (isset($request->permissions)) {
@@ -88,14 +89,14 @@ class SupervisorController extends Controller
 
     public function show(User $supervisor): View
     {
-        $this->authorize('show_supervisor');
+       // $this->authorize('show_supervisor');
 
         return view('backend.supervisors.show', compact('supervisor'));
     }
 
     public function edit(User $supervisor): View
     {
-        $this->authorize('edit_supervisor');
+       // $this->authorize('edit_supervisor');
 
         $permissions = Permission::orderBy('created_at')->get(['id', 'name']);
         $supervisorPermissions = $supervisor->getPermissionNames()->toArray();
@@ -105,7 +106,7 @@ class SupervisorController extends Controller
 
     public function update(SupervisorRequest $request, User $supervisor): RedirectResponse
     {
-        $this->authorize('edit_supervisor');
+       // $this->authorize('edit_supervisor');
 
         if ($request->hasFile('user_image')) {
             if ($supervisor->user_image) {
@@ -147,7 +148,7 @@ class SupervisorController extends Controller
 
     public function destroy(User $supervisor): RedirectResponse
     {
-        $this->authorize('delete_supervisor');
+       // $this->authorize('delete_supervisor');
 
         if ($supervisor->user_image) {
             $this->imageService->unlinkImage($supervisor->user_image, 'users');
@@ -163,7 +164,7 @@ class SupervisorController extends Controller
 
     public function removeImage(User $supervisor): RedirectResponse
     {
-        $this->authorize('delete_user');
+       // $this->authorize('delete_user');
 
         if (File::exists('storage/images/users/'. $supervisor->user_image)) {
             unlink('storage/images/users/'. $supervisor->user_image);

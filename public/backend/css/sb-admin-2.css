@@ -11280,3 +11280,12 @@ body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
 
+.userTypee {
+  width: 49%;
+  display: inline-block;
+}
+
+.userTypee  label {
+  font-weight: bold;
+}
+
