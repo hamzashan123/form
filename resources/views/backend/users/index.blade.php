@@ -28,8 +28,10 @@
                     <th>Name & Username</th>
                     <th>Email & Phone</th>
                     <th>Role</th>
+                    
                     <th>Status</th>
                     <th>Created at</th>
+                    <th> Assign Forms</th>
                     <th class="text-center" style="width: 30px;">Action</th>
                 </tr>
                 </thead>
@@ -57,6 +59,11 @@
                         <td>{{ $user->roles[0]->name }}<br>
                         <td>{{ $user->status }}</td>
                         <td>{{ $user->created_at ? $user->created_at->format('Y-m-d') : '' }}</td>
+                        <td>
+                        <a href="{{ route('admin.user.formslist', $user->id) }}" class="btn btn-sm btn-primary">
+                        <i class="fa fa-eye"> View Forms</i>
+                         </a>
+                        </td>
                         <td>
                             <div class="btn-group btn-group-sm">
                                 <!-- <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-sm btn-success">

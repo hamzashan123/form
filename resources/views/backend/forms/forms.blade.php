@@ -7,9 +7,16 @@
     <div class="row">
       
         <div class="col-12">
+                        @if(Auth::user()->hasRole('admin'))
                         <div class="form-group" style="text-align:right">
                         <a href="{{route('admin.forms.index')}}" class="btn btn-secondary" style="align-item:right;" >Back</a>
                         </div>
+                        @endif
+                        @if(Auth::user()->hasRole('consultant'))
+                        <div class="form-group" style="text-align:right">
+                        <a href="{{route('admin.users.index')}}" class="btn btn-secondary" style="align-item:right;" >Back</a>
+                        </div>
+                        @endif
             
             <div class="card">
                 <div class="card-header"><b>Form List</b></div>
