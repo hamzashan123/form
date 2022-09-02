@@ -127,7 +127,7 @@
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                             My Users
                         </div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$myUsers}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-check fa-2x text-gray-300"></i>

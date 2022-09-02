@@ -24,7 +24,7 @@ class Roles
             if ($route[0] == 'admin') {
                 return redirect()->route('admin.login');
             }
-            return redirect()->route('login');
+            return redirect()->route('admin.login');
         }
         //dd(auth()->user()->isAdminOrSupervisor());
         // if (auth()->user()->isAdminOrSupervisor()) {

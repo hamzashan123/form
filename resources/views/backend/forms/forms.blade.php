@@ -8,7 +8,7 @@
       
         <div class="col-12">
                         <div class="form-group" style="text-align:right">
-                        <a href="{{route('admin.consultant.index')}}" class="btn btn-secondary" style="align-item:right;" >Back</a>
+                        <a href="{{route('admin.forms.index')}}" class="btn btn-secondary" style="align-item:right;" >Back</a>
                         </div>
             
             <div class="card">
@@ -29,14 +29,14 @@
                     </thead>
                     <tbody>
                         
-                    @foreach($userforms as $form)
+                    @foreach($userassignforms as $form)
                             
                             <tr>
                                 <td>{{ ucfirst($form->id) }}</td>
                                 <td>{{ $form->name }}</td>
                                 <td>
                                     <div class="btn-group btn-group-toggle">
-                                        <a href="{{route('admin.userform.delete', ['userid' => 110 ,'form_id' => $form->id])}}" title="Show" class="btn-danger btn btn-sm"><i class="fa fa-trash"> Delete Users</i></a>
+                                        <a href="{{route('admin.userform.delete', ['userid' => $id ,'form_id' => $form->id])}}" title="Show" class="btn-danger btn btn-sm"><i class="fa fa-trash"> Delete Form</i></a>
                                     </div>
                                 </td>
                             </tr>

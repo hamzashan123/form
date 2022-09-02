@@ -68,6 +68,9 @@ Route::group(['middleware' => ['roles']], function () {
     Route::get('/deleteuser/{userid}/{consultantid}', [ConsultantController::class, 'deleteConsultantUser'])->name('consultant.user.delete');
     
     Route::get('/forms', [FormController::class, 'index'])->name('forms.index');
+    Route::get('/form1', [FormController::class, 'form1'])->name('form1.index');
+    Route::get('/form2', [FormController::class, 'form2'])->name('form2.index');
+    Route::get('/form3', [FormController::class, 'form3'])->name('form3.index');
     Route::get('/formslist/{id}', [FormController::class, 'getUserForms'])->name('user.formslist');
     Route::post('/assignforms', [FormController::class, 'assignFormsToUser'])->name('userform.create');
     Route::get('/deleteform/{userid}/{form_id}', [FormController::class, 'deleteUserForm'])->name('userform.delete');

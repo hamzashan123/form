@@ -73,21 +73,17 @@
                     <tbody>
                     @if(!empty($Assignedconsultants))     
                     @foreach($Assignedconsultants as $user)
-                            @php
-                                $counts = explode(',',$user->customer_id);
-                                
-                            @endphp
                             <tr>
                                 <td>{{ ucfirst($user->username) }}</td>
                                 <td>{{ ucfirst($user->email) }}</td>
-                                <td>{{count($counts)}}</td>
-                                @if(isset($user->consultant_id))
+                                <td>{{$user->total}}</td>
+                                
                                 <td>
                                     <div class="btn-group btn-group-toggle">
-                                        <a href="{{ route('admin.consultant.user.list', $user->consultant_id) }}" title="Show" class="btn-primary btn btn-sm"><i class="fa fa-eye"> View Users</i></a>
+                                        <a href="{{ route('admin.consultant.user.list', $user->id) }}" title="Show" class="btn-primary btn btn-sm"><i class="fa fa-eye"> View Users</i></a>
                                     </div>
                                 </td>
-                                @endif
+                              
                             </tr>
                         
                             

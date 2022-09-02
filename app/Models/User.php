@@ -10,6 +10,7 @@ use Illuminate\Notifications\Notifiable;
 use Nicolaslopezj\Searchable\SearchableTrait;
 use Spatie\Permission\Traits\HasRoles;
 
+
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory, Notifiable, searchableTrait, HasRoles;
@@ -42,7 +43,10 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function isAdminOrSupervisor()
     {
-        return auth()->user()->hasRole('admin') || auth()->user()->hasRole('supervisor') || auth()->user()->hasRole('consultant');
+        return auth()->user()->hasRole('admin') 
+        || auth()->user()->hasRole('supervisor') 
+        || auth()->user()->hasRole('consultant')
+        || auth()->user()->hasRole('user');
     }
 
     public function orders()
@@ -105,5 +109,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function favProduct()
     {
         return $this->belongsToMany(Product::class, 'favorites')->withTimestamps();
+    }
+
+    public function userForms()
+    {
+        return $this->hasMany(UserForms::class,'user_id');
     }
 }

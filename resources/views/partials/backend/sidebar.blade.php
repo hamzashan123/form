@@ -55,35 +55,44 @@
     </li>
     @endif
     @if(Auth::user()->hasRole('user'))
-    <li class="nav-item active ">
-                <a class="nav-link" href="{{route('admin.users.index')}}">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>Form1</span></a>
-    </li>
-    <li class="nav-item active ">
-                <a class="nav-link" href="{{route('admin.users.index')}}">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>Form2</span></a>
-    </li>
-    <li class="nav-item active ">
-                <a class="nav-link" href="{{route('admin.users.index')}}">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>Form3</span></a>
-    </li>
+        @if(isset($userforms))
+            @foreach($userforms as $form) 
+                 @if($form->form_id == 1)
+                 <li class="nav-item active ">
+                            <a class="nav-link" href="{{route('admin.form1.index')}}">
+                                <i class="fas fa-fw fa-user"></i>
+                                <span>Form 1</span></a>
+                </li>
+                 @elseif($form->form_id == 2)
+                 <li class="nav-item active ">
+                            <a class="nav-link" href="{{route('admin.form2.index')}}">
+                                <i class="fas fa-fw fa-user"></i>
+                                <span>Form 2</span></a>
+                </li>
+                @elseif($form->form_id == 3)
+                <li class="nav-item active ">
+                            <a class="nav-link" href="{{route('admin.form3.index')}}">
+                                <i class="fas fa-fw fa-user"></i>
+                                <span>Form 3</span></a>
+                </li>
+                 @endif   
+                 
+            @endforeach
+        @endif
     @endif
     @if(Auth::user()->hasRole('admin'))
     <li class="nav-item active ">
-                <a class="nav-link" href="{{route('admin.users.index')}}">
+                <a class="nav-link" href="{{route('admin.form1.index')}}">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Form1</span></a>
     </li>
     <li class="nav-item active ">
-                <a class="nav-link" href="{{route('admin.users.index')}}">
+                <a class="nav-link" href="{{route('admin.form2.index')}}">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Form2</span></a>
     </li>
     <li class="nav-item active ">
-                <a class="nav-link" href="{{route('admin.users.index')}}">
+                <a class="nav-link" href="{{route('admin.form3.index')}}">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Form3</span></a>
     </li>

@@ -5,12 +5,13 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\UserRequest;
 use App\Models\User;
+use App\Models\ConsultantUser;
 use App\Services\ImageService;
 use App\Traits\ImageUploadTrait;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
-
+use Auth;
 
 class UserController extends Controller
 {
@@ -26,8 +27,14 @@ class UserController extends Controller
     public function index(): View
     {
         //$this->authorize('access_user');
-
-        $users = User::where('id' ,'!=' , auth()->user()->id)->with('roles')
+        $me = Auth::user();
+        
+        $data = ConsultantUser::where('consultant_id' ,$me->id);
+        $customers = $data->pluck('customer_id');
+        $myusers = User::whereIn('id',$customers)->get();
+        
+        if(Auth::user()->hasRole('consultant')){
+            $users = User::whereIn('id',$customers)->where('id' ,'!=' , auth()->user()->id)->with('roles')
             ->when(\request()->keyword != null, function ($query) {
                 $query->search(\request()->keyword);
             })
@@ -35,7 +42,21 @@ class UserController extends Controller
                 $query->whereStatus(\request()->status);
             })
             ->orderBy(\request()->sortBy ?? 'id', \request()->orderBy ?? 'desc')
-            ->paginate(\request()->limitBy ?? 10);     
+            ->paginate(\request()->limitBy ?? 10); 
+        }
+        if(Auth::user()->hasRole('admin')){
+            $users = User::where('id' ,'!=' , auth()->user()->id)->with('roles')
+            ->when(\request()->keyword != null, function ($query) {
+                $query->search(\request()->keyword);
+            })
+            ->when(\request()->status != null, function ($query) {
+                $query->whereStatus(\request()->status);
+            })
+            ->orderBy(\request()->sortBy ?? 'id', \request()->orderBy ?? 'desc')
+            ->paginate(\request()->limitBy ?? 10);
+        }
+            
+           
         return view('backend.users.index', compact('users'));
     }
 

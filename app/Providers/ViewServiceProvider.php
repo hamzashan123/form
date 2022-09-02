@@ -7,9 +7,11 @@ use App\Models\Link;
 use App\Models\Page;
 use App\Models\Review;
 use App\Models\Tag;
+use App\Models\UserForms;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Auth;
 
 class ViewServiceProvider extends ServiceProvider
 {
@@ -44,10 +46,18 @@ class ViewServiceProvider extends ServiceProvider
                         $routes_name[] = $action['as'];
                     }
                 }
-
+         
+                $user = Auth::user();
+                $userforms = '';
+                if($user){
+                    $userforms = UserForms::where('user_id',$user->id)->get();
+                }
+                
+               // dd($userforms);
                 $view->with([
                     'admin_side_menu' => $admin_side_menu,
-                    'routes_name' => $routes_name
+                    'routes_name' => $routes_name,
+                    'userforms' => $userforms
                 ]);
             });
         }

@@ -45,10 +45,14 @@ class FormController extends Controller
         //     return redirect()->back();
         // }
         foreach($request->form_ids as  $formid){
-            $data = UserForms::create([
-                'user_id' => $request->user_id,
-                'form_id'  => $formid,
-            ]);
+            $exist = UserForms::where(['user_id' => $request->user_id,'form_id'  => $formid])->exists();
+
+            if($exist == false){
+                $data = UserForms::create([
+                    'user_id' => $request->user_id,
+                    'form_id'  => $formid,
+                ]);
+            }
         }
        
         
@@ -58,19 +62,32 @@ class FormController extends Controller
     public function getUserForms(int $id){
         $data = UserForms::where('user_id' ,$id);
         $forms = $data->pluck('form_id');
-        $userforms = DB::table('forms')->whereIn('id',$forms)->get();
-        
-        return view('backend.forms.forms',compact('userforms'));
+        $userassignforms = DB::table('forms')->whereIn('id',$forms)->get();
+       
+        return view('backend.forms.forms',compact('userassignforms','id'));
     }
 
     public function deleteUserForm(int $user_id,int $form_id){
         
         
         $data = UserForms::where(['user_id' => $user_id, 'form_id' => $form_id])->delete();
-        
-        
+       
+            
         return redirect()->back();
 
+    }
+
+    public function form1(){
+
+        return view('backend.forms.form1');
+    }
+    public function form2(){
+
+        return view('backend.forms.form2');
+    }
+    public function form3(){
+
+        return view('backend.forms.form3');
     }
 
 }
