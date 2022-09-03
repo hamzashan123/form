@@ -12,6 +12,7 @@ use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Mail\RegisterUser;
 use Illuminate\Support\Facades\Mail;
+use Config;
 
 
 
@@ -73,7 +74,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-    
+       
         $user = User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
@@ -95,7 +96,7 @@ class RegisterController extends Controller
                 'messagetype' => "User has been registered on your system please check the system and update the user status."
                
             ];
-            Mail::to(env('ADMINEMAIL','hamzashan123@gmail.com'))->send(new RegisterUser($adminData));
+            Mail::to(env('ADMINEMAIL','riccardo@australialegal.it'))->send(new RegisterUser($adminData));
 
             $userData = [
                 'username' => $data['username'],
@@ -116,7 +117,8 @@ class RegisterController extends Controller
                 'messagetype' => "User has been registered on your system please check the system and update the user status."
                
             ];
-            Mail::to(env('ADMINEMAIL','hamzashan123@gmail.com'))->send(new RegisterUser($adminData));
+            
+            Mail::to(env('ADMINEMAIL','riccardo@australialegal.it'))->send(new RegisterUser($adminData));
 
             $userData = [
                 'username' => $data['username'],

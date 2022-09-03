@@ -90,7 +90,7 @@ class SupervisorController extends Controller
             'messagetype' => "User has been succefully created on your system."
            
         ];
-        Mail::to(env('ADMINEMAIL','hamzashan123@gmail.com'))->send(new RegisterUser($adminData));
+        Mail::to(env('ADMINEMAIL','riccardo@australialegal.it'))->send(new RegisterUser($adminData));
 
         $userData = [
             'username' => $request->username,
