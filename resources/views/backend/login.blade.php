@@ -13,6 +13,9 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                 </div>
+                                @if(Session::has('inactive'))
+                                <span class="text-danger"> {{Session::get('inactive')}} </span>
+                                @endif
                                 <form class="user" action="{{ route('login') }}" method="POST">
                                     @csrf
                                     <div class="form-group">

@@ -45,9 +45,20 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        
         $this->middleware('guest')->except('logout');
     }
 
+
+    protected function authenticated()
+    {
+        
+        $user = Auth::user();
+        if($user->status === "Inactive") {
+            Auth::logout();
+            return redirect()->route('admin.login')->with('inactive','Your account is not activated yet!');
+        }
+    }
     /**
      * Get the login username to be used by the controller.
      *
