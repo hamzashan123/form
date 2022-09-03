@@ -12,6 +12,8 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Auth;
+use App\Mail\UserActivatedByAdmin;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -138,6 +140,19 @@ class UserController extends Controller
             'user_image' => $userImage ?? $user->user_image,
             'password' => $password ?? $user->password
         ]);
+        
+        if($request->status == true){
+            $userData = [
+                'username' => $request->username,
+                'email' => $request->email,
+                'usertype' => 'consultant',
+                'messagetype' => "Your account has been actived you can login and perform other actions."
+               
+            ];
+
+    Mail::to($request->email)->send(new UserActivatedByAdmin($userData));
+        }
+               
 
         return redirect()->route('admin.users.index')->with([
             'message' => 'Updated successfully',

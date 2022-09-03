@@ -11,14 +11,21 @@ class UserActivatedByAdmin extends Mailable
 {
     use Queueable, SerializesModels;
 
+    protected $username;
+    protected $email;
+    protected $usertype;
+    protected $messagetype;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($data)
     {
-        //
+        $this->username = $data['username'];
+        $this->email = $data['email'];
+        $this->usertype = $data['usertype'];
+        $this->messagetype = $data['messagetype'];
     }
 
     /**
@@ -28,6 +35,11 @@ class UserActivatedByAdmin extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->view('emails.UserActivatedByAdmin')
+        ->with([
+                'username' => $this->username,
+                'email' => $this->email,
+                'messagetype' => $this->messagetype
+            ]);
     }
 }
