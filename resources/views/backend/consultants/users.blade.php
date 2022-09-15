@@ -12,7 +12,7 @@
                         </div>
             
             <div class="card">
-                <div class="card-header"><b>User List</b></div>
+                <div class="card-header"><b>Clients List</b></div>
                 <div class="card-body">
             
                         <div class="row">
@@ -22,7 +22,7 @@
                     <thead>
                         <tr>
                             <th>UserName</th>
-                            <th>User Email</th>
+                            <th>Client Email</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -35,7 +35,7 @@
                                 <td>{{ $user->email }}</td>
                                 <td>
                                     <div class="btn-group btn-group-toggle">
-                                        <a href="{{route('admin.consultant.user.delete', ['userid' => $user->id, 'consultantid' => $id])}}" title="Show" class="btn-danger btn btn-sm"><i class="fa fa-trash"> Delete Users</i></a>
+                                        <a href="{{route('admin.consultant.user.delete', ['userid' => $user->id, 'consultantid' => $id])}}" title="Show" class="btn-danger btn btn-sm"><i class="fa fa-trash"> Delete Client</i></a>
                                     </div>
                                 </td>
                             </tr>

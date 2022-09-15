@@ -19,13 +19,63 @@
         Interface
     </div>
     <!-- Nav Item - Pages Collapse Menu -->
+    @if(Auth::user()->hasRole('admin'))
+    <li class="nav-item active ">
+                <a class="nav-link" href="{{route('admin.users.allusers')}}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Total Clients & Consultants</span></a>
+    </li>
+    @endif
+    @if(Auth::user()->hasRole('admin'))
+    <li class="nav-item active ">
+                <a class="nav-link" href="{{route('admin.users.clients')}}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Total Clients</span></a>
+    </li>
+    @endif
+    @if(Auth::user()->hasRole('admin'))
+    <li class="nav-item active ">
+                <a class="nav-link" href="{{route('admin.consultants.index')}}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Total Consultants</span></a>
+    </li>
+    @endif
+    
+    @if(Auth::user()->hasRole('admin'))
+    <li class="nav-item active ">
+                <a class="nav-link" href="{{route('admin.consultant.index')}}">
+                <i class="fas fa-user fa-2x text-gray-300"></i>
+                    <span>Consultants</span></a>
+    </li>
+    @endif
+    @if(Auth::user()->hasRole('admin'))
+    <li class="nav-item active ">
+                <a class="nav-link" href="{{route('admin.forms.index')}}">
+                <i class="fas fa-check fa-2x text-gray-300"></i>
+                    <span>Forms</span></a>
+    </li>
+    @endif
+    @if(Auth::user()->hasRole('admin'))
+    <li class="nav-item active ">
+                <a class="nav-link" href="{{route('admin.form1.index')}}">
+                <i class="fas fa-clock fa-2x text-gray-300"></i>
+                    <span>Draft Applications</span></a>
+    </li>
+    @endif
+    @if(Auth::user()->hasRole('admin'))
+    <li class="nav-item active ">
+                <a class="nav-link" href="{{route('admin.form1.index')}}">
+                <i class="fas fa-check fa-2x text-gray-300"></i>
+                    <span>Submitted Applications</span></a>
+    </li>
+    @endif
     @forelse($admin_side_menu as $link)
         @can($link->permission_title)
-            <li class="nav-item active ">
+            <!-- <li class="nav-item active ">
                 <a class="nav-link" href="{{ route($link->to) }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>{{ $link->title }}</span></a>
-            </li>
+            </li> -->
             <!-- <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse{{ $link->as }}"
                    aria-expanded="true" aria-controls="collapse{{ $link->as }}">
@@ -60,19 +110,19 @@
                  @if($form->form_id == 1)
                  <li class="nav-item active ">
                             <a class="nav-link" href="{{route('admin.form1.index')}}">
-                                <i class="fas fa-fw fa-user"></i>
+                            <i class="fas fa-fw fa-envelope"></i>
                                 <span>Form 1</span></a>
                 </li>
                  @elseif($form->form_id == 2)
                  <li class="nav-item active ">
                             <a class="nav-link" href="{{route('admin.form2.index')}}">
-                                <i class="fas fa-fw fa-user"></i>
+                            <i class="fas fa-fw fa-envelope"></i>
                                 <span>Form 2</span></a>
                 </li>
                 @elseif($form->form_id == 3)
                 <li class="nav-item active ">
                             <a class="nav-link" href="{{route('admin.form3.index')}}">
-                                <i class="fas fa-fw fa-user"></i>
+                            <i class="fas fa-fw fa-envelope"></i>
                                 <span>Form 3</span></a>
                 </li>
                  @endif   
@@ -83,18 +133,18 @@
     @if(Auth::user()->hasRole('admin'))
     <li class="nav-item active ">
                 <a class="nav-link" href="{{route('admin.form1.index')}}">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>Form1</span></a>
+                    <i class="fas fa-fw fa-envelope"></i>
+                    <span>Application Form1</span></a>
     </li>
     <li class="nav-item active ">
                 <a class="nav-link" href="{{route('admin.form2.index')}}">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>Form2</span></a>
+                <i class="fas fa-fw fa-envelope"></i>
+                    <span>Application Form2</span></a>
     </li>
     <li class="nav-item active ">
                 <a class="nav-link" href="{{route('admin.form3.index')}}">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>Form3</span></a>
+                <i class="fas fa-fw fa-envelope"></i>
+                    <span>Application Form3</span></a>
     </li>
     @endif
   

@@ -11,7 +11,7 @@
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                    <h1 class="h4 text-gray-900 mb-4">Welcome to Australia Legal!</h1>
                                 </div>
                                 <form method="POST" action="{{ route('register') }}">
                                     @csrf
@@ -32,8 +32,8 @@
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="username" class="text-small text-uppercase">{{ __('Username') }}</label>
-                                                <input id="username" type="text" class="form-control form-control-lg" name="username" value="{{ old('username') }}" placeholder="Username">
+                                                <label for="username" class="text-small text-uppercase">{{ __('CREATE USERNAME') }}</label>
+                                                <input id="username" type="text" class="form-control form-control-lg" name="username" value="{{ old('username') }}" placeholder="Create username">
                                                 @error('username')<span class="text-danger" role="alert"><strong>{{ $message }}</strong></span>@enderror
                                             </div>
                                         </div>
@@ -53,14 +53,14 @@
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="password" class="text-small text-uppercase">{{ __('New Password') }}</label>
+                                                <label for="password" class="text-small text-uppercase">{{ __('Create Password') }}</label>
                                                 <input id="password" type="password" class="form-control form-control-lg" name="password" placeholder="Enter your password">
                                                 @error('password')<span class="text-danger" role="alert"><strong>{{ $message }}</strong></span>@enderror
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="password-confirm" class="text-small text-uppercase">{{ __('Confirm Password') }}</label>
+                                                <label for="password-confirm" class="text-small text-uppercase">{{ __('Create Confirm Password') }}</label>
                                                 <input id="password-confirm" type="password" class="form-control form-control-lg" name="password_confirmation" placeholder="Confirm Password">
                                                 @error('password-confirm')<span class="text-danger" role="alert"><strong>{{ $message }}</strong></span>@enderror
                                             </div>
@@ -70,11 +70,11 @@
                                            <label for="register-as" class="text-small text-uppercase"> Register As </label>
                                             <div class="userType">
                                             <div class="userTypee">
-                                                <input id="usertype" type="radio" checked class=" " name="usertype" value="user" placeholder="User">
-                                                <label for="register-as" class="text-small text-uppercase"> User </label>
+                                                <input id="usertype" type="radio" checked class=" " name="usertype" value="user" placeholder="Client">
+                                                <label for="register-as" class="text-small text-uppercase"> Client </label>
                                                 </div>
                                                 <div class="userTypee">
-                                                <input id="usertype" type="radio"  class="" name="usertype" value="consultant" placeholder="User">
+                                                <input id="usertype" type="radio"  class="" name="usertype" value="consultant" placeholder="Consultant">
                                                 <label for="register-as" class="text-small text-uppercase"> Consultant </label>
                                                 
 

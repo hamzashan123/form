@@ -14,7 +14,7 @@
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label for="permissions"><b>Select Users </b></label>
+                                    <label for="permissions"><b>Select Client </b></label>
                                     <select name="user_id" id="user_id" class="form-control" >
                                        <option value="0" selected disabled>  Select </option>
                                        @if(isset($users)) 
@@ -57,7 +57,7 @@
           <hr>
         <div class="col-12">
             <div class="card">
-                <div class="card-header"><b>User Forms List</b></div>
+                <div class="card-header"><b>Client Forms List</b></div>
                 <div class="card-body">
             
                         <div class="row">
@@ -66,8 +66,8 @@
                 <table class="table table-content table-hover">
                     <thead>
                         <tr>
-                            <th>UserName</th>
-                            <th>UserEmail</th>
+                            <th>Client Name</th>
+                            <th>Client Email</th>
                             <th>Total Forms Assigned</th>
                             <th>Action</th>
                         </tr>

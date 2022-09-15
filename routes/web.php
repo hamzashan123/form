@@ -16,6 +16,9 @@ use App\Http\Controllers\Backend\BackendController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+
+
+
 Auth::routes(['verify' => true]);
 
 Route::post('registeruser', [UserController::class,'registerUser' ])->name('registeruser');

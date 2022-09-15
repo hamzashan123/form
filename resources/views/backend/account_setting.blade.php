@@ -56,6 +56,7 @@
                             @error('phone')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
+                    @if(Auth::user()->hasRole('admin'))
                     <div class="col-6">
                         <div class="form-group">
                             <label for="status">Status</label>
@@ -66,6 +67,7 @@
                             @error('status')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
+                    @endif
                 </div>
                 <div class="row">
                     <div class="col-6">

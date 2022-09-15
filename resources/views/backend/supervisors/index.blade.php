@@ -17,17 +17,21 @@
                 @endcan
             </div>
         </div>
-        @include('partials.backend.filter', ['model' => route('admin.supervisors.index')])
+        <!-- @include('partials.backend.filter', ['model' => route('admin.supervisors.index')]) -->
 
         <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Image</th>
+                <th>ID</th>
                     <th>Name</th>
-                    <th>Permissions</th>
+                    <th>Surname</th>
+                    <th>Matter</th>
+                    
+                    
                     <th>Status</th>
+                    <th>Role</th>
+                    <th>Created On</th>
                     <th class="text-center" style="width: 30px;">Action</th>
                 </tr>
                 </thead>
@@ -35,16 +39,24 @@
                 @forelse($supervisors as $supervisor)
                     <tr>
                         <td>{{ $supervisor->id }}</td>
-                        <td>
+                        <!-- <td>
                             @if($supervisor->user_image)
                                 <img src="{{ asset('storage/images/users/' . $supervisor->user_image) }}" alt="{{ $supervisor->full_name }}" width="60" height="60">
                             @else
                                 <img src="{{ asset('img/avatar.png') }}" alt="{{ $supervisor->full_name }}" width="60" height="60">
                             @endif
+                        </td> -->
+                        <td>
+                        {{ $supervisor->full_name }}
+                            
                         </td>
-                        <td><a href="{{ route('admin.supervisors.show', $supervisor->id) }}">{{ $supervisor->full_name }}</a></td>
-                        <td class="text-success">{{ str_replace("_", " ", $supervisor->getPermissionNames()->join(', ')) }} <br></td>
+                        
+                        <td>{{ $supervisor->first_name }}<br>
+                        </td>
+                        <td> Abc</td>
                         <td>{{ $supervisor->status }}</td>
+                        <td>{{ $supervisor->roles[0]->name }}<br>
+                        <td>{{ $supervisor->created_at }}<br>
                         <td>
                             <div class="btn-group btn-group-sm">
                                 <a href="{{ route('admin.supervisors.edit', $supervisor) }}" class="btn btn-sm btn-primary">
@@ -67,7 +79,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td class="text-center" colspan="6">No supervisors found.</td>
+                        <td class="text-center" colspan="6">No Consultant found.</td>
                     </tr>
                 @endforelse
                 </tbody>

@@ -46,13 +46,16 @@ Route::group(['middleware' => ['roles']], function () {
     Route::resource('coupons', CouponController::class);
     Route::resource('reviews', ReviewController::class);
     Route::get('/supervisors/{supervisor}/remove-image', [SupervisorController::class, 'removeImage'])->name('supervisors.remove_image');
+    Route::resource('consultants', SupervisorController::class);
     Route::resource('supervisors', SupervisorController::class);
     Route::resource('countries', CountryController::class);
     Route::get('/states/get-states', [StateController::class, 'get_states'])->name('states.get_states');
     Route::resource('states', StateController::class);
     Route::get('/cities/get-cities', [CityController::class, 'get_cities'])->name('cities.get_cities');
     Route::resource('cities', CityController::class);
-    Route::get('users/get-users', [UserController::class, 'get_users'])->name('users.get_users');
+    Route::get('get-allusers', [UserController::class, 'get_users'])->name('users.allusers');
+    Route::get('get-clients', [UserController::class, 'get_clients'])->name('users.clients');
+    Route::get('get-consultants', [UserController::class, 'get_users'])->name('users.consultants');
     Route::resource('users', UserController::class);
     Route::resource('user_addresses', UserAddressController::class);
     Route::resource('shipping_companies', ShippingCompanyController::class);

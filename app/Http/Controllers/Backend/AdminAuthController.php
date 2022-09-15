@@ -30,6 +30,7 @@ class AdminAuthController extends Controller
 
     public function updateAccount(Request $request): RedirectResponse
     {
+       
         if ($request->hasFile('user_image')) {
             if (auth()->user()->user_image) {
                 (new ImageService())->unlinkImage(auth()->user()->user_image, 'users');

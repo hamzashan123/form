@@ -45,7 +45,9 @@ class ConsultantController extends Controller
                     'username' => $userdetail->username,
                     'email' => $userdetail->email,
                     'usertype' => 'consultant',
-                    'messagetype' => "You have assign a new user. Please check the system and see the assigned user"
+                    'messagetype' => "Dear Consultant, You have been 
+                    assigned a new client. Please check the Aus Legal Online System to view the new client and for any further
+                    details related to this matter"
                    
                 ];
     

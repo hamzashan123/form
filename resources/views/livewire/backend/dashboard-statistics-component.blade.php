@@ -6,9 +6,11 @@
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                            Total System Users
-                        </div>
+                        <a href="{{route('admin.users.index')}}">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Clients & Consultants
+                            </div>
+                        </a>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">{{$totalSystemUsers}}</div>
                     </div>
                     <div class="col-auto">
@@ -25,9 +27,11 @@
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
+                    <a href="{{route('admin.users.clients')}}">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                            Total Users
+                            Total Clients
                         </div>
+                    </a>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">{{$totalUsers}}</div>
                     </div>
                     <div class="col-auto">
@@ -45,9 +49,11 @@
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
+                    <a href="{{route('admin.consultants.index')}}">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                             Total Consultants
                         </div>
+                    </a>   
                         <div class="h5 mb-0 font-weight-bold text-gray-800">{{$totalConsultantUsers}}</div>
                     </div>
                     <div class="col-auto">
@@ -106,7 +112,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                            Published Applications
+                        SUBMITTED APPLICATIONS
                         </div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">5</div>
                     </div>

@@ -4,16 +4,28 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex">
             <h6 class="m-0 font-weight-bold text-primary">
-                All Users
+            @if(str_contains(url()->current(), '/admin/get-clients'))
+                All Clients
+            @else
+                Clients And Consultants
+            @endif
+               
             </h6>
             <div class="ml-auto">
                 @can('create_user')
+                @if(str_contains(url()->current(), '/admin/get-clients'))
                     <a href="{{ route('admin.users.create') }}" class="btn btn-primary">
+                   
                     <span class="icon text-white-50">
                         <i class="fa fa-plus"></i>
                     </span>
-                        <span class="text">Add user</span>
+                    
+                        
+                        <span class="text">Add Client</span>
+                   
+                       
                     </a>
+                    @endif
                 @endcan
             </div>
         </div>
@@ -24,13 +36,14 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Image</th>
-                    <th>Name & Username</th>
-                    <th>Email & Phone</th>
-                    <th>Role</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Matter</th>
+                    
                     
                     <th>Status</th>
-                    <th>Created at</th>
+                    <th>Role</th>
+                    <th>Created On</th>
                     <th> Assign Forms</th>
                     <th class="text-center" style="width: 30px;">Action</th>
                 </tr>
@@ -40,24 +53,15 @@
                     <tr>
                         <td>{{ $user->id }}</td>
                         <td>
-                            @if($user->user_image)
-                                <img src="{{ asset('storage/images/users/' . $user->user_image) }}" alt="{{ $user->full_name }}" class="img-profile rounded-circle">
-                            @else
-                                <img src="{{ asset('img/avatar.png') }}" alt="{{ $user->full_name }}" width="60" height="60">
-                            @endif
-                        </td>
-                        <td>
-                            <a href="{{ route('admin.users.show', $user->id) }}">
-                                {{ $user->full_name }}
-                            </a><br>
-                            <strong>( {{ $user->username }} )</strong>
+                            {{ $user->full_name }}
                         </td>
                         
-                        <td>{{ $user->email }}<br>
-                            {{ $user->phone }}
+                        <td>{{ $user->first_name }}<br>
                         </td>
-                        <td>{{ $user->roles[0]->name }}<br>
+                        <td> Abc</td>
                         <td>{{ $user->status }}</td>
+                        <td>{{ $user->roles[0]->name }}<br>
+                        
                         <td>{{ $user->created_at ? $user->created_at->format('Y-m-d') : '' }}</td>
                         <td>
                         <a href="{{ route('admin.user.formslist', $user->id) }}" class="btn btn-sm btn-primary">

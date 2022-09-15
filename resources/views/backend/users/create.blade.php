@@ -4,14 +4,14 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex">
             <h6 class="m-0 font-weight-bold text-primary">
-                Create user
+                Create Clients
             </h6>
             <div class="ml-auto">
                 <a href="{{ route('admin.users.index') }}" class="btn btn-primary">
                     <span class="icon text-white-50">
                         <i class="fa fa-home"></i>
                     </span>
-                    <span class="text">Back to users</span>
+                    <span class="text">Back to clients</span>
                 </a>
             </div>
         </div>
@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
-                            <label for="first_name" class="text-small text-uppercase">{{ __('First Name') }}</label>
+                            <label for="first_name" class="text-small text-uppercase">{{ __('Name') }}</label>
                             <input id="first_name" type="text" class="form-control form-control-lg" name="first_name"
                                    value="{{ old('first_name') }}" placeholder="First Name">
                             @error('first_name')<span class="text-danger">{{ $message }}</span>@enderror
@@ -29,38 +29,37 @@
                     </div>
                     <div class="col-6">
                         <div class="form-group">
-                            <label for="last_name" class="text-small text-uppercase">{{ __('Last Name') }}</label>
-                            <input id="last_name" type="text" class="form-control form-control-lg" name="last_name"
-                                   value="{{ old('last_name') }}" placeholder="Last Name">
-                            @error('last_name')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label for="username" class="text-small text-uppercase">{{ __('Username') }}</label>
+                            <label for="username" class="text-small text-uppercase">{{ __('Sur Name') }}</label>
                             <input id="username" type="text" class="form-control form-control-lg" name="username"
                                    value="{{ old('username') }}" placeholder="Username">
                             @error('username')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
+                </div>
+                <div class="row">
+                    
                     <div class="col-6">
                         <div class="form-group">
-                            <label for="email" class="text-small text-uppercase">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="text-small text-uppercase">{{ __('E-Mail') }}</label>
                             <input id="email" type="email" class="form-control form-control-lg" name="email"
                                    placeholder="Enter your Email">
                             @error('email')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
-                </div>
-                <div class="row">
                     <div class="col-6">
                         <div class="form-group">
                             <label for="phone" class="text-small text-uppercase">{{ __('Phone') }}</label>
                             <input id="phone" type="text" class="form-control form-control-lg" name="phone"
                                    placeholder="Enter your Phone Number">
                             @error('phone')<span class="text-danger">{{ $message }}</span>@enderror
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="whatsapp" class="text-small text-uppercase">{{ __('Whatsapp') }}</label>
+                            <input id="whatsapp" type="number" class="form-control form-control-lg" name="whatsapp"
+                                   placeholder="Enter your whatsapp Phone">
+                            @error('whatsapp')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
                     <div class="col-6">
@@ -72,6 +71,48 @@
                                 <option value="0" {{ old('status') == "0" ? 'selected' : null }}>Inactive</option>
                             </select>
                             @error('status')<span class="text-danger">{{ $message }}</span>@enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                            <div class="form-group">
+                                <label for="status">Matter</label>
+                                <select name="matter" id="matter" class="form-control">
+                                    <option value="" disabled>-- Choose Visa Type --</option>
+                                    <option value="Skilled points visa" >Skilled points visa</option>
+                                    <option value="Sponsorship visa">Sponsorship visa</option>
+                                    <option value="400 visa">400 visa</option>
+                                    <option value="Skills Assessment">Skills Assessment </option>
+                                    <option value="Student visa">Student visa</option>
+                                    <option value="408 COVID visa">408 COVID visa</option>
+                                    <option value="Aus citizenship">Aus citizenship</option>
+                                    <option value="Business visa">Business visa</option>
+                                    <option value="Other">other</option>
+                                </select>
+                                @error('status')<span class="text-danger">{{ $message }}</span>@enderror
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <select name="location" id="location" class="form-control">
+                                <option value="" disabled>-- Choose location --</option>
+                                <option value="onShore">onShore</option>
+                                <option value="offShore">offShore</option>
+                            </select>
+                            @error('status')<span class="text-danger">{{ $message }}</span>@enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="visa_expiry" class="text-small text-uppercase">{{ __('Visa Expiry Date') }}</label>
+                            <input id="visa_expiry" type="date" class="form-control form-control-lg"
+                                   name="visa_expiry"
+                                   >
                         </div>
                     </div>
                 </div>

@@ -21,7 +21,7 @@
             <div class="card">
                 <div class="card-header"><b>Form List</b></div>
                 <div class="card-body">
-            
+                @if(count($userassignforms) > 0)
                         <div class="row">
                             <div class="col-12">
                             <div class="table-responsive">
@@ -36,7 +36,7 @@
                     </thead>
                     <tbody>
                         
-                    @foreach($userassignforms as $form)
+                        @foreach($userassignforms as $form)
                             
                             <tr>
                                 <td>{{ ucfirst($form->id) }}</td>
@@ -50,6 +50,7 @@
                         
                             
                         @endforeach
+                        
                     </tbody>
                     
                 </table>
@@ -57,7 +58,9 @@
                             </div>
                         </div>
                        
-              
+                        @else
+                            <p>No forms assigned to this user yet!</p>
+                        @endif
                 </div>
                 
             </div>

@@ -7,15 +7,15 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="card-header"><b>Assign Users</b></div>
+                <div class="card-header"><b>Assign Client</b></div>
                 <div class="card-body">
                 <form action="{{ route('admin.consultant.user.create') }}" method="POST">
                         @csrf
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label for="permissions"><b>Select Consultants </b></label>
-                                    <select name="consultant_id" id="consultant" class="form-control" >
+                                    <label for="consultant_ids"><b>Select Consultants </b></label>
+                                    <select name="consultant_id" id="consultant_ids" class="form-control" >
                                        <option value="0" selected disabled>  Select </option>
                                        @if(isset($consultants)) 
                                        @foreach($consultants as $user)
@@ -31,8 +31,8 @@
                             <div class="col-6">
                                 
                                 <div class="form-group">
-                                    <label for="permissions"><b>Select Users </b> </label>
-                                    <select name="user_ids[]" id="permissions" class="form-control select2" multiple="multiple">
+                                    <label for="user_ids"><b>Select Clients </b> </label>
+                                    <select name="user_ids[]" id="user_ids" class="form-control select2" multiple="multiple">
                                         @foreach($users as $user)
                                          
                                             <option value="{{ $user->id }}">{{ $user->username }} </option>
@@ -44,7 +44,7 @@
                             </div>
                         </div>
                         <div class="form-group" style="text-align:right">
-                            <button type="submit" class="btn btn-primary">Assign User</button>
+                            <button type="submit" class="btn btn-primary" id="assignclients" style="display:none">Assign Clients</button>
                         </div>
                 </form>
                 </div>
@@ -66,7 +66,7 @@
                         <tr>
                             <th>Consultant Name</th>
                             <th>Consultant Email</th>
-                            <th>Total User Assigned</th>
+                            <th>Total Clients Assigned</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -80,7 +80,7 @@
                                 
                                 <td>
                                     <div class="btn-group btn-group-toggle">
-                                        <a href="{{ route('admin.consultant.user.list', $user->id) }}" title="Show" class="btn-primary btn btn-sm"><i class="fa fa-eye"> View Users</i></a>
+                                        <a href="{{ route('admin.consultant.user.list', $user->id) }}" title="Show" class="btn-primary btn btn-sm"><i class="fa fa-eye"> View Clients</i></a>
                                     </div>
                                 </td>
                               
@@ -107,6 +107,10 @@
 @section('scripts')
     <script src="{{ asset('backend/vendor/select2/js/select2.full.min.js') }}"></script>
     <script>
+        $('#user_ids').on('change' , function (){
+            
+            $('#assignclients').css('display','block');
+        });
         $(function () {
             // select2
             function matchStart(params, data) {

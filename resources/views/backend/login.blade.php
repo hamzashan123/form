@@ -11,7 +11,7 @@
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                    <h1 class="h4 text-gray-900 mb-4">Australia Legal ,Welcome Back!</h1>
                                 </div>
                                 @if(Session::has('inactive'))
                                 <span class="text-danger"> {{Session::get('inactive')}} </span>
@@ -45,7 +45,7 @@
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    <a class="small" href="{{ route('register') }}">Dont have an acount? </a>
+                                    <a class="small" href="{{ route('register') }}">Register/Don’t have an account? </a>
                                 </div>
                                 <div class="text-center">
                                     <a class="small" href="{{ route('admin.forgot_password') }}">Forgot Password?</a>
