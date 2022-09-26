@@ -403,7 +403,7 @@
             <tbody>
                 <tr>
                     <td> English test to be uploaded here </td>
-                    <td> <input type="file" name="personal_languages_english_test" id="personal_languages_english_test"></td>
+                    <td> <input type="file" name="personal_languages_english_test_document" id="personal_languages_english_test_document"></td>
                 </tr>
             </tbody>
         </table>
@@ -438,7 +438,7 @@
             <tbody>
                 <tr>
                     <td> Licence/Registration evidence </td>
-                    <td> <input type="file" name="personal_license_and_registration" id="personal_license_and_registration"></td>
+                    <td> <input type="file" name="personal_license_and_registration_document" id="personal_license_and_registration_document"></td>
                 </tr>
             </tbody>
         </table>

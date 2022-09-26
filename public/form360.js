@@ -42,7 +42,7 @@ jQuery(document).ready(function () {
                   //  scrollToTop()
                    
                     
-                    if ( next_fs.attr('id') == 'fieldsetthree') {
+                    if ( next_fs.attr('id') == 'fieldsetfour') {
                        $('#form360').submit();
                       
                     } 
