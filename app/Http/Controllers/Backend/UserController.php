@@ -33,7 +33,7 @@ class UserController extends Controller
         $me = Auth::user();
 
         $data = ConsultantUser::where('consultant_id' ,$me->id);
-        $customers = $data->pluck('customer_id');
+        $customers = $data->pluck('client_id');
         $myusers = User::whereIn('id',$customers)->get();
         
         if(Auth::user()->hasRole('consultant')){
@@ -213,7 +213,7 @@ class UserController extends Controller
         $me = Auth::user();
 
         $data = ConsultantUser::where('consultant_id' ,$me->id);
-        $customers = $data->pluck('customer_id');
+        $customers = $data->pluck('client_id');
         $myusers = User::whereIn('id',$customers)->get();
         
         if(Auth::user()->hasRole('consultant')){
@@ -246,7 +246,7 @@ class UserController extends Controller
         $me = Auth::user();
 
         $data = ConsultantUser::where('consultant_id' ,$me->id);
-        $customers = $data->pluck('customer_id');
+        $customers = $data->pluck('client_id');
         $myusers = User::whereIn('id',$customers)->get();
         
         if(Auth::user()->hasRole('admin')){

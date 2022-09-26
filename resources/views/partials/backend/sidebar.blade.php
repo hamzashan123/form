@@ -57,14 +57,14 @@
     @endif
     @if(Auth::user()->hasRole('admin'))
     <li class="nav-item active ">
-                <a class="nav-link" href="{{route('admin.form1.index')}}">
+                <a class="nav-link" href="{{route('admin.form360.index')}}">
                 <i class="fas fa-clock fa-2x text-gray-300"></i>
                     <span>Draft Applications</span></a>
     </li>
     @endif
     @if(Auth::user()->hasRole('admin'))
     <li class="nav-item active ">
-                <a class="nav-link" href="{{route('admin.form1.index')}}">
+                <a class="nav-link" href="{{route('admin.form360.index')}}">
                 <i class="fas fa-check fa-2x text-gray-300"></i>
                     <span>Submitted Applications</span></a>
     </li>
@@ -109,22 +109,22 @@
             @foreach($userforms as $form) 
                  @if($form->form_id == 1)
                  <li class="nav-item active ">
-                            <a class="nav-link" href="{{route('admin.form1.index')}}">
+                            <a class="nav-link" href="{{route('admin.form360.index')}}">
                             <i class="fas fa-fw fa-envelope"></i>
-                                <span>Form 1</span></a>
+                                <span>Form 360</span></a>
                 </li>
                  @elseif($form->form_id == 2)
                  <li class="nav-item active ">
-                            <a class="nav-link" href="{{route('admin.form2.index')}}">
+                            <a class="nav-link" href="{{route('admin.employerform.index')}}">
                             <i class="fas fa-fw fa-envelope"></i>
-                                <span>Form 2</span></a>
+                                <span>Employer Form</span></a>
                 </li>
-                @elseif($form->form_id == 3)
+                <!-- @elseif($form->form_id == 3)
                 <li class="nav-item active ">
                             <a class="nav-link" href="{{route('admin.form3.index')}}">
                             <i class="fas fa-fw fa-envelope"></i>
                                 <span>Form 3</span></a>
-                </li>
+                </li> -->
                  @endif   
                  
             @endforeach
@@ -132,20 +132,16 @@
     @endif
     @if(Auth::user()->hasRole('admin'))
     <li class="nav-item active ">
-                <a class="nav-link" href="{{route('admin.form1.index')}}">
+                <a class="nav-link" href="{{route('admin.form360.index')}}">
                     <i class="fas fa-fw fa-envelope"></i>
-                    <span>Application Form1</span></a>
+                    <span>Form 360</span></a>
     </li>
     <li class="nav-item active ">
-                <a class="nav-link" href="{{route('admin.form2.index')}}">
+                <a class="nav-link" href="{{route('admin.employerform.index')}}">
                 <i class="fas fa-fw fa-envelope"></i>
-                    <span>Application Form2</span></a>
+                    <span>Employer Form</span></a>
     </li>
-    <li class="nav-item active ">
-                <a class="nav-link" href="{{route('admin.form3.index')}}">
-                <i class="fas fa-fw fa-envelope"></i>
-                    <span>Application Form3</span></a>
-    </li>
+   
     @endif
   
     <!-- Divider -->

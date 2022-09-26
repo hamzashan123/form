@@ -21,6 +21,8 @@ use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\ConsultantController;
 use App\Http\Controllers\Backend\FormController;
+use App\Http\Controllers\Backend\Form360Controller;
+use App\Http\Controllers\Backend\EmployerFormController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -69,10 +71,12 @@ Route::group(['middleware' => ['roles']], function () {
     Route::post('/consultant', [ConsultantController::class, 'assignUserToConsultant'])->name('consultant.user.create');
     Route::get('/viewuser/{id}', [ConsultantController::class, 'viewUsers'])->name('consultant.user.list');
     Route::get('/deleteuser/{userid}/{consultantid}', [ConsultantController::class, 'deleteConsultantUser'])->name('consultant.user.delete');
+
+    Route::get('/getformdetails/{userid}/{form_id}', [FormController::class, 'getFormDetails'])->name('userform.details');
     
     Route::get('/forms', [FormController::class, 'index'])->name('forms.index');
-    Route::get('/form1', [FormController::class, 'form1'])->name('form1.index');
-    Route::get('/form2', [FormController::class, 'form2'])->name('form2.index');
+    Route::get('/form360', [Form360Controller::class, 'index'])->name('form360.index');
+    Route::get('/employerform', [EmployerFormController::class, 'index'])->name('employerform.index');
     Route::get('/form3', [FormController::class, 'form3'])->name('form3.index');
     Route::get('/formslist/{id}', [FormController::class, 'getUserForms'])->name('user.formslist');
     Route::post('/assignforms', [FormController::class, 'assignFormsToUser'])->name('userform.create');

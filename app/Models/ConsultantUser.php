@@ -11,6 +11,6 @@ class ConsultantUser extends Model
 
     protected $table = 'consultant_users';
 
-    protected $fillable = ['consultant_id','customer_id','comments','assigned_by_id'];
+    protected $fillable = ['consultant_id','client_id','comments','assigned_by_id'];
     
 }

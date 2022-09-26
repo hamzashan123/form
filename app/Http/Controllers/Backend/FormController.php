@@ -76,6 +76,30 @@ class FormController extends Controller
 
     }
 
+    public function getFormDetails(int $user_id, int $form_id){
+           if($form_id == 1){
+
+            $data  =  DB::table('form360')
+                        ->join('form360_matrix', 'form360.id', '=', 'form360_matrix.form360_id')     
+                        ->where('user_id',$user_id)->select('form360.*','form360_matrix.*')->get();
+            //dd($data);            
+            return redirect()->route('admin.form360.index',compact('data'));
+            }elseif($form_id == 2){
+
+            $data  =  DB::table('employerform')
+                ->join('employerform_sbs', 'employerform.id', '=', 'employerform_sbs.employerform_id')     
+                ->where('user_id',$user_id)->select('employerform.*','employerform_sbs.*')->get();   
+           // dd($data);    
+            return redirect()->route('admin.employerform.index',compact('data'));   
+            }else{
+
+           }
+         
+           dd($data);
+    }
+
+
+
     public function form1(){
 
         return view('backend.forms.form1');

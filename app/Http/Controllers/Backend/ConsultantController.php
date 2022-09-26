@@ -30,12 +30,12 @@ class ConsultantController extends Controller
     public function assignUserToConsultant(Request $request){
   
         foreach($request->user_ids as  $user){   
-            $exist = ConsultantUser::where(['consultant_id' => $request->consultant_id,'customer_id'  => $user])->exists();
+            $exist = ConsultantUser::where(['consultant_id' => $request->consultant_id,'client_id'  => $user])->exists();
               
             if($exist == false){
                 $data = ConsultantUser::create([
                     'consultant_id' => $request->consultant_id,
-                    'customer_id'  => $user,
+                    'client_id'  => $user,
                     'comments' => 'assigned to consultant',
                     'assigned_by_id' => auth()->user()->id
                 ]);
@@ -62,7 +62,7 @@ class ConsultantController extends Controller
     public function viewUsers(int $id){
        
         $data = ConsultantUser::where('consultant_id' ,$id);
-        $customers = $data->pluck('customer_id');
+        $customers = $data->pluck('client_id');
         $users = DB::table('users')->whereIn('id',$customers->toArray())->get();
         
         return view('backend.consultants.users',compact('users','id'));
@@ -70,7 +70,7 @@ class ConsultantController extends Controller
 
     public function deleteConsultantUser(int $userid,int $consultant_id){
         
-        $data = ConsultantUser::where(['consultant_id' => $consultant_id, 'customer_id' => $userid])->delete();
+        $data = ConsultantUser::where(['consultant_id' => $consultant_id, 'client_id' => $userid])->delete();
     
         return redirect()->back();
 

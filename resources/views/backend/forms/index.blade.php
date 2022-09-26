@@ -35,9 +35,9 @@
                                     <select name="form_ids[]" id="permissions" class="form-control select2" multiple="multiple">
                                         
                                          
-                                            <option value="1"> Form 1</option>
-                                            <option value="2"> Form 2</option>
-                                            <option value="3"> Form 3</option>
+                                            <option value="1"> Form 360</option>
+                                            <option value="2"> Employer Form</option>
+                                          
 
                                         
                                     </select>

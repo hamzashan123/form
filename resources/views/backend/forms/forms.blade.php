@@ -31,7 +31,7 @@
                             <th>Form-id</th>
                             <th>Form-title</th>
                             
-                            <th>Action</th>
+                            <th colspan="2">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,6 +44,10 @@
                                 <td>
                                     <div class="btn-group btn-group-toggle">
                                         <a href="{{route('admin.userform.delete', ['userid' => $id ,'form_id' => $form->id])}}" title="Show" class="btn-danger btn btn-sm"><i class="fa fa-trash"> Delete Form</i></a>
+                                    </div>
+                                </td>
+                                <td><div class="btn-group btn-group-toggle">
+                                        <a href="{{route('admin.userform.details', ['userid' => $id ,'form_id' => $form->id])}}" title="Show" class="btn-primary btn btn-sm"><i class="fa fa-eye"> View Form</i></a>
                                     </div>
                                 </td>
                             </tr>
