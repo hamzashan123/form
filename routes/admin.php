@@ -76,6 +76,7 @@ Route::group(['middleware' => ['roles']], function () {
     
     Route::get('/forms', [FormController::class, 'index'])->name('forms.index');
     Route::get('/form360', [Form360Controller::class, 'index'])->name('form360.index');
+    Route::post('/form360', [Form360Controller::class, 'save'])->name('form360.save');
     Route::get('/employerform', [EmployerFormController::class, 'index'])->name('employerform.index');
     Route::get('/form3', [FormController::class, 'form3'])->name('form3.index');
     Route::get('/formslist/{id}', [FormController::class, 'getUserForms'])->name('user.formslist');

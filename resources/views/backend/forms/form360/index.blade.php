@@ -9,8 +9,12 @@
 
                 <img src="/logo.png" class="logo" />
                 <h2 id="heading">Form 360 </h2>
-
-                <form id="form360" action="#" method="post" enctype="multipart/form-data">
+                @if(session()->has('success')) 
+                <div class="alert alert-success">
+                    {{ session()->get('success') }}
+                </div>
+                @endif
+                <form id="form360" action="{{route('admin.form360.save')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <!-- progressbar -->
                     <ul id="progressbar">
