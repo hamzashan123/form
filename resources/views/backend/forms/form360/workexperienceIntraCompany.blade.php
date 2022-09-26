@@ -5,7 +5,7 @@
                 <h2 class="fs-title">- WORK EXPERIENCE – FOR INTRA COMPANY VISAS:</h2>
             </div>
             <div class="col-5">
-                <h2 class="steps">Step - 14</h2>
+                <h2 class="steps">Step 7 - 14</h2>
             </div>
         </div>
 
