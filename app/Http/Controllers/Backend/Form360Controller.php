@@ -13,7 +13,7 @@ class Form360Controller extends Controller
     }
 
     public function save(Request $request){
-       //dd($request);
+        dd($request);
         $formid = DB::table('form360')->insertGetId([
             'user_id' => auth()->user()->id,
             'created_at' => date('m/d/Y h:i:s a'),
@@ -56,6 +56,7 @@ class Form360Controller extends Controller
 
 
     private function getFieldsetsData($form_id,$request){
+        
         $matrixData =  [
             'form360_id' => $form_id,
             'matrix_name_and_surname' => $request->matrix_name_and_surname,
@@ -223,12 +224,26 @@ class Form360Controller extends Controller
             'apprenticeship_name_surname' => $request->apprenticeship_name_surname,
             'apprenticeship_referee_contact' => $request->apprenticeship_referee_contact,
         ];
+
+        $workExperienceData = [
+            'form360_id' => $form_id,
+            'apprenticeship_formal_studies' => $request->apprenticeship_formal_studies,
+            'apprenticeship_formal_studies_specify' => $request->apprenticeship_formal_studies_specify,
+            'apprenticeship_total_duration' => $request->apprenticeship_total_duration,
+            'apprenticeship_completed' => $request->apprenticeship_completed,
+            'apprenticeship_conclusion' => $request->apprenticeship_conclusion,
+            'apprenticeship_company' => $request->apprenticeship_company,
+            'apprenticeship_company_address' => $request->apprenticeship_company_address,
+            'apprenticeship_visa_country' => $request->apprenticeship_visa_country
+        
+        ];
         $fieldsetsData = [
             'matrixdata' => $matrixData ,
             'personaldata' => $personalData ,
             'firsteducationdata' => $firstEducationData,
             'higheducationdata' =>$highEducationData,
             'apprenticeship' =>$apprenticeshipData, 
+            'workExperienceData' => $workExperienceData
         ];
         return $fieldsetsData;
 
