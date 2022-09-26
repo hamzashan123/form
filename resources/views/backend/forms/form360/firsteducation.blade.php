@@ -217,7 +217,7 @@
 
                     </td>
                     <td> <input type="date" name="firstedu_high_yearobt" id="firstedu_high_yearobt" />
-                    </td>high
+                    </td>
                 </tr>
 
                 <tr>
