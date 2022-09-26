@@ -13,7 +13,7 @@ class Form360Controller extends Controller
     }
 
     public function save(Request $request){
-       // dd($request);
+       //dd($request);
         $formid = DB::table('form360')->insertGetId([
             'user_id' => auth()->user()->id,
             'created_at' => date('m/d/Y h:i:s a'),
@@ -36,6 +36,10 @@ class Form360Controller extends Controller
 
         DB::table('form360_high_education')->insert([
             $fieldsets['higheducationdata']
+        ]);
+
+        DB::table('form360_apprenticeship')->insert([
+            $fieldsets['apprenticeship']
         ]);
         
         
@@ -190,11 +194,41 @@ class Form360Controller extends Controller
             'higher_level_qualification3_thesis_project_if' => $request->higher_level_qualification3_thesis_project_if,
             
         ];
+
+        $apprenticeshipData = [
+            'form360_id' => $form_id,
+            'apprenticeship_formal_studies' => $request->apprenticeship_formal_studies,
+            'apprenticeship_formal_studies_specify' => $request->apprenticeship_formal_studies_specify,
+            'apprenticeship_total_duration' => $request->apprenticeship_total_duration,
+            'apprenticeship_completed' => $request->apprenticeship_completed,
+            'apprenticeship_conclusion' => $request->apprenticeship_conclusion,
+            'apprenticeship_company' => $request->apprenticeship_company,
+            'apprenticeship_company_address' => $request->apprenticeship_company_address,
+            'apprenticeship_visa_country' => $request->apprenticeship_visa_country,
+            'apprenticeship_position' => $request->apprenticeship_position,
+            'apprenticeship_start_date' => $request->apprenticeship_start_date,
+            'apprenticeship_end_date' => $request->apprenticeship_end_date,
+            'apprenticeship_fulltime_parttime' => $request->apprenticeship_fulltime_parttime,
+            'apprenticeship_week_perhour' => $request->apprenticeship_week_perhour,
+            'apprenticeship_duties_responsibities' => $request->apprenticeship_duties_responsibities,
+            'apprenticeship_formal_qualification' => $request->apprenticeship_formal_qualification,
+            'apprenticeship_payments' => $request->apprenticeship_payments,
+            'apprenticeship_period' => $request->apprenticeship_period,
+            'apprenticeship_issue_invoice' => $request->apprenticeship_issue_invoice,
+            'apprenticeship_employment_collaboration' => $request->apprenticeship_employment_collaboration,
+            'apprenticeship_payslips' => $request->apprenticeship_payslips,
+            'apprenticeship_income' => $request->apprenticeship_income,
+            'apprenticeship_bank_statement' => $request->apprenticeship_bank_statement,
+            'apprenticeship_reference_letter' => $request->apprenticeship_reference_letter,
+            'apprenticeship_name_surname' => $request->apprenticeship_name_surname,
+            'apprenticeship_referee_contact' => $request->apprenticeship_referee_contact,
+        ];
         $fieldsetsData = [
             'matrixdata' => $matrixData ,
             'personaldata' => $personalData ,
             'firsteducationdata' => $firstEducationData,
-            'higheducationdata' =>$highEducationData 
+            'higheducationdata' =>$highEducationData,
+            'apprenticeship' =>$apprenticeshipData, 
         ];
         return $fieldsetsData;
 
