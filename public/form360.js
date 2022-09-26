@@ -43,7 +43,7 @@ jQuery(document).ready(function () {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                    
                     
-                    if ( next_fs.attr('id') == 'fieldsetsix') {
+                    if ( next_fs.attr('id') == 'fieldsetfive') {
                        $('#form360').submit();
                       
                     } 
