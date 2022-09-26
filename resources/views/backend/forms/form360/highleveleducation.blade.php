@@ -174,6 +174,324 @@
             </tbody>
         </table>
 
+        <h2 class="fs-title">QUALIFICATIONS 2
+        </h2>
+
+        <table>
+
+            <tbody>
+
+                <tr>
+                    <td> Name of University/Institute </td>
+                    <td> <input type="text" name="higher_level_qualification2_nameofuniversity" id="higher_level_qualification2_nameofuniversity" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Is this a university or vocational level qualification?
+                    </td>
+                    <td>
+                        <select name="higher_level_vocational_level_qualification2" id="higher_level_vocational_level_qualification2" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="universitylevel"> University Level </option>
+                            <option value="vocationallevel"> Vocational/Professional Level </option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Full address of the education provider
+                    </td>
+                    <td> <input type="text" name="higher_level__qualification2_education_provider" id="higher_level__qualification2_education_provider" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Name of exact qualification obtained in the official
+                        language
+                    </td>
+                    <td> <input type="text" name="higher_level_qualifciation2_official_languages" id="higher_level_qualifciation2_official_languages" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Name of the qualification obtained in English
+                    </td>
+                    <td> <input type="text" name="higher_level_qualification2_english" id="higher_level_qualification2_english" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Course duration
+
+                    </td>
+                    <td> <input type="text" name="higher_level_qualification2_course_duration" id="higher_level_qualification2_course_duration" />
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td> Date course started
+
+                    </td>
+                    <td> <input type="date" name="higher_level_qualification2_course_started" id="higher_level_qualification2_course_started" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Date course extension_loaded
+
+                    </td>
+                    <td> <input type="date" name="higher_level_qualification2_course_ended" id="higher_level_qualification2_course_ended" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Was the course studied full-time or part-time
+
+
+                    </td>
+                    <td> <input type="text" name="higher_level_qualification2_full_part" id="higher_level_qualification2_full_part" />
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td> Was this qualification obtained through course of
+                        study or via RPL?
+
+
+                    </td>
+                    <td> <input type="text" name="higher_level_qualification2_courseofstudy" id="higher_level_qualification2_courseofstudy" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Country where you studied
+
+
+                    </td>
+                    <td> <input type="text" name="higher_level_qualification2_country" id="higher_level_qualification2_country" />
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td> Was a thesis or final project required to end the
+                        course? If so, specify the title of the thesis/project
+
+
+
+                    </td>
+                    <td> <input type="text" name="higher_level_qualification2_thesis_project" id="higher_level_qualification2_thesis_project" />
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td> Indicate the number of weeks (even if approximate)
+                        studied to complete the thesis/project
+
+
+
+                    </td>
+                    <td> <input type="text" name="higher_level_qualification2_thesis_project_if" id="higher_level_qualification2_thesis_project_if" />
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <h2 class="fs-title" style="margin-top: 10px;">DOCS FOR HIGHER QUALIFICATION 2
+        </h2>
+        <p style="color:red">Attachments must be colour scans of the original document and uploaded in PDF format only. Please consolidate all
+            multipage files into one PDF document for each attachment type. Maximum PDF file size is 3MB per PDF.
+            Unnecessary additional documents will cause delays in processing. </p>
+
+        <table>
+            <tbody>
+                <tr>
+                    <td> Qualification – Diploma/Award Certificate
+                    </td>
+                    <td> <input type="file" name="higher_level_qualification2_diploma_award" id="higher_level_qualification2_diploma_award"></td>
+                </tr>
+
+                <tr>
+                    <td> List of exams taken
+
+                    </td>
+                    <td> <input type="file" name="higher_level_qualification2_listofexams" id="higher_level_qualification2_listofexams"></td>
+                </tr>
+
+                <tr>
+                    <td> Diploma Supplement
+
+
+                    </td>
+                    <td> <input type="file" name="higher_level_qualification2_diploma_supplement" id="higher_level_qualification2_diploma_supplement"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="fs-title">QUALIFICATIONS 3
+        </h2>
+
+
+        <table>
+
+            <tbody>
+
+                <tr>
+                    <td> Name of University/Institute </td>
+                    <td> <input type="text" name="higher_level_qualification3_nameofuniversity" id="higher_level_qualification3_nameofuniversity" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Is this a university or vocational level qualification?
+                    </td>
+                    <td>
+                        <select name="higher_level_vocational_level_qualification3" id="higher_level_vocational_level_qualification3" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="universitylevel"> University Level </option>
+                            <option value="vocationallevel"> Vocational/Professional Level </option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Full address of the education provider
+                    </td>
+                    <td> <input type="text" name="higher_level__qualification3_education_provider" id="higher_level__qualification3_education_provider" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Name of exact qualification obtained in the official
+                        language
+                    </td>
+                    <td> <input type="text" name="higher_level_qualifciation3_official_languages" id="higher_level_qualifciation3_official_languages" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Name of the qualification obtained in English
+                    </td>
+                    <td> <input type="text" name="higher_level_qualification3_english" id="higher_level_qualification3_english" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Course duration
+
+                    </td>
+                    <td> <input type="text" name="higher_level_qualification3_course_duration" id="higher_level_qualification3_course_duration" />
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td> Date course started
+
+                    </td>
+                    <td> <input type="date" name="higher_level_qualification3_course_started" id="higher_level_qualification3_course_started" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Date course extension_loaded
+
+                    </td>
+                    <td> <input type="date" name="higher_level_qualification3_course_ended" id="higher_level_qualification3_course_ended" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Was the course studied full-time or part-time
+
+
+                    </td>
+                    <td> <input type="text" name="higher_level_qualification3_full_part" id="higher_level_qualification3_full_part" />
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td> Was this qualification obtained through course of
+                        study or via RPL?
+
+
+                    </td>
+                    <td> <input type="text" name="higher_level_qualification3_courseofstudy" id="higher_level_qualification3_courseofstudy" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Country where you studied
+
+
+                    </td>
+                    <td> <input type="text" name="higher_level_qualification3_country" id="higher_level_qualification3_country" />
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td> Was a thesis or final project required to end the
+                        course? If so, specify the title of the thesis/project
+
+
+
+                    </td>
+                    <td> <input type="text" name="higher_level_qualification3_thesis_project" id="higher_level_qualification3_thesis_project" />
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td> Indicate the number of weeks (even if approximate)
+                        studied to complete the thesis/project
+
+
+
+                    </td>
+                    <td> <input type="text" name="higher_level_qualification3_thesis_project_if" id="higher_level_qualification3_thesis_project_if" />
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <h2 class="fs-title" style="margin-top: 10px;">DOCS FOR HIGHER QUALIFICATION 3
+        </h2>
+        <p style="color:red">Attachments must be colour scans of the original document and uploaded in PDF format only. Please consolidate all
+            multipage files into one PDF document for each attachment type. Maximum PDF file size is 3MB per PDF.
+            Unnecessary additional documents will cause delays in processing. </p>
+
+        <table>
+            <tbody>
+                <tr>
+                    <td> Qualification – Diploma/Award Certificate
+                    </td>
+                    <td> <input type="file" name="higher_level_qualification3_diploma_award" id="higher_level_qualification3_diploma_award"></td>
+                </tr>
+
+                <tr>
+                    <td> List of exams taken
+
+                    </td>
+                    <td> <input type="file" name="higher_level_qualification3_listofexams" id="higher_level_qualification3_listofexams"></td>
+                </tr>
+
+                <tr>
+                    <td> Diploma Supplement
+
+
+                    </td>
+                    <td> <input type="file" name="higher_level_qualification3_diploma_supplement" id="higher_level_qualification3_diploma_supplement"></td>
+                </tr>
+            </tbody>
+        </table>
 
     </div>
 
