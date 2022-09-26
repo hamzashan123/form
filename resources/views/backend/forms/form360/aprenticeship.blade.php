@@ -1,13 +1,15 @@
-<fieldset id="fieldsettwo">
+<fieldset id="fieldsetfive">
     <div class="form-card">
         <div class="row">
             <div class="col-7">
-                <h2 class="fs-title">APRENTICESHIP (if applicable)</h2>
+                <h2 class="fs-title">APRENTICESHIP:</h2>
             </div>
             <div class="col-5">
                 <h2 class="steps">Step 5 - 14</h2>
             </div>
         </div>
+
+
 
 
 

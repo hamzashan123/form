@@ -13,7 +13,7 @@ class Form360Controller extends Controller
     }
 
     public function save(Request $request){
-
+        //dd($request);
         $formid = DB::table('form360')->insertGetId([
             'user_id' => auth()->user()->id,
             'created_at' => date('m/d/Y h:i:s a'),
@@ -29,6 +29,15 @@ class Form360Controller extends Controller
         DB::table('form360_personal')->insert([
             $fieldsets['personaldata']
         ]);
+
+        DB::table('form360_first_education')->insert([
+            $fieldsets['firsteducationdata']
+        ]);
+
+        DB::table('form360_high_education')->insert([
+            $fieldsets['higheducationdata']
+        ]);
+        
         
         return redirect()->back()->with('success','Application Submitted Successfully!');
     }
@@ -110,7 +119,55 @@ class Form360Controller extends Controller
             'personal_license_and_registration' => $request->personal_license_and_registration,
         ];
 
-        $fieldsetsData = ['matrixdata' => $matrixData ,'personaldata' => $personalData];
+        $firstEducationData = [
+            'form360_id' => $form_id,
+            'first_education_qualification_obtained' => $request->first_education_qualification_obtained,
+            'firstedu_background_nameofschool' => $request->firstedu_background_nameofschool,
+            'firstedu_background_fulladdress' => $request->firstedu_background_fulladdress,
+            'firstedu_background_datecoursesstarted' => $request->firstedu_background_datecoursesstarted,
+            'firstedu_background_datecoursesended' => $request->firstedu_background_datecoursesended,
+            'firstedu_background_yearobt' => $request->firstedu_background_yearobt,
+            'firstedu_background_legal_duration' => $request->firstedu_background_legal_duration,
+            'firstedu_background_qualification_obtained' => $request->firstedu_background_qualification_obtained,
+            'firstedu_middle_nameofschool' => $request->firstedu_middle_nameofschool,
+            'firstedu_middle_fulladdress' => $request->firstedu_middle_fulladdress,
+            'firstedu_middle_datecoursesstarted' => $request->firstedu_middle_datecoursesstarted,
+            'firstedu_middle_datecoursesended' => $request->firstedu_middle_datecoursesended,
+            'firstedu_middle_yearobt' => $request->firstedu_middle_yearobt,
+            'firstedu_middle_legal_duration' => $request->firstedu_middle_legal_duration,
+            'firstedu_middle_qualification_obtained' => $request->firstedu_middle_qualification_obtained,
+            'firstedu_high_nameofschool' => $request->firstedu_high_nameofschool,
+            'firstedu_high_fulladdress' => $request->firstedu_high_fulladdress,
+            'firstedu_high_datecoursesstarted' => $request->firstedu_high_datecoursesstarted,
+            'firstedu_high_datecoursesended' => $request->firstedu_high_datecoursesended,
+            'firstedu_high_yearobt' => $request->firstedu_high_yearobt,
+            'firstedu_high_legal_duration' => $request->firstedu_high_legal_duration,
+            'firstedu_high_qualification_obtained' => $request->firstedu_high_qualification_obtained,
+        ];
+
+        $highEducationData = [
+            'form360_id' => $form_id,
+            'higher_level_qualification1_nameofuniversity' => $request->higher_level_qualification1_nameofuniversity,
+            'higher_level_vocational_level_qualification1' => $request->higher_level_vocational_level_qualification1,
+            'higher_level__qualification1_education_provider' => $request->higher_level__qualification1_education_provider,
+            'higher_level_qualifciation1_official_languages' => $request->higher_level_qualifciation1_official_languages,
+            'higher_level_qualification1_english' => $request->higher_level_qualification1_english,
+            'higher_level_qualification1_course_duration' => $request->higher_level_qualification1_course_duration,
+            'higher_level_qualification1_course_started' => $request->higher_level_qualification1_course_started,
+            'higher_level_qualification1_course_ended' => $request->higher_level_qualification1_course_ended,
+            'higher_level_qualification1_full_part' => $request->higher_level_qualification1_full_part,
+            'higher_level_qualification1_courseofstudy' => $request->higher_level_qualification1_courseofstudy,
+            'higher_level_qualification1_country' => $request->higher_level_qualification1_country,
+            'higher_level_qualification1_thesis_project' => $request->higher_level_qualification1_thesis_project,
+            'higher_level_qualification1_thesis_project_if' => $request->higher_level_qualification1_thesis_project_if
+            
+        ];
+        $fieldsetsData = [
+            'matrixdata' => $matrixData ,
+            'personaldata' => $personalData ,
+            'firsteducationdata' => $firstEducationData,
+            'higheducationdata' =>$highEducationData 
+        ];
         return $fieldsetsData;
 
     }

@@ -40,9 +40,10 @@ jQuery(document).ready(function () {
               
                     setProgressBar(++current)
                   //  scrollToTop()
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
                    
                     
-                    if ( next_fs.attr('id') == 'fieldsetfour') {
+                    if ( next_fs.attr('id') == 'fieldsetsix') {
                        $('#form360').submit();
                       
                     } 
@@ -81,6 +82,7 @@ jQuery(document).ready(function () {
       )
       setProgressBar(--current)
     //  scrollToTop()
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     })
   
   function setProgressBar(curStep) {
