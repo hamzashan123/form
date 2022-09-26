@@ -26,10 +26,10 @@
                                 aria-valuemin="0" aria-valuemax="100"></div>
                         </div> <br> <!-- fieldsets -->
                        
-                        @include('backend.forms.form360.first')
-                        @include('backend.forms.form360.second')
-                        @include('backend.forms.form360.third')
-                        @include('backend.forms.form360.fourth')
+                        @include('backend.forms.employerform.first')
+                        @include('backend.forms.employerform.second')
+                        @include('backend.forms.employerform.third')
+                        @include('backend.forms.employerform.fourth')
                          
                         
                     </form>
