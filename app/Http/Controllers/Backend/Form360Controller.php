@@ -13,7 +13,7 @@ class Form360Controller extends Controller
     }
 
     public function save(Request $request){
-        //dd($request);
+       // dd($request);
         $formid = DB::table('form360')->insertGetId([
             'user_id' => auth()->user()->id,
             'created_at' => date('m/d/Y h:i:s a'),
@@ -159,7 +159,35 @@ class Form360Controller extends Controller
             'higher_level_qualification1_courseofstudy' => $request->higher_level_qualification1_courseofstudy,
             'higher_level_qualification1_country' => $request->higher_level_qualification1_country,
             'higher_level_qualification1_thesis_project' => $request->higher_level_qualification1_thesis_project,
-            'higher_level_qualification1_thesis_project_if' => $request->higher_level_qualification1_thesis_project_if
+            'higher_level_qualification1_thesis_project_if' => $request->higher_level_qualification1_thesis_project_if,
+            
+            'higher_level_qualification2_nameofuniversity' => $request->higher_level_qualification2_nameofuniversity,
+            'higher_level_vocational_level_qualification2' => $request->higher_level_vocational_level_qualification2,
+            'higher_level__qualification2_education_provider' => $request->higher_level__qualification2_education_provider,
+            'higher_level_qualifciation2_official_languages' => $request->higher_level_qualifciation2_official_languages,
+            'higher_level_qualification2_english' => $request->higher_level_qualification2_english,
+            'higher_level_qualification2_course_duration' => $request->higher_level_qualification2_course_duration,
+            'higher_level_qualification2_course_started' => $request->higher_level_qualification2_course_started,
+            'higher_level_qualification2_course_ended' => $request->higher_level_qualification2_course_ended,
+            'higher_level_qualification2_full_part' => $request->higher_level_qualification2_full_part,
+            'higher_level_qualification2_courseofstudy' => $request->higher_level_qualification2_courseofstudy,
+            'higher_level_qualification2_country' => $request->higher_level_qualification2_country,
+            'higher_level_qualification2_thesis_project' => $request->higher_level_qualification2_thesis_project,
+            'higher_level_qualification2_thesis_project_if' => $request->higher_level_qualification2_thesis_project_if,
+
+            'higher_level_qualification3_nameofuniversity' => $request->higher_level_qualification3_nameofuniversity,
+            'higher_level_vocational_level_qualification3' => $request->higher_level_vocational_level_qualification3,
+            'higher_level__qualification3_education_provider' => $request->higher_level__qualification3_education_provider,
+            'higher_level_qualifciation3_official_languages' => $request->higher_level_qualifciation3_official_languages,
+            'higher_level_qualification3_english' => $request->higher_level_qualification3_english,
+            'higher_level_qualification3_course_duration' => $request->higher_level_qualification3_course_duration,
+            'higher_level_qualification3_course_started' => $request->higher_level_qualification3_course_started,
+            'higher_level_qualification3_course_ended' => $request->higher_level_qualification3_course_ended,
+            'higher_level_qualification3_full_part' => $request->higher_level_qualification3_full_part,
+            'higher_level_qualification3_courseofstudy' => $request->higher_level_qualification3_courseofstudy,
+            'higher_level_qualification3_country' => $request->higher_level_qualification3_country,
+            'higher_level_qualification3_thesis_project' => $request->higher_level_qualification3_thesis_project,
+            'higher_level_qualification3_thesis_project_if' => $request->higher_level_qualification3_thesis_project_if,
             
         ];
         $fieldsetsData = [
