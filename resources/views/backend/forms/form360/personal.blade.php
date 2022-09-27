@@ -39,7 +39,7 @@
                     <td> Civil status </td>
                     <td>
                         <select name="personal_civil_status" id="personal_civil_status" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="single"> Single </option>
                             <option value="married"> Married </option>
                             <option value="formalcertificate"> De facto relationship with formal certificate
@@ -155,7 +155,7 @@
                     <td> Are you currently in Australia or New Zealand? </td>
                     <td>
                         <select name="personal_aus_or_nz" id="personal_aus_or_nz" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -180,7 +180,7 @@
                     <td>Have you undertaken a health examination for an Australia or New Zealandn visa in the last 12 months? </td>
                     <td>
                         <select name="personal_health_examination" id="personal_health_examination" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -199,7 +199,7 @@
                     <td>During your stay in Australia or New Zealand, are you planning to enter a hospital or a health care facility (including nursing homes) </td>
                     <td>
                         <select name="personal_health_care" id="personal_health_care" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -216,7 +216,7 @@
                     <td>Have you ever been convicted of an offence in any country (including any conviction which is now removed from official records)? </td>
                     <td>
                         <select name="personal_conviction" id="personal_conviction" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -233,7 +233,7 @@
                     <td>Have you ever been charged with any offence that is currently awaiting legal action? </td>
                     <td>
                         <select name="personal_legal_action" id="personal_legal_action" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -285,7 +285,7 @@
                     <td>Do you hold a skills assessment? If so, in what occupation (please attach outcome letter) </td>
                     <td>
                         <select name="personal_skills_assessment" id="personal_skills_assessment" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -303,7 +303,7 @@
                     <td>If you do not have a skills assessment, have you lodged a skills assessment application that is still pending? </td>
                     <td>
                         <select name="personal_skills_assessment_application" id="personal_skills_assessment_application" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -350,7 +350,7 @@
                         in the last 36 months? </td>
                     <td>
                         <select name="personal_languages_english_test" id="personal_languages_english_test" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -361,7 +361,7 @@
                     <td>If yes, please specify what Test was taken </td>
                     <td>
                         <select name="personal_englishtest_specify" id="personal_englishtest_specify" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="ielts"> IELTS </option>
                             <option value="pte"> PTE Academic </option>
                             <option value="toefl"> TOEFL </option>
@@ -382,7 +382,7 @@
                     </td>
                     <td>
                         <select name="personal_tertiary_institution" id="personal_tertiary_institution" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -421,7 +421,7 @@
                     </td>
                     <td>
                         <select name="personal_license_and_registration" id="personal_license_and_registration" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                             <option value="other"> OTHER </option>

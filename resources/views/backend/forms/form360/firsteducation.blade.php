@@ -25,7 +25,7 @@
 
                     <td>
                         <select name="first_education_qualification_obtained" id="first_education_qualification_obtained" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="phd"> PHD </option>
                             <option value="master"> Masters Degree </option>
                             <option value="bachelor"> Bachelor Degree </option>

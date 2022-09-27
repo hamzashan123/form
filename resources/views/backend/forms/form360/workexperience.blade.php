@@ -16,7 +16,7 @@
                     <td>Are you currently employed? </td>
                     <td>
                         <select name="workexp_current_employed" id="workexp_current_employed" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -29,7 +29,7 @@
                     </td>
                     <td>
                         <select name="workexp_current_future_sponsor" id="workexp_current_future_sponsor" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -47,7 +47,7 @@
                     <td>Are you retired? </td>
                     <td>
                         <select name="workexp_retired" id="workexp_retired" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>

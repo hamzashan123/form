@@ -33,7 +33,7 @@
                     </td>
                     <td>
                         <select name="higher_level_vocational_level_qualification1" id="higher_level_vocational_level_qualification1" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="universitylevel"> University Level </option>
                             <option value="vocationallevel"> Vocational/Professional Level </option>
                         </select>
@@ -192,7 +192,7 @@
                     </td>
                     <td>
                         <select name="higher_level_vocational_level_qualification2" id="higher_level_vocational_level_qualification2" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="universitylevel"> University Level </option>
                             <option value="vocationallevel"> Vocational/Professional Level </option>
                         </select>
@@ -352,7 +352,7 @@
                     </td>
                     <td>
                         <select name="higher_level_vocational_level_qualification3" id="higher_level_vocational_level_qualification3" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="universitylevel"> University Level </option>
                             <option value="vocationallevel"> Vocational/Professional Level </option>
                         </select>

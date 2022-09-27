@@ -97,7 +97,7 @@
                     <td>Did you receive payments for this apprenticeship period?</td>
                     <td>
                         <select name="apprenticeship_payments" id="apprenticeship_payments" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -108,7 +108,7 @@
                     <td>Can this work period be documented? </td>
                     <td>
                         <select name="apprenticeship_period" id="apprenticeship_period" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -124,7 +124,7 @@
                     <td>Are you able to provide an employment or collaboration contract for this work period </td>
                     <td>
                         <select name="apprenticeship_employment_collaboration" id="apprenticeship_employment_collaboration" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -135,7 +135,7 @@
                     <td>Can you provide payslips for this work period </td>
                     <td>
                         <select name="apprenticeship_payslips" id="apprenticeship_payslips" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -147,7 +147,7 @@
                     </td>
                     <td>
                         <select name="apprenticeship_income" id="apprenticeship_income" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -160,7 +160,7 @@
                     </td>
                     <td>
                         <select name="apprenticeship_bank_statement" id="apprenticeship_bank_statement" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -174,7 +174,7 @@
                     </td>
                     <td>
                         <select name="apprenticeship_reference_letter" id="apprenticeship_reference_letter" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>

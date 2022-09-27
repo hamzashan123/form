@@ -28,7 +28,7 @@
                     <td> Are you currently in Australia or New Zealand? </td>
                     <td>
                         <select name="matrix_aus_or_nz" id="matrix_aus_or_nz" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -39,7 +39,7 @@
                     <td> If yes, please indicate where you are located </td>
                     <td>
                         <select name="matrix_located" id="matrix_located" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="aus"> Australia </option>
                             <option value="nz"> New Zealand </option>
                         </select>
@@ -70,7 +70,7 @@
                     <td>Level of English Basic</td>
                     <td>
                         <select name="matrix_levelofenglish" id="matrix_levelofenglish" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="basic"> Basic </option>
                             <option value="competent"> Competent </option>
                             <option value="proficient"> Proficient </option>
@@ -86,7 +86,7 @@
 
                     <td>
                         <select name="matrix_yearofexperienceinausornz" id="matrix_yearofexperienceinausornz" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="lessthanoneyear"> Less than 1 year </option>
                             <option value="atleastoneyear"> At least 1 year </option>
                             <option value="atleastthreeyear">At least 3 year </option>
@@ -101,7 +101,7 @@
                         Zealand in your occupation</td>
                     <td>
                         <select name="matrix_yearofexperienceoutsideausornz" id="matrix_yearofexperienceoutsideausornz" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="lessthanoneyear"> Less than 3 year </option>
                             <option value="atleastoneyear"> More than 3 year </option>
                             <option value="atleastfiveyear"> At least 5 year </option>
@@ -114,7 +114,7 @@
                     <td>Highest education qualification obtained</td>
                     <td>
                         <select name="matrix_highesteducationqualification" id="matrix_highesteducationqualification" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yeareight"> Year 8 </option>
                             <option value="twelveThirteen"> Year 12/13 Maturità </option>
                             <option value="vocational"> Vocational technical course </option>
@@ -129,7 +129,7 @@
                         extending your stay to study?</td>
                     <td>
                         <select name="matrix_areyoucomingtoausornz" id="matrix_areyoucomingtoausornz" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -148,7 +148,7 @@
                     <td>Do you have a skills assessment YES – NO</td>
                     <td>
                         <select name="matrix_skillassessment" id="matrix_skillassessment" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -166,7 +166,7 @@
                     <td>Have you taken one of the following English tests?</td>
                     <td>
                         <select name="matrix_englishtest" id="matrix_englishtest" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="ielts"> IELTS </option>
                             <option value="pte"> PTE Academic </option>
                             <option value="toefl"> TOEFL </option>
@@ -190,7 +190,7 @@
 
                     <td>
                         <select name="matrix_familymember" id="matrix_familymember" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
