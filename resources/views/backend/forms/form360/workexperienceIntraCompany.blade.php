@@ -16,7 +16,7 @@
                     <td>Are you currently employed? </td>
                     <td>
                         <select name="workexpintracompany_current_employed" id="workexpintracompany_current_employed" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -30,7 +30,7 @@
                     </td>
                     <td>
                         <select name="workexpintracompany_current_working" id="workexpintracompany_current_working" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>

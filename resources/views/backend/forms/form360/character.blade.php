@@ -17,7 +17,7 @@
                         offence that is currently awaiting legal action? </td>
                     <td>
                         <select name="character_legal_action" id="character_legal_action" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -31,7 +31,7 @@
                         which is now removed from official records)? </td>
                     <td>
                         <select name="character_official_record" id="character_official_record" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -43,7 +43,7 @@
                         arrest warrant or Interpol notice? </td>
                     <td>
                         <select name="character_interpol_notice1" id="character_interpol_notice1" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -56,7 +56,7 @@
                     </td>
                     <td>
                         <select name="character_interpol_notice2" id="character_interpol_notice2" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -71,7 +71,7 @@
                     </td>
                     <td>
                         <select name="character_sexually" id="character_sexually" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -84,7 +84,7 @@
                     </td>
                     <td>
                         <select name="character_offender" id="character_offender" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -99,7 +99,7 @@
                     </td>
                     <td>
                         <select name="character_unsoundness" id="character_unsoundness" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -113,7 +113,7 @@
                     </td>
                     <td>
                         <select name="character_plead1" id="character_plead1" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -128,7 +128,7 @@
                     </td>
                     <td>
                         <select name="character_plead2" id="character_plead2" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -144,7 +144,7 @@
                     </td>
                     <td>
                         <select name="character_associated" id="character_associated" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -162,7 +162,7 @@
                     </td>
                     <td>
                         <select name="character_genocide" id="character_genocide" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -178,7 +178,7 @@
                     </td>
                     <td>
                         <select name="character_terrorism" id="character_terrorism" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -193,7 +193,7 @@
                     </td>
                     <td>
                         <select name="character_private_militia" id="character_private_militia" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -207,7 +207,7 @@
                     </td>
                     <td>
                         <select name="character_biological" id="character_biological" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -220,7 +220,7 @@
                         weapons/</td>
                     <td>
                         <select name="character_training" id="character_training" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -234,7 +234,7 @@
                     </td>
                     <td>
                         <select name="character_offences" id="character_offences" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -248,7 +248,7 @@
                     </td>
                     <td>
                         <select name="character_deported" id="character_deported" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -261,7 +261,7 @@
                     </td>
                     <td>
                         <select name="character_overstayed" id="character_overstayed" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -275,7 +275,7 @@
                     </td>
                     <td>
                         <select name="character_authority" id="character_authority" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -308,7 +308,7 @@
                         medical follow up for: </td>
                     <td>
                         <select name="healthquestion_medicalcosts" id="healthquestion_medicalcosts" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>

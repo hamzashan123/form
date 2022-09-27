@@ -18,7 +18,7 @@
                         while in Australia or New Zealand? </td>
                     <td>
                         <select name="healthquestion_aus_or_nz" id="healthquestion_aus_or_nz" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -33,7 +33,7 @@
                     <td>
 
                         <select name="healthquestion_paramedic" id="healthquestion_paramedic" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -46,7 +46,7 @@
                         creches) while in Australia or New Zealand? </td>
                     <td>
                         <select name="healthquestion_childcare" id="healthquestion_childcare" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -62,7 +62,7 @@
                     <td>
 
                         <select name="healthquestion_classroom" id="healthquestion_classroom" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -74,7 +74,7 @@
                     <td>
 
                         <select name="healthquestion_tuberculosis" id="healthquestion_tuberculosis" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -86,7 +86,7 @@
                         has active tuberculosis? </td>
                     <td>
                         <select name="healthquestion_familymember_tuberculosis" id="healthquestion_familymember_tuberculosis" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -103,7 +103,7 @@
                     <td>
 
                         <select name="healthquestion_xray" id="healthquestion_xray" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -116,7 +116,7 @@
                         details in the following box:</td>
                     <td>
                         <select name="healthquestion_indicate_if_yes" id="healthquestion_indicate_if_yes" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -140,7 +140,7 @@
                         medical follow up for: </td>
                     <td>
                         <select name="healthquestion_medicalcosts" id="healthquestion_medicalcosts" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -152,7 +152,7 @@
                     <td> 1) Blood disorder </td>
                     <td>
                         <select name="healthquestion_blood" id="healthquestion_blood" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -164,7 +164,7 @@
                     </td>
                     <td>
                         <select name="healthquestion_cancer" id="healthquestion_cancer" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -177,7 +177,7 @@
                     <td> 3) Heart disease </td>
                     <td>
                         <select name="healthquestion_heart" id="healthquestion_heart" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -190,7 +190,7 @@
                     <td> 4) Hepatitis B or C and/or liver disease </td>
                     <td>
                         <select name="healthquestion_hepatitis" id="healthquestion_hepatitis" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -205,7 +205,7 @@
                     <td>
 
                         <select name="healthquestion_hiv" id="healthquestion_hiv" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -218,7 +218,7 @@
                     <td> 6) Kidney disease, including dialysis </td>
                     <td>
                         <select name="healthquestion_kidney" id="healthquestion_kidney" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -231,7 +231,7 @@
                     <td> 7) Mental illness</td>
                     <td>
                         <select name="healthquestion_mental" id="healthquestion_mental" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -244,7 +244,7 @@
                     <td> 8) Pregnancy </td>
                     <td>
                         <select name="healthquestion_pregnancy" id="healthquestion_pregnancy" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -258,7 +258,7 @@
                         admission or oxygen therapy </td>
                     <td>
                         <select name="healthquestion_respiratory1" id="healthquestion_respiratory1" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -272,7 +272,7 @@
                     <td>
 
                         <select name="healthquestion_respiratory1" id="healthquestion_respiratory1" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -288,7 +288,7 @@
 
 
                         <select name="healthquestion_medical_condition" id="healthquestion_medical_condition" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -305,7 +305,7 @@
                     <td>
 
                         <select name="healthquestion_question_number_if_yes" id="healthquestion_question_number_if_yes" class="form-control">
-                            <option value="selectoption"> Select Option </option>
+                            <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
