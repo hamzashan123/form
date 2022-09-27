@@ -50,10 +50,34 @@ class Form360Controller extends Controller
             $fieldsets['workExperienceIntraData']
         ]);
 
+        DB::table('form360_visa_history')->insert([
+            $fieldsets['visahistoryData']
+        ]);
+
+        DB::table('form360_travel_history')->insert([
+            $fieldsets['travelhistoryData']
+        ]);
+
+        
         DB::table('form360_countries_of_residence')->insert([
             $fieldsets['countryofresidenceData']
         ]);
-        
+
+        DB::table('form360_health_declaration')->insert([
+            $fieldsets['healthdeclaration']
+        ]);
+
+        DB::table('form360_health_questions')->insert([
+            $fieldsets['healthQuestion']
+        ]);
+
+        DB::table('form360_character')->insert([
+            $fieldsets['character']
+        ]);
+
+        DB::table('form360_familymembers')->insert([
+            $fieldsets['familymember']
+        ]);
         
         return redirect()->back()->with('success','Application Submitted Successfully!');
     }
@@ -328,8 +352,14 @@ class Form360Controller extends Controller
             'travelhistory_country4' => $request->travelhistory_country4,
             'travelhistory_datefrom2' => $request->travelhistory_datefrom2,
             'travelhistory_dateto2' => $request->travelhistory_dateto2,
-            'currentvisa_indicate_countries' => $request->currentvisa_indicate_countries,
-            'currentvisa_complied_with_visa_conditions' => $request->currentvisa_complied_with_visa_conditions
+            'travelhistory_purpose2' => $request->travelhistory_purpose2,
+            'travelhistory_country3' => $request->travelhistory_country3,
+            'travelhistory_datefrom3' => $request->travelhistory_datefrom3,
+            'travelhistory_dateto3' => $request->travelhistory_dateto3,
+            'travelhistory_purpose3' => $request->travelhistory_purpose3,
+            'travelhistory_datefrom4' => $request->travelhistory_datefrom4,
+            'travelhistory_dateto4' => $request->travelhistory_dateto4,
+            'travelhistory_purpose4' => $request->travelhistory_purpose4
         ];
 
         $countryofresidenceData = [
@@ -367,6 +397,185 @@ class Form360Controller extends Controller
         
         ];
 
+        $healthDeclaration =  [
+            'form360_id' => $form_id,
+            'healthdeclaration_country1' => $request->healthdeclaration_country1,
+            'healthdeclaration_from1' => $request->healthdeclaration_from1,
+            'healthdeclaration_to1' => $request->healthdeclaration_to1,
+            'healthdeclaration_purpose1' => $request->healthdeclaration_purpose1,
+            'healthdeclaration_country2' => $request->healthdeclaration_country2,
+            'healthdeclaration_from2' => $request->healthdeclaration_from2,
+            'healthdeclaration_to2' => $request->healthdeclaration_to2,
+            'healthdeclaration_purpose2' => $request->healthdeclaration_purpose2,
+            'healthdeclaration_country3' => $request->healthdeclaration_country3,
+            'healthdeclaration_from3' => $request->healthdeclaration_from3,
+            'healthdeclaration_to3' => $request->healthdeclaration_to3,
+            'healthdeclaration_purpose3' => $request->healthdeclaration_purpose3,
+            'healthdeclaration_country4' => $request->healthdeclaration_country4,
+            'healthdeclaration_from4' => $request->healthdeclaration_from4,
+            'healthdeclaration_to4' => $request->healthdeclaration_to4,
+            'healthdeclaration_purpose4' => $request->healthdeclaration_purpose4,
+            'healthdeclaration_country5' => $request->healthdeclaration_country5,
+            'healthdeclaration_from5' => $request->healthdeclaration_from5,
+            'healthdeclaration_to5' => $request->healthdeclaration_to5,
+            'healthdeclaration_purpose5' => $request->healthdeclaration_purpose5
+        ];
+
+        $healthQuestion =  [
+            'form360_id' => $form_id,
+            'healthquestion_aus_or_nz' => $request->healthquestion_aus_or_nz,
+            'healthquestion_paramedic' => $request->healthquestion_paramedic,
+            'healthquestion_childcare' => $request->healthquestion_childcare,
+            'healthquestion_classroom' => $request->healthquestion_classroom,
+            'healthquestion_tuberculosis' => $request->healthquestion_tuberculosis,
+            'healthquestion_familymember_tuberculosis' => $request->healthquestion_familymember_tuberculosis,
+            'healthquestion_xray' => $request->healthquestion_xray,
+            'healthquestion_indicate_if_yes' => $request->healthquestion_indicate_if_yes,
+            'healthquestion_medicalcosts' => $request->healthquestion_medicalcosts,
+            'healthquestion_blood' => $request->healthquestion_blood,
+            'healthquestion_cancer' => $request->healthquestion_cancer,
+            'healthquestion_heart' => $request->healthquestion_heart,
+            'healthquestion_hepatitis' => $request->healthquestion_hepatitis,
+            'healthquestion_hiv' => $request->healthquestion_hiv,
+            'healthquestion_kidney' => $request->healthquestion_kidney,
+            'healthquestion_mental' => $request->healthquestion_mental,
+            'healthquestion_pregnancy' => $request->healthquestion_pregnancy,
+            'healthquestion_respiratory1' => $request->healthquestion_respiratory1,
+            'healthquestion_medical_condition' => $request->healthquestion_medical_condition,
+            'healthquestion_question_number_if_yes' => $request->healthquestion_question_number_if_yes
+        ];
+
+        $character =  [
+            'form360_id' => $form_id,
+            'character_legal_action' => $request->character_legal_action,
+            'character_official_record' => $request->character_official_record,
+            'character_interpol_notice1' => $request->character_interpol_notice1,
+            'character_interpol_notice2' => $request->character_interpol_notice2,
+            'character_sexually' => $request->character_sexually,
+            'character_offender' => $request->character_offender,
+            'character_unsoundness' => $request->character_unsoundness,
+            'character_plead1' => $request->character_plead1,
+            'character_plead2' => $request->character_plead2,
+            'character_associated' => $request->character_associated,
+            'character_genocide' => $request->character_genocide,
+            'character_terrorism' => $request->character_terrorism,
+            'character_private_militia' => $request->character_private_militia,
+            'character_biological' => $request->character_biological,
+            'character_training' => $request->character_training,
+            'character_offences' => $request->character_offences,
+            'character_deported' => $request->character_deported,
+            'character_overstayed' => $request->character_overstayed,
+            'character_authority' => $request->character_authority,
+            'character_refer_to_you' => $request->character_refer_to_you
+        ];
+
+        $familymember =  [
+            'form360_id' => $form_id,
+            'fam_member' => $request->fam_member,
+            'fam_member_visa' => $request->fam_member_visa,
+            'fam_member_children' => $request->fam_member_children,
+            'fam_member_child_visa' => $request->fam_member_child_visa,
+            'fam_member_name' => $request->fam_member_name,
+            'fam_member_dob' => $request->fam_member_dob,
+            'fam_member_pob' => $request->fam_member_pob,
+            'fam_member_nationality' => $request->fam_member_nationality,
+            'fam_member_other_nationality' => $request->fam_member_other_nationality,
+            'fam_member_ever_suffered' => $request->fam_member_ever_suffered,
+            'fam_member_legal_action' => $request->fam_member_legal_action,
+            'fam_member_visa_application' => $request->fam_member_visa_application,
+            'fam_member_currently_live' => $request->fam_member_currently_live,
+            'fam_member_child_nam1e' => $request->fam_member_child_nam1e,
+            'fam_member_child_dob1' => $request->fam_member_child_dob1,
+            'fam_member_child_pob1' => $request->fam_member_child_pob1,
+            'fam_member_child_nationality1' => $request->fam_member_child_nationality1,
+            'fam_member_child_other_nationality1' => $request->fam_member_child_other_nationality1,
+            'fam_member_child_ever_suffered1' => $request->fam_member_child_ever_suffered1,
+            'fam_member_child_legal_action1' => $request->fam_member_child_legal_action1,
+            'fam_member_child_visa_application1' => $request->fam_member_child_visa_application1,
+            'fam_member_child_currently_live1' => $request->fam_member_child_currently_live1,
+            'fam_member_child_nam2e' => $request->fam_member_child_nam2e,
+            'fam_member_child_dob2' => $request->fam_member_child_dob2,
+            'fam_member_child_pob2' => $request->fam_member_child_pob2,
+            'fam_member_child_nationality2' => $request->fam_member_child_nationality2,
+            'fam_member_child_other_nationality2' => $request->fam_member_child_other_nationality2,
+            'fam_member_child_ever_suffered2' => $request->fam_member_child_ever_suffered2,
+            'fam_member_child_legal_action2' => $request->fam_member_child_legal_action2,
+            'fam_member_child_visa_application2' => $request->fam_member_child_visa_application2,
+            'fam_member_child_currently_live2' => $request->fam_member_child_currently_live2,
+            'fam_member_child_name3' => $request->fam_member_child_name3,
+            'fam_member_child_dob3' => $request->fam_member_child_dob3,
+            'fam_member_child_pob3' => $request->fam_member_child_pob3,
+            'fam_member_child_nationality3' => $request->fam_member_child_nationality3,
+            'fam_member_child_other_nationality3' => $request->fam_member_child_other_nationality3,
+            'fam_member_child_ever_suffered3' => $request->fam_member_child_ever_suffered3,
+            'fam_member_child_legal_action3' => $request->fam_member_child_legal_action3,
+            'fam_member_child_visa_application3' => $request->fam_member_child_visa_application3,
+            'fam_member_child_currently_live3' => $request->fam_member_child_currently_live3,
+            'fam_member_child_name4' => $request->fam_member_child_name4,
+            'fam_member_child_dob4' => $request->fam_member_child_dob4,
+            'fam_member_child_pob4' => $request->fam_member_child_pob4,
+            'fam_member_child_nationality4' => $request->fam_member_child_nationality4,
+            'fam_member_child_other_nationality4' => $request->fam_member_child_other_nationality4,
+            'fam_member_child_ever_suffered4' => $request->fam_member_child_ever_suffered4,
+            'fam_member_child_legal_action4' => $request->fam_member_child_legal_action4,
+            'fam_member_child_visa_application4' => $request->fam_member_child_visa_application4,
+            'fam_member_child_currently_live4' => $request->fam_member_child_currently_live4,
+            'fam_member_father_name' => $request->fam_member_father_name,
+            'fam_member_father_dob' => $request->fam_member_father_dob,
+            'fam_member_father_pob' => $request->fam_member_father_pob,
+            'fam_member_father_nationality' => $request->fam_member_father_nationality,
+            'fam_member_father_other_nationality' => $request->fam_member_father_other_nationality,
+            'fam_member_father_ever_suffered' => $request->fam_member_father_ever_suffered,
+            'fam_member_father_legal_action' => $request->fam_member_father_legal_action,
+            'fam_member_father_visa_application' => $request->fam_member_father_visa_application,
+            'fam_member_father_currently_live' => $request->fam_member_father_currently_live,
+            'fam_member_mother_name' => $request->fam_member_mother_name,
+            'fam_member_mother_dob' => $request->fam_member_mother_dob,
+            'fam_member_mother_pob' => $request->fam_member_mother_pob,
+            'fam_member_mother_nationality' => $request->fam_member_mother_nationality,
+            'fam_member_mother_other_nationality' => $request->fam_member_mother_other_nationality,
+            'fam_member_mother_ever_suffered' => $request->fam_member_mother_ever_suffered,
+            'fam_member_mother_legal_action' => $request->fam_member_mother_legal_action,
+            'fam_member_mother_visa_application' => $request->fam_member_mother_visa_application,
+            'fam_member_mother_currently_live' => $request->fam_member_mother_currently_live,
+            'fam_member_bro_sis_name1' => $request->fam_member_bro_sis_name1,
+            'fam_member_bro_sis_dob1' => $request->fam_member_bro_sis_dob1,
+            'fam_member_bro_sis_pob1' => $request->fam_member_bro_sis_pob1,
+            'fam_member_bro_sis_nationality1' => $request->fam_member_bro_sis_nationality1 ,
+            'fam_member_bro_sis_other_nationality1' => $request->fam_member_bro_sis_other_nationality1,
+            'fam_member_bro_sis_ever_suffered1' => $request->fam_member_bro_sis_ever_suffered1,
+            'fam_member_bro_sis_legal_action1' => $request->fam_member_bro_sis_legal_action1,
+            'fam_member_bro_sis_visa_application1' => $request->fam_member_bro_sis_visa_application1,
+            'fam_member_bro_sis_currently_live1' => $request->fam_member_bro_sis_currently_live1,
+            'fam_member_bro_sis_name2' => $request->fam_member_bro_sis_name2,
+            'fam_member_bro_sis_dob2' => $request->fam_member_bro_sis_dob2,
+            'fam_member_bro_sis_pob2' => $request->fam_member_bro_sis_pob2,
+            'fam_member_bro_sis_nationality2' => $request->fam_member_bro_sis_nationality2,
+            'fam_member_bro_sis_other_nationality2' => $request->fam_member_bro_sis_other_nationality2,
+            'fam_member_bro_sis_ever_suffered2' => $request->fam_member_bro_sis_ever_suffered2,
+            'fam_member_bro_sis_legal_action2' => $request->fam_member_bro_sis_legal_action2,
+            'fam_member_bro_sis_visa_application2' => $request->fam_member_bro_sis_visa_application2,
+            'fam_member_bro_sis_currently_live2' => $request->fam_member_bro_sis_currently_live2,
+            'fam_member_bro_sis_name3' => $request->fam_member_bro_sis_name3,
+            'fam_member_bro_sis_dob3' => $request->fam_member_bro_sis_dob3,
+            'fam_member_bro_sis_pob3' => $request->fam_member_bro_sis_pob3,
+            'fam_member_bro_sis_nationality3' => $request->fam_member_bro_sis_nationality3,
+            'fam_member_bro_sis_other_nationality3' => $request->fam_member_bro_sis_other_nationality3,
+            'fam_member_bro_sis_ever_suffered3' => $request->fam_member_bro_sis_ever_suffered3,
+            'fam_member_bro_sis_legal_action3' => $request->fam_member_bro_sis_legal_action3,
+            'fam_member_bro_sis_visa_application3' => $request->fam_member_bro_sis_visa_application3 ,
+            'fam_member_bro_sis_currently_live3' => $request->fam_member_bro_sis_currently_live3,
+            'fam_member_bro_sis_name4' => $request->fam_member_bro_sis_name4,
+            'fam_member_bro_sis_dob4' => $request->fam_member_bro_sis_dob4,
+            'fam_member_bro_sis_pob4' => $request->fam_member_bro_sis_pob4,
+            'fam_member_bro_sis_nationality4' => $request->fam_member_bro_sis_nationality4,
+            'fam_member_bro_sis_other_nationality4' => $request->fam_member_bro_sis_other_nationality4,
+            'fam_member_bro_sis_ever_suffered4' => $request->fam_member_bro_sis_ever_suffered4,
+            'fam_member_bro_sis_legal_action4' => $request->fam_member_bro_sis_legal_action4,
+            'fam_member_bro_sis_visa_application4' => $request->fam_member_bro_sis_visa_application4,
+            'fam_member_bro_sis_currently_live4' => $request->fam_member_bro_sis_currently_live4,
+
+        ];
         
         $fieldsetsData = [
             'matrixdata' => $matrixData ,
@@ -377,7 +586,12 @@ class Form360Controller extends Controller
             'workExperienceData' => $workExperienceData,
             'workExperienceIntraData' => $workExperienceIntraData,
             'visahistoryData' => $visahistoryData,
-            'countryofresidenceData' => $countryofresidenceData
+            'travelhistoryData' => $travelhistoryData,
+            'countryofresidenceData' => $countryofresidenceData,
+            'healthdeclaration' => $healthDeclaration,
+            'healthQuestion' => $healthQuestion,
+            'character' => $character,
+            'familymember' => $familymember
         ];
         return $fieldsetsData;
 
