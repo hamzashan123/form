@@ -95,7 +95,7 @@ class FormController extends Controller
 
            }
          
-           dd($data);
+          // dd($data);
     }
 
 

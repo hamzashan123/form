@@ -41,6 +41,14 @@ class Form360Controller extends Controller
         DB::table('form360_apprenticeship')->insert([
             $fieldsets['apprenticeship']
         ]);
+
+        DB::table('form360_work_experience')->insert([
+            $fieldsets['workExperienceData']
+        ]);
+
+        DB::table('form360_work_experience_intra_companies')->insert([
+            $fieldsets['workExperienceIntraData']
+        ]);
         
         
         return redirect()->back()->with('success','Application Submitted Successfully!');
@@ -227,23 +235,107 @@ class Form360Controller extends Controller
 
         $workExperienceData = [
             'form360_id' => $form_id,
-            'apprenticeship_formal_studies' => $request->apprenticeship_formal_studies,
-            'apprenticeship_formal_studies_specify' => $request->apprenticeship_formal_studies_specify,
-            'apprenticeship_total_duration' => $request->apprenticeship_total_duration,
-            'apprenticeship_completed' => $request->apprenticeship_completed,
-            'apprenticeship_conclusion' => $request->apprenticeship_conclusion,
-            'apprenticeship_company' => $request->apprenticeship_company,
-            'apprenticeship_company_address' => $request->apprenticeship_company_address,
-            'apprenticeship_visa_country' => $request->apprenticeship_visa_country
+            'workexp_current_employed' => $request->workexp_current_employed,
+            'workexp_current_future_sponsor' => $request->workexp_current_future_sponsor,
+            'workexp_current_recent_occupation' => $request->workexp_current_recent_occupation,
+            'workexp_retired' => $request->workexp_retired,
+            'workexp_if_retired' => $request->workexp_if_retired,
+            'workexp_last_occupation' => $request->workexp_last_occupation,
+            'workexp1_your_position' => $request->workexp1_your_position,
+            'workexp1_your_position_type' => $request->workexp1_your_position_type,
+            'workexp1_employer_name' => $request->workexp1_employer_name,
+            'workexp1_business_country' => $request->workexp1_business_country,
+            'workexp1_date_work_started' => $request->workexp1_date_work_started,
+            'workexp1_date_work_ended' => $request->workexp1_date_work_ended,
+            'workexp1_description_duties' => $request->workexp1_description_duties,
+            'workexp1_nominated_position' => $request->workexp1_nominated_position,
+            'workexp1_performed_in_aus_nz' => $request->workexp1_performed_in_aus_nz,
+            'workexp1_visa_employer' => $request->workexp1_visa_employer,
+            'workexp1_payslips_for_this_week' => $request->workexp1_payslips_for_this_week,
+            'workexp1_contact_details_work_period' => $request->workexp1_contact_details_work_period,
+            'workexp1_contact_details_work_period_indicate' => $request->workexp1_contact_details_work_period_indicate,
+            'workexp1_contact_details_work_period_name' => $request->workexp1_contact_details_work_period_name,
+            'workexp1_contact_details_work_period_position' => $request->workexp1_contact_details_work_period_position,
+            'workexp1_contact_details_work_period_email' => $request->workexp1_contact_details_work_period_email,
+            'workexp1_contact_details_work_period_phone' => $request->workexp1_contact_details_work_period_phone
         
         ];
+
+        $workExperienceIntraData = [
+            'form360_id' => $form_id,
+            'workexpintracompany_current_employed' => $request->workexpintracompany_current_employed,
+            'workexpintracompany_current_working' => $request->workexpintracompany_current_working,
+            'workexpintracompany_current_recent_occupation' => $request->workexpintracompany_current_recent_occupation,
+            'workexpintracompany_your_position' => $request->workexpintracompany_your_position,
+            'workexpintracompany_your_position_type' => $request->workexpintracompany_your_position_type,
+            'workexpintracompany_employer_name' => $request->workexpintracompany_employer_name,
+            'workexpintracompany_business_country' => $request->workexpintracompany_business_country,
+            'workexpintracompany_date_work_started' => $request->workexpintracompany_date_work_started,
+            'workexpintracompany_date_work_ended' => $request->workexpintracompany_date_work_ended,
+            'workexpintracompany_description_duties' => $request->workexpintracompany_description_duties,
+            'workexpintracompany_nominated_position' => $request->workexpintracompany_nominated_position,
+            'workexpintracompany_performed_in_aus_nz' => $request->workexpintracompany_performed_in_aus_nz,
+            'workexpintracompany_visa_employer' => $request->workexpintracompany_visa_employer,
+            'workexpintracompany_payslips_for_this_week' => $request->workexpintracompany_payslips_for_this_week,
+            'workexpintracompany_contact_details_work_period' => $request->workexpintracompany_contact_details_work_period,
+            'workexpintracompany_contact_details_work_period_indicate' => $request->workexpintracompany_contact_details_work_period_indicate,
+            'workexpintracompany_contact_details_work_period_name' => $request->workexpintracompany_contact_details_work_period_name,
+            'workexpintracompany_contact_details_work_period_position' => $request->workexpintracompany_contact_details_work_period_position,
+            'workexpintracompany_contact_details_work_period_email' => $request->workexpintracompany_contact_details_work_period_email,
+            'workexpintracompany_contact_details_work_period_phone' => $request->workexpintracompany_contact_details_work_period_phone,
+            'workexpintracompany_aus_nz_name_of_company' => $request->workexpintracompany_aus_nz_name_of_company,
+            'workexpintracompany_aus_nz_reg_number' => $request->workexpintracompany_aus_nz_reg_number,
+            'workexpintracompany_aus_nz_address' => $request->workexpintracompany_aus_nz_address,
+            'workexpintracompany_aus_nz_contact' => $request->workexpintracompany_aus_nz_contact,
+            'workexpintracompany_aus_nz_name_surname' => $request->workexpintracompany_aus_nz_name_surname,
+            'workexpintracompany_aus_nz_role' => $request->workexpintracompany_aus_nz_role,
+            'workexpintracompany_aus_nz_sector' => $request->workexpintracompany_aus_nz_sector,
+            'workexpintracompany_aus_nz_position' => $request->workexpintracompany_aus_nz_position,
+            'workexpintracompany_aus_nz_responsibilities' => $request->workexpintracompany_aus_nz_responsibilities,
+            'workexpintracompany_aus_nz_description' => $request->workexpintracompany_aus_nz_description,
+            'workexpintracompany_aus_nz_planing_date' => $request->workexpintracompany_aus_nz_planing_date,
+            'workexpintracompany_aus_nz_planing_date_max_6_month' => $request->workexpintracompany_aus_nz_planing_date_max_6_month,
+            'workexpintracompany_aus_nz_necessary' => $request->workexpintracompany_aus_nz_necessary,
+            'workexpintracompany_aus_nz_paidby' => $request->workexpintracompany_aus_nz_paidby,
+
+        ];
+
+        $workExperienceData = [
+            'form360_id' => $form_id,
+            'workexp_current_employed' => $request->workexp_current_employed,
+            'workexp_current_future_sponsor' => $request->workexp_current_future_sponsor,
+            'workexp_current_recent_occupation' => $request->workexp_current_recent_occupation,
+            'workexp_retired' => $request->workexp_retired,
+            'workexp_if_retired' => $request->workexp_if_retired,
+            'workexp_last_occupation' => $request->workexp_last_occupation,
+            'workexp1_your_position' => $request->workexp1_your_position,
+            'workexp1_your_position_type' => $request->workexp1_your_position_type,
+            'workexp1_employer_name' => $request->workexp1_employer_name,
+            'workexp1_business_country' => $request->workexp1_business_country,
+            'workexp1_date_work_started' => $request->workexp1_date_work_started,
+            'workexp1_date_work_ended' => $request->workexp1_date_work_ended,
+            'workexp1_description_duties' => $request->workexp1_description_duties,
+            'workexp1_nominated_position' => $request->workexp1_nominated_position,
+            'workexp1_performed_in_aus_nz' => $request->workexp1_performed_in_aus_nz,
+            'workexp1_visa_employer' => $request->workexp1_visa_employer,
+            'workexp1_payslips_for_this_week' => $request->workexp1_payslips_for_this_week,
+            'workexp1_contact_details_work_period' => $request->workexp1_contact_details_work_period,
+            'workexp1_contact_details_work_period_indicate' => $request->workexp1_contact_details_work_period_indicate,
+            'workexp1_contact_details_work_period_name' => $request->workexp1_contact_details_work_period_name,
+            'workexp1_contact_details_work_period_position' => $request->workexp1_contact_details_work_period_position,
+            'workexp1_contact_details_work_period_email' => $request->workexp1_contact_details_work_period_email,
+            'workexp1_contact_details_work_period_phone' => $request->workexp1_contact_details_work_period_phone
+        
+        ];
+
         $fieldsetsData = [
             'matrixdata' => $matrixData ,
             'personaldata' => $personalData ,
             'firsteducationdata' => $firstEducationData,
             'higheducationdata' =>$highEducationData,
             'apprenticeship' =>$apprenticeshipData, 
-            'workExperienceData' => $workExperienceData
+            'workExperienceData' => $workExperienceData,
+            'workExperienceIntraData' => $workExperienceIntraData
         ];
         return $fieldsetsData;
 
