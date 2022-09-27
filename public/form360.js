@@ -40,7 +40,7 @@ jQuery(document).ready(function () {
             //  scrollToTop()
             window.scrollTo({ top: 0, behavior: "smooth" });
 
-            if (next_fs.attr("id") == "fieldseteleven") {
+            if (next_fs.attr("id") == "fieldsetfifteen") {
                 $("#form360").submit();
             }
         }, 500);

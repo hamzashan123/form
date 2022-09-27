@@ -13,7 +13,7 @@ class Form360Controller extends Controller
     }
 
     public function save(Request $request){
-        dd($request);
+       // dd($request);
         $formid = DB::table('form360')->insertGetId([
             'user_id' => auth()->user()->id,
             'created_at' => date('m/d/Y h:i:s a'),
@@ -75,7 +75,7 @@ class Form360Controller extends Controller
             $fieldsets['character']
         ]);
 
-        DB::table('form360_familymembers')->insert([
+        DB::table('form360_family_members')->insert([
             $fieldsets['familymember']
         ]);
         
@@ -310,7 +310,7 @@ class Form360Controller extends Controller
             'workexpintracompany_contact_details_work_period_name' => $request->workexpintracompany_contact_details_work_period_name,
             'workexpintracompany_contact_details_work_period_position' => $request->workexpintracompany_contact_details_work_period_position,
             'workexpintracompany_contact_details_work_period_email' => $request->workexpintracompany_contact_details_work_period_email,
-            'workexpintracompany_contact_details_work_period_phone' => $request->workexpintracompany_contact_details_work_period_phone,
+            //'workexpintracompany_contact_details_work_period_phone' => $request->workexpintracompany_contact_details_work_period_phone,
             'workexpintracompany_aus_nz_name_of_company' => $request->workexpintracompany_aus_nz_name_of_company,
             'workexpintracompany_aus_nz_reg_number' => $request->workexpintracompany_aus_nz_reg_number,
             'workexpintracompany_aus_nz_address' => $request->workexpintracompany_aus_nz_address,
