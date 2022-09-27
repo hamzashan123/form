@@ -1851,7 +1851,6 @@
                     <td> <input type="file" name="sbs_upload_asic_historical" id="sbs_upload_asic_historical"></td>
                 </tr>
 
-
                 <tr>
                     <td> Trust deed (signed pages only) if applicable
                     </td>
@@ -1865,14 +1864,12 @@
                     <td> <input type="file" name="sbs_upload_lease" id="sbs_upload_lease"></td>
                 </tr>
 
-
                 <tr>
                     <td> Bank statement in the name of the
                         company (not older than 6 months)
                     </td>
                     <td> <input type="file" name="sbs_upload_bank_statement" id="sbs_upload_bank_statement"></td>
                 </tr>
-
 
                 <tr>
                     <td> BAS for the last 12 months or since when
@@ -1906,7 +1903,6 @@
                     </td>
                     <td> <input type="file" name="sbs_upload_chart" id="sbs_upload_chart"></td>
                 </tr>
-
 
                 <tr>
                     <td>A few recent utility bills
