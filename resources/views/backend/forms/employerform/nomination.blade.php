@@ -13,43 +13,87 @@
         <h2 class="fs-title"> DETAILS OF THE POSITION YOU ARE WILLING TO OFFER </h2>
 
         <table>
+
+
             <tbody>
                 <tr>
-                    <td> Full name of the school
+                    <td> Indicate where the visa applicant will be
+                        working (full address)</td>
+                    <td> <input type="text" name="nomination_visa_appliciant" id="nomination_visa_appliciant" @if(isset($data['education'][0]->edu_info_junior_fullname)) value="{{$data['education'][0]->edu_info_junior_fullname}}" @endif /> </td>
+                </tr>
+
+
+                <tr>
+                    <td> Is this an intra-company transfer? (when
+                        the applicant has been working for a
+                        subsidiary and/or branch of the Australian
+                        company outside of Australia)</td>
+                    <td> <input type="text" name="nomination_intra_company_transfer" id="nomination_intra_company_transfer" @if(isset($data['education'][0]->edu_info_junior_fullname)) value="{{$data['education'][0]->edu_info_junior_fullname}}" @endif /> </td>
+                </tr>
+
+
+                <tr>
+                    <td> Indicate the annual turnover of the
+                        business for the last financial year
                     </td>
-                    <td> <input type="text" name="edu_info_junior_fullname" id="edu_info_junior_fullname" @if(isset($data['education'][0]->edu_info_junior_fullname)) value="{{$data['education'][0]->edu_info_junior_fullname}}" @endif /> </td>
+                    <td> <input type="text" name="nomination_financial_year" id="nomination_financial_year" @if(isset($data['education'][0]->edu_info_junior_fullname)) value="{{$data['education'][0]->edu_info_junior_fullname}}" @endif /> </td>
                 </tr>
 
                 <tr>
-                    <td> Full address
+                    <td> What is the job title you are offering to the
+                        visa applicant
                     </td>
-                    <td> <input type="text" name="edu_info_junior_fulladdress" id="edu_info_junior_fulladdress" @if(isset($data['education'][0]->edu_info_junior_fulladdress)) value="{{$data['education'][0]->edu_info_junior_fulladdress}}" @endif/> </td>
+                    <td> <input type="text" name="nomination_job_offering" id="nomination_job_offering" @if(isset($data['education'][0]->edu_info_junior_fullname)) value="{{$data['education'][0]->edu_info_junior_fullname}}" @endif /> </td>
+                </tr>
+
+
+                <tr>
+                    <td>Are you able to find the most suitable
+                        occupation from this dropdown menu? If
+                        so, please select it</td>
+
+                    <td>
+                        <select class="form-control" id="nomination_job_occupation" name="nomination_job_occupation">
+                            <option value="">SELECT </option>
+                            <option value="1">- Chiropractor</option>
+                            <option value="2">- Dentist</option>
+                            <option value="3">- Dietitian or Nutritionist</option>
+                            <option value="4">- Optometrist</option>
+                            <option value="5">- Pharmacist</option>
+                            <option value="6">- Physician</option>
+                            <option value="7">- Physician Assistant</option>
+                            <option value="8">- Podiatrist</option>
+                            <option value="9">- Registered Nurse</option>
+                            <option value="10">- Therapist</option>
+                            <option value="11">- Veterinarian</option>
+                            <option value="12">- Health Technologist or Technician</option>
+                            <option value="13">- Other Healthcare Practitioners and Technical Occupation</option>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
-                    <td> Year obtained </td>
-                    <td> <input type="date" name="edu_info_junior_yearobtainted" id="edu_info_junior_yearobtainted" @if(isset($data['education'][0]->edu_info_junior_yearobtainted)) value="{{$data['education'][0]->edu_info_junior_yearobtainted}}" @endif/>
+                    <td>Indicate the main duties and responsibilities
+                        that the applicant will be performing
+                        (ideally please indicate 5 duties)
                     </td>
+                    <td> <input type="text" name="nomination_responsibilities" id="nomination_responsibilities" /> </td>
+                </tr>
+
+
+                <tr>
+                    <td>Indicate the main tasks to be performed
+                    </td>
+                    <td> <input type="text" name="nomination_performed" id="nomination_performed" /> </td>
                 </tr>
 
                 <tr>
-                    <td> Legal duration of the course </td>
-                    <td> <input type="text" name="edu_info_junior_course" id="edu_info_junior_course" @if(isset($data['education'][0]->edu_info_junior_course)) value="{{$data['education'][0]->edu_info_junior_course}}" @endif/>
+                    <td>Other information about the position,
+                        including information about why this
                     </td>
+                    <td> <input type="text" name="nomination_position" id="nomination_position" /> </td>
                 </tr>
 
-                <tr>
-                    <td> Indicate the START date of your studies (DD-MMYYY)
-                    </td>
-                    <td> <input type="date" name="edu_info_junior_startdate" id="edu_info_junior_startdate" @if(isset($data['education'][0]->edu_info_junior_startdate)) value="{{$data['education'][0]->edu_info_junior_startdate}}" @endif/> </td>
-                </tr>
-
-                <tr>
-                    <td> Indicate the END date of your studies (DD-MMYYY)
-                    </td>
-                    <td> <input type="date" name="edu_info_junior_enddate" id="edu_info_junior_enddate" @if(isset($data['education'][0]->edu_info_junior_enddate)) value="{{$data['education'][0]->edu_info_junior_enddate}}" @endif/>
-                    </td>
-                </tr>
 
             </tbody>
         </table>
