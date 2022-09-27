@@ -49,6 +49,10 @@ class Form360Controller extends Controller
         DB::table('form360_work_experience_intra_companies')->insert([
             $fieldsets['workExperienceIntraData']
         ]);
+
+        DB::table('form360_countries_of_residence')->insert([
+            $fieldsets['countryofresidenceData']
+        ]);
         
         
         return redirect()->back()->with('success','Application Submitted Successfully!');
@@ -300,34 +304,70 @@ class Form360Controller extends Controller
 
         ];
 
-        $workExperienceData = [
+        $visahistoryData =  [
             'form360_id' => $form_id,
-            'workexp_current_employed' => $request->workexp_current_employed,
-            'workexp_current_future_sponsor' => $request->workexp_current_future_sponsor,
-            'workexp_current_recent_occupation' => $request->workexp_current_recent_occupation,
-            'workexp_retired' => $request->workexp_retired,
-            'workexp_if_retired' => $request->workexp_if_retired,
-            'workexp_last_occupation' => $request->workexp_last_occupation,
-            'workexp1_your_position' => $request->workexp1_your_position,
-            'workexp1_your_position_type' => $request->workexp1_your_position_type,
-            'workexp1_employer_name' => $request->workexp1_employer_name,
-            'workexp1_business_country' => $request->workexp1_business_country,
-            'workexp1_date_work_started' => $request->workexp1_date_work_started,
-            'workexp1_date_work_ended' => $request->workexp1_date_work_ended,
-            'workexp1_description_duties' => $request->workexp1_description_duties,
-            'workexp1_nominated_position' => $request->workexp1_nominated_position,
-            'workexp1_performed_in_aus_nz' => $request->workexp1_performed_in_aus_nz,
-            'workexp1_visa_employer' => $request->workexp1_visa_employer,
-            'workexp1_payslips_for_this_week' => $request->workexp1_payslips_for_this_week,
-            'workexp1_contact_details_work_period' => $request->workexp1_contact_details_work_period,
-            'workexp1_contact_details_work_period_indicate' => $request->workexp1_contact_details_work_period_indicate,
-            'workexp1_contact_details_work_period_name' => $request->workexp1_contact_details_work_period_name,
-            'workexp1_contact_details_work_period_position' => $request->workexp1_contact_details_work_period_position,
-            'workexp1_contact_details_work_period_email' => $request->workexp1_contact_details_work_period_email,
-            'workexp1_contact_details_work_period_phone' => $request->workexp1_contact_details_work_period_phone
+            'currentvisa_in_aus_nz' => $request->currentvisa_in_aus_nz,
+            'currentvisa_hold_aus_nz' => $request->currentvisa_hold_aus_nz,
+            'currentvisa_typeofvisa' => $request->currentvisa_typeofvisa,
+            'currentvisa_waiting_for_visa' => $request->currentvisa_waiting_for_visa,
+            'currentvisa_typeofvisawaiting' => $request->currentvisa_typeofvisawaiting,
+            'currentvisa_dateofexpiry' => $request->currentvisa_dateofexpiry,
+            'currentvisa_ever_had_visa' => $request->currentvisa_ever_had_visa,
+            'currentvisa_held_visa' => $request->currentvisa_held_visa,
+            'currentvisa_indicate_countries' => $request->currentvisa_indicate_countries,
+            'currentvisa_complied_with_visa_conditions' => $request->currentvisa_complied_with_visa_conditions
+        ];
+
+        $travelhistoryData =  [
+            'form360_id' => $form_id,
+            'travelhistory_last_ten_years' => $request->travelhistory_last_ten_years,
+            'travelhistory_country1' => $request->travelhistory_country1,
+            'travelhistory_datefrom1' => $request->travelhistory_datefrom1,
+            'travelhistory_dateto1' => $request->travelhistory_dateto1,
+            'travelhistory_purpose1' => $request->travelhistory_purpose1,
+            'travelhistory_country4' => $request->travelhistory_country4,
+            'travelhistory_datefrom2' => $request->travelhistory_datefrom2,
+            'travelhistory_dateto2' => $request->travelhistory_dateto2,
+            'currentvisa_indicate_countries' => $request->currentvisa_indicate_countries,
+            'currentvisa_complied_with_visa_conditions' => $request->currentvisa_complied_with_visa_conditions
+        ];
+
+        $countryofresidenceData = [
+            'form360_id' => $form_id,
+            'countryofresidence_country1' => $request->countryofresidence_country1,
+            'countryofresidence_fromwhen1' => $request->countryofresidence_fromwhen1,
+            'countryofresidence_towhen1' => $request->countryofresidence_towhen1,
+            'countryofresidence_address1' => $request->countryofresidence_address1,
+            'countryofresidence_city1' => $request->countryofresidence_city1,
+            'countryofresidence_postal1' => $request->countryofresidence_postal1,
+            'countryofresidence_country2' => $request->countryofresidence_country2,
+            'countryofresidence_fromwhen2' => $request->countryofresidence_fromwhen2,
+            'countryofresidence_towhen2' => $request->countryofresidence_towhen2,
+            'countryofresidence_address2' => $request->countryofresidence_address2,
+            'countryofresidence_city2' => $request->countryofresidence_city2,
+            'countryofresidence_postal2' => $request->countryofresidence_postal2,
+            'countryofresidence_country3' => $request->countryofresidence_country3,
+            'countryofresidence_fromwhen3' => $request->countryofresidence_fromwhen3,
+            'countryofresidence_towhen3' => $request->countryofresidence_towhen3,
+            'countryofresidence_address3' => $request->countryofresidence_address3,
+            'countryofresidence_city3' => $request->countryofresidence_city3,
+            'countryofresidence_postal3' => $request->countryofresidence_postal3,
+            'countryofresidence_country4' => $request->countryofresidence_country4,
+            'countryofresidence_fromwhen4' => $request->countryofresidence_fromwhen4,
+            'countryofresidence_towhen4' => $request->countryofresidence_towhen4,
+            'countryofresidence_address4' => $request->countryofresidence_address4,
+            'countryofresidence_city4' => $request->countryofresidence_city4,
+            'countryofresidence_postal4' => $request->countryofresidence_postal4,
+            'countryofresidence_country5' => $request->countryofresidence_country5,
+            'countryofresidence_fromwhen5' => $request->countryofresidence_fromwhen5,
+            'countryofresidence_towhen5' => $request->countryofresidence_towhen5,
+            'countryofresidence_address5' => $request->countryofresidence_address5,
+            'countryofresidence_city5' => $request->countryofresidence_city5,
+            'countryofresidence_postal5' => $request->countryofresidence_postal5,
         
         ];
 
+        
         $fieldsetsData = [
             'matrixdata' => $matrixData ,
             'personaldata' => $personalData ,
@@ -335,7 +375,9 @@ class Form360Controller extends Controller
             'higheducationdata' =>$highEducationData,
             'apprenticeship' =>$apprenticeshipData, 
             'workExperienceData' => $workExperienceData,
-            'workExperienceIntraData' => $workExperienceIntraData
+            'workExperienceIntraData' => $workExperienceIntraData,
+            'visahistoryData' => $visahistoryData,
+            'countryofresidenceData' => $countryofresidenceData
         ];
         return $fieldsetsData;
 
