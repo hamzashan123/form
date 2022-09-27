@@ -1,65 +1,324 @@
-<fieldset id="fieldsettwo">
-                                <div class="form-card">
-                                    <div class="row">
-                                        <div class="col-7">
-                                            <h2 class="fs-title">EDUCATION BACKGROUND - INFO:</h2>
-                                        </div>
-                                        <div class="col-5">
-                                            <h2 class="steps">Step 2 - 4</h2>
-                                        </div>
-                                    </div> 
-                                    
-                                   
+<fieldset id="fieldsettwelve">
+    <div class="form-card">
+        <div class="row">
+            <div class="col-7">
+                <h2 class="fs-title">- HEALTH QUESTIONS</h2>
+            </div>
+            <div class="col-5">
+                <h2 class="steps">Step 12 - 14</h2>
+            </div>
+        </div>
+
+        <table>
+            <tbody>
+
+                <tr>
+                    <td> 1) Does any applicant intend to enter a hospital or a
+                        health care facility (including nursing homes)
+                        while in Australia or New Zealand? </td>
+                    <td>
+                        <select name="healthquestion_aus_or_nz" id="healthquestion_aus_or_nz" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+                    </td>
+                </tr>
 
 
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td> Full name of the school
-                                                </td>
-                                                <td> <input type="text" name="edu_info_junior_fullname" id="edu_info_junior_fullname"  @if(isset($data['education'][0]->edu_info_junior_fullname)) value="{{$data['education'][0]->edu_info_junior_fullname}}" @endif /> </td>
-                                            </tr>
+                <tr>
+                    <td> 2) Does any applicant intend to work as, or study to
+                        be a doctor, dentist, nurse or paramedic during
+                        their stay in Australia or New Zealand? </td>
+                    <td>
 
-                                            <tr>
-                                                <td> Full address
-                                                </td>
-                                                <td> <input type="text" name="edu_info_junior_fulladdress" id="edu_info_junior_fulladdress" @if(isset($data['education'][0]->edu_info_junior_fulladdress)) value="{{$data['education'][0]->edu_info_junior_fulladdress}}" @endif/> </td>
-                                            </tr>
+                        <select name="healthquestion_paramedic" id="healthquestion_paramedic" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+                    </td>
+                </tr>
 
-                                            <tr>
-                                                <td> Year obtained </td>
-                                                <td> <input type="date" name="edu_info_junior_yearobtainted" id="edu_info_junior_yearobtainted" @if(isset($data['education'][0]->edu_info_junior_yearobtainted)) value="{{$data['education'][0]->edu_info_junior_yearobtainted}}" @endif/>
-                                                </td>
-                                            </tr>
+                <tr>
+                    <td> 3) Does any applicant intend to work or be a trainee
+                        at a childcare centre (including preschools and
+                        creches) while in Australia or New Zealand? </td>
+                    <td>
+                        <select name="healthquestion_childcare" id="healthquestion_childcare" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
 
-                                            <tr>
-                                                <td> Legal duration of the course </td>
-                                                <td> <input type="text" name="edu_info_junior_course" id="edu_info_junior_course" @if(isset($data['education'][0]->edu_info_junior_course)) value="{{$data['education'][0]->edu_info_junior_course}}" @endif/>
-                                                </td>
-                                            </tr>
+                    </td>
+                </tr>
 
-                                            <tr>
-                                                <td> Indicate the START date of your studies (DD-MMYYY)
-                                                </td>
-                                                <td> <input type="date" name="edu_info_junior_startdate" id="edu_info_junior_startdate" @if(isset($data['education'][0]->edu_info_junior_startdate)) value="{{$data['education'][0]->edu_info_junior_startdate}}" @endif/> </td>
-                                            </tr>
 
-                                            <tr>
-                                                <td> Indicate the END date of your studies (DD-MMYYY)
-                                                </td>
-                                                <td> <input type="date" name="edu_info_junior_enddate"
-                                                        id="edu_info_junior_enddate" @if(isset($data['education'][0]->edu_info_junior_enddate)) value="{{$data['education'][0]->edu_info_junior_enddate}}" @endif/>
-                                                </td>
-                                            </tr>
+                <tr>
+                    <td> 4) Does any applicant intend to be in a classroom
+                        situation for more than 3 months (eg. as either a
+                        student, teacher, lecturer or observer)? </td>
+                    <td>
 
-                                        </tbody>
-                                    </table>
+                        <select name="healthquestion_classroom" id="healthquestion_classroom" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+                    </td>
+                </tr>
 
-                                  
-                                
-                                
-                               
-                                    </div>
-                                <input type="button" name="next" class="next action-button" value="Next" /> 
-                                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-                            </fieldset>
+                <tr>
+                    <td> 5) Ever had, or currently have, tuberculosis? </td>
+                    <td>
+
+                        <select name="healthquestion_tuberculosis" id="healthquestion_tuberculosis" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> 6) been in close contact with a family member that
+                        has active tuberculosis? </td>
+                    <td>
+                        <select name="healthquestion_familymember_tuberculosis" id="healthquestion_familymember_tuberculosis" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+
+
+
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> 7) ever had a chest x-ray which showed an
+                        abnormality? </td>
+                    <td>
+
+                        <select name="healthquestion_xray" id="healthquestion_xray" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> If you answered YES to any questions, indicate YES, specify
+                        what question number refers to you and provide further
+                        details in the following box:</td>
+                    <td>
+                        <select name="healthquestion_indicate_if_yes" id="healthquestion_indicate_if_yes" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+
+
+                    </td>
+                </tr>
+
+
+
+            </tbody>
+        </table>
+
+
+        <table>
+            <tbody>
+
+                <tr>
+                    <td> During their proposed visit to Australia or New Zealand, do
+                        you expect to incur medical costs, or require treatment or
+                        medical follow up for: </td>
+                    <td>
+                        <select name="healthquestion_medicalcosts" id="healthquestion_medicalcosts" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td> 1) Blood disorder </td>
+                    <td>
+                        <select name="healthquestion_blood" id="healthquestion_blood" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> 2) Cancer
+                    </td>
+                    <td>
+                        <select name="healthquestion_cancer" id="healthquestion_cancer" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td> 3) Heart disease </td>
+                    <td>
+                        <select name="healthquestion_heart" id="healthquestion_heart" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> 4) Hepatitis B or C and/or liver disease </td>
+                    <td>
+                        <select name="healthquestion_hepatitis" id="healthquestion_hepatitis" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+
+
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> 5) HIV infection, including AIDS </td>
+                    <td>
+
+                        <select name="healthquestion_hiv" id="healthquestion_hiv" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> 6) Kidney disease, including dialysis </td>
+                    <td>
+                        <select name="healthquestion_kidney" id="healthquestion_kidney" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> 7) Mental illness</td>
+                    <td>
+                        <select name="healthquestion_mental" id="healthquestion_mental" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> 8) Pregnancy </td>
+                    <td>
+                        <select name="healthquestion_pregnancy" id="healthquestion_pregnancy" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> 9) Respiratory disease that has required hospital
+                        admission or oxygen therapy </td>
+                    <td>
+                        <select name="healthquestion_respiratory1" id="healthquestion_respiratory1" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> 10) Respiratory disease that has required hospital
+                        admission or oxygen therapy </td>
+                    <td>
+
+                        <select name="healthquestion_respiratory1" id="healthquestion_respiratory1" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> 11) Do you require assistance with mobility or care
+                        due to a medical condition? </td>
+                    <td>
+
+
+                        <select name="healthquestion_medical_condition" id="healthquestion_medical_condition" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td> If you answered YES to any questions, indicate YES, specify
+                        what question number refers to you and provide further
+                        details in the following box:
+                    </td>
+                    <td>
+
+                        <select name="healthquestion_question_number_if_yes" id="healthquestion_question_number_if_yes" class="form-control">
+                            <option value="selectoption"> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+                    </td>
+                </tr>
+
+
+
+            </tbody>
+        </table>
+
+
+    </div>
+    <input type="button" name="next" class="next action-button" value="Next" />
+    <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+</fieldset>
