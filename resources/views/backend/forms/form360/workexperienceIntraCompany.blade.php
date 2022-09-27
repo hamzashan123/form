@@ -41,7 +41,9 @@
                     <td>What is your current or most recent
                         occupation?
                     </td>
-                    <td> <input type="text" name="workexpintracompany_current_recent_occupation" id="workexpintracompany_current_recent_occupation" /> </td>
+                    <td>
+                        <input type="text" name="workexpintracompany_current_recent_occupation" id="workexpintracompany_current_recent_occupation" />
+                    </td>
                 </tr>
 
 
