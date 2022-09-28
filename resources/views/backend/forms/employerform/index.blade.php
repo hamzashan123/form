@@ -12,7 +12,11 @@
 
                 <img src="/logo.png" class="logo" />
                 <h2 id="heading">Employer Form </h2>
-
+                @if(session()->has('success')) 
+                <div class="alert alert-success">
+                    {{ session()->get('success') }}
+                </div>
+                @endif
                 <form id="form360" action="{{route('admin.employerform.save')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <!-- progressbar -->
@@ -30,6 +34,7 @@
                     @include('backend.forms.employerform.nomination')
                     @include('backend.forms.employerform.labour')
                     @include('backend.forms.employerform.job')
+                    @include('backend.forms.employerform.final')
 
 
                 </form>

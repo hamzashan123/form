@@ -13,7 +13,7 @@ class EmployerFormController extends Controller
     }
 
     public function save(Request $request){
-         dd($request);
+         //dd($request);
          $formid = DB::table('employerform')->insertGetId([
              'user_id' => auth()->user()->id,
              'created_at' => date('m/d/Y h:i:s a'),
@@ -122,9 +122,21 @@ class EmployerFormController extends Controller
             'nomination_responsibilities' => $request->nomination_responsibilities,
             'nomination_performed' => $request->nomination_performed,
             'nomination_position' => $request->nomination_position,
-            // 'job_n3_after_people' => $request->job_n3_after_people,
-            // 'job_n3_after_people_shortlisted' => $request->job_n3_after_people_shortlisted,
-            // 'job_n3_after_people_suitable' => $request->job_n3_after_people_suitable
+            'qua_and_exp_relevant' => $request->qua_and_exp_relevant,
+            'qua_and_exp_skills' => $request->qua_and_exp_skills,
+            'qua_and_exp_license' => $request->qua_and_exp_license,
+            'qua_and_exp_four_month' => $request->qua_and_exp_four_month,
+            'qua_and_exp_agriculture' => $request->qua_and_exp_agriculture,
+            'salary_offering_visa_applicant' => $request->salary_offering_visa_applicant,
+            'salary_non_monetary' => $request->salary_non_monetary,
+            'salary_offering_visa_applicant_specify' => $request->salary_offering_visa_applicant_specify,
+            'salary_year_of_contract' => $request->salary_year_of_contract,
+            'salary_annual' => $request->salary_annual,
+            'salary_hours_per_week' => $request->salary_hours_per_week,
+            'salary_eloborate_annual_salary' => $request->salary_eloborate_annual_salary,
+            'salary_permanent_resident' => $request->salary_permanent_resident,
+            'salary_permanent_resident_indicate' => $request->salary_permanent_resident_indicate,
+            'salary_citizen' => $request->salary_citizen,
            
         ];
 
