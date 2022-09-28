@@ -1,6 +1,9 @@
 @extends('layouts.admin')
 <link rel="stylesheet" href="{{asset('formstyles.css')}}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<script src="{{asset('countrycode.js')}}"></script>
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -9,8 +12,12 @@
 
                 <img src="/logo.png" class="logo" />
                 <h2 id="heading">Employer Form </h2>
-
-                <form id="form360" action="#" method="post" enctype="multipart/form-data">
+                @if(session()->has('success')) 
+                <div class="alert alert-success">
+                    {{ session()->get('success') }}
+                </div>
+                @endif
+                <form id="form360" action="{{route('admin.employerform.save')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <!-- progressbar -->
                     <ul id="progressbar">
@@ -27,6 +34,7 @@
                     @include('backend.forms.employerform.nomination')
                     @include('backend.forms.employerform.labour')
                     @include('backend.forms.employerform.job')
+                    @include('backend.forms.employerform.final')
 
 
                 </form>
@@ -46,5 +54,6 @@
     })
 </script>
 @endif
-<script src="{{asset('form360.js')}}"></script>
+<script src="{{asset('employerform.js')}}"></script>
+
 @endsection()

@@ -166,7 +166,7 @@
                         the nominee’s salary?
                     </td>
                     <td>
-                        <select name="salary_non-monetary" id="salary_non-monetary" class="form-control">
+                        <select name="salary_non_monetary" id="salary_non_monetary" class="form-control">
                             <option value=""> Select Option </option>
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>

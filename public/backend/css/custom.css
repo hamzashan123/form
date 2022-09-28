@@ -9,4 +9,7 @@
     flex: 0 0 100%;
     margin-top: 16px;
     max-width: 100%;
-  }
+}
+input[type='tel'] {
+    left: 25%;
+}

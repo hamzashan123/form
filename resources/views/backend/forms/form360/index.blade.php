@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 <link rel="stylesheet" href="{{asset('formstyles.css')}}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -52,6 +53,7 @@
                     @include('backend.forms.form360.healthquestion')
                     @include('backend.forms.form360.character')
                     @include('backend.forms.form360.familymembers')
+                    @include('backend.forms.form360.final')
 
 
                 </form>
