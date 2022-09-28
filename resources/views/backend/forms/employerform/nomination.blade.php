@@ -269,6 +269,71 @@
             </tbody>
         </table>
 
+
+        <h2 class="fs-title" style="margin-top: 10px;">NOMINATION – DOCS TO UPLOAD FOR THE POSITION NEEDED
+        </h2>
+
+
+        <table>
+            <tbody>
+
+                <tr>
+                    <td> Job description/Duty Statement of the
+                        position to be offered to the applicant </td>
+                    <td> <input type="file" name="nomination_job_description" id="nomination_job_description"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p> Employment contract to be offered to the
+            applicant. Please note the contract must
+            be: </p>
+
+
+        <table>
+            <tbody>
+                <tr>
+                    <td> 1) Dated after the 28 days period of
+                        the job ads </td>
+                    <td> <input type="file" name="nomination_period_of_job" id="nomination_period_of_job"></td>
+                </tr>
+
+                <tr>
+                    <td> 2) Indicate the name and surname of
+                        the applicant</td>
+                    <td> <input type="file" name="nomination_name_and_surname" id="nomination_name_and_surname"></td>
+                </tr>
+
+                <tr>
+                    <td> 3) Indicate "upon visa approval" for
+                        the Start date</td>
+                    <td> <input type="file" name="nomination_start_date_doc" id="nomination_start_date_doc"></td>
+                </tr>
+
+                <tr>
+                    <td> 4) Indicate the gross annual salary rate</td>
+                    <td> <input type="file" name="nomination_gross_annual_salary" id="nomination_gross_annual_salary"></td>
+                </tr>
+
+                <tr>
+                    <td> 5) Indicate the super annuation in
+                        addition to the gross annual salary
+                        rate</td>
+                    <td> <input type="file" name="nomination_super_annuation" id="nomination_super_annuation"></td>
+                </tr>
+
+                <tr>
+                    <td> 6) Indicate any other monetary
+                        components as a separate figure to
+                        the annual gross salary</td>
+                    <td> <input type="file" name="nomination_separate_figure" id="nomination_separate_figure"></td>
+                </tr>
+
+
+
+            </tbody>
+        </table>
+
     </div>
     <input type="button" name="next" class="next action-button" value="Next" />
     <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
