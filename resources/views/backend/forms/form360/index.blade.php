@@ -53,6 +53,7 @@
                     @include('backend.forms.form360.healthquestion')
                     @include('backend.forms.form360.character')
                     @include('backend.forms.form360.familymembers')
+                    @include('backend.forms.form360.final')
 
 
                 </form>
