@@ -318,62 +318,149 @@
 
                 <tr>
                     <td> 1) Blood disorder </td>
-                    <td> <input type="checkbox" name="healthquestion_blood" id="healthquestion_blood" /> </td>
+                    <td>
+                        <select name="healthquestion_blood" id="healthquestion_blood" class="form-control">
+                            <option value=""> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td> 2) Cancer
                     </td>
-                    <td> <input type="checkbox" name="healthquestion_cancer" id="healthquestion_cancer" /> </td>
+                    <td>
+
+                        <select name="healthquestion_cancer" id="healthquestion_cancer" class="form-control">
+                            <option value=""> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+                    </td>
                 </tr>
 
 
                 <tr>
                     <td> 3) Heart disease </td>
-                    <td> <input type="checkbox" name="healthquestion_heart" id="healthquestion_heart" /> </td>
+                    <td>
+                        <select name="healthquestion_heart" id="healthquestion_heart" class="form-control">
+                            <option value=""> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td> 4) Hepatitis B or C and/or liver disease </td>
-                    <td> <input type="checkbox" name="healthquestion_hepatitis" id="healthquestion_hepatitis" /> </td>
+                    <td>
+
+                        <select name="healthquestion_hepatitis" id="healthquestion_hepatitis" class="form-control">
+                            <option value=""> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td> 5) HIV infection, including AIDS </td>
-                    <td> <input type="checkbox" name="healthquestion_hiv" id="healthquestion_hiv" /> </td>
+                    <td>
+
+                        <select name="healthquestion_hiv" id="healthquestion_hiv" class="form-control">
+                            <option value=""> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> 6) Kidney disease, including dialysis </td>
-                    <td> <input type="checkbox" name="healthquestion_kidney" id="healthquestion_kidney" /> </td>
+                    <td>
+
+
+                        <select name="healthquestion_kidney" id="healthquestion_kidney" class="form-control">
+                            <option value=""> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td> 7) Mental illness</td>
-                    <td> <input type="checkbox" name="healthquestion_mental" id="healthquestion_mental" /> </td>
+                    <td>
+
+                        <select name="healthquestion_mental" id="healthquestion_mental" class="form-control">
+                            <option value=""> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td> 8) Pregnancy </td>
-                    <td> <input type="checkbox" name="healthquestion_pregnancy" id="healthquestion_pregnancy" /> </td>
+                    <td>
+                        <select name="healthquestion_pregnancy" id="healthquestion_pregnancy" class="form-control">
+                            <option value=""> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td> 9) Respiratory disease that has required hospital
                         admission or oxygen therapy </td>
-                    <td> <input type="checkbox" name="healthquestion_respiratory1" id="healthquestion_respiratory1" /> </td>
+                    <td>
+
+                        <select name="healthquestion_respiratory1" id="healthquestion_respiratory1" class="form-control">
+                            <option value=""> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> 10) Respiratory disease that has required hospital
                         admission or oxygen therapy </td>
-                    <td> <input type="checkbox" name="healthquestion_respiratory1" id="healthquestion_respiratory1" /> </td>
+                    <td>
+                        <select name="healthquestion_respiratory1" id="healthquestion_respiratory1" class="form-control">
+                            <option value=""> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td> 11) Do you require assistance with mobility or care
                         due to a medical condition? </td>
-                    <td> <input type="checkbox" name="healthquestion_medical_condition" id="healthquestion_medical_condition" /> </td>
+                    <td>
+
+                        <select name="healthquestion_medical_condition" id="healthquestion_medical_condition" class="form-control">
+                            <option value=""> Select Option </option>
+                            <option value="yes"> Yes </option>
+                            <option value="no"> No </option>
+                        </select>
+
+
+
+                    </td>
                 </tr>
 
 
