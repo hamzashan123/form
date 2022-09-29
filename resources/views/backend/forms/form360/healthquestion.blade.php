@@ -1,5 +1,7 @@
 <fieldset id="fieldsettwelve">
     <div class="form-card">
+        <h2 class="fs-title" style="text-align: center;">SECTION 12:</h2>
+
         <div class="row">
             <div class="col-7">
                 <h2 class="fs-title">- HEALTH QUESTIONS</h2>

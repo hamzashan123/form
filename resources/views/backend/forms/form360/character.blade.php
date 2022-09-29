@@ -1,8 +1,10 @@
 <fieldset id="fieldsetthirteen">
     <div class="form-card">
+        <h2 class="fs-title" style="text-align: center;">SECTION 13:</h2>
+
         <div class="row">
             <div class="col-7">
-                <h2 class="fs-title">- CHARACTHER – GENERAL QUESTIONS </h2>
+                <h2 class="fs-title">- CHARACTER – GENERAL QUESTIONS </h2>
             </div>
             <div class="col-5">
                 <h2 class="steps">Step 13 - 14</h2>

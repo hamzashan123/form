@@ -1,5 +1,7 @@
 <fieldset id="fieldseteleven">
     <div class="form-card">
+        <h2 class="fs-title" style="text-align: center;">SECTION 11:</h2>
+
         <div class="row">
             <div class="col-7">
                 <h2 class="fs-title">- HEALTH DECLARATION – TRAVLES FOR MORE THAN 3 MONTHS IN THE LAST 5 YEARS</h2>
