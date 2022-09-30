@@ -28,6 +28,9 @@
                     <td>
                         <select name="first_education_qualification_obtained" id="first_education_qualification_obtained" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->first_education_qualification_obtained)))
+                                <option value="{{$data->first_education_qualification_obtained}}" selected>{{$data->first_education_qualification_obtained}}</option>
+                            @endif
                             <option value="phd"> PHD </option>
                             <option value="master"> Masters Degree </option>
                             <option value="bachelor"> Bachelor Degree </option>
@@ -49,7 +52,7 @@
             <tbody>
                 <tr>
                     <td> Name Of the School </td>
-                    <td> <input type="text" name="firstedu_background_nameofschool" id="firstedu_background_nameofschool" />
+                    <td> <input type="text" name="firstedu_background_nameofschool" id="firstedu_background_nameofschool" @if(isset($data->firstedu_background_nameofschool)) value="{{$data->firstedu_background_nameofschool}}" @endif/>
                     </td>
                 </tr>
 
@@ -57,7 +60,7 @@
                 <tr>
                     <td> Full address
                     </td>
-                    <td> <input type="text" name="firstedu_background_fulladdress" id="firstedu_background_fulladdress" />
+                    <td> <input type="text" name="firstedu_background_fulladdress" id="firstedu_background_fulladdress" @if(isset($data->firstedu_background_fulladdress)) value="{{$data->firstedu_background_fulladdress}}" @endif/>
                     </td>
                 </tr>
 
@@ -66,7 +69,7 @@
                     <td> Date course started
 
                     </td>
-                    <td> <input type="date" name="firstedu_background_datecoursesstarted" id="firstedu_background_datecoursesstarted" />
+                    <td> <input type="date" name="firstedu_background_datecoursesstarted" id="firstedu_background_datecoursesstarted" @if(isset($data->firstedu_background_datecoursesstarted)) value="{{$data->firstedu_background_datecoursesstarted}}" @endif/>
                     </td>
                 </tr>
 
@@ -74,7 +77,7 @@
                     <td> Date course ended
 
                     </td>
-                    <td> <input type="date" name="firstedu_background_datecoursesended" id="firstedu_background_datecoursesended" />
+                    <td> <input type="date" name="firstedu_background_datecoursesended" id="firstedu_background_datecoursesended" @if(isset($data->firstedu_background_datecoursesended)) value="{{$data->firstedu_background_datecoursesended}}" @endif/>
                     </td>
                 </tr>
 
@@ -82,7 +85,7 @@
                     <td> Year obtained
 
                     </td>
-                    <td> <input type="date" name="firstedu_background_yearobt" id="firstedu_background_yearobt" />
+                    <td> <input type="date" name="firstedu_background_yearobt" id="firstedu_background_yearobt" @if(isset($data->firstedu_background_yearobt)) value="{{$data->firstedu_background_yearobt}}" @endif/>
                     </td>
                 </tr>
 
@@ -91,7 +94,7 @@
 
 
                     </td>
-                    <td> <input type="date" name="firstedu_background_legal_duration" id="firstedu_background_legal_duration" />
+                    <td> <input type="date" name="firstedu_background_legal_duration" id="firstedu_background_legal_duration" @if(isset($data->firstedu_background_legal_duration)) value="{{$data->firstedu_background_legal_duration}}" @endif/>
                     </td>
                 </tr>
 
@@ -101,7 +104,7 @@
 
 
                     </td>
-                    <td> <input type="date" name="firstedu_background_qualification_obtained" id="firstedu_background_qualification_obtained" />
+                    <td> <input type="date" name="firstedu_background_qualification_obtained" id="firstedu_background_qualification_obtained" @if(isset($data->firstedu_background_qualification_obtained)) value="{{$data->firstedu_background_qualification_obtained}}" @endif/>
                     </td>
                 </tr>
 
@@ -116,7 +119,7 @@
             <tbody>
                 <tr>
                     <td> Name Of the School </td>
-                    <td> <input type="text" name="firstedu_middle_nameofschool" id="firstedu_middle_nameofschool" />
+                    <td> <input type="text" name="firstedu_middle_nameofschool" id="firstedu_middle_nameofschool" @if(isset($data->firstedu_middle_nameofschool)) value="{{$data->firstedu_middle_nameofschool}}" @endif/>
                     </td>
                 </tr>
 
@@ -124,7 +127,7 @@
                 <tr>
                     <td> Full address
                     </td>
-                    <td> <input type="text" name="firstedu_middle_fulladdress" id="firstedu_middle_fulladdress" />
+                    <td> <input type="text" name="firstedu_middle_fulladdress" id="firstedu_middle_fulladdress" @if(isset($data->firstedu_middle_fulladdress)) value="{{$data->firstedu_middle_fulladdress}}" @endif/>
                     </td>
                 </tr>
 
@@ -133,7 +136,7 @@
                     <td> Date course started
 
                     </td>
-                    <td> <input type="date" name="firstedu_middle_datecoursesstarted" id="firstedu_middle_datecoursesstarted" />
+                    <td> <input type="date" name="firstedu_middle_datecoursesstarted" id="firstedu_middle_datecoursesstarted" @if(isset($data->firstedu_middle_datecoursesstarted)) value="{{$data->firstedu_middle_datecoursesstarted}}" @endif/>
                     </td>
                 </tr>
 
@@ -141,7 +144,7 @@
                     <td> Date course ended
 
                     </td>
-                    <td> <input type="date" name="firstedu_middle_datecoursesended" id="firstedu_middle_datecoursesended" />
+                    <td> <input type="date" name="firstedu_middle_datecoursesended" id="firstedu_middle_datecoursesended" @if(isset($data->firstedu_middle_datecoursesended)) value="{{$data->firstedu_middle_datecoursesended}}" @endif/>
                     </td>
                 </tr>
 
@@ -149,7 +152,7 @@
                     <td> Year obtained
 
                     </td>
-                    <td> <input type="date" name="firstedu_middle_yearobt" id="firstedu_middle_yearobt" />
+                    <td> <input type="date" name="firstedu_middle_yearobt" id="firstedu_middle_yearobt" @if(isset($data->firstedu_middle_yearobt)) value="{{$data->firstedu_middle_yearobt}}" @endif/>
                     </td>
                 </tr>
 
@@ -158,7 +161,7 @@
 
 
                     </td>
-                    <td> <input type="date" name="firstedu_middle_legal_duration" id="firstedu_middle_legal_duration" />
+                    <td> <input type="date" name="firstedu_middle_legal_duration" id="firstedu_middle_legal_duration" @if(isset($data->firstedu_middle_legal_duration)) value="{{$data->firstedu_middle_legal_duration}}" @endif/>
                     </td>
                 </tr>
 
@@ -168,7 +171,7 @@
 
 
                     </td>
-                    <td> <input type="date" name="firstedu_middle_qualification_obtained" id="firstedu_middle_qualification_obtained" />
+                    <td> <input type="date" name="firstedu_middle_qualification_obtained" id="firstedu_middle_qualification_obtained" @if(isset($data->firstedu_middle_qualification_obtained)) value="{{$data->firstedu_middle_qualification_obtained}}" @endif/>
                     </td>
                 </tr>
 
@@ -185,7 +188,7 @@
             <tbody>
                 <tr>
                     <td> Name Of the School </td>
-                    <td> <input type="text" name="firstedu_high_nameofschool" id="firstedu_high_nameofschool" />
+                    <td> <input type="text" name="firstedu_high_nameofschool" id="firstedu_high_nameofschool" @if(isset($data->firstedu_high_nameofschool)) value="{{$data->firstedu_high_nameofschool}}" @endif/>
                     </td>
                 </tr>
 
@@ -193,7 +196,7 @@
                 <tr>
                     <td> Full address
                     </td>
-                    <td> <input type="text" name="firstedu_high_fulladdress" id="firstedu_high_fulladdress" />
+                    <td> <input type="text" name="firstedu_high_fulladdress" id="firstedu_high_fulladdress" @if(isset($data->firstedu_high_fulladdress)) value="{{$data->firstedu_high_fulladdress}}" @endif/>
                     </td>
                 </tr>
 
@@ -202,7 +205,7 @@
                     <td> Date course started
 
                     </td>
-                    <td> <input type="date" name="firstedu_high_datecoursesstarted" id="firstedu_high_datecoursesstarted" />
+                    <td> <input type="date" name="firstedu_high_datecoursesstarted" id="firstedu_high_datecoursesstarted" @if(isset($data->firstedu_high_datecoursesstarted)) value="{{$data->firstedu_high_datecoursesstarted}}" @endif/>
                     </td>
                 </tr>
 
@@ -210,7 +213,7 @@
                     <td> Date course ended
 
                     </td>
-                    <td> <input type="date" name="firstedu_high_datecoursesended" id="firstedu_high_datecoursesended" />
+                    <td> <input type="date" name="firstedu_high_datecoursesended" id="firstedu_high_datecoursesended" @if(isset($data->firstedu_high_datecoursesended)) value="{{$data->firstedu_high_datecoursesended}}" @endif/>
                     </td>
                 </tr>
 
@@ -218,7 +221,7 @@
                     <td> Year obtained
 
                     </td>
-                    <td> <input type="date" name="firstedu_high_yearobt" id="firstedu_high_yearobt" />
+                    <td> <input type="date" name="firstedu_high_yearobt" id="firstedu_high_yearobt" @if(isset($data->firstedu_high_yearobt)) value="{{$data->firstedu_high_yearobt}}" @endif/>
                     </td>
                 </tr>
 
@@ -227,7 +230,7 @@
 
 
                     </td>
-                    <td> <input type="date" name="firstedu_high_legal_duration" id="firstedu_high_legal_duration" />
+                    <td> <input type="date" name="firstedu_high_legal_duration" id="firstedu_high_legal_duration" @if(isset($data->firstedu_high_legal_duration)) value="{{$data->firstedu_high_legal_duration}}" @endif/>
                     </td>
                 </tr>
 
@@ -237,7 +240,7 @@
 
 
                     </td>
-                    <td> <input type="date" name="firstedu_high_qualification_obtained" id="firstedu_high_qualification_obtained" />
+                    <td> <input type="date" name="firstedu_high_qualification_obtained" id="firstedu_high_qualification_obtained" @if(isset($data->firstedu_high_qualification_obtained)) value="{{$data->firstedu_high_qualification_obtained}}" @endif/>
                     </td>
                 </tr>
 

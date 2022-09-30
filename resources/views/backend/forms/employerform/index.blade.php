@@ -26,9 +26,7 @@
                         <li id="payment"><strong>LABOUR MARKET TESTING</strong></li>
                         <li id="payment"><strong>For Job </strong></li>
                     </ul>
-                    @if(Auth::user()->hasRole('consultant'))
-                    <a id="correctemail" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px; display:none;">Send Correction Email</a>
-                    @endif
+                    
                     <div class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                     </div> <br> <!-- fieldsets -->
@@ -62,6 +60,7 @@
   var fieldsname = [];
   var fieldsvalue = [];
   var fieldscomments = [];
+  <?php if(auth()->user()->hasRole('consultant')) {  ?>  
 jQuery('.form-card td').click(function (e) {
         
         if($(this).hasClass('addBorder')){
@@ -94,6 +93,7 @@ jQuery('.form-card td').click(function (e) {
             
         }
   });
+  <?php } ?>
 
   jQuery('#correctemail').click(function (e) {
                 
@@ -112,7 +112,7 @@ jQuery('.form-card td').click(function (e) {
                     fieldscomments.push(jQuery(this).val());
                     
                 });
-                 var userid = "<?php echo $_GET['userid'] ?>";
+                 var userid = "<?php echo isset($_GET['userid']) ?>";
                 
                 
                 

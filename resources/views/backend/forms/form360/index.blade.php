@@ -80,6 +80,8 @@
   var fieldsname = [];
   var fieldsvalue = [];
   var fieldscomments = [];
+
+<?php if(auth()->user()->hasRole('consultant')) {  ?>  
 jQuery('.form-card td').click(function (e) {
         
         if($(this).hasClass('addBorder')){
@@ -112,6 +114,7 @@ jQuery('.form-card td').click(function (e) {
             
         }
   });
+  <?php } ?>
 
   jQuery('#correctemail').click(function (e) {
                 

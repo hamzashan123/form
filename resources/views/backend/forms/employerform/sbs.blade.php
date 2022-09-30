@@ -19,7 +19,7 @@
                     <td>
                         <select name="sbs_business_required_aus" id="sbs_business_required_aus" class="form-control">
                             <option value=""> Select Option </option>
-
+                        
                             @if(!empty(isset($data->sbs_business_required_aus)))
                             <option value="{{$data->sbs_business_required_aus}}" selected>{{$data->sbs_business_required_aus}}</option>
                             @endif
@@ -349,7 +349,7 @@
 
                     </td>
                     <td>
-                        <input type="text" name="sbs_business_acn" id="sbs_business_acn" />
+                        <input type="text" name="sbs_business_acn" id="sbs_business_acn" @if(isset($data->sbs_business_acn)) value="{{$data->sbs_business_acn}}" @endif/>
                     </td>
                 </tr>
 
@@ -362,6 +362,9 @@
                     <td>
                         <select name="sbs_business_type" id="sbs_business_type" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->sbs_business_type)))
+                                <option value="{{$data->sbs_business_type}}" selected>{{$data->sbs_business_type}}</option>
+                            @endif
                             <option value="sole"> Sole trader </option>
                             <option value="proprietary"> Proprietary Limited </option>
                             <option value="public"> Public listed company </option>
@@ -378,7 +381,7 @@
 
                     </td>
                     <td>
-                        <input type="text" name="sbs_business_subsidiary" id="sbs_business_subsidiary" />
+                        <input type="text" name="sbs_business_subsidiary" id="sbs_business_subsidiary" @if(isset($data->sbs_business_subsidiary)) value="{{$data->sbs_business_subsidiary}}" @endif/>
                     </td>
                 </tr>
 
@@ -389,7 +392,7 @@
 
                     </td>
                     <td>
-                        <input type="text" name="sbs_business_branch" id="sbs_business_branch" />
+                        <input type="text" name="sbs_business_branch" id="sbs_business_branch" @if(isset($data->sbs_business_branch)) value="{{$data->sbs_business_branch}}" @endif/>
                     </td>
                 </tr>
 
@@ -398,7 +401,7 @@
 
                     </td>
                     <td>
-                        <input type="text" name="sbs_business_franchise" id="sbs_business_franchise" />
+                        <input type="text" name="sbs_business_franchise" id="sbs_business_franchise" @if(isset($data->sbs_business_franchise)) value="{{$data->sbs_business_franchise}}" @endif/>
                     </td>
                 </tr>
 
@@ -409,7 +412,7 @@
 
                     </td>
                     <td>
-                        <input type="text" name="sbs_business_trustee" id="sbs_business_trustee" />
+                        <input type="text" name="sbs_business_trustee" id="sbs_business_trustee" @if(isset($data->sbs_business_trustee)) value="{{$data->sbs_business_trustee}}" @endif/>
                     </td>
                 </tr>
 
@@ -420,7 +423,7 @@
 
                     </td>
                     <td>
-                        <input type="text" name="sbs_business_trustee_specify" id="sbs_business_trustee_specify" />
+                        <input type="text" name="sbs_business_trustee_specify" id="sbs_business_trustee_specify" @if(isset($data->sbs_business_trustee_specify)) value="{{$data->sbs_business_trustee_specify}}" @endif/>
                     </td>
                 </tr>
 
@@ -429,7 +432,7 @@
 
                     </td>
                     <td>
-                        <input type="text" name="sbs_business_trustee_name" id="sbs_business_trustee_name" />
+                        <input type="text" name="sbs_business_trustee_name" id="sbs_business_trustee_name" @if(isset($data->sbs_business_trustee_name)) value="{{$data->sbs_business_trustee_name}}" @endif/>
                     </td>
                 </tr>
 
@@ -439,7 +442,7 @@
 
                     </td>
                     <td>
-                        <input type="text" name="sbs_business_trustee_abn" id="sbs_business_trustee_abn" />
+                        <input type="text" name="sbs_business_trustee_abn" id="sbs_business_trustee_abn" @if(isset($data->sbs_business_trustee_abn)) value="{{$data->sbs_business_trustee_abn}}" @endif/>
                     </td>
                 </tr>
 
@@ -450,7 +453,7 @@
                         Immigration approval letter
                     </td>
                     <td>
-                        <input type="text" name="sbs_business_sponsor_migration" id="sbs_business_sponsor_migration" />
+                        <input type="text" name="sbs_business_sponsor_migration" id="sbs_business_sponsor_migration" @if(isset($data->sbs_business_sponsor_migration)) value="{{$data->sbs_business_sponsor_migration}}" @endif/>
                     </td>
                 </tr>
 
@@ -462,7 +465,7 @@
 
                     </td>
                     <td>
-                        <input type="text" name="sbs_business_ato" id="sbs_business_ato" />
+                        <input type="text" name="sbs_business_ato" id="sbs_business_ato" @if(isset($data->sbs_business_ato)) value="{{$data->sbs_business_ato}}" @endif/>
                     </td>
                 </tr>
 
@@ -476,7 +479,7 @@
 
                     </td>
                     <td>
-                        <input type="text" name="sbs_business_stock_exchange" id="sbs_business_stock_exchange" />
+                        <input type="text" name="sbs_business_stock_exchange" id="sbs_business_stock_exchange" @if(isset($data->sbs_business_stock_exchange)) value="{{$data->sbs_business_stock_exchange}}" @endif/>
                     </td>
                 </tr>
 
@@ -498,7 +501,7 @@
                         established?
                     </td>
                     <td>
-                        <input type="text" name="sbs_trading_established" id="sbs_trading_established" />
+                        <input type="text" name="sbs_trading_established" id="sbs_trading_established" @if(isset($data->sbs_trading_established)) value="{{$data->sbs_trading_established}}" @endif/>
                     </td>
                 </tr>
 
@@ -508,7 +511,7 @@
                         Australia? Indicate the month and year
                     </td>
                     <td>
-                        <input type="text" name="sbs_trading_business" id="sbs_trading_business" />
+                        <input type="text" name="sbs_trading_business" id="sbs_trading_business" @if(isset($data->sbs_trading_business)) value="{{$data->sbs_trading_business}}" @endif/>
                     </td>
                 </tr>
 
@@ -517,7 +520,7 @@
 
                     </td>
                     <td>
-                        <input type="text" name="sbs_trading_structure" id="sbs_trading_structure" />
+                        <input type="text" name="sbs_trading_structure" id="sbs_trading_structure" @if(isset($data->sbs_trading_structure)) value="{{$data->sbs_trading_structure}}" @endif/>
                     </td>
                 </tr>
 
@@ -525,7 +528,7 @@
                     <td> Address of the business
                     </td>
                     <td>
-                        <input type="text" name="sbs_trading_address" id="sbs_trading_address" />
+                        <input type="text" name="sbs_trading_address" id="sbs_trading_address" @if(isset($data->sbs_trading_address)) value="{{$data->sbs_trading_address}}" @endif/>
                     </td>
                 </tr>
 
@@ -533,7 +536,7 @@
                     <td> Sector of business
                     </td>
                     <td>
-                        <input type="text" name="sbs_trading_sector" id="sbs_trading_sector" />
+                        <input type="text" name="sbs_trading_sector" id="sbs_trading_sector" @if(isset($data->sbs_trading_sector)) value="{{$data->sbs_trading_sector}}" @endif/>
                     </td>
                 </tr>
 
@@ -542,7 +545,7 @@
                     <td> Description of the business activity
                     </td>
                     <td>
-                        <input type="text" name="sbs_trading_activity" id="sbs_trading_activity" />
+                        <input type="text" name="sbs_trading_activity" id="sbs_trading_activity" @if(isset($data->sbs_trading_activity)) value="{{$data->sbs_trading_activity}}" @endif/>
                     </td>
                 </tr>
 
@@ -552,6 +555,10 @@
                     <td>
                         <select name="sbs_trading_willing" id="sbs_trading_willing" class="form-control">
                             <option value=""> Select Option </option>
+                            
+ @if(!empty(isset($data->sbs_trading_willing)))
+                                <option value="{{$data->sbs_trading_willing}}" selected>{{$data->sbs_trading_willing}}</option>
+                            @endif
                             <option value="1_to_3"> 1 to 3 </option>
                             <option value="3_to_5"> 3 to 5 </option>
                             <option value="5_to_10"> 5 to 10</option>
@@ -570,7 +577,7 @@
                         or PR resident
                     </td>
                     <td>
-                        <input type="text" name="sbs_trading_outlining" id="sbs_trading_outlining" />
+                        <input type="text" name="sbs_trading_outlining" id="sbs_trading_outlining" @if(isset($data->sbs_trading_outlining)) value="{{$data->sbs_trading_outlining}}" @endif/>
                     </td>
                 </tr>
 
@@ -578,7 +585,7 @@
                     <td>Indicate your webpage, if you have one
                     </td>
                     <td>
-                        <input type="text" name="sbs_trading_webpage" id="sbs_trading_webpage" />
+                        <input type="text" name="sbs_trading_webpage" id="sbs_trading_webpage" @if(isset($data->sbs_trading_webpage)) value="{{$data->sbs_trading_webpage}}" @endif/>
                     </td>
                 </tr>
             </tbody>
@@ -595,7 +602,7 @@
                         contact person in the company
                     </td>
                     <td>
-                        <input type="text" name="main_point_name_surname" id="main_point_name_surname" />
+                        <input type="text" name="main_point_name_surname" id="main_point_name_surname" @if(isset($data->main_point_name_surname)) value="{{$data->main_point_name_surname}}" @endif/>
                     </td>
                 </tr>
 
@@ -604,7 +611,7 @@
                         company
                     </td>
                     <td>
-                        <input type="text" name="main_point_role" id="main_point_role" />
+                        <input type="text" name="main_point_role" id="main_point_role" @if(isset($data->main_point_role)) value="{{$data->main_point_role}}" @endif/>
                     </td>
                 </tr>
 
@@ -612,7 +619,7 @@
                     <td>Indicate the email contact of this person
                     </td>
                     <td>
-                        <input type="text" name="main_point_email_person" id="main_point_email_person" />
+                        <input type="text" name="main_point_email_person" id="main_point_email_person" @if(isset($data->main_point_email_person)) value="{{$data->main_point_email_person}}" @endif/>
                     </td>
                 </tr>
 
@@ -621,7 +628,7 @@
                         person
                     </td>
                     <td>
-                        <input type="text" name="main_point_contact_number" id="main_point_contact_number" />
+                        <input type="text" name="main_point_contact_number" id="main_point_contact_number" @if(isset($data->main_point_contact_number)) value="{{$data->main_point_contact_number}}" @endif/>
                     </td>
                 </tr>
 
@@ -638,7 +645,7 @@
                     <td>Name and surname
                     </td>
                     <td>
-                        <input type="text" name="partner_name_surname1" id="partner_name_surname1" />
+                        <input type="text" name="partner_name_surname1" id="partner_name_surname1" @if(isset($data->partner_name_surname1)) value="{{$data->partner_name_surname1}}" @endif/>
                     </td>
                 </tr>
 
@@ -646,7 +653,7 @@
                     <td>Gender
                     </td>
                     <td>
-                        <input type="text" name="partner_gender1" id="partner_gender1" />
+                        <input type="text" name="partner_gender1" id="partner_gender1" @if(isset($data->partner_gender1)) value="{{$data->partner_gender1}}" @endif/>
                     </td>
                 </tr>
 
@@ -654,7 +661,7 @@
                     <td>Date of birth
                     </td>
                     <td>
-                        <input type="text" name="partner_dob1" id="partner_dob1" />
+                        <input type="text" name="partner_dob1" id="partner_dob1" @if(isset($data->partner_dob1)) value="{{$data->partner_dob1}}" @endif/>
                     </td>
                 </tr>
 
@@ -662,7 +669,7 @@
                     <td>Position
                     </td>
                     <td>
-                        <input type="text" name="partner_position1" id="partner_position1" />
+                        <input type="text" name="partner_position1" id="partner_position1" @if(isset($data->partner_position1)) value="{{$data->partner_position1}}" @endif/>
                     </td>
                 </tr>
 
@@ -676,7 +683,7 @@
                     <td>Name and surname
                     </td>
                     <td>
-                        <input type="text" name="partner_name_surname2" id="partner_name_surname2" />
+                        <input type="text" name="partner_name_surname2" id="partner_name_surname2" @if(isset($data->partner_name_surname2)) value="{{$data->partner_name_surname2}}" @endif/>
                     </td>
                 </tr>
 
@@ -684,7 +691,7 @@
                     <td>Gender
                     </td>
                     <td>
-                        <input type="text" name="partner_gender2" id="partner_gender2" />
+                        <input type="text" name="partner_gender2" id="partner_gender2" @if(isset($data->partner_gender2)) value="{{$data->partner_gender2}}" @endif/>
                     </td>
                 </tr>
 
@@ -692,7 +699,7 @@
                     <td>Date of birth
                     </td>
                     <td>
-                        <input type="text" name="partner_dob2" id="partner_dob2" />
+                        <input type="text" name="partner_dob2" id="partner_dob2" @if(isset($data->partner_dob2)) value="{{$data->partner_dob2}}" @endif/>
                     </td>
                 </tr>
 
@@ -700,7 +707,7 @@
                     <td>Position
                     </td>
                     <td>
-                        <input type="text" name="partner_position2" id="partner_position2" />
+                        <input type="text" name="partner_position2" id="partner_position2" @if(isset($data->partner_position2)) value="{{$data->partner_position2}}" @endif/>
                     </td>
                 </tr>
 
@@ -714,7 +721,7 @@
                     <td>Name and surname
                     </td>
                     <td>
-                        <input type="text" name="partner_name_surname3" id="partner_name_surname3" />
+                        <input type="text" name="partner_name_surname3" id="partner_name_surname3" @if(isset($data->partner_name_surname3)) value="{{$data->partner_name_surname3}}" @endif/>
                     </td>
                 </tr>
 
@@ -722,7 +729,7 @@
                     <td>Gender
                     </td>
                     <td>
-                        <input type="text" name="partner_gender3" id="partner_gender3" />
+                        <input type="text" name="partner_gender3" id="partner_gender3" @if(isset($data->partner_gender3)) value="{{$data->partner_gender3}}" @endif/>
                     </td>
                 </tr>
 
@@ -730,7 +737,7 @@
                     <td>Date of birth
                     </td>
                     <td>
-                        <input type="text" name="partner_dob3" id="partner_dob3" />
+                        <input type="text" name="partner_dob3" id="partner_dob3" @if(isset($data->partner_dob3)) value="{{$data->partner_dob3}}" @endif/>
                     </td>
                 </tr>
 
@@ -738,7 +745,7 @@
                     <td>Position
                     </td>
                     <td>
-                        <input type="text" name="partner_position3" id="partner_position3" />
+                        <input type="text" name="partner_position3" id="partner_position3" @if(isset($data->partner_position3)) value="{{$data->partner_position3}}" @endif/>
                     </td>
                 </tr>
 
@@ -760,6 +767,9 @@
                     <td>
                         <select name="organization_name_surname" id="organization_name_surname" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->organization_name_surname)))
+                                <option value="{{$data->organization_name_surname}}" selected>{{$data->organization_name_surname}}</option>
+                            @endif
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -874,6 +884,9 @@
                     <td>
                         <select name="organization_residents1" id="organization_residents1" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->organization_residents1)))
+                                <option value="{{$data->organization_residents1}}" selected>{{$data->organization_residents1}}</option>
+                            @endif
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -989,6 +1002,9 @@
                     <td>
                         <select name="organization_residents2" id="organization_residents2" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->organization_residents2)))
+                                <option value="{{$data->organization_residents2}}" selected>{{$data->organization_residents2}}</option>
+                            @endif
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -1105,6 +1121,9 @@
                     <td>
                         <select name="organization_foreign_employees" id="organization_foreign_employees" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->organization_foreign_employees)))
+                                <option value="{{$data->organization_foreign_employees}}" selected>{{$data->organization_foreign_employees}}</option>
+                            @endif
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -1215,7 +1234,7 @@
                     <td>Of the total number of foreign employees,
                         what is the number of: </td>
                     <td>
-                        <input type="text" name="organization_foreign_employees_number" id="organization_foreign_employees_number" />
+                        <input type="text" name="organization_foreign_employees_number" id="organization_foreign_employees_number" @if(isset($data->organization_foreign_employees_number)) value="{{$data->organization_foreign_employees_number}}" @endif/>
                     </td>
                 </tr>
 
@@ -1226,6 +1245,11 @@
                     <td>
                         <select name="organization_foreign_457_482_visa" id="organization_foreign_457_482_visa" class="form-control">
                             <option value=""> Select Option </option>
+                            
+ @if(!empty(isset($data->organization_foreign_457_482_visa)))
+                                <option value="{{$data->organization_foreign_457_482_visa}}" selected>{{$data->organization_foreign_457_482_visa}}</option>
+                            @endif
+
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -1339,6 +1363,11 @@
                     <td>
                         <select name="organization_foreign_other_temporary_visa" id="organization_foreign_other_temporary_visa" class="form-control">
                             <option value=""> Select Option </option>
+                            
+ @if(!empty(isset($data->organization_foreign_other_temporary_visa)))
+                                <option value="{{$data->organization_foreign_other_temporary_visa}}" selected>{{$data->organization_foreign_other_temporary_visa}}</option>
+                            @endif
+
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -1450,6 +1479,11 @@
                     <td>
                         <select name="organization_foreign_student_visa" id="organization_foreign_student_visa" class="form-control">
                             <option value=""> Select Option </option>
+                            
+ @if(!empty(isset($data->organization_foreign_student_visa)))
+                                <option value="{{$data->organization_foreign_student_visa}}" selected>{{$data->organization_foreign_student_visa}}</option>
+                            @endif
+
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -1562,6 +1596,11 @@
                     <td>
                         <select name="organization_foreign_working_holiday" id="organization_foreign_working_holiday" class="form-control">
                             <option value=""> Select Option </option>
+                            
+ @if(!empty(isset($data->organization_foreign_working_holiday)))
+                                <option value="{{$data->organization_foreign_working_holiday}}" selected>{{$data->organization_foreign_working_holiday}}</option>
+                            @endif
+
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -1672,7 +1711,11 @@
                     </td>
                     <td>
                         <select name="organization_foreign_other_visas " id="organization_foreign_other_visas" class="form-control">
+
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->organization_foreign_other_visas)))
+                                <option value="{{$data->organization_foreign_other_visas}}" selected>{{$data->organization_foreign_other_visas}}</option>
+                            @endif
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -1784,7 +1827,7 @@
                         graduates with less than 12 months work
                         experience </td>
                     <td>
-                        <input type="text" name="organization_foreign_recent_university" id="organization_foreign_recent_university" />
+                        <input type="text" name="organization_foreign_recent_university" id="organization_foreign_recent_university" @if(isset($data->organization_foreign_recent_university)) value="{{$data->organization_foreign_recent_university}}" @endif/>
                     </td>
                 </tr>
 
@@ -1792,7 +1835,7 @@
                     <td>How many apprentices ae employed under
                         a training agreement or contract of training </td>
                     <td>
-                        <input type="text" name="organization_foreign_contract_of_training" id="organization_foreign_recent_university" />
+                        <input type="text" name="organization_foreign_contract_of_training" id="organization_foreign_recent_university" @if(isset($data->organization_foreign_recent_university)) value="{{$data->organization_foreign_recent_university}}" @endif/>
                     </td>
                 </tr>
 
@@ -1812,7 +1855,7 @@
                         year?
                     </td>
                     <td>
-                        <input type="text" name="annual_turnover_year" id="annual_turnover_year" />
+                        <input type="text" name="annual_turnover_year" id="annual_turnover_year" @if(isset($data->annual_turnover_year)) value="{{$data->annual_turnover_year}}" @endif/>
                     </td>
                 </tr>
 
@@ -1822,7 +1865,7 @@
 
                     </td>
                     <td>
-                        <input type="text" name="annual_turnover_payroll_figure" id="annual_turnover_payroll_figure" />
+                        <input type="text" name="annual_turnover_payroll_figure" id="annual_turnover_payroll_figure" @if(isset($data->annual_turnover_payroll_figure)) value="{{$data->annual_turnover_payroll_figure}}" @endif/>
                     </td>
                 </tr>
 
@@ -1833,7 +1876,7 @@
 
                     </td>
                     <td>
-                        <input type="text" name="annual_turnover_operating" id="annual_turnover_operating" />
+                        <input type="text" name="annual_turnover_operating" id="annual_turnover_operating" @if(isset($data->annual_turnover_operating)) value="{{$data->annual_turnover_operating}}" @endif/>
                     </td>
                 </tr>
 
@@ -1851,47 +1894,47 @@
                     <td> Previous Sponsorship Approval Letter (SBS)
                         if applicable
                     </td>
-                    <td> <input type="file" name="sbs_upload_previous_sponsorship" id="sbs_upload_previous_sponsorship"></td>
+                    <td> <input type="file" name="sbs_upload_previous_sponsorship" id="sbs_upload_previous_sponsorship" @if(isset($data->sbs_upload_previous_sponsorship)) value="{{$data->sbs_upload_previous_sponsorship}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td> ASIC Historical Extract
                     </td>
-                    <td> <input type="file" name="sbs_upload_asic_historical" id="sbs_upload_asic_historical"></td>
+                    <td> <input type="file" name="sbs_upload_asic_historical" id="sbs_upload_asic_historical" @if(isset($data->sbs_upload_asic_historical)) value="{{$data->sbs_upload_asic_historical}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td> Trust deed (signed pages only) if applicable
                     </td>
-                    <td> <input type="file" name="sbs_upload_trust" id="sbs_upload_trust"></td>
+                    <td> <input type="file" name="sbs_upload_trust" id="sbs_upload_trust" @if(isset($data->sbs_upload_trust)) value="{{$data->sbs_upload_trust}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td> Lease agreement/evidence of ownership
                         for the business premises
                     </td>
-                    <td> <input type="file" name="sbs_upload_lease" id="sbs_upload_lease"></td>
+                    <td> <input type="file" name="sbs_upload_lease" id="sbs_upload_lease" @if(isset($data->sbs_upload_lease)) value="{{$data->sbs_upload_lease}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td> Bank statement in the name of the
                         company (not older than 6 months)
                     </td>
-                    <td> <input type="file" name="sbs_upload_bank_statement" id="sbs_upload_bank_statement"></td>
+                    <td> <input type="file" name="sbs_upload_bank_statement" id="sbs_upload_bank_statement" @if(isset($data->sbs_upload_bank_statement)) value="{{$data->sbs_upload_bank_statement}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td> BAS for the last 12 months or since when
                         you the business has been operating
                     </td>
-                    <td> <input type="file" name="sbs_upload_bas" id="sbs_upload_bas"></td>
+                    <td> <input type="file" name="sbs_upload_bas" id="sbs_upload_bas" @if(isset($data->sbs_upload_bas)) value="{{$data->sbs_upload_bas}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td> Profit & Loss of the most recent financial
                         year
                     </td>
-                    <td> <input type="file" name="sbs_upload_profit_loss" id="sbs_upload_profit_loss"></td>
+                    <td> <input type="file" name="sbs_upload_profit_loss" id="sbs_upload_profit_loss" @if(isset($data->sbs_upload_profit_loss)) value="{{$data->sbs_upload_profit_loss}}" @endif></td>
                 </tr>
 
                 <tr>
@@ -1901,7 +1944,7 @@
                         month (or ever since the business has been
                         operating for)
                     </td>
-                    <td> <input type="file" name="sbs_upload_recent_payroll" id="sbs_upload_recent_payroll"></td>
+                    <td> <input type="file" name="sbs_upload_recent_payroll" id="sbs_upload_recent_payroll" @if(isset($data->sbs_upload_recent_payroll)) value="{{$data->sbs_upload_recent_payroll}}" @endif></td>
                 </tr>
 
                 <tr>
@@ -1910,31 +1953,31 @@
                         filled with the list of all of your employees
                         and roles
                     </td>
-                    <td> <input type="file" name="sbs_upload_chart" id="sbs_upload_chart"></td>
+                    <td> <input type="file" name="sbs_upload_chart" id="sbs_upload_chart" @if(isset($data->sbs_upload_chart)) value="{{$data->sbs_upload_chart}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td>A few recent utility bills
                     </td>
-                    <td> <input type="file" name="sbs_upload_bill1" id="sbs_upload_bill1"></td>
+                    <td> <input type="file" name="sbs_upload_bill1" id="sbs_upload_bill1" @if(isset($data->sbs_upload_bill1)) value="{{$data->sbs_upload_bill1}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td>A few recent utility bills
                     </td>
-                    <td> <input type="file" name="sbs_upload_bill2" id="sbs_upload_bill2"></td>
+                    <td> <input type="file" name="sbs_upload_bill2" id="sbs_upload_bill2" @if(isset($data->sbs_upload_bill2)) value="{{$data->sbs_upload_bill2}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td>A few invoices from suppliers
                     </td>
-                    <td> <input type="file" name="sbs_upload_invoice1" id="sbs_upload_invoice1"></td>
+                    <td> <input type="file" name="sbs_upload_invoice1" id="sbs_upload_invoice1" @if(isset($data->sbs_upload_invoice1)) value="{{$data->sbs_upload_invoice1}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td>A few invoices from suppliers
                     </td>
-                    <td> <input type="file" name="sbs_upload_invoice2" id="sbs_upload_invoice2"></td>
+                    <td> <input type="file" name="sbs_upload_invoice2" id="sbs_upload_invoice2" @if(isset($data->sbs_upload_invoice2)) value="{{$data->sbs_upload_invoice2}}" @endif></td>
                 </tr>
 
             </tbody>

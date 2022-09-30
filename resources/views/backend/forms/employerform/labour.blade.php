@@ -32,7 +32,7 @@
                         update this form when the job ads will be
                         online)
                     </td>
-                    <td> <input type="file" name="labour_market_different" id="labour_market_different"></td>
+                    <td> <input type="file" name="labour_market_different" id="labour_market_different" @if(isset($data->labour_market_different)) value="{{$data->labour_market_different}}" @endif></td>
                 </tr>
 
             </tbody>
@@ -48,26 +48,26 @@
                         note that Workforce is a mandatory
                         website)
                     </td>
-                    <td> <input type="text" name="labour_job_n1_people" id="labour_job_n1_people" />
+                    <td> <input type="text" name="labour_job_n1_people" id="labour_job_n1_people" @if(isset($data->labour_job_n1_people)) value="{{$data->labour_job_n1_people}}" @endif/>
                     </td>
                 </tr>
 
                 <tr>
                     <td> Exact date when the job ad was put online </td>
-                    <td> <input type="date" name="labour_job_n1_exact_date" id="labour_job_n1_exact_date" /> </td>
+                    <td> <input type="date" name="labour_job_n1_exact_date" id="labour_job_n1_exact_date" @if(isset($data->labour_job_n1_exact_date)) value="{{$data->labour_job_n1_exact_date}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td> Please confirm this job ad has been online
                         for at least 28 days or it will be by the time
                         it expires </td>
-                    <td> <input type="text" name="labour_job_n1_online" id="labour_job_n1_online" /> </td>
+                    <td> <input type="text" name="labour_job_n1_online" id="labour_job_n1_online" @if(isset($data->labour_job_n1_online)) value="{{$data->labour_job_n1_online}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td> Please indicate the link to the job ad here
                     </td>
-                    <td> <input type="text" name="labour_job_n1_indicate" id="labour_job_n1_indicate" /> </td>
+                    <td> <input type="text" name="labour_job_n1_indicate" id="labour_job_n1_indicate" @if(isset($data->labour_job_n1_indicate)) value="{{$data->labour_job_n1_indicate}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -75,7 +75,7 @@
                         for this job ad? If yes, please make sure to
                         attach this document
                     </td>
-                    <td> <input type="text" name="labour_job_n1_payment" id="labour_job_n1_payment" /> </td>
+                    <td> <input type="text" name="labour_job_n1_payment" id="labour_job_n1_payment" @if(isset($data->labour_job_n1_payment)) value="{{$data->labour_job_n1_payment}}" @endif/> </td>
                 </tr>
 
 
@@ -91,21 +91,21 @@
                 <tr>
                     <td> Number of people who applied for the
                         position to be filled </td>
-                    <td> <input type="text" name="labour_job_n1_after_people" id="labour_job_n1_after_people" />
+                    <td> <input type="text" name="labour_job_n1_after_people" id="labour_job_n1_after_people" @if(isset($data->labour_job_n1_after_people)) value="{{$data->labour_job_n1_after_people}}" @endif/>
                     </td>
                 </tr>
 
                 <tr>
                     <td> Number of people who were shortlisted for
                         the role </td>
-                    <td> <input type="text" name="labour_job_n1_after_people_shortlisted" id="labour_job_n1_after_people_shortlisted" /> </td>
+                    <td> <input type="text" name="labour_job_n1_after_people_shortlisted" id="labour_job_n1_after_people_shortlisted" @if(isset($data->labour_job_n1_after_people_shortlisted)) value="{{$data->labour_job_n1_after_people_shortlisted}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td> Reason why no one was suitable for the role
                         and therefore you are offering the full-time
                         position to the visa applicant </td>
-                    <td> <input type="text" name="labour_job_n1_after_people_suitable" id="labour_job_n1_after_people_suitable" /> </td>
+                    <td> <input type="text" name="labour_job_n1_after_people_suitable" id="labour_job_n1_after_people_suitable" @if(isset($data->labour_job_n1_after_people_suitable)) value="{{$data->labour_job_n1_after_people_suitable}}" @endif/> </td>
                 </tr>
             </tbody>
         </table>
@@ -121,26 +121,26 @@
                     <td> Name of the Job ad platform n.2
 
                     </td>
-                    <td> <input type="text" name="labour_job_n2_people" id="labour_job_n2_people" />
+                    <td> <input type="text" name="labour_job_n2_people" id="labour_job_n2_people" @if(isset($data->labour_job_n2_people)) value="{{$data->labour_job_n2_people}}" @endif/>
                     </td>
                 </tr>
 
                 <tr>
                     <td> Exact date when the job ad was put online </td>
-                    <td> <input type="date" name="labour_job_n2_exact_date" id="labour_job_n2_exact_date" /> </td>
+                    <td> <input type="date" name="labour_job_n2_exact_date" id="labour_job_n2_exact_date" @if(isset($data->labour_job_n2_exact_date)) value="{{$data->labour_job_n2_exact_date}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td> Please confirm this job ad has been online
                         for at least 28 days or it will be by the time
                         it expires </td>
-                    <td> <input type="text" name="labour_job_n2_online" id="labour_job_n2_online" /> </td>
+                    <td> <input type="text" name="labour_job_n2_online" id="labour_job_n2_online" @if(isset($data->labour_job_n2_online)) value="{{$data->labour_job_n2_online}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td> Please indicate the link to the job ad here
                     </td>
-                    <td> <input type="text" name="labour_job_n2_indicate" id="labour_job_n2_indicate" /> </td>
+                    <td> <input type="text" name="labour_job_n2_indicate" id="labour_job_n2_indicate" @if(isset($data->labour_job_n2_indicate)) value="{{$data->labour_job_n2_indicate}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -148,7 +148,7 @@
                         for this job ad? If yes, please make sure to
                         attach this document
                     </td>
-                    <td> <input type="text" name="labour_job_n2_payment" id="labour_job_n2_payment" /> </td>
+                    <td> <input type="text" name="labour_job_n2_payment" id="labour_job_n2_payment" @if(isset($data->labour_job_n2_payment)) value="{{$data->labour_job_n2_payment}}" @endif/> </td>
                 </tr>
 
 
@@ -166,27 +166,27 @@
                     <td>Copy and paste of the link of the Job ad
                         platform
                     </td>
-                    <td> <input type="file" name="workforce_1_copyandpaste" id="workforce_1_copyandpaste"></td>
+                    <td> <input type="file" name="workforce_1_copyandpaste" id="workforce_1_copyandpaste" @if(isset($data->workforce_1_copyandpaste)) value="{{$data->workforce_1_copyandpaste}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td>Invoice for having posted the job ad (if
                         applicable)
                     </td>
-                    <td> <input type="file" name="workforce_1_invoice" id="workforce_1_invoice"></td>
+                    <td> <input type="file" name="workforce_1_invoice" id="workforce_1_invoice" @if(isset($data->workforce_1_invoice)) value="{{$data->workforce_1_invoice}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td>Screenshot of the job ad page
                     </td>
-                    <td> <input type="file" name="workforce_1_screenshot" id="workforce_1_screenshot"></td>
+                    <td> <input type="file" name="workforce_1_screenshot" id="workforce_1_screenshot" @if(isset($data->workforce_1_screenshot)) value="{{$data->workforce_1_screenshot}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td>Any other evidence of having posted the job
                         ad
                     </td>
-                    <td> <input type="file" name="workforce_1_evidence" id="workforce_1_evidence"></td>
+                    <td> <input type="file" name="workforce_1_evidence" id="workforce_1_evidence" @if(isset($data->workforce_1_evidence)) value="{{$data->workforce_1_evidence}}" @endif></td>
                 </tr>
 
 
@@ -204,27 +204,27 @@
                     <td>Copy and paste of the link of the Job ad
                         platform
                     </td>
-                    <td> <input type="file" name="workforce_2_copyandpaste" id="workforce_2_copyandpaste"></td>
+                    <td> <input type="file" name="workforce_2_copyandpaste" id="workforce_2_copyandpaste" @if(isset($data->workforce_2_copyandpaste)) value="{{$data->workforce_2_copyandpaste}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td>Invoice for having posted the job ad (if
                         applicable)
                     </td>
-                    <td> <input type="file" name="workforce_2_invoice" id="workforce_2_invoice"></td>
+                    <td> <input type="file" name="workforce_2_invoice" id="workforce_2_invoice" @if(isset($data->workforce_2_invoice)) value="{{$data->workforce_2_invoice}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td>Screenshot of the job ad page
                     </td>
-                    <td> <input type="file" name="workforce_2_screenshot" id="workforce_2_screenshot"></td>
+                    <td> <input type="file" name="workforce_2_screenshot" id="workforce_2_screenshot" @if(isset($data->workforce_2_screenshot)) value="{{$data->workforce_2_screenshot}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td>Any other evidence of having posted the job
                         ad
                     </td>
-                    <td> <input type="file" name="workforce_2_evidence" id="workforce_2_evidence"></td>
+                    <td> <input type="file" name="workforce_2_evidence" id="workforce_2_evidence" @if(isset($data->workforce_2_evidence)) value="{{$data->workforce_2_evidence}}" @endif></td>
                 </tr>
 
 
@@ -242,27 +242,27 @@
                     <td>Copy and paste of the link of the Job ad
                         platform
                     </td>
-                    <td> <input type="file" name="workforce_3_copyandpaste" id="workforce_3_copyandpaste"></td>
+                    <td> <input type="file" name="workforce_3_copyandpaste" id="workforce_3_copyandpaste" @if(isset($data->workforce_3_copyandpaste)) value="{{$data->workforce_3_copyandpaste}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td>Invoice for having posted the job ad (if
                         applicable)
                     </td>
-                    <td> <input type="file" name="workforce_3_invoice" id="workforce_3_invoice"></td>
+                    <td> <input type="file" name="workforce_3_invoice" id="workforce_3_invoice" @if(isset($data->workforce_3_invoice)) value="{{$data->workforce_3_invoice}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td>Screenshot of the job ad page
                     </td>
-                    <td> <input type="file" name="workforce_3_screenshot" id="workforce_3_screenshot"></td>
+                    <td> <input type="file" name="workforce_3_screenshot" id="workforce_3_screenshot" @if(isset($data->workforce_3_screenshot)) value="{{$data->workforce_3_screenshot}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td>Any other evidence of having posted the job
                         ad
                     </td>
-                    <td> <input type="file" name="workforce_3_evidence" id="workforce_3_evidence"></td>
+                    <td> <input type="file" name="workforce_3_evidence" id="workforce_3_evidence" @if(isset($data->workforce_3_evidence)) value="{{$data->workforce_3_evidence}}" @endif></td>
                 </tr>
 
 
