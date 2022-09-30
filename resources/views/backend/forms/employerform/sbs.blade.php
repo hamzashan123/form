@@ -1,5 +1,7 @@
 <fieldset id="fieldsetone">
     <div class="form-card">
+        <h2 class="fs-title" style="text-align: center;">SECTION 1:</h2>
+
         <div class="row">
             <div class="col-7">
                 <h2 class="fs-title"> SPONSORSHIP APPLICATION TO BECOME A SPONSOR – Employer form </h2>
@@ -17,9 +19,9 @@
                     <td>
                         <select name="sbs_business_required_aus" id="sbs_business_required_aus" class="form-control">
                             <option value=""> Select Option </option>
-                            
+
                             @if(!empty(isset($data->sbs_business_required_aus)))
-                                <option value="{{$data->sbs_business_required_aus}}" selected>{{$data->sbs_business_required_aus}}</option>
+                            <option value="{{$data->sbs_business_required_aus}}" selected>{{$data->sbs_business_required_aus}}</option>
                             @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
@@ -34,7 +36,7 @@
                         <select id="sbs_business_country" name="sbs_business_country" class="form-control">
                             <option value="">Select Nationality</option>
                             @if(!empty(isset($data->sbs_business_country)))
-                                <option value="{{$data->sbs_business_country}}" selected>{{$data->sbs_business_country}}</option>
+                            <option value="{{$data->sbs_business_country}}" selected>{{$data->sbs_business_country}}</option>
                             @endif
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Aland Islands</option>
