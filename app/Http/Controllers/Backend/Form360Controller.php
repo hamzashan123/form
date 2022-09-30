@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\CorrectionMail;
+use App\Mail\CorrectionEmailAdmin;
 
 class Form360Controller extends Controller
 {
@@ -712,5 +715,25 @@ class Form360Controller extends Controller
         
         return $fieldsetsData;
 
+    }
+
+    public function correctFieldsEmail(Request $request){
+
+        if(!empty($request->userid)){
+            $user = DB::table('users')->where('id',$request->userid)->first();
+            if($request->has('fieldsname')){
+                       $data = [
+                           'email' => $user->email,
+                           'fieldsname' => $request->fieldsname,
+                           'fieldsvalue' => $request->fieldsvalue,
+                           'fieldscomments' => $request->fieldscomments
+                       ];
+                       //dd($data);
+                       Mail::to($user->email)->send(new CorrectionMail($data));
+                       //Mail::to('hamzashan123@gmail.com')->send(new CorrectionEmailAdmin($data));
+                      // Mail::to('riccardo@australialegal.it')->send(new CorrectionEmailAdmin($data));
+                       return response()->json(['success' => "true"]);
+           }
+       }
     }
 }

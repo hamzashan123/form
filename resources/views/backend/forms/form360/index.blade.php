@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 <link rel="stylesheet" href="{{asset('formstyles.css')}}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -39,7 +39,7 @@
                         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                     </div> <br> <!-- fieldsets -->
                     @if(Auth::user()->hasRole('consultant'))
-                    <a id="correctemail" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px;" disabled>Send Correction Email</a>
+                    <a id="correctemail" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px; display:none;">Send Correction Email</a>
                     @endif
                     @include('backend.forms.form360.matrix')
                     @include('backend.forms.form360.personal')
@@ -87,24 +87,24 @@ jQuery('.form-card td').click(function (e) {
           //jQuery(this).parent('tr').find('input.commentfield').remove();
 
           //fieldsname.remove(jQuery(this).parent('tr').find('input.commentfield').val()); // for remove index name
-          console.log(jQuery(this).closest('tr').find('td').text().trim());
-          fieldsname.remove(jQuery(this).closest('tr').find('td').text().trim());
+          console.log('remove' ,jQuery(this).parent('tr').children('input.commentfield'));
+
+          jQuery(this).parent('tr').children('input.commentfield').remove();
+        //  fieldsname.remove(jQuery(this).closest('tr').find('td').text().trim());
         //   fieldsvalue.remove(jQuery(this).closest('tr').find('input').val());
-          //fieldscomments.remove(jQuery(this).val());
-        //   fieldsvalue.remove(jQuery(this).closest('tr').find('td').text()); // for remove index value
-        //   fieldscomments.remove(jQuery(this).closest('tr').find('input').val());
-          jQuery(this).closest('td').find('tr').find('input.commentfield').remove();
+        //   fieldscomments.remove(jQuery(this).val());
+    
 
             if($('.commentfield').length < 1 ){
-             $('#correctemail').prop('disabled', true);
+             $('#correctemail').hide();
              }
         }else{
-            
+            console.log('add' ,jQuery(this).closest('tr').find('td').text().trim());
             $(this).addClass('addBorder');
             $(this).after('<input type="text" name="test" class="commentfield" placeholder="Enter Comments"/>');
             
             if($('.commentfield').length > 0 ){
-                 $('#correctemail').prop('disabled', false);
+                 $('#correctemail').show();
             }
           
             var title = jQuery(this).closest('tr').find('th').text();
@@ -139,7 +139,27 @@ jQuery('.form-card td').click(function (e) {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
                 });
-               
+                 $.ajax({
+                  type:'POST',
+                  url:"{{route('admin.correctionemail')}}",
+                  data:{ userid: userid , fieldsname : fieldsname , fieldsvalue : fieldsvalue , fieldscomments : fieldscomments},
+                  success:function(data){
+                      $("#correctemail").html("Send Correction email");
+                      if(data.success === "true"){
+                          Swal.fire({
+                              icon: 'success',
+                              title: 'Successfully sent',
+                              text: 'Correction Email has been sent!',
+                          }).then(function() {
+                                window.location.reload();
+                            });
+                      }else if(data.success === 'false'){
+                          $("#correctemail").html("Send Correction email");
+                         
+                             
+                      }
+                  }
+                });
                 console.log('feildsname' ,fieldsname);
                 console.log('fieldsvalue' ,fieldsvalue);
                 console.log('fieldscomments' ,fieldscomments);

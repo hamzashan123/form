@@ -83,6 +83,7 @@ Route::group(['middleware' => ['roles']], function () {
     Route::get('/formslist/{id}', [FormController::class, 'getUserForms'])->name('user.formslist');
     Route::post('/assignforms', [FormController::class, 'assignFormsToUser'])->name('userform.create');
     Route::get('/deleteform/{userid}/{form_id}', [FormController::class, 'deleteUserForm'])->name('userform.delete');
+    Route::post('/correction-email', [Form360Controller::class, 'correctFieldsEmail'])->name('correctionemail');
 
     //new routes here..us
 });
