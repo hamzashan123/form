@@ -23,6 +23,9 @@
                     <td>
                         <select id="countryofresidence_country1" name="countryofresidence_country1" class="form-control">
                             <option value="">Select Nationality</option>
+                            @if(!empty(isset($data->countryofresidence_country1)))
+                            <option value="{{$data->countryofresidence_country1}}" selected>{{$data->countryofresidence_country1}}</option>
+                            @endif
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Aland Islands</option>
                             <option value="Albania">Albania</option>
@@ -298,30 +301,35 @@
 
                 <tr>
                     <td> From When </td>
-                    <td> <input type="date" name="countryofresidence_fromwhen1" id="countryofresidence_fromwhen1" /> </td>
+                    <td> <input type="date" name="countryofresidence_fromwhen1" id="countryofresidence_fromwhen1" @if(isset($data->countryofresidence_fromwhen1)) value="{{$data->countryofresidence_fromwhen1}}" @endif
+                        /> </td>
                 </tr>
 
                 <tr>
                     <td> To When </td>
-                    <td> <input type="date" name="countryofresidence_towhen1" id="countryofresidence_towhen1" /> </td>
+                    <td> <input type="date" name="countryofresidence_towhen1" id="countryofresidence_towhen1" @if(isset($data->countryofresidence_towhen1)) value="{{$data->countryofresidence_towhen1}}" @endif
+                        /> </td>
                 </tr>
 
                 <tr>
                     <td>Address
                     </td>
-                    <td> <input type="text" name="countryofresidence_address1" id="countryofresidence_address1" /> </td>
+                    <td> <input type="text" name="countryofresidence_address1" id="countryofresidence_address1" @if(isset($data->countryofresidence_address1)) value="{{$data->countryofresidence_address1}}" @endif
+                        /> </td>
                 </tr>
 
                 <tr>
                     <td>City
                     </td>
-                    <td> <input type="text" name="countryofresidence_city1" id="countryofresidence_city1" /> </td>
+                    <td> <input type="text" name="countryofresidence_city1" id="countryofresidence_city1" @if(isset($data->countryofresidence_city1)) value="{{$data->countryofresidence_city1}}" @endif
+                        /> </td>
                 </tr>
 
                 <tr>
                     <td>Postal Code
                     </td>
-                    <td> <input type="text" name="countryofresidence_postal1" id="countryofresidence_postal1" /> </td>
+                    <td> <input type="text" name="countryofresidence_postal1" id="countryofresidence_postal1" @if(isset($data->countryofresidence_postal1)) value="{{$data->countryofresidence_postal1}}" @endif
+                        /> </td>
                 </tr>
             </tbody>
         </table>
@@ -334,6 +342,10 @@
                     <td>
                         <select id="countryofresidence_country2" name="countryofresidence_country2" class="form-control">
                             <option value="">Select Nationality</option>
+
+                            @if(!empty(isset($data->countryofresidence_country2)))
+                            <option value="{{$data->countryofresidence_country2}}" selected>{{$data->countryofresidence_country2}}</option>
+                            @endif
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Aland Islands</option>
                             <option value="Albania">Albania</option>
@@ -609,30 +621,35 @@
 
                 <tr>
                     <td> From When </td>
-                    <td> <input type="date" name="countryofresidence_fromwhen2" id="countryofresidence_fromwhen2" /> </td>
+                    <td> <input type="date" name="countryofresidence_fromwhen2" id="countryofresidence_fromwhen2" @if(isset($data->countryofresidence_fromwhen2)) value="{{$data->countryofresidence_fromwhen2}}" @endif
+                        /> </td>
                 </tr>
 
                 <tr>
                     <td> To When </td>
-                    <td> <input type="date" name="countryofresidence_towhen2" id="countryofresidence_towhen2" /> </td>
+                    <td> <input type="date" name="countryofresidence_towhen2" id="countryofresidence_towhen2" @if(isset($data->countryofresidence_towhen2)) value="{{$data->countryofresidence_towhen2}}" @endif
+                        /> </td>
                 </tr>
 
                 <tr>
                     <td>Address
                     </td>
-                    <td> <input type="text" name="countryofresidence_address2" id="countryofresidence_address2" /> </td>
+                    <td> <input type="text" name="countryofresidence_address2" id="countryofresidence_address2" @if(isset($data->countryofresidence_address2)) value="{{$data->countryofresidence_address2}}" @endif
+                        /> </td>
                 </tr>
 
                 <tr>
                     <td>City
                     </td>
-                    <td> <input type="text" name="countryofresidence_city2" id="countryofresidence_city2" /> </td>
+                    <td> <input type="text" name="countryofresidence_city2" id="countryofresidence_city2" @if(isset($data->countryofresidence_city2)) value="{{$data->countryofresidence_city2}}" @endif
+                        /> </td>
                 </tr>
 
                 <tr>
                     <td>Postal Code
                     </td>
-                    <td> <input type="text" name="countryofresidence_postal2" id="countryofresidence_postal2" /> </td>
+                    <td> <input type="text" name="countryofresidence_postal2" id="countryofresidence_postal2" @if(isset($data->countryofresidence_postal2)) value="{{$data->countryofresidence_postal2}}" @endif
+                        /> </td>
                 </tr>
             </tbody>
         </table>
@@ -645,6 +662,10 @@
                     <td>
                         <select id="countryofresidence_country3" name="countryofresidence_country3" class="form-control">
                             <option value="">Select Nationality</option>
+
+                            @if(!empty(isset($data->countryofresidence_country3)))
+                            <option value="{{$data->countryofresidence_country3}}" selected>{{$data->countryofresidence_country3}}</option>
+                            @endif
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Aland Islands</option>
                             <option value="Albania">Albania</option>
@@ -920,30 +941,35 @@
 
                 <tr>
                     <td> From When </td>
-                    <td> <input type="date" name="countryofresidence_fromwhen3" id="countryofresidence_fromwhen3" /> </td>
+                    <td> <input type="date" name="countryofresidence_fromwhen3" id="countryofresidence_fromwhen3" @if(isset($data->countryofresidence_fromwhen3)) value="{{$data->countryofresidence_fromwhen3}}" @endif
+                        /> </td>
                 </tr>
 
                 <tr>
                     <td> To When </td>
-                    <td> <input type="date" name="countryofresidence_towhen3" id="countryofresidence_towhen3" /> </td>
+                    <td> <input type="date" name="countryofresidence_towhen3" id="countryofresidence_towhen3" @if(isset($data->countryofresidence_towhen3)) value="{{$data->countryofresidence_towhen3}}" @endif
+                        /> </td>
                 </tr>
 
                 <tr>
                     <td>Address
                     </td>
-                    <td> <input type="text" name="countryofresidence_address3" id="countryofresidence_address3" /> </td>
+                    <td> <input type="text" name="countryofresidence_address3" id="countryofresidence_address3" @if(isset($data->countryofresidence_address3)) value="{{$data->countryofresidence_address3}}" @endif
+                        /> </td>
                 </tr>
 
                 <tr>
                     <td>City
                     </td>
-                    <td> <input type="text" name="countryofresidence_city3" id="countryofresidence_city3" /> </td>
+                    <td> <input type="text" name="countryofresidence_city3" id="countryofresidence_city3" @if(isset($data->countryofresidence_city3)) value="{{$data->countryofresidence_city3}}" @endif
+                        /> </td>
                 </tr>
 
                 <tr>
                     <td>Postal Code
                     </td>
-                    <td> <input type="text" name="countryofresidence_postal3" id="countryofresidence_postal3" /> </td>
+                    <td> <input type="text" name="countryofresidence_postal3" id="countryofresidence_postal3" @if(isset($data->countryofresidence_postal3)) value="{{$data->countryofresidence_postal3}}" @endif
+                        /> </td>
                 </tr>
             </tbody>
         </table>
@@ -956,6 +982,9 @@
                     <td>
                         <select id="countryofresidence_country4" name="countryofresidence_country4" class="form-control">
                             <option value="">Select Nationality</option>
+                            @if(!empty(isset($data->countryofresidence_country4)))
+                            <option value="{{$data->countryofresidence_country4}}" selected>{{$data->countryofresidence_country4}}</option>
+                            @endif
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Aland Islands</option>
                             <option value="Albania">Albania</option>
@@ -1231,30 +1260,35 @@
 
                 <tr>
                     <td> From When </td>
-                    <td> <input type="date" name="countryofresidence_fromwhen4" id="countryofresidence_fromwhen4" /> </td>
+                    <td> <input type="date" name="countryofresidence_fromwhen4" id="countryofresidence_fromwhen4" @if(isset($data->countryofresidence_fromwhen4)) value="{{$data->countryofresidence_fromwhen4}}" @endif
+                        /> </td>
                 </tr>
 
                 <tr>
                     <td> To When </td>
-                    <td> <input type="date" name="countryofresidence_towhen4" id="countryofresidence_towhen4" /> </td>
+                    <td> <input type="date" name="countryofresidence_towhen4" id="countryofresidence_towhen4" @if(isset($data->countryofresidence_towhen4)) value="{{$data->countryofresidence_towhen4}}" @endif
+                        /> </td>
                 </tr>
 
                 <tr>
                     <td>Address
                     </td>
-                    <td> <input type="text" name="countryofresidence_address4" id="countryofresidence_address4" /> </td>
+                    <td> <input type="text" name="countryofresidence_address4" id="countryofresidence_address4" @if(isset($data->countryofresidence_address4)) value="{{$data->countryofresidence_address4}}" @endif
+                        /> </td>
                 </tr>
 
                 <tr>
                     <td>City
                     </td>
-                    <td> <input type="text" name="countryofresidence_city4" id="countryofresidence_city4" /> </td>
+                    <td> <input type="text" name="countryofresidence_city4" id="countryofresidence_city4" @if(isset($data->countryofresidence_city4)) value="{{$data->countryofresidence_city4}}" @endif
+                        /> </td>
                 </tr>
 
                 <tr>
                     <td>Postal Code
                     </td>
-                    <td> <input type="text" name="countryofresidence_postal4" id="countryofresidence_postal4" /> </td>
+                    <td> <input type="text" name="countryofresidence_postal4" id="countryofresidence_postal4" @if(isset($data->countryofresidence_postal4)) value="{{$data->countryofresidence_postal4}}" @endif
+                        /> </td>
                 </tr>
             </tbody>
         </table>
@@ -1266,6 +1300,9 @@
                     <td>
                         <select id="countryofresidence_country5" name="countryofresidence_country5" class="form-control">
                             <option value="">Select Nationality</option>
+                            @if(!empty(isset($data->countryofresidence_country5)))
+                            <option value="{{$data->countryofresidence_country5}}" selected>{{$data->countryofresidence_country5}}</option>
+                            @endif
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Aland Islands</option>
                             <option value="Albania">Albania</option>
@@ -1541,30 +1578,35 @@
 
                 <tr>
                     <td> From When </td>
-                    <td> <input type="date" name="countryofresidence_fromwhen5" id="countryofresidence_fromwhen5" /> </td>
+                    <td> <input type="date" name="countryofresidence_fromwhen5" id="countryofresidence_fromwhen5" @if(isset($data->countryofresidence_fromwhen5)) value="{{$data->countryofresidence_fromwhen5}}" @endif
+                        /> </td>
                 </tr>
 
                 <tr>
                     <td> To When </td>
-                    <td> <input type="date" name="countryofresidence_towhen5" id="countryofresidence_towhen5" /> </td>
+                    <td> <input type="date" name="countryofresidence_towhen5" id="countryofresidence_towhen5" @if(isset($data->countryofresidence_towhen5)) value="{{$data->countryofresidence_towhen5}}" @endif
+                        /> </td>
                 </tr>
 
                 <tr>
                     <td>Address
                     </td>
-                    <td> <input type="text" name="countryofresidence_address5" id="countryofresidence_address5" /> </td>
+                    <td> <input type="text" name="countryofresidence_address5" id="countryofresidence_address5" @if(isset($data->countryofresidence_address5)) value="{{$data->countryofresidence_address5}}" @endif
+                        /> </td>
                 </tr>
 
                 <tr>
                     <td>City
                     </td>
-                    <td> <input type="text" name="countryofresidence_city5" id="countryofresidence_city5" /> </td>
+                    <td> <input type="text" name="countryofresidence_city5" id="countryofresidence_city5" @if(isset($data->countryofresidence_city5)) value="{{$data->countryofresidence_city5}}" @endif
+                        /> </td>
                 </tr>
 
                 <tr>
                     <td>Postal Code
                     </td>
-                    <td> <input type="text" name="countryofresidence_postal5" id="countryofresidence_postal5" /> </td>
+                    <td> <input type="text" name="countryofresidence_postal5" id="countryofresidence_postal5" @if(isset($data->countryofresidence_postal5)) value="{{$data->countryofresidence_postal5}}" @endif
+                        /> </td>
                 </tr>
             </tbody>
         </table>
