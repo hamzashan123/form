@@ -6,8 +6,10 @@
             <h6 class="m-0 font-weight-bold text-primary">
             @if(str_contains(url()->current(), '/admin/get-clients'))
                 All Clients
+            @elseif(Auth::user()->hasRole('consultant'))
+                    My Clients
             @else
-                Clients And Consultants
+                     Clients And Consultants
             @endif
                
             </h6>

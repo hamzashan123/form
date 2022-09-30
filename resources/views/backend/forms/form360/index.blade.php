@@ -38,7 +38,9 @@
                     <div class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                     </div> <br> <!-- fieldsets -->
-
+                    @if(Auth::user()->hasRole('consultant'))
+                    <a id="correctemail" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px;" disabled>Send Correction Email</a>
+                    @endif
                     @include('backend.forms.form360.matrix')
                     @include('backend.forms.form360.personal')
                     @include('backend.forms.form360.firsteducation')
@@ -74,4 +76,77 @@
 </script>
 @endif
 <script src="{{asset('form360.js')}}"></script>
+<script>
+  var fieldsname = [];
+  var fieldsvalue = [];
+  var fieldscomments = [];
+jQuery('.form-card td').click(function (e) {
+        
+        if($(this).hasClass('addBorder')){
+          $(this).removeClass('addBorder');
+          //jQuery(this).parent('tr').find('input.commentfield').remove();
+
+          //fieldsname.remove(jQuery(this).parent('tr').find('input.commentfield').val()); // for remove index name
+          console.log(jQuery(this).closest('tr').find('td').text().trim());
+          fieldsname.remove(jQuery(this).closest('tr').find('td').text().trim());
+        //   fieldsvalue.remove(jQuery(this).closest('tr').find('input').val());
+          //fieldscomments.remove(jQuery(this).val());
+        //   fieldsvalue.remove(jQuery(this).closest('tr').find('td').text()); // for remove index value
+        //   fieldscomments.remove(jQuery(this).closest('tr').find('input').val());
+          jQuery(this).closest('td').find('tr').find('input.commentfield').remove();
+
+            if($('.commentfield').length < 1 ){
+             $('#correctemail').prop('disabled', true);
+             }
+        }else{
+            
+            $(this).addClass('addBorder');
+            $(this).after('<input type="text" name="test" class="commentfield" placeholder="Enter Comments"/>');
+            
+            if($('.commentfield').length > 0 ){
+                 $('#correctemail').prop('disabled', false);
+            }
+          
+            var title = jQuery(this).closest('tr').find('th').text();
+            var value = jQuery(this).closest('tr').find('td').text();
+            
+        }
+  });
+
+  jQuery('#correctemail').click(function (e) {
+                
+                e.preventDefault();
+                $("#correctemail").html("Please wait...");
+            	//$(this).attr('disabled', 'true');
+                // console.log('fields to email' , fieldsname);
+                // console.log('fields to email' , fieldsvalue);
+                console.log('fields to fieldscomments' , $('.commentfield'));
+                $('.commentfield').each(function(i, obj) {
+                    // console.log('th',jQuery(this).closest('tr').find('td').text());
+                    // console.log('td' ,jQuery(this).closest('tr').find('td').text());
+                    // console.log('td' ,jQuery(this).val());
+                    fieldsname.push(jQuery(this).closest('tr').find('td').text().trim());
+                    fieldsvalue.push(jQuery(this).closest('tr').find('input').val());
+                    fieldscomments.push(jQuery(this).val());
+                    
+                });
+                 var userid = "<?php echo $_GET['userid'] ?>";
+                
+                
+                
+                $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+                });
+               
+                console.log('feildsname' ,fieldsname);
+                console.log('fieldsvalue' ,fieldsvalue);
+                console.log('fieldscomments' ,fieldscomments);
+               
+                
+      });
+
+</script>
+
 @endsection()

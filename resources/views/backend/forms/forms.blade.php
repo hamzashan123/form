@@ -47,7 +47,11 @@
                                     </div>
                                 </td>
                                 <td><div class="btn-group btn-group-toggle">
-                                        <a href="{{route('admin.userform.details', ['userid' => $id ,'form_id' => $form->id])}}" title="Show" class="btn-primary btn btn-sm"><i class="fa fa-eye"> View Form</i></a>
+                                        @if($form->id == 1)
+                                        <a href="{{route('admin.form360.index', ['userid' => $id ,'form_id' => $form->id])}}" title="Show" class="btn-primary btn btn-sm"><i class="fa fa-eye"> View Form</i></a>
+                                        @elseif($form->id == 2) 
+                                        <a href="{{route('admin.employerform.index', ['userid' => $id ,'form_id' => $form->id])}}" title="Show" class="btn-primary btn btn-sm"><i class="fa fa-eye"> View Form</i></a>
+                                        @endif
                                     </div>
                                 </td>
                             </tr>

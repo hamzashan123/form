@@ -5,79 +5,195 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class Form360Controller extends Controller
 {
-    public function index(){
-        return view('backend.forms.form360.index');
+    public function index(Request $request){
+
+        if(!empty($_GET['userid']) && !empty($_GET['form_id'])){
+            $userid = $_GET['userid'];
+        }else{
+            $userid = Auth::user()->id;
+        }
+        
+        
+
+            $data  =  DB::table('form360')
+                        ->join('form360_matrix', 'form360.id', '=', 'form360_matrix.form360_id')
+                        ->join('form360_personal', 'form360.id', '=', 'form360_personal.form360_id')
+                        ->join('form360_first_education', 'form360.id', '=', 'form360_first_education.form360_id')
+                        ->join('form360_high_education', 'form360.id', '=', 'form360_high_education.form360_id')
+                        ->join('form360_apprenticeship', 'form360.id', '=', 'form360_apprenticeship.form360_id')
+                        ->join('form360_work_experience', 'form360.id', '=', 'form360_work_experience.form360_id') 
+                        ->join('form360_work_experience_intra_companies', 'form360.id', '=', 'form360_work_experience_intra_companies.form360_id')     
+                        ->join('form360_visa_history', 'form360.id', '=', 'form360_visa_history.form360_id')
+                        ->join('form360_travel_history', 'form360.id', '=', 'form360_travel_history.form360_id')
+                        ->join('form360_countries_of_residence', 'form360.id', '=', 'form360_countries_of_residence.form360_id')
+                        ->join('form360_health_declaration', 'form360.id', '=', 'form360_health_declaration.form360_id')
+                        ->join('form360_health_questions', 'form360.id', '=', 'form360_health_questions.form360_id')
+                        ->join('form360_character', 'form360.id', '=', 'form360_character.form360_id')
+                        ->join('form360_family_members', 'form360.id', '=', 'form360_family_members.form360_id')
+                        ->where('form360.user_id',$userid)->select(
+                            'form360.*',
+                            'form360_matrix.*',
+                            'form360_personal.*',
+                            'form360_first_education.*',
+                            'form360_high_education.*',
+                            'form360_apprenticeship.*',
+                            'form360_work_experience.*',
+                            'form360_work_experience_intra_companies.*',
+                            'form360_visa_history.*',
+                            'form360_travel_history.*',
+                            'form360_countries_of_residence.*',
+                            'form360_health_declaration.*',
+                            'form360_health_questions.*',
+                            'form360_character.*',
+                            'form360_family_members.*'
+                            )->get();
+         
+        //dd($data);
+        if(!empty($data[0])){
+            $data = $data[0];
+        }                   
+          
+        //dd($data->matrix_name_and_surname);         
+        return view('backend.forms.form360.index',compact('data'));
+        
     }
 
     public function save(Request $request){
-       // dd($request);
-        $formid = DB::table('form360')->insertGetId([
-            'user_id' => auth()->user()->id,
-            'created_at' => date('m/d/Y h:i:s a'),
-            'updated_at' => date('m/d/Y h:i:s a')
-        ]);
         
-        $fieldsets = $this->getFieldsetsData($formid,$request);
+        $formExist = DB::table('form360')->where('user_id', Auth::user()->id)->exists();
+        if($formExist == false){
+            $formid = DB::table('form360')->insertGetId([
+                'user_id' => auth()->user()->id,
+                'created_at' => date('m/d/Y h:i:s a'),
+                'updated_at' => date('m/d/Y h:i:s a')
+            ]);
+            
+            $fieldsets = $this->getFieldsetsData($formid,$request);
+    
+            DB::table('form360_matrix')->insert([
+                $fieldsets['matrixdata']
+            ]);
+    
+            DB::table('form360_personal')->insert([
+                $fieldsets['personaldata']
+            ]);
+    
+            DB::table('form360_first_education')->insert([
+                $fieldsets['firsteducationdata']
+            ]);
+    
+            DB::table('form360_high_education')->insert([
+                $fieldsets['higheducationdata']
+            ]);
+    
+            DB::table('form360_apprenticeship')->insert([
+                $fieldsets['apprenticeship']
+            ]);
+    
+            DB::table('form360_work_experience')->insert([
+                $fieldsets['workExperienceData']
+            ]);
+    
+            DB::table('form360_work_experience_intra_companies')->insert([
+                $fieldsets['workExperienceIntraData']
+            ]);
+    
+            DB::table('form360_visa_history')->insert([
+                $fieldsets['visahistoryData']
+            ]);
+    
+            DB::table('form360_travel_history')->insert([
+                $fieldsets['travelhistoryData']
+            ]);
+    
+            
+            DB::table('form360_countries_of_residence')->insert([
+                $fieldsets['countryofresidenceData']
+            ]);
+    
+            DB::table('form360_health_declaration')->insert([
+                $fieldsets['healthdeclaration']
+            ]);
+    
+            DB::table('form360_health_questions')->insert([
+                $fieldsets['healthQuestion']
+            ]);
+    
+            DB::table('form360_character')->insert([
+                $fieldsets['character']
+            ]);
+    
+            DB::table('form360_family_members')->insert([
+                $fieldsets['familymember']
+            ]);
+        }else{
+           $existingForm =  DB::table('form360')->where('user_id', Auth::user()->id)->first();
 
-        DB::table('form360_matrix')->insert([
-            $fieldsets['matrixdata']
-        ]);
+           $fieldsets = $this->getFieldsetsData($existingForm->id,$request);
+           // dd($fieldsets['matrixdata']); 
+            DB::table('form360_matrix')->where('form360_id',$existingForm->id)->update(
+                $fieldsets['matrixdata']
+            );
 
-        DB::table('form360_personal')->insert([
-            $fieldsets['personaldata']
-        ]);
+            DB::table('form360_personal')->insert([
+                $fieldsets['personaldata']
+            ]);
 
-        DB::table('form360_first_education')->insert([
-            $fieldsets['firsteducationdata']
-        ]);
+            DB::table('form360_first_education')->where('form360_id',$existingForm->id)->update(
+                $fieldsets['firsteducationdata']
+            );
 
-        DB::table('form360_high_education')->insert([
-            $fieldsets['higheducationdata']
-        ]);
+            DB::table('form360_high_education')->where('form360_id',$existingForm->id)->update(
+                $fieldsets['higheducationdata']
+            );
 
-        DB::table('form360_apprenticeship')->insert([
-            $fieldsets['apprenticeship']
-        ]);
+            DB::table('form360_apprenticeship')->where('form360_id',$existingForm->id)->update(
+                $fieldsets['apprenticeship']
+            );
 
-        DB::table('form360_work_experience')->insert([
-            $fieldsets['workExperienceData']
-        ]);
+            DB::table('form360_work_experience')->where('form360_id',$existingForm->id)->update(
+                $fieldsets['workExperienceData']
+            );
 
-        DB::table('form360_work_experience_intra_companies')->insert([
-            $fieldsets['workExperienceIntraData']
-        ]);
+            DB::table('form360_work_experience_intra_companies')->where('form360_id',$existingForm->id)->update(
+                $fieldsets['workExperienceIntraData']
+            );
 
-        DB::table('form360_visa_history')->insert([
-            $fieldsets['visahistoryData']
-        ]);
+            DB::table('form360_visa_history')->where('form360_id',$existingForm->id)->update(
+                $fieldsets['visahistoryData']
+            );
 
-        DB::table('form360_travel_history')->insert([
-            $fieldsets['travelhistoryData']
-        ]);
+            DB::table('form360_travel_history')->where('form360_id',$existingForm->id)->update(
+                $fieldsets['travelhistoryData']
+            );
 
+            
+            DB::table('form360_countries_of_residence')->where('form360_id',$existingForm->id)->update(
+                $fieldsets['countryofresidenceData']
+            );
+
+            DB::table('form360_health_declaration')->where('form360_id',$existingForm->id)->update(
+                $fieldsets['healthdeclaration']
+            );
+
+            DB::table('form360_health_questions')->where('form360_id',$existingForm->id)->update(
+                $fieldsets['healthQuestion']
+            );
+
+            DB::table('form360_character')->where('form360_id',$existingForm->id)->update(
+                $fieldsets['character']
+            );
+
+            DB::table('form360_family_members')->where('form360_id',$existingForm->id)->update(
+                $fieldsets['familymember']
+            );
+          // dd($request);
+        }
         
-        DB::table('form360_countries_of_residence')->insert([
-            $fieldsets['countryofresidenceData']
-        ]);
-
-        DB::table('form360_health_declaration')->insert([
-            $fieldsets['healthdeclaration']
-        ]);
-
-        DB::table('form360_health_questions')->insert([
-            $fieldsets['healthQuestion']
-        ]);
-
-        DB::table('form360_character')->insert([
-            $fieldsets['character']
-        ]);
-
-        DB::table('form360_family_members')->insert([
-            $fieldsets['familymember']
-        ]);
         
         return redirect()->back()->with('success','Application Submitted Successfully!');
     }
@@ -593,6 +709,7 @@ class Form360Controller extends Controller
             'character' => $character,
             'familymember' => $familymember
         ];
+        
         return $fieldsetsData;
 
     }

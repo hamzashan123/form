@@ -19,7 +19,7 @@
                 <tr>
                     <td> Indicate where the visa applicant will be
                         working (full address)</td>
-                    <td> <input type="text" name="nomination_visa_appliciant" id="nomination_visa_appliciant" @if(isset($data['education'][0]->edu_info_junior_fullname)) value="{{$data['education'][0]->edu_info_junior_fullname}}" @endif /> </td>
+                    <td> <input type="text" name="nomination_visa_appliciant" id="nomination_visa_appliciant" /> </td>
                 </tr>
 
 
@@ -335,6 +335,7 @@
         </table>
 
     </div>
+    <input type="button" name="save" class="save action-button" value="Save" />
     <input type="button" name="next" class="next action-button" value="Next" />
     <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
 </fieldset>

@@ -101,7 +101,7 @@
     <li class="nav-item active ">
                 <a class="nav-link" href="{{route('admin.users.index')}}">
                     <i class="fas fa-fw fa-user"></i>
-                    <span>My Users</span></a>
+                    <span>My Clients</span></a>
     </li>
     @endif
     @if(Auth::user()->hasRole('user'))

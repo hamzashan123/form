@@ -5,38 +5,87 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class EmployerFormController extends Controller
 {
     public function index(){
-        return view('backend.forms.employerform.index');
+        if(!empty($_GET['userid']) && !empty($_GET['form_id'])){
+            $userid = $_GET['userid'];
+        }else{
+            $userid = Auth::user()->id;
+        }
+        
+
+            $data  =  DB::table('employerform')
+                        ->join('employerform_job', 'employerform.id', '=', 'employerform_job.employerform_id')
+                        ->join('employerform_labour', 'employerform.id', '=', 'employerform_labour.employerform_id')
+                        ->join('employerform_nomination', 'employerform.id', '=', 'employerform_nomination.employerform_id')
+                        ->join('employerform_sbs', 'employerform.id', '=', 'employerform_sbs.employerform_id')
+                        ->where('employerform.user_id',$userid)->select(
+                            'employerform.*',
+                            'employerform_job.*',
+                            'employerform_labour.*',
+                            'employerform_nomination.*',
+                            'employerform_sbs.*'
+                            )->get();
+         
+            //dd($data);
+            if(!empty($data[0])){
+                $data = $data[0];
+            }
+        
+        
+        return view('backend.forms.employerform.index',compact('data'));
     }
 
     public function save(Request $request){
-         //dd($request);
-         $formid = DB::table('employerform')->insertGetId([
-             'user_id' => auth()->user()->id,
-             'created_at' => date('m/d/Y h:i:s a'),
-             'updated_at' => date('m/d/Y h:i:s a')
-         ]);
+         
+        $formExist = DB::table('employerform')->where('user_id', Auth::user()->id)->exists();
+        if($formExist == false){
+            $formid = DB::table('employerform')->insertGetId([
+                'user_id' => auth()->user()->id,
+                'created_at' => date('m/d/Y h:i:s a'),
+                'updated_at' => date('m/d/Y h:i:s a')
+            ]);
 
-         $fieldsets = $this->getFieldsetsData($formid,$request);
+            $fieldsets = $this->getFieldsetsData($formid,$request);
 
-        DB::table('employerform_sbs')->insert([
-            $fieldsets['sbsData']
-        ]);
+            DB::table('employerform_sbs')->insert([
+                $fieldsets['sbsData']
+            ]);
 
-        DB::table('employerform_labour')->insert([
-            $fieldsets['labourData']
-        ]);
+            DB::table('employerform_labour')->insert([
+                $fieldsets['labourData']
+            ]);
 
-        DB::table('employerform_job')->insert([
-            $fieldsets['jobData']
-        ]);
+            DB::table('employerform_job')->insert([
+                $fieldsets['jobData']
+            ]);
 
-        DB::table('employerform_nomination')->insert([
-            $fieldsets['nominationData']
-        ]);
+            DB::table('employerform_nomination')->insert([
+                $fieldsets['nominationData']
+            ]);
+        }else{
+           $existingForm =  DB::table('employerform')->where('user_id', Auth::user()->id)->first();
+
+           $fieldsets = $this->getFieldsetsData($existingForm->id,$request);
+             DB::table('employerform_sbs')->where('employerform_id',$existingForm->id)->update(
+                $fieldsets['sbsData']
+             );
+
+            DB::table('employerform_labour')->where('employerform_id',$existingForm->id)->update(
+                $fieldsets['labourData']
+            );
+
+            DB::table('employerform_job')->where('employerform_id',$existingForm->id)->update(
+                $fieldsets['jobData']
+            );
+
+            DB::table('employerform_nomination')->where('employerform_id',$existingForm->id)->update(
+                $fieldsets['nominationData']
+            );
+        }
         
         
         return redirect()->back()->with('success','Application Submitted Successfully!');

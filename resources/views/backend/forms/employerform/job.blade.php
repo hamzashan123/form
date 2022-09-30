@@ -100,5 +100,6 @@
         </table>
 
     </div>
+    <input type="button" name="save" class="save action-button" value="Save" />
     <input type="button" name="next" class="next action-button" value="Next" />
 </fieldset>

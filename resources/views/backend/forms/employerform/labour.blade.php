@@ -273,7 +273,7 @@
 
 
 
-
+    <input type="button" name="save" class="save action-button" value="Save" />
     <input type="button" name="next" class="next action-button" value="Next" />
     <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
 

@@ -17,6 +17,10 @@
                     <td>
                         <select name="sbs_business_required_aus" id="sbs_business_required_aus" class="form-control">
                             <option value=""> Select Option </option>
+                            
+                            @if(!empty(isset($data->sbs_business_required_aus)))
+                                <option value="{{$data->sbs_business_required_aus}}" selected>{{$data->sbs_business_required_aus}}</option>
+                            @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -29,6 +33,9 @@
                     <td>
                         <select id="sbs_business_country" name="sbs_business_country" class="form-control">
                             <option value="">Select Nationality</option>
+                            @if(!empty(isset($data->sbs_business_country)))
+                                <option value="{{$data->sbs_business_country}}" selected>{{$data->sbs_business_country}}</option>
+                            @endif
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Aland Islands</option>
                             <option value="Albania">Albania</option>
@@ -307,7 +314,7 @@
                     <td> What is the business legal registered name
                     </td>
                     <td>
-                        <input type="text" name="sbs_business_legal_registered" id="sbs_business_legal_registered" />
+                        <input type="text" name="sbs_business_legal_registered" id="sbs_business_legal_registered" @if(isset($data->sbs_business_legal_registered)) value="{{$data->sbs_business_legal_registered}}" @endif/>
                     </td>
                 </tr>
 
@@ -317,7 +324,7 @@
 
                     </td>
                     <td>
-                        <input type="text" name="sbs_business_trading" id="sbs_business_trading" />
+                        <input type="text" name="sbs_business_trading" id="sbs_business_trading" @if(isset($data->sbs_business_trading)) value="{{$data->sbs_business_trading}}" @endif/>
                     </td>
                 </tr>
 
@@ -330,7 +337,7 @@
 
                     </td>
                     <td>
-                        <input type="text" name="sbs_business_abn" id="sbs_business_abn" />
+                        <input type="text" name="sbs_business_abn" id="sbs_business_abn" @if(isset($data->sbs_business_abn)) value="{{$data->sbs_business_abn}}" @endif/>
                     </td>
                 </tr>
 
@@ -1934,5 +1941,6 @@
 
 
     </div>
+    <input type="button" name="save" class="save action-button" value="Save" />
     <input type="button" name="next" class="next action-button" value="Next" />
 </fieldset>

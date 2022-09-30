@@ -47,7 +47,7 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label for="phone" class="text-small text-uppercase">{{ __('Phone') }}</label>
-                                                <input id="phone" type="number" class="form-control form-control-lg" name="phone" placeholder="Enter your Phone Number">
+                                                <input id="phonereg" type="number" class="form-control form-control-lg" name="phone" >
                                                 @error('phone')<span class="text-danger" role="alert"><strong>{{ $message }}</strong></span>@enderror
                                             </div>
                                         </div>

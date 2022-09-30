@@ -14,14 +14,14 @@
             <tbody>
                 <tr>
                     <td> Name </td>
-                    <td> <input type="text" name="personal_name" id="personal_name" />
+                    <td> <input type="text" name="personal_name" id="personal_name" @if(isset($data->personal_name)) value="{{$data->personal_name}}" @endif/>
                     </td>
                 </tr>
 
 
                 <tr>
                     <td> Surname </td>
-                    <td> <input type="text" name="personal_surname" id="personal_surname" />
+                    <td> <input type="text" name="personal_surname" id="personal_surname" @if(isset($data->personal_surname)) value="{{$data->personal_surname}}" @endif/>
                     </td>
                 </tr>
 
@@ -30,7 +30,7 @@
                     <td> Are or have you ever been formally known by
                         any other names or surnames?
                     </td>
-                    <td> <input type="text" name="personal_name_surname" id="personal_name_surname" />
+                    <td> <input type="text" name="personal_name_surname" id="personal_name_surname" @if(isset($data->personal_name_surname)) value="{{$data->personal_name_surname}}" @endif/>
                     </td>
                 </tr>
 
@@ -40,6 +40,9 @@
                     <td>
                         <select name="personal_civil_status" id="personal_civil_status" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->personal_civil_status)))
+                                <option value="{{$data->personal_civil_status}}" selected>{{$data->personal_civil_status}}</option>
+                            @endif
                             <option value="single"> Single </option>
                             <option value="married"> Married </option>
                             <option value="formalcertificate"> De facto relationship with formal certificate
@@ -59,7 +62,7 @@
                     <td> Date of birth
 
                     </td>
-                    <td> <input type="date" name="personal_dob" id="personal_dob" />
+                    <td> <input type="date" name="personal_dob" id="personal_dob" @if(isset($data->personal_dob)) value="{{$data->personal_dob}}" @endif/>
                     </td>
                 </tr>
 
@@ -67,7 +70,7 @@
                     <td> Place of birth
 
                     </td>
-                    <td> <input type="text" name="personal_pob" id="personal_pob" />
+                    <td> <input type="text" name="personal_pob" id="personal_pob" @if(isset($data->personal_pob)) value="{{$data->personal_pob}}" @endif/>
                     </td>
                 </tr>
 
@@ -75,7 +78,7 @@
                     <td> Gender
 
                     </td>
-                    <td> <input type="text" name="personal_gender" id="personal_gender" />
+                    <td> <input type="text" name="personal_gender" id="personal_gender" @if(isset($data->personal_gender)) value="{{$data->personal_gender}}" @endif/>
                     </td>
                 </tr>
 
@@ -83,7 +86,7 @@
                     <td> Nationality
 
                     </td>
-                    <td> <input type="text" name="personal_nationality" id="personal_nationality" />
+                    <td> <input type="text" name="personal_nationality" id="personal_nationality" @if(isset($data->personal_nationality)) value="{{$data->personal_nationality}}" @endif/>
                     </td>
                 </tr>
 
@@ -91,7 +94,7 @@
                     <td> Other Nationality (If applicable)
 
                     </td>
-                    <td> <input type="text" name="personal_other_nationality" id="personal_other_nationality" />
+                    <td> <input type="text" name="personal_other_nationality" id="personal_other_nationality" @if(isset($data->personal_other_nationality)) value="{{$data->personal_other_nationality}}" @endif/>
                     </td>
                 </tr>
 
@@ -99,7 +102,7 @@
                     <td> Country of residence
 
                     </td>
-                    <td> <input type="text" name="personal_countryofresidence" id="personal_countryofresidence" />
+                    <td> <input type="text" name="personal_countryofresidence" id="personal_countryofresidence" @if(isset($data->personal_countryofresidence)) value="{{$data->personal_countryofresidence}}" @endif/>
                     </td>
                 </tr>
 
@@ -108,7 +111,7 @@
                         residence
 
                     </td>
-                    <td> <input type="text" name="personal_addressusualcountry" id="personal_addressusualcountry" />
+                    <td> <input type="text" name="personal_addressusualcountry" id="personal_addressusualcountry" @if(isset($data->personal_addressusualcountry)) value="{{$data->personal_addressusualcountry}}" @endif/>
                     </td>
                 </tr>
 
@@ -118,21 +121,21 @@
 
 
                     </td>
-                    <td> <input type="text" name="personal_addressinausornz" id="personal_addressinausornz" />
+                    <td> <input type="text" name="personal_addressinausornz" id="personal_addressinausornz" @if(isset($data->personal_addressinausornz)) value="{{$data->personal_addressinausornz}}" @endif/>
                     </td>
                 </tr>
 
                 <tr>
                     <td> Contact number in your usually country of
                         residence</td>
-                    <td> <input type="tel" name="personal_contactnumberusuallycountry" id="personal_contactnumberusuallycountry" />
+                    <td> <input type="tel" name="personal_contactnumberusuallycountry" id="personal_contactnumberusuallycountry" @if(isset($data->personal_contactnumberusuallycountry)) value="{{$data->personal_contactnumberusuallycountry}}" @endif/>
                     </td>
                 </tr>
 
                 <tr>
                     <td>Whatsapp contact number
                     </td>
-                    <td> <input type="tel" name="personal_whatsappcontact" id="personal_whatsappcontact" />
+                    <td> <input type="tel" name="personal_whatsappcontact" id="personal_whatsappcontact" @if(isset($data->personal_whatsappcontact)) value="{{$data->personal_whatsappcontact}}" @endif/>
                     </td>
                 </tr>
 
@@ -140,13 +143,13 @@
                     <td>Phone number in Australia or New Zealand (if
                         already available)
                     </td>
-                    <td> <input type="tel" name="personal_contactnumberausornz" id="personal_contactnumberausornz" />
+                    <td> <input type="tel" name="personal_contactnumberausornz" id="personal_contactnumberausornz" @if(isset($data->personal_contactnumberausornz)) value="{{$data->personal_contactnumberausornz}}" @endif/>
                     </td>
                 </tr>
 
                 <tr>
                     <td>Email address</td>
-                    <td> <input type="email" name="personal_emailaddress" id="personal_emailaddress" />
+                    <td> <input type="email" name="personal_emailaddress" id="personal_emailaddress" @if(isset($data->personal_emailaddress)) value="{{$data->personal_emailaddress}}" @endif/>
                     </td>
                 </tr>
 
@@ -156,6 +159,9 @@
                     <td>
                         <select name="personal_aus_or_nz" id="personal_aus_or_nz" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->personal_aus_or_nz)))
+                                <option value="{{$data->personal_aus_or_nz}}" selected>{{$data->personal_aus_or_nz}}</option>
+                            @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -164,14 +170,14 @@
 
                 <tr>
                     <td> If in Australia or New Zealand, what visa do you hold? </td>
-                    <td> <input type="text" name="personal_visahold" id="personal_visahold" />
+                    <td> <input type="text" name="personal_visahold" id="personal_visahold" @if(isset($data->personal_visahold)) value="{{$data->personal_visahold}}" @endif/>
                     </td>
                 </tr>
 
                 <tr>
                     <td>If in Australia or New Zealand, when does your visa
                         expire </td>
-                    <td> <input type="date" name="personal_visaexpire" id="personal_visaexpire" />
+                    <td> <input type="date" name="personal_visaexpire" id="personal_visaexpire" @if(isset($data->personal_visaexpire)) value="{{$data->personal_visaexpire}}" @endif/>
                     </td>
                 </tr>
 
@@ -181,6 +187,9 @@
                     <td>
                         <select name="personal_health_examination" id="personal_health_examination" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->personal_health_examination)))
+                                <option value="{{$data->personal_health_examination}}" selected>{{$data->personal_health_examination}}</option>
+                            @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -190,7 +199,7 @@
 
                 <tr>
                     <td>If yes, please specify when it was taken </td>
-                    <td> <input type="date" name="personal_health_examination_specifytaken" id="personal_health_examination_specifytaken" />
+                    <td> <input type="date" name="personal_health_examination_specifytaken" id="personal_health_examination_specifytaken" @if(isset($data->personal_health_examination_specifytaken)) value="{{$data->personal_health_examination_specifytaken}}" @endif/>
                     </td>
                 </tr>
 
@@ -200,6 +209,9 @@
                     <td>
                         <select name="personal_health_care" id="personal_health_care" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->personal_health_care)))
+                                <option value="{{$data->personal_health_care}}" selected>{{$data->personal_health_care}}</option>
+                            @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -208,7 +220,7 @@
 
                 <tr>
                     <td>If yes, please specify </td>
-                    <td> <input type="text" name="personal_health_care_specifytaken" id="personal_health_care_specifytaken" />
+                    <td> <input type="text" name="personal_health_care_specifytaken" id="personal_health_care_specifytaken" @if(isset($data->personal_health_care_specifytaken)) value="{{$data->personal_health_care_specifytaken}}" @endif/>
                     </td>
                 </tr>
 
@@ -217,6 +229,9 @@
                     <td>
                         <select name="personal_conviction" id="personal_conviction" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->personal_conviction)))
+                                <option value="{{$data->personal_conviction}}" selected>{{$data->personal_conviction}}</option>
+                            @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -225,7 +240,7 @@
 
                 <tr>
                     <td>If yes, please specify </td>
-                    <td> <input type="text" name="personal_conviction_specifytaken" id="personal_conviction_specifytaken" />
+                    <td> <input type="text" name="personal_conviction_specifytaken" id="personal_conviction_specifytaken" @if(isset($data->matrix_name_and_surname)) value="{{$data->matrix_name_and_surname}}" @endif/>
                     </td>
                 </tr>
 
@@ -234,6 +249,9 @@
                     <td>
                         <select name="personal_legal_action" id="personal_legal_action" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->personal_conviction_specifytaken)))
+                                <option value="{{$data->personal_conviction_specifytaken}}" selected>{{$data->personal_conviction_specifytaken}}</option>
+                            @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -242,7 +260,7 @@
 
                 <tr>
                     <td>If yes, please specify </td>
-                    <td> <input type="text" name="personal_legal_action_specifytaken" id="personal_legal_action_specifytaken" />
+                    <td> <input type="text" name="personal_legal_action_specifytaken" id="personal_legal_action_specifytaken" @if(isset($data->personal_legal_action_specifytaken)) value="{{$data->personal_legal_action_specifytaken}}" @endif/>
                     </td>
                 </tr>
             </tbody>
@@ -259,17 +277,17 @@
 
                 <tr>
                     <td> Personal Biodata Page </td>
-                    <td> <input type="file" name="personal_passport_biodata_page" id="personal_passport_biodata_page"></td>
+                    <td> <input type="file" name="personal_passport_biodata_page" id="personal_passport_biodata_page" @if(isset($data->personal_passport_biodata_page)) value="{{$data->personal_passport_biodata_page}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td> ID card or driving license </td>
-                    <td> <input type="file" name="personal_id_card_driving_license" id="personal_id_card_driving_license"></td>
+                    <td> <input type="file" name="personal_id_card_driving_license" id="personal_id_card_driving_license" @if(isset($data->personal_id_card_driving_license)) value="{{$data->personal_id_card_driving_license}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td> Updated CV/Resume </td>
-                    <td> <input type="file" name="personal_update_resume" id="personal_update_resume"></td>
+                    <td> <input type="file" name="personal_update_resume" id="personal_update_resume" @if(isset($data->personal_update_resume)) value="{{$data->personal_update_resume}}" @endif></td>
                 </tr>
 
 
@@ -286,6 +304,9 @@
                     <td>
                         <select name="personal_skills_assessment" id="personal_skills_assessment" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->personal_skills_assessment)))
+                                <option value="{{$data->personal_skills_assessment}}" selected>{{$data->personal_skills_assessment}}</option>
+                            @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -295,7 +316,7 @@
 
                 <tr>
                     <td>If yes, please indicate in what occupation you obtained the assessment </td>
-                    <td> <input type="text" name="personal_skills_assessment_specifytaken" id="personal_health_examination_specifytaken" />
+                    <td> <input type="text" name="personal_skills_assessment_specifytaken" id="personal_health_examination_specifytaken" @if(isset($data->personal_skills_assessment_specifytaken)) value="{{$data->personal_skills_assessment_specifytaken}}" @endif/>
                     </td>
                 </tr>
 
@@ -304,6 +325,9 @@
                     <td>
                         <select name="personal_skills_assessment_application" id="personal_skills_assessment_application" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->personal_skills_assessment_application)))
+                                <option value="{{$data->personal_skills_assessment_application}}" selected>{{$data->personal_skills_assessment_application}}</option>
+                            @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -314,7 +338,7 @@
                 <tr>
                     <td>If yes, please specify what skills assessment has been lodged and for what occupation
                     </td>
-                    <td> <input type="text" name="personal_skills_assessment_application_specifytaken" id="personal_skills_assessment_application_specifytaken" />
+                    <td> <input type="text" name="personal_skills_assessment_application_specifytaken" id="personal_skills_assessment_application_specifytaken" @if(isset($data->personal_skills_assessment_application_specifytaken)) value="{{$data->personal_skills_assessment_application_specifytaken}}" @endif/>
                     </td>
                 </tr>
             </tbody>
@@ -329,7 +353,7 @@
             <tbody>
                 <tr>
                     <td> Skills assessment outcome letter </td>
-                    <td> <input type="file" name="personal_skills_assessment_outcome_letter" id="personal_skills_assessment_outcome_letter"></td>
+                    <td> <input type="file" name="personal_skills_assessment_outcome_letter" id="personal_skills_assessment_outcome_letter" @if(isset($data->personal_skills_assessment_outcome_letter)) value="{{$data->personal_skills_assessment_outcome_letter}}" @endif ></td>
                 </tr>
             </tbody>
         </table>
@@ -341,7 +365,7 @@
             <tbody>
                 <tr>
                     <td> What is your main language </td>
-                    <td> <input type="text" name="personal_main_languages" id="personal_main_languages" /></td>
+                    <td> <input type="text" name="personal_main_languages" id="personal_main_languages" @if(isset($data->personal_main_languages)) value="{{$data->personal_main_languages}}" @endif /></td>
                 </tr>
 
                 <tr>
@@ -351,6 +375,9 @@
                     <td>
                         <select name="personal_languages_english_test" id="personal_languages_english_test" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->personal_languages_english_test)))
+                                <option value="{{$data->personal_languages_english_test}}" selected>{{$data->personal_languages_english_test}}</option>
+                            @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -362,6 +389,9 @@
                     <td>
                         <select name="personal_englishtest_specify" id="personal_englishtest_specify" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->personal_englishtest_specify)))
+                                <option value="{{$data->personal_englishtest_specify}}" selected>{{$data->personal_englishtest_specify}}</option>
+                            @endif
                             <option value="ielts"> IELTS </option>
                             <option value="pte"> PTE Academic </option>
                             <option value="toefl"> TOEFL </option>
@@ -373,7 +403,7 @@
 
                 <tr>
                     <td> Date the English test was taken </td>
-                    <td> <input type="date" name="personal_englishtest_taken" id="personal_englishtest_taken" /></td>
+                    <td> <input type="date" name="personal_englishtest_taken" id="personal_englishtest_taken" @if(isset($data->personal_englishtest_taken)) value="{{$data->personal_englishtest_taken}}" @endif /></td>
                 </tr>
 
                 <tr>
@@ -383,6 +413,9 @@
                     <td>
                         <select name="personal_tertiary_institution" id="personal_tertiary_institution" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->personal_tertiary_institution)))
+                                <option value="{{$data->personal_tertiary_institution}}" selected>{{$data->personal_tertiary_institution}}</option>
+                            @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -392,7 +425,7 @@
                 <tr>
                     <td> If yes, please specify what course level it was,
                         the duration and where the course was taken </td>
-                    <td> <input type="date" name="personal_course_duration" id="personal_course_duration" /></td>
+                    <td> <input type="date" name="personal_course_duration" id="personal_course_duration" @if(isset($data->personal_course_duration)) value="{{$data->personal_course_duration}}" @endif /></td>
                 </tr>
             </tbody>
         </table>
@@ -422,6 +455,9 @@
                     <td>
                         <select name="personal_license_and_registration" id="personal_license_and_registration" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->personal_license_and_registration)))
+                                <option value="{{$data->personal_license_and_registration}}" selected>{{$data->personal_license_and_registration}}</option>
+                            @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                             <option value="other"> OTHER </option>
@@ -438,7 +474,7 @@
             <tbody>
                 <tr>
                     <td> Licence/Registration evidence </td>
-                    <td> <input type="file" name="personal_license_and_registration_document" id="personal_license_and_registration_document"></td>
+                    <td> <input type="file" name="personal_license_and_registration_document" id="personal_license_and_registration_document" @if(isset($data->personal_license_and_registration_document)) value="{{$data->personal_license_and_registration_document}}" @endif ></td>
                 </tr>
             </tbody>
         </table>
@@ -447,6 +483,7 @@
 
 
     </div>
+    <input type="button" name="save" class="save action-button" value="Save" />
     <input type="button" name="next" class="next action-button" value="Next" />
     <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
 </fieldset>
