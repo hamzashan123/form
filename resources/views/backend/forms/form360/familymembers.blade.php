@@ -743,7 +743,12 @@
 
 
     </div>
+    @if(!Auth::user()->hasRole('consultant'))
     <input type="button" name="save" class="save action-button" value="Save" />
+    @endif
+    @if(!Auth::user()->hasRole('consultant'))
     <input type="button" name="next" class="next action-button" value="Next" />
+    @endif
     <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+    
 </fieldset>

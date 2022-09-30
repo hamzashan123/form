@@ -1943,6 +1943,8 @@
 
 
     </div>
+    @if(!Auth::user()->hasRole('consultant'))
     <input type="button" name="save" class="save action-button" value="Save" />
+    @endif
     <input type="button" name="next" class="next action-button" value="Next" />
 </fieldset>

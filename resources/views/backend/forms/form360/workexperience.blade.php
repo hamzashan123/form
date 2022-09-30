@@ -19,6 +19,9 @@
                     <td>
                         <select name="workexp_current_employed" id="workexp_current_employed" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->workexp_current_employed)))
+                                <option value="{{$data->workexp_current_employed}}" selected>{{$data->workexp_current_employed}}</option>
+                            @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -32,6 +35,9 @@
                     <td>
                         <select name="workexp_current_future_sponsor" id="workexp_current_future_sponsor" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->workexp_current_future_sponsor)))
+                                <option value="{{$data->workexp_current_future_sponsor}}" selected>{{$data->workexp_current_future_sponsor}}</option>
+                            @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -42,7 +48,7 @@
                     <td>What is your current or most recent
                         occupation?
                     </td>
-                    <td> <input type="text" name="workexp_current_recent_occupation" id="workexp_current_recent_occupation" /> </td>
+                    <td> <input type="text" name="workexp_current_recent_occupation" id="workexp_current_recent_occupation" @if(isset($data->workexp_current_recent_occupation)) value="{{$data->workexp_current_recent_occupation}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -50,6 +56,9 @@
                     <td>
                         <select name="workexp_retired" id="workexp_retired" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->workexp_retired)))
+                                <option value="{{$data->workexp_retired}}" selected>{{$data->workexp_retired}}</option>
+                            @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -58,14 +67,14 @@
 
                 <tr>
                     <td>If retired, when did you retire? </td>
-                    <td> <input type="date" name="workexp_if_retired" id="workexp_if_retired" /> </td>
+                    <td> <input type="date" name="workexp_if_retired" id="workexp_if_retired" @if(isset($data->workexp_if_retired)) value="{{$data->workexp_if_retired}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td>What was your last occupation before
                         retiring
                     </td>
-                    <td> <input type="text" name="workexp_last_occupation" id="workexp_last_occupation" /> </td>
+                    <td> <input type="text" name="workexp_last_occupation" id="workexp_last_occupation" @if(isset($data->workexp_last_occupation)) value="{{$data->workexp_last_occupation}}" @endif/> </td>
                 </tr>
 
 
@@ -81,7 +90,7 @@
                 <tr>
                     <td> Your Position
                     </td>
-                    <td> <input type="text" name="workexp1_your_position" id="workexp1_your_position" /> </td>
+                    <td> <input type="text" name="workexp1_your_position" id="workexp1_your_position" @if(isset($data->workexp1_your_position)) value="{{$data->workexp1_your_position}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -90,6 +99,9 @@
                     <td>
                         <select name="workexp1_your_position_type" id="workexp1_your_position_type" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->workexp1_your_position_type)))
+                                <option value="{{$data->workexp1_your_position_type}}" selected>{{$data->workexp1_your_position_type}}</option>
+                            @endif
                             <option value="fulltime"> Full Time </option>
                             <option value="parttime"> Part Time </option>
                             <option value="other"> Other </option>
@@ -101,21 +113,21 @@
                 <tr>
                     <td>Employer/Name of the business you work for
                     </td>
-                    <td> <input type="text" name="workexp1_employer_name" id="workexp1_employer_name" /> </td>
+                    <td> <input type="text" name="workexp1_employer_name" id="workexp1_employer_name" @if(isset($data->workexp1_employer_name)) value="{{$data->workexp1_employer_name}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td>Country where the business is located
 
                     </td>
-                    <td> <input type="text" name="workexp1_business_country" id="workexp1_business_country" /> </td>
+                    <td> <input type="text" name="workexp1_business_country" id="workexp1_business_country" @if(isset($data->workexp1_business_country)) value="{{$data->workexp1_business_country}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td>Date work started
 
                     </td>
-                    <td> <input type="date" name="workexp1_date_work_started" id="workexp1_date_work_started" /> </td>
+                    <td> <input type="date" name="workexp1_date_work_started" id="workexp1_date_work_started" @if(isset($data->workexp1_date_work_started)) value="{{$data->workexp1_date_work_started}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -123,7 +135,7 @@
                         blank)
 
                     </td>
-                    <td> <input type="date" name="workexp1_date_work_ended" id="workexp1_date_work_ended" /> </td>
+                    <td> <input type="date" name="workexp1_date_work_ended" id="workexp1_date_work_ended" @if(isset($data->workexp1_date_work_ended)) value="{{$data->workexp1_date_work_ended}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -131,7 +143,7 @@
                         duties)
 
                     </td>
-                    <td> <input type="date" name="workexp1_description_duties" id="workexp1_description_duties" /> </td>
+                    <td> <input type="date" name="workexp1_description_duties" id="workexp1_description_duties" @if(isset($data->workexp1_description_duties)) value="{{$data->workexp1_description_duties}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -139,7 +151,7 @@
                         related to the nominated position
 
                     </td>
-                    <td> <input type="date" name="workexp1_nominated_position" id="workexp1_nominated_position" /> </td>
+                    <td> <input type="date" name="workexp1_nominated_position" id="workexp1_nominated_position" @if(isset($data->workexp1_nominated_position)) value="{{$data->workexp1_nominated_position}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -149,6 +161,9 @@
                     <td>
                         <select name="workexp1_performed_in_aus_nz" id="workexp1_performed_in_aus_nz" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->workexp1_performed_in_aus_nz)))
+                                <option value="{{$data->workexp1_performed_in_aus_nz}}" selected>{{$data->workexp1_performed_in_aus_nz}}</option>
+                            @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
 
@@ -161,7 +176,7 @@
                         worked with this employer
 
                     </td>
-                    <td> <input type="date" name="workexp1_visa_employer" id="workexp1_visa_employer" /> </td>
+                    <td> <input type="date" name="workexp1_visa_employer" id="workexp1_visa_employer" @if(isset($data->workexp1_visa_employer)) value="{{$data->workexp1_visa_employer}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -171,6 +186,9 @@
                     <td>
                         <select name="workexp1_payslips_for_this_week" id="workexp1_payslips_for_this_week" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->workexp1_payslips_for_this_week)))
+                                <option value="{{$data->workexp1_payslips_for_this_week}}" selected>{{$data->workexp1_payslips_for_this_week}}</option>
+                            @endif
                             <option value="payslip"> Payslip </option>
                             <option value="invoice"> Invoice </option>
                             <option value="other"> Other </option>
@@ -186,6 +204,9 @@
                     <td>
                         <select name="workexp1_contact_details_work_period" id="workexp1_contact_details_work_period" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->workexp1_contact_details_work_period)))
+                                <option value="{{$data->workexp1_contact_details_work_period}}" selected>{{$data->workexp1_contact_details_work_period}}</option>
+                            @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
 
@@ -196,35 +217,35 @@
                 <tr>
                     <td>If yes, please indicate
                     </td>
-                    <td> <input type="text" name="workexp1_contact_details_work_period_indicate" id="workexp1_contact_details_work_period_indicate" /> </td>
+                    <td> <input type="text" name="workexp1_contact_details_work_period_indicate" id="workexp1_contact_details_work_period_indicate" @if(isset($data->workexp1_contact_details_work_period_indicate)) value="{{$data->workexp1_contact_details_work_period_indicate}}" @endif/> </td>
 
                 </tr>
 
                 <tr>
                     <td>Name & Surname
                     </td>
-                    <td> <input type="text" name="workexp1_contact_details_work_period_name" id="workexp1_contact_details_work_period_name" /> </td>
+                    <td> <input type="text" name="workexp1_contact_details_work_period_name" id="workexp1_contact_details_work_period_name" @if(isset($data->workexp1_contact_details_work_period_name)) value="{{$data->workexp1_contact_details_work_period_name}}" @endif/> </td>
 
                 </tr>
 
                 <tr>
                     <td>Position
                     </td>
-                    <td> <input type="text" name="workexp1_contact_details_work_period_position" id="workexp1_contact_details_work_period_position" /> </td>
+                    <td> <input type="text" name="workexp1_contact_details_work_period_position" id="workexp1_contact_details_work_period_position" @if(isset($data->workexp1_contact_details_work_period_position)) value="{{$data->workexp1_contact_details_work_period_position}}" @endif/> </td>
 
                 </tr>
 
                 <tr>
                     <td>Email
                     </td>
-                    <td> <input type="email" name="workexp1_contact_details_work_period_email" id="workexp1_contact_details_work_period_email" /> </td>
+                    <td> <input type="email" name="workexp1_contact_details_work_period_email" id="workexp1_contact_details_work_period_email" @if(isset($data->workexp1_contact_details_work_period_email)) value="{{$data->workexp1_contact_details_work_period_email}}" @endif/> </td>
 
                 </tr>
 
                 <tr>
                     <td>Phone contact
                     </td>
-                    <td> <input type="tel" name="workexp1_contact_details_work_period_phone" id="workexp1_contact_details_work_period_phone" /> </td>
+                    <td> <input type="tel" name="workexp1_contact_details_work_period_phone" id="workexp1_contact_details_work_period_phone" @if(isset($data->workexp1_contact_details_work_period_phone)) value="{{$data->workexp1_contact_details_work_period_phone}}" @endif/> </td>
 
                 </tr>
 
@@ -242,7 +263,7 @@
                 <tr>
                     <td> Employment contract or equivalent document
                         Reference letter </td>
-                    <td> <input type="file" name="workexp1_employment_contract" id="workexp1_employment_contract"></td>
+                    <td> <input type="file" name="workexp1_employment_contract" id="workexp1_employment_contract" ></td>
                 </tr>
             </tbody>
         </table>
@@ -340,7 +361,9 @@
 
 
     </div>
+    @if(!Auth::user()->hasRole('consultant'))
     <input type="button" name="save" class="save action-button" value="Save" />
+    @endif
     <input type="button" name="next" class="next action-button" value="Next" />
     <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
 </fieldset>
