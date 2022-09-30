@@ -1,5 +1,7 @@
 <fieldset id="fieldsetnine">
     <div class="form-card">
+        <h2 class="fs-title" style="text-align: center;">SECTION 9:</h2>
+
         <div class="row">
             <div class="col-7">
                 <h2 class="fs-title">TRAVEL HISTORY GENERAL – TRAVELS FOR LESS THAN 3 MONTHS IN THE LAST 10 YEARS</h2>

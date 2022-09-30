@@ -1,5 +1,7 @@
 <fieldset id="fieldsetten">
     <div class="form-card">
+        <h2 class="fs-title" style="text-align: center;">SECTION 10:</h2>
+
         <div class="row">
             <div class="col-7">
                 <h2 class="fs-title">COUNTRIES OF RESIDENCE – AT LEAST 12 MONTHS</h2>

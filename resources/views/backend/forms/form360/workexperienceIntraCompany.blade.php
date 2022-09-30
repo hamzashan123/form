@@ -1,5 +1,7 @@
 <fieldset id="fieldsetseven">
     <div class="form-card">
+        <h2 class="fs-title" style="text-align: center;">SECTION 7:</h2>
+
         <div class="row">
             <div class="col-7">
                 <h2 class="fs-title">- WORK EXPERIENCE – FOR INTRA COMPANY VISAS:</h2>

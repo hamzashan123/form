@@ -1,5 +1,7 @@
 <fieldset id="fieldsetfive">
     <div class="form-card">
+        <h2 class="fs-title" style="text-align: center;">SECTION 5:</h2>
+
         <div class="row">
             <div class="col-7">
                 <h2 class="fs-title">APRENTICESHIP:</h2>

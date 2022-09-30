@@ -1,5 +1,7 @@
 <fieldset id="fieldseteight">
     <div class="form-card">
+        <h2 class="fs-title" style="text-align: center;">SECTION 8:</h2>
+
         <div class="row">
             <div class="col-7">
                 <h2 class="fs-title">VISA HISTORY QUESTIONS</h2>

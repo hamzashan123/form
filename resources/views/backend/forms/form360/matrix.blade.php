@@ -1,5 +1,6 @@
 <fieldset id="fieldsetone">
     <div class="form-card">
+        <h2 class="fs-title" style="text-align: center;">SECTION 1:</h2>
         <div class="row">
             <div class="col-7">
                 <h2 class="fs-title">MATRIX:</h2>

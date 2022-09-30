@@ -1,5 +1,7 @@
 <fieldset id="fieldsetsix">
     <div class="form-card">
+        <h2 class="fs-title" style="text-align: center;">SECTION 6:</h2>
+
         <div class="row">
             <div class="col-7">
                 <h2 class="fs-title">- WORK EXPERIENCE (CURRENT OR MOST RECENT) NOT OLDER THAN 10 YEARS:</h2>
