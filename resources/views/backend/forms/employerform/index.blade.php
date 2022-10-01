@@ -30,7 +30,9 @@
                     <div class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                     </div> <br> <!-- fieldsets -->
-
+                    @if(Auth::user()->hasRole('consultant'))
+                    <a id="correctemail" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px; display:none;">Send Correction Email</a>
+                    @endif
                     @include('backend.forms.employerform.sbs')
                     @include('backend.forms.employerform.nomination')
                     @include('backend.forms.employerform.labour')
