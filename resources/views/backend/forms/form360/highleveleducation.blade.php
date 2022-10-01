@@ -472,7 +472,7 @@
 
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification3_thesis_project_if" id="higher_level_qualification3_thesis_project_if" @if(isset($data->higher_level_qualification3_thesis_project_if)) value="{{$data->matrix_name_and_surhigher_level_qualification3_thesis_project_ifname}}" @endif/>
+                    <td> <input type="text" name="higher_level_qualification3_thesis_project_if" id="higher_level_qualification3_thesis_project_if" @if(isset($data->higher_level_qualification3_thesis_project_if)) value="{{$data->higher_level_qualification3_thesis_project_if}}" @endif/>
                     </td>
                 </tr>
 
