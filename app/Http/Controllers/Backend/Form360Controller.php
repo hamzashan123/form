@@ -61,12 +61,11 @@ class Form360Controller extends Controller
         }                   
           
         //dd($data->matrix_name_and_surname);
-        if(Auth::user()->hasRole('admin')){
-            return view('backend.forms.form360.index');
-            
-        }else{
+        // if(Auth::user()->hasRole('admin')){
+        //     return view('backend.forms.form360.index');
+        // }else{
             return view('backend.forms.form360.index',compact('data'));
-        }         
+        // }         
         
         
     }
