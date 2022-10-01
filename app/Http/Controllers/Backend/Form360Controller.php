@@ -60,8 +60,14 @@ class Form360Controller extends Controller
             $data = $data[0];
         }                   
           
-        //dd($data->matrix_name_and_surname);         
-        return view('backend.forms.form360.index',compact('data'));
+        //dd($data->matrix_name_and_surname);
+        if(Auth::user()->hasRole('admin')){
+            return view('backend.forms.form360.index');
+            
+        }else{
+            return view('backend.forms.form360.index',compact('data'));
+        }         
+        
         
     }
 
