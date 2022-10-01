@@ -56,18 +56,18 @@
     </li>
     @endif
     @if(Auth::user()->hasRole('admin'))
-    <li class="nav-item active ">
+    <!-- <li class="nav-item active ">
                 <a class="nav-link" href="{{route('admin.form360.index')}}">
                 <i class="fas fa-clock fa-2x text-gray-300"></i>
                     <span>Draft Applications</span></a>
-    </li>
+    </li> -->
     @endif
     @if(Auth::user()->hasRole('admin'))
-    <li class="nav-item active ">
+    <!-- <li class="nav-item active ">
                 <a class="nav-link" href="{{route('admin.form360.index')}}">
                 <i class="fas fa-check fa-2x text-gray-300"></i>
                     <span>Submitted Applications</span></a>
-    </li>
+    </li> -->
     @endif
     @forelse($admin_side_menu as $link)
         @can($link->permission_title)
