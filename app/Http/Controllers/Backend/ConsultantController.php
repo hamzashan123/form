@@ -39,7 +39,7 @@ class ConsultantController extends Controller
                     'comments' => 'assigned to consultant',
                     'assigned_by_id' => auth()->user()->id
                 ]);
-                $userdetail = User::find($user);
+                $userdetail = User::find($request->consultant_id);
                 
                 $userData = [
                     'username' => $userdetail->username,

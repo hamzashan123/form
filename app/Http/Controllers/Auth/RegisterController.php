@@ -74,7 +74,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        // dd($data);
+        //dd($data);
         $user = User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
@@ -86,7 +86,7 @@ class RegisterController extends Controller
         ]);
         
         $user->markEmailAsVerified();
-        $user->assignRole('user');
+        
 
         if($data['usertype'] == 'consultant'){
             $user->markEmailAsVerified();
@@ -112,7 +112,7 @@ class RegisterController extends Controller
             Mail::to($data['email'])->send(new RegisterUser($userData));
 
         }else if($data['usertype'] == 'user'){
-
+            $user->assignRole('user');
             $adminData = [
                 'username' => $data['username'],
                 'email' => $data['email'],

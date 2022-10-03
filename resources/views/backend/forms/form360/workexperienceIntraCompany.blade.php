@@ -19,6 +19,9 @@
                     <td>
                         <select name="workexpintracompany_current_employed" id="workexpintracompany_current_employed" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->workexpintracompany_current_employed)))
+                                <option value="{{$data->workexpintracompany_current_employed}}" selected>{{$data->workexpintracompany_current_employed}}</option>
+                            @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -33,6 +36,9 @@
                     <td>
                         <select name="workexpintracompany_current_working" id="workexpintracompany_current_working" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->workexpintracompany_current_working)))
+                                <option value="{{$data->workexpintracompany_current_working}}" selected>{{$data->workexpintracompany_current_working}}</option>
+                            @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -44,7 +50,7 @@
                         occupation?
                     </td>
                     <td>
-                        <input type="text" name="workexpintracompany_current_recent_occupation" id="workexpintracompany_current_recent_occupation" />
+                        <input type="text" name="workexpintracompany_current_recent_occupation" id="workexpintracompany_current_recent_occupation" @if(isset($data->workexpintracompany_current_recent_occupation)) value="{{$data->workexpintracompany_current_recent_occupation}}" @endif/>
                     </td>
                 </tr>
 
@@ -52,7 +58,7 @@
                 <tr>
                     <td> Your Position
                     </td>
-                    <td> <input type="text" name="workexpintracompany_your_position" id="workexpintracompany_your_position" /> </td>
+                    <td> <input type="text" name="workexpintracompany_your_position" id="workexpintracompany_your_position" @if(isset($data->workexpintracompany_your_position)) value="{{$data->workexpintracompany_your_position}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -61,6 +67,9 @@
                     <td>
                         <select name="workexpintracompany_your_position_type" id="workexpintracompany_your_position_type" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->workexpintracompany_your_position_type)))
+                                <option value="{{$data->workexpintracompany_your_position_type}}" selected>{{$data->workexpintracompany_your_position_type}}</option>
+                            @endif
                             <option value="fulltime"> Full Time </option>
                             <option value="parttime"> Part Time </option>
                             <option value="other"> Other </option>
@@ -72,21 +81,21 @@
                 <tr>
                     <td>Employer/Name of the business you work for
                     </td>
-                    <td> <input type="text" name="workexpintracompany_employer_name" id="workexpintracompany_employer_name" /> </td>
+                    <td> <input type="text" name="workexpintracompany_employer_name" id="workexpintracompany_employer_name" @if(isset($data->workexpintracompany_employer_name)) value="{{$data->workexpintracompany_employer_name}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td>Country where the business is located
 
                     </td>
-                    <td> <input type="text" name="workexpintracompany_business_country" id="workexpintracompany_business_country" /> </td>
+                    <td> <input type="text" name="workexpintracompany_business_country" id="workexpintracompany_business_country" @if(isset($data->workexpintracompany_business_country)) value="{{$data->workexpintracompany_business_country}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td>Date work started
 
                     </td>
-                    <td> <input type="date" name="workexpintracompany_date_work_started" id="workexpintracompany_date_work_started" /> </td>
+                    <td> <input type="date" name="workexpintracompany_date_work_started" id="workexpintracompany_date_work_started" @if(isset($data->workexpintracompany_date_work_started)) value="{{$data->workexpintracompany_date_work_started}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -94,7 +103,7 @@
                         blank)
 
                     </td>
-                    <td> <input type="date" name="workexpintracompany_date_work_ended" id="workexpintracompany_date_work_ended" /> </td>
+                    <td> <input type="date" name="workexpintracompany_date_work_ended" id="workexpintracompany_date_work_ended" @if(isset($data->workexpintracompany_date_work_ended)) value="{{$data->workexpintracompany_date_work_ended}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -102,7 +111,7 @@
                         duties)
 
                     </td>
-                    <td> <input type="date" name="workexpintracompany_description_duties" id="workexpintracompany_description_duties" /> </td>
+                    <td> <input type="date" name="workexpintracompany_description_duties" id="workexpintracompany_description_duties" @if(isset($data->workexpintracompany_description_duties)) value="{{$data->workexpintracompany_description_duties}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -110,7 +119,7 @@
                         related to the nominated position
 
                     </td>
-                    <td> <input type="date" name="workexpintracompany_nominated_position" id="workexpintracompany_nominated_position" /> </td>
+                    <td> <input type="date" name="workexpintracompany_nominated_position" id="workexpintracompany_nominated_position" @if(isset($data->workexpintracompany_nominated_position)) value="{{$data->workexpintracompany_nominated_position}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -120,6 +129,9 @@
                     <td>
                         <select name="workexpintracompany_performed_in_aus_nz" id="workexpintracompany_performed_in_aus_nz" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->workexpintracompany_performed_in_aus_nz)))
+                                <option value="{{$data->workexpintracompany_performed_in_aus_nz}}" selected>{{$data->workexpintracompany_performed_in_aus_nz}}</option>
+                            @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
 
@@ -132,7 +144,7 @@
                         worked with this employer
 
                     </td>
-                    <td> <input type="date" name="workexpintracompany_visa_employer" id="workexpintracompany_visa_employer" /> </td>
+                    <td> <input type="date" name="workexpintracompany_visa_employer" id="workexpintracompany_visa_employer" @if(isset($data->workexpintracompany_visa_employer)) value="{{$data->workexpintracompany_visa_employer}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -142,6 +154,9 @@
                     <td>
                         <select name="workexpintracompany_payslips_for_this_week" id="workexpintracompany_payslips_for_this_week" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->workexpintracompany_payslips_for_this_week)))
+                                <option value="{{$data->workexpintracompany_payslips_for_this_week}}" selected>{{$data->workexpintracompany_payslips_for_this_week}}</option>
+                            @endif
                             <option value="payslip"> Payslip </option>
                             <option value="invoice"> Invoice </option>
                             <option value="other"> Other </option>
@@ -157,6 +172,9 @@
                     <td>
                         <select name="workexpintracompany_contact_details_work_period" id="workexpintracompany_contact_details_work_period" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->workexpintracompany_contact_details_work_period)))
+                                <option value="{{$data->workexpintracompany_contact_details_work_period}}" selected>{{$data->workexpintracompany_contact_details_work_period}}</option>
+                            @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
 
@@ -167,35 +185,35 @@
                 <tr>
                     <td>If yes, please indicate
                     </td>
-                    <td> <input type="text" name="workexpintracompany_contact_details_work_period_indicate" id="workexpintracompany_contact_details_work_period_indicate" /> </td>
+                    <td> <input type="text" name="workexpintracompany_contact_details_work_period_indicate" id="workexpintracompany_contact_details_work_period_indicate" @if(isset($data->workexpintracompany_contact_details_work_period_indicate)) value="{{$data->workexpintracompany_contact_details_work_period_indicate}}" @endif/> </td>
 
                 </tr>
 
                 <tr>
                     <td>Name & Surname
                     </td>
-                    <td> <input type="text" name="workexpintracompany_contact_details_work_period_name" id="workexpintracompany_contact_details_work_period_name" /> </td>
+                    <td> <input type="text" name="workexpintracompany_contact_details_work_period_name" id="workexpintracompany_contact_details_work_period_name" @if(isset($data->workexpintracompany_contact_details_work_period_name)) value="{{$data->workexpintracompany_contact_details_work_period_name}}" @endif/> </td>
 
                 </tr>
 
                 <tr>
                     <td>Position
                     </td>
-                    <td> <input type="text" name="workexpintracompany_contact_details_work_period_position" id="workexpintracompany_contact_details_work_period_position" /> </td>
+                    <td> <input type="text" name="workexpintracompany_contact_details_work_period_position" id="workexpintracompany_contact_details_work_period_position" @if(isset($data->workexpintracompany_contact_details_work_period_position)) value="{{$data->workexpintracompany_contact_details_work_period_position}}" @endif/> </td>
 
                 </tr>
 
                 <tr>
                     <td>Email
                     </td>
-                    <td> <input type="email" name="workexpintracompany_contact_details_work_period_email" id="workexpintracompany_contact_details_work_period_email" /> </td>
+                    <td> <input type="email" name="workexpintracompany_contact_details_work_period_email" id="workexpintracompany_contact_details_work_period_email" @if(isset($data->workexpintracompany_contact_details_work_period_email)) value="{{$data->workexpintracompany_contact_details_work_period_email}}" @endif/> </td>
 
                 </tr>
 
                 <tr>
                     <td>Phone contact
                     </td>
-                    <td> <input type="tel" name="workexpintracompany_contact_details_work_period_phone" id="workexpintracompany_contact_details_work_period_phone" /> </td>
+                    <td> <input type="tel" name="workexpintracompany_contact_details_work_period_phone" id="workexpintracompany_contact_details_work_period_phone" @if(isset($data->workexpintracompany_contact_details_work_period_phone)) value="{{$data->workexpintracompany_contact_details_work_period_phone}}" @endif/> </td>
 
                 </tr>
 
@@ -211,24 +229,24 @@
             <tbody>
                 <tr>
                     <td> Employment contract </td>
-                    <td> <input type="file" name="workexpintracompany_employment_contract" id="workexpintracompany_employment_contract"></td>
+                    <td> <input type="file" name="workexpintracompany_employment_contract" id="workexpintracompany_employment_contract" @if(isset($data->workexpintracompany_employment_contract)) value="{{$data->workexpintracompany_employment_contract}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td> Payslip of the current or most recent year </td>
-                    <td> <input type="file" name="workexpintracompany_current_recent_payslip" id="workexpintracompany_current_recent_payslip"></td>
+                    <td> <input type="file" name="workexpintracompany_current_recent_payslip" id="workexpintracompany_current_recent_payslip" @if(isset($data->workexpintracompany_current_recent_payslip)) value="{{$data->workexpintracompany_current_recent_payslip}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td> Income tax return </td>
-                    <td> <input type="file" name="workexpintracompany_income_tax_return" id="workexpintracompany_income_tax_return"></td>
+                    <td> <input type="file" name="workexpintracompany_income_tax_return" id="workexpintracompany_income_tax_return" @if(isset($data->workexpintracompany_income_tax_return)) value="{{$data->workexpintracompany_income_tax_return}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td> Social security chart such as INPS chart or other
                         equivalent document
                     </td>
-                    <td> <input type="file" name="workexpintracompany_social_security" id="workexpintracompany_social_security"></td>
+                    <td> <input type="file" name="workexpintracompany_social_security" id="workexpintracompany_social_security" @if(isset($data->workexpintracompany_social_security)) value="{{$data->workexpintracompany_social_security}}" @endif></td>
                 </tr>
             </tbody>
         </table>
@@ -242,7 +260,7 @@
                 <tr>
                     <td>Name of company in Australia or New Zealand
                     </td>
-                    <td> <input type="text" name="workexpintracompany_aus_nz_name_of_company" id="workexpintracompany_aus_nz_name_of_company" /> </td>
+                    <td> <input type="text" name="workexpintracompany_aus_nz_name_of_company" id="workexpintracompany_aus_nz_name_of_company" @if(isset($data->workexpintracompany_aus_nz_name_of_company)) value="{{$data->workexpintracompany_aus_nz_name_of_company}}" @endif /> </td>
 
                 </tr>
 
@@ -252,7 +270,7 @@
                         or New Zealand (ABN and CAN number)
 
                     </td>
-                    <td> <input type="text" name="workexpintracompany_aus_nz_reg_number" id="workexpintracompany_aus_nz_reg_number" /> </td>
+                    <td> <input type="text" name="workexpintracompany_aus_nz_reg_number" id="workexpintracompany_aus_nz_reg_number" @if(isset($data->workexpintracompany_aus_nz_reg_number)) value="{{$data->workexpintracompany_aus_nz_reg_number}}" @endif /> </td>
 
                 </tr>
 
@@ -262,7 +280,7 @@
                         Zealand
 
                     </td>
-                    <td> <input type="text" name="workexpintracompany_aus_nz_address" id="workexpintracompany_aus_nz_addresss" /> </td>
+                    <td> <input type="text" name="workexpintracompany_aus_nz_address" id="workexpintracompany_aus_nz_addresss" @if(isset($data->workexpintracompany_aus_nz_addresss)) value="{{$data->workexpintracompany_aus_nz_addresss}}" @endif /> </td>
 
                 </tr>
 
@@ -271,63 +289,63 @@
 
 
                     </td>
-                    <td> <input type="text" name="workexpintracompany_aus_nz_contact" id="workexpintracompany_aus_nz_contact" /> </td>
+                    <td> <input type="text" name="workexpintracompany_aus_nz_contact" id="workexpintracompany_aus_nz_contact" @if(isset($data->workexpintracompany_aus_nz_contact)) value="{{$data->workexpintracompany_aus_nz_contact}}" @endif /> </td>
 
                 </tr>
 
                 <tr>
                     <td>Contact person in Australia or New Zealand
                         (name and surname) </td>
-                    <td> <input type="text" name="workexpintracompany_aus_nz_name_surname" id="workexpintracompany_aus_nz_name_surname" /> </td>
+                    <td> <input type="text" name="workexpintracompany_aus_nz_name_surname" id="workexpintracompany_aus_nz_name_surname" @if(isset($data->workexpintracompany_aus_nz_name_surname)) value="{{$data->workexpintracompany_aus_nz_name_surname}}" @endif /> </td>
 
                 </tr>
 
                 <tr>
                     <td>Role of the contact person in Australia or New
                         Zealand </td>
-                    <td> <input type="text" name="workexpintracompany_aus_nz_role" id="workexpintracompany_aus_nz_role" /> </td>
+                    <td> <input type="text" name="workexpintracompany_aus_nz_role" id="workexpintracompany_aus_nz_role" @if(isset($data->workexpintracompany_aus_nz_role)) value="{{$data->workexpintracompany_aus_nz_role}}" @endif/> </td>
 
                 </tr>
 
 
                 <tr>
                     <td>Company sector </td>
-                    <td> <input type="text" name="workexpintracompany_aus_nz_sector" id="workexpintracompany_aus_nz_sector" /> </td>
+                    <td> <input type="text" name="workexpintracompany_aus_nz_sector" id="workexpintracompany_aus_nz_sector" @if(isset($data->workexpintracompany_aus_nz_sector)) value="{{$data->workexpintracompany_aus_nz_sector}}" @endif/> </td>
 
                 </tr>
 
                 <tr>
                     <td>Position that you will carry out in Australia or
                         New Zealand </td>
-                    <td> <input type="text" name="workexpintracompany_aus_nz_position" id="workexpintracompany_aus_nz_position" /> </td>
+                    <td> <input type="text" name="workexpintracompany_aus_nz_position" id="workexpintracompany_aus_nz_position" @if(isset($data->workexpintracompany_aus_nz_position)) value="{{$data->workexpintracompany_aus_nz_position}}" @endif/> </td>
 
                 </tr>
 
                 <tr>
                     <td>Main responsibilities and duties to be carried
                         out in Australia or New Zealand </td>
-                    <td> <input type="text" name="workexpintracompany_aus_nz_responsibilities" id="workexpintracompany_aus_nz_responsibilities" /> </td>
+                    <td> <input type="text" name="workexpintracompany_aus_nz_responsibilities" id="workexpintracompany_aus_nz_responsibilities" @if(isset($data->workexpintracompany_aus_nz_responsibilities)) value="{{$data->workexpintracompany_aus_nz_responsibilities}}" @endif/> </td>
 
                 </tr>
 
                 <tr>
                     <td>Description of the project you will be working
                         during the time in Australia or New Zealand </td>
-                    <td> <input type="text" name="workexpintracompany_aus_nz_description" id="workexpintracompany_aus_nz_description" /> </td>
+                    <td> <input type="text" name="workexpintracompany_aus_nz_description" id="workexpintracompany_aus_nz_description" @if(isset($data->workexpintracompany_aus_nz_description)) value="{{$data->workexpintracompany_aus_nz_description}}" @endif/> </td>
 
                 </tr>
 
                 <tr>
                     <td>Date you are planning to enter Australia or New
                         Zealand </td>
-                    <td> <input type="date" name="workexpintracompany_aus_nz_planing_date" id="workexpintracompany_aus_nz_planing_date" /> </td>
+                    <td> <input type="date" name="workexpintracompany_aus_nz_planing_date" id="workexpintracompany_aus_nz_planing_date" @if(isset($data->workexpintracompany_aus_nz_planing_date)) value="{{$data->workexpintracompany_aus_nz_planing_date}}" @endif/> </td>
 
                 </tr>
 
                 <tr>
                     <td>Date you are planning to leave Australia or New
                         Zealand (maximum 6 months stay) </td>
-                    <td> <input type="date" name="workexpintracompany_aus_nz_planing_date_max_6_month" id="workexpintracompany_aus_nz_planing_date_max_6_month" /> </td>
+                    <td> <input type="date" name="workexpintracompany_aus_nz_planing_date_max_6_month" id="workexpintracompany_aus_nz_planing_date_max_6_month" @if(isset($data->workexpintracompany_aus_nz_planing_date_max_6_month)) value="{{$data->workexpintracompany_aus_nz_planing_date_max_6_month}}" @endif/> </td>
 
                 </tr>
 
@@ -338,7 +356,7 @@
                         out the job? In this case, please indicate how
                         many times and for how long you will need to
                         stay </td>
-                    <td> <input type="text" name="workexpintracompany_aus_nz_necessary" id="workexpintracompany_aus_nz_necessary" /> </td>
+                    <td> <input type="text" name="workexpintracompany_aus_nz_necessary" id="workexpintracompany_aus_nz_necessary" @if(isset($data->workexpintracompany_aus_nz_necessary)) value="{{$data->workexpintracompany_aus_nz_necessary}}" @endif/> </td>
 
                 </tr>
 
@@ -349,7 +367,7 @@
                         the payment from the company in Spain? Please
                         specify in any case the amount for the period of
                         work (even if approximately)</td>
-                    <td> <input type="text" name="workexpintracompany_aus_nz_paidby" id="workexpintracompany_aus_nz_paidby" /> </td>
+                    <td> <input type="text" name="workexpintracompany_aus_nz_paidby" id="workexpintracompany_aus_nz_paidby" @if(isset($data->workexpintracompany_aus_nz_paidby)) value="{{$data->workexpintracompany_aus_nz_paidby}}" @endif/> </td>
 
                 </tr>
 
@@ -367,13 +385,15 @@
                     <td> Invitation letter from the Australia or New
                         Zealand company
                     </td>
-                    <td> <input type="file" name="workexpintracompany_perform_in_aus_nz" id="workexpintracompany_perform_in_aus_nz"></td>
+                    <td> <input type="file" name="workexpintracompany_perform_in_aus_nz" id="workexpintracompany_perform_in_aus_nz" @if(isset($data->workexpintracompany_perform_in_aus_nz)) value="{{$data->workexpintracompany_perform_in_aus_nz}}" @endif></td>
                 </tr>
             </tbody>
         </table>
 
     </div>
+    @if(!Auth::user()->hasRole('consultant') && !Auth::user()->hasRole('admin') )
     <input type="button" name="save" class="save action-button" value="Save" />
+    @endif
     <input type="button" name="next" class="next action-button" value="Next" />
     <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
 </fieldset>

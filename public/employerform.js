@@ -14,7 +14,7 @@ jQuery(document).ready(function () {
 
         setTimeout(function () {
             $(".next").val("Next");
-
+            $('body.client #fieldsetfour .next').val('Submit');
             next_fs.show();
             current_fs.animate(
                 { opacity: 0 },

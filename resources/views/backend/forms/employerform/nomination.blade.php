@@ -21,7 +21,7 @@
                 <tr>
                     <td> Indicate where the visa applicant will be
                         working (full address)</td>
-                    <td> <input type="text" name="nomination_visa_appliciant" id="nomination_visa_appliciant" /> </td>
+                    <td> <input type="text" name="nomination_visa_appliciant" id="nomination_visa_appliciant" @if(isset($data->nomination_visa_appliciant)) value="{{$data->nomination_visa_appliciant}}" @endif/> </td>
                 </tr>
 
 
@@ -30,7 +30,7 @@
                         the applicant has been working for a
                         subsidiary and/or branch of the Australian
                         company outside of Australia)</td>
-                    <td> <input type="text" name="nomination_intra_company_transfer" id="nomination_intra_company_transfer" /> </td>
+                    <td> <input type="text" name="nomination_intra_company_transfer" id="nomination_intra_company_transfer" @if(isset($data->nomination_intra_company_transfer)) value="{{$data->nomination_intra_company_transfer}}" @endif/> </td>
                 </tr>
 
 
@@ -38,14 +38,14 @@
                     <td> Indicate the annual turnover of the
                         business for the last financial year
                     </td>
-                    <td> <input type="text" name="nomination_financial_year" id="nomination_financial_year" /> </td>
+                    <td> <input type="text" name="nomination_financial_year" id="nomination_financial_year" @if(isset($data->nomination_financial_year)) value="{{$data->nomination_financial_year}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td> What is the job title you are offering to the
                         visa applicant
                     </td>
-                    <td> <input type="text" name="nomination_job_offering" id="nomination_job_offering" /> </td>
+                    <td> <input type="text" name="nomination_job_offering" id="nomination_job_offering" @if(isset($data->nomination_job_offering)) value="{{$data->matrix_name_and_surname}}" @endif/> </td>
                 </tr>
 
 
@@ -57,6 +57,9 @@
                     <td>
                         <select class="form-control" id="nomination_job_occupation" name="nomination_job_occupation">
                             <option value="">SELECT </option>
+                            @if(!empty(isset($data->nomination_job_occupation)))
+                                <option value="{{$data->nomination_job_occupation}}" selected>{{$data->nomination_job_occupation}}</option>
+                            @endif
                             <option value="1">- Chiropractor</option>
                             <option value="2">- Dentist</option>
                             <option value="3">- Dietitian or Nutritionist</option>
@@ -79,14 +82,14 @@
                         that the applicant will be performing
                         (ideally please indicate 5 duties)
                     </td>
-                    <td> <input type="text" name="nomination_responsibilities" id="nomination_responsibilities" /> </td>
+                    <td> <input type="text" name="nomination_responsibilities" id="nomination_responsibilities" @if(isset($data->nomination_responsibilities)) value="{{$data->nomination_responsibilities}}" @endif/> </td>
                 </tr>
 
 
                 <tr>
                     <td>Indicate the main tasks to be performed
                     </td>
-                    <td> <input type="text" name="nomination_performed" id="nomination_performed" /> </td>
+                    <td> <input type="text" name="nomination_performed" id="nomination_performed" @if(isset($data->nomination_performed)) value="{{$data->nomination_performed}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -95,7 +98,7 @@
                         labour market:
 
                     </td>
-                    <td> <input type="text" name="nomination_position" id="nomination_position" /> </td>
+                    <td> <input type="text" name="nomination_position" id="nomination_position" @if(isset($data->nomination_position)) value="{{$data->nomination_position}}" @endif/> </td>
                 </tr>
 
 
@@ -113,13 +116,13 @@
 
                 <tr>
                     <td> Relevant qualifications needed</td>
-                    <td> <input type="text" name="qua_and_exp_relevant" id="qua_and_exp_relevant" /> </td>
+                    <td> <input type="text" name="qua_and_exp_relevant" id="qua_and_exp_relevant" @if(isset($data->qua_and_exp_relevant)) value="{{$data->qua_and_exp_relevant}}" @endif/> </td>
                 </tr>
 
 
                 <tr>
                     <td>Relevant skills needed</td>
-                    <td> <input type="text" name="qua_and_exp_skills" id="qua_and_exp_skills" /> </td>
+                    <td> <input type="text" name="qua_and_exp_skills" id="qua_and_exp_skills" @if(isset($data->qua_and_exp_skills)) value="{{$data->qua_and_exp_skills}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -129,7 +132,7 @@
                         please specify if the applicant can perform
                         work under supervision of another person
                         who holds licence/registration</td>
-                    <td> <input type="text" name="qua_and_exp_license" id="qua_and_exp_license" /> </td>
+                    <td> <input type="text" name="qua_and_exp_license" id="qua_and_exp_license" @if(isset($data->qua_and_exp_license)) value="{{$data->qua_and_exp_license}}" @endif/> </td>
                 </tr>
 
 
@@ -138,13 +141,13 @@
                         citizens or Australian permanent residents in
                         the nominated occupation, or made their
                         positions redundant, in the last four months?</td>
-                    <td> <input type="text" name="qua_and_exp_four_month" id="qua_and_exp_four_month" /> </td>
+                    <td> <input type="text" name="qua_and_exp_four_month" id="qua_and_exp_four_month" @if(isset($data->qua_and_exp_four_month)) value="{{$data->qua_and_exp_four_month}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td>Does your business operate in the
                         Agricultural sector?</td>
-                    <td> <input type="text" name="qua_and_exp_agriculture" id="qua_and_exp_agriculture" /> </td>
+                    <td> <input type="text" name="qua_and_exp_agriculture" id="qua_and_exp_agriculture" @if(isset($data->qua_and_exp_agriculture)) value="{{$data->qua_and_exp_agriculture}}" @endif/> </td>
                 </tr>
 
             </tbody>
@@ -160,7 +163,7 @@
                     <td> What annual salary are you offering the visa
                         applicant?
                     </td>
-                    <td> <input type="text" name="salary_offering_visa_applicant" id="salary_offering_visa_applicant" /> </td>
+                    <td> <input type="text" name="salary_offering_visa_applicant" id="salary_offering_visa_applicant" @if(isset($data->salary_offering_visa_applicant)) value="{{$data->salary_offering_visa_applicant}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -170,6 +173,11 @@
                     <td>
                         <select name="salary_non_monetary" id="salary_non_monetary" class="form-control">
                             <option value=""> Select Option </option>
+                            
+ @if(!empty(isset($data->salary_non_monetary)))
+                                <option value="{{$data->salary_non_monetary}}" selected>{{$data->salary_non_monetary}}</option>
+                            @endif
+
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -180,7 +188,7 @@
                 <tr>
                     <td> If Yes, please specify
                     </td>
-                    <td> <input type="text" name="salary_offering_visa_applicant_specify" id="salary_offering_visa_applicant_specify" /> </td>
+                    <td> <input type="text" name="salary_offering_visa_applicant_specify" id="salary_offering_visa_applicant_specify" @if(isset($data->salary_offering_visa_applicant_specify)) value="{{$data->salary_offering_visa_applicant_specify}}" @endif/> </td>
                 </tr>
 
 
@@ -191,6 +199,10 @@
                     <td>
                         <select name="salary_year_of_contract" id="salary_year_of_contract-monetary" class="form-control">
                             <option value=""> Select Option </option>
+                            
+ @if(!empty(isset($data->salary_year_of_contract)))
+                                <option value="{{$data->salary_year_of_contract}}" selected>{{$data->salary_year_of_contract}}</option>
+                            @endif
                             <option value="yes"> 1 year </option>
                             <option value="no"> 2 year </option>
                             <option value="yes"> 3 year </option>
@@ -208,7 +220,7 @@
                         superannuation
 
                     </td>
-                    <td> <input type="text" name="salary_annual" id="salary_annual" /> </td>
+                    <td> <input type="text" name="salary_annual" id="salary_annual" @if(isset($data->salary_annual)) value="{{$data->salary_annual}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -217,7 +229,7 @@
                         38 hours per week is required)
 
                     </td>
-                    <td> <input type="text" name="salary_hours_per_week" id="salary_hours_per_week" /> </td>
+                    <td> <input type="text" name="salary_hours_per_week" id="salary_hours_per_week" @if(isset($data->salary_hours_per_week)) value="{{$data->salary_hours_per_week}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -226,7 +238,7 @@
                         offer the visa applicant?
 
                     </td>
-                    <td> <input type="text" name="salary_eloborate_annual_salary" id="salary_eloborate_annual_salary" /> </td>
+                    <td> <input type="text" name="salary_eloborate_annual_salary" id="salary_eloborate_annual_salary" @if(isset($data->salary_eloborate_annual_salary)) value="{{$data->salary_eloborate_annual_salary}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -237,6 +249,10 @@
                     <td>
                         <select name="salary_permanent_resident" id="salary_permanent_resident" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->salary_permanent_resident)))
+                                <option value="{{$data->salary_permanent_resident}}" selected>{{$data->salary_permanent_resident}}</option>
+                            @endif
+
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -249,7 +265,7 @@
                         this person
 
                     </td>
-                    <td> <input type="text" name="salary_permanent_resident_indicate" id="salary_permanent_resident_indicate" /> </td>
+                    <td> <input type="text" name="salary_permanent_resident_indicate" id="salary_permanent_resident_indicate" @if(isset($data->salary_permanent_resident_indicate)) value="{{$data->salary_permanent_resident_indicate}}" @endif/> </td>
                 </tr>
 
 
@@ -261,6 +277,9 @@
                     <td>
                         <select name="salary_citizen" id="salary_citizen" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->salary_citizen)))
+                                <option value="{{$data->salary_citizen}}" selected>{{$data->salary_citizen}}</option>
+                            @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
                         </select>
@@ -282,7 +301,7 @@
                 <tr>
                     <td> Job description/Duty Statement of the
                         position to be offered to the applicant </td>
-                    <td> <input type="file" name="nomination_job_description" id="nomination_job_description"></td>
+                    <td> <input type="file" name="nomination_job_description" id="nomination_job_description" @if(isset($data->nomination_job_description)) value="{{$data->nomination_job_description}}" @endif></td>
                 </tr>
             </tbody>
         </table>
@@ -297,38 +316,38 @@
                 <tr>
                     <td> 1) Dated after the 28 days period of
                         the job ads </td>
-                    <td> <input type="file" name="nomination_period_of_job" id="nomination_period_of_job"></td>
+                    <td> <input type="file" name="nomination_period_of_job" id="nomination_period_of_job" @if(isset($data->nomination_period_of_job)) value="{{$data->nomination_period_of_job}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td> 2) Indicate the name and surname of
                         the applicant</td>
-                    <td> <input type="file" name="nomination_name_and_surname" id="nomination_name_and_surname"></td>
+                    <td> <input type="file" name="nomination_name_and_surname" id="nomination_name_and_surname" @if(isset($data->nomination_name_and_surname)) value="{{$data->nomination_name_and_surname}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td> 3) Indicate "upon visa approval" for
                         the Start date</td>
-                    <td> <input type="file" name="nomination_start_date_doc" id="nomination_start_date_doc"></td>
+                    <td> <input type="file" name="nomination_start_date_doc" id="nomination_start_date_doc" @if(isset($data->nomination_start_date_doc)) value="{{$data->nomination_start_date_doc}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td> 4) Indicate the gross annual salary rate</td>
-                    <td> <input type="file" name="nomination_gross_annual_salary" id="nomination_gross_annual_salary"></td>
+                    <td> <input type="file" name="nomination_gross_annual_salary" id="nomination_gross_annual_salary" @if(isset($data->nomination_gross_annual_salary)) value="{{$data->nomination_gross_annual_salary}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td> 5) Indicate the super annuation in
                         addition to the gross annual salary
                         rate</td>
-                    <td> <input type="file" name="nomination_super_annuation" id="nomination_super_annuation"></td>
+                    <td> <input type="file" name="nomination_super_annuation" id="nomination_super_annuation" @if(isset($data->nomination_super_annuation)) value="{{$data->nomination_super_annuation}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td> 6) Indicate any other monetary
                         components as a separate figure to
                         the annual gross salary</td>
-                    <td> <input type="file" name="nomination_separate_figure" id="nomination_separate_figure"></td>
+                    <td> <input type="file" name="nomination_separate_figure" id="nomination_separate_figure" @if(isset($data->nomination_separate_figure)) value="{{$data->nomination_separate_figure}}" @endif></td>
                 </tr>
 
 
@@ -337,7 +356,9 @@
         </table>
 
     </div>
+    @if(!Auth::user()->hasRole('consultant') && !Auth::user()->hasRole('admin') )
     <input type="button" name="save" class="save action-button" value="Save" />
+    @endif
     <input type="button" name="next" class="next action-button" value="Next" />
     <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
 </fieldset>

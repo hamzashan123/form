@@ -13,3 +13,6 @@
 input[type='tel'] {
     left: 25%;
 }
+.iti.iti--allow-dropdown {
+    display: block;
+  }

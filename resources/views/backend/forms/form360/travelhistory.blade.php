@@ -25,6 +25,9 @@
                     <td>
                         <select name="travelhistory_last_ten_years" id="travelhistory_last_ten_years" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->travelhistory_last_ten_years)))
+                                <option value="{{$data->travelhistory_last_ten_years}}" selected>{{$data->travelhistory_last_ten_years}}</option>
+                            @endif
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
 
@@ -45,6 +48,9 @@
                     <td>
                         <select id="travelhistory_country1" name="travelhistory_country1" class="form-control">
                             <option value="">Select Nationality</option>
+                            @if(!empty(isset($data->travelhistory_country1)))
+                                <option value="{{$data->travelhistory_country1}}" selected>{{$data->travelhistory_country1}}</option>
+                            @endif
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Aland Islands</option>
                             <option value="Albania">Albania</option>
@@ -320,18 +326,18 @@
 
                 <tr>
                     <td> Date From </td>
-                    <td> <input type="date" name="travelhistory_datefrom1" id="travelhistory_country1" /> </td>
+                    <td> <input type="date" name="travelhistory_datefrom1" id="travelhistory_country1" @if(isset($data->travelhistory_datefrom1)) value="{{$data->travelhistory_datefrom1}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td> Date to </td>
-                    <td> <input type="date" name="travelhistory_dateto1" id="travelhistory_dateto1" /> </td>
+                    <td> <input type="date" name="travelhistory_dateto1" id="travelhistory_dateto1" @if(isset($data->travelhistory_dateto1)) value="{{$data->travelhistory_dateto1}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td>Purpose of your travel
                     </td>
-                    <td> <input type="text" name="travelhistory_purpose1" id="travelhistory_purpose1" /> </td>
+                    <td> <input type="text" name="travelhistory_purpose1" id="travelhistory_purpose1" @if(isset($data->travelhistory_purpose1)) value="{{$data->travelhistory_purpose1}}" @endif/> </td>
                 </tr>
             </tbody>
         </table>
@@ -343,6 +349,10 @@
                     <td>
                         <select id="travelhistory_country4" name="travelhistory_country4" class="form-control">
                             <option value="">Select Nationality</option>
+                            @if(!empty(isset($data->travelhistory_country4)))
+                                <option value="{{$data->travelhistory_country4}}" selected>{{$data->travelhistory_country4}}</option>
+                            @endif
+
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Aland Islands</option>
                             <option value="Albania">Albania</option>
@@ -618,18 +628,18 @@
 
                 <tr>
                     <td> Date From </td>
-                    <td> <input type="date" name="travelhistory_datefrom2" id="travelhistory_from2" /> </td>
+                    <td> <input type="date" name="travelhistory_datefrom2" id="travelhistory_from2" @if(isset($data->travelhistory_datefrom2)) value="{{$data->travelhistory_datefrom2}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td> Date to </td>
-                    <td> <input type="date" name="travelhistory_dateto2" id="travelhistory_dateto2" /> </td>
+                    <td> <input type="date" name="travelhistory_dateto2" id="travelhistory_dateto2" @if(isset($data->travelhistory_dateto2)) value="{{$data->travelhistory_dateto2}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td>Purpose of your travel
                     </td>
-                    <td> <input type="text" name="travelhistory_purpose2" id="travelhistory_purpose2" /> </td>
+                    <td> <input type="text" name="travelhistory_purpose2" id="travelhistory_purpose2" @if(isset($data->travelhistory_purpose2)) value="{{$data->travelhistory_purpose2}}" @endif/> </td>
                 </tr>
             </tbody>
         </table>
@@ -641,6 +651,10 @@
                     <td>
                         <select id="travelhistory_country3" name="travelhistory_country3" class="form-control">
                             <option value="">Select Nationality</option>
+                            @if(!empty(isset($data->travelhistory_country3)))
+                                <option value="{{$data->travelhistory_country3}}" selected>{{$data->travelhistory_country3}}</option>
+                            @endif
+
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Aland Islands</option>
                             <option value="Albania">Albania</option>
@@ -916,18 +930,18 @@
 
                 <tr>
                     <td> Date From </td>
-                    <td> <input type="date" name="travelhistory_datefrom3" id="travelhistory_from3" /> </td>
+                    <td> <input type="date" name="travelhistory_datefrom3" id="travelhistory_from3" @if(isset($data->travelhistory_datefrom3)) value="{{$data->travelhistory_datefrom3}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td> Date to </td>
-                    <td> <input type="date" name="travelhistory_dateto3" id="travelhistory_dateto3" /> </td>
+                    <td> <input type="date" name="travelhistory_dateto3" id="travelhistory_dateto3" @if(isset($data->travelhistory_dateto3)) value="{{$data->travelhistory_dateto3}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td>Purpose of your travel
                     </td>
-                    <td> <input type="text" name="travelhistory_purpose3" id="travelhistory_purpose3" /> </td>
+                    <td> <input type="text" name="travelhistory_purpose3" id="travelhistory_purpose3" @if(isset($data->travelhistory_purpose3)) value="{{$data->travelhistory_purpose3}}" @endif/> </td>
                 </tr>
             </tbody>
         </table>
@@ -940,6 +954,10 @@
                     <td>
                         <select id="travelhistory_country3" name="travelhistory_country3" class="form-control">
                             <option value="">Select Nationality</option>
+                            @if(!empty(isset($data->travelhistory_country3)))
+                                <option value="{{$data->travelhistory_country3}}" selected>{{$data->travelhistory_country3}}</option>
+                            @endif
+
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Aland Islands</option>
                             <option value="Albania">Albania</option>
@@ -1215,18 +1233,18 @@
 
                 <tr>
                     <td> Date From </td>
-                    <td> <input type="date" name="travelhistory_datefrom4" id="travelhistory_from4" /> </td>
+                    <td> <input type="date" name="travelhistory_datefrom4" id="travelhistory_from4" @if(isset($data->travelhistory_datefrom4)) value="{{$data->travelhistory_datefrom4}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td> Date to </td>
-                    <td> <input type="date" name="travelhistory_dateto4" id="travelhistory_dateto4" /> </td>
+                    <td> <input type="date" name="travelhistory_dateto4" id="travelhistory_dateto4" @if(isset($data->travelhistory_dateto4)) value="{{$data->travelhistory_dateto4}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td>Purpose of your travel
                     </td>
-                    <td> <input type="text" name="travelhistory_purpose4" id="travelhistory_purpose4" /> </td>
+                    <td> <input type="text" name="travelhistory_purpose4" id="travelhistory_purpose4" @if(isset($data->travelhistory_purpose4)) value="{{$data->travelhistory_purpose4}}" @endif/> </td>
                 </tr>
             </tbody>
         </table>
@@ -1236,7 +1254,9 @@
 
 
     </div>
+    @if(!Auth::user()->hasRole('consultant') && !Auth::user()->hasRole('admin') )
     <input type="button" name="save" class="save action-button" value="Save" />
+    @endif
     <input type="button" name="next" class="next action-button" value="Next" />
     <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
 </fieldset>

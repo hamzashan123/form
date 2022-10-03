@@ -7,14 +7,15 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class AssignFormToUser extends Mailable
+class NewFormSubmitted extends Mailable
 {
     use Queueable, SerializesModels;
 
+    protected $messagetype;
     protected $username;
     protected $email;
-    protected $usertype;
-    protected $messagetype;
+    
+    
     /**
      * Create a new message instance.
      *
@@ -22,10 +23,9 @@ class AssignFormToUser extends Mailable
      */
     public function __construct($data)
     {
+        $this->messagetype = $data['messagetype'];
         $this->username = $data['username'];
         $this->email = $data['email'];
-        $this->usertype = $data['usertype'];
-        $this->messagetype = $data['messagetype'];
     }
 
     /**
@@ -35,13 +35,12 @@ class AssignFormToUser extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.AssignFormToUser')
-        ->subject('Form Assigned')
-        ->with([
-                'username' => $this->username,
-                'email' => $this->email,
-                'usertype' => $this->usertype,
-                'messagetype' => $this->messagetype
-            ]);
+        return $this->view('emails.newformsubmitted')
+        ->subject('New Application Recieved !')
+            ->with([
+                    'messagetype' => $this->messagetype,
+                    'username' => $this->username,
+                    'email' => $this->email,
+                ]);
     }
 }

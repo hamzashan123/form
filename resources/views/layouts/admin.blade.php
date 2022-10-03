@@ -25,7 +25,8 @@
     <livewire:styles/>
     @yield('styles')
 </head>
-<body id="page-top">
+
+<body id="page-top" @if(Auth::user()->hasRole('admin')) class="admin" @elseif(Auth::user()->hasRole('consultant')) class="consultant" @else class="client" @endif >
 
     <div id="app">
         <div id="wrapper">
@@ -62,6 +63,8 @@
     <!-- summernote -->
     <script src="{{ asset('backend/vendor/summernote/summernote-bs4.min.js') }}"></script>
     <script src="{{asset('countrycode.js')}}"></script>
+    
+
     @yield('scripts')
 </body>
 </html>

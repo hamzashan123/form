@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="{{asset('countrycode.js')}}"></script>
 @section('content')
 <div class="container-fluid">
@@ -26,15 +27,20 @@
                         <li id="payment"><strong>LABOUR MARKET TESTING</strong></li>
                         <li id="payment"><strong>For Job </strong></li>
                     </ul>
+                    
                     <div class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                     </div> <br> <!-- fieldsets -->
-
+                    @if(Auth::user()->hasRole('consultant'))
+                    <a id="correctemail" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px; display:none;">Send Correction Email</a>
+                    @endif
                     @include('backend.forms.employerform.sbs')
                     @include('backend.forms.employerform.nomination')
                     @include('backend.forms.employerform.labour')
                     @include('backend.forms.employerform.job')
+                    
                     @include('backend.forms.employerform.final')
+                    
 
 
                 </form>
@@ -50,10 +56,117 @@
         text: 'Thank you, your application has been successfully submitted. Login details have been sent to your glistereded email to either login again and change or details or to change what has been submitted.',
 
     }).then((result) => {
-        window.location = '/login';
+        //window.location = '/login';
     })
 </script>
 @endif
+<script>
+    //alert('adsd');
+        jQuery(document).ready(function(){
+            if ( jQuery('body').hasClass('admin') || jQuery('body').hasClass('consultant')) {
+                jQuery('#form360 input').prop('disabled', true);
+                jQuery('#form360 input').css('opacity', 0.5);
+                jQuery('#form360 select').prop('disabled', true);
+                jQuery('#form360 select').css('opacity', 0.5);
+            }
+
+            jQuery('body.client #fieldsetfour .next').val('Submit');
+        })
+</script>
 <script src="{{asset('employerform.js')}}"></script>
+<script>
+  var fieldsname = [];
+  var fieldsvalue = [];
+  var fieldscomments = [];
+  <?php if(auth()->user()->hasRole('consultant')) {  ?>  
+jQuery('.form-card td').click(function (e) {
+        
+        if($(this).hasClass('addBorder')){
+          $(this).removeClass('addBorder');
+          //jQuery(this).parent('tr').find('input.commentfield').remove();
+
+          //fieldsname.remove(jQuery(this).parent('tr').find('input.commentfield').val()); // for remove index name
+          console.log('remove' ,jQuery(this).parent('tr').children('input.commentfield'));
+
+          jQuery(this).parent('tr').children('input.commentfield').remove();
+        //  fieldsname.remove(jQuery(this).closest('tr').find('td').text().trim());
+        //   fieldsvalue.remove(jQuery(this).closest('tr').find('input').val());
+        //   fieldscomments.remove(jQuery(this).val());
+    
+
+            if($('.commentfield').length < 1 ){
+             $('#correctemail').hide();
+             }
+        }else{
+            console.log('add' ,jQuery(this).closest('tr').find('td').text().trim());
+            $(this).addClass('addBorder');
+            $(this).after('<input type="text" name="test" class="commentfield" placeholder="Enter Comments"/>');
+            
+            if($('.commentfield').length > 0 ){
+                 $('#correctemail').show();
+            }
+          
+            var title = jQuery(this).closest('tr').find('th').text();
+            var value = jQuery(this).closest('tr').find('td').text();
+            
+        }
+  });
+  <?php } ?>
+
+  jQuery('#correctemail').click(function (e) {
+                
+                e.preventDefault();
+                $("#correctemail").html("Please wait...");
+            	//$(this).attr('disabled', 'true');
+                // console.log('fields to email' , fieldsname);
+                // console.log('fields to email' , fieldsvalue);
+                console.log('fields to fieldscomments' , $('.commentfield'));
+                $('.commentfield').each(function(i, obj) {
+                    // console.log('th',jQuery(this).closest('tr').find('td').text());
+                    // console.log('td' ,jQuery(this).closest('tr').find('td').text());
+                    // console.log('td' ,jQuery(this).val());
+                    fieldsname.push(jQuery(this).closest('tr').find('td').text().trim());
+                    fieldsvalue.push(jQuery(this).closest('tr').find('input').val());
+                    fieldscomments.push(jQuery(this).val());
+                    
+                });
+                var userid = "<?php echo ($_GET['userid']); ?>";
+                
+                
+                
+                $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+                });
+                 $.ajax({
+                  type:'POST',
+                  url:"{{route('admin.correctionemail')}}",
+                  data:{ userid: userid , formName: 'Employer Form', fieldsname : fieldsname , fieldsvalue : fieldsvalue , fieldscomments : fieldscomments},
+                  success:function(data){
+                      $("#correctemail").html("Send Correction email");
+                      if(data.success === "true"){
+                          Swal.fire({
+                              icon: 'success',
+                              title: 'Successfully sent',
+                              text: 'Correction Email has been sent!',
+                          }).then(function() {
+                            window.location.href = '/admin';
+                            });
+                      }else if(data.success === 'false'){
+                          $("#correctemail").html("Send Correction email");
+                         
+                             
+                      }
+                  }
+                });
+                console.log('feildsname' ,fieldsname);
+                console.log('fieldsvalue' ,fieldsvalue);
+                console.log('fieldscomments' ,fieldscomments);
+               
+                
+      });
+
+</script>
 
 @endsection()

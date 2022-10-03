@@ -26,7 +26,7 @@
 
                 <tr>
                     <td> Name of University/Institute </td>
-                    <td> <input type="text" name="higher_level_qualification1_nameofuniversity" id="higher_level_qualification1_nameofuniversity" />
+                    <td> <input type="text" name="higher_level_qualification1_nameofuniversity" id="higher_level_qualification1_nameofuniversity" @if(isset($data->higher_level_qualification1_nameofuniversity)) value="{{$data->higher_level_qualification1_nameofuniversity}}" @endif/>
                     </td>
                 </tr>
 
@@ -36,6 +36,10 @@
                     <td>
                         <select name="higher_level_vocational_level_qualification1" id="higher_level_vocational_level_qualification1" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->higher_level_vocational_level_qualification1)))
+                                <option value="{{$data->higher_level_vocational_level_qualification1}}" selected>{{$data->higher_level_vocational_level_qualification1}}</option>
+                            @endif
+
                             <option value="universitylevel"> University Level </option>
                             <option value="vocationallevel"> Vocational/Professional Level </option>
                         </select>
@@ -45,7 +49,7 @@
                 <tr>
                     <td> Full address of the education provider
                     </td>
-                    <td> <input type="text" name="higher_level__qualification1_education_provider" id="higher_level__qualification1_education_provider" />
+                    <td> <input type="text"  name="higher_level__qualification1_education_provider" id="higher_level__qualification1_education_provider" @if(isset($data->higher_level__qualification1_education_provider)) value="{{$data->higher_level__qualification1_education_provider}}" @endif/>
                     </td>
                 </tr>
 
@@ -53,14 +57,14 @@
                     <td> Name of exact qualification obtained in the official
                         language
                     </td>
-                    <td> <input type="text" name="higher_level_qualifciation1_official_languages" id="higher_level_qualifciation1_official_languages" />
+                    <td> <input type="text" name="higher_level_qualifciation1_official_languages" id="higher_level_qualifciation1_official_languages" @if(isset($data->higher_level_qualifciation1_official_languages)) value="{{$data->higher_level_qualifciation1_official_languages}}" @endif/>
                     </td>
                 </tr>
 
                 <tr>
                     <td> Name of the qualification obtained in English
                     </td>
-                    <td> <input type="text" name="higher_level_qualification1_english" id="higher_level_qualification1_english" />
+                    <td> <input type="text" name="higher_level_qualification1_english" id="higher_level_qualification1_english" @if(isset($data->higher_level_qualification1_english)) value="{{$data->higher_level_qualification1_english}}" @endif/>
                     </td>
                 </tr>
 
@@ -68,7 +72,7 @@
                     <td> Course duration
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification1_course_duration" id="higher_level_qualification1_course_duration" />
+                    <td> <input type="text" name="higher_level_qualification1_course_duration" id="higher_level_qualification1_course_duration" @if(isset($data->higher_level_qualification1_course_duration)) value="{{$data->higher_level_qualification1_course_duration}}" @endif/>
                     </td>
                 </tr>
 
@@ -77,7 +81,7 @@
                     <td> Date course started
 
                     </td>
-                    <td> <input type="date" name="higher_level_qualification1_course_started" id="higher_level_qualification1_course_started" />
+                    <td> <input type="date" name="higher_level_qualification1_course_started" id="higher_level_qualification1_course_started" @if(isset($data->higher_level_qualification1_course_started)) value="{{$data->higher_level_qualification1_course_started}}" @endif/>
                     </td>
                 </tr>
 
@@ -85,7 +89,7 @@
                     <td> Date course extension_loaded
 
                     </td>
-                    <td> <input type="date" name="higher_level_qualification1_course_ended" id="higher_level_qualification1_course_ended" />
+                    <td> <input type="date" name="higher_level_qualification1_course_ended" id="higher_level_qualification1_course_ended" @if(isset($data->higher_level_qualification1_course_ended)) value="{{$data->higher_level_qualification1_course_ended}}" @endif/>
                     </td>
                 </tr>
 
@@ -94,7 +98,7 @@
 
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification1_full_part" id="higher_level_qualification1_full_part" />
+                    <td> <input type="text" name="higher_level_qualification1_full_part" id="higher_level_qualification1_full_part" @if(isset($data->higher_level_qualification1_full_part)) value="{{$data->higher_level_qualification1_full_part}}" @endif/>
                     </td>
                 </tr>
 
@@ -105,7 +109,7 @@
 
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification1_courseofstudy" id="higher_level_qualification1_courseofstudy" />
+                    <td> <input type="text" name="higher_level_qualification1_courseofstudy" id="higher_level_qualification1_courseofstudy" @if(isset($data->higher_level_qualification1_courseofstudy)) value="{{$data->higher_level_qualification1_courseofstudy}}" @endif/>
                     </td>
                 </tr>
 
@@ -114,7 +118,7 @@
 
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification1_country" id="higher_level_qualification1_country" />
+                    <td> <input type="text" name="higher_level_qualification1_country" id="higher_level_qualification1_country" @if(isset($data->higher_level_qualification1_country)) value="{{$data->higher_level_qualification1_country}}" @endif/>
                     </td>
                 </tr>
 
@@ -126,7 +130,7 @@
 
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification1_thesis_project" id="higher_level_qualification1_thesis_project" />
+                    <td> <input type="text" name="higher_level_qualification1_thesis_project" id="higher_level_qualification1_thesis_project" @if(isset($data->higher_level_qualification1_thesis_project)) value="{{$data->higher_level_qualification1_thesis_project}}" @endif/>
                     </td>
                 </tr>
 
@@ -138,7 +142,7 @@
 
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification1_thesis_project_if" id="higher_level_qualification1_thesis_project_if" />
+                    <td> <input type="text" name="higher_level_qualification1_thesis_project_if" id="higher_level_qualification1_thesis_project_if" @if(isset($data->higher_level_qualification1_thesis_project_if)) value="{{$data->higher_level_qualification1_thesis_project_if}}" @endif/>
                     </td>
                 </tr>
 
@@ -156,14 +160,14 @@
                 <tr>
                     <td> Qualification – Diploma/Award Certificate
                     </td>
-                    <td> <input type="file" name="higher_level_qualification1_diploma_award" id="higher_level_qualification1_diploma_award"></td>
+                    <td> <input type="file" name="higher_level_qualification1_diploma_award" id="higher_level_qualification1_diploma_award" @if(isset($data->higher_level_qualification1_diploma_award)) value="{{$data->higher_level_qualification1_diploma_award}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td> List of exams taken
 
                     </td>
-                    <td> <input type="file" name="higher_level_qualification1_listofexams" id="higher_level_qualification1_listofexams"></td>
+                    <td> <input type="file" name="higher_level_qualification1_listofexams" id="higher_level_qualification1_listofexams" @if(isset($data->higher_level_qualification1_listofexams)) value="{{$data->higher_level_qualification1_listofexams}}" @endif></td>
                 </tr>
 
                 <tr>
@@ -171,7 +175,7 @@
 
 
                     </td>
-                    <td> <input type="file" name="higher_level_qualification1_diploma_supplement" id="higher_level_qualification1_diploma_supplement"></td>
+                    <td> <input  type="file" name="higher_level_qualification1_diploma_supplement" id="higher_level_qualification1_diploma_supplement" @if(isset($data->higher_level_qualification1_diploma_supplement)) value="{{$data->higher_level_qualification1_diploma_supplement}}" @endif></td>
                 </tr>
             </tbody>
         </table>
@@ -185,7 +189,7 @@
 
                 <tr>
                     <td> Name of University/Institute </td>
-                    <td> <input type="text" name="higher_level_qualification2_nameofuniversity" id="higher_level_qualification2_nameofuniversity" />
+                    <td> <input type="text" name="higher_level_qualification2_nameofuniversity" id="higher_level_qualification2_nameofuniversity" @if(isset($data->higher_level_qualification2_nameofuniversity)) value="{{$data->higher_level_qualification2_nameofuniversity}}" @endif/>
                     </td>
                 </tr>
 
@@ -195,6 +199,10 @@
                     <td>
                         <select name="higher_level_vocational_level_qualification2" id="higher_level_vocational_level_qualification2" class="form-control">
                             <option value=""> Select Option </option>
+                            
+ @if(!empty(isset($data->higher_level_vocational_level_qualification2)))
+                                <option value="{{$data->higher_level_vocational_level_qualification2}}" selected>{{$data->higher_level_vocational_level_qualification2}}</option>
+                            @endif
                             <option value="universitylevel"> University Level </option>
                             <option value="vocationallevel"> Vocational/Professional Level </option>
                         </select>
@@ -204,7 +212,7 @@
                 <tr>
                     <td> Full address of the education provider
                     </td>
-                    <td> <input type="text" name="higher_level__qualification2_education_provider" id="higher_level__qualification2_education_provider" />
+                    <td> <input type="text" name="higher_level__qualification2_education_provider" id="higher_level__qualification2_education_provider" @if(isset($data->higher_level__qualification2_education_provider)) value="{{$data->higher_level__qualification2_education_provider}}" @endif/>
                     </td>
                 </tr>
 
@@ -212,14 +220,14 @@
                     <td> Name of exact qualification obtained in the official
                         language
                     </td>
-                    <td> <input type="text" name="higher_level_qualifciation2_official_languages" id="higher_level_qualifciation2_official_languages" />
+                    <td> <input type="text" name="higher_level_qualifciation2_official_languages" id="higher_level_qualifciation2_official_languages" @if(isset($data->higher_level_qualifciation2_official_languages)) value="{{$data->higher_level_qualifciation2_official_languages}}" @endif/>
                     </td>
                 </tr>
 
                 <tr>
                     <td> Name of the qualification obtained in English
                     </td>
-                    <td> <input type="text" name="higher_level_qualification2_english" id="higher_level_qualification2_english" />
+                    <td> <input type="text" name="higher_level_qualification2_english" id="higher_level_qualification2_english" @if(isset($data->higher_level_qualification2_english)) value="{{$data->higher_level_qualification2_english}}" @endif/>
                     </td>
                 </tr>
 
@@ -227,7 +235,7 @@
                     <td> Course duration
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification2_course_duration" id="higher_level_qualification2_course_duration" />
+                    <td> <input type="text" name="higher_level_qualification2_course_duration" id="higher_level_qualification2_course_duration" @if(isset($data->higher_level_qualification2_course_duration)) value="{{$data->higher_level_qualification2_course_duration}}" @endif/>
                     </td>
                 </tr>
 
@@ -236,7 +244,7 @@
                     <td> Date course started
 
                     </td>
-                    <td> <input type="date" name="higher_level_qualification2_course_started" id="higher_level_qualification2_course_started" />
+                    <td> <input type="date" name="higher_level_qualification2_course_started" id="higher_level_qualification2_course_started" @if(isset($data->higher_level_qualification2_course_started)) value="{{$data->higher_level_qualification2_course_started}}" @endif/>
                     </td>
                 </tr>
 
@@ -244,7 +252,7 @@
                     <td> Date course extension_loaded
 
                     </td>
-                    <td> <input type="date" name="higher_level_qualification2_course_ended" id="higher_level_qualification2_course_ended" />
+                    <td> <input type="date" name="higher_level_qualification2_course_ended" id="higher_level_qualification2_course_ended" @if(isset($data->higher_level_qualification2_course_ended)) value="{{$data->higher_level_qualification2_course_ended}}" @endif/>
                     </td>
                 </tr>
 
@@ -253,7 +261,7 @@
 
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification2_full_part" id="higher_level_qualification2_full_part" />
+                    <td> <input type="text" name="higher_level_qualification2_full_part" id="higher_level_qualification2_full_part" @if(isset($data->higher_level_qualification2_full_part)) value="{{$data->higher_level_qualification2_full_part}}" @endif/>
                     </td>
                 </tr>
 
@@ -264,7 +272,7 @@
 
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification2_courseofstudy" id="higher_level_qualification2_courseofstudy" />
+                    <td> <input type="text" name="higher_level_qualification2_courseofstudy" id="higher_level_qualification2_courseofstudy" @if(isset($data->higher_level_qualification2_courseofstudy)) value="{{$data->higher_level_qualification2_courseofstudy}}" @endif/>
                     </td>
                 </tr>
 
@@ -273,7 +281,7 @@
 
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification2_country" id="higher_level_qualification2_country" />
+                    <td> <input type="text" name="higher_level_qualification2_country" id="higher_level_qualification2_country" @if(isset($data->higher_level_qualification2_country)) value="{{$data->higher_level_qualification2_country}}" @endif/>
                     </td>
                 </tr>
 
@@ -285,7 +293,7 @@
 
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification2_thesis_project" id="higher_level_qualification2_thesis_project" />
+                    <td> <input type="text" name="higher_level_qualification2_thesis_project" id="higher_level_qualification2_thesis_project" @if(isset($data->higher_level_qualification2_thesis_project)) value="{{$data->higher_level_qualification2_thesis_project}}" @endif/>
                     </td>
                 </tr>
 
@@ -297,7 +305,7 @@
 
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification2_thesis_project_if" id="higher_level_qualification2_thesis_project_if" />
+                    <td> <input type="text" name="higher_level_qualification2_thesis_project_if" id="higher_level_qualification2_thesis_project_if" @if(isset($data->higher_level_qualification2_thesis_project_if)) value="{{$data->higher_level_qualification2_thesis_project_if}}" @endif/>
                     </td>
                 </tr>
 
@@ -315,14 +323,14 @@
                 <tr>
                     <td> Qualification – Diploma/Award Certificate
                     </td>
-                    <td> <input type="file" name="higher_level_qualification2_diploma_award" id="higher_level_qualification2_diploma_award"></td>
+                    <td> <input type="file" name="higher_level_qualification2_diploma_award" id="higher_level_qualification2_diploma_award" @if(isset($data->higher_level_qualification2_diploma_award)) value="{{$data->higher_level_qualification2_diploma_award}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td> List of exams taken
 
                     </td>
-                    <td> <input type="file" name="higher_level_qualification2_listofexams" id="higher_level_qualification2_listofexams"></td>
+                    <td> <input type="file" name="higher_level_qualification2_listofexams" id="higher_level_qualification2_listofexams" @if(isset($data->higher_level_qualification2_listofexams)) value="{{$data->higher_level_qualification2_listofexams}}" @endif></td>
                 </tr>
 
                 <tr>
@@ -330,7 +338,7 @@
 
 
                     </td>
-                    <td> <input type="file" name="higher_level_qualification2_diploma_supplement" id="higher_level_qualification2_diploma_supplement"></td>
+                    <td> <input type="file" name="higher_level_qualification2_diploma_supplement" id="higher_level_qualification2_diploma_supplement" @if(isset($data->higher_level_qualification2_diploma_supplement)) value="{{$data->higher_level_qualification2_diploma_supplement}}" @endif></td>
                 </tr>
             </tbody>
         </table>
@@ -345,7 +353,7 @@
 
                 <tr>
                     <td> Name of University/Institute </td>
-                    <td> <input type="text" name="higher_level_qualification3_nameofuniversity" id="higher_level_qualification3_nameofuniversity" />
+                    <td> <input type="text" name="higher_level_qualification3_nameofuniversity" id="higher_level_qualification3_nameofuniversity" @if(isset($data->higher_level_qualification3_nameofuniversity)) value="{{$data->higher_level_qualification3_nameofuniversity}}" @endif/>
                     </td>
                 </tr>
 
@@ -355,6 +363,13 @@
                     <td>
                         <select name="higher_level_vocational_level_qualification3" id="higher_level_vocational_level_qualification3" class="form-control">
                             <option value=""> Select Option </option>
+                            
+ @if(!empty(isset($data->higher_level_vocational_level_qualification3)))
+                                <option value="{{$data->higher_level_vocational_level_qualification3}}" selected>{{$data->higher_level_vocational_level_qualification3}}</option>
+                            @endif
+
+
+
                             <option value="universitylevel"> University Level </option>
                             <option value="vocationallevel"> Vocational/Professional Level </option>
                         </select>
@@ -364,7 +379,7 @@
                 <tr>
                     <td> Full address of the education provider
                     </td>
-                    <td> <input type="text" name="higher_level__qualification3_education_provider" id="higher_level__qualification3_education_provider" />
+                    <td> <input type="text" name="higher_level__qualification3_education_provider" id="higher_level__qualification3_education_provider" @if(isset($data->higher_level__qualification3_education_provider)) value="{{$data->higher_level__qualification3_education_provider}}" @endif/>
                     </td>
                 </tr>
 
@@ -372,14 +387,14 @@
                     <td> Name of exact qualification obtained in the official
                         language
                     </td>
-                    <td> <input type="text" name="higher_level_qualifciation3_official_languages" id="higher_level_qualifciation3_official_languages" />
+                    <td> <input type="text" name="higher_level_qualifciation3_official_languages" id="higher_level_qualifciation3_official_languages" @if(isset($data->higher_level_qualifciation3_official_languages)) value="{{$data->higher_level_qualifciation3_official_languages}}" @endif/>
                     </td>
                 </tr>
 
                 <tr>
                     <td> Name of the qualification obtained in English
                     </td>
-                    <td> <input type="text" name="higher_level_qualification3_english" id="higher_level_qualification3_english" />
+                    <td> <input type="text" name="higher_level_qualification3_english" id="higher_level_qualification3_english" @if(isset($data->higher_level_qualification3_english)) value="{{$data->higher_level_qualification3_english}}" @endif/>
                     </td>
                 </tr>
 
@@ -387,7 +402,7 @@
                     <td> Course duration
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification3_course_duration" id="higher_level_qualification3_course_duration" />
+                    <td> <input type="text" name="higher_level_qualification3_course_duration" id="higher_level_qualification3_course_duration" @if(isset($data->higher_level_qualification3_course_duration)) value="{{$data->higher_level_qualification3_course_duration}}" @endif/>
                     </td>
                 </tr>
 
@@ -396,7 +411,7 @@
                     <td> Date course started
 
                     </td>
-                    <td> <input type="date" name="higher_level_qualification3_course_started" id="higher_level_qualification3_course_started" />
+                    <td> <input type="date" name="higher_level_qualification3_course_started" id="higher_level_qualification3_course_started" @if(isset($data->higher_level_qualification3_course_started)) value="{{$data->higher_level_qualification3_course_started}}" @endif/>
                     </td>
                 </tr>
 
@@ -404,7 +419,7 @@
                     <td> Date course extension_loaded
 
                     </td>
-                    <td> <input type="date" name="higher_level_qualification3_course_ended" id="higher_level_qualification3_course_ended" />
+                    <td> <input type="date" name="higher_level_qualification3_course_ended" id="higher_level_qualification3_course_ended" @if(isset($data->higher_level_qualification3_course_ended)) value="{{$data->higher_level_qualification3_course_ended}}" @endif/>
                     </td>
                 </tr>
 
@@ -413,7 +428,7 @@
 
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification3_full_part" id="higher_level_qualification3_full_part" />
+                    <td> <input type="text" name="higher_level_qualification3_full_part" id="higher_level_qualification3_full_part" @if(isset($data->higher_level_qualification3_full_part)) value="{{$data->higher_level_qualification3_full_part}}" @endif/>
                     </td>
                 </tr>
 
@@ -424,7 +439,7 @@
 
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification3_courseofstudy" id="higher_level_qualification3_courseofstudy" />
+                    <td> <input type="text" name="higher_level_qualification3_courseofstudy" id="higher_level_qualification3_courseofstudy" @if(isset($data->higher_level_qualification3_courseofstudy)) value="{{$data->higher_level_qualification3_courseofstudy}}" @endif/>
                     </td>
                 </tr>
 
@@ -433,7 +448,7 @@
 
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification3_country" id="higher_level_qualification3_country" />
+                    <td> <input type="text" name="higher_level_qualification3_country" id="higher_level_qualification3_country" @if(isset($data->higher_level_qualification3_country)) value="{{$data->higher_level_qualification3_country}}" @endif/>
                     </td>
                 </tr>
 
@@ -445,7 +460,7 @@
 
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification3_thesis_project" id="higher_level_qualification3_thesis_project" />
+                    <td> <input type="text" name="higher_level_qualification3_thesis_project" id="higher_level_qualification3_thesis_project" @if(isset($data->higher_level_qualification3_thesis_project)) value="{{$data->higher_level_qualification3_thesis_project}}" @endif />
                     </td>
                 </tr>
 
@@ -457,7 +472,7 @@
 
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification3_thesis_project_if" id="higher_level_qualification3_thesis_project_if" />
+                    <td> <input type="text" name="higher_level_qualification3_thesis_project_if" id="higher_level_qualification3_thesis_project_if" @if(isset($data->higher_level_qualification3_thesis_project_if)) value="{{$data->higher_level_qualification3_thesis_project_if}}" @endif/>
                     </td>
                 </tr>
 
@@ -475,14 +490,14 @@
                 <tr>
                     <td> Qualification – Diploma/Award Certificate
                     </td>
-                    <td> <input type="file" name="higher_level_qualification3_diploma_award" id="higher_level_qualification3_diploma_award"></td>
+                    <td> <input type="file" name="higher_level_qualification3_diploma_award" id="higher_level_qualification3_diploma_award" @if(isset($data->higher_level_qualification3_diploma_award)) value="{{$data->higher_level_qualification3_diploma_award}}" @endif></td>
                 </tr>
 
                 <tr>
                     <td> List of exams taken
 
                     </td>
-                    <td> <input type="file" name="higher_level_qualification3_listofexams" id="higher_level_qualification3_listofexams"></td>
+                    <td> <input type="file" name="higher_level_qualification3_listofexams" id="higher_level_qualification3_listofexams" @if(isset($data->higher_level_qualification3_listofexams)) value="{{$data->higher_level_qualification3_listofexams}}" @endif></td>
                 </tr>
 
                 <tr>
@@ -490,7 +505,7 @@
 
 
                     </td>
-                    <td> <input type="file" name="higher_level_qualification3_diploma_supplement" id="higher_level_qualification3_diploma_supplement"></td>
+                    <td> <input type="file" name="higher_level_qualification3_diploma_supplement" id="higher_level_qualification3_diploma_supplement" @if(isset($data->higher_level_qualification3_diploma_supplement)) value="{{$data->higher_level_qualification3_diploma_supplement}}" @endif></td>
                 </tr>
             </tbody>
         </table>
@@ -500,7 +515,9 @@
 
 
 
+    @if(!Auth::user()->hasRole('consultant') && !Auth::user()->hasRole('admin') )
     <input type="button" name="save" class="save action-button" value="Save" />
+    @endif
     <input type="button" name="next" class="next action-button" value="Next" />
     <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
 

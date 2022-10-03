@@ -23,6 +23,10 @@
                     <td>
                         <select name="currentvisa_in_aus_nz" id="currentvisa_in_aus_nz" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->currentvisa_in_aus_nz)))
+                                <option value="{{$data->currentvisa_in_aus_nz}}" selected>{{$data->currentvisa_in_aus_nz}}</option>
+                            @endif
+
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
 
@@ -36,6 +40,10 @@
                     <td>
                         <select name="currentvisa_hold_aus_nz" id="currentvisa_hold_aus_nz" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->currentvisa_hold_aus_nz)))
+                                <option value="{{$data->currentvisa_hold_aus_nz}}" selected>{{$data->currentvisa_hold_aus_nz}}</option>
+                            @endif
+
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
 
@@ -48,7 +56,7 @@
                     <td>If yes, what type of visa do you hold?
                     </td>
                     <td>
-                        <input type="text" name="currentvisa_typeofvisa" id="currentvisa_typeofvisa" />
+                        <input type="text" name="currentvisa_typeofvisa" id="currentvisa_typeofvisa" @if(isset($data->currentvisa_typeofvisa)) value="{{$data->currentvisa_typeofvisa}}" @endif/>
                     </td>
                 </tr>
 
@@ -60,6 +68,10 @@
                     <td>
                         <select name="currentvisa_waiting_for_visa" id="currentvisa_waiting_for_visa" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->currentvisa_waiting_for_visa)))
+                                <option value="{{$data->currentvisa_waiting_for_visa}}" selected>{{$data->currentvisa_waiting_for_visa}}</option>
+                            @endif
+
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
 
@@ -72,7 +84,7 @@
                         finalized?
                     </td>
                     <td>
-                        <input type="text" name="currentvisa_typeofvisawaiting" id="currentvisa_typeofvisawaiting" />
+                        <input type="text" name="currentvisa_typeofvisawaiting" id="currentvisa_typeofvisawaiting" @if(isset($data->currentvisa_typeofvisawaiting)) value="{{$data->currentvisa_typeofvisawaiting}}" @endif/>
                     </td>
                 </tr>
 
@@ -83,7 +95,7 @@
 
                     </td>
                     <td>
-                        <input type="date" name="currentvisa_dateofexpiry" id="currentvisa_dateofexpiry" />
+                        <input type="date" name="currentvisa_dateofexpiry" id="currentvisa_dateofexpiry" @if(isset($data->currentvisa_dateofexpiry)) value="{{$data->currentvisa_dateofexpiry}}" @endif/>
                     </td>
                 </tr>
 
@@ -93,7 +105,7 @@
                         cancelled?If so, please specify
                     </td>
                     <td>
-                        <input type="text" name="currentvisa_ever_had_visa" id="currentvisa_ever_had_visa" />
+                        <input type="text" name="currentvisa_ever_had_visa" id="currentvisa_ever_had_visa" @if(isset($data->currentvisa_ever_had_visa)) value="{{$data->currentvisa_ever_had_visa}}" @endif/>
                     </td>
                 </tr>
 
@@ -108,6 +120,10 @@
                     <td>
                         <select name="currentvisa_held_visa" id="currentvisa_held_visa" class="form-control">
                             <option value=""> Select Option </option>
+                            @if(!empty(isset($data->currentvisa_held_visa)))
+                                <option value="{{$data->currentvisa_held_visa}}" selected>{{$data->currentvisa_held_visa}}</option>
+                            @endif
+
                             <option value="yes"> Yes </option>
                             <option value="no"> No </option>
 
@@ -120,7 +136,7 @@
                         held or hold a visa for
                     </td>
                     <td>
-                        <input type="text" name="currentvisa_indicate_countries" id="currentvisa_indicate_countries" />
+                        <input type="text" name="currentvisa_indicate_countries" id="currentvisa_indicate_countries" @if(isset($data->currentvisa_indicate_countries)) value="{{$data->currentvisa_indicate_countries}}" @endif/>
                     </td>
                 </tr>
 
@@ -136,7 +152,7 @@
 
                     </td>
                     <td>
-                        <input type="text" name="currentvisa_complied_with_visa_conditions" id="currentvisa_complied_with_visa_conditions" />
+                        <input type="text" name="currentvisa_complied_with_visa_conditions" id="currentvisa_complied_with_visa_conditions" @if(isset($data->currentvisa_complied_with_visa_conditions)) value="{{$data->currentvisa_complied_with_visa_conditions}}" @endif/>
                     </td>
                 </tr>
 
@@ -159,14 +175,14 @@
                             <td> Current visa to Australia or New Zealand (if
                                 applicable)
                             </td>
-                            <td> <input type="file" name="currentvisa_aus_naz_if_applicable" id="currentvisa_aus_naz_if_applicable"></td>
+                            <td> <input type="file" name="currentvisa_aus_naz_if_applicable" id="currentvisa_aus_naz_if_applicable" @if(isset($data->currentvisa_aus_naz_if_applicable)) value="{{$data->currentvisa_aus_naz_if_applicable}}" @endif></td>
                         </tr>
 
                         <tr>
                             <td> Previous visas to Australia or New Zealand (if
                                 applicable)
                             </td>
-                            <td> <input type="file" name="previous_visa_if_applicable1" id="previous_visa_if_applicable1"></td>
+                            <td> <input type="file" name="previous_visa_if_applicable1" id="previous_visa_if_applicable1" @if(isset($data->previous_visa_if_applicable1)) value="{{$data->previous_visa_if_applicable1}}" @endif ></td>
                         </tr>
 
                         <tr>
@@ -174,7 +190,7 @@
                                 applicable)
 
                             </td>
-                            <td> <input type="file" name="previous_visa_if_applicable2" id="previous_visa_if_applicable2"></td>
+                            <td> <input type="file" name="previous_visa_if_applicable2" id="previous_visa_if_applicable2" @if(isset($data->previous_visa_if_applicable2)) value="{{$data->previous_visa_if_applicable2}}" @endif></td>
                         </tr>
 
 
@@ -190,7 +206,9 @@
 
 
     </div>
+    @if(!Auth::user()->hasRole('consultant') && !Auth::user()->hasRole('admin') )
     <input type="button" name="save" class="save action-button" value="Save" />
+    @endif
     <input type="button" name="next" class="next action-button" value="Next" />
     <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
 </fieldset>

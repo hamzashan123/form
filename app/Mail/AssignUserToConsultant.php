@@ -38,6 +38,7 @@ class AssignUserToConsultant extends Mailable
     public function build()
     {
         return $this->view('emails.AssignUserToConsultant')
+        ->subject('New Client Assigned')
         ->with([
                 'username' => $this->username,
                 'email' => $this->email,

@@ -45,29 +45,29 @@
     <li class="nav-item active ">
                 <a class="nav-link" href="{{route('admin.consultant.index')}}">
                 <i class="fas fa-user fa-2x text-gray-300"></i>
-                    <span>Consultants</span></a>
+                    <span>Assign client to Consultant</span></a>
     </li>
     @endif
     @if(Auth::user()->hasRole('admin'))
     <li class="nav-item active ">
                 <a class="nav-link" href="{{route('admin.forms.index')}}">
                 <i class="fas fa-check fa-2x text-gray-300"></i>
-                    <span>Forms</span></a>
+                    <span>Select Client/Assign Form </span></a>
     </li>
     @endif
     @if(Auth::user()->hasRole('admin'))
-    <li class="nav-item active ">
+    <!-- <li class="nav-item active ">
                 <a class="nav-link" href="{{route('admin.form360.index')}}">
                 <i class="fas fa-clock fa-2x text-gray-300"></i>
                     <span>Draft Applications</span></a>
-    </li>
+    </li> -->
     @endif
     @if(Auth::user()->hasRole('admin'))
-    <li class="nav-item active ">
+    <!-- <li class="nav-item active ">
                 <a class="nav-link" href="{{route('admin.form360.index')}}">
                 <i class="fas fa-check fa-2x text-gray-300"></i>
                     <span>Submitted Applications</span></a>
-    </li>
+    </li> -->
     @endif
     @forelse($admin_side_menu as $link)
         @can($link->permission_title)

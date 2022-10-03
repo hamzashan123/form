@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="{{asset('formstyles.css')}}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -13,6 +14,11 @@
                 @if(session()->has('success')) 
                 <div class="alert alert-success">
                     {{ session()->get('success') }}
+                </div>
+                @endif
+                @if(session()->has('error')) 
+                <div class="alert alert-danger">
+                    {{ session()->get('error') }}
                 </div>
                 @endif
                 <form id="form360" action="{{route('admin.form360.save')}}" method="post" enctype="multipart/form-data">
@@ -64,6 +70,7 @@
     </div>
 </div>
 @if(Session::has('submitted'))
+
 <script>
     Swal.fire({
         icon: 'success',
@@ -71,15 +78,30 @@
         text: 'Thank you, your application has been successfully submitted. Login details have been sent to your glistereded email to either login again and change or details or to change what has been submitted.',
 
     }).then((result) => {
-        window.location = '/login';
+        //window.location = '/login';
     })
 </script>
 @endif
 <script src="{{asset('form360.js')}}"></script>
 <script>
+    //alert('adsd');
+        jQuery(document).ready(function(){
+            if ( jQuery('body').hasClass('admin') || jQuery('body').hasClass('consultant')) {
+                jQuery('#form360 input').prop('disabled', true);
+                jQuery('#form360 input').css('opacity', 0.5);
+                jQuery('#form360 select').prop('disabled', true);
+                jQuery('#form360 select').css('opacity', 0.5);
+            }
+        })
+</script>
+<script>
+
+
   var fieldsname = [];
   var fieldsvalue = [];
   var fieldscomments = [];
+
+<?php if(auth()->user()->hasRole('consultant')) {  ?>  
 jQuery('.form-card td').click(function (e) {
         
         if($(this).hasClass('addBorder')){
@@ -112,28 +134,23 @@ jQuery('.form-card td').click(function (e) {
             
         }
   });
+  <?php } ?>
 
   jQuery('#correctemail').click(function (e) {
                 
                 e.preventDefault();
                 $("#correctemail").html("Please wait...");
-            	//$(this).attr('disabled', 'true');
-                // console.log('fields to email' , fieldsname);
-                // console.log('fields to email' , fieldsvalue);
                 console.log('fields to fieldscomments' , $('.commentfield'));
                 $('.commentfield').each(function(i, obj) {
-                    // console.log('th',jQuery(this).closest('tr').find('td').text());
-                    // console.log('td' ,jQuery(this).closest('tr').find('td').text());
-                    // console.log('td' ,jQuery(this).val());
                     fieldsname.push(jQuery(this).closest('tr').find('td').text().trim());
                     fieldsvalue.push(jQuery(this).closest('tr').find('input').val());
                     fieldscomments.push(jQuery(this).val());
                     
                 });
-                 var userid = "<?php echo $_GET['userid'] ?>";
+                 var userid = "<?php echo ($_GET['userid']); ?>";
                 
                 
-                
+               
                 $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -142,7 +159,7 @@ jQuery('.form-card td').click(function (e) {
                  $.ajax({
                   type:'POST',
                   url:"{{route('admin.correctionemail')}}",
-                  data:{ userid: userid , fieldsname : fieldsname , fieldsvalue : fieldsvalue , fieldscomments : fieldscomments},
+                  data:{ userid: userid , formName: 'Form 360', fieldsname : fieldsname , fieldsvalue : fieldsvalue , fieldscomments : fieldscomments},
                   success:function(data){
                       $("#correctemail").html("Send Correction email");
                       if(data.success === "true"){
@@ -151,7 +168,7 @@ jQuery('.form-card td').click(function (e) {
                               title: 'Successfully sent',
                               text: 'Correction Email has been sent!',
                           }).then(function() {
-                                window.location.reload();
+                                window.location.href = '/admin';
                             });
                       }else if(data.success === 'false'){
                           $("#correctemail").html("Send Correction email");
