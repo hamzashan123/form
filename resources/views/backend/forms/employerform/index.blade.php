@@ -59,6 +59,17 @@
     })
 </script>
 @endif
+<script>
+    //alert('adsd');
+        jQuery(document).ready(function(){
+            if ( jQuery('body').hasClass('admin') || jQuery('body').hasClass('consultant')) {
+                jQuery('#form360 input').prop('disabled', true);
+                jQuery('#form360 input').css('opacity', 0.5);
+                jQuery('#form360 select').prop('disabled', true);
+                jQuery('#form360 select').css('opacity', 0.5);
+            }
+        })
+</script>
 <script src="{{asset('employerform.js')}}"></script>
 <script>
   var fieldsname = [];
