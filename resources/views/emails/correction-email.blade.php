@@ -6,7 +6,7 @@
 
 <h3 style="font-size: 20px;
     font-weight: normal;">Hello Dear, We recommended you to please correct the mentioned fields below.</h3>
-
+<h5>Form name : {{$formname}}</h5>
 
 @if(!empty($fieldsname))
 

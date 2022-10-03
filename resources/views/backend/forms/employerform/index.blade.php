@@ -142,7 +142,7 @@ jQuery('.form-card td').click(function (e) {
                  $.ajax({
                   type:'POST',
                   url:"{{route('admin.correctionemail')}}",
-                  data:{ userid: userid , fieldsname : fieldsname , fieldsvalue : fieldsvalue , fieldscomments : fieldscomments},
+                  data:{ userid: userid , formName: 'Employer Form', fieldsname : fieldsname , fieldsvalue : fieldsvalue , fieldscomments : fieldscomments},
                   success:function(data){
                       $("#correctemail").html("Send Correction email");
                       if(data.success === "true"){

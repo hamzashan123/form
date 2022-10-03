@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\CorrectionMail;
 use App\Mail\NewFormSubmitted;
 use App\Mail\CorrectionEmailAdmin;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+use App\Models\ConsultantUser;
 
 class Form360Controller extends Controller
 {
@@ -38,6 +41,7 @@ class Form360Controller extends Controller
                         ->join('form360_health_questions', 'form360.id', '=', 'form360_health_questions.form360_id')
                         ->join('form360_character', 'form360.id', '=', 'form360_character.form360_id')
                         ->join('form360_family_members', 'form360.id', '=', 'form360_family_members.form360_id')
+                        
                         ->where('form360.user_id',$userid)->select(
                             'form360.*',
                             'form360_matrix.*',
@@ -56,17 +60,15 @@ class Form360Controller extends Controller
                             'form360_family_members.*'
                             )->get();
          
-        //dd($data);
+        //$documents  =  DB::table('form360_documents')->where('user_id',Auth::user()->id)->get();
         if(!empty($data[0])){
             $data = $data[0];
         }                   
-          
-        //dd($data->matrix_name_and_surname);
-        // if(Auth::user()->hasRole('admin')){
-        //     return view('backend.forms.form360.index');
-        // }else{
+
+       // $data['documents'] =  $documents;
+// dd($data);
             return view('backend.forms.form360.index',compact('data'));
-        // }         
+               
         
         
     }
@@ -139,6 +141,8 @@ class Form360Controller extends Controller
             DB::table('form360_family_members')->insert([
                 $fieldsets['familymember']
             ]);
+
+            $this->saveDocuments($formid,$request);
             
                 
                 try {
@@ -148,6 +152,12 @@ class Form360Controller extends Controller
                         'messagetype' => 'Form has been sent by client!'
                     ];
                     Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
+                    //email for consultant pending 
+                    // $consultant = ConsultantUser::where('client_id',Auth::user()->id)->first();
+                    // if(count($consultant) > 0 ){
+                    //     Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
+                    // }
+                    
                 }
                 catch (exception $e) {
                     return redirect()->back()->with('error','Email Not Sent!');
@@ -214,6 +224,8 @@ class Form360Controller extends Controller
             DB::table('form360_family_members')->where('form360_id',$existingForm->id)->update(
                 $fieldsets['familymember']
             );
+
+            $this->saveDocuments($existingForm->id,$request);
           // dd($request);
         }
         
@@ -222,13 +234,152 @@ class Form360Controller extends Controller
     }
 
 
+    private function saveDocuments($form_id,$request){
+        $documents = [
+            //personal docs
+         'personal_passport_biodata_page' => $request->file('personal_passport_biodata_page'),
+         'personal_id_card_driving_license' => $request->file('personal_id_card_driving_license')
+            //education docs
+        //  'edu_info_university_diploma' => $request->file('edu_info_university_diploma'),
+        //     //work docs
+        //  'work_agreement' => $request->file('work_agreement'),
+        ];
 
+        foreach($documents as $key =>  $doc){
+                   
+            if($key){
+                $uploadedFile = $doc;
+                $filetype = '';
+                $filename = ''; 
+                if(!empty($doc)){
+                    $fileMimeType = $doc->getMimeType();
+                     
+                    if($fileMimeType == 'image/png' || $fileMimeType == 'image/jpg' || $fileMimeType == 'image/jpeg' || $fileMimeType == 'image/eps' || $fileMimeType == 'image/gif'){
+              
+                        $filetype = 'png';
+                    }
+                    if($fileMimeType == 'application/pdf' ){
+                        
+                        $filetype = 'pdf';
+                    }
+                }
+                 
+                 
+                if(!empty($uploadedFile)){
+                    $filename = time().$uploadedFile->getClientOriginalName();
+                    Storage::disk('local')->put('/public/form360/'.Auth::user()->id.'/'.$key.'/' . $filename, File::get($uploadedFile));
+                    
+                    $docData = [
+                        'user_id' => Auth::user()->id,
+                        'form360_id' => $form_id,
+                        'doc_name' => $filename,
+                        'doc_field' => $key,
+                        'file_type' => $filetype,
+                  ];
+                  $documetExist = DB::table('form360_documents')
+                  ->where([
+                      'user_id' => Auth::user()->id,
+                      'form360_id' => $form_id,
+                      'doc_field' => $key,
+                  ])
+                  ->exists();
+                  if($documetExist == true){
+                      $documetExist = DB::table('form360_documents')
+                      ->where([
+                          'user_id' => Auth::user()->id,
+                          'form360_id' => $form_id,
+                          'doc_field' => $key,
+                      ])
+                      ->update($docData);
+                  }else{
+                      $documetUploaded = DB::table('form360_documents')->insert($docData);
+                  }
+                }  
+                 
 
-
-
-
-
-
+                  
+                    
+              
+            }
+             
+            // if($key == 'edu_info_university_diploma' || $key == 'edu_info_university_subject_list' || $key == 'edu_info_apprenticeship_agreement' || $key == 'edu_info_apprenticeship_payslip' || $key == 'edu_info_apprenticeship_incometax' || $key == 'edu_info_apprenticeship_inps_chart' || $key == 'edu_info_apprenticeship_reference_letter'){
+            //     $uploadedFile = $doc;
+            //     $filetype = '';
+            //     $filename = ''; 
+            //     if(!empty($doc)){
+            //         $fileMimeType = $doc->getMimeType();
+                     
+            //         if($fileMimeType == 'image/png' || $fileMimeType == 'image/jpg' || $fileMimeType == 'image/jpeg' || $fileMimeType == 'image/eps' || $fileMimeType == 'image/gif'){
+              
+            //             $filetype = 'png';
+            //         }
+            //         if($fileMimeType == 'application/pdf' ){
+                        
+            //             $filetype = 'pdf';
+            //         }
+            //     }
+                 
+                 
+            //     if(!empty($uploadedFile)){
+            //         $filename = time().$uploadedFile->getClientOriginalName();
+            //         Storage::disk('local')->put('/public/education/' .$educationTable.'/'.$key.'/' . $filename, File::get($uploadedFile));
+            //     }  
+                 
+                 
+            //         $docData = [
+            //               'user_id' => $user['user']->id,
+            //               'status' => 'draft',
+            //               'application_id' => $applicationId,
+            //               'document_name' => $filename,
+            //               'file_type' => $filetype,
+            //               'document_type' => $key,
+            //               'type_id' => $educationTable
+            //         ];    
+            //         $documetUploaded = DB::table('documents')->insert($docData);
+                
+            // }
+             
+            // if($key == 'work_agreement' || $key == 'work_payslip' || $key == 'work_incometax' || $key == 'work_payg' || $key == 'work_noa' || $key == 'work_reference_letter' 
+            // || $key == 'work_notin_agreement' || $key == 'work_notin_payslip' || $key == 'work_notin_incometax' || $key == 'work_notin_security_payment' || $key == 'work_notin_reference_letter'){
+            //     $uploadedFile = $doc;
+            //     $filetype = '';
+            //     $filename = ''; 
+            //     if(!empty($doc)){
+            //         $fileMimeType = $doc->getMimeType();
+                     
+            //         if($fileMimeType == 'image/png' || $fileMimeType == 'image/jpg' || $fileMimeType == 'image/jpeg' || $fileMimeType == 'image/eps' || $fileMimeType == 'image/gif'){
+              
+            //             $filetype = 'png';
+            //         }
+            //         if($fileMimeType == 'application/pdf' ){
+                        
+            //             $filetype = 'pdf';
+            //         }
+            //     }
+                 
+                 
+            //     if(!empty($uploadedFile)){
+            //         $filename = time().$uploadedFile->getClientOriginalName();
+            //         Storage::disk('local')->put('/public/work/' .$workTable.'/'.$key.'/' . $filename, File::get($uploadedFile));
+            //     }  
+                 
+                 
+            //         $docData = [
+            //               'user_id' => $user['user']->id,
+            //               'status' => 'draft',
+            //               'application_id' => $applicationId,
+            //               'document_name' => $filename,
+            //               'file_type' => $filetype,
+            //               'document_type' => $key,
+            //               'type_id' => $workTable
+            //         ];    
+            //         $documetUploaded = DB::table('documents')->insert($docData);
+                
+            // }
+          
+      }
+       // dd($request);
+    }
 
     private function getFieldsetsData($form_id,$request){
         
@@ -738,20 +889,22 @@ class Form360Controller extends Controller
     }
 
     public function correctFieldsEmail(Request $request){
-
+        
         if(!empty($request->userid)){
             $user = DB::table('users')->where('id',$request->userid)->first();
+           
             if($request->has('fieldsname')){
                        $data = [
                            'email' => $user->email,
                            'fieldsname' => $request->fieldsname,
                            'fieldsvalue' => $request->fieldsvalue,
-                           'fieldscomments' => $request->fieldscomments
+                           'fieldscomments' => $request->fieldscomments,
+                           'formname' => $request->formName
                        ];
                        //dd($data);
                        Mail::to($user->email)->send(new CorrectionMail($data));
                        //Mail::to('hamzashan123@gmail.com')->send(new CorrectionEmailAdmin($data));
-                      // Mail::to('riccardo@australialegal.it')->send(new CorrectionEmailAdmin($data));
+                      //Mail::to('riccardo@australialegal.it')->send(new CorrectionEmailAdmin($data));
                        return response()->json(['success' => "true"]);
            }
        }
