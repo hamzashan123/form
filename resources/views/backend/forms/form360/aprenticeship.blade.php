@@ -106,8 +106,8 @@
                             @if(!empty(isset($data->apprenticeship_payments)))
                             <option value="{{$data->apprenticeship_payments}}" selected>{{$data->apprenticeship_payments}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -120,8 +120,8 @@
                             @if(!empty(isset($data->apprenticeship_period)))
                             <option value="{{$data->apprenticeship_period}}" selected>{{$data->apprenticeship_period}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -139,8 +139,8 @@
                             @if(!empty(isset($data->apprenticeship_employment_collaboration)))
                             <option value="{{$data->apprenticeship_employment_collaboration}}" selected>{{$data->apprenticeship_employment_collaboration}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -153,8 +153,8 @@
                             @if(!empty(isset($data->apprenticeship_payslips)))
                             <option value="{{$data->apprenticeship_payslips}}" selected>{{$data->apprenticeship_payslips}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -168,8 +168,8 @@
                             @if(!empty(isset($data->apprenticeship_bank_statement)))
                             <option value="{{$data->apprenticeship_bank_statement}}" selected>{{$data->apprenticeship_bank_statement}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -184,8 +184,8 @@
                             @if(!empty(isset($data->apprenticeship_bank_statement)))
                             <option value="{{$data->apprenticeship_bank_statement}}" selected>{{$data->apprenticeship_bank_statement}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -201,8 +201,8 @@
                             @if(!empty(isset($data->apprenticeship_reference_letter)))
                             <option value="{{$data->apprenticeship_reference_letter}}" selected>{{$data->apprenticeship_reference_letter}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
