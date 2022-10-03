@@ -63,6 +63,8 @@
     <!-- summernote -->
     <script src="{{ asset('backend/vendor/summernote/summernote-bs4.min.js') }}"></script>
     <script src="{{asset('countrycode.js')}}"></script>
+    
+
     @yield('scripts')
 </body>
 </html>

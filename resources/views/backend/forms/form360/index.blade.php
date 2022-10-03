@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="{{asset('formstyles.css')}}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -69,6 +70,7 @@
     </div>
 </div>
 @if(Session::has('submitted'))
+
 <script>
     Swal.fire({
         icon: 'success',
@@ -82,6 +84,19 @@
 @endif
 <script src="{{asset('form360.js')}}"></script>
 <script>
+    //alert('adsd');
+        jQuery(document).ready(function(){
+            if ( jQuery('body').hasClass('admin') || jQuery('body').hasClass('consultant')) {
+                jQuery('#form360 input').prop('disabled', true);
+                jQuery('#form360 input').css('opacity', 0.5);
+                jQuery('#form360 select').prop('disabled', true);
+                jQuery('#form360 select').css('opacity', 0.5);
+            }
+        })
+</script>
+<script>
+
+
   var fieldsname = [];
   var fieldsvalue = [];
   var fieldscomments = [];
