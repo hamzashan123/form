@@ -22,11 +22,11 @@
                         <select name="healthquestion_aus_or_nz" id="healthquestion_aus_or_nz" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->healthquestion_aus_or_nz)))
-                                <option value="{{$data->healthquestion_aus_or_nz}}" selected>{{$data->healthquestion_aus_or_nz}}</option>
+                            <option value="{{$data->healthquestion_aus_or_nz}}" selected>{{$data->healthquestion_aus_or_nz}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -41,11 +41,11 @@
                         <select name="healthquestion_paramedic" id="healthquestion_paramedic" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->healthquestion_paramedic)))
-                                <option value="{{$data->healthquestion_paramedic}}" selected>{{$data->healthquestion_paramedic}}</option>
+                            <option value="{{$data->healthquestion_paramedic}}" selected>{{$data->healthquestion_paramedic}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -58,11 +58,11 @@
                         <select name="healthquestion_childcare" id="healthquestion_childcare" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->healthquestion_childcare)))
-                                <option value="{{$data->healthquestion_childcare}}" selected>{{$data->healthquestion_childcare}}</option>
+                            <option value="{{$data->healthquestion_childcare}}" selected>{{$data->healthquestion_childcare}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
                     </td>
@@ -78,11 +78,11 @@
                         <select name="healthquestion_classroom" id="healthquestion_classroom" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->healthquestion_classroom)))
-                                <option value="{{$data->healthquestion_classroom}}" selected>{{$data->healthquestion_classroom}}</option>
+                            <option value="{{$data->healthquestion_classroom}}" selected>{{$data->healthquestion_classroom}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -94,11 +94,11 @@
                         <select name="healthquestion_tuberculosis" id="healthquestion_tuberculosis" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->healthquestion_tuberculosis)))
-                                <option value="{{$data->healthquestion_tuberculosis}}" selected>{{$data->healthquestion_tuberculosis}}</option>
+                            <option value="{{$data->healthquestion_tuberculosis}}" selected>{{$data->healthquestion_tuberculosis}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -110,11 +110,11 @@
                         <select name="healthquestion_familymember_tuberculosis" id="healthquestion_familymember_tuberculosis" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->healthquestion_familymember_tuberculosis)))
-                                <option value="{{$data->healthquestion_familymember_tuberculosis}}" selected>{{$data->healthquestion_familymember_tuberculosis}}</option>
+                            <option value="{{$data->healthquestion_familymember_tuberculosis}}" selected>{{$data->healthquestion_familymember_tuberculosis}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
 
@@ -131,11 +131,11 @@
                         <select name="healthquestion_xray" id="healthquestion_xray" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->healthquestion_xray)))
-                                <option value="{{$data->healthquestion_xray}}" selected>{{$data->healthquestion_xray}}</option>
+                            <option value="{{$data->healthquestion_xray}}" selected>{{$data->healthquestion_xray}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -148,11 +148,11 @@
                         <select name="healthquestion_indicate_if_yes" id="healthquestion_indicate_if_yes" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->healthquestion_indicate_if_yes)))
-                                <option value="{{$data->healthquestion_indicate_if_yes}}" selected>{{$data->healthquestion_indicate_if_yes}}</option>
+                            <option value="{{$data->healthquestion_indicate_if_yes}}" selected>{{$data->healthquestion_indicate_if_yes}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
 
@@ -176,11 +176,11 @@
                         <select name="healthquestion_medicalcosts" id="healthquestion_medicalcosts" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->healthquestion_medicalcosts)))
-                                <option value="{{$data->healthquestion_medicalcosts}}" selected>{{$data->healthquestion_medicalcosts}}</option>
+                            <option value="{{$data->healthquestion_medicalcosts}}" selected>{{$data->healthquestion_medicalcosts}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -192,11 +192,11 @@
                         <select name="healthquestion_blood" id="healthquestion_blood" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->healthquestion_blood)))
-                                <option value="{{$data->healthquestion_blood}}" selected>{{$data->healthquestion_blood}}</option>
+                            <option value="{{$data->healthquestion_blood}}" selected>{{$data->healthquestion_blood}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -208,11 +208,11 @@
                         <select name="healthquestion_cancer" id="healthquestion_cancer" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->healthquestion_cancer)))
-                                <option value="{{$data->healthquestion_cancer}}" selected>{{$data->healthquestion_cancer}}</option>
+                            <option value="{{$data->healthquestion_cancer}}" selected>{{$data->healthquestion_cancer}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
                     </td>
@@ -225,11 +225,11 @@
                         <select name="healthquestion_heart" id="healthquestion_heart" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->healthquestion_heart)))
-                                <option value="{{$data->healthquestion_heart}}" selected>{{$data->healthquestion_heart}}</option>
+                            <option value="{{$data->healthquestion_heart}}" selected>{{$data->healthquestion_heart}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
 
@@ -242,11 +242,11 @@
                         <select name="healthquestion_hepatitis" id="healthquestion_hepatitis" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->healthquestion_hepatitis)))
-                                <option value="{{$data->healthquestion_hepatitis}}" selected>{{$data->healthquestion_hepatitis}}</option>
+                            <option value="{{$data->healthquestion_hepatitis}}" selected>{{$data->healthquestion_hepatitis}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
 
@@ -261,11 +261,11 @@
                         <select name="healthquestion_hiv" id="healthquestion_hiv" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->healthquestion_hiv)))
-                                <option value="{{$data->healthquestion_hiv}}" selected>{{$data->healthquestion_hiv}}</option>
+                            <option value="{{$data->healthquestion_hiv}}" selected>{{$data->healthquestion_hiv}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
 
@@ -278,11 +278,11 @@
                         <select name="healthquestion_kidney" id="healthquestion_kidney" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->healthquestion_kidney)))
-                                <option value="{{$data->healthquestion_kidney}}" selected>{{$data->healthquestion_kidney}}</option>
+                            <option value="{{$data->healthquestion_kidney}}" selected>{{$data->healthquestion_kidney}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
 
@@ -295,11 +295,11 @@
                         <select name="healthquestion_mental" id="healthquestion_mental" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->healthquestion_mental)))
-                                <option value="{{$data->healthquestion_mental}}" selected>{{$data->healthquestion_mental}}</option>
+                            <option value="{{$data->healthquestion_mental}}" selected>{{$data->healthquestion_mental}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
 
@@ -312,11 +312,11 @@
                         <select name="healthquestion_pregnancy" id="healthquestion_pregnancy" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->healthquestion_pregnancy)))
-                                <option value="{{$data->healthquestion_pregnancy}}" selected>{{$data->healthquestion_pregnancy}}</option>
+                            <option value="{{$data->healthquestion_pregnancy}}" selected>{{$data->healthquestion_pregnancy}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
 
@@ -330,11 +330,11 @@
                         <select name="healthquestion_respiratory1" id="healthquestion_respiratory1" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->healthquestion_respiratory1)))
-                                <option value="{{$data->healthquestion_respiratory1}}" selected>{{$data->healthquestion_respiratory1}}</option>
+                            <option value="{{$data->healthquestion_respiratory1}}" selected>{{$data->healthquestion_respiratory1}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
                     </td>
@@ -348,11 +348,11 @@
                         <select name="healthquestion_respiratory1" id="healthquestion_respiratory1" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->healthquestion_respiratory1)))
-                                <option value="{{$data->healthquestion_respiratory1}}" selected>{{$data->healthquestion_respiratory1}}</option>
+                            <option value="{{$data->healthquestion_respiratory1}}" selected>{{$data->healthquestion_respiratory1}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
 
@@ -368,11 +368,11 @@
                         <select name="healthquestion_medical_condition" id="healthquestion_medical_condition" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->healthquestion_medical_condition)))
-                                <option value="{{$data->healthquestion_medical_condition}}" selected>{{$data->healthquestion_medical_condition}}</option>
+                            <option value="{{$data->healthquestion_medical_condition}}" selected>{{$data->healthquestion_medical_condition}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
                     </td>
@@ -389,11 +389,11 @@
                         <select name="healthquestion_question_number_if_yes" id="healthquestion_question_number_if_yes" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->healthquestion_question_number_if_yes)))
-                                <option value="{{$data->healthquestion_question_number_if_yes}}" selected>{{$data->healthquestion_question_number_if_yes}}</option>
+                            <option value="{{$data->healthquestion_question_number_if_yes}}" selected>{{$data->healthquestion_question_number_if_yes}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
