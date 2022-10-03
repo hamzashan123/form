@@ -29,14 +29,14 @@
                         <select name="first_education_qualification_obtained" id="first_education_qualification_obtained" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->first_education_qualification_obtained)))
-                                <option value="{{$data->first_education_qualification_obtained}}" selected>{{$data->first_education_qualification_obtained}}</option>
+                            <option value="{{$data->first_education_qualification_obtained}}" selected>{{$data->first_education_qualification_obtained}}</option>
                             @endif
-                            <option value="phd"> PHD </option>
-                            <option value="master"> Masters Degree </option>
-                            <option value="bachelor"> Bachelor Degree </option>
-                            <option value="vocational"> Vocational diploma </option>
-                            <option value="highschool"> High School diploma </option>
-                            <option value="other"> Other </option>
+                            <option value="PHD"> PHD </option>
+                            <option value="Masters Degree"> Masters Degree </option>
+                            <option value="Bachelor Degree"> Bachelor Degree </option>
+                            <option value="Vocational diploma"> Vocational diploma </option>
+                            <option value="High School diploma"> High School diploma </option>
+                            <option value="Other"> Other </option>
 
                         </select>
                     </td>
