@@ -37,11 +37,11 @@
                         <select name="higher_level_vocational_level_qualification1" id="higher_level_vocational_level_qualification1" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->higher_level_vocational_level_qualification1)))
-                                <option value="{{$data->higher_level_vocational_level_qualification1}}" selected>{{$data->higher_level_vocational_level_qualification1}}</option>
+                            <option value="{{$data->higher_level_vocational_level_qualification1}}" selected>{{$data->higher_level_vocational_level_qualification1}}</option>
                             @endif
 
-                            <option value="universitylevel"> University Level </option>
-                            <option value="vocationallevel"> Vocational/Professional Level </option>
+                            <option value="University Level"> University Level </option>
+                            <option value="Vocational/Professional Level"> Vocational/Professional Level </option>
                         </select>
                     </td>
                 </tr>
@@ -49,7 +49,7 @@
                 <tr>
                     <td> Full address of the education provider
                     </td>
-                    <td> <input type="text"  name="higher_level__qualification1_education_provider" id="higher_level__qualification1_education_provider" @if(isset($data->higher_level__qualification1_education_provider)) value="{{$data->higher_level__qualification1_education_provider}}" @endif/>
+                    <td> <input type="text" name="higher_level__qualification1_education_provider" id="higher_level__qualification1_education_provider" @if(isset($data->higher_level__qualification1_education_provider)) value="{{$data->higher_level__qualification1_education_provider}}" @endif/>
                     </td>
                 </tr>
 
@@ -175,7 +175,7 @@
 
 
                     </td>
-                    <td> <input  type="file" name="higher_level_qualification1_diploma_supplement" id="higher_level_qualification1_diploma_supplement" @if(isset($data->higher_level_qualification1_diploma_supplement)) value="{{$data->higher_level_qualification1_diploma_supplement}}" @endif></td>
+                    <td> <input type="file" name="higher_level_qualification1_diploma_supplement" id="higher_level_qualification1_diploma_supplement" @if(isset($data->higher_level_qualification1_diploma_supplement)) value="{{$data->higher_level_qualification1_diploma_supplement}}" @endif></td>
                 </tr>
             </tbody>
         </table>
@@ -199,12 +199,12 @@
                     <td>
                         <select name="higher_level_vocational_level_qualification2" id="higher_level_vocational_level_qualification2" class="form-control">
                             <option value=""> Select Option </option>
-                            
- @if(!empty(isset($data->higher_level_vocational_level_qualification2)))
-                                <option value="{{$data->higher_level_vocational_level_qualification2}}" selected>{{$data->higher_level_vocational_level_qualification2}}</option>
+
+                            @if(!empty(isset($data->higher_level_vocational_level_qualification2)))
+                            <option value="{{$data->higher_level_vocational_level_qualification2}}" selected>{{$data->higher_level_vocational_level_qualification2}}</option>
                             @endif
-                            <option value="universitylevel"> University Level </option>
-                            <option value="vocationallevel"> Vocational/Professional Level </option>
+                            <option value="University Level"> University Level </option>
+                            <option value="Vocational/Professional Level"> Vocational/Professional Level </option>
                         </select>
                     </td>
                 </tr>
@@ -363,15 +363,15 @@
                     <td>
                         <select name="higher_level_vocational_level_qualification3" id="higher_level_vocational_level_qualification3" class="form-control">
                             <option value=""> Select Option </option>
-                            
- @if(!empty(isset($data->higher_level_vocational_level_qualification3)))
-                                <option value="{{$data->higher_level_vocational_level_qualification3}}" selected>{{$data->higher_level_vocational_level_qualification3}}</option>
+
+                            @if(!empty(isset($data->higher_level_vocational_level_qualification3)))
+                            <option value="{{$data->higher_level_vocational_level_qualification3}}" selected>{{$data->higher_level_vocational_level_qualification3}}</option>
                             @endif
 
 
 
-                            <option value="universitylevel"> University Level </option>
-                            <option value="vocationallevel"> Vocational/Professional Level </option>
+                            <option value="University Level"> University Level </option>
+                            <option value="Vocational/Professional Level"> Vocational/Professional Level </option>
                         </select>
                     </td>
                 </tr>
