@@ -23,8 +23,8 @@
                             @if(!empty(isset($data->sbs_business_required_aus)))
                             <option value="{{$data->sbs_business_required_aus}}" selected>{{$data->sbs_business_required_aus}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -362,11 +362,11 @@
                     <td>
                         <select name="sbs_business_type" id="sbs_business_type" class="form-control">
                             <option value=""> Select Option </option>
-                            <option value="sole"> Sole trader </option>
-                            <option value="proprietary"> Proprietary Limited </option>
-                            <option value="public"> Public listed company </option>
-                            <option value="trust"> Trust </option>
-                            <option value="other"> Other </option>
+                            <option value="Sole trader"> Sole trader </option>
+                            <option value="Proprietary Limited"> Proprietary Limited </option>
+                            <option value="Public listed company"> Public listed company </option>
+                            <option value="Trust"> Trust </option>
+                            <option value="Other"> Other </option>
                         </select>
                     </td>
                 </tr>
@@ -552,10 +552,10 @@
                     <td>
                         <select name="sbs_trading_willing" id="sbs_trading_willing" class="form-control">
                             <option value=""> Select Option </option>
-                            <option value="1_to_3"> 1 to 3 </option>
-                            <option value="3_to_5"> 3 to 5 </option>
-                            <option value="5_to_10"> 5 to 10</option>
-                            <option value="More_than_10"> More than 10 </option>
+                            <option value="1 to 3"> 1 to 3 </option>
+                            <option value="3 to 5"> 3 to 5 </option>
+                            <option value="5 to 10"> 5 to 10</option>
+                            <option value="More than 10"> More than 10 </option>
 
 
                         </select>
