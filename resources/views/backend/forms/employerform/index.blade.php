@@ -37,7 +37,9 @@
                     @include('backend.forms.employerform.nomination')
                     @include('backend.forms.employerform.labour')
                     @include('backend.forms.employerform.job')
+                    
                     @include('backend.forms.employerform.final')
+                    
 
 
                 </form>
@@ -53,7 +55,7 @@
         text: 'Thank you, your application has been successfully submitted. Login details have been sent to your glistereded email to either login again and change or details or to change what has been submitted.',
 
     }).then((result) => {
-        window.location = '/login';
+        //window.location = '/login';
     })
 </script>
 @endif
@@ -135,7 +137,7 @@ jQuery('.form-card td').click(function (e) {
                               title: 'Successfully sent',
                               text: 'Correction Email has been sent!',
                           }).then(function() {
-                                window.location.reload();
+                            window.location.href = '/admin';
                             });
                       }else if(data.success === 'false'){
                           $("#correctemail").html("Send Correction email");

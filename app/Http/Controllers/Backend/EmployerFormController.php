@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Mail\NewFormSubmitted;
+use Illuminate\Support\Facades\Mail;
 
 class EmployerFormController extends Controller
 {
@@ -66,6 +68,18 @@ class EmployerFormController extends Controller
             DB::table('employerform_nomination')->insert([
                 $fieldsets['nominationData']
             ]);
+            try {
+                $data = [
+                    'username' => Auth::user()->username,
+                    'email' => Auth::user()->email,
+                    'messagetype' => 'Form has been sent by client!'
+                ];
+                Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
+            }
+            catch (exception $e) {
+                return redirect()->back()->with('error','Email Not Sent!');
+            }
+            
         }else{
            $existingForm =  DB::table('employerform')->where('user_id', Auth::user()->id)->first();
 
@@ -87,7 +101,7 @@ class EmployerFormController extends Controller
             );
         }
         
-        
+       // return view('backend.forms.employerform.final');
         return redirect()->back()->with('success','Application Submitted Successfully!');
     }
 

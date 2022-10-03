@@ -36,6 +36,7 @@ class UserActivatedByAdmin extends Mailable
     public function build()
     {
         return $this->view('emails.UserActivatedByAdmin')
+        ->subject('Account Activated!')
         ->with([
                 'username' => $this->username,
                 'email' => $this->email,

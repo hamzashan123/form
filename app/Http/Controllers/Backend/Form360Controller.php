@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\CorrectionMail;
+use App\Mail\NewFormSubmitted;
 use App\Mail\CorrectionEmailAdmin;
 
 class Form360Controller extends Controller
@@ -138,6 +139,20 @@ class Form360Controller extends Controller
             DB::table('form360_family_members')->insert([
                 $fieldsets['familymember']
             ]);
+            
+                
+                try {
+                    $data = [
+                        'username' => Auth::user()->username,
+                        'email' => Auth::user()->email,
+                        'messagetype' => 'Form has been sent by client!'
+                    ];
+                    Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
+                }
+                catch (exception $e) {
+                    return redirect()->back()->with('error','Email Not Sent!');
+                }
+                
         }else{
            $existingForm =  DB::table('form360')->where('user_id', Auth::user()->id)->first();
 
@@ -202,7 +217,7 @@ class Form360Controller extends Controller
           // dd($request);
         }
         
-        
+        //return view('backend.forms.form360.final');
         return redirect()->back()->with('success','Application Submitted Successfully!');
     }
 

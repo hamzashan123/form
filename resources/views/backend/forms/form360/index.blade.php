@@ -15,6 +15,11 @@
                     {{ session()->get('success') }}
                 </div>
                 @endif
+                @if(session()->has('error')) 
+                <div class="alert alert-danger">
+                    {{ session()->get('error') }}
+                </div>
+                @endif
                 <form id="form360" action="{{route('admin.form360.save')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <!-- progressbar -->
@@ -71,7 +76,7 @@
         text: 'Thank you, your application has been successfully submitted. Login details have been sent to your glistereded email to either login again and change or details or to change what has been submitted.',
 
     }).then((result) => {
-        window.location = '/login';
+        //window.location = '/login';
     })
 </script>
 @endif
@@ -154,7 +159,7 @@ jQuery('.form-card td').click(function (e) {
                               title: 'Successfully sent',
                               text: 'Correction Email has been sent!',
                           }).then(function() {
-                                window.location.reload();
+                                window.location.href = '/admin';
                             });
                       }else if(data.success === 'false'){
                           $("#correctemail").html("Send Correction email");

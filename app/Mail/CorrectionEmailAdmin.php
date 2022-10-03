@@ -39,6 +39,7 @@ class CorrectionEmailAdmin extends Mailable
     public function build()
     {
         return $this->view('admincorrection-email')
+        ->subject('New Form Correction Email')
                     ->with([
                         'fieldsname' => $this->fieldsname,
                         'email' => $this->email,

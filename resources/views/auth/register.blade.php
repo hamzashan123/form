@@ -70,7 +70,7 @@
                                            <label for="register-as" class="text-small text-uppercase"> Register As </label>
                                             <div class="userType">
                                             <div class="userTypee">
-                                                <input id="usertype" type="radio" checked class=" " name="usertype" value="user" placeholder="Client">
+                                                <input id="usertype" type="radio" class=" " name="usertype" value="user" placeholder="Client">
                                                 <label for="register-as" class="text-small text-uppercase"> Client </label>
                                                 </div>
                                                 <div class="userTypee">
