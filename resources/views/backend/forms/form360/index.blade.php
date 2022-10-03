@@ -140,23 +140,17 @@ jQuery('.form-card td').click(function (e) {
                 
                 e.preventDefault();
                 $("#correctemail").html("Please wait...");
-            	//$(this).attr('disabled', 'true');
-                // console.log('fields to email' , fieldsname);
-                // console.log('fields to email' , fieldsvalue);
                 console.log('fields to fieldscomments' , $('.commentfield'));
                 $('.commentfield').each(function(i, obj) {
-                    // console.log('th',jQuery(this).closest('tr').find('td').text());
-                    // console.log('td' ,jQuery(this).closest('tr').find('td').text());
-                    // console.log('td' ,jQuery(this).val());
                     fieldsname.push(jQuery(this).closest('tr').find('td').text().trim());
                     fieldsvalue.push(jQuery(this).closest('tr').find('input').val());
                     fieldscomments.push(jQuery(this).val());
                     
                 });
-                 var userid = "<?php echo isset($_GET['userid']) ?>";
+                 var userid = "<?php echo ($_GET['userid']); ?>";
                 
                 
-                
+               
                 $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

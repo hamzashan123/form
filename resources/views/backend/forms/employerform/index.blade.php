@@ -130,7 +130,7 @@ jQuery('.form-card td').click(function (e) {
                     fieldscomments.push(jQuery(this).val());
                     
                 });
-                 var userid = "<?php echo isset($_GET['userid']) ?>";
+                var userid = "<?php echo ($_GET['userid']); ?>";
                 
                 
                 
