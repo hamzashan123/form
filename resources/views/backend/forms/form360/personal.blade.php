@@ -42,17 +42,19 @@
                         <select name="personal_civil_status" id="personal_civil_status" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->personal_civil_status)))
-                                <option value="{{$data->personal_civil_status}}" selected>{{$data->personal_civil_status}}</option>
+                            <option value="{{$data->personal_civil_status}}" selected>{{$data->personal_civil_status}}</option>
                             @endif
-                            <option value="single"> Single </option>
-                            <option value="married"> Married </option>
-                            <option value="formalcertificate"> De facto relationship with formal certificate
+                            <option value="Single"> Single </option>
+                            <option value="Married"> Married </option>
+                            <option value="De facto relationship with formal certificate
+                                issued"> De facto relationship with formal certificate
                                 issued </option>
-                            <option value="formalcertificateissued"> De facto relationship without a formal
+                            <option value="De facto relationship without a formal
+                                certificate issued"> De facto relationship without a formal
                                 certificate issued </option>
-                            <option value="separated"> Separated </option>
-                            <option value="sivorced"> Divorced </option>
-                            <option value="widowed"> Widowed </option>
+                            <option value="Separated"> Separated </option>
+                            <option value="Divorced"> Divorced </option>
+                            <option value="Widowed"> Widowed </option>
 
                         </select>
                     </td>
@@ -161,10 +163,10 @@
                         <select name="personal_aus_or_nz" id="personal_aus_or_nz" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->personal_aus_or_nz)))
-                                <option value="{{$data->personal_aus_or_nz}}" selected>{{$data->personal_aus_or_nz}}</option>
+                            <option value="{{$data->personal_aus_or_nz}}" selected>{{$data->personal_aus_or_nz}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -189,10 +191,10 @@
                         <select name="personal_health_examination" id="personal_health_examination" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->personal_health_examination)))
-                                <option value="{{$data->personal_health_examination}}" selected>{{$data->personal_health_examination}}</option>
+                            <option value="{{$data->personal_health_examination}}" selected>{{$data->personal_health_examination}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -211,10 +213,10 @@
                         <select name="personal_health_care" id="personal_health_care" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->personal_health_care)))
-                                <option value="{{$data->personal_health_care}}" selected>{{$data->personal_health_care}}</option>
+                            <option value="{{$data->personal_health_care}}" selected>{{$data->personal_health_care}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -231,10 +233,10 @@
                         <select name="personal_conviction" id="personal_conviction" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->personal_conviction)))
-                                <option value="{{$data->personal_conviction}}" selected>{{$data->personal_conviction}}</option>
+                            <option value="{{$data->personal_conviction}}" selected>{{$data->personal_conviction}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -251,10 +253,10 @@
                         <select name="personal_legal_action" id="personal_legal_action" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->personal_conviction_specifytaken)))
-                                <option value="{{$data->personal_conviction_specifytaken}}" selected>{{$data->personal_conviction_specifytaken}}</option>
+                            <option value="{{$data->personal_conviction_specifytaken}}" selected>{{$data->personal_conviction_specifytaken}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -306,10 +308,10 @@
                         <select name="personal_skills_assessment" id="personal_skills_assessment" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->personal_skills_assessment)))
-                                <option value="{{$data->personal_skills_assessment}}" selected>{{$data->personal_skills_assessment}}</option>
+                            <option value="{{$data->personal_skills_assessment}}" selected>{{$data->personal_skills_assessment}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -327,10 +329,10 @@
                         <select name="personal_skills_assessment_application" id="personal_skills_assessment_application" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->personal_skills_assessment_application)))
-                                <option value="{{$data->personal_skills_assessment_application}}" selected>{{$data->personal_skills_assessment_application}}</option>
+                            <option value="{{$data->personal_skills_assessment_application}}" selected>{{$data->personal_skills_assessment_application}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -377,10 +379,10 @@
                         <select name="personal_languages_english_test" id="personal_languages_english_test" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->personal_languages_english_test)))
-                                <option value="{{$data->personal_languages_english_test}}" selected>{{$data->personal_languages_english_test}}</option>
+                            <option value="{{$data->personal_languages_english_test}}" selected>{{$data->personal_languages_english_test}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -391,13 +393,13 @@
                         <select name="personal_englishtest_specify" id="personal_englishtest_specify" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->personal_englishtest_specify)))
-                                <option value="{{$data->personal_englishtest_specify}}" selected>{{$data->personal_englishtest_specify}}</option>
+                            <option value="{{$data->personal_englishtest_specify}}" selected>{{$data->personal_englishtest_specify}}</option>
                             @endif
-                            <option value="ielts"> IELTS </option>
-                            <option value="pte"> PTE Academic </option>
-                            <option value="toefl"> TOEFL </option>
-                            <option value="oet"> OET </option>
-                            <option value="cae"> CAE Advanced </option>
+                            <option value="IELTS"> IELTS </option>
+                            <option value="PTE Academic"> PTE Academic </option>
+                            <option value="TOEFL"> TOEFL </option>
+                            <option value="OET"> OET </option>
+                            <option value="CAE Advanced"> CAE Advanced </option>
                         </select>
                     </td>
                 </tr>
@@ -415,10 +417,10 @@
                         <select name="personal_tertiary_institution" id="personal_tertiary_institution" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->personal_tertiary_institution)))
-                                <option value="{{$data->personal_tertiary_institution}}" selected>{{$data->personal_tertiary_institution}}</option>
+                            <option value="{{$data->personal_tertiary_institution}}" selected>{{$data->personal_tertiary_institution}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -457,11 +459,11 @@
                         <select name="personal_license_and_registration" id="personal_license_and_registration" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->personal_license_and_registration)))
-                                <option value="{{$data->personal_license_and_registration}}" selected>{{$data->personal_license_and_registration}}</option>
+                            <option value="{{$data->personal_license_and_registration}}" selected>{{$data->personal_license_and_registration}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
-                            <option value="other"> OTHER </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
+                            <option value="OTHER"> OTHER </option>
                         </select>
                     </td>
                 </tr>
