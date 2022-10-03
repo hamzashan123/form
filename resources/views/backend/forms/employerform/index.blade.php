@@ -68,6 +68,8 @@
                 jQuery('#form360 select').prop('disabled', true);
                 jQuery('#form360 select').css('opacity', 0.5);
             }
+
+            jQuery('body.client #fieldsetfour .next').val('Submit');
         })
 </script>
 <script src="{{asset('employerform.js')}}"></script>
