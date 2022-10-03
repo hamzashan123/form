@@ -19,7 +19,7 @@
                     <td>
                         <select name="sbs_business_required_aus" id="sbs_business_required_aus" class="form-control">
                             <option value=""> Select Option </option>
-                        
+
                             @if(!empty(isset($data->sbs_business_required_aus)))
                             <option value="{{$data->sbs_business_required_aus}}" selected>{{$data->sbs_business_required_aus}}</option>
                             @endif
@@ -362,22 +362,14 @@
                     <td>
                         <select name="sbs_business_type" id="sbs_business_type" class="form-control">
                             <option value=""> Select Option </option>
-<<<<<<< HEAD
+                            @if(!empty(isset($data->sbs_business_type)))
+                            <option value="{{$data->sbs_business_type}}" selected>{{$data->sbs_business_type}}</option>
+                            @endif
                             <option value="Sole trader"> Sole trader </option>
                             <option value="Proprietary Limited"> Proprietary Limited </option>
                             <option value="Public listed company"> Public listed company </option>
                             <option value="Trust"> Trust </option>
                             <option value="Other"> Other </option>
-=======
-                            @if(!empty(isset($data->sbs_business_type)))
-                                <option value="{{$data->sbs_business_type}}" selected>{{$data->sbs_business_type}}</option>
-                            @endif
-                            <option value="sole"> Sole trader </option>
-                            <option value="proprietary"> Proprietary Limited </option>
-                            <option value="public"> Public listed company </option>
-                            <option value="trust"> Trust </option>
-                            <option value="other"> Other </option>
->>>>>>> c65c278951c5d8649b33ddad837ce7a8065e952e
                         </select>
                     </td>
                 </tr>
@@ -563,21 +555,14 @@
                     <td>
                         <select name="sbs_trading_willing" id="sbs_trading_willing" class="form-control">
                             <option value=""> Select Option </option>
-<<<<<<< HEAD
+
+                            @if(!empty(isset($data->sbs_trading_willing)))
+                            <option value="{{$data->sbs_trading_willing}}" selected>{{$data->sbs_trading_willing}}</option>
+                            @endif
                             <option value="1 to 3"> 1 to 3 </option>
                             <option value="3 to 5"> 3 to 5 </option>
                             <option value="5 to 10"> 5 to 10</option>
                             <option value="More than 10"> More than 10 </option>
-=======
-                            
- @if(!empty(isset($data->sbs_trading_willing)))
-                                <option value="{{$data->sbs_trading_willing}}" selected>{{$data->sbs_trading_willing}}</option>
-                            @endif
-                            <option value="1_to_3"> 1 to 3 </option>
-                            <option value="3_to_5"> 3 to 5 </option>
-                            <option value="5_to_10"> 5 to 10</option>
-                            <option value="More_than_10"> More than 10 </option>
->>>>>>> c65c278951c5d8649b33ddad837ce7a8065e952e
 
 
                         </select>
@@ -783,7 +768,7 @@
                         <select name="organization_name_surname" id="organization_name_surname" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->organization_name_surname)))
-                                <option value="{{$data->organization_name_surname}}" selected>{{$data->organization_name_surname}}</option>
+                            <option value="{{$data->organization_name_surname}}" selected>{{$data->organization_name_surname}}</option>
                             @endif
                             <option value="0">0</option>
                             <option value="1">1</option>
@@ -900,7 +885,7 @@
                         <select name="organization_residents1" id="organization_residents1" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->organization_residents1)))
-                                <option value="{{$data->organization_residents1}}" selected>{{$data->organization_residents1}}</option>
+                            <option value="{{$data->organization_residents1}}" selected>{{$data->organization_residents1}}</option>
                             @endif
                             <option value="0">0</option>
                             <option value="1">1</option>
@@ -1018,7 +1003,7 @@
                         <select name="organization_residents2" id="organization_residents2" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->organization_residents2)))
-                                <option value="{{$data->organization_residents2}}" selected>{{$data->organization_residents2}}</option>
+                            <option value="{{$data->organization_residents2}}" selected>{{$data->organization_residents2}}</option>
                             @endif
                             <option value="0">0</option>
                             <option value="1">1</option>
@@ -1137,7 +1122,7 @@
                         <select name="organization_foreign_employees" id="organization_foreign_employees" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->organization_foreign_employees)))
-                                <option value="{{$data->organization_foreign_employees}}" selected>{{$data->organization_foreign_employees}}</option>
+                            <option value="{{$data->organization_foreign_employees}}" selected>{{$data->organization_foreign_employees}}</option>
                             @endif
                             <option value="0">0</option>
                             <option value="1">1</option>
@@ -1260,9 +1245,9 @@
                     <td>
                         <select name="organization_foreign_457_482_visa" id="organization_foreign_457_482_visa" class="form-control">
                             <option value=""> Select Option </option>
-                            
- @if(!empty(isset($data->organization_foreign_457_482_visa)))
-                                <option value="{{$data->organization_foreign_457_482_visa}}" selected>{{$data->organization_foreign_457_482_visa}}</option>
+
+                            @if(!empty(isset($data->organization_foreign_457_482_visa)))
+                            <option value="{{$data->organization_foreign_457_482_visa}}" selected>{{$data->organization_foreign_457_482_visa}}</option>
                             @endif
 
                             <option value="0">0</option>
@@ -1378,9 +1363,9 @@
                     <td>
                         <select name="organization_foreign_other_temporary_visa" id="organization_foreign_other_temporary_visa" class="form-control">
                             <option value=""> Select Option </option>
-                            
- @if(!empty(isset($data->organization_foreign_other_temporary_visa)))
-                                <option value="{{$data->organization_foreign_other_temporary_visa}}" selected>{{$data->organization_foreign_other_temporary_visa}}</option>
+
+                            @if(!empty(isset($data->organization_foreign_other_temporary_visa)))
+                            <option value="{{$data->organization_foreign_other_temporary_visa}}" selected>{{$data->organization_foreign_other_temporary_visa}}</option>
                             @endif
 
                             <option value="0">0</option>
@@ -1494,9 +1479,9 @@
                     <td>
                         <select name="organization_foreign_student_visa" id="organization_foreign_student_visa" class="form-control">
                             <option value=""> Select Option </option>
-                            
- @if(!empty(isset($data->organization_foreign_student_visa)))
-                                <option value="{{$data->organization_foreign_student_visa}}" selected>{{$data->organization_foreign_student_visa}}</option>
+
+                            @if(!empty(isset($data->organization_foreign_student_visa)))
+                            <option value="{{$data->organization_foreign_student_visa}}" selected>{{$data->organization_foreign_student_visa}}</option>
                             @endif
 
                             <option value="0">0</option>
@@ -1611,9 +1596,9 @@
                     <td>
                         <select name="organization_foreign_working_holiday" id="organization_foreign_working_holiday" class="form-control">
                             <option value=""> Select Option </option>
-                            
- @if(!empty(isset($data->organization_foreign_working_holiday)))
-                                <option value="{{$data->organization_foreign_working_holiday}}" selected>{{$data->organization_foreign_working_holiday}}</option>
+
+                            @if(!empty(isset($data->organization_foreign_working_holiday)))
+                            <option value="{{$data->organization_foreign_working_holiday}}" selected>{{$data->organization_foreign_working_holiday}}</option>
                             @endif
 
                             <option value="0">0</option>
@@ -1729,7 +1714,7 @@
 
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->organization_foreign_other_visas)))
-                                <option value="{{$data->organization_foreign_other_visas}}" selected>{{$data->organization_foreign_other_visas}}</option>
+                            <option value="{{$data->organization_foreign_other_visas}}" selected>{{$data->organization_foreign_other_visas}}</option>
                             @endif
                             <option value="0">0</option>
                             <option value="1">1</option>
