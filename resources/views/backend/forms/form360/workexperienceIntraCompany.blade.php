@@ -20,10 +20,10 @@
                         <select name="workexpintracompany_current_employed" id="workexpintracompany_current_employed" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->workexpintracompany_current_employed)))
-                                <option value="{{$data->workexpintracompany_current_employed}}" selected>{{$data->workexpintracompany_current_employed}}</option>
+                            <option value="{{$data->workexpintracompany_current_employed}}" selected>{{$data->workexpintracompany_current_employed}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -37,10 +37,10 @@
                         <select name="workexpintracompany_current_working" id="workexpintracompany_current_working" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->workexpintracompany_current_working)))
-                                <option value="{{$data->workexpintracompany_current_working}}" selected>{{$data->workexpintracompany_current_working}}</option>
+                            <option value="{{$data->workexpintracompany_current_working}}" selected>{{$data->workexpintracompany_current_working}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -68,11 +68,11 @@
                         <select name="workexpintracompany_your_position_type" id="workexpintracompany_your_position_type" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->workexpintracompany_your_position_type)))
-                                <option value="{{$data->workexpintracompany_your_position_type}}" selected>{{$data->workexpintracompany_your_position_type}}</option>
+                            <option value="{{$data->workexpintracompany_your_position_type}}" selected>{{$data->workexpintracompany_your_position_type}}</option>
                             @endif
-                            <option value="fulltime"> Full Time </option>
-                            <option value="parttime"> Part Time </option>
-                            <option value="other"> Other </option>
+                            <option value="Full Time"> Full Time </option>
+                            <option value="Part Time"> Part Time </option>
+                            <option value="Other"> Other </option>
                         </select>
                     </td>
                 </tr>
@@ -130,10 +130,10 @@
                         <select name="workexpintracompany_performed_in_aus_nz" id="workexpintracompany_performed_in_aus_nz" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->workexpintracompany_performed_in_aus_nz)))
-                                <option value="{{$data->workexpintracompany_performed_in_aus_nz}}" selected>{{$data->workexpintracompany_performed_in_aus_nz}}</option>
+                            <option value="{{$data->workexpintracompany_performed_in_aus_nz}}" selected>{{$data->workexpintracompany_performed_in_aus_nz}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
 
                         </select>
                     </td>
@@ -155,11 +155,11 @@
                         <select name="workexpintracompany_payslips_for_this_week" id="workexpintracompany_payslips_for_this_week" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->workexpintracompany_payslips_for_this_week)))
-                                <option value="{{$data->workexpintracompany_payslips_for_this_week}}" selected>{{$data->workexpintracompany_payslips_for_this_week}}</option>
+                            <option value="{{$data->workexpintracompany_payslips_for_this_week}}" selected>{{$data->workexpintracompany_payslips_for_this_week}}</option>
                             @endif
-                            <option value="payslip"> Payslip </option>
-                            <option value="invoice"> Invoice </option>
-                            <option value="other"> Other </option>
+                            <option value="Payslip"> Payslip </option>
+                            <option value="Invoice"> Invoice </option>
+                            <option value="Other"> Other </option>
 
                         </select>
                     </td>
@@ -173,10 +173,10 @@
                         <select name="workexpintracompany_contact_details_work_period" id="workexpintracompany_contact_details_work_period" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->workexpintracompany_contact_details_work_period)))
-                                <option value="{{$data->workexpintracompany_contact_details_work_period}}" selected>{{$data->workexpintracompany_contact_details_work_period}}</option>
+                            <option value="{{$data->workexpintracompany_contact_details_work_period}}" selected>{{$data->workexpintracompany_contact_details_work_period}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
 
                         </select>
                     </td>
