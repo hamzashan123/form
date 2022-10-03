@@ -25,7 +25,8 @@
     <livewire:styles/>
     @yield('styles')
 </head>
-<body id="page-top">
+
+<body id="page-top" @if(isset(Auth::user()->hasRole('admin'))) class="admin" @elseif(isset(Auth::user()->hasRole('consultant'))) class="consultant" @else class="client" @endif >
 
     <div id="app">
         <div id="wrapper">
