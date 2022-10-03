@@ -62,7 +62,7 @@
                         </td>
                         <td> Abc</td>
                         <td>{{ $user->status }}</td>
-                        <td>@if($user->roles[0]->name == 'user')  Client @else $user->roles[0]->name @endif <br>
+                        <td>@if($user->roles[0]->name == 'user')  Client @else {{$user->roles[0]->name}} @endif <br>
                         
                         <td>{{ $user->created_at ? $user->created_at->format('Y-m-d') : '' }}</td>
                         <td>
