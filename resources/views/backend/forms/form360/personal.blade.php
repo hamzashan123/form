@@ -277,20 +277,17 @@
 
         <table>
             <tbody>
+            
+            <tr>
+                        <td> Personal Biodata Page </td>
+                        <td> <input type="file" name="personal_passport_biodata_page" id="personal_passport_biodata_page" > </td>
+                    </tr>
 
-                <tr>
-                    <td> Personal Biodata Page </td>
-                    <td> <input type="file" name="personal_passport_biodata_page" id="personal_passport_biodata_page" > </td>
-                    @if(isset($data->personal_passport_biodata_page))
-                    <a href="" class="btn btn-primary" >View ( PDf ) </a>
-                    @endif
-                </tr>
-
+               
                 <tr>
                     <td> ID card or driving license </td>
                     <td> <input type="file" name="personal_id_card_driving_license" id="personal_id_card_driving_license" @if(isset($data->personal_id_card_driving_license)) value="{{$data->personal_id_card_driving_license}}" @endif></td>
                 </tr>
-
                 <tr>
                     <td> Updated CV/Resume </td>
                     <td> <input type="file" name="personal_update_resume" id="personal_update_resume" @if(isset($data->personal_update_resume)) value="{{$data->personal_update_resume}}" @endif></td>

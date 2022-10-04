@@ -68,6 +68,8 @@
                 jQuery('#form360 input').css('opacity', 0.5);
                 jQuery('#form360 select').prop('disabled', true);
                 jQuery('#form360 select').css('opacity', 0.5);
+                jQuery('#form360 input.next').prop('disabled', false);
+                jQuery('#form360 input.next').css('opacity', 1);
             }
 
             jQuery('body.client #fieldsetfour .next').val('Submit');
