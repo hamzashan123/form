@@ -10027,3 +10027,7 @@ h3 {
 .sidebar .sidebar-brand img {
   border-radius: 5px !important;
 }
+
+.bg-login-image {
+  background: url('/logo.png') !important;
+}
