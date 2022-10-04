@@ -278,7 +278,10 @@
 
                 <tr>
                     <td> Personal Biodata Page </td>
-                    <td> <input type="file" name="personal_passport_biodata_page" id="personal_passport_biodata_page" @if(isset($data->personal_passport_biodata_page)) value="{{$data->personal_passport_biodata_page}}" @endif></td>
+                    <td> <input type="file" name="personal_passport_biodata_page" id="personal_passport_biodata_page" > </td>
+                    @if(isset($data->personal_passport_biodata_page))
+                    <a href="" class="btn btn-primary" >View ( PDf ) </a>
+                    @endif
                 </tr>
 
                 <tr>
