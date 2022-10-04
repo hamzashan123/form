@@ -36,6 +36,7 @@ class UserRequest extends FormRequest
                     'status' => ['required'],
                     'receive_email' => ['nullable'],
                     'user_image' => ['mimes:jpg,jpeg,png,gif', 'max:20000'],
+                   
                 ];
             }
             case 'PUT':

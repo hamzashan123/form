@@ -66,25 +66,47 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-12">
+                                        <!-- <div class="col-12">
                                            <label for="register-as" class="text-small text-uppercase"> Register As </label>
                                             <div class="userType">
-                                            <div class="userTypee">
-                                                <input id="usertype" type="radio" class=" " name="usertype" value="user" placeholder="Client" checked @if(old('usertype') == 'user') checked  @endif>
+                                            
+                                                <div class="userTypee">
+                                                
+                                                <input id="usertype" type="radio" class=" " name="usertype" value="user" placeholder="Client"  checked>
                                                 <label for="register-as" class="text-small text-uppercase"> Client </label>
+                                                
                                                 </div>
                                                 <div class="userTypee">
-                                                <input id="usertype" type="radio"  class="" name="usertype" value="consultant" placeholder="Consultant" @if(old('usertype') == 'consultant') checked  @endif>
+                                                <input id="usertype" type="radio"  class="" name="usertype" value="consultant" placeholder="Consultant" >
                                                 <label for="register-as" class="text-small text-uppercase"> Consultant </label>
-                                                
+                                               
 
                                                 </div>
-                                                
+                                               
                                             </div>
                                             
+                                        </div> -->
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox">
+                                        <div class="userType">
+                                            
+                                            <div class="userTypee">
+                                            
+                                            <input id="usertype" type="radio" class=" " name="usertype" value="user" placeholder="Client" checked {{ old('usertype') == 'user' ? 'checked' : '' }}>
+                                            <label for="register-as" class="text-small text-uppercase"> Client </label>
+                                            
+                                            </div>
+                                            <div class="userTypee">
+                                            <input id="usertype" type="radio"  class="" name="usertype" value="consultant" placeholder="Consultant" {{ old('usertype') == 'consultant' ? 'checked' : '' }}>
+                                            <label for="register-as" class="text-small text-uppercase"> Consultant </label>
+                                           
+
+                                            </div>
+                                           
+                                        </div>
                                         </div>
                                     </div>
-
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox">
                                             <input class="custom-control-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
@@ -116,5 +138,11 @@
             </div>
         </div>
     </div>
+    <!-- <script>
+        jQuery(':radio[name="usertype"]').change(function() {
+            var category = $(this).filter(':checked').val();
+                alert(category );
+            });
+    </script> -->
 @endsection
 
