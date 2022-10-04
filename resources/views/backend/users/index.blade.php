@@ -61,7 +61,7 @@
                         
                         <td>{{ $user->first_name }}<br>
                         </td>
-                        <td> Abc</td>
+                        <td> {{$user->matter}}</td>
                         <td>{{ $user->status }}</td>
                         <td>@if($user->roles[0]->name == 'user')  <strong> Client </strong> @else <strong>{{$user->roles[0]->name}} </strong> @endif <br>
                         @if(Auth::user()->hasRole('admin'))  
