@@ -93,6 +93,11 @@
                 jQuery('#form360 select').css('opacity', 0.5);
             }
         })
+        
+        //remove selected duplicate value from all select tags
+        $("select option").each(function() {
+            $(this).siblings('[value="'+ this.value +'"]').remove();
+        });
 </script>
 <script>
 

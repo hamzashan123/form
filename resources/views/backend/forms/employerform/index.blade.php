@@ -72,6 +72,11 @@
 
             jQuery('body.client #fieldsetfour .next').val('Submit');
         })
+
+        //remove selected duplicate value from all select tags
+        $("select option").each(function() {
+            $(this).siblings('[value="'+ this.value +'"]').remove();
+        });
 </script>
 <script src="{{asset('employerform.js')}}"></script>
 <script>
