@@ -65,7 +65,7 @@ class Form360Controller extends Controller
             $data = $data[0];
         }   
         if(!empty($data->user_id)){
-            $data->documents  =  DB::table('form360_documents')->where(['user_id' => $data->user_id ])->get()->toArray();
+           // $data->documents  =  DB::table('form360_documents')->where(['user_id' => $data->user_id ])->get()->toArray();
         }                
         //dd($data->documents);
         //dd(array_key_exists('doc_name' ,$data->documents[0]));
