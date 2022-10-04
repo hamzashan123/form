@@ -91,18 +91,18 @@
                                         <div class="custom-control custom-checkbox">
                                         <div class="userType">
                                             
-                                            <div class="userTypee">
+                                            <!-- <div class="userTypee"> -->
                                             
-                                            <input id="usertype" type="radio" class=" " name="usertype" value="user" placeholder="Client" checked {{ old('usertype') == 'user' ? 'checked' : '' }}>
+                                            <input id="usertype" type="radio" class="usertypeuser" name="usertype" value="user" placeholder="Client" checked {{ old('usertype') == 'user' ? 'checked' : '' }}>
                                             <label for="register-as" class="text-small text-uppercase"> Client </label>
                                             
-                                            </div>
-                                            <div class="userTypee">
-                                            <input id="usertype" type="radio"  class="" name="usertype" value="consultant" placeholder="Consultant" {{ old('usertype') == 'consultant' ? 'checked' : '' }}>
+                                            <!-- </div> -->
+                                            <!-- <div class="userTypee"> -->
+                                            <input id="usertype" type="radio"  class="usertypeconsultant" name="usertype" value="consultant" placeholder="Consultant" {{ old('usertype') == 'consultant' ? 'checked' : '' }}>
                                             <label for="register-as" class="text-small text-uppercase"> Consultant </label>
                                            
 
-                                            </div>
+                                            <!-- </div> -->
                                            
                                         </div>
                                         </div>
@@ -139,10 +139,45 @@
         </div>
     </div>
     <script>
-        jQuery(':radio[name="usertype"]').change(function() {
-            var category = $(this).filter(':checked').val();
-                //alert(category );
-            });
+        $("input[type='radio']").change( function () {
+
+            // alert('asdasd');
+
+
+
+            if ($('input[type=radio]:checked').val() == "consultant") {
+                    //alert('check consultant')
+
+                    $('.usertypeuser').removeAttr('checked')
+                    $('.usertypeconsultant').attr('checked', 'true')
+            }else {
+                $('.usertypeconsultant').removeAttr('checked')
+                    $('.usertypeuser').attr('checked', 'true')
+
+                // $('.usertypeuser').removeAttr('checked')
+            }
+           
+          
+            // $(this).find('input[type=radio]').attr('checked', 'checked');
+            
+            // if ( $(this).val() == "consultant") {
+            //     alert('cons');
+            //     $('.usertypeconsultant').prop('checked', false);
+            //     $('.usertypeuser').prop('checked', true);
+            // }  else {
+            //     alert($(this).val())
+            //     $('.usertypeuser').prop('checked', true);
+            //     $('.usertypeconsultant').prop('checked', false);
+            // }
+
+
+    //         $('input[type=radio]').change(function() {
+    //     // When any radio button on the page is selected,
+    //     // then deselect all other radio buttons.
+       
+    // });
+        
+        });
     </script>
 @endsection
 
