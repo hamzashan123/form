@@ -138,11 +138,11 @@
             </div>
         </div>
     </div>
-    <!-- <script>
+    <script>
         jQuery(':radio[name="usertype"]').change(function() {
             var category = $(this).filter(':checked').val();
-                alert(category );
+                //alert(category );
             });
-    </script> -->
+    </script>
 @endsection
 
