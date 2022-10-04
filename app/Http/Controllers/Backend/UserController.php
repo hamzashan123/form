@@ -145,6 +145,7 @@ class UserController extends Controller
 
     public function update(UserRequest $request, User $user): RedirectResponse
     {
+        
         $this->authorize('edit_user');
 
         if ($request->hasFile('user_image')) {
@@ -166,6 +167,9 @@ class UserController extends Controller
             'phone' => $request->phone,
             'status' => $request->status,
             'receive_email' => $request->receive_email,
+            'matter' => $request->matter,
+            'location' => $request->location,
+            'application_status' => $request->application_status,
             'user_image' => $userImage ?? $user->user_image,
             'password' => $password ?? $user->password
         ]);

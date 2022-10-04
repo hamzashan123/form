@@ -45,6 +45,7 @@
                     
                     <th>Status</th>
                     <th>Role</th>
+                    @if(Auth::user()->hasRole('admin'))   <th>Application Status</th> @endif
                     <th>Created On</th>
                     <th> Assign Forms</th>
                     <th class="text-center" style="width: 30px;">Action</th>
@@ -63,7 +64,9 @@
                         <td> Abc</td>
                         <td>{{ $user->status }}</td>
                         <td>@if($user->roles[0]->name == 'user')  <strong> Client </strong> @else <strong>{{$user->roles[0]->name}} </strong> @endif <br>
-                        
+                        @if(Auth::user()->hasRole('admin'))  
+                         <td>{{ $user->application_status }}</td> 
+                         @endif
                         <td>{{ $user->created_at ? $user->created_at->format('Y-m-d') : '' }}</td>
                         <td>
                         <a href="{{ route('admin.user.formslist', $user->id) }}" class="btn btn-sm btn-primary">

@@ -52,7 +52,57 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-6">
+                            <div class="form-group">
+                                <label for="status">Matter</label>
+                                <select name="matter" id="matter" class="form-control">
+                                    <option value="" disabled>-- Choose Visa Type --</option>
+                                    <option value="Skilled points visa" >Skilled points visa</option>
+                                    <option value="Sponsorship visa">Sponsorship visa</option>
+                                    <option value="400 visa">400 visa</option>
+                                    <option value="Skills Assessment">Skills Assessment </option>
+                                    <option value="Student visa">Student visa</option>
+                                    <option value="408 COVID visa">408 COVID visa</option>
+                                    <option value="Aus citizenship">Aus citizenship</option>
+                                    <option value="Business visa">Business visa</option>
+                                    <option value="Other">other</option>
+                                </select>
+                                @error('status')<span class="text-danger">{{ $message }}</span>@enderror
+                            </div>
+                        </div>
 
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="status">Application Status</label>
+                                <select name="application_status" id="application_status" class="form-control">
+                                    <option value="" disabled>-- Choose Visa Type --</option>
+                                    <option value="To start" >To start</option>
+                                    <option value="In progress" >In progress </option>
+                                    <option value="In progress" >In progress </option>
+                                    <option value="Lodged" >Lodged </option>
+                                    <option value="Outcome positive" >Outcome positive </option>
+                                    <option value="Outcome negative" >Outcome negative </option>
+                                    <option value="AAT" >AATe </option>
+                                    <option value="Other">other</option>
+                                </select>
+                                @error('application_status')<span class="text-danger">{{ $message }}</span>@enderror
+                            </div>
+                        </div>
+
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <select name="location" id="location" class="form-control">
+                                    <option value="" disabled>-- Choose location --</option>
+                                    <option value="onShore">onShore</option>
+                                    <option value="offShore">offShore</option>
+                                </select>
+                                @error('status')<span class="text-danger">{{ $message }}</span>@enderror
+                            </div>
+                        </div>
+                </div>
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
