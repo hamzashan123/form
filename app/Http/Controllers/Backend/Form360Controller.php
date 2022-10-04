@@ -60,14 +60,16 @@ class Form360Controller extends Controller
                             'form360_family_members.*'
                             )->get();
          
-        //$documents  =  DB::table('form360_documents')->where('user_id',Auth::user()->id)->get();
+        
         if(!empty($data[0])){
             $data = $data[0];
-        }                   
-
-       // $data['documents'] =  $documents;
-// dd($data);
-            return view('backend.forms.form360.index',compact('data'));
+        }   
+        if(!empty($data->user_id)){
+            $data->documents  =  DB::table('form360_documents')->where(['user_id' => $data->user_id ])->get()->toArray();
+        }                
+        //dd($data->documents);
+        //dd(array_key_exists('doc_name' ,$data->documents[0]));
+        return view('backend.forms.form360.index',compact('data'));
                
         
         
@@ -230,7 +232,7 @@ class Form360Controller extends Controller
         }
         
         //return view('backend.forms.form360.final');
-        return redirect()->back()->with('success','Application Submitted Successfully!');
+        return redirect()->back()->with('success','Application Saved !');
     }
 
 
