@@ -10031,7 +10031,7 @@ h3 {
 .bg-login-image {
   background: url('/logo.png') !important;
 }
-.bg-login-image {
+.bg-login-image , .bg-password-image {
   background: url(/logo.png) !important;
   padding: 20px !important;
   background-size: 250px !important;
