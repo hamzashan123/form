@@ -10021,9 +10021,9 @@ h3 {
 }
 
 .sidebar .sidebar-brand {
-  height: auto;
+  height: auto !important;
 }
 
 .sidebar .sidebar-brand img {
-  border-radius: 5px;
+  border-radius: 5px !important;
 }
