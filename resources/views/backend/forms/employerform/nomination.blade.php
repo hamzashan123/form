@@ -58,21 +58,21 @@
                         <select class="form-control" id="nomination_job_occupation" name="nomination_job_occupation">
                             <option value="">SELECT </option>
                             @if(!empty(isset($data->nomination_job_occupation)))
-                                <option value="{{$data->nomination_job_occupation}}" selected>{{$data->nomination_job_occupation}}</option>
+                            <option value="{{$data->nomination_job_occupation}}" selected>{{$data->nomination_job_occupation}}</option>
                             @endif
-                            <option value="1">- Chiropractor</option>
-                            <option value="2">- Dentist</option>
-                            <option value="3">- Dietitian or Nutritionist</option>
-                            <option value="4">- Optometrist</option>
-                            <option value="5">- Pharmacist</option>
-                            <option value="6">- Physician</option>
-                            <option value="7">- Physician Assistant</option>
-                            <option value="8">- Podiatrist</option>
-                            <option value="9">- Registered Nurse</option>
-                            <option value="10">- Therapist</option>
-                            <option value="11">- Veterinarian</option>
-                            <option value="12">- Health Technologist or Technician</option>
-                            <option value="13">- Other Healthcare Practitioners and Technical Occupation</option>
+                            <option value="Chiropractor">Chiropractor</option>
+                            <option value="Dentist">Dentist</option>
+                            <option value="Dietitian or Nutritionist">Dietitian or Nutritionist</option>
+                            <option value="Optometrist">Optometrist</option>
+                            <option value="Pharmacist">Pharmacist</option>
+                            <option value="Physician">Physician</option>
+                            <option value="Physician Assistant">Physician Assistant</option>
+                            <option value="Podiatrist">Podiatrist</option>
+                            <option value="Registered Nurse">Registered Nurse</option>
+                            <option value="Therapist">Therapist</option>
+                            <option value="Veterinarian">Veterinarian</option>
+                            <option value="Health Technologist or Technician">Health Technologist or Technician</option>
+                            <option value="Other Healthcare Practitioners and Technical Occupation">Other Healthcare Practitioners and Technical Occupation</option>
                         </select>
                     </td>
                 </tr>
@@ -173,13 +173,13 @@
                     <td>
                         <select name="salary_non_monetary" id="salary_non_monetary" class="form-control">
                             <option value=""> Select Option </option>
-                            
- @if(!empty(isset($data->salary_non_monetary)))
-                                <option value="{{$data->salary_non_monetary}}" selected>{{$data->salary_non_monetary}}</option>
+
+                            @if(!empty(isset($data->salary_non_monetary)))
+                            <option value="{{$data->salary_non_monetary}}" selected>{{$data->salary_non_monetary}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
                     </td>
@@ -199,14 +199,14 @@
                     <td>
                         <select name="salary_year_of_contract" id="salary_year_of_contract-monetary" class="form-control">
                             <option value=""> Select Option </option>
-                            
- @if(!empty(isset($data->salary_year_of_contract)))
-                                <option value="{{$data->salary_year_of_contract}}" selected>{{$data->salary_year_of_contract}}</option>
+
+                            @if(!empty(isset($data->salary_year_of_contract)))
+                            <option value="{{$data->salary_year_of_contract}}" selected>{{$data->salary_year_of_contract}}</option>
                             @endif
-                            <option value="yes"> 1 year </option>
-                            <option value="no"> 2 year </option>
-                            <option value="yes"> 3 year </option>
-                            <option value="no"> 4 year </option>
+                            <option value="1 year"> 1 year </option>
+                            <option value="2 year"> 2 year </option>
+                            <option value="3 year"> 3 year </option>
+                            <option value="4 year"> 4 year </option>
                         </select>
 
                     </td>
@@ -250,11 +250,11 @@
                         <select name="salary_permanent_resident" id="salary_permanent_resident" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->salary_permanent_resident)))
-                                <option value="{{$data->salary_permanent_resident}}" selected>{{$data->salary_permanent_resident}}</option>
+                            <option value="{{$data->salary_permanent_resident}}" selected>{{$data->salary_permanent_resident}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
                     </td>
@@ -278,10 +278,10 @@
                         <select name="salary_citizen" id="salary_citizen" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->salary_citizen)))
-                                <option value="{{$data->salary_citizen}}" selected>{{$data->salary_citizen}}</option>
+                            <option value="{{$data->salary_citizen}}" selected>{{$data->salary_citizen}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
                     </td>

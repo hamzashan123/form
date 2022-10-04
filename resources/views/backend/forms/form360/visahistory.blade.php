@@ -24,11 +24,11 @@
                         <select name="currentvisa_in_aus_nz" id="currentvisa_in_aus_nz" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->currentvisa_in_aus_nz)))
-                                <option value="{{$data->currentvisa_in_aus_nz}}" selected>{{$data->currentvisa_in_aus_nz}}</option>
+                            <option value="{{$data->currentvisa_in_aus_nz}}" selected>{{$data->currentvisa_in_aus_nz}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
 
                         </select>
                     </td>
@@ -41,11 +41,11 @@
                         <select name="currentvisa_hold_aus_nz" id="currentvisa_hold_aus_nz" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->currentvisa_hold_aus_nz)))
-                                <option value="{{$data->currentvisa_hold_aus_nz}}" selected>{{$data->currentvisa_hold_aus_nz}}</option>
+                            <option value="{{$data->currentvisa_hold_aus_nz}}" selected>{{$data->currentvisa_hold_aus_nz}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
 
                         </select>
                     </td>
@@ -69,11 +69,11 @@
                         <select name="currentvisa_waiting_for_visa" id="currentvisa_waiting_for_visa" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->currentvisa_waiting_for_visa)))
-                                <option value="{{$data->currentvisa_waiting_for_visa}}" selected>{{$data->currentvisa_waiting_for_visa}}</option>
+                            <option value="{{$data->currentvisa_waiting_for_visa}}" selected>{{$data->currentvisa_waiting_for_visa}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
 
                         </select>
                     </td>
@@ -121,11 +121,11 @@
                         <select name="currentvisa_held_visa" id="currentvisa_held_visa" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->currentvisa_held_visa)))
-                                <option value="{{$data->currentvisa_held_visa}}" selected>{{$data->currentvisa_held_visa}}</option>
+                            <option value="{{$data->currentvisa_held_visa}}" selected>{{$data->currentvisa_held_visa}}</option>
                             @endif
 
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
 
                         </select>
                     </td>

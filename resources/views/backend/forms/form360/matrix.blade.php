@@ -29,13 +29,13 @@
                     <td> Are you currently in Australia or New Zealand? </td>
                     <td>
                         <select name="matrix_aus_or_nz" id="matrix_aus_or_nz" class="form-control">
-                           
+
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->matrix_aus_or_nz)))
-                                <option value="{{$data->matrix_aus_or_nz}}" selected>{{$data->matrix_aus_or_nz}}</option>
+                            <option value="{{$data->matrix_aus_or_nz}}" selected>{{$data->matrix_aus_or_nz}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -44,13 +44,13 @@
                     <td> If yes, please indicate where you are located </td>
                     <td>
                         <select name="matrix_located" id="matrix_located" class="form-control">
-                            
+
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->matrix_located)))
-                                <option value="{{$data->matrix_located}}" selected>{{$data->matrix_located}}</option>
+                            <option value="{{$data->matrix_located}}" selected>{{$data->matrix_located}}</option>
                             @endif
-                            <option value="aus"> Australia </option>
-                            <option value="nz"> New Zealand </option>
+                            <option value="Australia"> Australia </option>
+                            <option value="New Zealand"> New Zealand </option>
                         </select>
                     </td>
                 </tr>
@@ -81,12 +81,12 @@
                         <select name="matrix_levelofenglish" id="matrix_levelofenglish" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->matrix_levelofenglish)))
-                                <option value="{{$data->matrix_levelofenglish}}" selected>{{$data->matrix_levelofenglish}}</option>
+                            <option value="{{$data->matrix_levelofenglish}}" selected>{{$data->matrix_levelofenglish}}</option>
                             @endif
-                            <option value="basic"> Basic </option>
-                            <option value="competent"> Competent </option>
-                            <option value="proficient"> Proficient </option>
-                            <option value="superior"> Superior </option>
+                            <option value="Basic"> Basic </option>
+                            <option value="Competent"> Competent </option>
+                            <option value="Proficient"> Proficient </option>
+                            <option value="Superior"> Superior </option>
                         </select>
                     </td>
                 </tr>
@@ -100,12 +100,12 @@
                         <select name="matrix_yearofexperienceinausornz" id="matrix_yearofexperienceinausornz" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->matrix_yearofexperienceinausornz)))
-                                <option value="{{$data->matrix_yearofexperienceinausornz}}" selected>{{$data->matrix_yearofexperienceinausornz}}</option>
+                            <option value="{{$data->matrix_yearofexperienceinausornz}}" selected>{{$data->matrix_yearofexperienceinausornz}}</option>
                             @endif
-                            <option value="lessthanoneyear"> Less than 1 year </option>
-                            <option value="atleastoneyear"> At least 1 year </option>
-                            <option value="atleastthreeyear">At least 3 year </option>
-                            <option value="atleastfiveyear"> At least 5 year </option>
+                            <option value="Less than 1 year">Less than 1 year</option>
+                            <option value="At least 1 year">At least 1 year</option>
+                            <option value="At least 3 year">At least 3 year</option>
+                            <option value="At least 5 year">At least 5 year</option>
                         </select>
                     </td>
                 </tr>
@@ -118,12 +118,12 @@
                         <select name="matrix_yearofexperienceoutsideausornz" id="matrix_yearofexperienceoutsideausornz" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->matrix_yearofexperienceoutsideausornz)))
-                                <option value="{{$data->matrix_yearofexperienceoutsideausornz}}" selected>{{$data->matrix_yearofexperienceoutsideausornz}}</option>
+                            <option value="{{$data->matrix_yearofexperienceoutsideausornz}}" selected>{{$data->matrix_yearofexperienceoutsideausornz}}</option>
                             @endif
-                            <option value="lessthanoneyear"> Less than 3 year </option>
-                            <option value="atleastoneyear"> More than 3 year </option>
-                            <option value="atleastfiveyear"> At least 5 year </option>
-                            <option value="atleasteightyear"> At least 8 year </option>
+                            <option value="Less than 3 year"> Less than 3 year </option>
+                            <option value="More than 3 year"> More than 3 year </option>
+                            <option value="At least 5 year"> At least 5 year </option>
+                            <option value="At least 8 year"> At least 8 year </option>
                         </select>
                     </td>
                 </tr>
@@ -134,12 +134,12 @@
                         <select name="matrix_highesteducationqualification" id="matrix_highesteducationqualification" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->matrix_highesteducationqualification)))
-                                <option value="{{$data->matrix_highesteducationqualification}}" selected>{{$data->matrix_highesteducationqualification}}</option>
+                            <option value="{{$data->matrix_highesteducationqualification}}" selected>{{$data->matrix_highesteducationqualification}}</option>
                             @endif
-                            <option value="yeareight"> Year 8 </option>
-                            <option value="twelveThirteen"> Year 12/13 Maturità </option>
-                            <option value="vocational"> Vocational technical course </option>
-                            <option value="bachelorsOrMaster"> Bachelor or Master’s degree course </option>
+                            <option value="Year 8"> Year 8 </option>
+                            <option value="Year 12/13 Maturità"> Year 12/13 Maturità </option>
+                            <option value="Vocational technical course"> Vocational technical course </option>
+                            <option value="Bachelor or Master’s degree course"> Bachelor or Master’s degree course </option>
                             <option value="phd"> PhD </option>
                         </select>
                     </td>
@@ -152,10 +152,10 @@
                         <select name="matrix_areyoucomingtoausornz" id="matrix_areyoucomingtoausornz" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->matrix_areyoucomingtoausornz)))
-                                <option value="{{$data->matrix_areyoucomingtoausornz}}" selected>{{$data->matrix_areyoucomingtoausornz}}</option>
+                            <option value="{{$data->matrix_areyoucomingtoausornz}}" selected>{{$data->matrix_areyoucomingtoausornz}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -174,10 +174,10 @@
                         <select name="matrix_skillassessment" id="matrix_skillassessment" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->matrix_skillassessment)))
-                                <option value="{{$data->matrix_skillassessment}}" selected>{{$data->matrix_skillassessment}}</option>
+                            <option value="{{$data->matrix_skillassessment}}" selected>{{$data->matrix_skillassessment}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -195,13 +195,13 @@
                         <select name="matrix_englishtest" id="matrix_englishtest" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->matrix_englishtest)))
-                                <option value="{{$data->matrix_englishtest}}" selected>{{$data->matrix_englishtest}}</option>
+                            <option value="{{$data->matrix_englishtest}}" selected>{{$data->matrix_englishtest}}</option>
                             @endif
-                            <option value="ielts"> IELTS </option>
-                            <option value="pte"> PTE Academic </option>
-                            <option value="toefl"> TOEFL </option>
-                            <option value="oet"> OET </option>
-                            <option value="cae"> CAE Advanced </option>
+                            <option value="IELTS"> IELTS </option>
+                            <option value="PTE Academic"> PTE Academic </option>
+                            <option value="TOEFL"> TOEFL </option>
+                            <option value="OET"> OET </option>
+                            <option value="CAE Advanced"> CAE Advanced </option>
                         </select>
                     </td>
                 </tr>
@@ -222,10 +222,10 @@
                         <select name="matrix_familymember" id="matrix_familymember" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->matrix_familymember)))
-                                <option value="{{$data->matrix_familymember}}" selected>{{$data->matrix_familymember}}</option>
+                            <option value="{{$data->matrix_familymember}}" selected>{{$data->matrix_familymember}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
 

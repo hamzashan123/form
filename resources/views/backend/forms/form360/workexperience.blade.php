@@ -20,10 +20,10 @@
                         <select name="workexp_current_employed" id="workexp_current_employed" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->workexp_current_employed)))
-                                <option value="{{$data->workexp_current_employed}}" selected>{{$data->workexp_current_employed}}</option>
+                            <option value="{{$data->workexp_current_employed}}" selected>{{$data->workexp_current_employed}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -36,10 +36,10 @@
                         <select name="workexp_current_future_sponsor" id="workexp_current_future_sponsor" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->workexp_current_future_sponsor)))
-                                <option value="{{$data->workexp_current_future_sponsor}}" selected>{{$data->workexp_current_future_sponsor}}</option>
+                            <option value="{{$data->workexp_current_future_sponsor}}" selected>{{$data->workexp_current_future_sponsor}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -57,10 +57,10 @@
                         <select name="workexp_retired" id="workexp_retired" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->workexp_retired)))
-                                <option value="{{$data->workexp_retired}}" selected>{{$data->workexp_retired}}</option>
+                            <option value="{{$data->workexp_retired}}" selected>{{$data->workexp_retired}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -100,11 +100,11 @@
                         <select name="workexp1_your_position_type" id="workexp1_your_position_type" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->workexp1_your_position_type)))
-                                <option value="{{$data->workexp1_your_position_type}}" selected>{{$data->workexp1_your_position_type}}</option>
+                            <option value="{{$data->workexp1_your_position_type}}" selected>{{$data->workexp1_your_position_type}}</option>
                             @endif
-                            <option value="fulltime"> Full Time </option>
-                            <option value="parttime"> Part Time </option>
-                            <option value="other"> Other </option>
+                            <option value="Full Time"> Full Time </option>
+                            <option value="Part Time"> Part Time </option>
+                            <option value="Other"> Other </option>
                         </select>
                     </td>
                 </tr>
@@ -162,10 +162,10 @@
                         <select name="workexp1_performed_in_aus_nz" id="workexp1_performed_in_aus_nz" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->workexp1_performed_in_aus_nz)))
-                                <option value="{{$data->workexp1_performed_in_aus_nz}}" selected>{{$data->workexp1_performed_in_aus_nz}}</option>
+                            <option value="{{$data->workexp1_performed_in_aus_nz}}" selected>{{$data->workexp1_performed_in_aus_nz}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
 
                         </select>
                     </td>
@@ -187,11 +187,11 @@
                         <select name="workexp1_payslips_for_this_week" id="workexp1_payslips_for_this_week" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->workexp1_payslips_for_this_week)))
-                                <option value="{{$data->workexp1_payslips_for_this_week}}" selected>{{$data->workexp1_payslips_for_this_week}}</option>
+                            <option value="{{$data->workexp1_payslips_for_this_week}}" selected>{{$data->workexp1_payslips_for_this_week}}</option>
                             @endif
-                            <option value="payslip"> Payslip </option>
-                            <option value="invoice"> Invoice </option>
-                            <option value="other"> Other </option>
+                            <option value="Payslip"> Payslip </option>
+                            <option value="Invoice"> Invoice </option>
+                            <option value="Other"> Other </option>
 
                         </select>
                     </td>
@@ -205,10 +205,10 @@
                         <select name="workexp1_contact_details_work_period" id="workexp1_contact_details_work_period" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->workexp1_contact_details_work_period)))
-                                <option value="{{$data->workexp1_contact_details_work_period}}" selected>{{$data->workexp1_contact_details_work_period}}</option>
+                            <option value="{{$data->workexp1_contact_details_work_period}}" selected>{{$data->workexp1_contact_details_work_period}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
 
                         </select>
                     </td>
@@ -263,7 +263,7 @@
                 <tr>
                     <td> Employment contract or equivalent document
                         Reference letter </td>
-                    <td> <input type="file" name="workexp1_employment_contract" id="workexp1_employment_contract" ></td>
+                    <td> <input type="file" name="workexp1_employment_contract" id="workexp1_employment_contract"></td>
                 </tr>
             </tbody>
         </table>

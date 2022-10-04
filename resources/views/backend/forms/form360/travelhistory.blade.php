@@ -26,10 +26,10 @@
                         <select name="travelhistory_last_ten_years" id="travelhistory_last_ten_years" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->travelhistory_last_ten_years)))
-                                <option value="{{$data->travelhistory_last_ten_years}}" selected>{{$data->travelhistory_last_ten_years}}</option>
+                            <option value="{{$data->travelhistory_last_ten_years}}" selected>{{$data->travelhistory_last_ten_years}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
 
                         </select>
                     </td>
@@ -49,7 +49,7 @@
                         <select id="travelhistory_country1" name="travelhistory_country1" class="form-control">
                             <option value="">Select Nationality</option>
                             @if(!empty(isset($data->travelhistory_country1)))
-                                <option value="{{$data->travelhistory_country1}}" selected>{{$data->travelhistory_country1}}</option>
+                            <option value="{{$data->travelhistory_country1}}" selected>{{$data->travelhistory_country1}}</option>
                             @endif
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Aland Islands</option>
@@ -350,7 +350,7 @@
                         <select id="travelhistory_country4" name="travelhistory_country4" class="form-control">
                             <option value="">Select Nationality</option>
                             @if(!empty(isset($data->travelhistory_country4)))
-                                <option value="{{$data->travelhistory_country4}}" selected>{{$data->travelhistory_country4}}</option>
+                            <option value="{{$data->travelhistory_country4}}" selected>{{$data->travelhistory_country4}}</option>
                             @endif
 
                             <option value="Afghanistan">Afghanistan</option>
@@ -652,7 +652,7 @@
                         <select id="travelhistory_country3" name="travelhistory_country3" class="form-control">
                             <option value="">Select Nationality</option>
                             @if(!empty(isset($data->travelhistory_country3)))
-                                <option value="{{$data->travelhistory_country3}}" selected>{{$data->travelhistory_country3}}</option>
+                            <option value="{{$data->travelhistory_country3}}" selected>{{$data->travelhistory_country3}}</option>
                             @endif
 
                             <option value="Afghanistan">Afghanistan</option>
@@ -955,7 +955,7 @@
                         <select id="travelhistory_country3" name="travelhistory_country3" class="form-control">
                             <option value="">Select Nationality</option>
                             @if(!empty(isset($data->travelhistory_country3)))
-                                <option value="{{$data->travelhistory_country3}}" selected>{{$data->travelhistory_country3}}</option>
+                            <option value="{{$data->travelhistory_country3}}" selected>{{$data->travelhistory_country3}}</option>
                             @endif
 
                             <option value="Afghanistan">Afghanistan</option>

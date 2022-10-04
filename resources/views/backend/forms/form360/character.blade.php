@@ -23,8 +23,8 @@
                             @if(!empty(isset($data->character_legal_action)))
                             <option value="{{$data->character_legal_action}}" selected>{{$data->character_legal_action}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -40,8 +40,8 @@
                             @if(!empty(isset($data->character_official_record)))
                             <option value="{{$data->character_official_record}}" selected>{{$data->character_official_record}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -55,8 +55,8 @@
                             @if(!empty(isset($data->character_interpol_notice1)))
                             <option value="{{$data->character_interpol_notice1}}" selected>{{$data->character_interpol_notice1}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -71,8 +71,8 @@
                             @if(!empty(isset($data->character_interpol_notice2)))
                             <option value="{{$data->character_interpol_notice2}}" selected>{{$data->character_interpol_notice2}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -89,8 +89,8 @@
                             @if(!empty(isset($data->character_sexually)))
                             <option value="{{$data->character_sexually}}" selected>{{$data->character_sexually}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -105,8 +105,8 @@
                             @if(!empty(isset($data->character_offender)))
                             <option value="{{$data->character_offender}}" selected>{{$data->character_offender}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -123,8 +123,8 @@
                             @if(!empty(isset($data->character_unsoundness)))
                             <option value="{{$data->character_unsoundness}}" selected>{{$data->character_unsoundness}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -140,8 +140,8 @@
                             @if(!empty(isset($data->character_plead1)))
                             <option value="{{$data->character_plead1}}" selected>{{$data->character_plead1}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -158,8 +158,8 @@
                             @if(!empty(isset($data->character_plead2)))
                             <option value="{{$data->character_plead2}}" selected>{{$data->character_plead2}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -177,8 +177,8 @@
                             @if(!empty(isset($data->character_associated)))
                             <option value="{{$data->character_associated}}" selected>{{$data->character_associated}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -198,8 +198,8 @@
                             @if(!empty(isset($data->character_genocide)))
                             <option value="{{$data->character_genocide}}" selected>{{$data->character_genocide}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -217,8 +217,8 @@
                             @if(!empty(isset($data->character_terrorism)))
                             <option value="{{$data->character_terrorism}}" selected>{{$data->character_terrorism}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -235,8 +235,8 @@
                             @if(!empty(isset($data->character_private_militia)))
                             <option value="{{$data->character_private_militia}}" selected>{{$data->character_private_militia}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -252,8 +252,8 @@
                             @if(!empty(isset($data->character_biological)))
                             <option value="{{$data->character_biological}}" selected>{{$data->character_biological}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -268,8 +268,8 @@
                             @if(!empty(isset($data->character_training)))
                             <option value="{{$data->character_training}}" selected>{{$data->character_training}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -285,8 +285,8 @@
                             @if(!empty(isset($data->character_offences)))
                             <option value="{{$data->character_offences}}" selected>{{$data->character_offences}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -302,8 +302,8 @@
                             @if(!empty(isset($data->character_deported)))
                             <option value="{{$data->character_deported}}" selected>{{$data->character_deported}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -318,8 +318,8 @@
                             @if(!empty(isset($data->character_overstayed)))
                             <option value="{{$data->character_overstayed}}" selected>{{$data->character_overstayed}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -335,8 +335,8 @@
                             @if(!empty(isset($data->character_authority)))
                             <option value="{{$data->character_authority}}" selected>{{$data->character_authority}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -372,8 +372,8 @@
                             @if(!empty(isset($data->healthquestion_medicalcosts)))
                             <option value="{{$data->healthquestion_medicalcosts}}" selected>{{$data->healthquestion_medicalcosts}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -387,8 +387,8 @@
                             @if(!empty(isset($data->healthquestion_blood)))
                             <option value="{{$data->healthquestion_blood}}" selected>{{$data->healthquestion_blood}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
                     </td>
@@ -404,8 +404,8 @@
                             @if(!empty(isset($data->healthquestion_cancer)))
                             <option value="{{$data->healthquestion_cancer}}" selected>{{$data->healthquestion_cancer}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -419,8 +419,8 @@
                             @if(!empty(isset($data->healthquestion_heart)))
                             <option value="{{$data->healthquestion_heart}}" selected>{{$data->healthquestion_heart}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
 
@@ -436,8 +436,8 @@
                             @if(!empty(isset($data->healthquestion_hepatitis)))
                             <option value="{{$data->healthquestion_hepatitis}}" selected>{{$data->healthquestion_hepatitis}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
 
@@ -453,8 +453,8 @@
                             @if(!empty(isset($data->healthquestion_hiv)))
                             <option value="{{$data->healthquestion_hiv}}" selected>{{$data->healthquestion_hiv}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -469,8 +469,8 @@
                             @if(!empty(isset($data->healthquestion_kidney)))
                             <option value="{{$data->healthquestion_kidney}}" selected>{{$data->healthquestion_kidney}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
                     </td>
@@ -485,8 +485,8 @@
                             @if(!empty(isset($data->healthquestion_mental)))
                             <option value="{{$data->healthquestion_mental}}" selected>{{$data->healthquestion_mental}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
                     </td>
@@ -500,8 +500,8 @@
                             @if(!empty(isset($data->healthquestion_pregnancy)))
                             <option value="{{$data->healthquestion_pregnancy}}" selected>{{$data->healthquestion_pregnancy}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
 
@@ -518,8 +518,8 @@
                             @if(!empty(isset($data->healthquestion_respiratory1)))
                             <option value="{{$data->healthquestion_respiratory1}}" selected>{{$data->healthquestion_respiratory1}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
                     </td>
                 </tr>
@@ -533,8 +533,8 @@
                             @if(!empty(isset($data->healthquestion_respiratory1)))
                             <option value="{{$data->healthquestion_respiratory1}}" selected>{{$data->healthquestion_respiratory1}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
                     </td>
@@ -550,8 +550,8 @@
                             @if(!empty(isset($data->healthquestion_medical_condition)))
                             <option value="{{$data->healthquestion_medical_condition}}" selected>{{$data->healthquestion_medical_condition}}</option>
                             @endif
-                            <option value="yes"> Yes </option>
-                            <option value="no"> No </option>
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
                         </select>
 
 
