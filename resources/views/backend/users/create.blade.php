@@ -95,16 +95,35 @@
                         </div>
 
                         <div class="col-6">
-                        <div class="form-group">
-                            <label for="location">Location</label>
-                            <select name="location" id="location" class="form-control">
-                                <option value="" disabled>-- Choose location --</option>
-                                <option value="onShore">onShore</option>
-                                <option value="offShore">offShore</option>
-                            </select>
-                            @error('status')<span class="text-danger">{{ $message }}</span>@enderror
+                            <div class="form-group">
+                                <label for="status">Application Status</label>
+                                <select name="application_status" id="application_status" class="form-control">
+                                    <option value="" disabled>-- Choose Visa Type --</option>
+                                    <option value="To start" >To start</option>
+                                    <option value="In progress" >In progress </option>
+                                    <option value="In progress" >In progress </option>
+                                    <option value="Lodged" >Lodged </option>
+                                    <option value="Outcome positive" >Outcome positive </option>
+                                    <option value="Outcome negative" >Outcome negative </option>
+                                    <option value="AAT" >AATe </option>
+                                    <option value="Other">other</option>
+                                </select>
+                                @error('application_status')<span class="text-danger">{{ $message }}</span>@enderror
+                            </div>
                         </div>
-                    </div>
+
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <select name="location" id="location" class="form-control">
+                                    <option value="" disabled>-- Choose location --</option>
+                                    <option value="onShore">onShore</option>
+                                    <option value="offShore">offShore</option>
+                                </select>
+                                @error('status')<span class="text-danger">{{ $message }}</span>@enderror
+                            </div>
+                        </div>
                 </div>
                 <div class="row">
                     <div class="col-6">

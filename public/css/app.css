@@ -10031,3 +10031,10 @@ h3 {
 .bg-login-image {
   background: url('/logo.png') !important;
 }
+.bg-login-image {
+  background: url(/logo.png) !important;
+  padding: 20px !important;
+  background-size: 250px !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+}
