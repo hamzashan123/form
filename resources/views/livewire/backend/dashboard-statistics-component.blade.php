@@ -132,7 +132,7 @@
                     <div class="col mr-2">
                     <a href="{{route('admin.users.index')}}">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                            My Users
+                            My Clients
                         </div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">{{$myUsers}}</div>
                     </a>
