@@ -63,7 +63,7 @@
                         </td>
                         <td> {{$user->matter}}</td>
                         <td>{{ $user->status }}</td>
-                        <td>@if($user->roles[0]->name == 'user')  <strong> Client </strong> @else <strong>{{$user->roles[0]->name}} </strong> @endif <br>
+                        <td>@if(isset($user->roles[0]->name) == 'user')  <strong> Client </strong> @else <strong>{{isset($user->roles[0]->name)}} </strong> @endif <br>
                         @if(Auth::user()->hasRole('admin'))  
                          <td>{{ $user->application_status }}</td> 
                          @endif
