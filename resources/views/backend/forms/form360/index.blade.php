@@ -93,6 +93,8 @@
                 jQuery('#form360 select').css('opacity', 0.5);
                 jQuery('#form360 input.next').prop('disabled', false);
                 jQuery('#form360 input.next').css('opacity', 1);
+                jQuery('#form360 input.previous').prop('disabled', false);
+                jQuery('#form360 input.previous').css('opacity', 1);
             }
         })
         
