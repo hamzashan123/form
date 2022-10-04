@@ -11288,5 +11288,11 @@ body.sidebar-toggled footer.sticky-footer {
 .userTypee  label {
   font-weight: bold;
 }
+.sidebar .sidebar-brand {
+    height: auto;
+}
 
+.sidebar .sidebar-brand img {
+    border-radius: 5px;
+}
 
