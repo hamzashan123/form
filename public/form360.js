@@ -24,6 +24,7 @@ jQuery(document).ready(function () {
              jQuery('#fieldseteleven').hide();
              jQuery('#fieldsettwelve').hide();
              jQuery('#fieldsetthirteen').hide();
+             jQuery('#fieldsetfourteen').hide();
              
              current = 1;
              
@@ -45,6 +46,7 @@ jQuery(document).ready(function () {
              jQuery('#fieldseteleven').hide();
              jQuery('#fieldsettwelve').hide();
              jQuery('#fieldsetthirteen').hide();
+             jQuery('#fieldsetfourteen').hide();
 
              current = 2;
          }else if(fieldsetid == 'fieldsetthree'){
@@ -65,6 +67,7 @@ jQuery(document).ready(function () {
              jQuery('#fieldseteleven').hide();
              jQuery('#fieldsettwelve').hide();
              jQuery('#fieldsetthirteen').hide();
+             jQuery('#fieldsetfourteen').hide();
 
              current = 3;
          }else if(fieldsetid == 'fieldsetfour'){
@@ -85,6 +88,7 @@ jQuery(document).ready(function () {
             jQuery('#fieldseteleven').hide();
             jQuery('#fieldsettwelve').hide();
             jQuery('#fieldsetthirteen').hide();
+            jQuery('#fieldsetfourteen').hide();
 
             current = 4;
         }else if(fieldsetid == 'fieldsetfive'){
@@ -105,6 +109,7 @@ jQuery(document).ready(function () {
             jQuery('#fieldseteleven').hide();
             jQuery('#fieldsettwelve').hide();
             jQuery('#fieldsetthirteen').hide();
+            jQuery('#fieldsetfourteen').hide();
 
             current = 5;
         }else if(fieldsetid == 'fieldsetsix'){
@@ -125,6 +130,7 @@ jQuery(document).ready(function () {
             jQuery('#fieldseteleven').hide();
             jQuery('#fieldsettwelve').hide();
             jQuery('#fieldsetthirteen').hide();
+            jQuery('#fieldsetfourteen').hide();
 
             current = 6;
         }else if(fieldsetid == 'fieldsetseven'){
@@ -145,6 +151,7 @@ jQuery(document).ready(function () {
             jQuery('#fieldseteleven').hide();
             jQuery('#fieldsettwelve').hide();
             jQuery('#fieldsetthirteen').hide();
+            jQuery('#fieldsetfourteen').hide();
 
             current = 7;
         }else if(fieldsetid == 'fieldseteight'){
@@ -165,6 +172,7 @@ jQuery(document).ready(function () {
             jQuery('#fieldseteleven').hide();
             jQuery('#fieldsettwelve').hide();
             jQuery('#fieldsetthirteen').hide();
+            jQuery('#fieldsetfourteen').hide();
 
             current = 8;
         }else if(fieldsetid == 'fieldsetnine'){
@@ -185,6 +193,7 @@ jQuery(document).ready(function () {
             jQuery('#fieldseteleven').hide();
             jQuery('#fieldsettwelve').hide();
             jQuery('#fieldsetthirteen').hide();
+            jQuery('#fieldsetfourteen').hide();
 
             current = 9;
         }else if(fieldsetid == 'fieldsetten'){
@@ -205,6 +214,7 @@ jQuery(document).ready(function () {
             jQuery('#fieldseteleven').hide();
             jQuery('#fieldsettwelve').hide();
             jQuery('#fieldsetthirteen').hide();
+            jQuery('#fieldsetfourteen').hide();
 
             current = 10;
         }else if(fieldsetid == 'fieldseteleven'){
@@ -225,6 +235,7 @@ jQuery(document).ready(function () {
             jQuery('#fieldseteleven').show();
             jQuery('#fieldsettwelve').hide();
             jQuery('#fieldsetthirteen').hide();
+            jQuery('#fieldsetfourteen').hide();
 
             current = 11;
         }else if(fieldsetid == 'fieldsettwelve'){
@@ -245,6 +256,7 @@ jQuery(document).ready(function () {
             jQuery('#fieldseteleven').hide();
             jQuery('#fieldsettwelve').show();
             jQuery('#fieldsetthirteen').hide();
+            jQuery('#fieldsetfourteen').hide();
 
             current = 12;
         }else if(fieldsetid == 'fieldsetthirteen'){
@@ -265,6 +277,7 @@ jQuery(document).ready(function () {
             jQuery('#fieldseteleven').hide();
             jQuery('#fieldsettwelve').hide();
             jQuery('#fieldsetthirteen').show();
+            jQuery('#fieldsetfourteen').hide();
 
             current = 13;
         }else if(fieldsetid == 'fieldsetfourteen'){
