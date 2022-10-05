@@ -10041,3 +10041,10 @@ h3 {
 .iti {
   display: block !important;
 }
+.admin .employerformside fieldset#fieldsetfour .next, .consultant .employerformside fieldset#fieldsetfour .next {
+  display: none;
+}
+
+.admin .form360side fieldset#fieldsetfourteen .next ,  .consultant .form360side fieldset#fieldsetfourteen .next{
+  display: none;
+}

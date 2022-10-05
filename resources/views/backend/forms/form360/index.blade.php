@@ -22,7 +22,7 @@
                     {{ session()->get('error') }}
                 </div>
                 @endif
-                <form id="form360" action="{{route('admin.form360.save')}}" method="post" enctype="multipart/form-data">
+                <form id="form360" class="form360side" action="{{route('admin.form360.save')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <!-- progressbar -->
                     <ul id="progressbar">

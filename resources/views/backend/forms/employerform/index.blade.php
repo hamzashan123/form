@@ -19,7 +19,7 @@
                     {{ session()->get('success') }}
                 </div>
                 @endif
-                <form id="form360" action="{{route('admin.employerform.save')}}" method="post" enctype="multipart/form-data">
+                <form id="form360" class="employerformside" action="{{route('admin.employerform.save')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <!-- progressbar -->
                     <ul id="progressbar">
