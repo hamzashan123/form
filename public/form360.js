@@ -269,26 +269,26 @@ jQuery(document).ready(function () {
             current = 13;
         }else if(fieldsetid == 'fieldsetfourteen'){
             localStorage.removeItem('form360fieldset')
-            window.location.href = '/admin';
-            // jQuery('#fieldsetone').hide();
-            // jQuery('#fieldsettwo').hide();
-            // jQuery('#fieldsetthree').hide();
-            // jQuery('#fieldsetfour').hide();
+            //window.location.href = '/admin';
+            jQuery('#fieldsetone').hide();
+            jQuery('#fieldsettwo').hide();
+            jQuery('#fieldsetthree').hide();
+            jQuery('#fieldsetfour').hide();
 
-            // jQuery('#fieldsetfive').hide();
-            // jQuery('#fieldsetsix').hide();
-            // jQuery('#fieldsetseven').hide();
+            jQuery('#fieldsetfive').hide();
+            jQuery('#fieldsetsix').hide();
+            jQuery('#fieldsetseven').hide();
 
-            // jQuery('#fieldseteight').hide();
-            // jQuery('#fieldsetnine').hide();
-            // jQuery('#fieldsetten').hide();
+            jQuery('#fieldseteight').hide();
+            jQuery('#fieldsetnine').hide();
+            jQuery('#fieldsetten').hide();
 
-            // jQuery('#fieldseteleven').hide();
-            // jQuery('#fieldsettwelve').hide();
-            // jQuery('#fieldsetthirteen').hide();
-            // jQuery('#fieldsetfourteen').show();
+            jQuery('#fieldseteleven').hide();
+            jQuery('#fieldsettwelve').hide();
+            jQuery('#fieldsetthirteen').hide();
+            jQuery('#fieldsetfourteen').show();
 
-             current = 1;
+             current = 14;
         }
      }
     setProgressBar(current);

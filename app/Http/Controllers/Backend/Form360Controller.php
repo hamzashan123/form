@@ -67,8 +67,7 @@ class Form360Controller extends Controller
         if(!empty($data->user_id)){
            // $data->documents  =  DB::table('form360_documents')->where(['user_id' => $data->user_id ])->get()->toArray();
         }                
-        //dd($data->documents);
-        //dd(array_key_exists('doc_name' ,$data->documents[0]));
+        
         return view('backend.forms.form360.index',compact('data'));
                
         
@@ -77,8 +76,10 @@ class Form360Controller extends Controller
 
     public function save(Request $request){
         
-        $formExist = DB::table('form360')->where('user_id', Auth::user()->id)->exists();
-        if($formExist == false){
+        $formExist = DB::table('form360')->where('user_id', Auth::user()->id)->first();
+        
+        if(empty($formExist->id)){
+        
             $formid = DB::table('form360')->insertGetId([
                 'user_id' => auth()->user()->id,
                 'created_at' => date('m/d/Y h:i:s a'),
@@ -147,26 +148,24 @@ class Form360Controller extends Controller
             $this->saveDocuments($formid,$request);
             
                 
-                try {
-                    $data = [
-                        'username' => Auth::user()->username,
-                        'email' => Auth::user()->email,
-                        'messagetype' => 'A new application has been recieved!'
-                    ];
-                    if($request->has('formsubmit')){
-                        //Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
-                        Mail::to('hamzashan123@gmail.com')->send(new NewFormSubmitted($data));
-                    }
-                    //email for consultant pending 
-                    // $consultant = ConsultantUser::where('client_id',Auth::user()->id)->first();
-                    // if(count($consultant) > 0 ){
-                    //     Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
-                    // }
-                    
+            try {
+                $formdata = DB::table('form360')->where('user_id', Auth::user()->id)->first();
+                
+                $data = [
+                    'username' => Auth::user()->username,
+                    'email' => Auth::user()->email,
+                    'messagetype' => 'A new application has been recieved!'
+                ];
+                
+                if($request->has('formsubmit') && $formdata->is_email_sent == false){
+                    Mail::to('hamzashan123@gmail.com')->send(new NewFormSubmitted($data));
+                    DB::table('form360')->where('user_id', Auth::user()->id)->update(['is_email_sent' => true]);
+                     //Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
                 }
-                catch (exception $e) {
-                    return redirect()->back()->with('error','Email Not Sent!');
-                }
+            }
+            catch (exception $e) {
+                return redirect()->back()->with('error','Email Not Sent!');
+            }
                 
         }else{
            $existingForm =  DB::table('form360')->where('user_id', Auth::user()->id)->first();
@@ -231,15 +230,23 @@ class Form360Controller extends Controller
             );
 
             $this->saveDocuments($existingForm->id,$request);
+
+              //check if is_email_sent is false
+              if($request->has('formsubmit') && !empty($existingForm) && $existingForm->is_email_sent == false){
+                $data = [
+                    'username' => Auth::user()->username,
+                    'email' => Auth::user()->email,
+                    'messagetype' => 'A new application has been recieved!'
+                ];
+                Mail::to('hamzashan123@gmail.com')->send(new NewFormSubmitted($data));
+                DB::table('form360')->where('user_id', Auth::user()->id)->update(['is_email_sent' => true]);
+                 //Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
+            }
            
         }
         
-        if($request->has('formsubmit')){
-            return redirect()->back()->with('success','Application Submitted !');  
-        }else{
-            return redirect()->back()->with('success','Application Saved !');
-        }
-        //return view('backend.forms.form360.final');
+        return redirect()->back()->with('success','Application Saved !');
+        
         
     }
 

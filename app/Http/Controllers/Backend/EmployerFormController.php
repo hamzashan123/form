@@ -41,22 +41,24 @@ class EmployerFormController extends Controller
                 $data = $data[0];
             }
         
-        
+            
         return view('backend.forms.employerform.index',compact('data'));
     }
 
     public function save(Request $request){
+    
+        $formExist = DB::table('employerform')->where('user_id', Auth::user()->id)->first();
         
-        $formExist = DB::table('employerform')->where('user_id', Auth::user()->id)->exists();
-        if($formExist == false){
+        if(empty($formExist->id)){
+            
             $formid = DB::table('employerform')->insertGetId([
                 'user_id' => auth()->user()->id,
                 'created_at' => date('m/d/Y h:i:s a'),
                 'updated_at' => date('m/d/Y h:i:s a')
             ]);
-
+            
             $fieldsets = $this->getFieldsetsData($formid,$request);
-
+            
             DB::table('employerform_sbs')->insert([
                 $fieldsets['sbsData']
             ]);
@@ -72,15 +74,20 @@ class EmployerFormController extends Controller
             DB::table('employerform_nomination')->insert([
                 $fieldsets['nominationData']
             ]);
+            
             try {
+                $formdata = DB::table('employerform')->where('user_id', Auth::user()->id)->first();
+                
                 $data = [
                     'username' => Auth::user()->username,
                     'email' => Auth::user()->email,
                     'messagetype' => 'A new application has been recieved!'
                 ];
-                if($request->has('formsubmit')){
-                    //Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
+                
+                if($request->has('formsubmit') && $formdata->is_email_sent == false){
                     Mail::to('hamzashan123@gmail.com')->send(new NewFormSubmitted($data));
+                    DB::table('employerform')->where('user_id', Auth::user()->id)->update(['is_email_sent' => true]);
+                     //Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
                 }
             }
             catch (exception $e) {
@@ -106,8 +113,23 @@ class EmployerFormController extends Controller
             DB::table('employerform_nomination')->where('employerform_id',$existingForm->id)->update(
                 $fieldsets['nominationData']
             );
+            //check if is_email_sent is false
+            if($request->has('formsubmit') && !empty($existingForm) && $existingForm->is_email_sent == false){
+                $data = [
+                    'username' => Auth::user()->username,
+                    'email' => Auth::user()->email,
+                    'messagetype' => 'A new application has been recieved!'
+                ];
+                Mail::to('hamzashan123@gmail.com')->send(new NewFormSubmitted($data));
+                DB::table('employerform')->where('user_id', Auth::user()->id)->update(['is_email_sent' => true]);
+                 //Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
+            }
+                
+            
+            
         }
-       
+
+        
             return redirect()->back()->with('success','Application Saved !');
         
           

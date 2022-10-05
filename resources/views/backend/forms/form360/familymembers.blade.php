@@ -746,7 +746,12 @@
    
     @if(!Auth::user()->hasRole('consultant') && !Auth::user()->hasRole('admin') )
     <!-- <input type="button" name="next" class="next action-button" value="Submit" /> -->
-    <button name="formsubmit" class="next action-button" id="form360submit"> Submit</button>
+        @if(!empty($data->is_email_sent) != true)
+        <button name="formsubmit" class="next action-button" > Submit</button>
+        @else
+        <input type="button" name="save" class="save action-button" value="Save" />
+        @endif
+    
     @endif
     <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
     

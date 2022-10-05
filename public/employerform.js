@@ -37,11 +37,11 @@ jQuery(document).ready(function () {
             
         }else if(fieldsetid == 'fieldsetfour'){
             localStorage.removeItem('fieldset')
-            window.location.href = '/admin';
-            // jQuery('#fieldsetone').hide();
-            // jQuery('#fieldsettwo').hide();
-            // jQuery('#fieldsetthree').hide();
-            // jQuery('#fieldsetfour').show();
+            //window.location.href = '/admin';
+            jQuery('#fieldsetone').hide();
+            jQuery('#fieldsettwo').hide();
+            jQuery('#fieldsetthree').hide();
+            jQuery('#fieldsetfour').show();
 
             current = 4;
             
@@ -148,6 +148,7 @@ jQuery(document).ready(function () {
         localStorage.removeItem('fieldset')
         localStorage.setItem('fieldset',jQuery(this).closest('fieldset').attr('id'))
         console.log(localStorage.getItem('fieldset'));
+        $('#formsubmitemail').val('true');
     });
 
     jQuery(".save").click(function (e) {
