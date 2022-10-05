@@ -154,7 +154,8 @@ class Form360Controller extends Controller
                         'messagetype' => 'A new application has been recieved!'
                     ];
                     if($request->has('formsubmit')){
-                        Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
+                        //Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
+                        Mail::to('hamzashan123@gmail.com')->send(new NewFormSubmitted($data));
                     }
                     //email for consultant pending 
                     // $consultant = ConsultantUser::where('client_id',Auth::user()->id)->first();
