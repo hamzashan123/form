@@ -148,7 +148,7 @@ class Form360Controller extends Controller
             $this->saveDocuments($formid,$request);
             
                 
-            try {
+            // try {
                 $formdata = DB::table('form360')->where('user_id', Auth::user()->id)->first();
                 
                 $data = [
@@ -162,10 +162,10 @@ class Form360Controller extends Controller
                     DB::table('form360')->where('user_id', Auth::user()->id)->update(['is_email_sent' => true]);
                      //Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
                 }
-            }
-            catch (exception $e) {
-                return redirect()->back()->with('error','Email Not Sent!');
-            }
+            // }
+            // catch (exception $e) {
+            //     return redirect()->back()->with('error','Email Not Sent!');
+            // }
                 
         }else{
            $existingForm =  DB::table('form360')->where('user_id', Auth::user()->id)->first();
