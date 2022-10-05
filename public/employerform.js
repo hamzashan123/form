@@ -60,7 +60,7 @@ jQuery(document).ready(function () {
         console.log('next_fs' , next_fs);
         setTimeout(function () {
             $(".next").val("Next");
-            $('body.client #fieldsetfour .next').val('Submit');
+           // $('body.client #fieldsetfour .next').val('Submit');
             next_fs.show();
             current_fs.animate(
                 { opacity: 0 },
