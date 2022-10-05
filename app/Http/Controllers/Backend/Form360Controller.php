@@ -151,9 +151,11 @@ class Form360Controller extends Controller
                     $data = [
                         'username' => Auth::user()->username,
                         'email' => Auth::user()->email,
-                        'messagetype' => 'Form has been sent by client!'
+                        'messagetype' => 'A new application has been recieved!'
                     ];
-                    Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
+                    if($request->has('formsubmit')){
+                        Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
+                    }
                     //email for consultant pending 
                     // $consultant = ConsultantUser::where('client_id',Auth::user()->id)->first();
                     // if(count($consultant) > 0 ){
@@ -228,11 +230,16 @@ class Form360Controller extends Controller
             );
 
             $this->saveDocuments($existingForm->id,$request);
-          // dd($request);
+           
         }
         
+        if($request->has('formsubmit')){
+            return redirect()->back()->with('success','Application Submitted !');  
+        }else{
+            return redirect()->back()->with('success','Application Saved !');
+        }
         //return view('backend.forms.form360.final');
-        return redirect()->back()->with('success','Application Saved !');
+        
     }
 
 

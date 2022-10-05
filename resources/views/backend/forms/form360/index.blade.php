@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="{{asset('formstyles.css')}}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 @section('content')
 <div class="container-fluid">
@@ -12,7 +13,7 @@
                 <img src="/logo.png" class="logo" />
                 <h2 id="heading">Form 360 </h2>
                 @if(session()->has('success')) 
-                <div class="alert alert-success">
+                <div class="alert alert-success ">
                     {{ session()->get('success') }}
                 </div>
                 @endif
@@ -111,7 +112,7 @@
   var fieldscomments = [];
 
 <?php if(auth()->user()->hasRole('consultant')) {  ?>  
-jQuery('.form-card td').click(function (e) {
+jQuery('.form-card td:nth-child(2)').click(function (e) {
         
         if($(this).hasClass('addBorder')){
           $(this).removeClass('addBorder');
@@ -149,10 +150,17 @@ jQuery('.form-card td').click(function (e) {
                 
                 e.preventDefault();
                 $("#correctemail").html("Please wait...");
-                console.log('fields to fieldscomments' , $('.commentfield'));
+                //console.log('fields to fieldscomments' , $('.commentfield'));
                 $('.commentfield').each(function(i, obj) {
-                    fieldsname.push(jQuery(this).closest('tr').find('td').text().trim());
-                    fieldsvalue.push(jQuery(this).closest('tr').find('input').val());
+                    // console.log(jQuery(this).closest('tr').find('td:nth-child(2)'));
+                    // console.log(jQuery(this).closest('tr').find('td:nth-child(2)').children());
+                    // console.log(jQuery(this).closest('tr').find('td:nth-child(2)').children().get(0).tagName);
+                    fieldsname.push(jQuery(this).closest('tr').find('td:nth-child(1)').text().trim());
+                    if(jQuery(this).closest('tr').find('td:nth-child(2)').children().get(0).tagName == 'INPUT'){
+                        fieldsvalue.push(jQuery(this).closest('tr').find('input').val());
+                    }else if (jQuery(this).closest('tr').find('td:nth-child(2)').children().get(0).tagName == 'SELECT'){
+                        fieldsvalue.push(jQuery(this).closest('tr').find('select').val());
+                    }
                     fieldscomments.push(jQuery(this).val());
                     
                 });
@@ -178,7 +186,7 @@ jQuery('.form-card td').click(function (e) {
                               text: 'Correction Email has been sent!',
                           }).then(function() {
                                 window.location.href = '/admin';
-                            });
+                         });
                       }else if(data.success === 'false'){
                           $("#correctemail").html("Send Correction email");
                          

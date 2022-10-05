@@ -12,11 +12,11 @@
 
     @foreach( $fieldsname as $index => $data  )
         
-        <p><strong style="font-size: 17px; text-decoration: underline;">  {{$data}} </strong>:  @if(empty($fieldsvalue[$index])) <span style="font-size: 17px;"> "N/A" </span> @else  <span style="font-size: 17px;"> {{$fieldsvalue[$index]}}  </span> @endif  </p>
+        <p><strong style="font-size: 17px; text-decoration: underline;"> Question :  {{$data}} </strong>:  @if(empty($fieldsvalue[$index])) <p style="font-size: 17px;"> Answer:  "N/A" </p> @else  <p style="font-size: 17px;">Answer:  {{$fieldsvalue[$index]}}  </p> @endif  </p>
         @if(empty($fieldsvalue[$index]))
-        <p>{{$fieldscomments[$index]}}</p>
+        <p>Comment : {{$fieldscomments[$index]}}</p>
         @else
-            <p>{{$fieldscomments[$index]}}</p>
+            <p>Comment : {{$fieldscomments[$index]}}</p>
         @endif
     @endforeach
     

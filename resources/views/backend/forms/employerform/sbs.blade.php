@@ -1986,6 +1986,9 @@
 
 
     </div>
+   
+    <input type="hidden" name="fieldset" value="abc" class="currentfieldset">
+
     @if(!Auth::user()->hasRole('consultant') && !Auth::user()->hasRole('admin') )
     <input type="button" name="save" class="save action-button" value="Save" />
     @endif

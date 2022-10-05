@@ -10,6 +10,8 @@ use App\Mail\NewFormSubmitted;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Session;
+
 
 class EmployerFormController extends Controller
 {
@@ -44,7 +46,7 @@ class EmployerFormController extends Controller
     }
 
     public function save(Request $request){
-         
+        
         $formExist = DB::table('employerform')->where('user_id', Auth::user()->id)->exists();
         if($formExist == false){
             $formid = DB::table('employerform')->insertGetId([
@@ -74,9 +76,11 @@ class EmployerFormController extends Controller
                 $data = [
                     'username' => Auth::user()->username,
                     'email' => Auth::user()->email,
-                    'messagetype' => 'Form has been sent by client!'
+                    'messagetype' => 'A new application has been recieved!'
                 ];
-                Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
+                if($request->has('formsubmit')){
+                    Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
+                }
             }
             catch (exception $e) {
                 return redirect()->back()->with('error','Email Not Sent!');
@@ -102,9 +106,11 @@ class EmployerFormController extends Controller
                 $fieldsets['nominationData']
             );
         }
+       
+            return redirect()->back()->with('success','Application Saved !');
         
-       // return view('backend.forms.employerform.final');
-        return redirect()->back()->with('success','Application Saved !');
+          
+    
     }
 
     private function getFieldsetsData($form_id,$request){
@@ -181,7 +187,7 @@ class EmployerFormController extends Controller
             'employerform_id' => $form_id,
             'nomination_visa_appliciant' => $request->nomination_visa_appliciant,
             'nomination_intra_company_transfer' => $request->nomination_intra_company_transfer,
-            'nomination_financial_year' => $request->job_n2_people_suitable,
+            'nomination_financial_year' => $request->nomination_financial_year,
             'nomination_job_offering' => $request->nomination_job_offering,
             'nomination_job_occupation' => $request->nomination_job_occupation,
             'nomination_responsibilities' => $request->nomination_responsibilities,

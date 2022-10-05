@@ -45,7 +45,7 @@
                     <td> What is the job title you are offering to the
                         visa applicant
                     </td>
-                    <td> <input type="text" name="nomination_job_offering" id="nomination_job_offering" @if(isset($data->nomination_job_offering)) value="{{$data->matrix_name_and_surname}}" @endif/> </td>
+                    <td> <input type="text" name="nomination_job_offering" id="nomination_job_offering" @if(isset($data->nomination_job_offering)) value="{{$data->nomination_job_offering}}" @endif/> </td>
                 </tr>
 
 
@@ -356,6 +356,8 @@
         </table>
 
     </div>
+    <input type="hidden" name="fieldset" value="xyz" class="currentfieldset">
+
     @if(!Auth::user()->hasRole('consultant') && !Auth::user()->hasRole('admin') )
     <input type="button" name="save" class="save action-button" value="Save" />
     @endif

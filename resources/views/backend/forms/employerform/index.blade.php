@@ -5,6 +5,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="{{asset('countrycode.js')}}"></script>
+
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -88,7 +89,7 @@
   var fieldsvalue = [];
   var fieldscomments = [];
   <?php if(auth()->user()->hasRole('consultant')) {  ?>  
-jQuery('.form-card td').click(function (e) {
+jQuery('.form-card td:nth-child(2)').click(function (e) {
         
         if($(this).hasClass('addBorder')){
           $(this).removeClass('addBorder');
@@ -134,8 +135,12 @@ jQuery('.form-card td').click(function (e) {
                     // console.log('th',jQuery(this).closest('tr').find('td').text());
                     // console.log('td' ,jQuery(this).closest('tr').find('td').text());
                     // console.log('td' ,jQuery(this).val());
-                    fieldsname.push(jQuery(this).closest('tr').find('td').text().trim());
-                    fieldsvalue.push(jQuery(this).closest('tr').find('input').val());
+                    fieldsname.push(jQuery(this).closest('tr').find('td:nth-child(1)').text().trim());
+                    if(jQuery(this).closest('tr').find('td:nth-child(2)').children().get(0).tagName == 'INPUT'){
+                        fieldsvalue.push(jQuery(this).closest('tr').find('input').val());
+                    }else if (jQuery(this).closest('tr').find('td:nth-child(2)').children().get(0).tagName == 'SELECT'){
+                        fieldsvalue.push(jQuery(this).closest('tr').find('select').val());
+                    }
                     fieldscomments.push(jQuery(this).val());
                     
                 });
