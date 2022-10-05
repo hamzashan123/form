@@ -36,7 +36,7 @@ jQuery(document).ready(function () {
             current = 3;
             
         }else if(fieldsetid == 'fieldsetfour'){
-            localStorage.removeItem('fieldset')
+            //localStorage.removeItem('fieldset')
             //window.location.href = '/admin';
             jQuery('#fieldsetone').hide();
             jQuery('#fieldsettwo').hide();

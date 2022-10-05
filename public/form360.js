@@ -268,7 +268,7 @@ jQuery(document).ready(function () {
 
             current = 13;
         }else if(fieldsetid == 'fieldsetfourteen'){
-            localStorage.removeItem('form360fieldset')
+            //localStorage.removeItem('form360fieldset')
             //window.location.href = '/admin';
             jQuery('#fieldsetone').hide();
             jQuery('#fieldsettwo').hide();
