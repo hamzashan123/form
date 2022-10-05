@@ -70,7 +70,8 @@ class FormController extends Controller
         
         
         $data = UserForms::where(['user_id' => $user_id, 'form_id' => $form_id])->delete();
-       
+        DB::table('form360')->where(['user_id' => $user_id, 'id' => $form_id])->delete();
+        DB::table('employerform')->where(['user_id' => $user_id, 'id' => $form_id])->delete();
             
         return redirect()->back();
 
