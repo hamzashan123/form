@@ -1,66 +1,65 @@
 jQuery(document).ready(function () {
-    
     //scrollToTop()
     var current_fs, next_fs, previous_fs; //fieldsets
     var opacity;
     var current = 1;
     var steps = jQuery("fieldset").length;
 
-    if(localStorage.getItem('fieldset') !== '' || localStorage.getItem('fieldset') !== null || localStorage.getItem('fieldset') !== undefined){
-      //alert(localStorage.getItem('currentstep'));
-        const fieldsetid = localStorage.getItem('fieldset');
-        if(fieldsetid == 'fieldsetone'){
-            jQuery('#fieldsetone').show();
-            jQuery('#fieldsettwo').hide();
-            jQuery('#fieldsetthree').hide();
-            jQuery('#fieldsetfour').hide();
+    if (
+        localStorage.getItem("fieldset") !== "" ||
+        localStorage.getItem("fieldset") !== null ||
+        localStorage.getItem("fieldset") !== undefined
+    ) {
+        //alert(localStorage.getItem('currentstep'));
+        const fieldsetid = localStorage.getItem("fieldset");
+        if (fieldsetid == "fieldsetone") {
+            jQuery("#fieldsetone").show();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
 
             current = 1;
-           
-        }else if(fieldsetid == 'fieldsettwo'){
+        } else if (fieldsetid == "fieldsettwo") {
             //jQuery('#fieldsetone').hide();
-            jQuery('#fieldsetone').hide();
-            jQuery('#fieldsettwo').show();
-            jQuery('#fieldsetthree').hide();
-            jQuery('#fieldsetfour').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").show();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
 
             current = 2;
-            
-        }else if(fieldsetid == 'fieldsetthree'){
+        } else if (fieldsetid == "fieldsetthree") {
             //jQuery('#fieldsetone').hide();
-            jQuery('#fieldsetone').hide();
-            jQuery('#fieldsettwo').hide();
-            jQuery('#fieldsetthree').show();
-            jQuery('#fieldsetfour').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").show();
+            jQuery("#fieldsetfour").hide();
 
             current = 3;
-            
-        }else if(fieldsetid == 'fieldsetfour'){
+        } else if (fieldsetid == "fieldsetfour") {
             //localStorage.removeItem('fieldset')
             //window.location.href = '/admin';
-            jQuery('#fieldsetone').hide();
-            jQuery('#fieldsettwo').hide();
-            jQuery('#fieldsetthree').hide();
-            jQuery('#fieldsetfour').show();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").show();
 
             current = 4;
-            
-           //window.location.reload();
+
+            //window.location.reload();
         }
     }
 
     setProgressBar(current);
 
     jQuery(".next").click(function (e) {
-       
         current_fs = jQuery(this).parent();
-        console.log('current' , current);
-        
+        console.log("current", current);
+
         next_fs = jQuery(this).parent().next();
-        console.log('next_fs' , next_fs);
+        console.log("next_fs", next_fs);
         setTimeout(function () {
             $(".next").val("Next");
-           // $('body.client #fieldsetfour .next').val('Submit');
+            // $('body.client #fieldsetfour .next').val('Submit');
             next_fs.show();
             current_fs.animate(
                 { opacity: 0 },
@@ -94,7 +93,6 @@ jQuery(document).ready(function () {
     });
 
     jQuery(".previous").click(function () {
-        
         current_fs = jQuery(this).parent();
         previous_fs = jQuery(this).parent().prev();
 
@@ -129,7 +127,7 @@ jQuery(document).ready(function () {
     });
 
     function setProgressBar(curStep) {
-        console.log('currnt step ' , curStep);
+        console.log("currnt step ", curStep);
         var percent = parseFloat(100 / steps) * curStep;
         percent = percent.toFixed();
         jQuery(".progress-bar").css("width", percent + "%");
@@ -144,20 +142,26 @@ jQuery(document).ready(function () {
 
     setProgressBar(current);
 
-    jQuery('#employersubmit').click(function(){
-        localStorage.removeItem('fieldset')
-        localStorage.setItem('fieldset',jQuery(this).closest('fieldset').attr('id'))
-        console.log(localStorage.getItem('fieldset'));
-        $('#formsubmitemail').val('true');
+    jQuery("#employersubmit").click(function () {
+        localStorage.removeItem("fieldset");
+        localStorage.setItem(
+            "fieldset",
+            jQuery(this).closest("fieldset").attr("id")
+        );
+        console.log(localStorage.getItem("fieldset"));
+        $("#formsubmitemail").val("true");
     });
 
     jQuery(".save").click(function (e) {
+        $(this).val("Saving");
+        $(this).attr("disabled", "disabled");
 
-        localStorage.removeItem('fieldset')
-        localStorage.setItem('fieldset',jQuery(this).closest('fieldset').attr('id'))
-        console.log(localStorage.getItem('fieldset'));
-        //alert(current);
-        $(this).text('Saving...');
-       $("#form360").submit();
+        localStorage.removeItem("fieldset");
+        localStorage.setItem(
+            "fieldset",
+            jQuery(this).closest("fieldset").attr("id")
+        );
+        console.log(localStorage.getItem("fieldset"));
+        $("#form360").submit();
     });
 });

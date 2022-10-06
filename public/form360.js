@@ -4,306 +4,309 @@ jQuery(document).ready(function () {
     var opacity;
     var current = 1;
     var steps = jQuery("fieldset").length;
-    if(localStorage.getItem('form360fieldset') !== '' || localStorage.getItem('form360fieldset') !== null || localStorage.getItem('form360fieldset') !== undefined){
+    if (
+        localStorage.getItem("form360fieldset") !== "" ||
+        localStorage.getItem("form360fieldset") !== null ||
+        localStorage.getItem("form360fieldset") !== undefined
+    ) {
         //alert(localStorage.getItem('form360fieldset'));
-         const fieldsetid = localStorage.getItem('form360fieldset');
-         if(fieldsetid == 'fieldsetone'){
-             jQuery('#fieldsetone').show();
-             jQuery('#fieldsettwo').hide();
-             jQuery('#fieldsetthree').hide();
-             jQuery('#fieldsetfour').hide();
+        const fieldsetid = localStorage.getItem("form360fieldset");
+        if (fieldsetid == "fieldsetone") {
+            jQuery("#fieldsetone").show();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
 
-             jQuery('#fieldsetfive').hide();
-             jQuery('#fieldsetsix').hide();
-             jQuery('#fieldsetseven').hide();
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
 
-             jQuery('#fieldseteight').hide();
-             jQuery('#fieldsetnine').hide();
-             jQuery('#fieldsetten').hide();
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
 
-             jQuery('#fieldseteleven').hide();
-             jQuery('#fieldsettwelve').hide();
-             jQuery('#fieldsetthirteen').hide();
-             jQuery('#fieldsetfourteen').hide();
-             
-             current = 1;
-             
-         }else if(fieldsetid == 'fieldsettwo'){
-             //jQuery('#fieldsetone').hide();
-             jQuery('#fieldsetone').hide();
-             jQuery('#fieldsettwo').show();
-             jQuery('#fieldsetthree').hide();
-             jQuery('#fieldsetfour').hide();
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
 
-             jQuery('#fieldsetfive').hide();
-             jQuery('#fieldsetsix').hide();
-             jQuery('#fieldsetseven').hide();
-
-             jQuery('#fieldseteight').hide();
-             jQuery('#fieldsetnine').hide();
-             jQuery('#fieldsetten').hide();
-
-             jQuery('#fieldseteleven').hide();
-             jQuery('#fieldsettwelve').hide();
-             jQuery('#fieldsetthirteen').hide();
-             jQuery('#fieldsetfourteen').hide();
-
-             current = 2;
-         }else if(fieldsetid == 'fieldsetthree'){
-             //jQuery('#fieldsetone').hide();
-             jQuery('#fieldsetone').hide();
-             jQuery('#fieldsettwo').hide();
-             jQuery('#fieldsetthree').show();
-             jQuery('#fieldsetfour').hide();
-
-             jQuery('#fieldsetfive').hide();
-             jQuery('#fieldsetsix').hide();
-             jQuery('#fieldsetseven').hide();
-
-             jQuery('#fieldseteight').hide();
-             jQuery('#fieldsetnine').hide();
-             jQuery('#fieldsetten').hide();
-
-             jQuery('#fieldseteleven').hide();
-             jQuery('#fieldsettwelve').hide();
-             jQuery('#fieldsetthirteen').hide();
-             jQuery('#fieldsetfourteen').hide();
-
-             current = 3;
-         }else if(fieldsetid == 'fieldsetfour'){
+            current = 1;
+        } else if (fieldsetid == "fieldsettwo") {
             //jQuery('#fieldsetone').hide();
-            jQuery('#fieldsetone').hide();
-            jQuery('#fieldsettwo').hide();
-            jQuery('#fieldsetthree').hide();
-            jQuery('#fieldsetfour').show();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").show();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
 
-            jQuery('#fieldsetfive').hide();
-            jQuery('#fieldsetsix').hide();
-            jQuery('#fieldsetseven').hide();
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
 
-            jQuery('#fieldseteight').hide();
-            jQuery('#fieldsetnine').hide();
-            jQuery('#fieldsetten').hide();
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
 
-            jQuery('#fieldseteleven').hide();
-            jQuery('#fieldsettwelve').hide();
-            jQuery('#fieldsetthirteen').hide();
-            jQuery('#fieldsetfourteen').hide();
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
+
+            current = 2;
+        } else if (fieldsetid == "fieldsetthree") {
+            //jQuery('#fieldsetone').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").show();
+            jQuery("#fieldsetfour").hide();
+
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
+
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
+
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
+
+            current = 3;
+        } else if (fieldsetid == "fieldsetfour") {
+            //jQuery('#fieldsetone').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").show();
+
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
+
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
+
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
 
             current = 4;
-        }else if(fieldsetid == 'fieldsetfive'){
+        } else if (fieldsetid == "fieldsetfive") {
             //jQuery('#fieldsetone').hide();
-            jQuery('#fieldsetone').hide();
-            jQuery('#fieldsettwo').hide();
-            jQuery('#fieldsetthree').hide();
-            jQuery('#fieldsetfour').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
 
-            jQuery('#fieldsetfive').show();
-            jQuery('#fieldsetsix').hide();
-            jQuery('#fieldsetseven').hide();
+            jQuery("#fieldsetfive").show();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
 
-            jQuery('#fieldseteight').hide();
-            jQuery('#fieldsetnine').hide();
-            jQuery('#fieldsetten').hide();
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
 
-            jQuery('#fieldseteleven').hide();
-            jQuery('#fieldsettwelve').hide();
-            jQuery('#fieldsetthirteen').hide();
-            jQuery('#fieldsetfourteen').hide();
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
 
             current = 5;
-        }else if(fieldsetid == 'fieldsetsix'){
+        } else if (fieldsetid == "fieldsetsix") {
             //jQuery('#fieldsetone').hide();
-            jQuery('#fieldsetone').hide();
-            jQuery('#fieldsettwo').hide();
-            jQuery('#fieldsetthree').hide();
-            jQuery('#fieldsetfour').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
 
-            jQuery('#fieldsetfive').hide();
-            jQuery('#fieldsetsix').show();
-            jQuery('#fieldsetseven').hide();
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").show();
+            jQuery("#fieldsetseven").hide();
 
-            jQuery('#fieldseteight').hide();
-            jQuery('#fieldsetnine').hide();
-            jQuery('#fieldsetten').hide();
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
 
-            jQuery('#fieldseteleven').hide();
-            jQuery('#fieldsettwelve').hide();
-            jQuery('#fieldsetthirteen').hide();
-            jQuery('#fieldsetfourteen').hide();
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
 
             current = 6;
-        }else if(fieldsetid == 'fieldsetseven'){
+        } else if (fieldsetid == "fieldsetseven") {
             //jQuery('#fieldsetone').hide();
-            jQuery('#fieldsetone').hide();
-            jQuery('#fieldsettwo').hide();
-            jQuery('#fieldsetthree').hide();
-            jQuery('#fieldsetfour').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
 
-            jQuery('#fieldsetfive').hide();
-            jQuery('#fieldsetsix').hide();
-            jQuery('#fieldsetseven').show();
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").show();
 
-            jQuery('#fieldseteight').hide();
-            jQuery('#fieldsetnine').hide();
-            jQuery('#fieldsetten').hide();
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
 
-            jQuery('#fieldseteleven').hide();
-            jQuery('#fieldsettwelve').hide();
-            jQuery('#fieldsetthirteen').hide();
-            jQuery('#fieldsetfourteen').hide();
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
 
             current = 7;
-        }else if(fieldsetid == 'fieldseteight'){
+        } else if (fieldsetid == "fieldseteight") {
             //jQuery('#fieldsetone').hide();
-            jQuery('#fieldsetone').hide();
-            jQuery('#fieldsettwo').hide();
-            jQuery('#fieldsetthree').hide();
-            jQuery('#fieldsetfour').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
 
-            jQuery('#fieldsetfive').hide();
-            jQuery('#fieldsetsix').hide();
-            jQuery('#fieldsetseven').hide();
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
 
-            jQuery('#fieldseteight').show();
-            jQuery('#fieldsetnine').hide();
-            jQuery('#fieldsetten').hide();
+            jQuery("#fieldseteight").show();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
 
-            jQuery('#fieldseteleven').hide();
-            jQuery('#fieldsettwelve').hide();
-            jQuery('#fieldsetthirteen').hide();
-            jQuery('#fieldsetfourteen').hide();
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
 
             current = 8;
-        }else if(fieldsetid == 'fieldsetnine'){
+        } else if (fieldsetid == "fieldsetnine") {
             //jQuery('#fieldsetone').hide();
-            jQuery('#fieldsetone').hide();
-            jQuery('#fieldsettwo').hide();
-            jQuery('#fieldsetthree').hide();
-            jQuery('#fieldsetfour').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
 
-            jQuery('#fieldsetfive').hide();
-            jQuery('#fieldsetsix').hide();
-            jQuery('#fieldsetseven').hide();
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
 
-            jQuery('#fieldseteight').hide();
-            jQuery('#fieldsetnine').show();
-            jQuery('#fieldsetten').hide();
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").show();
+            jQuery("#fieldsetten").hide();
 
-            jQuery('#fieldseteleven').hide();
-            jQuery('#fieldsettwelve').hide();
-            jQuery('#fieldsetthirteen').hide();
-            jQuery('#fieldsetfourteen').hide();
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
 
             current = 9;
-        }else if(fieldsetid == 'fieldsetten'){
+        } else if (fieldsetid == "fieldsetten") {
             //jQuery('#fieldsetone').hide();
-            jQuery('#fieldsetone').hide();
-            jQuery('#fieldsettwo').hide();
-            jQuery('#fieldsetthree').hide();
-            jQuery('#fieldsetfour').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
 
-            jQuery('#fieldsetfive').hide();
-            jQuery('#fieldsetsix').hide();
-            jQuery('#fieldsetseven').hide();
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
 
-            jQuery('#fieldseteight').hide();
-            jQuery('#fieldsetnine').hide();
-            jQuery('#fieldsetten').show();
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").show();
 
-            jQuery('#fieldseteleven').hide();
-            jQuery('#fieldsettwelve').hide();
-            jQuery('#fieldsetthirteen').hide();
-            jQuery('#fieldsetfourteen').hide();
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
 
             current = 10;
-        }else if(fieldsetid == 'fieldseteleven'){
+        } else if (fieldsetid == "fieldseteleven") {
             //jQuery('#fieldsetone').hide();
-            jQuery('#fieldsetone').hide();
-            jQuery('#fieldsettwo').hide();
-            jQuery('#fieldsetthree').hide();
-            jQuery('#fieldsetfour').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
 
-            jQuery('#fieldsetfive').hide();
-            jQuery('#fieldsetsix').hide();
-            jQuery('#fieldsetseven').hide();
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
 
-            jQuery('#fieldseteight').hide();
-            jQuery('#fieldsetnine').hide();
-            jQuery('#fieldsetten').hide();
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
 
-            jQuery('#fieldseteleven').show();
-            jQuery('#fieldsettwelve').hide();
-            jQuery('#fieldsetthirteen').hide();
-            jQuery('#fieldsetfourteen').hide();
+            jQuery("#fieldseteleven").show();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
 
             current = 11;
-        }else if(fieldsetid == 'fieldsettwelve'){
+        } else if (fieldsetid == "fieldsettwelve") {
             //jQuery('#fieldsetone').hide();
-            jQuery('#fieldsetone').hide();
-            jQuery('#fieldsettwo').hide();
-            jQuery('#fieldsetthree').hide();
-            jQuery('#fieldsetfour').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
 
-            jQuery('#fieldsetfive').hide();
-            jQuery('#fieldsetsix').hide();
-            jQuery('#fieldsetseven').hide();
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
 
-            jQuery('#fieldseteight').hide();
-            jQuery('#fieldsetnine').hide();
-            jQuery('#fieldsetten').hide();
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
 
-            jQuery('#fieldseteleven').hide();
-            jQuery('#fieldsettwelve').show();
-            jQuery('#fieldsetthirteen').hide();
-            jQuery('#fieldsetfourteen').hide();
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").show();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
 
             current = 12;
-        }else if(fieldsetid == 'fieldsetthirteen'){
+        } else if (fieldsetid == "fieldsetthirteen") {
             //jQuery('#fieldsetone').hide();
-            jQuery('#fieldsetone').hide();
-            jQuery('#fieldsettwo').hide();
-            jQuery('#fieldsetthree').hide();
-            jQuery('#fieldsetfour').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
 
-            jQuery('#fieldsetfive').hide();
-            jQuery('#fieldsetsix').hide();
-            jQuery('#fieldsetseven').hide();
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
 
-            jQuery('#fieldseteight').hide();
-            jQuery('#fieldsetnine').hide();
-            jQuery('#fieldsetten').hide();
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
 
-            jQuery('#fieldseteleven').hide();
-            jQuery('#fieldsettwelve').hide();
-            jQuery('#fieldsetthirteen').show();
-            jQuery('#fieldsetfourteen').hide();
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").show();
+            jQuery("#fieldsetfourteen").hide();
 
             current = 13;
-        }else if(fieldsetid == 'fieldsetfourteen'){
+        } else if (fieldsetid == "fieldsetfourteen") {
             //localStorage.removeItem('form360fieldset')
             //window.location.href = '/admin';
-            jQuery('#fieldsetone').hide();
-            jQuery('#fieldsettwo').hide();
-            jQuery('#fieldsetthree').hide();
-            jQuery('#fieldsetfour').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
 
-            jQuery('#fieldsetfive').hide();
-            jQuery('#fieldsetsix').hide();
-            jQuery('#fieldsetseven').hide();
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
 
-            jQuery('#fieldseteight').hide();
-            jQuery('#fieldsetnine').hide();
-            jQuery('#fieldsetten').hide();
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
 
-            jQuery('#fieldseteleven').hide();
-            jQuery('#fieldsettwelve').hide();
-            jQuery('#fieldsetthirteen').hide();
-            jQuery('#fieldsetfourteen').show();
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").show();
 
-             current = 14;
+            current = 14;
         }
-     }
+    }
     setProgressBar(current);
 
     jQuery(".next").click(function (e) {
@@ -394,17 +397,25 @@ jQuery(document).ready(function () {
 
     setProgressBar(current);
 
-    jQuery('#form360submit').click(function(){
-        localStorage.removeItem('form360fieldset')
-        localStorage.setItem('form360fieldset',jQuery(this).closest('fieldset').attr('id'))
-        console.log(localStorage.getItem('form360fieldset'));
+    jQuery("#form360submit").click(function () {
+        localStorage.removeItem("form360fieldset");
+        localStorage.setItem(
+            "form360fieldset",
+            jQuery(this).closest("fieldset").attr("id")
+        );
+        console.log(localStorage.getItem("form360fieldset"));
     });
     jQuery(".save").click(function (e) {
+        $(this).val("Saving");
+        $(this).attr("disabled", "disabled");
 
-        localStorage.removeItem('form360fieldset')
-        localStorage.setItem('form360fieldset',jQuery(this).closest('fieldset').attr('id'))
-        console.log(localStorage.getItem('form360fieldset'));
-        $(this).text('Saving...');
+        localStorage.removeItem("form360fieldset");
+        localStorage.setItem(
+            "form360fieldset",
+            jQuery(this).closest("fieldset").attr("id")
+        );
+        console.log(localStorage.getItem("form360fieldset"));
+        $(this).text("Saving...");
         $("#form360").submit();
     });
 });
