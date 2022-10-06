@@ -69,15 +69,14 @@ class Form360Controller extends Controller
         }    
         
         $docdataForm360 = [];
-        //$docdocument = [];
+      
         if(!empty($data->documents)){
             foreach ($data->documents as $key =>  $doc) {
                 $docdataForm360[$doc->doc_field] = $doc->doc_name;
-                //$docdocument[$key]  = $doc->doc_name;
+             
             }
         }
-        
-        // dd($data);
+  
         
 
         return view('backend.forms.form360.index',compact('data','docdataForm360'));

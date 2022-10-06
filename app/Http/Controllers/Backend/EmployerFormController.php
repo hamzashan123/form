@@ -36,13 +36,24 @@ class EmployerFormController extends Controller
                             'employerform_sbs.*'
                             )->get();
          
-            //dd($data);
+        
+        
             if(!empty($data[0])){
                 $data = $data[0];
-            }
-        
+            }   
+            if(!empty($data->user_id)){
+               $data->documents  =  DB::table('employerform_documents')->where(['user_id' => $data->user_id ])->get();
+            }    
             
-        return view('backend.forms.employerform.index',compact('data'));
+            $docdataemployerform = [];
+          
+            if(!empty($data->documents)){
+                foreach ($data->documents as $key =>  $doc) {
+                    $docdataemployerform[$doc->doc_field] = $doc->doc_name;
+                   
+                }
+            }
+        return view('backend.forms.employerform.index',compact('data','docdataemployerform'));
     }
 
     public function save(Request $request){
@@ -74,7 +85,9 @@ class EmployerFormController extends Controller
             DB::table('employerform_nomination')->insert([
                 $fieldsets['nominationData']
             ]);
-            
+
+
+            $this->saveDocuments($formid,$request);
             try {
                 $formdata = DB::table('employerform')->where('user_id', Auth::user()->id)->first();
                 
@@ -113,6 +126,8 @@ class EmployerFormController extends Controller
             DB::table('employerform_nomination')->where('employerform_id',$existingForm->id)->update(
                 $fieldsets['nominationData']
             );
+
+            $this->saveDocuments($existingForm->id,$request);
             //check if is_email_sent is false
             if($request->has('formsubmit') && !empty($existingForm) && $existingForm->is_email_sent == false){
                 $data = [
@@ -134,6 +149,77 @@ class EmployerFormController extends Controller
         
           
     
+    }
+
+    private function saveDocuments($form_id,$request){
+        $documents = [
+            //personal docs
+         'sbs_upload_previous_sponsorship' => $request->file('sbs_upload_previous_sponsorship'),
+         'sbs_upload_asic_historical' => $request->file('sbs_upload_asic_historical'),
+
+        ];
+
+        foreach($documents as $key =>  $doc){
+                   
+            if($key){
+                $uploadedFile = $doc;
+                $filetype = '';
+                $filename = ''; 
+                if(!empty($doc)){
+                    $fileMimeType = $doc->getMimeType();
+                     
+                    if($fileMimeType == 'image/png' || $fileMimeType == 'image/jpg' || $fileMimeType == 'image/jpeg' || $fileMimeType == 'image/eps' || $fileMimeType == 'image/gif'){
+              
+                        $filetype = 'png';
+                    }
+                    if($fileMimeType == 'application/pdf' ){
+                        
+                        $filetype = 'pdf';
+                    }
+                }
+                 
+                 
+                if(!empty($uploadedFile)){
+                    $filename = time().$uploadedFile->getClientOriginalName();
+                    Storage::disk('local')->put('/public/employerform/'.Auth::user()->id.'/'.$key.'/' . $filename, File::get($uploadedFile));
+                    
+                    $docData = [
+                        'user_id' => Auth::user()->id,
+                        'employerform_id' => $form_id,
+                        'doc_name' => $filename,
+                        'doc_field' => $key,
+                        'file_type' => $filetype,
+                  ];
+                  $documetExist = DB::table('employerform_documents')
+                  ->where([
+                      'user_id' => Auth::user()->id,
+                      'employerform_id' => $form_id,
+                      'doc_field' => $key,
+                  ])
+                  ->exists();
+                  if($documetExist == true){
+                      $documetExist = DB::table('employerform_documents')
+                      ->where([
+                          'user_id' => Auth::user()->id,
+                          'employerform_id' => $form_id,
+                          'doc_field' => $key,
+                      ])
+                      ->update($docData);
+                  }else{
+                      $documetUploaded = DB::table('employerform_documents')->insert($docData);
+                  }
+                }  
+                 
+
+                  
+                    
+              
+            }
+             
+          
+          
+      }
+       
     }
 
     private function getFieldsetsData($form_id,$request){

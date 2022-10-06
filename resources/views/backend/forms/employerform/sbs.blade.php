@@ -1894,13 +1894,39 @@
                     <td> Previous Sponsorship Approval Letter (SBS)
                         if applicable
                     </td>
-                    <td> <input type="file" name="sbs_upload_previous_sponsorship" id="sbs_upload_previous_sponsorship" @if(isset($data->sbs_upload_previous_sponsorship)) value="{{$data->sbs_upload_previous_sponsorship}}" @endif></td>
+                    <td> <input type="file" name="sbs_upload_previous_sponsorship" id="sbs_upload_previous_sponsorship" >
+                    @if (array_key_exists('sbs_upload_previous_sponsorship', $docdataemployerform))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_previous_sponsorship/'.$docdataemployerform['sbs_upload_previous_sponsorship'])  }}">
+                                                               @if(str_contains($docdataemployerform['sbs_upload_previous_sponsorship'] , '.pdf'))
+                                                                <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_previous_sponsorship/'.$docdataemployerform['sbs_upload_previous_sponsorship'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                                                                    
+                                                                                                      
+                                                           @endif      
+                </td>
                 </tr>
 
                 <tr>
                     <td> ASIC Historical Extract
                     </td>
-                    <td> <input type="file" name="sbs_upload_asic_historical" id="sbs_upload_asic_historical" @if(isset($data->sbs_upload_asic_historical)) value="{{$data->sbs_upload_asic_historical}}" @endif></td>
+                    <td> <input type="file" name="sbs_upload_asic_historical" id="sbs_upload_asic_historical" >
+                    @if (array_key_exists('sbs_upload_asic_historical', $docdataemployerform))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_asic_historical/'.$docdataemployerform['sbs_upload_asic_historical'])  }}">
+                                                               @if(str_contains($docdataemployerform['sbs_upload_asic_historical'] , '.pdf'))
+                                                                <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_asic_historical/'.$docdataemployerform['sbs_upload_asic_historical'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                                                                    
+                                                                                                      
+                                                           @endif 
+                    </td>
                 </tr>
 
                 <tr>
