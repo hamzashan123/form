@@ -70,10 +70,11 @@ class Form360Controller extends Controller
         
         $docdataForm360 = [];
         //$docdocument = [];
-
-        foreach ($data->documents as $key =>  $doc) {
-            $docdataForm360[$doc->doc_field] = $doc->doc_name;
-            //$docdocument[$key]  = $doc->doc_name;
+        if(!empty($data->documents)){
+            foreach ($data->documents as $key =>  $doc) {
+                $docdataForm360[$doc->doc_field] = $doc->doc_name;
+                //$docdocument[$key]  = $doc->doc_name;
+            }
         }
         
         // dd($data);
