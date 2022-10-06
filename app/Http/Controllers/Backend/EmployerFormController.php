@@ -15,61 +15,62 @@ use Illuminate\Support\Facades\Session;
 
 class EmployerFormController extends Controller
 {
-    public function index(){
-        if(!empty($_GET['userid']) && !empty($_GET['form_id'])){
+    public function index()
+    {
+        if (!empty($_GET['userid']) && !empty($_GET['form_id'])) {
             $userid = $_GET['userid'];
-        }else{
+        } else {
             $userid = Auth::user()->id;
         }
-        
 
-            $data  =  DB::table('employerform')
-                        ->join('employerform_job', 'employerform.id', '=', 'employerform_job.employerform_id')
-                        ->join('employerform_labour', 'employerform.id', '=', 'employerform_labour.employerform_id')
-                        ->join('employerform_nomination', 'employerform.id', '=', 'employerform_nomination.employerform_id')
-                        ->join('employerform_sbs', 'employerform.id', '=', 'employerform_sbs.employerform_id')
-                        ->where('employerform.user_id',$userid)->select(
-                            'employerform.*',
-                            'employerform_job.*',
-                            'employerform_labour.*',
-                            'employerform_nomination.*',
-                            'employerform_sbs.*'
-                            )->get();
-         
-        
-        
-            if(!empty($data[0])){
-                $data = $data[0];
-            }   
-            if(!empty($data->user_id)){
-               $data->documents  =  DB::table('employerform_documents')->where(['user_id' => $data->user_id ])->get();
-            }    
-            
-            $docdataemployerform = [];
-          
-            if(!empty($data->documents)){
-                foreach ($data->documents as $key =>  $doc) {
-                    $docdataemployerform[$doc->doc_field] = $doc->doc_name;
-                   
-                }
+
+        $data  =  DB::table('employerform')
+            ->join('employerform_job', 'employerform.id', '=', 'employerform_job.employerform_id')
+            ->join('employerform_labour', 'employerform.id', '=', 'employerform_labour.employerform_id')
+            ->join('employerform_nomination', 'employerform.id', '=', 'employerform_nomination.employerform_id')
+            ->join('employerform_sbs', 'employerform.id', '=', 'employerform_sbs.employerform_id')
+            ->where('employerform.user_id', $userid)->select(
+                'employerform.*',
+                'employerform_job.*',
+                'employerform_labour.*',
+                'employerform_nomination.*',
+                'employerform_sbs.*'
+            )->get();
+
+
+
+        if (!empty($data[0])) {
+            $data = $data[0];
+        }
+        if (!empty($data->user_id)) {
+            $data->documents  =  DB::table('employerform_documents')->where(['user_id' => $data->user_id])->get();
+        }
+
+        $docdataemployerform = [];
+
+        if (!empty($data->documents)) {
+            foreach ($data->documents as $key =>  $doc) {
+                $docdataemployerform[$doc->doc_field] = $doc->doc_name;
             }
-        return view('backend.forms.employerform.index',compact('data','docdataemployerform'));
+        }
+        return view('backend.forms.employerform.index', compact('data', 'docdataemployerform'));
     }
 
-    public function save(Request $request){
-    
+    public function save(Request $request)
+    {
+
         $formExist = DB::table('employerform')->where('user_id', Auth::user()->id)->first();
-        
-        if(empty($formExist->id)){
-            
+
+        if (empty($formExist->id)) {
+
             $formid = DB::table('employerform')->insertGetId([
                 'user_id' => auth()->user()->id,
                 'created_at' => date('m/d/Y h:i:s a'),
                 'updated_at' => date('m/d/Y h:i:s a')
             ]);
-            
-            $fieldsets = $this->getFieldsetsData($formid,$request);
-            
+
+            $fieldsets = $this->getFieldsetsData($formid, $request);
+
             DB::table('employerform_sbs')->insert([
                 $fieldsets['sbsData']
             ]);
@@ -87,49 +88,47 @@ class EmployerFormController extends Controller
             ]);
 
 
-            $this->saveDocuments($formid,$request);
+            $this->saveDocuments($formid, $request);
             try {
                 $formdata = DB::table('employerform')->where('user_id', Auth::user()->id)->first();
-                
+
                 $data = [
                     'username' => Auth::user()->username,
                     'email' => Auth::user()->email,
                     'messagetype' => 'A new application has been recieved!'
                 ];
-                
-                if($request->has('formsubmit') && $formdata->is_email_sent == false){
+
+                if ($request->has('formsubmit') && $formdata->is_email_sent == false) {
                     Mail::to('hamzashan123@gmail.com')->send(new NewFormSubmitted($data));
                     DB::table('employerform')->where('user_id', Auth::user()->id)->update(['is_email_sent' => true]);
-                     //Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
+                    //Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
                 }
+            } catch (exception $e) {
+                return redirect()->back()->with('error', 'Email Not Sent!');
             }
-            catch (exception $e) {
-                return redirect()->back()->with('error','Email Not Sent!');
-            }
-            
-        }else{
-           $existingForm =  DB::table('employerform')->where('user_id', Auth::user()->id)->first();
+        } else {
+            $existingForm =  DB::table('employerform')->where('user_id', Auth::user()->id)->first();
 
-           $fieldsets = $this->getFieldsetsData($existingForm->id,$request);
-             DB::table('employerform_sbs')->where('employerform_id',$existingForm->id)->update(
+            $fieldsets = $this->getFieldsetsData($existingForm->id, $request);
+            DB::table('employerform_sbs')->where('employerform_id', $existingForm->id)->update(
                 $fieldsets['sbsData']
-             );
+            );
 
-            DB::table('employerform_labour')->where('employerform_id',$existingForm->id)->update(
+            DB::table('employerform_labour')->where('employerform_id', $existingForm->id)->update(
                 $fieldsets['labourData']
             );
 
-            DB::table('employerform_job')->where('employerform_id',$existingForm->id)->update(
+            DB::table('employerform_job')->where('employerform_id', $existingForm->id)->update(
                 $fieldsets['jobData']
             );
 
-            DB::table('employerform_nomination')->where('employerform_id',$existingForm->id)->update(
+            DB::table('employerform_nomination')->where('employerform_id', $existingForm->id)->update(
                 $fieldsets['nominationData']
             );
 
-            $this->saveDocuments($existingForm->id,$request);
+            $this->saveDocuments($existingForm->id, $request);
             //check if is_email_sent is false
-            if($request->has('formsubmit') && !empty($existingForm) && $existingForm->is_email_sent == false){
+            if ($request->has('formsubmit') && !empty($existingForm) && $existingForm->is_email_sent == false) {
                 $data = [
                     'username' => Auth::user()->username,
                     'email' => Auth::user()->email,
@@ -137,92 +136,118 @@ class EmployerFormController extends Controller
                 ];
                 //Mail::to('hamzashan123@gmail.com')->send(new NewFormSubmitted($data));
                 DB::table('employerform')->where('user_id', Auth::user()->id)->update(['is_email_sent' => true]);
-                 Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
+                Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
             }
-                
-            
-            
         }
 
-        
-            return redirect()->back()->with('success','Application Saved !');
-        
-          
-    
+
+        return redirect()->back()->with('success', 'Application Saved !');
     }
 
-    private function saveDocuments($form_id,$request){
+    private function saveDocuments($form_id, $request)
+    {
         $documents = [
-            //personal docs
-         'sbs_upload_previous_sponsorship' => $request->file('sbs_upload_previous_sponsorship'),
-         'sbs_upload_asic_historical' => $request->file('sbs_upload_asic_historical'),
+
+            //sbs
+
+            'sbs_upload_previous_sponsorship' => $request->file('sbs_upload_previous_sponsorship'),
+            'sbs_upload_asic_historical' => $request->file('sbs_upload_asic_historical'),
+            'sbs_upload_trust' => $request->file('sbs_upload_trust'),
+            'sbs_upload_lease' => $request->file('sbs_upload_lease'),
+            'sbs_upload_bank_statement' => $request->file('sbs_upload_bank_statement'),
+            'sbs_upload_bas' => $request->file('sbs_upload_bas'),
+            'sbs_upload_profit_loss' => $request->file('sbs_upload_profit_loss'),
+            'sbs_upload_recent_payroll' => $request->file('sbs_upload_recent_payroll'),
+            'sbs_upload_chart' => $request->file('sbs_upload_chart'),
+            'sbs_upload_bill1' => $request->file('sbs_upload_bill1'),
+            'sbs_upload_bill2' => $request->file('sbs_upload_bill2'),
+            'sbs_upload_invoice1' => $request->file('sbs_upload_invoice1'),
+            'sbs_upload_invoice2' => $request->file('sbs_upload_invoice2'),
+
+            //nomination
+
+            'nomination_job_description' => $request->file('nomination_job_description'),
+            'nomination_period_of_job' => $request->file('nomination_period_of_job'),
+            'nomination_name_and_surname' => $request->file('nomination_name_and_surname'),
+            'nomination_start_date_doc' => $request->file('nomination_start_date_doc'),
+            'nomination_gross_annual_salary' => $request->file('nomination_gross_annual_salary'),
+            'nomination_super_annuation' => $request->file('nomination_super_annuation'),
+            'nomination_separate_figure' => $request->file('nomination_separate_figure'),
+
+            //LABOUR 
+
+            'labour_market_different' => $request->file('labour_market_different'),
+            'workforce_1_copyandpaste' => $request->file('workforce_1_copyandpaste'),
+            'workforce_1_invoice' => $request->file('workforce_1_invoice'),
+            'workforce_1_screenshot' => $request->file('workforce_1_screenshot'),
+            'workforce_1_evidence' => $request->file('workforce_1_evidence'),
+            'workforce_2_copyandpaste' => $request->file('workforce_2_copyandpaste'),
+            'workforce_2_invoice' => $request->file('workforce_2_invoice'),
+            'workforce_2_screenshot' => $request->file('workforce_2_screenshot'),
+            'workforce_2_evidence' => $request->file('workforce_2_evidence'),
+            'workforce_3_copyandpaste' => $request->file('workforce_3_copyandpaste'),
+            'workforce_3_invoice' => $request->file('workforce_3_invoice'),
+            'workforce_3_screenshot' => $request->file('workforce_3_screenshot'),
+            'workforce_3_evidence' => $request->file('workforce_3_evidence'),
 
         ];
 
-        foreach($documents as $key =>  $doc){
-                   
-            if($key){
+        foreach ($documents as $key =>  $doc) {
+
+            if ($key) {
                 $uploadedFile = $doc;
                 $filetype = '';
-                $filename = ''; 
-                if(!empty($doc)){
+                $filename = '';
+                if (!empty($doc)) {
                     $fileMimeType = $doc->getMimeType();
-                     
-                    if($fileMimeType == 'image/png' || $fileMimeType == 'image/jpg' || $fileMimeType == 'image/jpeg' || $fileMimeType == 'image/eps' || $fileMimeType == 'image/gif'){
-              
+
+                    if ($fileMimeType == 'image/png' || $fileMimeType == 'image/jpg' || $fileMimeType == 'image/jpeg' || $fileMimeType == 'image/eps' || $fileMimeType == 'image/gif') {
+
                         $filetype = 'png';
                     }
-                    if($fileMimeType == 'application/pdf' ){
-                        
+                    if ($fileMimeType == 'application/pdf') {
+
                         $filetype = 'pdf';
                     }
                 }
-                 
-                 
-                if(!empty($uploadedFile)){
-                    $filename = time().$uploadedFile->getClientOriginalName();
-                    Storage::disk('local')->put('/public/employerform/'.Auth::user()->id.'/'.$key.'/' . $filename, File::get($uploadedFile));
-                    
+
+
+                if (!empty($uploadedFile)) {
+                    $filename = time() . $uploadedFile->getClientOriginalName();
+                    Storage::disk('local')->put('/public/employerform/' . Auth::user()->id . '/' . $key . '/' . $filename, File::get($uploadedFile));
+
                     $docData = [
                         'user_id' => Auth::user()->id,
                         'employerform_id' => $form_id,
                         'doc_name' => $filename,
                         'doc_field' => $key,
                         'file_type' => $filetype,
-                  ];
-                  $documetExist = DB::table('employerform_documents')
-                  ->where([
-                      'user_id' => Auth::user()->id,
-                      'employerform_id' => $form_id,
-                      'doc_field' => $key,
-                  ])
-                  ->exists();
-                  if($documetExist == true){
-                      $documetExist = DB::table('employerform_documents')
-                      ->where([
-                          'user_id' => Auth::user()->id,
-                          'employerform_id' => $form_id,
-                          'doc_field' => $key,
-                      ])
-                      ->update($docData);
-                  }else{
-                      $documetUploaded = DB::table('employerform_documents')->insert($docData);
-                  }
-                }  
-                 
-
-                  
-                    
-              
+                    ];
+                    $documetExist = DB::table('employerform_documents')
+                        ->where([
+                            'user_id' => Auth::user()->id,
+                            'employerform_id' => $form_id,
+                            'doc_field' => $key,
+                        ])
+                        ->exists();
+                    if ($documetExist == true) {
+                        $documetExist = DB::table('employerform_documents')
+                            ->where([
+                                'user_id' => Auth::user()->id,
+                                'employerform_id' => $form_id,
+                                'doc_field' => $key,
+                            ])
+                            ->update($docData);
+                    } else {
+                        $documetUploaded = DB::table('employerform_documents')->insert($docData);
+                    }
+                }
             }
-             
-          
-          
-      }
-       
+        }
     }
 
-    private function getFieldsetsData($form_id,$request){
+    private function getFieldsetsData($form_id, $request)
+    {
         //dd($request);
         $sbsData =  [
             'employerform_id' => $form_id,
@@ -255,7 +280,7 @@ class EmployerFormController extends Controller
             'annual_turnover_year' => $request->annual_turnover_year,
             'annual_turnover_payroll_figure' => $request->annual_turnover_payroll_figure,
             'annual_turnover_operating' => $request->annual_turnover_operating,
-            
+
         ];
 
         $labourData =  [
@@ -273,7 +298,7 @@ class EmployerFormController extends Controller
             'labour_job_n2_online' => $request->labour_job_n2_online,
             'labour_job_n2_indicate' => $request->labour_job_n2_indicate,
             'labour_job_n2_payment' => $request->labour_job_n2_payment
-           
+
         ];
 
         $jobData =  [
@@ -289,7 +314,7 @@ class EmployerFormController extends Controller
             'job_n3_after_people' => $request->job_n3_after_people,
             'job_n3_after_people_shortlisted' => $request->job_n3_after_people_shortlisted,
             'job_n3_after_people_suitable' => $request->job_n3_after_people_suitable
-           
+
         ];
 
         $nominationData =  [
@@ -317,7 +342,7 @@ class EmployerFormController extends Controller
             'salary_permanent_resident' => $request->salary_permanent_resident,
             'salary_permanent_resident_indicate' => $request->salary_permanent_resident_indicate,
             'salary_citizen' => $request->salary_citizen,
-           
+
         ];
 
         $fieldsetsData = [
@@ -327,6 +352,5 @@ class EmployerFormController extends Controller
             'nominationData' => $nominationData
         ];
         return $fieldsetsData;
-
     }
 }

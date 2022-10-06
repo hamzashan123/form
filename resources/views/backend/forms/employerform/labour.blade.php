@@ -32,7 +32,22 @@
                         update this form when the job ads will be
                         online)
                     </td>
-                    <td> <input type="file" name="labour_market_different" id="labour_market_different" @if(isset($data->labour_market_different)) value="{{$data->labour_market_different}}" @endif></td>
+                    <td> <input type="file" name="labour_market_different" id="labour_market_different">
+
+                        @if (array_key_exists('labour_market_different', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/labour_market_different/'.$docdataemployerform['labour_market_different'])  }}">
+                            @if(str_contains($docdataemployerform['labour_market_different'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/labour_market_different/'.$docdataemployerform['labour_market_different'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
 
             </tbody>
@@ -166,27 +181,93 @@
                     <td>Copy and paste of the link of the Job ad
                         platform
                     </td>
-                    <td> <input type="file" name="workforce_1_copyandpaste" id="workforce_1_copyandpaste" @if(isset($data->workforce_1_copyandpaste)) value="{{$data->workforce_1_copyandpaste}}" @endif></td>
+                    <td> <input type="file" name="workforce_1_copyandpaste" id="workforce_1_copyandpaste">
+
+                        @if (array_key_exists('workforce_1_copyandpaste', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_1_copyandpaste/'.$docdataemployerform['workforce_1_copyandpaste'])  }}">
+                            @if(str_contains($docdataemployerform['workforce_1_copyandpaste'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_1_copyandpaste/'.$docdataemployerform['workforce_1_copyandpaste'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td>Invoice for having posted the job ad (if
                         applicable)
                     </td>
-                    <td> <input type="file" name="workforce_1_invoice" id="workforce_1_invoice" @if(isset($data->workforce_1_invoice)) value="{{$data->workforce_1_invoice}}" @endif></td>
+                    <td> <input type="file" name="workforce_1_invoice" id="workforce_1_invoice">
+
+
+
+                        @if (array_key_exists('workforce_1_invoice', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_1_invoice/'.$docdataemployerform['workforce_1_invoice'])  }}">
+                            @if(str_contains($docdataemployerform['workforce_1_invoice'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_1_invoice/'.$docdataemployerform['workforce_1_invoice'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td>Screenshot of the job ad page
                     </td>
-                    <td> <input type="file" name="workforce_1_screenshot" id="workforce_1_screenshot" @if(isset($data->workforce_1_screenshot)) value="{{$data->workforce_1_screenshot}}" @endif></td>
+                    <td> <input type="file" name="workforce_1_screenshot" id="workforce_1_screenshot">
+
+
+                        @if (array_key_exists('workforce_1_screenshot', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_1_screenshot/'.$docdataemployerform['workforce_1_screenshot'])  }}">
+                            @if(str_contains($docdataemployerform['workforce_1_screenshot'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_1_screenshot/'.$docdataemployerform['workforce_1_screenshot'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td>Any other evidence of having posted the job
                         ad
                     </td>
-                    <td> <input type="file" name="workforce_1_evidence" id="workforce_1_evidence" @if(isset($data->workforce_1_evidence)) value="{{$data->workforce_1_evidence}}" @endif></td>
+                    <td> <input type="file" name="workforce_1_evidence" id="workforce_1_evidence">
+
+
+
+                        @if (array_key_exists('workforce_1_evidence', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_1_evidence/'.$docdataemployerform['workforce_1_evidence'])  }}">
+                            @if(str_contains($docdataemployerform['workforce_1_evidence'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_1_evidence/'.$docdataemployerform['workforce_1_evidence'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
 
 
@@ -204,27 +285,92 @@
                     <td>Copy and paste of the link of the Job ad
                         platform
                     </td>
-                    <td> <input type="file" name="workforce_2_copyandpaste" id="workforce_2_copyandpaste" @if(isset($data->workforce_2_copyandpaste)) value="{{$data->workforce_2_copyandpaste}}" @endif></td>
+                    <td> <input type="file" name="workforce_2_copyandpaste" id="workforce_2_copyandpaste">
+
+
+                        @if (array_key_exists('workforce_2_copyandpaste', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_2_copyandpaste/'.$docdataemployerform['workforce_2_copyandpaste'])  }}">
+                            @if(str_contains($docdataemployerform['workforce_2_copyandpaste'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_2_copyandpaste/'.$docdataemployerform['workforce_2_copyandpaste'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td>Invoice for having posted the job ad (if
                         applicable)
                     </td>
-                    <td> <input type="file" name="workforce_2_invoice" id="workforce_2_invoice" @if(isset($data->workforce_2_invoice)) value="{{$data->workforce_2_invoice}}" @endif></td>
+                    <td> <input type="file" name="workforce_2_invoice" id="workforce_2_invoice">
+
+                        @if (array_key_exists('workforce_2_invoice', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_2_invoice/'.$docdataemployerform['workforce_2_invoice'])  }}">
+                            @if(str_contains($docdataemployerform['workforce_2_invoice'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_2_invoice/'.$docdataemployerform['workforce_2_invoice'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td>Screenshot of the job ad page
                     </td>
-                    <td> <input type="file" name="workforce_2_screenshot" id="workforce_2_screenshot" @if(isset($data->workforce_2_screenshot)) value="{{$data->workforce_2_screenshot}}" @endif></td>
+                    <td> <input type="file" name="workforce_2_screenshot" id="workforce_2_screenshot">
+
+                        @if (array_key_exists('workforce_2_screenshot', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_2_screenshot/'.$docdataemployerform['workforce_2_screenshot'])  }}">
+                            @if(str_contains($docdataemployerform['workforce_2_screenshot'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_2_screenshot/'.$docdataemployerform['workforce_2_screenshot'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td>Any other evidence of having posted the job
                         ad
                     </td>
-                    <td> <input type="file" name="workforce_2_evidence" id="workforce_2_evidence" @if(isset($data->workforce_2_evidence)) value="{{$data->workforce_2_evidence}}" @endif></td>
+                    <td> <input type="file" name="workforce_2_evidence" id="workforce_2_evidence">
+
+
+
+                        @if (array_key_exists('workforce_2_evidence', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_2_evidence/'.$docdataemployerform['workforce_2_evidence'])  }}">
+                            @if(str_contains($docdataemployerform['workforce_2_evidence'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_2_evidence/'.$docdataemployerform['workforce_2_evidence'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
 
 
@@ -242,27 +388,91 @@
                     <td>Copy and paste of the link of the Job ad
                         platform
                     </td>
-                    <td> <input type="file" name="workforce_3_copyandpaste" id="workforce_3_copyandpaste" @if(isset($data->workforce_3_copyandpaste)) value="{{$data->workforce_3_copyandpaste}}" @endif></td>
+                    <td> <input type="file" name="workforce_3_copyandpaste" id="workforce_3_copyandpaste">
+
+                        @if (array_key_exists('workforce_3_copyandpaste', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_3_copyandpaste/'.$docdataemployerform['workforce_3_copyandpaste'])  }}">
+                            @if(str_contains($docdataemployerform['workforce_3_copyandpaste'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_3_copyandpaste/'.$docdataemployerform['workforce_3_copyandpaste'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td>Invoice for having posted the job ad (if
                         applicable)
                     </td>
-                    <td> <input type="file" name="workforce_3_invoice" id="workforce_3_invoice" @if(isset($data->workforce_3_invoice)) value="{{$data->workforce_3_invoice}}" @endif></td>
+                    <td> <input type="file" name="workforce_3_invoice" id="workforce_3_invoice">
+
+
+                        @if (array_key_exists('workforce_3_invoice', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_3_invoice/'.$docdataemployerform['workforce_3_invoice'])  }}">
+                            @if(str_contains($docdataemployerform['workforce_3_invoice'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_3_invoice/'.$docdataemployerform['workforce_3_invoice'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td>Screenshot of the job ad page
                     </td>
-                    <td> <input type="file" name="workforce_3_screenshot" id="workforce_3_screenshot" @if(isset($data->workforce_3_screenshot)) value="{{$data->workforce_3_screenshot}}" @endif></td>
+                    <td> <input type="file" name="workforce_3_screenshot" id="workforce_3_screenshot">
+
+
+                        @if (array_key_exists('workforce_3_screenshot', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_3_screenshot/'.$docdataemployerform['workforce_3_screenshot'])  }}">
+                            @if(str_contains($docdataemployerform['workforce_3_screenshot'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_3_screenshot/'.$docdataemployerform['workforce_3_screenshot'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td>Any other evidence of having posted the job
                         ad
                     </td>
-                    <td> <input type="file" name="workforce_3_evidence" id="workforce_3_evidence" @if(isset($data->workforce_3_evidence)) value="{{$data->workforce_3_evidence}}" @endif></td>
+                    <td> <input type="file" name="workforce_3_evidence" id="workforce_3_evidence">
+
+
+
+                        @if (array_key_exists('workforce_3_evidence', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_3_evidence/'.$docdataemployerform['workforce_3_evidence'])  }}">
+                            @if(str_contains($docdataemployerform['workforce_3_evidence'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/workforce_3_evidence/'.$docdataemployerform['workforce_3_evidence'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
 
 

@@ -1894,73 +1894,145 @@
                     <td> Previous Sponsorship Approval Letter (SBS)
                         if applicable
                     </td>
-                    <td> <input type="file" name="sbs_upload_previous_sponsorship" id="sbs_upload_previous_sponsorship" >
-                    @if (array_key_exists('sbs_upload_previous_sponsorship', $docdataemployerform))
-                                                               
-                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_previous_sponsorship/'.$docdataemployerform['sbs_upload_previous_sponsorship'])  }}">
-                                                               @if(str_contains($docdataemployerform['sbs_upload_previous_sponsorship'] , '.pdf'))
-                                                                <img class="imgfile" src="{{asset('pdficon.png')}}"   />
-                                                               @else
-                                                               <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_previous_sponsorship/'.$docdataemployerform['sbs_upload_previous_sponsorship'])  }}"  />
-                                                               @endif
-                                                               </a>
-                                                                                                    
-                                                                                                      
-                                                           @endif      
-                </td>
+                    <td> <input type="file" name="sbs_upload_previous_sponsorship" id="sbs_upload_previous_sponsorship">
+                        @if (array_key_exists('sbs_upload_previous_sponsorship', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_previous_sponsorship/'.$docdataemployerform['sbs_upload_previous_sponsorship'])  }}">
+                            @if(str_contains($docdataemployerform['sbs_upload_previous_sponsorship'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_previous_sponsorship/'.$docdataemployerform['sbs_upload_previous_sponsorship'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+                    </td>
                 </tr>
 
                 <tr>
                     <td> ASIC Historical Extract
                     </td>
-                    <td> <input type="file" name="sbs_upload_asic_historical" id="sbs_upload_asic_historical" >
-                    @if (array_key_exists('sbs_upload_asic_historical', $docdataemployerform))
-                                                               
-                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_asic_historical/'.$docdataemployerform['sbs_upload_asic_historical'])  }}">
-                                                               @if(str_contains($docdataemployerform['sbs_upload_asic_historical'] , '.pdf'))
-                                                                <img class="imgfile" src="{{asset('pdficon.png')}}"   />
-                                                               @else
-                                                               <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_asic_historical/'.$docdataemployerform['sbs_upload_asic_historical'])  }}"  />
-                                                               @endif
-                                                               </a>
-                                                                                                    
-                                                                                                      
-                                                           @endif 
+                    <td> <input type="file" name="sbs_upload_asic_historical" id="sbs_upload_asic_historical">
+                        @if (array_key_exists('sbs_upload_asic_historical', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_asic_historical/'.$docdataemployerform['sbs_upload_asic_historical'])  }}">
+                            @if(str_contains($docdataemployerform['sbs_upload_asic_historical'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_asic_historical/'.$docdataemployerform['sbs_upload_asic_historical'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
                     </td>
                 </tr>
 
                 <tr>
                     <td> Trust deed (signed pages only) if applicable
                     </td>
-                    <td> <input type="file" name="sbs_upload_trust" id="sbs_upload_trust" @if(isset($data->sbs_upload_trust)) value="{{$data->sbs_upload_trust}}" @endif></td>
+                    <td> <input type="file" name="sbs_upload_trust" id="sbs_upload_trust">
+
+                        @if (array_key_exists('sbs_upload_trust', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_trust/'.$docdataemployerform['sbs_upload_trust'])  }}">
+                            @if(str_contains($docdataemployerform['sbs_upload_trust'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_trust/'.$docdataemployerform['sbs_upload_trust'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Lease agreement/evidence of ownership
                         for the business premises
                     </td>
-                    <td> <input type="file" name="sbs_upload_lease" id="sbs_upload_lease" @if(isset($data->sbs_upload_lease)) value="{{$data->sbs_upload_lease}}" @endif></td>
+                    <td> <input type="file" name="sbs_upload_lease" id="sbs_upload_lease">
+                        @if (array_key_exists('sbs_upload_lease', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_lease/'.$docdataemployerform['sbs_upload_lease'])  }}">
+                            @if(str_contains($docdataemployerform['sbs_upload_lease'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_lease/'.$docdataemployerform['sbs_upload_lease'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Bank statement in the name of the
                         company (not older than 6 months)
                     </td>
-                    <td> <input type="file" name="sbs_upload_bank_statement" id="sbs_upload_bank_statement" @if(isset($data->sbs_upload_bank_statement)) value="{{$data->sbs_upload_bank_statement}}" @endif></td>
+                    <td> <input type="file" name="sbs_upload_bank_statement" id="sbs_upload_bank_statement">
+
+                        @if (array_key_exists('sbs_upload_bank_statement', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_bank_statement/'.$docdataemployerform['sbs_upload_bank_statement'])  }}">
+                            @if(str_contains($docdataemployerform['sbs_upload_bank_statement'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_bank_statement/'.$docdataemployerform['sbs_upload_bank_statement'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+                    </td>
                 </tr>
 
                 <tr>
                     <td> BAS for the last 12 months or since when
                         you the business has been operating
                     </td>
-                    <td> <input type="file" name="sbs_upload_bas" id="sbs_upload_bas" @if(isset($data->sbs_upload_bas)) value="{{$data->sbs_upload_bas}}" @endif></td>
+                    <td> <input type="file" name="sbs_upload_bas" id="sbs_upload_bas">
+                        @if (array_key_exists('sbs_upload_bas', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_bas/'.$docdataemployerform['sbs_upload_bas'])  }}">
+                            @if(str_contains($docdataemployerform['sbs_upload_bas'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_bas/'.$docdataemployerform['sbs_upload_bas'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Profit & Loss of the most recent financial
                         year
                     </td>
-                    <td> <input type="file" name="sbs_upload_profit_loss" id="sbs_upload_profit_loss" @if(isset($data->sbs_upload_profit_loss)) value="{{$data->sbs_upload_profit_loss}}" @endif></td>
+                    <td> <input type="file" name="sbs_upload_profit_loss" id="sbs_upload_profit_loss">
+
+                        @if (array_key_exists('sbs_upload_profit_loss', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_profit_loss/'.$docdataemployerform['sbs_upload_profit_loss'])  }}">
+                            @if(str_contains($docdataemployerform['sbs_upload_profit_loss'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_profit_loss/'.$docdataemployerform['sbs_upload_profit_loss'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+
+                    </td>
                 </tr>
 
                 <tr>
@@ -1970,7 +2042,21 @@
                         month (or ever since the business has been
                         operating for)
                     </td>
-                    <td> <input type="file" name="sbs_upload_recent_payroll" id="sbs_upload_recent_payroll" @if(isset($data->sbs_upload_recent_payroll)) value="{{$data->sbs_upload_recent_payroll}}" @endif></td>
+                    <td> <input type="file" name="sbs_upload_recent_payroll" id="sbs_upload_recent_payroll">
+
+                        @if (array_key_exists('sbs_upload_recent_payroll', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_recent_payroll/'.$docdataemployerform['sbs_upload_recent_payroll'])  }}">
+                            @if(str_contains($docdataemployerform['sbs_upload_recent_payroll'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_recent_payroll/'.$docdataemployerform['sbs_upload_recent_payroll'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+                    </td>
                 </tr>
 
                 <tr>
@@ -1979,31 +2065,106 @@
                         filled with the list of all of your employees
                         and roles
                     </td>
-                    <td> <input type="file" name="sbs_upload_chart" id="sbs_upload_chart" @if(isset($data->sbs_upload_chart)) value="{{$data->sbs_upload_chart}}" @endif></td>
+                    <td> <input type="file" name="sbs_upload_chart" id="sbs_upload_chart">
+
+
+                        @if (array_key_exists('sbs_upload_chart', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_chart/'.$docdataemployerform['sbs_upload_chart'])  }}">
+                            @if(str_contains($docdataemployerform['sbs_upload_chart'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_chart/'.$docdataemployerform['sbs_upload_chart'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+                    </td>
                 </tr>
 
                 <tr>
                     <td>A few recent utility bills
                     </td>
-                    <td> <input type="file" name="sbs_upload_bill1" id="sbs_upload_bill1" @if(isset($data->sbs_upload_bill1)) value="{{$data->sbs_upload_bill1}}" @endif></td>
+                    <td> <input type="file" name="sbs_upload_bill1" id="sbs_upload_bill1">
+
+                        @if (array_key_exists('sbs_upload_bill1', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_bill1/'.$docdataemployerform['sbs_upload_bill1'])  }}">
+                            @if(str_contains($docdataemployerform['sbs_upload_bill1'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_bill1/'.$docdataemployerform['sbs_upload_bill1'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td>A few recent utility bills
                     </td>
-                    <td> <input type="file" name="sbs_upload_bill2" id="sbs_upload_bill2" @if(isset($data->sbs_upload_bill2)) value="{{$data->sbs_upload_bill2}}" @endif></td>
+                    <td> <input type="file" name="sbs_upload_bill2" id="sbs_upload_bill2">
+
+                        @if (array_key_exists('sbs_upload_bill2', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_bill2/'.$docdataemployerform['sbs_upload_bill2'])  }}">
+                            @if(str_contains($docdataemployerform['sbs_upload_bill2'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_bill2/'.$docdataemployerform['sbs_upload_bill2'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td>A few invoices from suppliers
                     </td>
-                    <td> <input type="file" name="sbs_upload_invoice1" id="sbs_upload_invoice1" @if(isset($data->sbs_upload_invoice1)) value="{{$data->sbs_upload_invoice1}}" @endif></td>
+                    <td> <input type="file" name="sbs_upload_invoice1" id="sbs_upload_invoice1">
+
+                        @if (array_key_exists('sbs_upload_invoice1', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_invoice1/'.$docdataemployerform['sbs_upload_invoice1'])  }}">
+                            @if(str_contains($docdataemployerform['sbs_upload_invoice1'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_invoice1/'.$docdataemployerform['sbs_upload_invoice1'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td>A few invoices from suppliers
                     </td>
-                    <td> <input type="file" name="sbs_upload_invoice2" id="sbs_upload_invoice2" @if(isset($data->sbs_upload_invoice2)) value="{{$data->sbs_upload_invoice2}}" @endif></td>
+                    <td> <input type="file" name="sbs_upload_invoice2" id="sbs_upload_invoice2">
+
+                        @if (array_key_exists('sbs_upload_invoice2', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_invoice2/'.$docdataemployerform['sbs_upload_invoice2'])  }}">
+                            @if(str_contains($docdataemployerform['sbs_upload_invoice2'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/sbs_upload_invoice2/'.$docdataemployerform['sbs_upload_invoice2'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
 
             </tbody>
@@ -2012,7 +2173,7 @@
 
 
     </div>
-   
+
     <input type="hidden" name="fieldset" value="abc" class="currentfieldset">
 
     @if(!Auth::user()->hasRole('consultant') && !Auth::user()->hasRole('admin') )
