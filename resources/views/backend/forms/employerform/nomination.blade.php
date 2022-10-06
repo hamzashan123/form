@@ -372,19 +372,21 @@
                         the Start date</td>
                     <td> <input type="file" name="nomination_start_date_doc" id="nomination_start_date_doc">
 
-                    </td>
-                    @if (array_key_exists('nomination_start_date_doc', $docdataemployerform))
 
-                    <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/nomination_start_date_doc/'.$docdataemployerform['nomination_start_date_doc'])  }}">
-                        @if(str_contains($docdataemployerform['nomination_start_date_doc'] , '.pdf'))
-                        <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                        @else
-                        <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/nomination_start_date_doc/'.$docdataemployerform['nomination_start_date_doc'])  }}" />
+                        @if (array_key_exists('nomination_start_date_doc', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/nomination_start_date_doc/'.$docdataemployerform['nomination_start_date_doc'])  }}">
+                            @if(str_contains($docdataemployerform['nomination_start_date_doc'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/nomination_start_date_doc/'.$docdataemployerform['nomination_start_date_doc'])  }}" />
+                            @endif
+                        </a>
+
+
                         @endif
-                    </a>
 
-
-                    @endif
+                    </td>
                 </tr>
 
                 <tr>
