@@ -93,7 +93,7 @@
     var fieldsvalue = [];
     var fieldscomments = [];
     <?php if (auth()->user()->hasRole('consultant')) {  ?>
-        jQuery('.form-card td:nth-child(2)').click(function(e) {
+        jQuery('.form-card td:nth-child(1)').click(function(e) {
 
             if ($(this).hasClass('addBorder')) {
                 $(this).removeClass('addBorder');
@@ -114,7 +114,7 @@
             } else {
                 console.log('add', jQuery(this).closest('tr').find('td').text().trim());
                 $(this).addClass('addBorder');
-                $(this).after('<input type="text" name="test" class="commentfield" placeholder="Enter Comments"/>');
+                $(this).parent('tr').children('td:last-child').after('<input type="text" name="test" class="commentfield" placeholder="Enter Comments"/>');
 
                 if ($('.commentfield').length > 0) {
                     $('#correctemail').show();

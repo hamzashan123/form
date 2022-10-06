@@ -12,12 +12,12 @@
 
                 <img src="/logo.png" class="logo" />
                 <h2 id="heading">Form 360 </h2>
-                @if(session()->has('success')) 
+                @if(session()->has('success'))
                 <div class="alert alert-success ">
                     {{ session()->get('success') }}
                 </div>
                 @endif
-                @if(session()->has('error')) 
+                @if(session()->has('error'))
                 <div class="alert alert-danger">
                     {{ session()->get('error') }}
                 </div>
@@ -49,7 +49,7 @@
                     <a id="correctemail" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px; display:none;">Send Correction Email</a>
                     @endif
 
-                 
+
 
                     @include('backend.forms.form360.matrix')
                     @include('backend.forms.form360.personal')
@@ -89,121 +89,124 @@
 <script src="{{asset('form360.js')}}"></script>
 <script>
     //alert('adsd');
-        jQuery(document).ready(function(){
-            if ( jQuery('body').hasClass('admin') || jQuery('body').hasClass('consultant')) {
-                jQuery('#form360 input').prop('disabled', true);
-                jQuery('#form360 input').css('opacity', 0.5);
-                jQuery('#form360 select').prop('disabled', true);
-                jQuery('#form360 select').css('opacity', 0.5);
-                jQuery('#form360 input.next').prop('disabled', false);
-                jQuery('#form360 input.next').css('opacity', 1);
-                jQuery('#form360 input.previous').prop('disabled', false);
-                jQuery('#form360 input.previous').css('opacity', 1);
-            }
-        })
-        
-        //remove selected duplicate value from all select tags
-        $("select option").each(function() {
-            $(this).siblings('[value="'+ this.value +'"]').remove();
-        });
+    jQuery(document).ready(function() {
+        if (jQuery('body').hasClass('admin') || jQuery('body').hasClass('consultant')) {
+            jQuery('#form360 input').prop('disabled', true);
+            jQuery('#form360 input').css('opacity', 0.5);
+            jQuery('#form360 select').prop('disabled', true);
+            jQuery('#form360 select').css('opacity', 0.5);
+            jQuery('#form360 input.next').prop('disabled', false);
+            jQuery('#form360 input.next').css('opacity', 1);
+            jQuery('#form360 input.previous').prop('disabled', false);
+            jQuery('#form360 input.previous').css('opacity', 1);
+        }
+    })
+
+    //remove selected duplicate value from all select tags
+    $("select option").each(function() {
+        $(this).siblings('[value="' + this.value + '"]').remove();
+    });
 </script>
 <script>
+    var fieldsname = [];
+    var fieldsvalue = [];
+    var fieldscomments = [];
+
+    <?php if (auth()->user()->hasRole('consultant')) {  ?>
+        jQuery('.form-card td:nth-child(1)').click(function(e) {
+
+            if ($(this).hasClass('addBorder')) {
+                $(this).removeClass('addBorder');
+                //jQuery(this).parent('tr').find('input.commentfield').remove();
+
+                //fieldsname.remove(jQuery(this).parent('tr').find('input.commentfield').val()); // for remove index name
+                console.log('remove', jQuery(this).parent('tr').children('input.commentfield'));
+
+                jQuery(this).parent('tr').children('input.commentfield').remove();
+                //  fieldsname.remove(jQuery(this).closest('tr').find('td').text().trim());
+                //   fieldsvalue.remove(jQuery(this).closest('tr').find('input').val());
+                //   fieldscomments.remove(jQuery(this).val());
 
 
-  var fieldsname = [];
-  var fieldsvalue = [];
-  var fieldscomments = [];
-
-<?php if(auth()->user()->hasRole('consultant')) {  ?>  
-jQuery('.form-card td:nth-child(2)').click(function (e) {
-        
-        if($(this).hasClass('addBorder')){
-          $(this).removeClass('addBorder');
-          //jQuery(this).parent('tr').find('input.commentfield').remove();
-
-          //fieldsname.remove(jQuery(this).parent('tr').find('input.commentfield').val()); // for remove index name
-          console.log('remove' ,jQuery(this).parent('tr').children('input.commentfield'));
-
-          jQuery(this).parent('tr').children('input.commentfield').remove();
-        //  fieldsname.remove(jQuery(this).closest('tr').find('td').text().trim());
-        //   fieldsvalue.remove(jQuery(this).closest('tr').find('input').val());
-        //   fieldscomments.remove(jQuery(this).val());
-    
-
-            if($('.commentfield').length < 1 ){
-             $('#correctemail').hide();
-             }
-        }else{
-            console.log('add' ,jQuery(this).closest('tr').find('td').text().trim());
-            $(this).addClass('addBorder');
-            $(this).after('<input type="text" name="test" class="commentfield" placeholder="Enter Comments"/>');
-            
-            if($('.commentfield').length > 0 ){
-                 $('#correctemail').show();
-            }
-          
-            var title = jQuery(this).closest('tr').find('th').text();
-            var value = jQuery(this).closest('tr').find('td').text();
-            
-        }
-  });
-  <?php } ?>
-
-  jQuery('#correctemail').click(function (e) {
-                
-                e.preventDefault();
-                $("#correctemail").html("Please wait...");
-                //console.log('fields to fieldscomments' , $('.commentfield'));
-                $('.commentfield').each(function(i, obj) {
-                    // console.log(jQuery(this).closest('tr').find('td:nth-child(2)'));
-                    // console.log(jQuery(this).closest('tr').find('td:nth-child(2)').children());
-                    // console.log(jQuery(this).closest('tr').find('td:nth-child(2)').children().get(0).tagName);
-                    fieldsname.push(jQuery(this).closest('tr').find('td:nth-child(1)').text().trim());
-                    if(jQuery(this).closest('tr').find('td:nth-child(2)').children().get(0).tagName == 'INPUT'){
-                        fieldsvalue.push(jQuery(this).closest('tr').find('input').val());
-                    }else if (jQuery(this).closest('tr').find('td:nth-child(2)').children().get(0).tagName == 'SELECT'){
-                        fieldsvalue.push(jQuery(this).closest('tr').find('select').val());
-                    }
-                    fieldscomments.push(jQuery(this).val());
-                    
-                });
-                var userid = "<?php echo (!empty($_GET['userid'])) ? $_GET['userid'] : '';  ?>";
-                
-                
-               
-                $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                if ($('.commentfield').length < 1) {
+                    $('#correctemail').hide();
                 }
-                });
-                 $.ajax({
-                  type:'POST',
-                  url:"{{route('admin.correctionemail')}}",
-                  data:{ userid: userid , formName: 'Form 360', fieldsname : fieldsname , fieldsvalue : fieldsvalue , fieldscomments : fieldscomments},
-                  success:function(data){
-                      $("#correctemail").html("Send Correction email");
-                      if(data.success === "true"){
-                          Swal.fire({
-                              icon: 'success',
-                              title: 'Successfully sent',
-                              text: 'Correction Email has been sent!',
-                          }).then(function() {
-                                window.location.href = '/admin';
-                         });
-                      }else if(data.success === 'false'){
-                          $("#correctemail").html("Send Correction email");
-                         
-                             
-                      }
-                  }
-                });
-                console.log('feildsname' ,fieldsname);
-                console.log('fieldsvalue' ,fieldsvalue);
-                console.log('fieldscomments' ,fieldscomments);
-               
-                
-      });
+            } else {
+                console.log('add', jQuery(this).closest('tr').find('td').text().trim());
+                $(this).addClass('addBorder');
+                $(this).parent('tr').children('td:last-child').after('<input type="text" name="test" class="commentfield" placeholder="Enter Comments"/>');
 
+                if ($('.commentfield').length > 0) {
+                    $('#correctemail').show();
+                }
+
+                var title = jQuery(this).closest('tr').find('th').text();
+                var value = jQuery(this).closest('tr').find('td').text();
+
+            }
+        });
+    <?php } ?>
+
+    jQuery('#correctemail').click(function(e) {
+
+        e.preventDefault();
+        $("#correctemail").html("Please wait...");
+        //console.log('fields to fieldscomments' , $('.commentfield'));
+        $('.commentfield').each(function(i, obj) {
+            // console.log(jQuery(this).closest('tr').find('td:nth-child(2)'));
+            // console.log(jQuery(this).closest('tr').find('td:nth-child(2)').children());
+            // console.log(jQuery(this).closest('tr').find('td:nth-child(2)').children().get(0).tagName);
+            fieldsname.push(jQuery(this).closest('tr').find('td:nth-child(1)').text().trim());
+            if (jQuery(this).closest('tr').find('td:nth-child(2)').children().get(0).tagName == 'INPUT') {
+                fieldsvalue.push(jQuery(this).closest('tr').find('input').val());
+            } else if (jQuery(this).closest('tr').find('td:nth-child(2)').children().get(0).tagName == 'SELECT') {
+                fieldsvalue.push(jQuery(this).closest('tr').find('select').val());
+            }
+            fieldscomments.push(jQuery(this).val());
+
+        });
+        var userid = "<?php echo (!empty($_GET['userid'])) ? $_GET['userid'] : '';  ?>";
+
+
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            type: 'POST',
+            url: "{{route('admin.correctionemail')}}",
+            data: {
+                userid: userid,
+                formName: 'Form 360',
+                fieldsname: fieldsname,
+                fieldsvalue: fieldsvalue,
+                fieldscomments: fieldscomments
+            },
+            success: function(data) {
+                $("#correctemail").html("Send Correction email");
+                if (data.success === "true") {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Successfully sent',
+                        text: 'Correction Email has been sent!',
+                    }).then(function() {
+                        window.location.href = '/admin';
+                    });
+                } else if (data.success === 'false') {
+                    $("#correctemail").html("Send Correction email");
+
+
+                }
+            }
+        });
+        console.log('feildsname', fieldsname);
+        console.log('fieldsvalue', fieldsvalue);
+        console.log('fieldscomments', fieldscomments);
+
+
+    });
 </script>
 
 @endsection()
