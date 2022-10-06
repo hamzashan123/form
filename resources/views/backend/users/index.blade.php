@@ -40,6 +40,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Surname</th>
+                    <th>Username</th>
                     <th>Matter</th>
                     
                     
@@ -56,12 +57,14 @@
                     <tr>
                         <td>{{ $user->id }}</td>
                         <td>
-                            {{ $user->full_name }}
+                            {{ $user->first_name }}
                         </td>
                         
-                        <td>{{ $user->first_name }}<br>
+                        <td>{{ $user->surname }}
                         </td>
-                        <td> {{$user->matter}}</td>
+                        <td>{{ $user->username }}
+                        </td>
+                        <td>@if($user->roles[0]->name == 'user') {{$user->matter}} @else  <strong > -- </strong>  @endif</td>
                         <td>{{ $user->status }}</td>
                         <td>@if($user->roles[0]->name == 'user')  <strong> Client </strong> @else <strong>{{$user->roles[0]->name}} </strong> @endif <br>
                         @if(Auth::user()->hasRole('admin'))  

@@ -15,7 +15,7 @@
         @endif
         <div class="card-header py-3 d-flex">
             <h6 class="m-0 font-weight-bold text-primary">
-                Edit user: ({{ $supervisor->full_name }})
+                Edit user: ({{ $supervisor->username }})
             </h6>
             <div class="ml-auto">
                 <a href="{{ route('admin.supervisors.index') }}" class="btn btn-primary">
@@ -39,9 +39,10 @@
                     </div>
                     <div class="col-6">
                         <div class="form-group">
-                            <label for="last_name">Last Name</label>
-                            <input class="form-control" id="last_name" type="text" name="last_name" value="{{ old('last_name', $supervisor->last_name) }}">
-                            @error('last_name')<span class="text-danger">{{ $message }}</span>@enderror
+                            <label for="surname" class="">{{ __('Sur Name') }}</label>
+                            <input id="surname" type="text" class="form-control" name="surname"
+                                   value="{{ old('surname') }}" placeholder="surname">
+                            @error('surname')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
                 </div>

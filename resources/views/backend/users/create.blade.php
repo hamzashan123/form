@@ -19,7 +19,7 @@
             <form method="POST" action="{{ route('admin.users.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-4">
                         <div class="form-group">
                             <label for="first_name" class="text-small text-uppercase">{{ __('Name') }}</label>
                             <input id="first_name" type="text" class="form-control form-control-lg" name="first_name"
@@ -27,9 +27,17 @@
                             @error('first_name')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">
                         <div class="form-group">
-                            <label for="username" class="text-small text-uppercase">{{ __('Sur Name') }}</label>
+                            <label for="surname" class="text-small text-uppercase">{{ __('Sur Name') }}</label>
+                            <input id="surname" type="text" class="form-control form-control-lg" name="surname"
+                                   value="{{ old('surname') }}" placeholder="surname">
+                            @error('surname')<span class="text-danger">{{ $message }}</span>@enderror
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="username" class="text-small text-uppercase">{{ __('User Name') }}</label>
                             <input id="username" type="text" class="form-control form-control-lg" name="username"
                                    value="{{ old('username') }}" placeholder="Username">
                             @error('username')<span class="text-danger">{{ $message }}</span>@enderror

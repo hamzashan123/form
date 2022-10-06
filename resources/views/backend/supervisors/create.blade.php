@@ -31,10 +31,10 @@
                     </div>
                     <div class="col-6">
                         <div class="form-group">
-                            <label for="last_name" class="text-small text-uppercase">{{ __('Last Name') }}</label>
-                            <input id="last_name" type="text" class="form-control form-control-lg" name="last_name"
-                                   value="{{ old('last_name') }}" placeholder="Last Name">
-                            @error('last_name')<span class="text-danger">{{ $message }}</span>@enderror
+                            <label for="surname" class="">{{ __('Sur Name') }}</label>
+                            <input id="surname" type="text" class="form-control" name="surname"
+                                   value="{{ old('surname') }}" placeholder="surname">
+                            @error('surname')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
                 </div>

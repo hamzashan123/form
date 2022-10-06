@@ -41,11 +41,12 @@ class AdminAuthController extends Controller
         if ($request->password){
             $password = bcrypt($request->password);
         }
-
+        
         auth()->user()->update([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'username' => $request->username,
+            'surname' => $request->surname,
             'email' => $request->email,
             'phone' => $request->phone,
             'status' => $request->status,

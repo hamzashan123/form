@@ -26,7 +26,8 @@
                 <th>ID</th>
                     <th>Name</th>
                     <th>Surname</th>
-                    <th>Matter</th>
+                    <th>Username</th>
+                   
                     
                     
                     <th>Status</th>
@@ -47,13 +48,15 @@
                             @endif
                         </td> -->
                         <td>
-                        {{ $supervisor->full_name }}
+                        {{ $supervisor->first_name }}
                             
                         </td>
                         
-                        <td>{{ $supervisor->first_name }}<br>
+                        <td>{{ $supervisor->surname }}
                         </td>
-                        <td> Abc</td>
+                        <td>{{ $supervisor->username }}
+                        </td>
+                       
                         <td>{{ $supervisor->status }}</td>
                         <td>{{ $supervisor->roles[0]->name }}<br>
                         <td>{{ $supervisor->created_at }}<br>
