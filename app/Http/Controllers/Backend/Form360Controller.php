@@ -65,10 +65,21 @@ class Form360Controller extends Controller
             $data = $data[0];
         }   
         if(!empty($data->user_id)){
-           // $data->documents  =  DB::table('form360_documents')->where(['user_id' => $data->user_id ])->get()->toArray();
-        }                
+           $data->documents  =  DB::table('form360_documents')->where(['user_id' => $data->user_id ])->get();
+        }    
         
-        return view('backend.forms.form360.index',compact('data'));
+        $docdataForm360 = [];
+        //$docdocument = [];
+
+        foreach ($data->documents as $key =>  $doc) {
+            $docdataForm360[$doc->doc_field] = $doc->doc_name;
+            //$docdocument[$key]  = $doc->doc_name;
+        }
+        
+        // dd($data);
+        
+
+        return view('backend.forms.form360.index',compact('data','docdataForm360'));
                
         
         
@@ -148,7 +159,7 @@ class Form360Controller extends Controller
             $this->saveDocuments($formid,$request);
             
                 
-            // try {
+           
                 $formdata = DB::table('form360')->where('user_id', Auth::user()->id)->first();
                 
                 $data = [
@@ -162,10 +173,7 @@ class Form360Controller extends Controller
                     DB::table('form360')->where('user_id', Auth::user()->id)->update(['is_email_sent' => true]);
                      //Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
                 }
-            // }
-            // catch (exception $e) {
-            //     return redirect()->back()->with('error','Email Not Sent!');
-            // }
+           
                 
         }else{
            $existingForm =  DB::table('form360')->where('user_id', Auth::user()->id)->first();
@@ -255,7 +263,52 @@ class Form360Controller extends Controller
         $documents = [
             //personal docs
          'personal_passport_biodata_page' => $request->file('personal_passport_biodata_page'),
-         'personal_id_card_driving_license' => $request->file('personal_id_card_driving_license')
+         'personal_id_card_driving_license' => $request->file('personal_id_card_driving_license'),
+         'personal_update_resume' => $request->file('personal_update_resume'),
+
+         'personal_skills_assessment_outcome_letter' => $request->file('personal_skills_assessment_outcome_letter'),
+         'personal_languages_english_test_document' => $request->file('personal_languages_english_test_document'),
+         'personal_license_and_registration_document' => $request->file('personal_license_and_registration_document'),
+
+         'higher_level_qualification1_diploma_award' => $request->file('higher_level_qualification1_diploma_award'),
+         'higher_level_qualification1_listofexams' => $request->file('higher_level_qualification1_listofexams'),
+         'higher_level_qualification1_diploma_supplement' => $request->file('higher_level_qualification1_diploma_supplement'),
+
+         'higher_level_qualification2_diploma_award' => $request->file('higher_level_qualification2_diploma_award'),
+         'higher_level_qualification2_listofexams' => $request->file('higher_level_qualification2_listofexams'),
+         'higher_level_qualification2_diploma_supplement' => $request->file('higher_level_qualification2_diploma_supplement'),
+
+
+         'higher_level_qualification3_diploma_award' => $request->file('higher_level_qualification3_diploma_award'),
+         'higher_level_qualification3_listofexams' => $request->file('higher_level_qualification3_listofexams'),
+         'higher_level_qualification3_diploma_supplement' => $request->file('higher_level_qualification3_diploma_supplement'),
+
+
+
+         
+         'apprenticeship_contract_doc' => $request->file('apprenticeship_contract_doc'),
+         'apprenticeship_completion_letter' => $request->file('apprenticeship_completion_letter'),
+         'apprenticeship_payslip_current_year' => $request->file('apprenticeship_payslip_current_year'),
+         'apprenticeship_previous_year' => $request->file('apprenticeship_previous_year'),
+         'apprenticeship_tax_return' => $request->file('apprenticeship_tax_return'),
+         'apprenticeship_social_security' => $request->file('apprenticeship_social_security'),
+
+         'workexp1_employment_contract' => $request->file('workexp1_employment_contract'),
+         'workexp1_current_year_of_experience' => $request->file('workexp1_current_year_of_experience'),
+         'workexp1_previous_year_of_experience1' => $request->file('workexp1_previous_year_of_experience1'),
+         'workexp1_previous_year_of_experience2' => $request->file('workexp1_previous_year_of_experience2'),
+         'workexp1_previous_year_of_experience3' => $request->file('workexp1_previous_year_of_experience3'),
+
+         'workexp1_income_tax_return1' => $request->file('workexp1_income_tax_return1'),
+         'workexp1_income_tax_return2' => $request->file('workexp1_income_tax_return2'),
+         'workexp1_income_tax_return2_1' => $request->file('workexp1_income_tax_return2_1'),
+         'workexp1_relevant_doc' => $request->file('workexp1_relevant_doc'),
+         'workexp1_tabella_estratto' => $request->file('workexp1_tabella_estratto'),
+
+         
+
+  
+        
             //education docs
         //  'edu_info_university_diploma' => $request->file('edu_info_university_diploma'),
         //     //work docs
@@ -319,80 +372,7 @@ class Form360Controller extends Controller
               
             }
              
-            // if($key == 'edu_info_university_diploma' || $key == 'edu_info_university_subject_list' || $key == 'edu_info_apprenticeship_agreement' || $key == 'edu_info_apprenticeship_payslip' || $key == 'edu_info_apprenticeship_incometax' || $key == 'edu_info_apprenticeship_inps_chart' || $key == 'edu_info_apprenticeship_reference_letter'){
-            //     $uploadedFile = $doc;
-            //     $filetype = '';
-            //     $filename = ''; 
-            //     if(!empty($doc)){
-            //         $fileMimeType = $doc->getMimeType();
-                     
-            //         if($fileMimeType == 'image/png' || $fileMimeType == 'image/jpg' || $fileMimeType == 'image/jpeg' || $fileMimeType == 'image/eps' || $fileMimeType == 'image/gif'){
-              
-            //             $filetype = 'png';
-            //         }
-            //         if($fileMimeType == 'application/pdf' ){
-                        
-            //             $filetype = 'pdf';
-            //         }
-            //     }
-                 
-                 
-            //     if(!empty($uploadedFile)){
-            //         $filename = time().$uploadedFile->getClientOriginalName();
-            //         Storage::disk('local')->put('/public/education/' .$educationTable.'/'.$key.'/' . $filename, File::get($uploadedFile));
-            //     }  
-                 
-                 
-            //         $docData = [
-            //               'user_id' => $user['user']->id,
-            //               'status' => 'draft',
-            //               'application_id' => $applicationId,
-            //               'document_name' => $filename,
-            //               'file_type' => $filetype,
-            //               'document_type' => $key,
-            //               'type_id' => $educationTable
-            //         ];    
-            //         $documetUploaded = DB::table('documents')->insert($docData);
-                
-            // }
-             
-            // if($key == 'work_agreement' || $key == 'work_payslip' || $key == 'work_incometax' || $key == 'work_payg' || $key == 'work_noa' || $key == 'work_reference_letter' 
-            // || $key == 'work_notin_agreement' || $key == 'work_notin_payslip' || $key == 'work_notin_incometax' || $key == 'work_notin_security_payment' || $key == 'work_notin_reference_letter'){
-            //     $uploadedFile = $doc;
-            //     $filetype = '';
-            //     $filename = ''; 
-            //     if(!empty($doc)){
-            //         $fileMimeType = $doc->getMimeType();
-                     
-            //         if($fileMimeType == 'image/png' || $fileMimeType == 'image/jpg' || $fileMimeType == 'image/jpeg' || $fileMimeType == 'image/eps' || $fileMimeType == 'image/gif'){
-              
-            //             $filetype = 'png';
-            //         }
-            //         if($fileMimeType == 'application/pdf' ){
-                        
-            //             $filetype = 'pdf';
-            //         }
-            //     }
-                 
-                 
-            //     if(!empty($uploadedFile)){
-            //         $filename = time().$uploadedFile->getClientOriginalName();
-            //         Storage::disk('local')->put('/public/work/' .$workTable.'/'.$key.'/' . $filename, File::get($uploadedFile));
-            //     }  
-                 
-                 
-            //         $docData = [
-            //               'user_id' => $user['user']->id,
-            //               'status' => 'draft',
-            //               'application_id' => $applicationId,
-            //               'document_name' => $filename,
-            //               'file_type' => $filetype,
-            //               'document_type' => $key,
-            //               'type_id' => $workTable
-            //         ];    
-            //         $documetUploaded = DB::table('documents')->insert($docData);
-                
-            // }
+          
           
       }
        // dd($request);

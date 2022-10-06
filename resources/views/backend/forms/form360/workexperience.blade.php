@@ -263,7 +263,22 @@
                 <tr>
                     <td> Employment contract or equivalent document
                         Reference letter </td>
-                    <td> <input type="file" name="workexp1_employment_contract" id="workexp1_employment_contract"></td>
+                    <td> <input type="file" name="workexp1_employment_contract" id="workexp1_employment_contract">
+                
+                    @if (array_key_exists('workexp1_employment_contract', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_employment_contract/'.$docdataForm360['workexp1_employment_contract'])  }}">
+                                                               @if(str_contains($docdataForm360['workexp1_employment_contract'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_employment_contract/'.$docdataForm360['workexp1_employment_contract'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif   
+                
+                </td>
                 </tr>
             </tbody>
         </table>
@@ -276,7 +291,21 @@
                     <td> 1 payslip of your current year or most recent
                         year of experience to be uploaded here
                     </td>
-                    <td> <input type="file" name="workexp1_current_year_of_experience" id="workexp1_current_year_of_experience"></td>
+                    <td> <input type="file" name="workexp1_current_year_of_experience" id="workexp1_current_year_of_experience">
+                
+                    @if (array_key_exists('workexp1_current_year_of_experience', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_current_year_of_experience/'.$docdataForm360['workexp1_current_year_of_experience'])  }}">
+                                                               @if(str_contains($docdataForm360['workexp1_current_year_of_experience'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_current_year_of_experience/'.$docdataForm360['workexp1_current_year_of_experience'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif   
+                </td>
                 </tr>
 
                 <tr>
@@ -284,7 +313,21 @@
                         experience performed with this employer, to be
                         uploaded here
                     </td>
-                    <td> <input type="file" name="workexp1_previous_year_of_experience1" id="workexp1_previous_year_of_experience1"></td>
+                    <td> <input type="file" name="workexp1_previous_year_of_experience1" id="workexp1_previous_year_of_experience1">
+                
+                    @if (array_key_exists('workexp1_previous_year_of_experience1', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_previous_year_of_experience1/'.$docdataForm360['workexp1_previous_year_of_experience1'])  }}">
+                                                               @if(str_contains($docdataForm360['workexp1_previous_year_of_experience1'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_previous_year_of_experience1/'.$docdataForm360['workexp1_previous_year_of_experience1'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif   
+                </td>
                 </tr>
 
                 <tr>
@@ -292,7 +335,21 @@
                         experience performed with this employer, to be
                         uploaded here
                     </td>
-                    <td> <input type="file" name="workexp1_previous_year_of_experience2" id="workexp1_previous_year_of_experience2"></td>
+                    <td> <input type="file" name="workexp1_previous_year_of_experience2" id="workexp1_previous_year_of_experience2">
+                
+                    @if (array_key_exists('workexp1_previous_year_of_experience2', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_previous_year_of_experience2/'.$docdataForm360['workexp1_previous_year_of_experience2'])  }}">
+                                                               @if(str_contains($docdataForm360['workexp1_previous_year_of_experience2'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_previous_year_of_experience2/'.$docdataForm360['workexp1_previous_year_of_experience2'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif   
+                </td>
                 </tr>
 
                 <tr>
@@ -300,7 +357,21 @@
                         experience performed with this employer, to be
                         uploaded here
                     </td>
-                    <td> <input type="file" name="workexp1_previous_year_of_experience3" id="workexp1_previous_year_of_experience3"></td>
+                    <td> <input type="file" name="workexp1_previous_year_of_experience3" id="workexp1_previous_year_of_experience3">
+                
+                    @if (array_key_exists('workexp1_previous_year_of_experience3', $docdataForm360))
+                                                               
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_previous_year_of_experience3/'.$docdataForm360['workexp1_previous_year_of_experience3'])  }}">
+                        @if(str_contains($docdataForm360['workexp1_previous_year_of_experience3'] , '.pdf'))
+                         <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                        @else
+                        <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_previous_year_of_experience3/'.$docdataForm360['workexp1_previous_year_of_experience3'])  }}"  />
+                        @endif
+                        </a>
+                                                             
+                                                               
+                    @endif   
+                </td>
                 </tr>
 
 
@@ -315,21 +386,60 @@
                     <td>Income tax return issued for each year of work
                         performed to be uploaded here
                     </td>
-                    <td> <input type="file" name="workexp1_income_tax_return1" id="workexp1_income_tax_return1"></td>
+                    <td> <input type="file" name="workexp1_income_tax_return1" id="workexp1_income_tax_return1">
+                    @if (array_key_exists('workexp1_income_tax_return1', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_income_tax_return1/'.$docdataForm360['workexp1_income_tax_return1'])  }}">
+                                                               @if(str_contains($docdataForm360['workexp1_income_tax_return1'] , '.pdf'))
+                                                                <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_income_tax_return1/'.$docdataForm360['workexp1_income_tax_return1'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                                                                    
+                                                                                                      
+                                                           @endif  
+                    </td>
                 </tr>
 
                 <tr>
                     <td>Income tax return issued for each year of work
                         performed to be uploaded here
                     </td>
-                    <td> <input type="file" name="workexp1_income_tax_return2" id="workexp1_income_tax_return2"></td>
+                    <td> <input type="file" name="workexp1_income_tax_return2" id="workexp1_income_tax_return2">
+                    @if (array_key_exists('workexp1_income_tax_return2', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_income_tax_return2/'.$docdataForm360['workexp1_income_tax_return2'])  }}">
+                                                               @if(str_contains($docdataForm360['workexp1_income_tax_return2'] , '.pdf'))
+                                                                <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_income_tax_return2/'.$docdataForm360['workexp1_income_tax_return2'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                                                                    
+                                                                                                      
+                                                           @endif  
+                </td>
                 </tr>
 
                 <tr>
                     <td>Income tax return issued for each year of work
                         performed to be uploaded here
                     </td>
-                    <td> <input type="file" name="workexp1_income_tax_return2" id="workexp1_income_tax_return2"></td>
+                    <td> <input type="file" name="workexp1_income_tax_return2_1" id="workexp1_income_tax_return2_1">
+                    @if (array_key_exists('workexp1_income_tax_return2_1', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_income_tax_return2_1/'.$docdataForm360['workexp1_income_tax_return2_1'])  }}">
+                                                               @if(str_contains($docdataForm360['workexp1_income_tax_return2_1'] , '.pdf'))
+                                                                <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_income_tax_return2_1/'.$docdataForm360['workexp1_income_tax_return2_1'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                                                                    
+                                                                                                      
+                                                           @endif  
+                    </td>
                 </tr>
 
 
@@ -337,7 +447,20 @@
                     <td>Any other relevant document to be uploaded
                         here
                     </td>
-                    <td> <input type="file" name="workexp1_relevant_doc" id="workexp1_relevant_doc"></td>
+                    <td> <input type="file" name="workexp1_relevant_doc" id="workexp1_relevant_doc">
+                    @if (array_key_exists('workexp1_tabella_estratto', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_tabella_estratto/'.$docdataForm360['workexp1_tabella_estratto'])  }}">
+                                                               @if(str_contains($docdataForm360['workexp1_tabella_estratto'] , '.pdf'))
+                                                                <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_tabella_estratto/'.$docdataForm360['workexp1_tabella_estratto'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                                                                    
+                                                                                                      
+                                                           @endif      
+                </td>
                 </tr>
 
 

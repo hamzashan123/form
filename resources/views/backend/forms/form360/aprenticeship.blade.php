@@ -236,34 +236,108 @@
                 <tr>
                     <td> Apprenticeship contract
                     </td>
-                    <td> <input type="file" name="apprenticeship_contract_doc" id="apprenticeship_contract_doc"></td>
+                    <td> <input type="file" name="apprenticeship_contract_doc" id="apprenticeship_contract_doc">
+                
+                    @if (array_key_exists('apprenticeship_contract_doc', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/apprenticeship_contract_doc/'.$docdataForm360['apprenticeship_contract_doc'])  }}">
+                                                               @if(str_contains($docdataForm360['apprenticeship_contract_doc'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/apprenticeship_contract_doc/'.$docdataForm360['apprenticeship_contract_doc'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif   
+                
+                
+                </td>
                 </tr>
 
                 <tr>
                     <td> Apprenticeship completion letter issued by the employer
                     </td>
-                    <td> <input type="file" name="apprenticeship_completion_letter" id="apprenticeship_completion_letter"></td>
+                    <td> <input type="file" name="apprenticeship_completion_letter" id="apprenticeship_completion_letter">
+                
+                    @if (array_key_exists('apprenticeship_completion_letter', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/apprenticeship_completion_letter/'.$docdataForm360['apprenticeship_completion_letter'])  }}">
+                                                               @if(str_contains($docdataForm360['apprenticeship_completion_letter'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/apprenticeship_completion_letter/'.$docdataForm360['apprenticeship_completion_letter'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif   
+                
+                </td>
                 </tr>
 
                 <tr>
                     <td> Provide 1 payslip for your current or most recent
                         apprenticeship experience here (current year)
                     </td>
-                    <td> <input type="file" name="apprenticeship_payslip_current_year" id="apprenticeship_payslip_current_year"></td>
+                    <td> <input type="file" name="apprenticeship_payslip_current_year" id="apprenticeship_payslip_current_year">
+                
+                    @if (array_key_exists('apprenticeship_payslip_current_year', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/apprenticeship_payslip_current_year/'.$docdataForm360['apprenticeship_payslip_current_year'])  }}">
+                                                               @if(str_contains($docdataForm360['apprenticeship_payslip_current_year'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/apprenticeship_payslip_current_year/'.$docdataForm360['apprenticeship_payslip_current_year'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif   
+                </td>
                 </tr>
 
                 <tr>
                     <td> Provide 1 payslip for the previous year of
                         apprenticeship
                     </td>
-                    <td> <input type="file" name="apprenticeship_previous_year" id="apprenticeship_previous_year"></td>
+                    <td> <input type="file" name="apprenticeship_previous_year" id="apprenticeship_previous_year">
+                
+                
+                    @if (array_key_exists('apprenticeship_previous_year', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/apprenticeship_previous_year/'.$docdataForm360['apprenticeship_previous_year'])  }}">
+                                                               @if(str_contains($docdataForm360['apprenticeship_previous_year'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/apprenticeship_previous_year/'.$docdataForm360['apprenticeship_previous_year'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif   
+                </td>
                 </tr>
 
                 <tr>
                     <td> Income tax return of the most the current or most
                         recent year (in Italy CUD)
                     </td>
-                    <td> <input type="file" name="apprenticeship_tax_return" id="apprenticeship_tax_return"></td>
+                    <td> <input type="file" name="apprenticeship_tax_return" id="apprenticeship_tax_return">
+                    @if (array_key_exists('apprenticeship_tax_return', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/apprenticeship_tax_return/'.$docdataForm360['apprenticeship_tax_return'])  }}">
+                                                               @if(str_contains($docdataForm360['apprenticeship_tax_return'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/apprenticeship_tax_return/'.$docdataForm360['apprenticeship_tax_return'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif   
+                
+                </td>
                 </tr>
 
                 <tr>
@@ -272,7 +346,22 @@
                         by the National Social Security Body or dedicated
                         registration body)
                     </td>
-                    <td> <input type="file" name="apprenticeship_social_security" id="apprenticeship_social_security"></td>
+                    <td> <input type="file" name="apprenticeship_social_security" id="apprenticeship_social_security">
+                
+                
+                    @if (array_key_exists('apprenticeship_social_security', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/apprenticeship_social_security/'.$docdataForm360['apprenticeship_social_security'])  }}">
+                                                               @if(str_contains($docdataForm360['apprenticeship_social_security'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/apprenticeship_social_security/'.$docdataForm360['apprenticeship_social_security'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif   
+                </td>
                 </tr>
 
 

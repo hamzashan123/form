@@ -160,14 +160,43 @@
                 <tr>
                     <td> Qualification – Diploma/Award Certificate
                     </td>
-                    <td> <input type="file" name="higher_level_qualification1_diploma_award" id="higher_level_qualification1_diploma_award" @if(isset($data->higher_level_qualification1_diploma_award)) value="{{$data->higher_level_qualification1_diploma_award}}" @endif></td>
+                    <td> <input type="file" name="higher_level_qualification1_diploma_award" id="higher_level_qualification1_diploma_award">
+                    @if (array_key_exists('higher_level_qualification1_diploma_award', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification1_diploma_award/'.$docdataForm360['higher_level_qualification1_diploma_award'])  }}">
+                                                               @if(str_contains($docdataForm360['higher_level_qualification1_diploma_award'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification1_diploma_award/'.$docdataForm360['higher_level_qualification1_diploma_award'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif
+                
+                
+                </td>
                 </tr>
 
                 <tr>
                     <td> List of exams taken
 
                     </td>
-                    <td> <input type="file" name="higher_level_qualification1_listofexams" id="higher_level_qualification1_listofexams" @if(isset($data->higher_level_qualification1_listofexams)) value="{{$data->higher_level_qualification1_listofexams}}" @endif></td>
+                    <td> <input type="file" name="higher_level_qualification1_listofexams" id="higher_level_qualification1_listofexams">
+                
+                    @if (array_key_exists('higher_level_qualification1_listofexams', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification1_listofexams/'.$docdataForm360['higher_level_qualification1_listofexams'])  }}">
+                                                               @if(str_contains($docdataForm360['higher_level_qualification1_listofexams'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification1_listofexams/'.$docdataForm360['higher_level_qualification1_listofexams'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif
+                </td>
                 </tr>
 
                 <tr>
@@ -175,7 +204,21 @@
 
 
                     </td>
-                    <td> <input type="file" name="higher_level_qualification1_diploma_supplement" id="higher_level_qualification1_diploma_supplement" @if(isset($data->higher_level_qualification1_diploma_supplement)) value="{{$data->higher_level_qualification1_diploma_supplement}}" @endif></td>
+                    <td> <input type="file" name="higher_level_qualification1_diploma_supplement" id="higher_level_qualification1_diploma_supplement" >
+                    @if (array_key_exists('higher_level_qualification1_diploma_supplement', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification1_diploma_supplement/'.$docdataForm360['higher_level_qualification1_diploma_supplement'])  }}">
+                                                               @if(str_contains($docdataForm360['higher_level_qualification1_diploma_supplement'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification1_diploma_supplement/'.$docdataForm360['higher_level_qualification1_diploma_supplement'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif
+                
+                </td>
                 </tr>
             </tbody>
         </table>
@@ -323,14 +366,42 @@
                 <tr>
                     <td> Qualification – Diploma/Award Certificate
                     </td>
-                    <td> <input type="file" name="higher_level_qualification2_diploma_award" id="higher_level_qualification2_diploma_award" @if(isset($data->higher_level_qualification2_diploma_award)) value="{{$data->higher_level_qualification2_diploma_award}}" @endif></td>
+                    <td> <input type="file" name="higher_level_qualification2_diploma_award" id="higher_level_qualification2_diploma_award">
+                    @if (array_key_exists('higher_level_qualification2_diploma_award', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification2_diploma_award/'.$docdataForm360['higher_level_qualification2_diploma_award'])  }}">
+                                                               @if(str_contains($docdataForm360['higher_level_qualification2_diploma_award'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification2_diploma_award/'.$docdataForm360['higher_level_qualification2_diploma_award'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif
+                
+                </td>
                 </tr>
 
                 <tr>
                     <td> List of exams taken
 
                     </td>
-                    <td> <input type="file" name="higher_level_qualification2_listofexams" id="higher_level_qualification2_listofexams" @if(isset($data->higher_level_qualification2_listofexams)) value="{{$data->higher_level_qualification2_listofexams}}" @endif></td>
+                    <td> <input type="file" name="higher_level_qualification2_listofexams" id="higher_level_qualification2_listofexams">
+                    @if (array_key_exists('higher_level_qualification2_listofexams', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification2_listofexams/'.$docdataForm360['higher_level_qualification2_listofexams'])  }}">
+                                                               @if(str_contains($docdataForm360['higher_level_qualification2_listofexams'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification2_listofexams/'.$docdataForm360['higher_level_qualification2_listofexams'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif
+                
+                </td>
                 </tr>
 
                 <tr>
@@ -338,7 +409,22 @@
 
 
                     </td>
-                    <td> <input type="file" name="higher_level_qualification2_diploma_supplement" id="higher_level_qualification2_diploma_supplement" @if(isset($data->higher_level_qualification2_diploma_supplement)) value="{{$data->higher_level_qualification2_diploma_supplement}}" @endif></td>
+                    <td> <input type="file" name="higher_level_qualification2_diploma_supplement" id="higher_level_qualification2_diploma_supplement">
+                
+                    @if (array_key_exists('higher_level_qualification2_diploma_supplement', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification2_diploma_supplement/'.$docdataForm360['higher_level_qualification2_diploma_supplement'])  }}">
+                                                               @if(str_contains($docdataForm360['higher_level_qualification2_diploma_supplement'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification2_diploma_supplement/'.$docdataForm360['higher_level_qualification2_diploma_supplement'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif
+                
+                </td>
                 </tr>
             </tbody>
         </table>
@@ -490,14 +576,42 @@
                 <tr>
                     <td> Qualification – Diploma/Award Certificate
                     </td>
-                    <td> <input type="file" name="higher_level_qualification3_diploma_award" id="higher_level_qualification3_diploma_award" @if(isset($data->higher_level_qualification3_diploma_award)) value="{{$data->higher_level_qualification3_diploma_award}}" @endif></td>
+                    <td> <input type="file" name="higher_level_qualification3_diploma_award" id="higher_level_qualification3_diploma_award">
+                
+                    @if (array_key_exists('higher_level_qualification3_diploma_award', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification3_diploma_award/'.$docdataForm360['higher_level_qualification3_diploma_award'])  }}">
+                                                               @if(str_contains($docdataForm360['higher_level_qualification3_diploma_award'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification3_diploma_award/'.$docdataForm360['higher_level_qualification3_diploma_award'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif
+                
+                </td>
                 </tr>
 
                 <tr>
                     <td> List of exams taken
 
                     </td>
-                    <td> <input type="file" name="higher_level_qualification3_listofexams" id="higher_level_qualification3_listofexams" @if(isset($data->higher_level_qualification3_listofexams)) value="{{$data->higher_level_qualification3_listofexams}}" @endif></td>
+                    <td> <input type="file" name="higher_level_qualification3_listofexams" id="higher_level_qualification3_listofexams">
+                    @if (array_key_exists('higher_level_qualification3_listofexams', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification3_listofexams/'.$docdataForm360['higher_level_qualification3_listofexams'])  }}">
+                                                               @if(str_contains($docdataForm360['higher_level_qualification3_listofexams'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification3_listofexams/'.$docdataForm360['higher_level_qualification3_listofexams'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif               
+                </td>
                 </tr>
 
                 <tr>
@@ -505,7 +619,21 @@
 
 
                     </td>
-                    <td> <input type="file" name="higher_level_qualification3_diploma_supplement" id="higher_level_qualification3_diploma_supplement" @if(isset($data->higher_level_qualification3_diploma_supplement)) value="{{$data->higher_level_qualification3_diploma_supplement}}" @endif></td>
+                    <td> <input type="file" name="higher_level_qualification3_diploma_supplement" id="higher_level_qualification3_diploma_supplement">
+                    @if (array_key_exists('higher_level_qualification3_diploma_supplement', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification3_diploma_supplement/'.$docdataForm360['higher_level_qualification3_diploma_supplement'])  }}">
+                                                               @if(str_contains($docdataForm360['higher_level_qualification3_diploma_supplement'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification3_diploma_supplement/'.$docdataForm360['higher_level_qualification3_diploma_supplement'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif    
+                
+                </td>
                 </tr>
             </tbody>
         </table>

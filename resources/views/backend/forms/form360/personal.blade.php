@@ -280,17 +280,58 @@
             
             <tr>
                         <td> Personal Biodata Page </td>
-                        <td> <input type="file" name="personal_passport_biodata_page" id="personal_passport_biodata_page" > </td>
+                        <td> <input type="file" name="personal_passport_biodata_page" id="personal_passport_biodata_page" > 
+                        
+                        @if (array_key_exists('personal_passport_biodata_page', $docdataForm360))
+                                                               
+                            <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/personal_passport_biodata_page/'.$docdataForm360['personal_passport_biodata_page'])  }}">
+                            @if(str_contains($docdataForm360['personal_passport_biodata_page'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}"  />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/personal_passport_biodata_page/'.$docdataForm360['personal_passport_biodata_page'])  }}" />
+                            @endif
+                            </a>
+                          
+                            
+                        @endif
+                        </td>
                     </tr>
 
                
                 <tr>
                     <td> ID card or driving license </td>
-                    <td> <input type="file" name="personal_id_card_driving_license" id="personal_id_card_driving_license" @if(isset($data->personal_id_card_driving_license)) value="{{$data->personal_id_card_driving_license}}" @endif></td>
+                    <td> <input type="file" name="personal_id_card_driving_license" id="personal_id_card_driving_license" >
+                    @if (array_key_exists('personal_id_card_driving_license', $docdataForm360))
+                                                               
+                            <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/personal_id_card_driving_license/'.$docdataForm360['personal_id_card_driving_license'])  }}">
+                            @if(str_contains($docdataForm360['personal_id_card_driving_license'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/personal_id_card_driving_license/'.$docdataForm360['personal_id_card_driving_license'])  }}"  />
+                            @endif
+                            </a>
+                          
+                            
+                        @endif
+                        </td>
                 </tr>
                 <tr>
                     <td> Updated CV/Resume </td>
-                    <td> <input type="file" name="personal_update_resume" id="personal_update_resume" @if(isset($data->personal_update_resume)) value="{{$data->personal_update_resume}}" @endif></td>
+                    <td> <input type="file" name="personal_update_resume" id="personal_update_resume" >
+                    @if (array_key_exists('personal_update_resume', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/personal_update_resume/'.$docdataForm360['personal_update_resume'])  }}">
+                                                               @if(str_contains($docdataForm360['personal_update_resume'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/personal_update_resume/'.$docdataForm360['personal_update_resume'])  }}" />
+                                                               @endif
+                                             </a>
+                         
+                        
+                     
+                   @endif
+                   </td>
                 </tr>
 
 
@@ -356,7 +397,22 @@
             <tbody>
                 <tr>
                     <td> Skills assessment outcome letter </td>
-                    <td> <input type="file" name="personal_skills_assessment_outcome_letter" id="personal_skills_assessment_outcome_letter" @if(isset($data->personal_skills_assessment_outcome_letter)) value="{{$data->personal_skills_assessment_outcome_letter}}" @endif ></td>
+                    <td> <input type="file" name="personal_skills_assessment_outcome_letter" id="personal_skills_assessment_outcome_letter" >
+                
+                    @if (array_key_exists('personal_skills_assessment_outcome_letter', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/personal_skills_assessment_outcome_letter/'.$docdataForm360['personal_skills_assessment_outcome_letter'])  }}">
+                                                               @if(str_contains($docdataForm360['personal_skills_assessment_outcome_letter'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/personal_skills_assessment_outcome_letter/'.$docdataForm360['personal_skills_assessment_outcome_letter'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif
+                                                        
+                                                        </td>
                 </tr>
             </tbody>
         </table>
@@ -439,7 +495,24 @@
             <tbody>
                 <tr>
                     <td> English test to be uploaded here </td>
-                    <td> <input type="file" name="personal_languages_english_test_document" id="personal_languages_english_test_document"></td>
+                    <td> <input type="file" name="personal_languages_english_test_document" id="personal_languages_english_test_document">
+                
+                    @if (array_key_exists('personal_languages_english_test_document', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/personal_languages_english_test_document/'.$docdataForm360['personal_languages_english_test_document'])  }}">
+                                                               @if(str_contains($docdataForm360['personal_languages_english_test_document'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/personal_languages_english_test_document/'.$docdataForm360['personal_languages_english_test_document'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif
+                                                        
+                
+                
+                </td>
                 </tr>
             </tbody>
         </table>
@@ -477,7 +550,24 @@
             <tbody>
                 <tr>
                     <td> Licence/Registration evidence </td>
-                    <td> <input type="file" name="personal_license_and_registration_document" id="personal_license_and_registration_document" @if(isset($data->personal_license_and_registration_document)) value="{{$data->personal_license_and_registration_document}}" @endif ></td>
+                    <td> <input type="file" name="personal_license_and_registration_document" id="personal_license_and_registration_document" >
+                
+                    @if (array_key_exists('personal_license_and_registration_document', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/personal_license_and_registration_document/'.$docdataForm360['personal_license_and_registration_document'])  }}">
+                                                               @if(str_contains($docdataForm360['personal_license_and_registration_document'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/personal_license_and_registration_document/'.$docdataForm360['personal_license_and_registration_document'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif
+                                                        
+                
+                
+                </td>
                 </tr>
             </tbody>
         </table>
