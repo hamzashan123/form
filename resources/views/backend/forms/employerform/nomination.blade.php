@@ -301,7 +301,21 @@
                 <tr>
                     <td> Job description/Duty Statement of the
                         position to be offered to the applicant </td>
-                    <td> <input type="file" name="nomination_job_description" id="nomination_job_description" @if(isset($data->nomination_job_description)) value="{{$data->nomination_job_description}}" @endif></td>
+                    <td> <input type="file" name="nomination_job_description" id="nomination_job_description">
+
+                        @if (array_key_exists('nomination_job_description', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/nomination_job_description/'.$docdataemployerform['nomination_job_description'])  }}">
+                            @if(str_contains($docdataemployerform['nomination_job_description'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/nomination_job_description/'.$docdataemployerform['nomination_job_description'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -316,38 +330,124 @@
                 <tr>
                     <td> 1) Dated after the 28 days period of
                         the job ads </td>
-                    <td> <input type="file" name="nomination_period_of_job" id="nomination_period_of_job" @if(isset($data->nomination_period_of_job)) value="{{$data->nomination_period_of_job}}" @endif></td>
+                    <td> <input type="file" name="nomination_period_of_job" id="nomination_period_of_job">
+
+                        @if (array_key_exists('nomination_period_of_job', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/nomination_period_of_job/'.$docdataemployerform['nomination_period_of_job'])  }}">
+                            @if(str_contains($docdataemployerform['nomination_period_of_job'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/nomination_period_of_job/'.$docdataemployerform['nomination_period_of_job'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+                    </td>
                 </tr>
 
                 <tr>
                     <td> 2) Indicate the name and surname of
                         the applicant</td>
-                    <td> <input type="file" name="nomination_name_and_surname" id="nomination_name_and_surname" @if(isset($data->nomination_name_and_surname)) value="{{$data->nomination_name_and_surname}}" @endif></td>
+                    <td> <input type="file" name="nomination_name_and_surname" id="nomination_name_and_surname">
+
+                        @if (array_key_exists('nomination_name_and_surname', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/nomination_name_and_surname/'.$docdataemployerform['nomination_name_and_surname'])  }}">
+                            @if(str_contains($docdataemployerform['nomination_name_and_surname'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/nomination_name_and_surname/'.$docdataemployerform['nomination_name_and_surname'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+                    </td>
                 </tr>
 
                 <tr>
                     <td> 3) Indicate "upon visa approval" for
                         the Start date</td>
-                    <td> <input type="file" name="nomination_start_date_doc" id="nomination_start_date_doc" @if(isset($data->nomination_start_date_doc)) value="{{$data->nomination_start_date_doc}}" @endif></td>
+                    <td> <input type="file" name="nomination_start_date_doc" id="nomination_start_date_doc">
+
+                    </td>
+                    @if (array_key_exists('nomination_start_date_doc', $docdataemployerform))
+
+                    <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/nomination_start_date_doc/'.$docdataemployerform['nomination_start_date_doc'])  }}">
+                        @if(str_contains($docdataemployerform['nomination_start_date_doc'] , '.pdf'))
+                        <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                        @else
+                        <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/nomination_start_date_doc/'.$docdataemployerform['nomination_start_date_doc'])  }}" />
+                        @endif
+                    </a>
+
+
+                    @endif
                 </tr>
 
                 <tr>
                     <td> 4) Indicate the gross annual salary rate</td>
-                    <td> <input type="file" name="nomination_gross_annual_salary" id="nomination_gross_annual_salary" @if(isset($data->nomination_gross_annual_salary)) value="{{$data->nomination_gross_annual_salary}}" @endif></td>
+                    <td> <input type="file" name="nomination_gross_annual_salary" id="nomination_gross_annual_salary">
+
+                        @if (array_key_exists('nomination_gross_annual_salary', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/nomination_gross_annual_salary/'.$docdataemployerform['nomination_gross_annual_salary'])  }}">
+                            @if(str_contains($docdataemployerform['nomination_gross_annual_salary'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/nomination_gross_annual_salary/'.$docdataemployerform['nomination_gross_annual_salary'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td> 5) Indicate the super annuation in
                         addition to the gross annual salary
                         rate</td>
-                    <td> <input type="file" name="nomination_super_annuation" id="nomination_super_annuation" @if(isset($data->nomination_super_annuation)) value="{{$data->nomination_super_annuation}}" @endif></td>
+                    <td> <input type="file" name="nomination_super_annuation" id="nomination_super_annuation">
+
+                        @if (array_key_exists('nomination_super_annuation', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/nomination_super_annuation/'.$docdataemployerform['nomination_super_annuation'])  }}">
+                            @if(str_contains($docdataemployerform['nomination_super_annuation'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/nomination_super_annuation/'.$docdataemployerform['nomination_super_annuation'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td> 6) Indicate any other monetary
                         components as a separate figure to
                         the annual gross salary</td>
-                    <td> <input type="file" name="nomination_separate_figure" id="nomination_separate_figure" @if(isset($data->nomination_separate_figure)) value="{{$data->nomination_separate_figure}}" @endif></td>
+                    <td> <input type="file" name="nomination_separate_figure" id="nomination_separate_figure">
+
+                        @if (array_key_exists('nomination_separate_figure', $docdataemployerform))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/nomination_separate_figure/'.$docdataemployerform['nomination_separate_figure'])  }}">
+                            @if(str_contains($docdataemployerform['nomination_separate_figure'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/nomination_separate_figure/'.$docdataemployerform['nomination_separate_figure'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+                    </td>
                 </tr>
 
 
