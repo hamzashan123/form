@@ -305,7 +305,15 @@ class Form360Controller extends Controller
          'workexp1_relevant_doc' => $request->file('workexp1_relevant_doc'),
          'workexp1_tabella_estratto' => $request->file('workexp1_tabella_estratto'),
 
-         
+         'workexpintracompany_employment_contract' => $request->file('workexpintracompany_employment_contract'),
+         'workexpintracompany_current_recent_payslip' => $request->file('workexpintracompany_current_recent_payslip'),
+         'workexpintracompany_income_tax_return' => $request->file('workexpintracompany_income_tax_return'),
+         'workexpintracompany_social_security' => $request->file('workexpintracompany_social_security'),
+         'workexpintracompany_perform_in_aus_nz' => $request->file('workexp1_tabella_estratto'),
+
+         'currentvisa_aus_naz_if_applicable' => $request->file('currentvisa_aus_naz_if_applicable'),
+         'previous_visa_if_applicable1' => $request->file('previous_visa_if_applicable1'),
+         'previous_visa_if_applicable2' => $request->file('previous_visa_if_applicable2'),
 
   
         

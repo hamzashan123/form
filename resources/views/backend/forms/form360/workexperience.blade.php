@@ -448,13 +448,13 @@
                         here
                     </td>
                     <td> <input type="file" name="workexp1_relevant_doc" id="workexp1_relevant_doc">
-                    @if (array_key_exists('workexp1_tabella_estratto', $docdataForm360))
+                    @if (array_key_exists('workexp1_relevant_doc', $docdataForm360))
                                                                
-                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_tabella_estratto/'.$docdataForm360['workexp1_tabella_estratto'])  }}">
-                                                               @if(str_contains($docdataForm360['workexp1_tabella_estratto'] , '.pdf'))
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_relevant_doc/'.$docdataForm360['workexp1_relevant_doc'])  }}">
+                                                               @if(str_contains($docdataForm360['workexp1_relevant_doc'] , '.pdf'))
                                                                 <img class="imgfile" src="{{asset('pdficon.png')}}"   />
                                                                @else
-                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_tabella_estratto/'.$docdataForm360['workexp1_tabella_estratto'])  }}"  />
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_relevant_doc/'.$docdataForm360['workexp1_relevant_doc'])  }}"  />
                                                                @endif
                                                                </a>
                                                                                                     
@@ -477,7 +477,20 @@
                 <tr>
                     <td>Tabella estratto contributivo INPS
                     </td>
-                    <td> <input type="file" name="workexp1_tabella_estratto" id="workexp1_tabella_estratto"></td>
+                    <td> <input type="file" name="workexp1_tabella_estratto" id="workexp1_tabella_estratto">
+                    @if (array_key_exists('workexp1_tabella_estratto', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_tabella_estratto/'.$docdataForm360['workexp1_tabella_estratto'])  }}">
+                                                               @if(str_contains($docdataForm360['workexp1_tabella_estratto'] , '.pdf'))
+                                                                <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_tabella_estratto/'.$docdataForm360['workexp1_tabella_estratto'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                                                                    
+                                                                                                      
+                                                           @endif 
+                    </td>
                 </tr>
             </tbody>
         </table>

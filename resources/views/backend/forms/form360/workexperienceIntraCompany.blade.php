@@ -229,24 +229,76 @@
             <tbody>
                 <tr>
                     <td> Employment contract </td>
-                    <td> <input type="file" name="workexpintracompany_employment_contract" id="workexpintracompany_employment_contract" @if(isset($data->workexpintracompany_employment_contract)) value="{{$data->workexpintracompany_employment_contract}}" @endif></td>
+                    <td> <input type="file" name="workexpintracompany_employment_contract" id="workexpintracompany_employment_contract" >
+                    @if (array_key_exists('workexpintracompany_employment_contract', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexpintracompany_employment_contract/'.$docdataForm360['workexpintracompany_employment_contract'])  }}">
+                                                               @if(str_contains($docdataForm360['workexpintracompany_employment_contract'] , '.pdf'))
+                                                                <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexpintracompany_employment_contract/'.$docdataForm360['workexpintracompany_employment_contract'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                                                                    
+                                                                                                      
+                                                           @endif      
+                </td>
                 </tr>
 
                 <tr>
                     <td> Payslip of the current or most recent year </td>
-                    <td> <input type="file" name="workexpintracompany_current_recent_payslip" id="workexpintracompany_current_recent_payslip" @if(isset($data->workexpintracompany_current_recent_payslip)) value="{{$data->workexpintracompany_current_recent_payslip}}" @endif></td>
+                    <td> <input type="file" name="workexpintracompany_current_recent_payslip" id="workexpintracompany_current_recent_payslip" >
+                    @if (array_key_exists('workexpintracompany_current_recent_payslip', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexpintracompany_current_recent_payslip/'.$docdataForm360['workexpintracompany_current_recent_payslip'])  }}">
+                                                               @if(str_contains($docdataForm360['workexpintracompany_current_recent_payslip'] , '.pdf'))
+                                                                <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexpintracompany_current_recent_payslip/'.$docdataForm360['workexpintracompany_current_recent_payslip'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                                                                    
+                                                                                                      
+                                                           @endif      
+                </td>
                 </tr>
 
                 <tr>
                     <td> Income tax return </td>
-                    <td> <input type="file" name="workexpintracompany_income_tax_return" id="workexpintracompany_income_tax_return" @if(isset($data->workexpintracompany_income_tax_return)) value="{{$data->workexpintracompany_income_tax_return}}" @endif></td>
+                    <td> <input type="file" name="workexpintracompany_income_tax_return" id="workexpintracompany_income_tax_return" >
+                    @if (array_key_exists('workexpintracompany_income_tax_return', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexpintracompany_income_tax_return/'.$docdataForm360['workexpintracompany_income_tax_return'])  }}">
+                                                               @if(str_contains($docdataForm360['workexpintracompany_income_tax_return'] , '.pdf'))
+                                                                <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexpintracompany_income_tax_return/'.$docdataForm360['workexpintracompany_income_tax_return'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                                                                    
+                                                                                                      
+                                                           @endif      
+                </td>
                 </tr>
 
                 <tr>
                     <td> Social security chart such as INPS chart or other
                         equivalent document
                     </td>
-                    <td> <input type="file" name="workexpintracompany_social_security" id="workexpintracompany_social_security" @if(isset($data->workexpintracompany_social_security)) value="{{$data->workexpintracompany_social_security}}" @endif></td>
+                    <td> <input type="file" name="workexpintracompany_social_security" id="workexpintracompany_social_security" >
+                    @if (array_key_exists('workexpintracompany_social_security', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexpintracompany_social_security/'.$docdataForm360['workexpintracompany_social_security'])  }}">
+                                                               @if(str_contains($docdataForm360['workexpintracompany_social_security'] , '.pdf'))
+                                                                <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexpintracompany_social_security/'.$docdataForm360['workexpintracompany_social_security'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                                                                    
+                                                                                                      
+                                                           @endif 
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -385,7 +437,20 @@
                     <td> Invitation letter from the Australia or New
                         Zealand company
                     </td>
-                    <td> <input type="file" name="workexpintracompany_perform_in_aus_nz" id="workexpintracompany_perform_in_aus_nz" @if(isset($data->workexpintracompany_perform_in_aus_nz)) value="{{$data->workexpintracompany_perform_in_aus_nz}}" @endif></td>
+                    <td> <input type="file" name="workexpintracompany_perform_in_aus_nz" id="workexpintracompany_perform_in_aus_nz" >
+                    @if (array_key_exists('workexpintracompany_perform_in_aus_nz', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexpintracompany_perform_in_aus_nz/'.$docdataForm360['workexpintracompany_perform_in_aus_nz'])  }}">
+                                                               @if(str_contains($docdataForm360['workexpintracompany_perform_in_aus_nz'] , '.pdf'))
+                                                                <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexpintracompany_perform_in_aus_nz/'.$docdataForm360['workexpintracompany_perform_in_aus_nz'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                                                                    
+                                                                                                      
+                                                           @endif      
+                </td>
                 </tr>
             </tbody>
         </table>
