@@ -246,9 +246,9 @@ class Form360Controller extends Controller
                     'email' => Auth::user()->email,
                     'messagetype' => 'A new application has been recieved!'
                 ];
-                Mail::to('hamzashan123@gmail.com')->send(new NewFormSubmitted($data));
+               // Mail::to('hamzashan123@gmail.com')->send(new NewFormSubmitted($data));
                 DB::table('form360')->where('user_id', Auth::user()->id)->update(['is_email_sent' => true]);
-                 //Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
+                 Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
             }
            
         }
