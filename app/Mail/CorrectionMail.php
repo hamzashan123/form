@@ -27,6 +27,7 @@ class CorrectionMail extends Mailable
     public function __construct($data)
     {
         $this->email = $data['email'];
+        $this->username = $data['username'];
         $this->formname = $data['formname'];
         $this->fieldsname = $data['fieldsname'];
         $this->fieldsvalue = $data['fieldsvalue'];
@@ -45,6 +46,7 @@ class CorrectionMail extends Mailable
                     ->with([
                         'fieldsname' => $this->fieldsname,
                         'email' => $this->email,
+                        'username' => $this->username,
                         'formname' => $this->formname,
                         'fieldsvalue' => $this->fieldsvalue,
                         'fieldscomments' => $this->fieldscomments

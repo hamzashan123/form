@@ -901,6 +901,7 @@ class Form360Controller extends Controller
             if($request->has('fieldsname')){
                        $data = [
                            'email' => $user->email,
+                           'username' => $user->username,
                            'fieldsname' => $request->fieldsname,
                            'fieldsvalue' => $request->fieldsvalue,
                            'fieldscomments' => $request->fieldscomments,
