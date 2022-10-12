@@ -1,4 +1,4 @@
-<h1>Hello {{$username}},Welcome Back</h1>
+<h1>Dear {{$username}}</h1>
 <p>{!!$messagetype!!}</p>
 
 Thanks,<br>

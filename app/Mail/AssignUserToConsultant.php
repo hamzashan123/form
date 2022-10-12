@@ -13,6 +13,7 @@ class AssignUserToConsultant extends Mailable
 
 
     protected $username;
+    protected $surname;
     protected $email;
     protected $usertype;
     protected $messagetype;
@@ -25,6 +26,7 @@ class AssignUserToConsultant extends Mailable
     public function __construct($data)
     {
         $this->username = $data['username'];
+        $this->surname = $data['surname'];
         $this->email = $data['email'];
         $this->usertype = $data['usertype'];
         $this->messagetype = $data['messagetype'];
@@ -41,6 +43,7 @@ class AssignUserToConsultant extends Mailable
         ->subject('New Client Assigned')
         ->with([
                 'username' => $this->username,
+                'surname' => $this->surname,
                 'email' => $this->email,
                 'usertype' => $this->usertype,
                 'messagetype' => $this->messagetype

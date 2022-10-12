@@ -16,6 +16,7 @@ class CorrectionMail extends Mailable
     protected $email;
     protected $formname;
     protected $fieldsname;
+    //protected $surname;
     protected $fieldsvalue;
     protected $fieldscomments;
     
@@ -28,6 +29,7 @@ class CorrectionMail extends Mailable
     {
         $this->email = $data['email'];
         $this->username = $data['username'];
+        //$this->surname = $data['surname'];
         $this->formname = $data['formname'];
         $this->fieldsname = $data['fieldsname'];
         $this->fieldsvalue = $data['fieldsvalue'];
@@ -42,11 +44,12 @@ class CorrectionMail extends Mailable
     public function build()
     {
         return $this->view('emails.correction-email')
-        ->subject('Application Correction!')
+        ->subject('Additional Info/Docs required')
                     ->with([
                         'fieldsname' => $this->fieldsname,
                         'email' => $this->email,
                         'username' => $this->username,
+                        //'surname' => $this->surname,
                         'formname' => $this->formname,
                         'fieldsvalue' => $this->fieldsvalue,
                         'fieldscomments' => $this->fieldscomments

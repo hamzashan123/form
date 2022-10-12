@@ -57,8 +57,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-             'first_name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string', 'max:255'],
+            'first_name' => ['required', 'string', 'max:255'],
+            'surname' => ['required', 'string', 'max:255'],
+            //'last_name' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'string', 'max:255', 'unique:users'],
             'username' => ['required', 'string', 'max:128', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -77,8 +78,9 @@ class RegisterController extends Controller
         //dd($data);
         $user = User::create([
             'first_name' => $data['first_name'],
-            'last_name' => $data['last_name'],
+            //'last_name' => $data['last_name'],
             'username' => $data['username'],
+            'surname' => $data['surname'],
             'email' => $data['email'],
             'phone' => $data['phone'],
             'status' => false,
@@ -93,19 +95,23 @@ class RegisterController extends Controller
             $user->assignRole('consultant');
 
             $adminData = [
+                'admin' => true,
+                'surname' => $data['surname'],
                 'username' => $data['username'],
                 'email' => $data['email'],
                 'usertype' => 'consultant',
-                'messagetype' => "A New user has registered on your system please check the system and update the user status from Inactive to Active."
+                'messagetype' => "A new user has registered on your system please check the system and update the user status from Inactive to Active."
                
             ];
             Mail::to(env('ADMINEMAIL','riccardo@australialegal.it'))->send(new RegisterUser($adminData));
 
             $userData = [
+                'admin' => false,
+                'surname' => $data['surname'],
                 'username' => $data['username'],
                 'email' => $data['email'],
                 'usertype' => 'consultant',
-                'messagetype' => " Dear ".$data['username'].", Welcome to Australia Legal Migration Agents. Thank you for registering on the Aus Legal Online System. Your registration is currently pending. Once registration is internally approved you will be notified via email and you will then be able to login and fill out your forms requested for your application."
+                'messagetype' => "Welcome to Australia Legal Migration Agents. Thank you for registering on the Aus Legal Online System. Your registration is currently pending. Once registration is internally approved you will be notified via email and you will then be able to login and fill out your forms requested for your application."
                
             ];
 
@@ -114,21 +120,26 @@ class RegisterController extends Controller
         }else if($data['usertype'] == 'user'){
             $user->assignRole('user');
             $adminData = [
+                'admin' => true,
+                'surname' => $data['surname'],
                 'username' => $data['username'],
                 'email' => $data['email'],
                 'usertype' => 'user',
-                'messagetype' => "A New user has registered on your system please check the system and update the user status from Inactive to Active."
+                'messagetype' => "A new user has registered on your system please check the system and update the user status from Inactive to Active."
                
             ];
             
             Mail::to(env('ADMINEMAIL','riccardo@australialegal.it'))->send(new RegisterUser($adminData));
 
             $userData = [
+                'admin' => false,
+                'surname' => $data['surname'],
                 'username' => $data['username'],
                 'email' => $data['email'],
                 'usertype' => 'user',
-                'messagetype' => " Dear ".$data['username'].", Welcome to Australia Legal Migration Agents. Thank you for registering on the Aus Legal Online System. Your registration is currently pending. Once registration is internally approved you will be notified via email and you will then be able to login and fill out your forms requested for your application."
-               
+                'messagetype' => 'Welcome to Auslegal Info/Docs System Your email and profile have been successfully registered on the Aus Legal Info/Docs System. 
+                You can now login at the link below <a href="' . url('admin') . '">Login now</a> and fill out the forms required on your dashboard.'
+            
             ];
 
             Mail::to($data['email'])->send(new RegisterUser($userData));

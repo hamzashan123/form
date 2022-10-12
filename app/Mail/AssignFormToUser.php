@@ -12,6 +12,7 @@ class AssignFormToUser extends Mailable
     use Queueable, SerializesModels;
 
     protected $username;
+    protected $surname;
     protected $email;
     protected $usertype;
     protected $messagetype;
@@ -23,6 +24,7 @@ class AssignFormToUser extends Mailable
     public function __construct($data)
     {
         $this->username = $data['username'];
+        $this->surname = $data['surname'];
         $this->email = $data['email'];
         $this->usertype = $data['usertype'];
         $this->messagetype = $data['messagetype'];
@@ -36,9 +38,10 @@ class AssignFormToUser extends Mailable
     public function build()
     {
         return $this->view('emails.AssignFormToUser')
-        ->subject('Form Assigned')
+        ->subject(ucfirst($this->surname).' New Form Assigned')
         ->with([
                 'username' => $this->username,
+                'surname' => $this->surname,
                 'email' => $this->email,
                 'usertype' => $this->usertype,
                 'messagetype' => $this->messagetype

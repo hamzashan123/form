@@ -1,9 +1,9 @@
-<h1>Hello there,Welcome Back</h1>
+<h1>Dear {{$surname}},</h1>
 <p>{!!$messagetype!!}</p>
 
-<p>Client Details: </p>
+<!-- <p>Client Details: </p>
 <p>Username :  {{$username}}</p>
-<p>Email : {{$email}}</p>
+<p>Email : {{$email}}</p> -->
 
 
 Thanks,<br>

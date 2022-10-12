@@ -23,11 +23,18 @@
                                                 @error('first_name')<span class="text-danger" role="alert"><strong>{{ $message }}</strong></span>@enderror
                                             </div>
                                         </div>
-                                        <div class="col-12">
+                                        <!-- <div class="col-12">
                                             <div class="form-group">
                                                 <label for="last_name" class="text-small text-uppercase">{{ __('Last Name') }}</label>
                                                 <input id="last_name" type="text" class="form-control form-control-lg" name="last_name" value="{{ old('last_name') }}" placeholder="Last Name">
                                                 @error('last_name')<span class="text-danger" role="alert"><strong>{{ $message }}</strong></span>@enderror
+                                            </div>
+                                        </div> -->
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="surname" class="text-small text-uppercase">{{ __('CREATE SURNAME') }}</label>
+                                                <input id="surname" type="text" class="form-control form-control-lg" name="surname" value="{{ old('surname') }}" placeholder="Create surname">
+                                                @error('surname')<span class="text-danger" role="alert"><strong>{{ $message }}</strong></span>@enderror
                                             </div>
                                         </div>
                                         <div class="col-12">

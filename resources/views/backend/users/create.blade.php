@@ -160,17 +160,34 @@
                         </div>
 
 
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="location">Location</label>
-                                <select name="location" id="location" class="form-control">
-                                    <option value="" disabled>-- Choose location --</option>
-                                    <option value="onShore">onShore</option>
-                                    <option value="offShore">offShore</option>
-                                </select>
-                                @error('status')<span class="text-danger">{{ $message }}</span>@enderror
+                       
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                                <div class="form-group">
+                                    <label for="location">Location</label>
+                                    <select name="location" id="location" class="form-control">
+                                        <option value="" disabled>-- Choose location --</option>
+                                        <option value="onShore">onShore</option>
+                                        <option value="offShore">offShore</option>
+                                    </select>
+                                    @error('status')<span class="text-danger">{{ $message }}</span>@enderror
+                                </div>
                             </div>
-                        </div>
+
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="account_status">Account Status</label>
+                                    <select name="account_status" id="account_status" class="form-control">
+                                        <option value="" disabled>-- Choose account status --</option>
+                                        <option value="Has paid 1st instalment ">Has paid 1st instalment </option>
+                                        <option value="Has paid 2nd instalment Ok to lodge ">Has paid 2nd instalment Ok to lodge </option>
+                                        <option value="Pays in 1 payment only">Pays in 1 payment only</option>
+                                         
+                                    </select>
+                                    @error('account_status')<span class="text-danger">{{ $message }}</span>@enderror
+                                </div>
+                            </div>      
                 </div>
                 <div class="row">
                     <div class="col-6">
@@ -179,6 +196,14 @@
                             <input id="visa_expiry" type="date" class="form-control form-control-lg"
                                    name="visa_expiry"
                                    >
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="admin_comments" class="text-small text-uppercase">{{ __('Admin Comments') }}</label>
+                            <textarea name="admin_comments" class="form-control"></textarea>
                         </div>
                     </div>
                 </div>

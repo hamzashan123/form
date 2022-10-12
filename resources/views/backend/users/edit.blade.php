@@ -31,7 +31,7 @@
                         <div class="form-group">
                             <label for="surname" class="">{{ __('Sur Name') }}</label>
                             <input id="surname" type="text" class="form-control" name="surname"
-                                   value="{{ old('surname') }}" placeholder="surname">
+                            value="{{ old('surname', $user->surname) }}" placeholder="surname">
                             @error('surname')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
@@ -142,7 +142,8 @@
                     </div>
                 </div>
 
-
+                </div>
+                <div class="row">
                 <div class="col-6">
                     <div class="form-group">
                         <label for="location">Location</label>
@@ -157,7 +158,25 @@
                         @error('status')<span class="text-danger">{{ $message }}</span>@enderror
                     </div>
                 </div>
-            </div>
+
+                <div class="col-6">
+                                <div class="form-group">
+                                    <label for="account_status">Account Status</label>
+                                    <select name="account_status" id="account_status" class="form-control">
+                                        <option value="" disabled>-- Choose account status --</option>
+                                        @if(!empty(isset($user->account_status)))
+                                        <option value="{{$user->account_status}}" selected>{{$user->account_status}}</option>
+                                        @endif
+                                        <option value="Has paid 1st instalment ">Has paid 1st instalment </option>
+                                        <option value="Has paid 2nd instalment Ok to lodge ">Has paid 2nd instalment Ok to lodge </option>
+                                        <option value="Pays in 1 payment only">Pays in 1 payment only</option>
+                                         
+                                    </select>
+                                    @error('account_status')<span class="text-danger">{{ $message }}</span>@enderror
+                                </div>
+                            </div> 
+                </div>
+            
             <div class="row">
                 <div class="col-6">
                     <div class="form-group">
@@ -179,7 +198,7 @@
             </div>
 
             <div class="row">
-                <div class="col-6">
+                <!-- <div class="col-6">
                     <label for="receive-email">Receive Email</label>
                     <select name="receive_email" id="receive-email" class="form-control">
                         <option value="">---</option>
@@ -187,7 +206,8 @@
                         <option value="0" {{ old('receive_email', $user->receive_email) == 0 ? 'selected' : null }}>No</option>
                     </select>
                     @error('receive_email')<span class="text-danger">{{ $message }}</span>@enderror
-                </div>
+                </div> -->
+
                 <div class="col-6">
                     <div class="form-group">
                         <label for="password" class="text-danger">Change password</label>
@@ -196,7 +216,14 @@
                     </div>
                 </div>
             </div>
-
+            <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="admin_comments" class="text-small text-uppercase">{{ __('Admin Comments') }}</label>
+                            <textarea name="admin_comments" class="form-control"> @if(!empty($user->admin_comments)) {{$user->admin_comments}} @endif</textarea>
+                        </div>
+                    </div>
+                </div>
             <div class="row">
                 <div class="col-12">
                     @if($user->user_image)

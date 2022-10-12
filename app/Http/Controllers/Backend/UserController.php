@@ -89,34 +89,39 @@ class UserController extends Controller
             'phone' => $request->phone,
             'password' => bcrypt($request->password),
             'status' => $request->status,
+            'account_status' => $request->account_status,
             'receive_email' => true,
             'user_image' => $userImage ?? NULL,
             'matter' => $request->matter ?? NULL,
             'location' => $request->location ?? NULL,
             'visa_expiry' => $request->visa_expiry ?? NULL,
-            'whatsapp' => $request->whatsapp ?? NULL
+            'whatsapp' => $request->whatsapp ?? NULL,
+            'admin_comments'=> $request->admin_comments ?? NULL,
         ]);
         
         $user->markEmailAsVerified();
         $user->assignRole('user');
         $adminData = [
+            'admin' => true,
             'username' => $request->username,
+            'surname' => $request->surname,
             'email' => $request->email,
             'usertype' => 'user',
-            'messagetype' => "Dear Admin, The User has been correctly activated and 
-            successfully add into the online system."
+            'messagetype' => " The User has been correctly activated and 
+             successfully add into the online system."
            
         ];
         
         Mail::to(env('ADMINEMAIL','riccardo@australialegal.it'))->send(new RegisterUser($adminData));
 
         $userData = [
+            'admin' => false,
             'username' => $request->username,
+            'surname' => $request->surname,
             'email' => $request->email,
             'usertype' => 'user',
-            'messagetype' => "Dear ".$request->username.", Your email has been 
-            successfully registered on the Aus Legal Online System by the Admin. You can login and fill out the forms 
-            required."
+            'messagetype' => 'Welcome to Auslegal Info/Docs System Your email and profile have been successfully registered on the Aus Legal Info/Docs System. 
+            You can now login at the link below <a href="' . url('admin') . '">Login now</a> and fill out the forms required on your dashboard.'
            
         ];
 
@@ -146,7 +151,7 @@ class UserController extends Controller
 
     public function update(UserRequest $request, User $user): RedirectResponse
     {
-        
+       
         $this->authorize('edit_user');
 
         if ($request->hasFile('user_image')) {
@@ -168,12 +173,14 @@ class UserController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'status' => $request->status,
+            'account_status' => $request->account_status,
             'receive_email' => $request->receive_email,
             'matter' => $request->matter,
             'location' => $request->location,
             'application_status' => $request->application_status,
             'user_image' => $userImage ?? $user->user_image,
-            'password' => $password ?? $user->password
+            'password' => $password ?? $user->password,
+            'admin_comments'=> $request->admin_comments ?? NULL,
         ]);
         
         if($request->status == true){

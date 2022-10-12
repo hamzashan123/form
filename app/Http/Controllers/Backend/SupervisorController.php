@@ -85,7 +85,9 @@ class SupervisorController extends Controller
         }
 
         $adminData = [
+            'admin' => true,
             'username' => $request->username,
+            'surname' => $request->surname,
             'email' => $request->email,
             'usertype' => 'consultant',
             'messagetype' => "Dear Admin, the Consultant has been correctly activated and 
@@ -95,10 +97,14 @@ class SupervisorController extends Controller
         Mail::to(env('ADMINEMAIL','riccardo@australialegal.it'))->send(new RegisterUser($adminData));
 
         $userData = [
+            'admin' => false,
             'username' => $request->username,
+            'surname' => $request->surname,
             'email' => $request->email,
             'usertype' => 'consultant',
-            'messagetype' => "Your email has been register to austrillian legal system by super admin you can login and perform other action."
+            'messagetype' => 'Welcome to Australia Legal Info/Docs System You are now officially registered as a consultant on the Aus Legal Info/Docs System.  
+            You can now login at the link below <a href="' . url('admin') . '">Login now</a> to see which clients have been assigned to you. 
+            '
            
         ];
 

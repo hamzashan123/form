@@ -13,7 +13,9 @@ class NewFormSubmitted extends Mailable
 
     protected $messagetype;
     protected $username;
+    protected $surname;
     protected $email;
+    protected $admin;
     
     
     /**
@@ -25,7 +27,9 @@ class NewFormSubmitted extends Mailable
     {
         $this->messagetype = $data['messagetype'];
         $this->username = $data['username'];
+        $this->surname = $data['surname'];
         $this->email = $data['email'];
+        $this->admin = $data['admin'];
     }
 
     /**
@@ -40,7 +44,9 @@ class NewFormSubmitted extends Mailable
             ->with([
                     'messagetype' => $this->messagetype,
                     'username' => $this->username,
+                    'surname' => $this->surname,
                     'email' => $this->email,
+                    'admin' => $this->admin,
                 ]);
     }
 }

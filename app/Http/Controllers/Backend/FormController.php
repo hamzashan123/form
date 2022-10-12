@@ -45,9 +45,20 @@ class FormController extends Controller
                 
                 $userData = [
                     'username' => $userdetail->username,
+                    'surname' => $userdetail->surname,
                     'email' => $userdetail->email,
                     'usertype' => 'consultant',
-                    'messagetype' => "You have assign a new form. Please check the system and fill out the form."
+                    'messagetype' => 'Australia Legal has assigned you a new form for your application. 
+                        <h4>What you need to do </h4>
+                        Please make sure to login to the Auslegal Info/Docs system page by following this link:
+                        <a href="' . url('admin') . '">Login now</a>
+                        <h4> What to do and what you can do</h4> 
+                        <p>Once you are logged in, on the left side column you will see the name of the form that has been assigned to you. 
+                        Please make sure to click on it and start filling it out. 
+                        You can SAVE your application and resume it at a second stagge. 
+                        Please note that saving your application does not mean you have submitted the online form.
+                        Once your application is submitted you will receive another email with further instructions</p>.
+                    '
                    
                 ];
     

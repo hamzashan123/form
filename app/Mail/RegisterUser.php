@@ -11,7 +11,9 @@ class RegisterUser extends Mailable
 {
     use Queueable, SerializesModels;
 
+    protected $admin;
     protected $username;
+    protected $surname;
     protected $email;
     protected $usertype;
     protected $messagetype;
@@ -23,7 +25,9 @@ class RegisterUser extends Mailable
     public function __construct($data)
     {
         //dd($data);
+        $this->admin = $data['admin'];
         $this->username = $data['username'];
+        $this->surname = $data['surname'];
         $this->email = $data['email'];
         $this->usertype = $data['usertype'];
         $this->messagetype = $data['messagetype'];
@@ -37,8 +41,9 @@ class RegisterUser extends Mailable
     public function build()
     {
         return $this->view('emails.registerUser')
-        ->subject('Registration Successfull!')
+        ->subject(ucfirst($this->surname).' - Registration successful')
             ->with([
+                    'admin' => $this->admin,
                     'username' => $this->username,
                     'email' => $this->email,
                     'usertype' => $this->usertype,

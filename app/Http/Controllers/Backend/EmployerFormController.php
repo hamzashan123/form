@@ -89,23 +89,40 @@ class EmployerFormController extends Controller
 
 
             $this->saveDocuments($formid, $request);
-            try {
+            
                 $formdata = DB::table('employerform')->where('user_id', Auth::user()->id)->first();
 
-                $data = [
-                    'username' => Auth::user()->username,
-                    'email' => Auth::user()->email,
-                    'messagetype' => 'A new application has been recieved!'
-                ];
-
                 if ($request->has('formsubmit') && $formdata->is_email_sent == false) {
-                    Mail::to('hamzashan123@gmail.com')->send(new NewFormSubmitted($data));
+                    //dd($request);
                     DB::table('employerform')->where('user_id', Auth::user()->id)->update(['is_email_sent' => true]);
-                    //Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
+                    $admindata = [
+                        'admin' => true,
+                        'surname' => Auth::user()->surname,
+                        'username' => Auth::user()->username,
+                        'email' => Auth::user()->email,
+                        'messagetype' => 'A new application has been recieved!'
+                    ];
+                    Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($admindata));
+    
+                    $userdata = [
+                        'admin' => false,
+                        'surname' => Auth::user()->surname,
+                        'username' => Auth::user()->username,
+                        'email' => Auth::user()->email,
+                        'messagetype' => ' 
+                            Your application has been correctly submitted and received on the Auslegal Info/Docs system.
+                            What will happen next
+                            Australia Legal Admin Team will review the form and then assign it to an internal consultant.
+                            Once the consultant is assigned, he/she will check the information and documents you have provided and will either:
+                            ⦁	Inform you that the application will be lodged as no other information is needed
+                            Or 
+                            2) 
+                            You will receive an email from the consultant with a request of more information and/or specific comments about the information and documents you will have provided on the online form.
+                            '
+                    ];
+                    Mail::to(Auth::user()->email)->send(new NewFormSubmitted($userdata));
                 }
-            } catch (exception $e) {
-                return redirect()->back()->with('error', 'Email Not Sent!');
-            }
+            
         } else {
             $existingForm =  DB::table('employerform')->where('user_id', Auth::user()->id)->first();
 
@@ -128,15 +145,38 @@ class EmployerFormController extends Controller
 
             $this->saveDocuments($existingForm->id, $request);
             //check if is_email_sent is false
+            
             if ($request->has('formsubmit') && !empty($existingForm) && $existingForm->is_email_sent == false) {
-                $data = [
+                //dd($request);
+                DB::table('employerform')->where('user_id', Auth::user()->id)->update(['is_email_sent' => true]);
+                $admindata = [
+                    'admin' => true,
+                    'surname' => Auth::user()->surname,
                     'username' => Auth::user()->username,
                     'email' => Auth::user()->email,
                     'messagetype' => 'A new application has been recieved!'
                 ];
-                //Mail::to('hamzashan123@gmail.com')->send(new NewFormSubmitted($data));
-                DB::table('employerform')->where('user_id', Auth::user()->id)->update(['is_email_sent' => true]);
-                Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($data));
+                Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($admindata));
+
+                $userdata = [
+                    'admin' => false,
+                    'surname' => Auth::user()->surname,
+                    'username' => Auth::user()->username,
+                    'email' => Auth::user()->email,
+                    'messagetype' => ' 
+                        Your application has been correctly submitted and received on the Auslegal Info/Docs system.
+                        What will happen next
+                        Australia Legal Admin Team will review the form and then assign it to an internal consultant.
+                        Once the consultant is assigned, he/she will check the information and documents you have provided and will either:
+                        ⦁	Inform you that the application will be lodged as no other information is needed
+                        Or 
+                        2) 
+                        You will receive an email from the consultant with a request of more information and/or specific comments about the information and documents you will have provided on the online form.
+                        '
+                ];
+                Mail::to(Auth::user()->email)->send(new NewFormSubmitted($userdata));
+                
+                
             }
         }
 
