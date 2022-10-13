@@ -7,7 +7,7 @@
 <p>Email : {!!$email!!}</p>
 
 @elseif($admin == false)
-
+<h4>Dear , {!!$surname !!}</h4>
 <p>{!!$messagetype!!}</p>
 
 @endif 
