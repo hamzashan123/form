@@ -66,7 +66,7 @@
                         <div class="form-group">
                             <label for="whatsapp" class="text-small text-uppercase">{{ __('Whatsapp') }}</label>
                             <input id="whatsapp" type="number" class="form-control form-control-lg" name="whatsapp"
-                            value="{{ old('number') }}"  placeholder="Enter your whatsapp Phone">
+                            value="{{ old('whatsapp') }}"  placeholder="Enter your whatsapp Phone">
                             @error('whatsapp')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                                 <option value="1" {{ old('status') == "1" ? 'selected' : null }}>Active</option>
                                 <option value="0" {{ old('status') == "0" ? 'selected' : null }}>Inactive</option>
                             </select>
-                            @error('status')<span class="text-danger">{{ $message }}</span>@enderror
+                            
                         </div>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
                             <option value="VETASSESS TRA ANGLISS">VETASSESS TRA ANGLISS  </option>
                             <option value="Other">other</option>
                                 </select>
-                                @error('status')<span class="text-danger">{{ $message }}</span>@enderror
+                                
                             </div>
                         </div>
 
@@ -155,7 +155,7 @@
                                     <option value="AAT" >AATe </option>
                                     <option value="Other">other</option>
                                 </select>
-                                @error('application_status')<span class="text-danger">{{ $message }}</span>@enderror
+                                
                             </div>
                         </div>
 
@@ -171,7 +171,7 @@
                                         <option value="onShore">onShore</option>
                                         <option value="offShore">offShore</option>
                                     </select>
-                                    @error('status')<span class="text-danger">{{ $message }}</span>@enderror
+                                    
                                 </div>
                             </div>
 
@@ -203,7 +203,7 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label for="admin_comments" class="text-small text-uppercase">{{ __('Admin Comments') }}</label>
-                            <textarea name="admin_comments" class="form-control"></textarea>
+                            <textarea name="admin_comments" class="form-control">@if(old('admin_comments')) {{old('admin_comments')}} @endif</textarea>
                         </div>
                     </div>
                 </div>
