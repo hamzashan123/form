@@ -7,11 +7,8 @@
 <p>Email : {!!$email!!}</p>
 
 @elseif($admin == false)
-<p>{!!$messagetype!!}</p>
 
-<p>Client Details :</p>
-<p>Username : {!!$username!!}</p>
-<p>Email : {!!$email!!}</p>
+<p>{!!$messagetype!!}</p>
 
 @endif 
 
