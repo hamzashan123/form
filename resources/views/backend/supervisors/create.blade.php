@@ -51,7 +51,7 @@
                         <div class="form-group">
                             <label for="email" class="text-small text-uppercase">{{ __('E-Mail Address') }}</label>
                             <input id="email" type="email" class="form-control form-control-lg" name="email"
-                                   placeholder="Enter your Email">
+                            value="{{ old('email') }}" placeholder="Enter your Email">
                             @error('email')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                         <div class="form-group">
                             <label for="phone" class="text-small text-uppercase">{{ __('Phone') }}</label>
                             <input id="phone" type="text" class="form-control form-control-lg" name="phone"
-                                   placeholder="Enter your Phone Number">
+                            value="{{ old('phone') }}" placeholder="Enter your Phone Number">
                             @error('phone')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
