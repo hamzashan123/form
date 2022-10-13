@@ -63,7 +63,13 @@
     <!-- summernote -->
     <script src="{{ asset('backend/vendor/summernote/summernote-bs4.min.js') }}"></script>
     <script src="{{asset('countrycode.js')}}"></script>
-    
+    <script>
+        jQuery(document).ready(function(){
+            jQuery('#logoutsession').on('click', function(){
+                localStorage.clear();
+            });
+        });
+    </script>
 
     @yield('scripts')
 </body>
