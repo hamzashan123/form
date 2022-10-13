@@ -18,22 +18,6 @@
     <div class="sidebar-heading">
         Interface
     </div>
-    @if(Auth::user()->hasRole('admin'))
-    <li class="nav-item active ">
-                <a class="nav-link" href="{{route('admin.forms.index')}}">
-                <i class="fas fa-check fa-2x text-gray-300"></i>
-                    <span>Select Client/Assign Form </span></a>
-    </li>
-    @endif
-    
-    @if(Auth::user()->hasRole('admin'))
-    <li class="nav-item active ">
-                <a class="nav-link" href="{{route('admin.consultant.index')}}">
-                <i class="fas fa-user fa-2x text-gray-300"></i>
-                    <span>Assign client to Consultant</span></a>
-    </li>
-    @endif
-    
     <!-- Nav Item - Pages Collapse Menu -->
     @if(Auth::user()->hasRole('admin'))
     <li class="nav-item active ">
@@ -56,7 +40,20 @@
                     <span>Total Consultants</span></a>
     </li>
     @endif
-    
+    @if(Auth::user()->hasRole('admin'))
+    <li class="nav-item active ">
+                <a class="nav-link" href="{{route('admin.forms.index')}}">
+                <i class="fas fa-check fa-2x text-gray-300"></i>
+                    <span>Select Client/Assign Form </span></a>
+    </li>
+    @endif
+    @if(Auth::user()->hasRole('admin'))
+    <li class="nav-item active ">
+                <a class="nav-link" href="{{route('admin.consultant.index')}}">
+                <i class="fas fa-user fa-2x text-gray-300"></i>
+                    <span>Assign client to Consultant</span></a>
+    </li>
+    @endif
    
     @if(Auth::user()->hasRole('admin'))
     <!-- <li class="nav-item active ">
