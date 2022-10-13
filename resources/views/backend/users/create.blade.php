@@ -50,7 +50,7 @@
                         <div class="form-group">
                             <label for="email" class="text-small text-uppercase">{{ __('E-Mail') }}</label>
                             <input id="email" type="email" class="form-control form-control-lg" name="email"
-                                   placeholder="Enter your Email">
+                            value="{{ old('email') }}" placeholder="Enter your Email">
                             @error('email')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                         <div class="form-group">
                             <label for="phone" class="text-small text-uppercase">{{ __('Phone') }}</label>
                             <input id="phone" type="text" class="form-control form-control-lg" name="phone"
-                                   placeholder="Enter your Phone Number">
+                            value="{{ old('phone') }}" placeholder="Enter your Phone Number">
                             @error('phone')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                         <div class="form-group">
                             <label for="whatsapp" class="text-small text-uppercase">{{ __('Whatsapp') }}</label>
                             <input id="whatsapp" type="number" class="form-control form-control-lg" name="whatsapp"
-                                   placeholder="Enter your whatsapp Phone">
+                            value="{{ old('number') }}"  placeholder="Enter your whatsapp Phone">
                             @error('whatsapp')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
@@ -194,7 +194,7 @@
                         <div class="form-group">
                             <label for="visa_expiry" class="text-small text-uppercase">{{ __('Visa Expiry Date') }}</label>
                             <input id="visa_expiry" type="date" class="form-control form-control-lg"
-                                   name="visa_expiry"
+                            value="{{ old('visa_expiry') }}" name="visa_expiry"
                                    >
                         </div>
                     </div>
