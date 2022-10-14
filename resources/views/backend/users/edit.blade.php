@@ -64,53 +64,49 @@
                             <option value="{{$user->matter}}" selected>{{$user->matter}}</option>
                             @endif
 
-                            <option value="Skilled points visa">Skilled points visa</option>
-                            <option value="Sponsorship visa">Sponsorship visa</option>
-                            <option value="400 visa">400 visa</option>
-                            <option value="Skills Assessment">Skills Assessment </option>
-                            <option value="Student visa">Student visa</option>
-                            <option value="408 COVID visa">408 COVID visa</option>
-                            <option value="Aus citizenship">Aus citizenship</option>
-                            <option value="Business visa">Business visa</option>
-                            <option value="Sponsorship">186 Nom DE
-                            </option>
-                            <option value="186 Visa DE">186 Visa DE
-                            </option>
-                            <option value="186 Nom TRT">186 Nom TRT
-                            </option>
-                            <option value="186 Visa TRT">186 Visa TRT
-                            </option>
-                            <option value="188 Visa">188 Visa
-                            </option>
-                            <option value="189 Visa ">189 Visa
-                            </option>
-                            <option value="190 Visa">190 Visa
-                            </option>
-                            <option value="400 Visa">400 Visa
-                            </option>
-                            <option value="482 SBS">482 SBS
-                            </option>
-                            <option value="482 NOM">482 NOM
-                            </option>
-                            <option value="482 VISA">482 VISA
-                            </option>
-                            <option value="491 Visa">491 Visa
-                            </option>
-                            <option value="494 Visa ">494 Visa
-                            </option>
-                            <option value="500 Visa">500 Visa</option>
-                            <option value="600 Visa">600 Visa</option>
-                            <option value="651 Visa">651 Visa </option>
-                            <option value="820/801 Partner visa"> 820/801 Partner visa </option>
-                            <option value="309/100 Partner visa">309/100 Partner visa</option>
-                            <option value="Parent Visa">Parent Visa</option>
-                            <option value="Internal study">Internal study </option>
-                            <option value="AITISL">AITISL  </option>
-                            <option value="ACS ">ACS   </option>
-                            <option value="EA">EA  </option>
-                            <option value="TRA">TRA  </option>
-                            <option value="VETASSESS">VETASSESS  </option>
-                            <option value="VETASSESS TRA ANGLISS">VETASSESS TRA ANGLISS  </option>
+                            <option value="" disabled>-- Choose Visa Type --</option>
+                                    
+                                    <option value="Aus citizenship">Aus citizenship</option>
+                                    <option value="Sponsorship">186 Nom DE
+                                    </option>
+                                    <option value="186 Visa DE">186 Visa DE
+                                    </option>
+                                    <option value="186 Nom TRT">186 Nom TRT
+                                    </option>
+                                    <option value="186 Visa TRT">186 Visa TRT
+                                    </option>
+                                    <option value="188 Visa">188 Visa
+                                    </option>
+                                    <option value="189 Visa ">189 Visa
+                                    </option>
+                                    <option value="190 Visa">190 Visa
+                                    </option>
+                                    <option value="400 Visa">400 Visa
+                                    </option>
+                                    <option value="482 SBS">482 SBS
+                                    </option>
+                                    <option value="482 NOM">482 NOM
+                                    </option>
+                                    <option value="482 VISA">482 VISA
+                                    </option>
+                                    <option value="491 Visa">491 Visa
+                                    </option>
+                                    <option value="494 Visa ">494 Visa
+                                    </option>
+                                    <option value="500 Visa">500 Visa</option>
+                                    <option value="600 Visa">600 Visa</option>
+                                    <option value="651 Visa">651 Visa </option>
+                                    <option value="820/801 Partner visa"> 820/801 Partner visa </option>
+                                    <option value="309/100 Partner visa">309/100 Partner visa</option>
+                                    <option value="Parent Visa">Parent Visa</option>
+                                    <option value="Internal study">Internal study </option>
+                                    <option value="AITISL">AITISL  </option>
+                                    <option value="ACS ">ACS   </option>
+                                    <option value="EA">EA  </option>
+                                    <option value="TRA">TRA  </option>
+                                    <option value="VETASSESS">VETASSESS  </option>
+                                    <option value="VETASSESS TRA ANGLISS">VETASSESS TRA ANGLISS  </option>
+                                    <option value="Other">other</option>
                             
 
 

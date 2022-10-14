@@ -88,14 +88,8 @@
                                 <label for="status">Matter</label>
                                 <select name="matter" id="matter" class="form-control">
                                     <option value="" disabled>-- Choose Visa Type --</option>
-                                    <option value="Skilled points visa">Skilled points visa</option>
-                            <option value="Sponsorship visa">Sponsorship visa</option>
-                            <option value="400 visa">400 visa</option>
-                            <option value="Skills Assessment">Skills Assessment </option>
-                            <option value="Student visa">Student visa</option>
-                            <option value="408 COVID visa">408 COVID visa</option>
+                                    
                             <option value="Aus citizenship">Aus citizenship</option>
-                            <option value="Business visa">Business visa</option>
                             <option value="Sponsorship">186 Nom DE
                             </option>
                             <option value="186 Visa DE">186 Visa DE
