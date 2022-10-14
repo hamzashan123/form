@@ -68,6 +68,13 @@
 <script>
     //alert('adsd');
     jQuery(document).ready(function() {
+
+        var counter = 0;
+        jQuery('#form360 tr td:nth-child(1)').each(function (){
+            counter++;
+            jQuery(this).prepend(' ( '+counter+' ) ');
+        })
+        
         if (jQuery('body').hasClass('admin') || jQuery('body').hasClass('consultant')) {
             jQuery('#form360 input').prop('disabled', true);
             jQuery('#form360 input').css('opacity', 0.5);
