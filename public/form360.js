@@ -340,8 +340,8 @@ jQuery(document).ready(function () {
 
             setProgressBar(++current);
             //  scrollToTop()
-            window.scrollTo({ top: 0, behavior: "smooth" });
-
+           // window.scrollTo({ top: 0, behavior: "smooth" });
+           jQuery('html, body').animate({scrollTop:0}, 'slow');
             if (next_fs.attr("id") == "fieldsetfifteen") {
                 $("#form360").submit();
             }
@@ -379,7 +379,8 @@ jQuery(document).ready(function () {
         );
         setProgressBar(--current);
         //  scrollToTop()
-        window.scrollTo({ top: 0, behavior: "smooth" });
+       // window.scrollTo({ top: 0, behavior: "smooth" });
+       jQuery('html, body').animate({scrollTop:0}, 'slow');
     });
 
     function setProgressBar(curStep) {
