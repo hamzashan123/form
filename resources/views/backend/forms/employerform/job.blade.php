@@ -107,7 +107,7 @@
     <!-- <input type="button" name="next" class="next action-button" value="Submit" /> -->
     
     @if(!empty($data->is_email_sent) != true)
-    <button name="formsubmit" class="next action-button" > Submit</button>
+    <button name="formsubmit" class="next action-button submitemployerform" > Submit</button>
     @else
     <input type="button" name="save" class="save action-button" value="Save" />
     @endif

@@ -173,6 +173,7 @@ class Form360Controller extends Controller
 
                     $admindata = [
                         'admin' => true,
+                        'consultant' => false,
                         'surname' => Auth::user()->surname,
                         'username' => Auth::user()->username,
                         'email' => Auth::user()->email,
@@ -182,6 +183,7 @@ class Form360Controller extends Controller
     
                     $userdata = [
                         'admin' => false,
+                        'consultant' => false,
                         'surname' => Auth::user()->surname,
                         'username' => Auth::user()->username,
                         'email' => Auth::user()->email,
@@ -197,6 +199,23 @@ class Form360Controller extends Controller
                             '
                     ];
                     Mail::to(Auth::user()->email)->send(new NewFormSubmitted($userdata));
+
+                        // if this user has any consultant then email also be sent to consultant
+                        $consultants = ConsultantUser::where(['client_id'  => Auth::user()->id])->pluck('consultant_id');
+                        if(count($consultants) > 0){
+                            foreach($consultants as $consultant){
+                                $consultantUser = DB::table('users')->where('id',$consultant)->first();
+                                $consultantdata = [
+                                    'admin' => false,
+                                    'consultant' => true,
+                                    'surname' => $consultantUser->surname,
+                                    'username' => $consultantUser->username,
+                                    'email' => $consultantUser->email,
+                                    'messagetype' => 'A new application is submitted by your assigned user please check and make correction if you find any problem in the submitted application.'
+                                ];
+                                Mail::to($consultantUser->email)->send(new NewFormSubmitted($consultantdata));
+                            }
+                        }
                 }
            
                 
@@ -269,6 +288,7 @@ class Form360Controller extends Controller
                 DB::table('form360')->where('user_id', Auth::user()->id)->update(['is_email_sent' => true]);
                     $admindata = [
                         'admin' => true,
+                        'consultant' => false,
                         'surname' => Auth::user()->surname,
                         'username' => Auth::user()->username,
                         'email' => Auth::user()->email,
@@ -278,6 +298,7 @@ class Form360Controller extends Controller
     
                     $userdata = [
                         'admin' => false,
+                        'consultant' => false,
                         'surname' => Auth::user()->surname,
                         'username' => Auth::user()->username,
                         'email' => Auth::user()->email,
@@ -293,6 +314,23 @@ class Form360Controller extends Controller
                             '
                     ];
                     Mail::to(Auth::user()->email)->send(new NewFormSubmitted($userdata));
+
+                      // if this user has any consultant then email also be sent to consultant
+                      $consultants = ConsultantUser::where(['client_id'  => Auth::user()->id])->pluck('consultant_id');
+                      if(count($consultants) > 0){
+                          foreach($consultants as $consultant){
+                              $consultantUser = DB::table('users')->where('id',$consultant)->first();
+                              $consultantdata = [
+                                  'admin' => false,
+                                  'consultant' => true,
+                                  'surname' => $consultantUser->surname,
+                                  'username' => $consultantUser->username,
+                                  'email' => $consultantUser->email,
+                                  'messagetype' => 'A new application is submitted by your assigned user please check and make correction if you find any problem in the submitted application.'
+                              ];
+                              Mail::to($consultantUser->email)->send(new NewFormSubmitted($consultantdata));
+                          }
+                      }
             }
            
         }

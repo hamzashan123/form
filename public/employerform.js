@@ -142,6 +142,10 @@ jQuery(document).ready(function () {
 
     setProgressBar(current);
 
+    $(".submitemployerform").on("click", function(){
+         localStorage.removeItem("fieldset");
+     });
+
     jQuery("#employersubmit").click(function () {
         localStorage.removeItem("fieldset");
         localStorage.setItem(

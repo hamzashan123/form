@@ -397,6 +397,10 @@ jQuery(document).ready(function () {
 
     setProgressBar(current);
 
+    $(".submitform360").on("click", function(){
+         localStorage.removeItem("form360fieldset");
+     });
+
     jQuery("#form360submit").click(function () {
         localStorage.removeItem("form360fieldset");
         localStorage.setItem(

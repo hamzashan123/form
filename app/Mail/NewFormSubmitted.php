@@ -16,6 +16,7 @@ class NewFormSubmitted extends Mailable
     protected $surname;
     protected $email;
     protected $admin;
+    protected $consultant;
     
     
     /**
@@ -30,6 +31,7 @@ class NewFormSubmitted extends Mailable
         $this->surname = $data['surname'];
         $this->email = $data['email'];
         $this->admin = $data['admin'];
+        $this->consultant = $data['consultant'];
     }
 
     /**
@@ -47,6 +49,8 @@ class NewFormSubmitted extends Mailable
                     'surname' => $this->surname,
                     'email' => $this->email,
                     'admin' => $this->admin,
+                    'consultant' => $this->consultant,
+                    
                 ]);
     }
 }

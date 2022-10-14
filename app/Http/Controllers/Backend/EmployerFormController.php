@@ -10,8 +10,7 @@ use App\Mail\NewFormSubmitted;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Session;
-
+use App\Models\ConsultantUser;
 
 class EmployerFormController extends Controller
 {
@@ -93,10 +92,11 @@ class EmployerFormController extends Controller
                 $formdata = DB::table('employerform')->where('user_id', Auth::user()->id)->first();
 
                 if ($request->has('formsubmit') && $formdata->is_email_sent == false) {
-                    //dd($request);
+                    
                     DB::table('employerform')->where('user_id', Auth::user()->id)->update(['is_email_sent' => true]);
                     $admindata = [
                         'admin' => true,
+                        'consultant' => false,
                         'surname' => Auth::user()->surname,
                         'username' => Auth::user()->username,
                         'email' => Auth::user()->email,
@@ -106,6 +106,7 @@ class EmployerFormController extends Controller
     
                     $userdata = [
                         'admin' => false,
+                        'consultant' => false,
                         'surname' => Auth::user()->surname,
                         'username' => Auth::user()->username,
                         'email' => Auth::user()->email,
@@ -121,6 +122,25 @@ class EmployerFormController extends Controller
                             '
                     ];
                     Mail::to(Auth::user()->email)->send(new NewFormSubmitted($userdata));
+
+                     // if this user has any consultant then email also be sent to consultant
+                    $consultants = ConsultantUser::where(['client_id'  => Auth::user()->id])->pluck('consultant_id');
+                    if(count($consultants) > 0){
+                        foreach($consultants as $consultant){
+                            $consultantUser = DB::table('users')->where('id',$consultant)->first();
+                            $consultantdata = [
+                                'admin' => false,
+                                'consultant' => true,
+                                'surname' => $consultantUser->surname,
+                                'username' => $consultantUser->username,
+                                'email' => $consultantUser->email,
+                                'messagetype' => 'A new application is submitted by your assigned user please check and make correction if you find any problem in the submitted application.'
+                            ];
+                            Mail::to($consultantUser->email)->send(new NewFormSubmitted($consultantdata));
+                        }
+                    }
+                   
+                   
                 }
             
         } else {
@@ -151,6 +171,7 @@ class EmployerFormController extends Controller
                 DB::table('employerform')->where('user_id', Auth::user()->id)->update(['is_email_sent' => true]);
                 $admindata = [
                     'admin' => true,
+                    'consultant' => false,
                     'surname' => Auth::user()->surname,
                     'username' => Auth::user()->username,
                     'email' => Auth::user()->email,
@@ -160,6 +181,7 @@ class EmployerFormController extends Controller
 
                 $userdata = [
                     'admin' => false,
+                    'consultant' => false,
                     'surname' => Auth::user()->surname,
                     'username' => Auth::user()->username,
                     'email' => Auth::user()->email,
@@ -176,6 +198,22 @@ class EmployerFormController extends Controller
                 ];
                 Mail::to(Auth::user()->email)->send(new NewFormSubmitted($userdata));
                 
+                 // if this user has any consultant then email also be sent to consultant
+                 $consultants = ConsultantUser::where(['client_id'  => Auth::user()->id])->pluck('consultant_id');
+                 if(count($consultants) > 0){
+                     foreach($consultants as $consultant){
+                         $consultantUser = DB::table('users')->where('id',$consultant)->first();
+                         $consultantdata = [
+                             'admin' => false,
+                             'consultant' => true,
+                             'surname' => $consultantUser->surname,
+                             'username' => $consultantUser->username,
+                             'email' => $consultantUser->email,
+                             'messagetype' => 'A new application is submitted by your assigned user please check and make correction if you find any problem in the submitted application.'
+                         ];
+                         Mail::to($consultantUser->email)->send(new NewFormSubmitted($consultantdata));
+                     }
+                 }
                 
             }
         }

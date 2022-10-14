@@ -6,7 +6,7 @@
 <p>Username : {!!$username!!}</p>
 <p>Email : {!!$email!!}</p>
 
-@elseif($admin == false)
+@elseif($admin == false )
 <h4>Dear , {!! ucfirst($surname) !!}</h4>
 <p>{!!$messagetype!!}</p>
 
