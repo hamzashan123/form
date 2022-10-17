@@ -78,7 +78,7 @@ class Form360Controller extends Controller
         }
   
         
-
+        // dd($data);
         return view('backend.forms.form360.index',compact('data','docdataForm360'));
                
         
@@ -228,9 +228,9 @@ class Form360Controller extends Controller
                 $fieldsets['matrixdata']
             );
 
-            DB::table('form360_personal')->insert([
+            DB::table('form360_personal')->where('form360_id',$existingForm->id)->update(
                 $fieldsets['personaldata']
-            ]);
+            );
 
             DB::table('form360_first_education')->where('form360_id',$existingForm->id)->update(
                 $fieldsets['firsteducationdata']
