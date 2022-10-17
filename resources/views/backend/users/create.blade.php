@@ -162,8 +162,8 @@
                                     <label for="location">Location</label>
                                     <select name="location" id="location" class="form-control">
                                         <option value="" disabled>-- Choose location --</option>
-                                        <option value="onShore">onShore</option>
-                                        <option value="offShore">offShore</option>
+                                        <option value="Onshore">Onshore</option>
+                                        <option value="Offshore">Offshore</option>
                                     </select>
                                     
                                 </div>

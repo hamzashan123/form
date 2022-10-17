@@ -164,6 +164,19 @@ class EmployerFormController extends Controller
             );
 
             $this->saveDocuments($existingForm->id, $request);
+                //send email after everytime client saves the form
+                $saveEmail = [
+                    'admin' => false,
+                    'consultant' => false,
+                    'surname' => Auth::user()->surname,
+                    'username' => Auth::user()->username,
+                    'email' => Auth::user()->email,
+                    'messagetype' => ' 
+                    Your application has been saved.You can login again and resume your application when needed.
+                    Please note that until your form is not submitted for the first time, the application will not show as submitted. 
+                    To submit your form you must get to the last page of the form and click on submit.'
+                ];
+                Mail::to(Auth::user()->email)->send(new NewFormSubmitted($saveEmail));
             //check if is_email_sent is false
             
             if ($request->has('formsubmit') && !empty($existingForm) && $existingForm->is_email_sent == false) {

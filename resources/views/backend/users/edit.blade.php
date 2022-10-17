@@ -148,8 +148,8 @@
                             @if(!empty(isset($user->location)))
                             <option value="{{$user->location}}" selected>{{$user->location}}</option>
                             @endif
-                            <option value="onShore">onShore</option>
-                            <option value="offShore">offShore</option>
+                            <option value="Onshore">Onshore</option>
+                            <option value="Offshore">Offshore</option>
                         </select>
                         @error('status')<span class="text-danger">{{ $message }}</span>@enderror
                     </div>
