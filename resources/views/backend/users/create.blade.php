@@ -22,7 +22,7 @@
                     <div class="col-4">
                         <div class="form-group">
                             <label for="first_name" class="text-small text-uppercase">{{ __('Name') }}</label>
-                            <input id="first_name" type="text" class="form-control form-control-lg" name="first_name"
+                            <input id="first_name" type="text" class="form-control form-control" name="first_name"
                                    value="{{ old('first_name') }}" placeholder="First Name">
                             @error('first_name')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
@@ -30,7 +30,7 @@
                     <div class="col-4">
                         <div class="form-group">
                             <label for="surname" class="text-small text-uppercase">{{ __('Sur Name') }}</label>
-                            <input id="surname" type="text" class="form-control form-control-lg" name="surname"
+                            <input id="surname" type="text" class="form-control form-control" name="surname"
                                    value="{{ old('surname') }}" placeholder="surname">
                             @error('surname')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
@@ -38,7 +38,7 @@
                     <div class="col-4">
                         <div class="form-group">
                             <label for="username" class="text-small text-uppercase">{{ __('User Name') }}</label>
-                            <input id="username" type="text" class="form-control form-control-lg" name="username"
+                            <input id="username" type="text" class="form-control form-control" name="username"
                                    value="{{ old('username') }}" placeholder="Username">
                             @error('username')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
@@ -49,7 +49,7 @@
                     <div class="col-6">
                         <div class="form-group">
                             <label for="email" class="text-small text-uppercase">{{ __('E-Mail') }}</label>
-                            <input id="email" type="email" class="form-control form-control-lg" name="email"
+                            <input id="email" type="email" class="form-control form-control" name="email"
                             value="{{ old('email') }}" placeholder="Enter your Email">
                             @error('email')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
@@ -57,7 +57,7 @@
                     <div class="col-6">
                         <div class="form-group">
                             <label for="phone" class="text-small text-uppercase">{{ __('Phone') }}</label>
-                            <input id="phone" type="text" class="form-control form-control-lg" name="phone"
+                            <input id="phone" type="text" class="form-control form-control" name="phone"
                             value="{{ old('phone') }}" placeholder="Enter your Phone Number">
                             @error('phone')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
@@ -65,7 +65,7 @@
                     <div class="col-6">
                         <div class="form-group">
                             <label for="whatsapp" class="text-small text-uppercase">{{ __('Whatsapp') }}</label>
-                            <input id="whatsapp" type="number" class="form-control form-control-lg" name="whatsapp"
+                            <input id="whatsapp" type="number" class="form-control form-control" name="whatsapp"
                             value="{{ old('whatsapp') }}"  placeholder="Enter your whatsapp Phone">
                             @error('whatsapp')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
@@ -157,7 +157,7 @@
                        
                 </div>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-4">
                                 <div class="form-group">
                                     <label for="location">Location</label>
                                     <select name="location" id="location" class="form-control">
@@ -169,7 +169,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-6">
+                            <div class="col-4">
                                 <div class="form-group">
                                     <label for="account_status">Account Status</label>
                                     <select name="account_status" id="account_status" class="form-control">
@@ -181,17 +181,51 @@
                                     </select>
                                     @error('account_status')<span class="text-danger">{{ $message }}</span>@enderror
                                 </div>
+                            </div>   
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label for="payment_status">Payment Status</label>
+                                    <select name="payment_status" id="payment_status" class="form-control">
+                                        <option value="" disabled>-- Choose payment status --</option>
+                                        <option value="Pending">Pending</option>
+                                        <option value="Paid">Paid</option>
+                                         
+                                    </select>
+                                    @error('payment_status')<span class="text-danger">{{ $message }}</span>@enderror
+                                </div>
                             </div>      
                 </div>
                 <div class="row">
-                    <div class="col-6">
+                <div class="col-4">
+                                <div class="form-group">
+                                    <label for="client_paid">Client has Paid </label>
+                                    <select name="client_paid" id="client_paid" class="form-control">
+                                        <option value="" disabled>-- Client Paid --</option>
+                                        <option value="$">$</option>
+                                        <option value="€"> €</option>
+                                         
+                                    </select>
+                                    @error('payment_status')<span class="text-danger">{{ $message }}</span>@enderror
+                                </div>
+                            </div>  
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label for="client_paid">Client Amount </label>
+                                    <input id="client_amount" type="text" class="form-control form-control"
+                            value="{{ old('client_amount') }}" name="client_amount"
+                                   >
+                                    @error('payment_status')<span class="text-danger">{{ $message }}</span>@enderror
+                                </div>
+                            </div>  
+                    <div class="col-4">
                         <div class="form-group">
                             <label for="visa_expiry" class="text-small text-uppercase">{{ __('Visa Expiry Date') }}</label>
-                            <input id="visa_expiry" type="date" class="form-control form-control-lg"
+                            <input id="visa_expiry" type="date" class="form-control form-control"
                             value="{{ old('visa_expiry') }}" name="visa_expiry"
                                    >
                         </div>
                     </div>
+
                 </div>
                 <div class="row">
                     <div class="col-12">
@@ -205,7 +239,7 @@
                     <div class="col-6">
                         <div class="form-group">
                             <label for="password" class="text-small text-uppercase">{{ __('New Password') }}</label>
-                            <input id="password" type="password" class="form-control form-control-lg"
+                            <input id="password" type="password" class="form-control form-control"
                                    name="password"
                                    placeholder="Enter your password">
                             @error('password')<span class="text-danger">{{ $message }}</span>@enderror
@@ -215,7 +249,7 @@
                         <div class="form-group">
                             <label for="password-confirm"
                                    class="text-small text-uppercase">{{ __('Confirm Password') }}</label>
-                            <input id="password-confirm" type="password" class="form-control form-control-lg"
+                            <input id="password-confirm" type="password" class="form-control form-control"
                                    name="password_confirmation" placeholder="Confirm Password">
                             @error('password-confirm')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>

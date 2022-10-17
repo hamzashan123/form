@@ -171,6 +171,45 @@
                                     @error('account_status')<span class="text-danger">{{ $message }}</span>@enderror
                                 </div>
                             </div> 
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label for="payment_status">Payment Status</label>
+                                    <select name="payment_status" id="payment_status" class="form-control">
+                                        <option value="" disabled>-- Choose payment status --</option>
+                                        @if(!empty(isset($user->payment_status)))
+                                        <option value="{{$user->payment_status}}" selected>{{$user->payment_status}}</option>
+                                        @endif
+                                        <option value="Pending">Pending</option>
+                                        <option value="Paid">Paid</option>
+                                         
+                                    </select>
+                                    @error('payment_status')<span class="text-danger">{{ $message }}</span>@enderror
+                                </div>
+                            </div>  
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label for="client_paid">Client has Paid </label>
+                                    <select name="client_paid" id="client_paid" class="form-control">
+                                        <option value="" disabled>-- Client Paid --</option>
+                                        @if(!empty(isset($user->client_paid)))
+                                        <option value="{{$user->client_paid}}" selected>{{$user->client_paid}}</option>
+                                        @endif
+                                        <option value="$">$</option>
+                                        <option value="€"> €</option>
+                                         
+                                    </select>
+                                    @error('payment_status')<span class="text-danger">{{ $message }}</span>@enderror
+                                </div>
+                            </div>  
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label for="client_paid">Client Amount </label>
+                                    <input id="client_amount" type="text" class="form-control form-control"
+                                    value="{{ old('client_amount', $user->client_amount) }}" name="client_amount"
+                                   >
+                                    @error('payment_status')<span class="text-danger">{{ $message }}</span>@enderror
+                                </div>
+                            </div>
                 </div>
             
             <div class="row">

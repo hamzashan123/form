@@ -139,8 +139,8 @@ class EmployerFormController extends Controller
                             Mail::to($consultantUser->email)->send(new NewFormSubmitted($consultantdata));
                         }
                     }
-                   
-                   
+                    
+                    return redirect()->back()->with('success', 'Application Submitted !');
                 }
             
         } else {
@@ -227,11 +227,12 @@ class EmployerFormController extends Controller
                          Mail::to($consultantUser->email)->send(new NewFormSubmitted($consultantdata));
                      }
                  }
-                
+             
+                 return redirect()->back()->with('success', 'Application Submitted !');
             }
         }
 
-
+       
         return redirect()->back()->with('success', 'Application Saved !');
     }
 
