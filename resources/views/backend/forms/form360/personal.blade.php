@@ -243,7 +243,7 @@
 
                 <tr>
                     <td>If yes, please specify </td>
-                    <td> <input type="text" name="personal_conviction_specifytaken" id="personal_conviction_specifytaken" @if(isset($data->matrix_name_and_surname)) value="{{$data->matrix_name_and_surname}}" @endif/>
+                    <td> <input type="text" name="personal_conviction_specifytaken" id="personal_conviction_specifytaken" @if(isset($data->personal_conviction_specifytaken)) value="{{$data->personal_conviction_specifytaken}}" @endif/>
                     </td>
                 </tr>
 
@@ -252,8 +252,8 @@
                     <td>
                         <select name="personal_legal_action" id="personal_legal_action" class="form-control">
                             <option value=""> Select Option </option>
-                            @if(!empty(isset($data->personal_conviction_specifytaken)))
-                            <option value="{{$data->personal_conviction_specifytaken}}" selected>{{$data->personal_conviction_specifytaken}}</option>
+                            @if(!empty(isset($data->personal_legal_action)))
+                            <option value="{{$data->personal_legal_action}}" selected>{{$data->personal_legal_action}}</option>
                             @endif
                             <option value="Yes"> Yes </option>
                             <option value="No"> No </option>
