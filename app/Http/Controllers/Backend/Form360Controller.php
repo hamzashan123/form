@@ -216,6 +216,7 @@ class Form360Controller extends Controller
                                 Mail::to($consultantUser->email)->send(new NewFormSubmitted($consultantdata));
                             }
                         }
+                        return redirect()->back()->with('success', 'Application Submitted !');
                 }
            
                 
@@ -344,6 +345,7 @@ class Form360Controller extends Controller
                               Mail::to($consultantUser->email)->send(new NewFormSubmitted($consultantdata));
                           }
                       }
+                      return redirect()->back()->with('success', 'Application Submitted !');
             }
            
         }
