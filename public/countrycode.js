@@ -1,5 +1,8 @@
 
 
+
+     
+
      const phoneInputField1 = document.querySelector('#personal_contactnumberausornz');
     const phoneInputField2 = document.querySelector('#workexp1_contact_details_work_period_phone');
     const phoneInputField3 = document.querySelector('#workexpintracompany_contact_details_work_period_phone');

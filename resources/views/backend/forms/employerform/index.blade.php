@@ -4,6 +4,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script>
+   
+</script>
 <script src="{{asset('countrycode.js')}}"></script>
 
 @section('content')
@@ -39,6 +43,10 @@
                     @if(Auth::user()->hasRole('consultant'))
                     <a id="correctemail" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px; display:none;">Send Correction Email</a>
                     @endif
+                    @if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('admin'))
+                    <a id="cmd" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px;">Generate Pdf</a>
+                    @endif
+                    
                     @include('backend.forms.employerform.sbs')
                     @include('backend.forms.employerform.nomination')
                     @include('backend.forms.employerform.labour')
@@ -68,6 +76,7 @@
 <script>
     //alert('adsd');
     jQuery(document).ready(function() {
+       
 
         var counter = 0;
         jQuery('#form360 tr td:nth-child(1)').each(function (){
@@ -198,5 +207,25 @@
 
     });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script>  
+    var doc = new jsPDF();
+    var specialElementHandlers = {
+        '#editor': function (element, renderer) {
+            return true;
+        }
+    };
 
+   // var cmd = document.querySelector('#cmd');
+    // jQuery('#cmd').on("click", function () {   
+    //     var contentContainer = document.querySelector('#form360 tr');
+        
+    //     doc.fromHTML(contentContainer.outerHTML, 15, 15, {
+    //         'width': 70,
+    //         'elementHandlers': specialElementHandlers
+    //     });
+    //     doc.save('employerform.pdf');
+    // });
+ </script>
 @endsection()
