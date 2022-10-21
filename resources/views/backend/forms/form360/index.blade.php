@@ -49,7 +49,9 @@
                     <a id="correctemail" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px; display:none;">Send Correction Email</a>
                     @endif
 
-
+                    @if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('consultant'))
+                    <a id="cmd" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px;">Generate Pdf</a>
+                    @endif
 
                     @include('backend.forms.form360.matrix')
                     @include('backend.forms.form360.personal')
@@ -214,5 +216,176 @@
 
     });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>  
+    jQuery('#cmd').on('click', function(){
+        jQuery(this).text('Generating...');
+        var set1 = document.getElementById('fieldsetone');
+        var set2 = document.getElementById('fieldsettwo');
+        var set3 = document.getElementById('fieldsetthree');
+        var set4 = document.getElementById('fieldsetfour');
+        var set5 = document.getElementById('fieldsetfive');
+        var set6 = document.getElementById('fieldsetsix');
+        var set7 = document.getElementById('fieldsetseven');
+        var set8 = document.getElementById('fieldseteight');
+        var set9 = document.getElementById('fieldsetnine');
+        var set10 = document.getElementById('fieldsetten');
+        var set11 = document.getElementById('fieldseteleven');
+        var set12 = document.getElementById('fieldsettwelve');
+        var set13 = document.getElementById('fieldsetthirteen');
+        var set14 = document.getElementById('fieldsetfourteen');
+
+        
+        var opt = {
+        margin:       1,
+        filename:     'MATRIX.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { avoid: 'tr'}
+        };
+        var opt2 = {
+        margin:       1,
+        filename:     'PERSONAL.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { avoid: 'tr'}
+        };
+        var opt3 = {
+        margin:       1,
+        filename:     'EDUCATION.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { avoid: 'tr'}
+        };
+        var opt4 = {
+        margin:       1,
+        filename:     'HIGHER-EDUCATION.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { avoid: 'tr'}
+        };
+        var opt5 = {
+        margin:       1,
+        filename:     'APPRENTICESHIP.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { avoid: 'tr'}
+        };
+        var opt6 = {
+        margin:       1,
+        filename:     'WORK-EXPERIENCE.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { avoid: 'tr'}
+        };
+        var opt7 = {
+        margin:       1,
+        filename:     'WORK-EXPERIENCE-INTRACOMPANY.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { avoid: 'tr'}
+        };
+        var opt8 = {
+        margin:       1,
+        filename:     'VISA-HISTORY.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { avoid: 'tr'}
+        };
+        var opt9 = {
+        margin:       1,
+        filename:     'TRAVEL-HISTORY.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { avoid: 'tr'}
+        };
+        var opt10 = {
+        margin:       1,
+        filename:     'COUNTRY-OF-RESIDENCE.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { avoid: 'tr'}
+        };
+        var opt11 = {
+        margin:       1,
+        filename:     'HEALTH-DECLARATION.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { avoid: 'tr'}
+        };
+        var opt12 = {
+        margin:       1,
+        filename:     'HEALTH-QUESTION.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { avoid: 'tr'}
+        };
+        var opt13 = {
+        margin:       1,
+        filename:     'CHARACTER.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { avoid: 'tr'}
+        };
+        var opt14 = {
+        margin:       1,
+        filename:     'FAMILY-MEMBERS.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { avoid: 'tr'}
+        };
+       
+
+        // New Promise-based usage:
+        var one = html2pdf().set(opt).from(set1).save();
+
+        var two = html2pdf().set(opt2).from(set2).save();
+        
+        
+        var three = html2pdf().set(opt3).from(set3).save();
+
+         var four = html2pdf().set(opt4).from(set4).save();
+      
+        var five = html2pdf().set(opt5).from(set5).save();
+        
+        var six = html2pdf().set(opt6).from(set6).save();
+      
+        
+        var seven = html2pdf().set(opt7).from(set7).save();
+    
+         var eight = html2pdf().set(opt8).from(set8).save();
+      
+        var nine = html2pdf().set(opt9).from(set9).save();
+        
+        var ten = html2pdf().set(opt10).from(set10).save();
+     
+        
+        var eleven = html2pdf().set(opt11).from(set11).save();
+       
+        
+         var twelve = html2pdf().set(opt12).from(set12).save();
+         var fourteen = html2pdf().set(opt14).from(set14).save();
+        var thirteen = html2pdf().set(opt13).from(set13).save();
+        
+    
+       
+        
+    })
+    
+ </script>
 
 @endsection()
