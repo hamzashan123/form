@@ -260,8 +260,8 @@
         setTimeout(function () {
          var four = html2pdf().set(opt4).from(set4).save();
         } , 4000);
-        jQuery(this).removeAttr('disabled');
-        jQuery(this).text('Generate PDF');
+        // jQuery(this).removeAttr('disabled');
+        // jQuery(this).text('Generate PDF');
         
     })
     
