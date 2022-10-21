@@ -4,7 +4,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script> -->
 <script>
    
 </script>
@@ -207,42 +206,47 @@
 
     });
 </script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script> -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>  
     jQuery('#cmd').on('click', function(){
+        jQuery(this).text('Generating...');
+        jQuery(this).attr('disabled');
         var set1 = document.getElementById('fieldsetone');
         var set2 = document.getElementById('fieldsettwo');
         var set3 = document.getElementById('fieldsetthree');
         var set4 = document.getElementById('fieldsetfour');
         var opt = {
-        margin:       1,
+        margin:       10,
         filename:     'SBS.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2 },
-        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { avoid: 'tr'}
         };
         var opt2 = {
-        margin:       1,
+        margin:       10,
         filename:     'NOMINATION.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { scale: 2 },
-        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { avoid: 'tr'}
         };
         var opt3 = {
-        margin:       1,
+        margin:       10,
         filename:     'LABOUR-MARKETING.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { scale: 2 },
-        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { avoid: 'tr'}
         };
         var opt4 = {
-        margin:       1,
+        margin:       10,
         filename:     'JOB.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { scale: 2 },
-        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { avoid: 'tr'}
         };
 
         // New Promise-based usage:
@@ -256,13 +260,9 @@
         setTimeout(function () {
          var four = html2pdf().set(opt4).from(set4).save();
         } , 4000);
+        jQuery(this).removeAttr('disabled');
+        jQuery(this).text('Generate PDF');
         
-       
-
-        // Old monolithic-style usage:
-       // html2pdf(element, opt);
-       //var element = document.getElementById('element-to-print');
-       // html2pdf(element);
     })
     
  </script>
