@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script> -->
 <script>
    
 </script>
@@ -43,7 +43,7 @@
                     @if(Auth::user()->hasRole('consultant'))
                     <a id="correctemail" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px; display:none;">Send Correction Email</a>
                     @endif
-                    @if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('admin'))
+                    @if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('consultant'))
                     <a id="cmd" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px;">Generate Pdf</a>
                     @endif
                     
@@ -207,25 +207,63 @@
 
     });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>  
-    var doc = new jsPDF();
-    var specialElementHandlers = {
-        '#editor': function (element, renderer) {
-            return true;
-        }
-    };
+    jQuery('#cmd').on('click', function(){
+        var set1 = document.getElementById('fieldsetone');
+        var set2 = document.getElementById('fieldsettwo');
+        var set3 = document.getElementById('fieldsetthree');
+        var set4 = document.getElementById('fieldsetfour');
+        var opt = {
+        margin:       1,
+        filename:     'SBS.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        var opt2 = {
+        margin:       1,
+        filename:     'NOMINATION.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        var opt3 = {
+        margin:       1,
+        filename:     'LABOUR-MARKETING.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        var opt4 = {
+        margin:       1,
+        filename:     'JOB.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
 
-   // var cmd = document.querySelector('#cmd');
-    // jQuery('#cmd').on("click", function () {   
-    //     var contentContainer = document.querySelector('#form360 tr');
+        // New Promise-based usage:
+        var one = html2pdf().set(opt).from(set1).save();
+        setTimeout(function () {
+        var two = html2pdf().set(opt2).from(set2).save();
+        } , 2000);
+        setTimeout(function () {
+        var three = html2pdf().set(opt3).from(set3).save();
+        } , 3000);
+        setTimeout(function () {
+         var four = html2pdf().set(opt4).from(set4).save();
+        } , 4000);
         
-    //     doc.fromHTML(contentContainer.outerHTML, 15, 15, {
-    //         'width': 70,
-    //         'elementHandlers': specialElementHandlers
-    //     });
-    //     doc.save('employerform.pdf');
-    // });
+       
+
+        // Old monolithic-style usage:
+       // html2pdf(element, opt);
+       //var element = document.getElementById('element-to-print');
+       // html2pdf(element);
+    })
+    
  </script>
 @endsection()
