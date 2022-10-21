@@ -237,7 +237,7 @@
 
         
         var opt = {
-        margin:       1,
+        margin:       10,
         filename:     'MATRIX.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
@@ -245,7 +245,7 @@
         pagebreak: { avoid: 'tr'}
         };
         var opt2 = {
-        margin:       1,
+        margin:       10,
         filename:     'PERSONAL.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
@@ -253,7 +253,7 @@
         pagebreak: { avoid: 'tr'}
         };
         var opt3 = {
-        margin:       1,
+        margin:       10,
         filename:     'EDUCATION.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
@@ -261,7 +261,7 @@
         pagebreak: { avoid: 'tr'}
         };
         var opt4 = {
-        margin:       1,
+        margin:       10,
         filename:     'HIGHER-EDUCATION.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
@@ -269,7 +269,7 @@
         pagebreak: { avoid: 'tr'}
         };
         var opt5 = {
-        margin:       1,
+        margin:       10,
         filename:     'APPRENTICESHIP.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
@@ -277,7 +277,7 @@
         pagebreak: { avoid: 'tr'}
         };
         var opt6 = {
-        margin:       1,
+        margin:       10,
         filename:     'WORK-EXPERIENCE.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
@@ -285,7 +285,7 @@
         pagebreak: { avoid: 'tr'}
         };
         var opt7 = {
-        margin:       1,
+        margin:       10,
         filename:     'WORK-EXPERIENCE-INTRACOMPANY.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
@@ -293,7 +293,7 @@
         pagebreak: { avoid: 'tr'}
         };
         var opt8 = {
-        margin:       1,
+        margin:       10,
         filename:     'VISA-HISTORY.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
@@ -301,7 +301,7 @@
         pagebreak: { avoid: 'tr'}
         };
         var opt9 = {
-        margin:       1,
+        margin:       10,
         filename:     'TRAVEL-HISTORY.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
@@ -309,7 +309,7 @@
         pagebreak: { avoid: 'tr'}
         };
         var opt10 = {
-        margin:       1,
+        margin:       10,
         filename:     'COUNTRY-OF-RESIDENCE.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
@@ -317,7 +317,7 @@
         pagebreak: { avoid: 'tr'}
         };
         var opt11 = {
-        margin:       1,
+        margin:       10,
         filename:     'HEALTH-DECLARATION.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
@@ -325,7 +325,7 @@
         pagebreak: { avoid: 'tr'}
         };
         var opt12 = {
-        margin:       1,
+        margin:       10,
         filename:     'HEALTH-QUESTION.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
@@ -333,7 +333,7 @@
         pagebreak: { avoid: 'tr'}
         };
         var opt13 = {
-        margin:       1,
+        margin:       10,
         filename:     'CHARACTER.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
@@ -341,7 +341,7 @@
         pagebreak: { avoid: 'tr'}
         };
         var opt14 = {
-        margin:       1,
+        margin:       10,
         filename:     'FAMILY-MEMBERS.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
