@@ -212,6 +212,7 @@
     jQuery('#cmd').on('click', function(){
         jQuery(this).text('Generating...');
         jQuery(this).prop('disabled',true);
+        jQuery(this).css('pointer-event','none');
         var set1 = document.getElementById('fieldsetone');
         var set2 = document.getElementById('fieldsettwo');
         var set3 = document.getElementById('fieldsetthree');
