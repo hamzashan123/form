@@ -362,24 +362,24 @@
       
         var five = html2pdf().set(opt5).from(set5).save();
         
-        var six = html2pdf().set(opt6).from(set6).save();
+        // var six = html2pdf().set(opt6).from(set6).save();
       
         
-        var seven = html2pdf().set(opt7).from(set7).save();
+        // var seven = html2pdf().set(opt7).from(set7).save();
     
-         var eight = html2pdf().set(opt8).from(set8).save();
+        //  var eight = html2pdf().set(opt8).from(set8).save();
       
-        var nine = html2pdf().set(opt9).from(set9).save();
+        // var nine = html2pdf().set(opt9).from(set9).save();
         
-        var ten = html2pdf().set(opt10).from(set10).save();
+        // var ten = html2pdf().set(opt10).from(set10).save();
      
         
-        var eleven = html2pdf().set(opt11).from(set11).save();
+        // var eleven = html2pdf().set(opt11).from(set11).save();
        
         
-         var twelve = html2pdf().set(opt12).from(set12).save();
-         var fourteen = html2pdf().set(opt14).from(set14).save();
-        var thirteen = html2pdf().set(opt13).from(set13).save();
+        //  var twelve = html2pdf().set(opt12).from(set12).save();
+        //  var fourteen = html2pdf().set(opt14).from(set14).save();
+        // var thirteen = html2pdf().set(opt13).from(set13).save();
         
     
        
