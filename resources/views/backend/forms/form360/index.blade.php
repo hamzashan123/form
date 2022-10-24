@@ -49,9 +49,7 @@
                     <a id="correctemail" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px; display:none;">Send Correction Email</a>
                     @endif
 
-                    @if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('consultant'))
-                    <a id="cmd" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px;">Generate Pdf</a>
-                    @endif
+                    
 
                     @include('backend.forms.form360.matrix')
                     @include('backend.forms.form360.personal')
@@ -218,26 +216,9 @@
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>  
-    jQuery('#cmd').on('click', function(){
+    jQuery('#pdfmatrix').on('click', function(){
         jQuery(this).text('Generating...');
-        jQuery(this).prop('disabled',true);
-        jQuery(this).css('pointer-event','none');
         var set1 = document.getElementById('fieldsetone');
-        var set2 = document.getElementById('fieldsettwo');
-        var set3 = document.getElementById('fieldsetthree');
-        var set4 = document.getElementById('fieldsetfour');
-        var set5 = document.getElementById('fieldsetfive');
-        var set6 = document.getElementById('fieldsetsix');
-        var set7 = document.getElementById('fieldsetseven');
-        var set8 = document.getElementById('fieldseteight');
-        var set9 = document.getElementById('fieldsetnine');
-        var set10 = document.getElementById('fieldsetten');
-        var set11 = document.getElementById('fieldseteleven');
-        var set12 = document.getElementById('fieldsettwelve');
-        var set13 = document.getElementById('fieldsetthirteen');
-        var set14 = document.getElementById('fieldsetfourteen');
-
-        
         var opt = {
         margin:       10,
         filename:     'MATRIX.pdf',
@@ -246,6 +227,13 @@
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { avoid: 'tr'}
         };
+           // New Promise-based usage:
+        var one = html2pdf().set(opt).from(set1).save();
+        jQuery(this).text('Generate Pdf');
+    })
+    jQuery('#pdfpersonal').on('click', function(){
+        jQuery(this).text('Generating...');
+        var set2 = document.getElementById('fieldsettwo');
         var opt2 = {
         margin:       10,
         filename:     'PERSONAL.pdf',
@@ -254,14 +242,28 @@
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { avoid: 'tr'}
         };
+           // New Promise-based usage:
+        var two = html2pdf().set(opt2).from(set2).save();
+        jQuery(this).text('Generate Pdf');
+    })
+    jQuery('#pdffirst_education').on('click', function(){
+        jQuery(this).text('Generating...');
+        var set3 = document.getElementById('fieldsetthree');
         var opt3 = {
         margin:       10,
-        filename:     'EDUCATION.pdf',
+        filename:     'FIRST-EDUCATION.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { scale: 2 ,logging: true, dpi: 192, letterRendering: true },
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { avoid: 'tr'}
         };
+           // New Promise-based usage:
+        var two = html2pdf().set(opt3).from(set3).save();
+        jQuery(this).text('Generate Pdf');
+    })
+    jQuery('#pdfhighleveleducation').on('click', function(){
+        jQuery(this).text('Generating...');
+        var set4 = document.getElementById('fieldsetfour');
         var opt4 = {
         margin:       10,
         filename:     'HIGHER-EDUCATION.pdf',
@@ -270,6 +272,13 @@
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { avoid: 'tr'}
         };
+           // New Promise-based usage:
+        var four = html2pdf().set(opt4).from(set4).save();
+        jQuery(this).text('Generate Pdf');
+    })
+    jQuery('#pdfapprenticeship').on('click', function(){
+        jQuery(this).text('Generating...');
+        var set5 = document.getElementById('fieldsetfive');
         var opt5 = {
         margin:       10,
         filename:     'APPRENTICESHIP.pdf',
@@ -278,6 +287,13 @@
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { avoid: 'tr'}
         };
+           // New Promise-based usage:
+        var five = html2pdf().set(opt5).from(set5).save();
+        jQuery(this).text('Generate Pdf');
+    })
+    jQuery('#pdfworkhistory').on('click', function(){
+        jQuery(this).text('Generating...');
+        var set6 = document.getElementById('fieldsetsix');
         var opt6 = {
         margin:       10,
         filename:     'WORK-EXPERIENCE.pdf',
@@ -286,6 +302,13 @@
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { avoid: 'tr'}
         };
+           // New Promise-based usage:
+        var six = html2pdf().set(opt6).from(set6).save();
+        jQuery(this).text('Generate Pdf');
+    })
+    jQuery('#pdfworkexpintra').on('click', function(){
+        jQuery(this).text('Generating...');
+        var set7 = document.getElementById('fieldsetseven');
         var opt7 = {
         margin:       10,
         filename:     'WORK-EXPERIENCE-INTRACOMPANY.pdf',
@@ -294,6 +317,13 @@
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { avoid: 'tr'}
         };
+           // New Promise-based usage:
+        var seven = html2pdf().set(opt7).from(set7).save();
+        jQuery(this).text('Generate Pdf');
+    })
+    jQuery('#pdfvisahistory').on('click', function(){
+        jQuery(this).text('Generating...');
+        var set8 = document.getElementById('fieldseteight');
         var opt8 = {
         margin:       10,
         filename:     'VISA-HISTORY.pdf',
@@ -302,6 +332,13 @@
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { avoid: 'tr'}
         };
+           // New Promise-based usage:
+        var eight = html2pdf().set(opt8).from(set8).save();
+        jQuery(this).text('Generate Pdf');
+    })
+    jQuery('#pdftravel').on('click', function(){
+        jQuery(this).text('Generating...');
+        var set9 = document.getElementById('fieldsetnine');
         var opt9 = {
         margin:       10,
         filename:     'TRAVEL-HISTORY.pdf',
@@ -310,6 +347,13 @@
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { avoid: 'tr'}
         };
+           // New Promise-based usage:
+        var nine = html2pdf().set(opt9).from(set9).save();
+        jQuery(this).text('Generate Pdf');
+    })
+    jQuery('#pdfcountryofresidence').on('click', function(){
+        jQuery(this).text('Generating...');
+        var set10 = document.getElementById('fieldsetten');
         var opt10 = {
         margin:       10,
         filename:     'COUNTRY-OF-RESIDENCE.pdf',
@@ -318,6 +362,13 @@
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { avoid: 'tr'}
         };
+           // New Promise-based usage:
+        var ten = html2pdf().set(opt10).from(set10).save();
+        jQuery(this).text('Generate Pdf');
+    })
+    jQuery('#pdfhealthdeclaration').on('click', function(){
+        jQuery(this).text('Generating...');
+        var set11 = document.getElementById('fieldseteleven');
         var opt11 = {
         margin:       10,
         filename:     'HEALTH-DECLARATION.pdf',
@@ -326,6 +377,13 @@
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { avoid: 'tr'}
         };
+           // New Promise-based usage:
+        var eleven = html2pdf().set(opt11).from(set11).save();
+        jQuery(this).text('Generate Pdf');
+    })
+    jQuery('#pdfhealthquestion').on('click', function(){
+        jQuery(this).text('Generating...');
+        var set12 = document.getElementById('fieldsettwelve');
         var opt12 = {
         margin:       10,
         filename:     'HEALTH-QUESTION.pdf',
@@ -334,6 +392,13 @@
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { avoid: 'tr'}
         };
+           // New Promise-based usage:
+        var twelve = html2pdf().set(opt12).from(set12).save();
+        jQuery(this).text('Generate Pdf');
+    })
+    jQuery('#pdfcharacter').on('click', function(){
+        jQuery(this).text('Generating...');
+        var set13 = document.getElementById('fieldsetthirteen');
         var opt13 = {
         margin:       10,
         filename:     'CHARACTER.pdf',
@@ -342,6 +407,13 @@
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { avoid: 'tr'}
         };
+           // New Promise-based usage:
+        var thirteen = html2pdf().set(opt13).from(set13).save();
+        jQuery(this).text('Generate Pdf');
+    })
+    jQuery('#pdffamilymember').on('click', function(){
+        jQuery(this).text('Generating...');
+        var set14 = document.getElementById('fieldsetfourteen');
         var opt14 = {
         margin:       10,
         filename:     'FAMILY-MEMBERS.pdf',
@@ -350,19 +422,22 @@
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { avoid: 'tr'}
         };
-       
+           // New Promise-based usage:
+        var fourteen = html2pdf().set(opt14).from(set14).save();
+        jQuery(this).text('Generate Pdf');
+    })
+  
 
-        // New Promise-based usage:
-        var one = html2pdf().set(opt).from(set1).save();
+     
 
-        var two = html2pdf().set(opt2).from(set2).save();
         
         
-        var three = html2pdf().set(opt3).from(set3).save();
+        
+        // var three = html2pdf().set(opt3).from(set3).save();
 
-         var four = html2pdf().set(opt4).from(set4).save();
+        //  var four = html2pdf().set(opt4).from(set4).save();
       
-        var five = html2pdf().set(opt5).from(set5).save();
+        // var five = html2pdf().set(opt5).from(set5).save();
         
         // var six = html2pdf().set(opt6).from(set6).save();
       
@@ -386,7 +461,7 @@
     
        
         
-    })
+    
     
  </script>
 

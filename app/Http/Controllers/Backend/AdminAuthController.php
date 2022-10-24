@@ -8,6 +8,8 @@ use App\Traits\ImageUploadTrait;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+// use Dompdf\Dompdf;
+// use DB;
 
 class AdminAuthController extends Controller
 {
@@ -59,4 +61,45 @@ class AdminAuthController extends Controller
             'alert-type' => 'success'
         ]);
     }
+
+    // public function pdf(){
+    //     $userid = 137;
+    //     $data  =  DB::table('employerform')
+    //         ->join('employerform_job', 'employerform.id', '=', 'employerform_job.employerform_id')
+    //         ->join('employerform_labour', 'employerform.id', '=', 'employerform_labour.employerform_id')
+    //         ->join('employerform_nomination', 'employerform.id', '=', 'employerform_nomination.employerform_id')
+    //         ->join('employerform_sbs', 'employerform.id', '=', 'employerform_sbs.employerform_id')
+    //         ->where('employerform.user_id', $userid)->select(
+    //             'employerform.*',
+    //             'employerform_job.*',
+    //             'employerform_labour.*',
+    //             'employerform_nomination.*',
+    //             'employerform_sbs.*'
+    //         )->first();
+    //     //dd($data);
+    //     // instantiate and use the dompdf class
+    //     $dompdf = new Dompdf();
+    //     $html = [];
+    //     $table = "<table>";
+    //     $table .= "<tbody>";
+    //     $table .= "<tr>";
+    //     foreach($data as $key => $value)   {
+           
+    //         $table .= '<td>'.$key.'</td>'.'<td>'.$value.'</td>';
+    //     }     
+    //     $table .= "</tr>";
+    //     $table .= "</tbody>";
+    //     $table .= "</table>";
+    //     // dd($table);
+    //     $dompdf->loadHtml($table);
+
+    //     // (Optional) Setup the paper size and orientation
+    //     $dompdf->setPaper('A4', 'portrait');
+
+    //     // Render the HTML as PDF
+    //     $dompdf->render();
+
+    //     // Output the generated PDF to Browser
+    //     $dompdf->stream();
+    // }
 }

@@ -1,4 +1,7 @@
 <fieldset id="fieldsetone">
+                    @if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('consultant'))
+                    <a id="pdfmatrix" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px;">Generate Pdf</a>
+                    @endif
     <div class="form-card">
         <h2 class="fs-title" style="text-align: center;">SECTION 1:</h2>
         <div class="row">

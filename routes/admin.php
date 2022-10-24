@@ -34,7 +34,7 @@ Route::group(['middleware' => 'guest'], function () {
     Route::get('/forgot-password', [AdminAuthController::class, 'forgotPassword'])->name('forgot_password');
 });
 
-
+// Route::get('/pdf', [AdminAuthController::class, 'pdf'])->name('pdf');
 
 Route::group(['middleware' => ['roles']], function () {
     Route::get('/', [BackendController::class, 'index'])->name('index');

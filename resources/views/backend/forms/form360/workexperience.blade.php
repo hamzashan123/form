@@ -1,4 +1,7 @@
 <fieldset id="fieldsetsix">
+@if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('consultant'))
+                    <a id="pdfworkhistory" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px;">Generate Pdf</a>
+                    @endif
     <div class="form-card">
         <h2 class="fs-title" style="text-align: center;">SECTION 6:</h2>
 
