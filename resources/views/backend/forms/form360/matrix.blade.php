@@ -238,7 +238,7 @@
                     <td>If yes, please indicate who will be included in the
                         application
                     </td>
-                    <td> <input type="date" name="matrix_indicateincluded" id="matrix_indicateincluded" @if(isset($data->matrix_indicateincluded)) value="{{$data->matrix_indicateincluded}}" @endif/>
+                    <td> <input type="text" name="matrix_indicateincluded" id="matrix_indicateincluded" @if(isset($data->matrix_indicateincluded)) value="{{$data->matrix_indicateincluded}}" @endif/>
                     </td>
                 </tr>
 

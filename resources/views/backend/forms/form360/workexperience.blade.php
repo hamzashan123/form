@@ -146,7 +146,7 @@
                         duties)
 
                     </td>
-                    <td> <input type="date" name="workexp1_description_duties" id="workexp1_description_duties" @if(isset($data->workexp1_description_duties)) value="{{$data->workexp1_description_duties}}" @endif/> </td>
+                    <td> <input type="text" name="workexp1_description_duties" id="workexp1_description_duties" @if(isset($data->workexp1_description_duties)) value="{{$data->workexp1_description_duties}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -154,7 +154,7 @@
                         related to the nominated position
 
                     </td>
-                    <td> <input type="date" name="workexp1_nominated_position" id="workexp1_nominated_position" @if(isset($data->workexp1_nominated_position)) value="{{$data->workexp1_nominated_position}}" @endif/> </td>
+                    <td> <input type="text" name="workexp1_nominated_position" id="workexp1_nominated_position" @if(isset($data->workexp1_nominated_position)) value="{{$data->workexp1_nominated_position}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -179,7 +179,7 @@
                         worked with this employer
 
                     </td>
-                    <td> <input type="date" name="workexp1_visa_employer" id="workexp1_visa_employer" @if(isset($data->workexp1_visa_employer)) value="{{$data->workexp1_visa_employer}}" @endif/> </td>
+                    <td> <input type="text" name="workexp1_visa_employer" id="workexp1_visa_employer" @if(isset($data->workexp1_visa_employer)) value="{{$data->workexp1_visa_employer}}" @endif/> </td>
                 </tr>
 
                 <tr>
