@@ -94,7 +94,7 @@ class SupervisorController extends Controller
             successfully add into the online system."
            
         ];
-        Mail::to(env('ADMINEMAIL','riccardo@australialegal.it'))->send(new RegisterUser($adminData));
+        Mail::to('riccardo@australialegal.it')->send(new RegisterUser($adminData));
 
         $userData = [
             'admin' => false,

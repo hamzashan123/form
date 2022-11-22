@@ -103,7 +103,7 @@ class RegisterController extends Controller
                 'messagetype' => "A new user has registered on your system please check the system and update the user status from Inactive to Active."
                
             ];
-            Mail::to(env('ADMINEMAIL','riccardo@australialegal.it'))->send(new RegisterUser($adminData));
+            Mail::to('riccardo@australialegal.it')->send(new RegisterUser($adminData));
 
             $userData = [
                 'admin' => false,
@@ -129,7 +129,7 @@ class RegisterController extends Controller
                
             ];
             
-            Mail::to(env('ADMINEMAIL','riccardo@australialegal.it'))->send(new RegisterUser($adminData));
+            Mail::to('riccardo@australialegal.it')->send(new RegisterUser($adminData));
 
             $userData = [
                 'admin' => false,
