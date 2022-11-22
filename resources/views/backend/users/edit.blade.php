@@ -114,6 +114,8 @@
                                     </option>
                                     <option value="400 Visa">400 Visa
                                     </option>
+                                    <option value="408 Visa">408 Visa
+                                    </option>
                                     <option value="482 SBS">482 SBS
                                     </option>
                                     <option value="482 NOM">482 NOM

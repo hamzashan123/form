@@ -142,6 +142,7 @@
                                     <option value="" disabled>-- Choose Visa Type --</option>
                                     
                             <option value="Aus citizenship">Aus citizenship</option>
+                            
                             <option value="Sponsorship">186 Nom DE
                             </option>
                             <option value="186 Visa DE">186 Visa DE
@@ -158,6 +159,7 @@
                             </option>
                             <option value="400 Visa">400 Visa
                             </option>
+                            <option value="408 Visa">408 Visa</option>
                             <option value="482 SBS">482 SBS
                             </option>
                             <option value="482 NOM">482 NOM
