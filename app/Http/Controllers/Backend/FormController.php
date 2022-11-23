@@ -19,7 +19,7 @@ class FormController extends Controller
         $users = User::role('user')->get();
        
         $user_forms = DB::table('users')
-                 ->leftjoin('user_forms', 'users.id', '=', 'user_forms.user_id')
+                 ->join('user_forms', 'users.id', '=', 'user_forms.user_id')
                  ->select('users.*',DB::raw('count(*) as total'))
                  ->groupBy('user_forms.user_id')
                  ->get();
