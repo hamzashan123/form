@@ -26,7 +26,7 @@
                     <td> Country </td>
                     <td>
                         <select id="healthdeclaration_country1" name="healthdeclaration_country1" class="form-control">
-                            <option value="">Select Nationality</option>
+                            <option value="">Select Country</option>
                             @if(!empty(isset($data->healthdeclaration_country1)))
                                 <option value="{{$data->healthdeclaration_country1}}" selected>{{$data->healthdeclaration_country1}}</option>
                             @endif
@@ -329,7 +329,7 @@
                     <td> Country </td>
                     <td>
                         <select id="healthdeclaration_country2" name="healthdeclaration_country2" class="form-control">
-                            <option value="">Select Nationality</option>
+                            <option value="">Select Country</option>
                             @if(!empty(isset($data->healthdeclaration_country2)))
                                 <option value="{{$data->healthdeclaration_country2}}" selected>{{$data->healthdeclaration_country2}}</option>
                             @endif
@@ -631,7 +631,7 @@
                     <td> Country </td>
                     <td>
                         <select id="healthdeclaration_country3" name="healthdeclaration_country3" class="form-control">
-                            <option value="">Select Nationality</option>
+                            <option value="">Select Country</option>
                             @if(!empty(isset($data->healthdeclaration_country3)))
                                 <option value="{{$data->healthdeclaration_country3}}" selected>{{$data->healthdeclaration_country3}}</option>
                             @endif
@@ -934,7 +934,7 @@
                     <td> Country </td>
                     <td>
                         <select id="healthdeclaration_country4" name="healthdeclaration_country4" class="form-control">
-                            <option value="">Select Nationality</option>
+                            <option value="">Select Country</option>
                             @if(!empty(isset($data->healthdeclaration_country4)))
                                 <option value="{{$data->healthdeclaration_country4}}" selected>{{$data->healthdeclaration_country4}}</option>
                             @endif
@@ -1236,7 +1236,7 @@
                     <td> Country </td>
                     <td>
                         <select id="healthdeclaration_country5" name="healthdeclaration_country5" class="form-control">
-                            <option value="">Select Nationality</option>
+                            <option value="">Select Country</option>
                             @if(!empty(isset($data->healthdeclaration_country5)))
                                 <option value="{{$data->healthdeclaration_country5}}" selected>{{$data->healthdeclaration_country5}}</option>
                             @endif

@@ -50,7 +50,7 @@
                     <td> Country </td>
                     <td>
                         <select id="travelhistory_country1" name="travelhistory_country1" class="form-control">
-                            <option value="">Select Nationality</option>
+                            <option value="">Select Country</option>
                             @if(!empty(isset($data->travelhistory_country1)))
                             <option value="{{$data->travelhistory_country1}}" selected>{{$data->travelhistory_country1}}</option>
                             @endif
@@ -351,7 +351,7 @@
                     <td> Country </td>
                     <td>
                         <select id="travelhistory_country4" name="travelhistory_country4" class="form-control">
-                            <option value="">Select Nationality</option>
+                            <option value="">Select Country</option>
                             @if(!empty(isset($data->travelhistory_country4)))
                             <option value="{{$data->travelhistory_country4}}" selected>{{$data->travelhistory_country4}}</option>
                             @endif
@@ -653,7 +653,7 @@
                     <td> Country </td>
                     <td>
                         <select id="travelhistory_country3" name="travelhistory_country3" class="form-control">
-                            <option value="">Select Nationality</option>
+                            <option value="">Select Country</option>
                             @if(!empty(isset($data->travelhistory_country3)))
                             <option value="{{$data->travelhistory_country3}}" selected>{{$data->travelhistory_country3}}</option>
                             @endif
@@ -956,7 +956,7 @@
                     <td> Country </td>
                     <td>
                         <select id="travelhistory_country3" name="travelhistory_country3" class="form-control">
-                            <option value="">Select Nationality</option>
+                            <option value="">Select Country</option>
                             @if(!empty(isset($data->travelhistory_country3)))
                             <option value="{{$data->travelhistory_country3}}" selected>{{$data->travelhistory_country3}}</option>
                             @endif

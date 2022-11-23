@@ -108,7 +108,16 @@
                         cancelled?If so, please specify
                     </td>
                     <td>
-                        <input type="text" name="currentvisa_ever_had_visa" id="currentvisa_ever_had_visa" @if(isset($data->currentvisa_ever_had_visa)) value="{{$data->currentvisa_ever_had_visa}}" @endif/>
+                    <select name="currentvisa_ever_had_visa" id="currentvisa_ever_had_visa" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->currentvisa_ever_had_visa)))
+                            <option value="{{$data->currentvisa_ever_had_visa}}" selected>{{$data->currentvisa_ever_had_visa}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select> 
+                        
                     </td>
                 </tr>
 

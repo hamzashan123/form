@@ -19,8 +19,17 @@
                 <tr>
                     <td> Did you undergo a period of apprenticeship (apprendistato) either during your formal studies or after your finished you course of study?
                     </td>
-                    <td> <input type="text" name="apprenticeship_formal_studies" id="apprenticeship_formal_studies" @if(isset($data->apprenticeship_formal_studies)) value="{{$data->apprenticeship_formal_studies}}" @endif
-                        /> </td>
+                    <td> 
+                    <select name="apprenticeship_formal_studies" id="apprenticeship_formal_studies" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->apprenticeship_formal_studies)))
+                            <option value="{{$data->apprenticeship_formal_studies}}" selected>{{$data->apprenticeship_formal_studies}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>    
+                   </td>
                 </tr>
 
                 <tr>
@@ -80,7 +89,17 @@
 
                 <tr>
                     <td>Was this work full-time or part-time? </td>
-                    <td> <input type="text" name="apprenticeship_fulltime_parttime" id="apprenticeship_fulltime_parttime" @if(isset($data->apprenticeship_fulltime_parttime)) value="{{$data->apprenticeship_fulltime_parttime}}" @endif/> </td>
+                    <td>
+                    <select name="apprenticeship_fulltime_parttime" id="apprenticeship_fulltime_parttime" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->apprenticeship_fulltime_parttime)))
+                            <option value="{{$data->apprenticeship_fulltime_parttime}}" selected>{{$data->apprenticeship_fulltime_parttime}}</option>
+                            @endif
+                            <option value="Part Time"> Part Time </option>
+                            <option value="Full Time"> Full Time </option>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
