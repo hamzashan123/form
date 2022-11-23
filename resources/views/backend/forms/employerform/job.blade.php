@@ -41,7 +41,8 @@
             <tbody>
                 <tr>
                     <td> Name of the Job ad platform n.2 </td>
-                    <td> <input type="text" name="job_n3_people" id="job_n3_people" @if(isset($data->job_n3_people)) value="{{$data->job_n3_people}}" @endif/>
+                    <td> 
+                        <input type="text" name="job_n3_people" id="job_n3_people" @if(isset($data->job_n3_people)) value="{{$data->job_n3_people}}" @endif/>
                     </td>
                 </tr>
 
