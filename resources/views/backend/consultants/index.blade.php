@@ -15,8 +15,8 @@
                             <div class="col-6">
                                 <div class="form-group">
                                     <label for="consultant_ids"><b>Select Consultants </b></label>
-                                    <select name="consultant_id" id="consultant_ids" class="form-control" >
-                                       <option value="0" selected disabled>  Select </option>
+                                    <select name="consultant_id" id="consultant_ids" class="form-control" required>
+                                       <option value="" selected disabled>  Select </option>
                                        @if(isset($consultants)) 
                                        @foreach($consultants as $user)
                                            
@@ -32,7 +32,7 @@
                                 
                                 <div class="form-group">
                                     <label for="user_ids"><b>Select Clients </b> </label>
-                                    <select name="user_ids[]" id="user_ids" class="form-control select2" multiple="multiple">
+                                    <select name="user_ids[]" id="user_ids" class="form-control select2" multiple="multiple" required>
                                         @foreach($users as $user)
                                          
                                             <option value="{{ $user->id }}">{{ $user->username }} </option>

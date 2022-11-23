@@ -15,8 +15,8 @@
                             <div class="col-6">
                                 <div class="form-group">
                                     <label for="permissions"><b>Select Client </b></label>
-                                    <select name="user_id" id="user_id" class="form-control" >
-                                       <option value="0" selected disabled>  Select </option>
+                                    <select name="user_id" id="user_id" class="form-control" required>
+                                       <option value="" selected disabled>  Select </option>
                                        @if(isset($users)) 
                                        @foreach($users as $user)
                                            
@@ -32,7 +32,7 @@
                                 
                                 <div class="form-group">
                                     <label for="permissions"><b>Select Forms </b> </label>
-                                    <select name="form_ids[]" id="permissions" class="form-control select2" multiple="multiple">
+                                    <select name="form_ids[]" id="permissions" class="form-control select2" multiple="multiple" required>
                                         
                                          
                                             <option value="1"> Form 360</option>
