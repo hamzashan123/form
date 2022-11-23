@@ -32,21 +32,17 @@
                         update this form when the job ads will be
                         online)
                     </td>
-                    <td> <input type="file" name="labour_market_different" id="labour_market_different">
+                    <td> 
+                        
+                    <select name="labour_market_different" id="labour_market_different" class="form-control">
+                            <option value=""> Select Option </option>
 
-                        @if (array_key_exists('labour_market_different', $docdataemployerform))
-
-                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/employerform/'.$data->user_id.'/labour_market_different/'.$docdataemployerform['labour_market_different'])  }}">
-                            @if(str_contains($docdataemployerform['labour_market_different'] , '.pdf'))
-                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                            @else
-                            <img class="imgfile" src="{{  asset('/storage/employerform/'.$data->user_id.'/labour_market_different/'.$docdataemployerform['labour_market_different'])  }}" />
+                            @if(!empty(isset($data->labour_market_different)))
+                            <option value="{{$data->labour_market_different}}" selected>{{$data->labour_market_different}}</option>
                             @endif
-                        </a>
-
-
-                        @endif
-
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>
                     </td>
                 </tr>
 

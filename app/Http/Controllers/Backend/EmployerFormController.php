@@ -268,7 +268,7 @@ class EmployerFormController extends Controller
 
             //LABOUR 
 
-            'labour_market_different' => $request->file('labour_market_different'),
+            //'labour_market_different' => $request->file('labour_market_different'),
             'workforce_1_copyandpaste' => $request->file('workforce_1_copyandpaste'),
             'workforce_1_invoice' => $request->file('workforce_1_invoice'),
             'workforce_1_screenshot' => $request->file('workforce_1_screenshot'),
@@ -377,6 +377,7 @@ class EmployerFormController extends Controller
 
         $labourData =  [
             'employerform_id' => $form_id,
+            'labour_market_different' => $request->labour_market_different,
             'labour_job_n1_people' => $request->labour_job_n1_people,
             'labour_job_n1_exact_date' => $request->labour_job_n1_exact_date,
             'labour_job_n1_online' => $request->labour_job_n1_online,

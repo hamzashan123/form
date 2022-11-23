@@ -30,7 +30,17 @@
                         the applicant has been working for a
                         subsidiary and/or branch of the Australian
                         company outside of Australia)</td>
-                    <td> <input type="text" name="nomination_intra_company_transfer" id="nomination_intra_company_transfer" @if(isset($data->nomination_intra_company_transfer)) value="{{$data->nomination_intra_company_transfer}}" @endif/> </td>
+                    <td> 
+                    <select name="nomination_intra_company_transfer" id="nomination_intra_company_transfer" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->nomination_intra_company_transfer)))
+                            <option value="{{$data->nomination_intra_company_transfer}}" selected>{{$data->nomination_intra_company_transfer}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>    
+                    </td>
                 </tr>
 
 
@@ -132,7 +142,17 @@
                         please specify if the applicant can perform
                         work under supervision of another person
                         who holds licence/registration</td>
-                    <td> <input type="text" name="qua_and_exp_license" id="qua_and_exp_license" @if(isset($data->qua_and_exp_license)) value="{{$data->qua_and_exp_license}}" @endif/> </td>
+                    <td> 
+                    <select name="qua_and_exp_license" id="qua_and_exp_license" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->qua_and_exp_license)))
+                            <option value="{{$data->qua_and_exp_license}}" selected>{{$data->qua_and_exp_license}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>    
+                   </td>
                 </tr>
 
 
@@ -147,7 +167,17 @@
                 <tr>
                     <td>Does your business operate in the
                         Agricultural sector?</td>
-                    <td> <input type="text" name="qua_and_exp_agriculture" id="qua_and_exp_agriculture" @if(isset($data->qua_and_exp_agriculture)) value="{{$data->qua_and_exp_agriculture}}" @endif/> </td>
+                    <td> 
+                    <select name="qua_and_exp_agriculture" id="qua_and_exp_agriculture" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->qua_and_exp_agriculture)))
+                            <option value="{{$data->qua_and_exp_agriculture}}" selected>{{$data->qua_and_exp_agriculture}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>     
+                    </td>
                 </tr>
 
             </tbody>

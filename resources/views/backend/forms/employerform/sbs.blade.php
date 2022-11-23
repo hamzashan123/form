@@ -661,7 +661,7 @@
                     <td>Date of birth
                     </td>
                     <td>
-                        <input type="text" name="partner_dob1" id="partner_dob1" @if(isset($data->partner_dob1)) value="{{$data->partner_dob1}}" @endif/>
+                        <input type="date" name="partner_dob1" id="partner_dob1" @if(isset($data->partner_dob1)) value="{{$data->partner_dob1}}" @endif/>
                     </td>
                 </tr>
 
@@ -691,7 +691,16 @@
                     <td>Gender
                     </td>
                     <td>
-                        <input type="text" name="partner_gender2" id="partner_gender2" @if(isset($data->partner_gender2)) value="{{$data->partner_gender2}}" @endif/>
+                        <select name="partner_gender2" id="partner_gender2" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->partner_gender2)))
+                            <option value="{{$data->partner_gender2}}" selected>{{$data->partner_gender2}}</option>
+                            @endif
+                            <option value="Male">Male </option>
+                            <option value="Female"> Female </option>
+                        </select>
+                       
                     </td>
                 </tr>
 
@@ -699,7 +708,7 @@
                     <td>Date of birth
                     </td>
                     <td>
-                        <input type="text" name="partner_dob2" id="partner_dob2" @if(isset($data->partner_dob2)) value="{{$data->partner_dob2}}" @endif/>
+                        <input type="date" name="partner_dob2" id="partner_dob2" @if(isset($data->partner_dob2)) value="{{$data->partner_dob2}}" @endif/>
                     </td>
                 </tr>
 
@@ -729,7 +738,16 @@
                     <td>Gender
                     </td>
                     <td>
-                        <input type="text" name="partner_gender3" id="partner_gender3" @if(isset($data->partner_gender3)) value="{{$data->partner_gender3}}" @endif/>
+                    <select name="partner_gender3" id="partner_gender3" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->partner_gender3)))
+                            <option value="{{$data->partner_gender3}}" selected>{{$data->partner_gender3}}</option>
+                            @endif
+                            <option value="Male">Male </option>
+                            <option value="Female"> Female </option>
+                        </select>
+                     
                     </td>
                 </tr>
 
@@ -737,7 +755,7 @@
                     <td>Date of birth
                     </td>
                     <td>
-                        <input type="text" name="partner_dob3" id="partner_dob3" @if(isset($data->partner_dob3)) value="{{$data->partner_dob3}}" @endif/>
+                        <input type="date" name="partner_dob3" id="partner_dob3" @if(isset($data->partner_dob3)) value="{{$data->partner_dob3}}" @endif/>
                     </td>
                 </tr>
 
@@ -1228,16 +1246,23 @@
                         </select>
                     </td>
                 </tr>
-
-
-                <tr>
-                    <td>Of the total number of foreign employees,
-                        what is the number of: </td>
+            </tbody>
+        </table>
+        <h2 class="fs-title">Of the total number of foreign employees,
+                        what is the number of:</h2>
+        <table>
+            <tbody>
+                
+                
+                <tr style="visibility: hidden;">
                     <td>
-                        <input type="text" name="organization_foreign_employees_number" id="organization_foreign_employees_number" @if(isset($data->organization_foreign_employees_number)) value="{{$data->organization_foreign_employees_number}}" @endif/>
+                    Of the total number of foreign employees,
+                        what is the number of:
+                    </td>
+                    <td>
+                    
                     </td>
                 </tr>
-
 
                 <tr>
                     <td> 457 or 482 visa holders (this is the
@@ -1835,7 +1860,25 @@
                     <td>How many apprentices ae employed under
                         a training agreement or contract of training </td>
                     <td>
-                        <input type="text" name="organization_foreign_contract_of_training" id="organization_foreign_recent_university" @if(isset($data->organization_foreign_recent_university)) value="{{$data->organization_foreign_recent_university}}" @endif/>
+                    <select name="organization_foreign_contract_of_training" id="organization_foreign_contract_of_training" class="form-control">
+                            <option value=""> Select Option </option>
+                            @if(!empty(isset($data->organization_foreign_contract_of_training)))
+                            <option value="{{$data->organization_foreign_contract_of_training}}" selected>{{$data->organization_foreign_contract_of_training}}</option>
+                            @endif
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            
+                        </select>
+                       
                     </td>
                 </tr>
 
@@ -1855,7 +1898,25 @@
                         year?
                     </td>
                     <td>
-                        <input type="text" name="annual_turnover_year" id="annual_turnover_year" @if(isset($data->annual_turnover_year)) value="{{$data->annual_turnover_year}}" @endif/>
+                    <select name="annual_turnover_year" id="annual_turnover_year" class="form-control">
+                            <option value=""> Select Option </option>
+                            @if(!empty(isset($data->annual_turnover_year)))
+                            <option value="{{$data->annual_turnover_year}}" selected>{{$data->annual_turnover_year}}</option>
+                            @endif
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            
+                        </select>
+                      
                     </td>
                 </tr>
 
