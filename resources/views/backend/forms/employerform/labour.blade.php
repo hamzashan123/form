@@ -114,8 +114,134 @@
             </tbody>
         </table>
 
+        <h2 class="fs-title">For Job ad n.2 please indicate
+        </h2>
 
-        <h2 class="fs-title">For Job ad n.1 AFTER THE 28 DAY PERIOD please indicate
+
+        <table>
+            <tbody>
+                <tr>
+                    <td> Name of the Job ad platform n.2
+
+                    </td>
+                    <td> <input type="text" name="labour_job_n2_people" id="labour_job_n2_people" @if(isset($data->labour_job_n2_people)) value="{{$data->labour_job_n2_people}}" @endif/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Exact date when the job ad was put online </td>
+                    <td> <input type="date" name="labour_job_n2_exact_date" id="labour_job_n2_exact_date" @if(isset($data->labour_job_n2_exact_date)) value="{{$data->labour_job_n2_exact_date}}" @endif/> </td>
+                </tr>
+
+                <tr>
+                    <td> Please confirm this job ad has been online
+                        for at least 28 days or it will be by the time
+                        it expires </td>
+                    <td>
+                    <select name="labour_job_n2_online" id="labour_job_n2_online" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->labour_job_n2_online)))
+                            <option value="{{$data->labour_job_n2_online}}" selected>{{$data->labour_job_n2_online}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>    
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Please indicate the link to the job ad here
+                    </td>
+                    <td> <input type="text" name="labour_job_n2_indicate" id="labour_job_n2_indicate" @if(isset($data->labour_job_n2_indicate)) value="{{$data->labour_job_n2_indicate}}" @endif/> </td>
+                </tr>
+
+                <tr>
+                    <td> Are you able to provide a payment receipt
+                        for this job ad? If yes, please make sure to
+                        attach this document
+                    </td>
+                    <td> 
+                    <select name="labour_job_n2_payment" id="labour_job_n2_payment" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->labour_job_n2_payment)))
+                            <option value="{{$data->labour_job_n2_payment}}" selected>{{$data->labour_job_n2_payment}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                    </select>    
+                   </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+
+        <h2 class="fs-title">For Job ad n.3 please indicate
+        </h2>
+
+
+        <table>
+            <tbody>
+                <tr>
+                    <td> Name of the Job ad platform n.3
+
+                    </td>
+                    <td> <input type="text" name="labour_job_n3_people" id="labour_job_n3_people" @if(isset($data->labour_job_n3_people)) value="{{$data->labour_job_n3_people}}" @endif/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Exact date when the job ad was put online </td>
+                    <td> <input type="date" name="labour_job_n3_exact_date" id="labour_job_n3_exact_date" @if(isset($data->labour_job_n3_exact_date)) value="{{$data->labour_job_n3_exact_date}}" @endif/> </td>
+                </tr>
+
+                <tr>
+                    <td> Please confirm this job ad has been online
+                        for at least 28 days or it will be by the time
+                        it expires </td>
+                    <td>
+                    <select name="labour_job_n3_online" id="labour_job_n3_online" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->labour_job_n3_online)))
+                            <option value="{{$data->labour_job_n3_online}}" selected>{{$data->labour_job_n3_online}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>    
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Please indicate the link to the job ad here
+                    </td>
+                    <td> <input type="text" name="labour_job_n3_indicate" id="labour_job_n3_indicate" @if(isset($data->labour_job_n3_indicate)) value="{{$data->labour_job_n3_indicate}}" @endif/> </td>
+                </tr>
+
+                <tr>
+                    <td> Are you able to provide a payment receipt
+                        for this job ad? If yes, please make sure to
+                        attach this document
+                    </td>
+                    <td> 
+                    <select name="labour_job_n3_payment" id="labour_job_n3_payment" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->labour_job_n3_payment)))
+                            <option value="{{$data->labour_job_n3_payment}}" selected>{{$data->labour_job_n3_payment}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                    </select>    
+                   </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+        <!-- <h2 class="fs-title">For Job ad n.1 AFTER THE 28 DAY PERIOD please indicate
         </h2>
 
         <table>
@@ -360,72 +486,10 @@
                     <td> <input type="text" name="labour_job_n1_after_people_suitable" id="labour_job_n1_after_people_suitable" @if(isset($data->labour_job_n1_after_people_suitable)) value="{{$data->labour_job_n1_after_people_suitable}}" @endif/> </td>
                 </tr>
             </tbody>
-        </table>
+        </table> -->
 
 
-        <h2 class="fs-title">For Job ad n.2 please indicate
-        </h2>
-
-
-        <table>
-            <tbody>
-                <tr>
-                    <td> Name of the Job ad platform n.2
-
-                    </td>
-                    <td> <input type="text" name="labour_job_n2_people" id="labour_job_n2_people" @if(isset($data->labour_job_n2_people)) value="{{$data->labour_job_n2_people}}" @endif/>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td> Exact date when the job ad was put online </td>
-                    <td> <input type="date" name="labour_job_n2_exact_date" id="labour_job_n2_exact_date" @if(isset($data->labour_job_n2_exact_date)) value="{{$data->labour_job_n2_exact_date}}" @endif/> </td>
-                </tr>
-
-                <tr>
-                    <td> Please confirm this job ad has been online
-                        for at least 28 days or it will be by the time
-                        it expires </td>
-                    <td>
-                    <select name="labour_job_n2_online" id="labour_job_n2_online" class="form-control">
-                            <option value=""> Select Option </option>
-
-                            @if(!empty(isset($data->labour_job_n2_online)))
-                            <option value="{{$data->labour_job_n2_online}}" selected>{{$data->labour_job_n2_online}}</option>
-                            @endif
-                            <option value="Yes">Yes </option>
-                            <option value="No"> No </option>
-                        </select>    
-                    </td>
-                </tr>
-
-                <tr>
-                    <td> Please indicate the link to the job ad here
-                    </td>
-                    <td> <input type="text" name="labour_job_n2_indicate" id="labour_job_n2_indicate" @if(isset($data->labour_job_n2_indicate)) value="{{$data->labour_job_n2_indicate}}" @endif/> </td>
-                </tr>
-
-                <tr>
-                    <td> Are you able to provide a payment receipt
-                        for this job ad? If yes, please make sure to
-                        attach this document
-                    </td>
-                    <td> 
-                    <select name="labour_job_n2_payment" id="labour_job_n2_payment" class="form-control">
-                            <option value=""> Select Option </option>
-
-                            @if(!empty(isset($data->labour_job_n2_payment)))
-                            <option value="{{$data->labour_job_n2_payment}}" selected>{{$data->labour_job_n2_payment}}</option>
-                            @endif
-                            <option value="Yes">Yes </option>
-                            <option value="No"> No </option>
-                    </select>    
-                   </td>
-                </tr>
-
-
-            </tbody>
-        </table>
+       
 
 
         <h2 class="fs-title">NOMINATION – DOCS TO UPLOAD FOR THE LABOR MARKET TESTING </h2>
@@ -434,7 +498,7 @@
 
             <tbody>
 
-                <tr>
+                <!-- <tr>
                     <td>Copy and paste of the link of the Job ad
                         platform
                     </td>
@@ -455,7 +519,7 @@
 
 
                     </td>
-                </tr>
+                </tr> -->
 
                 <tr>
                     <td>Invoice for having posted the job ad (if
@@ -538,7 +602,7 @@
 
             <tbody>
 
-                <tr>
+                <!-- <tr>
                     <td>Copy and paste of the link of the Job ad
                         platform
                     </td>
@@ -559,7 +623,7 @@
                         @endif
 
                     </td>
-                </tr>
+                </tr> -->
 
                 <tr>
                     <td>Invoice for having posted the job ad (if
@@ -641,7 +705,7 @@
 
             <tbody>
 
-                <tr>
+                <!-- <tr>
                     <td>Copy and paste of the link of the Job ad
                         platform
                     </td>
@@ -661,7 +725,7 @@
                         @endif
 
                     </td>
-                </tr>
+                </tr> -->
 
                 <tr>
                     <td>Invoice for having posted the job ad (if

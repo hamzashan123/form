@@ -369,6 +369,43 @@ class EmployerFormController extends Controller
             'sbs_trading_willing' => $request->sbs_trading_willing,
             'sbs_trading_outlining' => $request->sbs_trading_outlining,
             'sbs_trading_webpage' => $request->sbs_trading_webpage,
+            'main_point_name_surname' => $request->main_point_name_surname,
+            'main_point_role' => $request->main_point_role,
+            'main_point_email_person' => $request->main_point_email_person,
+            'main_point_contact_number' => $request->main_point_contact_number,
+            'partner_name_surname1' => $request->partner_name_surname1,
+            'partner_gender1' => $request->partner_gender1,
+            'partner_dob1' => $request->partner_dob1,
+            'partner_position1' => $request->partner_position1,
+            'partner_name_surname2' => $request->partner_name_surname2,
+            'partner_gender2' => $request->partner_gender2,
+            'partner_dob2' => $request->partner_dob2,
+            'partner_position2' => $request->partner_position2,
+            'partner_name_surname3' => $request->partner_name_surname3,
+            'partner_gender3' => $request->partner_gender3,
+            'partner_dob3' => $request->partner_dob3,
+            'partner_position3' => $request->partner_position3,
+            'partner_name_surname4' => $request->partner_name_surname4,
+            'partner_gender4' => $request->partner_gender4,
+            'partner_dob4' => $request->partner_dob4,
+            'partner_position4' => $request->partner_position4,
+
+            'organization_name_surname' => $request->organization_name_surname,
+            'organization_residents1' => $request->organization_residents1,
+            'organization_residents2' => $request->organization_residents2,
+            'organization_foreign_employees' => $request->organization_foreign_employees,
+            'organization_foreign_457_482_visa' => $request->organization_foreign_457_482_visa,
+            'organization_foreign_other_temporary_visa' => $request->organization_foreign_other_temporary_visa,
+            'organization_foreign_student_visa' => $request->organization_foreign_student_visa,
+            'organization_foreign_working_holiday' => $request->organization_foreign_working_holiday,
+            'organization_foreign_other_visas' => $request->organization_foreign_other_visas,
+            'organization_foreign_recent_university' => $request->organization_foreign_recent_university,
+            'organization_foreign_contract_of_training' => $request->organization_foreign_contract_of_training,
+            
+            
+            
+
+
             'annual_turnover_year' => $request->annual_turnover_year,
             'annual_turnover_payroll_figure' => $request->annual_turnover_payroll_figure,
             'annual_turnover_operating' => $request->annual_turnover_operating,
@@ -390,7 +427,12 @@ class EmployerFormController extends Controller
             'labour_job_n2_exact_date' => $request->labour_job_n2_exact_date,
             'labour_job_n2_online' => $request->labour_job_n2_online,
             'labour_job_n2_indicate' => $request->labour_job_n2_indicate,
-            'labour_job_n2_payment' => $request->labour_job_n2_payment
+            'labour_job_n2_payment' => $request->labour_job_n2_payment,
+            'labour_job_n3_people' => $request->labour_job_n3_people,
+            'labour_job_n3_exact_date' => $request->labour_job_n3_exact_date,
+            'labour_job_n3_online' => $request->labour_job_n3_online,
+            'labour_job_n3_indicate' => $request->labour_job_n3_indicate,
+            'labour_job_n3_payment' => $request->labour_job_n3_payment
 
         ];
 
@@ -406,7 +448,12 @@ class EmployerFormController extends Controller
             'job_n3_payment' => $request->job_n3_payment,
             'job_n3_after_people' => $request->job_n3_after_people,
             'job_n3_after_people_shortlisted' => $request->job_n3_after_people_shortlisted,
-            'job_n3_after_people_suitable' => $request->job_n3_after_people_suitable
+            'job_n3_after_people_suitable' => $request->job_n3_after_people_suitable,
+
+            'job_n4_people' => $request->job_n4_people,
+            'job_n4_people_shortlisted' => $request->job_n4_people_shortlisted,
+            'job_n4_people_suitable' => $request->job_n4_people_suitable,
+
 
         ];
 

@@ -34,7 +34,7 @@
                         where your business is registered </td>
                     <td>
                         <select id="sbs_business_country" name="sbs_business_country" class="form-control">
-                            <option value="">Select Nationality</option>
+                            <option value="">Select Country</option>
                             @if(!empty(isset($data->sbs_business_country)))
                             <option value="{{$data->sbs_business_country}}" selected>{{$data->sbs_business_country}}</option>
                             @endif
@@ -619,7 +619,7 @@
                     <td>Indicate the email contact of this person
                     </td>
                     <td>
-                        <input type="text" name="main_point_email_person" id="main_point_email_person" @if(isset($data->main_point_email_person)) value="{{$data->main_point_email_person}}" @endif/>
+                        <input type="email" name="main_point_email_person" id="main_point_email_person" @if(isset($data->main_point_email_person)) value="{{$data->main_point_email_person}}" @endif/>
                     </td>
                 </tr>
 
@@ -628,7 +628,7 @@
                         person
                     </td>
                     <td>
-                        <input type="text" name="main_point_contact_number" id="main_point_contact_number" @if(isset($data->main_point_contact_number)) value="{{$data->main_point_contact_number}}" @endif/>
+                        <input type="tel" name="main_point_contact_number" id="main_point_contact_number" @if(isset($data->main_point_contact_number)) value="{{$data->main_point_contact_number}}" @endif/>
                     </td>
                 </tr>
 
@@ -653,7 +653,16 @@
                     <td>Gender
                     </td>
                     <td>
-                        <input type="text" name="partner_gender1" id="partner_gender1" @if(isset($data->partner_gender1)) value="{{$data->partner_gender1}}" @endif/>
+                    <select name="partner_gender1" id="partner_gender1" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->partner_gender1)))
+                            <option value="{{$data->partner_gender1}}" selected>{{$data->partner_gender1}}</option>
+                            @endif
+                            <option value="Male">Male </option>
+                            <option value="Female"> Female </option>
+                        </select> 
+                        
                     </td>
                 </tr>
 
@@ -669,7 +678,17 @@
                     <td>Position
                     </td>
                     <td>
-                        <input type="text" name="partner_position1" id="partner_position1" @if(isset($data->partner_position1)) value="{{$data->partner_position1}}" @endif/>
+                    <select name="partner_position1" id="partner_position1" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->partner_position1)))
+                            <option value="{{$data->partner_position1}}" selected>{{$data->partner_position1}}</option>
+                            @endif
+                            <option value="Owner">Owner </option>
+                            <option value="Director"> Director </option>
+                            <option value="Partner"> Partner </option>
+                        </select> 
+                        
                     </td>
                 </tr>
 
@@ -716,7 +735,17 @@
                     <td>Position
                     </td>
                     <td>
-                        <input type="text" name="partner_position2" id="partner_position2" @if(isset($data->partner_position2)) value="{{$data->partner_position2}}" @endif/>
+                    <select name="partner_position2" id="partner_position2" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->partner_position2)))
+                            <option value="{{$data->partner_position2}}" selected>{{$data->partner_position2}}</option>
+                            @endif
+                            <option value="Owner">Owner </option>
+                            <option value="Director"> Director </option>
+                            <option value="Partner"> Partner </option>
+                        </select> 
+                      
                     </td>
                 </tr>
 
@@ -763,7 +792,73 @@
                     <td>Position
                     </td>
                     <td>
-                        <input type="text" name="partner_position3" id="partner_position3" @if(isset($data->partner_position3)) value="{{$data->partner_position3}}" @endif/>
+                    <select name="partner_position3" id="partner_position3" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->partner_position3)))
+                            <option value="{{$data->partner_position3}}" selected>{{$data->partner_position3}}</option>
+                            @endif
+                            <option value="Owner">Owner </option>
+                            <option value="Director"> Director </option>
+                            <option value="Partner"> Partner </option>
+                        </select>
+                       
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table>
+            <tbody>
+
+                <tr>
+                    <td>Name and surname
+                    </td>
+                    <td>
+                        <input type="text" name="partner_name_surname4" id="partner_name_surname4" @if(isset($data->partner_name_surname4)) value="{{$data->partner_name_surname4}}" @endif/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Gender
+                    </td>
+                    <td>
+                    <select name="partner_gender4" id="partner_gender4" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->partner_gender4)))
+                            <option value="{{$data->partner_gender4}}" selected>{{$data->partner_gender4}}</option>
+                            @endif
+                            <option value="Male">Male </option>
+                            <option value="Female"> Female </option>
+                        </select>
+                     
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Date of birth
+                    </td>
+                    <td>
+                        <input type="date" name="partner_dob4" id="partner_dob4" @if(isset($data->partner_dob4)) value="{{$data->partner_dob4}}" @endif/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Position
+                    </td>
+                    <td>
+                    <select name="partner_position4" id="partner_position4" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->partner_position4)))
+                            <option value="{{$data->partner_position4}}" selected>{{$data->partner_position4}}</option>
+                            @endif
+                            <option value="Owner">Owner </option>
+                            <option value="Director"> Director </option>
+                            <option value="Partner"> Partner </option>
+                        </select>
+                       
                     </td>
                 </tr>
 
@@ -1254,15 +1349,15 @@
             <tbody>
                 
                 
-                <tr style="visibility: hidden;">
+                <!-- <tr >
                     <td>
                     Of the total number of foreign employees,
                         what is the number of:
                     </td>
                     <td>
-                    
+
                     </td>
-                </tr>
+                </tr> -->
 
                 <tr>
                     <td> 457 or 482 visa holders (this is the
@@ -1735,7 +1830,7 @@
                     <td>Other visas
                     </td>
                     <td>
-                        <select name="organization_foreign_other_visas " id="organization_foreign_other_visas" class="form-control">
+                        <select name="organization_foreign_other_visas" id="organization_foreign_other_visas" class="form-control">
 
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->organization_foreign_other_visas)))

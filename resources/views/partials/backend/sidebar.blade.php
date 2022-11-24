@@ -111,7 +111,7 @@
                  <li class="nav-item active ">
                             <a class="nav-link" href="{{route('admin.form360.index')}}">
                             <i class="fas fa-fw fa-envelope"></i>
-                                <span>Form 360</span></a>
+                                <span>Form Applicant</span></a>
                 </li>
                  @elseif($form->form_id == 2)
                  <li class="nav-item active ">
@@ -134,7 +134,7 @@
     <li class="nav-item active ">
                 <a class="nav-link" href="{{route('admin.form360.index')}}">
                     <i class="fas fa-fw fa-envelope"></i>
-                    <span>Form 360</span></a>
+                    <span>Form Applicant</span></a>
     </li>
     <li class="nav-item active ">
                 <a class="nav-link" href="{{route('admin.employerform.index')}}">

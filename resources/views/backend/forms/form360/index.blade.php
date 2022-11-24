@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+<script src="{{asset('countrycode.js')}}"></script>
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -11,7 +11,7 @@
             <div class=" px-0 pt-4 pb-0 mt-3 mb-3">
 
                 <img src="/logo.png" class="logo" />
-                <h2 id="heading">Form 360 </h2>
+                <h2 id="heading">Form Applicant </h2>
                 @if(session()->has('success'))
                 <div class="alert alert-success ">
                     {{ session()->get('success') }}

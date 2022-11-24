@@ -268,4 +268,10 @@
   td.addBorder {
       border-color: red !important;
   }
+
+  h2.fs-title {
+    font-size: 20px;
+    margin-top: 10px;
+    text-transform: uppercase !important;
+}
   
