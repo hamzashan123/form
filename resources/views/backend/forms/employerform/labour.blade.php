@@ -13,13 +13,7 @@
 
         <div class="col-12 pl-0 mt-20">
 
-            <p>You will need to make sure that at least 3 job ads on 3 different platforms have been put
-                online, under the name of the sponsoring company. Each job ad must indicate the name of
-                the sponsoring company, the position to be filled, a brief description of the duties, full-time
-                role, annual salary unless the annual salary to be offered is beyond $ 96.400 AUD per year. </p>
-
-            <p> Each job ad must have run for at least 28 days and must not be older than 4 months before
-                the application is submitted </p>
+            <p>Unless it’s an intra company transfer, You will need to make sure that at least 3 job ads on 3 different platforms have been put online, under the name of the sponsoring company. Each job ad must indicate the name of the sponsoring company, the position to be filled, a brief description of the duties, full-time role, annual salary unless the annual salary to be offered is beyond $ 96.400 AUD per year. </p>
         </div>
 
         <table>
