@@ -30,7 +30,7 @@
                         online)
                     </td>
                     <td> 
-                        
+                    
                     <select name="labour_market_different" id="labour_market_different" class="form-control">
                             <option value=""> Select Option </option>
 
@@ -57,16 +57,8 @@
                         website)
                     </td>
                     <td> 
-                        
-                    <select name="labour_job_n1_people" id="labour_job_n1_people" class="form-control">
-                            <option value=""> Select Option </option>
-
-                            @if(!empty(isset($data->labour_job_n1_people)))
-                            <option value="{{$data->labour_job_n1_people}}" selected>{{$data->labour_job_n1_people}}</option>
-                            @endif
-                            <option value="Yes">Yes </option>
-                            <option value="No"> No </option>
-                        </select>
+                    <input type="text" name="labour_job_n1_people" id="labour_job_n1_people" @if(isset($data->labour_job_n1_people)) value="{{$data->labour_job_n1_people}}" @endif/>
+                 
                     
                     </td>
                 </tr>
@@ -104,7 +96,17 @@
                         for this job ad? If yes, please make sure to
                         attach this document
                     </td>
-                    <td> <input type="text" name="labour_job_n1_payment" id="labour_job_n1_payment" @if(isset($data->labour_job_n1_payment)) value="{{$data->labour_job_n1_payment}}" @endif/> </td>
+                    <td> 
+                    <select name="labour_job_n1_payment" id="labour_job_n1_payment" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->labour_job_n1_payment)))
+                            <option value="{{$data->labour_job_n1_payment}}" selected>{{$data->labour_job_n1_payment}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>    
+                   </td>
                 </tr>
 
 

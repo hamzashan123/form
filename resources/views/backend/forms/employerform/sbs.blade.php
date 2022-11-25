@@ -2102,24 +2102,8 @@
                         year?
                     </td>
                     <td>
-                    <select name="annual_turnover_year" id="annual_turnover_year" class="form-control">
-                            <option value=""> Select Option </option>
-                            @if(!empty(isset($data->annual_turnover_year)))
-                            <option value="{{$data->annual_turnover_year}}" selected>{{$data->annual_turnover_year}}</option>
-                            @endif
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            
-                        </select>
+                    <input type="text" name="annual_turnover_year" id="annual_turnover_year" @if(isset($data->annual_turnover_year)) value="{{$data->annual_turnover_year}}" @endif/>
+                           
                       
                     </td>
                 </tr>
