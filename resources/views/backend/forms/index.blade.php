@@ -35,7 +35,7 @@
                                     <select name="form_ids[]" id="permissions" class="form-control select2" multiple="multiple" required>
                                         
                                          
-                                            <option value="1"> Form 360</option>
+                                            <option value="1"> Form Applicant</option>
                                             <option value="2"> Employer Form</option>
                                           
 
