@@ -16,6 +16,7 @@ class NewFormSubmitted extends Mailable
     protected $surname;
     protected $email;
     protected $admin;
+    public $subject;
     protected $consultant;
     
     
@@ -30,6 +31,7 @@ class NewFormSubmitted extends Mailable
         $this->username = $data['username'];
         $this->surname = $data['surname'];
         $this->email = $data['email'];
+        $this->subject = $data['subject'];
         $this->admin = $data['admin'];
         $this->consultant = $data['consultant'];
     }
@@ -42,7 +44,7 @@ class NewFormSubmitted extends Mailable
     public function build()
     {
         return $this->view('emails.newformsubmitted')
-        ->subject('New Application Recieved !')
+        ->subject(ucfirst($this->subject))
             ->with([
                     'messagetype' => $this->messagetype,
                     'username' => $this->username,

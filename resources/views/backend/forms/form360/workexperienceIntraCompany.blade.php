@@ -93,7 +93,7 @@
                     </td>
                     <td> 
                     <select id="workexpintracompany_business_country" name="workexpintracompany_business_country" class="form-control">
-                            <option value="">Select Nationality</option>
+                            <option value="">Select Country</option>
                             @if(!empty(isset($data->workexpintracompany_business_country)))
                             <option value="{{$data->workexpintracompany_business_country}}" selected>{{$data->workexpintracompany_business_country}}</option>
                             @endif
@@ -525,7 +525,7 @@
                 </tr>
 
                 <tr>
-                    <td> Payslip of the current or most recent year </td>
+                    <td> Payslip of the current or most recent year of work performed  </td>
                     <td> <input type="file" name="workexpintracompany_current_recent_payslip" id="workexpintracompany_current_recent_payslip" >
                     @if (array_key_exists('workexpintracompany_current_recent_payslip', $docdataForm360))
                                                                
@@ -543,7 +543,7 @@
                 </tr>
 
                 <tr>
-                    <td> Income tax return </td>
+                    <td> A payslip from the previous year of work performed (if applicable) </td>
                     <td> <input type="file" name="workexpintracompany_income_tax_return" id="workexpintracompany_income_tax_return" >
                     @if (array_key_exists('workexpintracompany_income_tax_return', $docdataForm360))
                                                                
@@ -561,8 +561,7 @@
                 </tr>
 
                 <tr>
-                    <td> Social security chart such as INPS chart or other
-                        equivalent document
+                    <td> Income tax return or CUD document for the most recent year of work performed
                     </td>
                     <td> <input type="file" name="workexpintracompany_social_security" id="workexpintracompany_social_security" >
                     @if (array_key_exists('workexpintracompany_social_security', $docdataForm360))
@@ -579,10 +578,28 @@
                                                            @endif 
                     </td>
                 </tr>
+                <tr>
+                    <td> INPS Chart – Estratto contributivo
+                    </td>
+                    <td> <input type="file" name="workexpintracompany_contributivo" id="workexpintracompany_contributivo" >
+                    @if (array_key_exists('workexpintracompany_contributivo', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexpintracompany_contributivo/'.$docdataForm360['workexpintracompany_contributivo'])  }}">
+                                                               @if(str_contains($docdataForm360['workexpintracompany_contributivo'] , '.pdf'))
+                                                                <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexpintracompany_contributivo/'.$docdataForm360['workexpintracompany_contributivo'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                                                                    
+                                                                                                      
+                                                           @endif 
+                    </td>
+                </tr>
             </tbody>
         </table>
 
-        <h2 class="fs-title" style="margin-top: 10px;"> WORK TO BE PERFORMED IN AUSTRALIA OR NEW ZEALAND
+        <h2 class="fs-title" style="margin-top: 10px;"> WORK TO BE PERFORMED FOR THE SHORT-TERM WORK VISA OR PANDEMIC VISA IN AUSTRALIA OR NEW ZEALAND
         </h2>
 
         <table>
@@ -660,8 +677,8 @@
                 </tr>
 
                 <tr>
-                    <td>Description of the project you will be working
-                        during the time in Australia or New Zealand </td>
+                    <td>Description of the project you will be working during the time
+                         in Australia or New Zealand (This question is Not for the Pandemic visa) </td>
                     <td> <input type="text" name="workexpintracompany_aus_nz_description" id="workexpintracompany_aus_nz_description" @if(isset($data->workexpintracompany_aus_nz_description)) value="{{$data->workexpintracompany_aus_nz_description}}" @endif/> </td>
 
                 </tr>
@@ -682,23 +699,35 @@
 
 
                 <tr>
-                    <td>Will it be necessary enter Australia or New
-                        Zealand more than one time in order to carry
-                        out the job? In this case, please indicate how
-                        many times and for how long you will need to
-                        stay </td>
-                    <td> <input type="text" name="workexpintracompany_aus_nz_necessary" id="workexpintracompany_aus_nz_necessary" @if(isset($data->workexpintracompany_aus_nz_necessary)) value="{{$data->workexpintracompany_aus_nz_necessary}}" @endif/> </td>
+                    <td>Will it be necessary to enter Australia or New Zealand more than one time in order to carry out the job?  </td>
+                    <td> 
+                    <select name="workexpintracompany_aus_nz_necessary" id="workexpintracompany_aus_nz_necessary" class="form-control">
+                            <option value=""> Select Option </option>
+                            @if(!empty(isset($data->workexpintracompany_aus_nz_necessary)))
+                            <option value="{{$data->workexpintracompany_aus_nz_necessary}}" selected>{{$data->workexpintracompany_aus_nz_necessary}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>     
+                  
+                    </td>
 
                 </tr>
 
                 <tr>
-                    <td>For the work carried out in Australia or New
-                        Zealand, will you be paid by the Australia or
-                        New Zealandn company or will you still receive
-                        the payment from the company in Spain? Please
-                        specify in any case the amount for the period of
-                        work (even if approximately)</td>
-                    <td> <input type="text" name="workexpintracompany_aus_nz_paidby" id="workexpintracompany_aus_nz_paidby" @if(isset($data->workexpintracompany_aus_nz_paidby)) value="{{$data->workexpintracompany_aus_nz_paidby}}" @endif/> </td>
+                    <td>For the work carried out in Australia or New Zealand, will you be paid by the Australian or New Zealand company, or will you receive payments from the company located overseas? </td>
+                    <td> 
+                        
+                    <select name="workexpintracompany_aus_nz_paidby" id="workexpintracompany_aus_nz_paidby" class="form-control">
+                            <option value=""> Select Option </option>
+                            @if(!empty(isset($data->workexpintracompany_aus_nz_paidby)))
+                            <option value="{{$data->workexpintracompany_aus_nz_paidby}}" selected>{{$data->workexpintracompany_aus_nz_paidby}}</option>
+                            @endif
+                            <option value="Australiancompany">Australian company </option>
+                            <option value="NZCompany"> NZ Company </option>
+                            <option value="Overseascompany "> Overseas company  </option>
+                        </select> 
+                   </td>
 
                 </tr>
 
@@ -713,8 +742,7 @@
         <table>
             <tbody>
                 <tr>
-                    <td> Invitation letter from the Australia or New
-                        Zealand company
+                    <td> Invitation letter from the Australia or NewZealand company
                     </td>
                     <td> <input type="file" name="workexpintracompany_perform_in_aus_nz" id="workexpintracompany_perform_in_aus_nz" >
                     @if (array_key_exists('workexpintracompany_perform_in_aus_nz', $docdataForm360))

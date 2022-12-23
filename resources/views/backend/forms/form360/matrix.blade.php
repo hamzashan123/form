@@ -140,7 +140,7 @@
                             <option value="{{$data->matrix_highesteducationqualification}}" selected>{{$data->matrix_highesteducationqualification}}</option>
                             @endif
                             <option value="Year 8"> Year 8 </option>
-                            <option value="Year 12/13 Maturità"> Year 12/13 Maturità </option>
+                            <option value="Year 12/13 High school qualification"> Year 12/13 High school qualification  </option>
                             <option value="Vocational technical course"> Vocational technical course </option>
                             <option value="Bachelor or Master’s degree course"> Bachelor or Master’s degree course </option>
                             <option value="phd"> PhD </option>
@@ -238,7 +238,18 @@
                     <td>If yes, please indicate who will be included in the
                         application
                     </td>
-                    <td> <input type="text" name="matrix_indicateincluded" id="matrix_indicateincluded" @if(isset($data->matrix_indicateincluded)) value="{{$data->matrix_indicateincluded}}" @endif/>
+                    <td>
+                    <select name="matrix_indicateincluded" id="matrix_indicateincluded" class="form-control">
+                            <option value=""> Select Option </option>
+                            @if(!empty(isset($data->matrix_indicateincluded)))
+                            <option value="{{$data->matrix_indicateincluded}}" selected>{{$data->matrix_indicateincluded}}</option>
+                            @endif
+                            <option value="Just myself"> Just myself </option>
+                            <option value="Partner only"> Partner only </option>
+                            <option value="Partner and children  "> Partner and children </option>
+                    </select>
+
+                       
                     </td>
                 </tr>
 

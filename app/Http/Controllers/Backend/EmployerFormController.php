@@ -52,12 +52,14 @@ class EmployerFormController extends Controller
                 $docdataemployerform[$doc->doc_field] = $doc->doc_name;
             }
         }
+
+        
         return view('backend.forms.employerform.index', compact('data', 'docdataemployerform'));
     }
 
     public function save(Request $request)
     {
-
+       //dd($request);
         $formExist = DB::table('employerform')->where('user_id', Auth::user()->id)->first();
 
         if (empty($formExist->id)) {
@@ -86,12 +88,12 @@ class EmployerFormController extends Controller
                 $fieldsets['nominationData']
             ]);
 
-
+            
             $this->saveDocuments($formid, $request);
             
                 $formdata = DB::table('employerform')->where('user_id', Auth::user()->id)->first();
 
-                if ($request->has('formsubmit') && $formdata->is_email_sent == false) {
+                if ($request->isFormSubmit == true && $formdata->is_email_sent == false) {
                     
                     DB::table('employerform')->where('user_id', Auth::user()->id)->update(['is_email_sent' => true]);
                     $admindata = [
@@ -100,6 +102,7 @@ class EmployerFormController extends Controller
                         'surname' => Auth::user()->surname,
                         'username' => Auth::user()->username,
                         'email' => Auth::user()->email,
+                        'subject' => 'New Application Recieved',
                         'messagetype' => 'A new application has been recieved!'
                     ];
                     Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($admindata));
@@ -110,6 +113,7 @@ class EmployerFormController extends Controller
                         'surname' => Auth::user()->surname,
                         'username' => Auth::user()->username,
                         'email' => Auth::user()->email,
+                        'subject' => 'Your application has been submitted',
                         'messagetype' => ' 
                             Your application has been correctly submitted and received on the Auslegal Info/Docs system.
                             What will happen next
@@ -125,25 +129,32 @@ class EmployerFormController extends Controller
 
                      // if this user has any consultant then email also be sent to consultant
                     $consultants = ConsultantUser::where(['client_id'  => Auth::user()->id])->pluck('consultant_id');
+                    
                     if(count($consultants) > 0){
                         foreach($consultants as $consultant){
                             $consultantUser = DB::table('users')->where('id',$consultant)->first();
-                            $consultantdata = [
-                                'admin' => false,
-                                'consultant' => true,
-                                'surname' => $consultantUser->surname,
-                                'username' => $consultantUser->username,
-                                'email' => $consultantUser->email,
-                                'messagetype' => 'A new application is submitted by your assigned user please check and make correction if you find any problem in the submitted application.'
-                            ];
-                            Mail::to($consultantUser->email)->send(new NewFormSubmitted($consultantdata));
+                           
+                            if($consultantUser !== null){
+                                $consultantdata = [
+                                    'admin' => false,
+                                    'consultant' => true,
+                                    'surname' => $consultantUser->surname,
+                                    'username' => $consultantUser->username,
+                                    'email' => $consultantUser->email,
+                                    'messagetype' => 'A new application is submitted by your assigned user please check and make correction if you find any problem in the submitted application.'
+                                ];
+                                Mail::to($consultantUser->email)->send(new NewFormSubmitted($consultantdata));
+                            }
+                            
                         }
                     }
                     
                     return redirect()->back()->with('success', 'Application Submitted !');
+                   
                 }
             
         } else {
+            
             $existingForm =  DB::table('employerform')->where('user_id', Auth::user()->id)->first();
 
             $fieldsets = $this->getFieldsetsData($existingForm->id, $request);
@@ -171,6 +182,7 @@ class EmployerFormController extends Controller
                     'surname' => Auth::user()->surname,
                     'username' => Auth::user()->username,
                     'email' => Auth::user()->email,
+                    'subject' => 'Your application has been saved',
                     'messagetype' => ' 
                     Your application has been saved.You can login again and resume your application when needed.
                     Please note that until your form is not submitted for the first time, the application will not show as submitted. 
@@ -179,7 +191,7 @@ class EmployerFormController extends Controller
                 Mail::to(Auth::user()->email)->send(new NewFormSubmitted($saveEmail));
             //check if is_email_sent is false
             
-            if ($request->has('formsubmit') && !empty($existingForm) && $existingForm->is_email_sent == false) {
+            if ($request->isFormSubmit == true  && !empty($existingForm) && $existingForm->is_email_sent == false) {
                 //dd($request);
                 DB::table('employerform')->where('user_id', Auth::user()->id)->update(['is_email_sent' => true]);
                 $admindata = [
@@ -188,6 +200,7 @@ class EmployerFormController extends Controller
                     'surname' => Auth::user()->surname,
                     'username' => Auth::user()->username,
                     'email' => Auth::user()->email,
+                    'subject' => 'New Application Recieved',
                     'messagetype' => 'A new application has been recieved!'
                 ];
                 Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($admindata));
@@ -198,6 +211,7 @@ class EmployerFormController extends Controller
                     'surname' => Auth::user()->surname,
                     'username' => Auth::user()->username,
                     'email' => Auth::user()->email,
+                    'subject' => 'Your application has been submitted ',
                     'messagetype' => ' 
                         Your application has been correctly submitted and received on the Auslegal Info/Docs system.
                         What will happen next
@@ -216,15 +230,18 @@ class EmployerFormController extends Controller
                  if(count($consultants) > 0){
                      foreach($consultants as $consultant){
                          $consultantUser = DB::table('users')->where('id',$consultant)->first();
+                         if($consultantUser !== null){
                          $consultantdata = [
                              'admin' => false,
                              'consultant' => true,
                              'surname' => $consultantUser->surname,
                              'username' => $consultantUser->username,
                              'email' => $consultantUser->email,
+                             'subject' => 'New Application Recieved',
                              'messagetype' => 'A new application is submitted by your assigned user please check and make correction if you find any problem in the submitted application.'
                          ];
                          Mail::to($consultantUser->email)->send(new NewFormSubmitted($consultantdata));
+                        }
                      }
                  }
              

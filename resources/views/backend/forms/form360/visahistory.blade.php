@@ -104,20 +104,11 @@
 
                 <tr>
                     <td>Have you ever had a visa for Australia or New
-                        Zealand or any other country refused or
-                        cancelled?If so, please specify
+Zealand or any other country refused or cancelled? If so, please specify
                     </td>
                     <td>
-                    <select name="currentvisa_ever_had_visa" id="currentvisa_ever_had_visa" class="form-control">
-                            <option value=""> Select Option </option>
-
-                            @if(!empty(isset($data->currentvisa_ever_had_visa)))
-                            <option value="{{$data->currentvisa_ever_had_visa}}" selected>{{$data->currentvisa_ever_had_visa}}</option>
-                            @endif
-                            <option value="Yes">Yes </option>
-                            <option value="No"> No </option>
-                        </select> 
-                        
+                    <input type="text" name="currentvisa_ever_had_visa" id="currentvisa_ever_had_visa" @if(isset($data->currentvisa_ever_had_visa)) value="{{$data->currentvisa_ever_had_visa}}" @endif/>    
+                  
                     </td>
                 </tr>
 
@@ -153,14 +144,8 @@
                 </tr>
 
                 <tr>
-                    <td>Have you ever been in Australia or New Zealand
-                        or any other country and Have you ever had any
-                        visa issues, not complied with visa conditions or
-                        have departed outside their authorised period
-                        of stay, in any country, Australia or New
-                        Zealand or non in Australia or New Zealand? If
-                        yes, please specify the country and the type of
-                        issue
+                    <td>Have you ever had any  visa issues or have not complied with visa conditions or  have departed outside their authorized period of stay, in any country? <br>
+If yes, please specify the country and the type of issue
 
                     </td>
                     <td>
@@ -184,8 +169,7 @@
                     <tbody>
 
                         <tr>
-                            <td> Current visa to Australia or New Zealand (if
-                                applicable)
+                            <td> Current visa to Australia or New Zealand (if applicable)
                             </td>
                             <td> <input type="file" name="currentvisa_aus_naz_if_applicable" id="currentvisa_aus_naz_if_applicable"  >
                             @if (array_key_exists('currentvisa_aus_naz_if_applicable', $docdataForm360))
@@ -204,8 +188,7 @@
                         </tr>
 
                         <tr>
-                            <td> Previous visas to Australia or New Zealand (if
-                                applicable)
+                            <td> Previous visas to Australia or New Zealand (if applicable)
                             </td>
                             <td> <input type="file" name="previous_visa_if_applicable1" id="previous_visa_if_applicable1"  >
                             @if (array_key_exists('previous_visa_if_applicable1', $docdataForm360))
@@ -224,9 +207,7 @@
                         </tr>
 
                         <tr>
-                            <td> Previous visas to Australia or New Zealand (if
-                                applicable)
-
+                            <td> Previous visas to Australia or New Zealand (if applicable)
                             </td>
                             <td> <input type="file" name="previous_visa_if_applicable2" id="previous_visa_if_applicable2" >
                             @if (array_key_exists('previous_visa_if_applicable2', $docdataForm360))

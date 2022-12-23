@@ -29,7 +29,8 @@
                     <td> Is this an intra-company transfer? (when
                         the applicant has been working for a
                         subsidiary and/or branch of the Australian
-                        company outside of Australia)</td>
+                        company outside of Australia)
+                    </td>
                     <td> 
                     <select name="nomination_intra_company_transfer" id="nomination_intra_company_transfer" class="form-control">
                             <option value=""> Select Option </option>
@@ -831,7 +832,17 @@
                         citizens or Australian permanent residents in
                         the nominated occupation, or made their
                         positions redundant, in the last four months?</td>
-                    <td> <input type="text" name="qua_and_exp_four_month" id="qua_and_exp_four_month" @if(isset($data->qua_and_exp_four_month)) value="{{$data->qua_and_exp_four_month}}" @endif/> </td>
+                    <td>
+                    <select name="qua_and_exp_four_month" id="qua_and_exp_four_month" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->qua_and_exp_four_month)))
+                            <option value="{{$data->qua_and_exp_four_month}}" selected>{{$data->qua_and_exp_four_month}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>  
+                 </td>
                 </tr>
 
                 <tr>
@@ -860,8 +871,7 @@
             <tbody>
 
                 <tr>
-                    <td> What annual salary are you offering the visa
-                        applicant?
+                    <td> What annual salary will you be offering the visa applicant? Please indicate the net salary offered to the applicant NOT including superannuation
                     </td>
                     <td> <input type="text" name="salary_offering_visa_applicant" id="salary_offering_visa_applicant" @if(isset($data->salary_offering_visa_applicant)) value="{{$data->salary_offering_visa_applicant}}" @endif/> </td>
                 </tr>
@@ -913,7 +923,7 @@
                 </tr>
 
 
-                <tr>
+                <!-- <tr>
                     <td> What annual salary will you be offering the
                         visa applicant? Please indicate the net salary
                         offered to the applicant NOT including
@@ -921,7 +931,7 @@
 
                     </td>
                     <td> <input type="text" name="salary_annual" id="salary_annual" @if(isset($data->salary_annual)) value="{{$data->salary_annual}}" @endif/> </td>
-                </tr>
+                </tr> -->
 
                 <tr>
                     <td> How many hours per week will the applicant

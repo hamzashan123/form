@@ -37,7 +37,7 @@
 <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
 <script>
     const phonereg = document.querySelector('#phonereg');
-    const phoneInput2 = window.intlTelInput(phonereg, {
+    const phoneInput = window.intlTelInput(phonereg, {
         initialCountry: 'au',
         utilsScript:
             'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js',

@@ -786,12 +786,13 @@
 
     </div>
   
-    <input type="hidden" name="formsubmitemail" value="" id="formsubmitemail"/>
-    <!-- <input type="button" name="next" class="next action-button" value="Submit" /> -->
     
-    @if(!empty($data->is_email_sent) != true)
+    
+    @if(!empty($data->is_email_sent) && $data->is_email_sent == false)
+    <input type="hidden" name="isFormSubmit" value="true">
     <button name="formsubmit" class="next action-button submitemployerform" > Submit</button>
     @else
+    <input type="hidden" name="isFormSubmit" value="false">
     <input type="button" name="save" class="save action-button" value="Save" />
     @endif
  

@@ -161,7 +161,7 @@ jQuery(document).ready(function () {
             jQuery(this).closest("fieldset").attr("id")
         );
         console.log(localStorage.getItem("fieldset"));
-        $("#formsubmitemail").val("true");
+        // $("#formsubmitemail").val("true");
     });
 
     jQuery(".save").click(function (e) {

@@ -18,9 +18,27 @@
             <tbody>
 
                 <tr>
-                    <td> 1) Does any applicant intend to enter a hospital or a
+                    <td>
+                        <ul>
+                        <li>Does any applicant intend to enter a hospital or a
                         health care facility (including nursing homes)
-                        while in Australia or New Zealand? </td>
+                        while in Australia or New Zealand?</li>
+                        <li>Does any applicant intend to work as, or study to
+                        be a doctor, dentist, nurse or paramedic during
+                        their stay in Australia or New Zealand? </li>
+                        <li>Does any applicant intend to work or be a trainee
+                        at a childcare centre (including preschools and
+                        creches) while in Australia or New Zealand? </li>
+                        <li>4) Does any applicant intend to be in a classroom
+                        situation for more than 3 months (eg. as either a
+                        student, teacher, lecturer or observer)? </li>
+                        <li> Ever had, or currently have, tuberculosis? </li>
+                        <li> been in close contact with a family member that
+                        has active tuberculosis? </li>
+                        <li> ever had a chest x-ray which showed an
+                        abnormality?</li>
+                        </ul>
+                   </td>
                     <td>
                         <select name="healthquestion_aus_or_nz" id="healthquestion_aus_or_nz" class="form-control">
                             <option value=""> Select Option </option>
@@ -35,7 +53,7 @@
                 </tr>
 
 
-                <tr>
+                <!-- <tr>
                     <td> 2) Does any applicant intend to work as, or study to
                         be a doctor, dentist, nurse or paramedic during
                         their stay in Australia or New Zealand? </td>
@@ -141,22 +159,16 @@
                             <option value="No"> No </option>
                         </select>
                     </td>
-                </tr>
+                </tr> -->
 
                 <tr>
                     <td> If you answered YES to any questions, indicate YES, specify
                         what question number refers to you and provide further
                         details in the following box:</td>
                     <td>
-                        <select name="healthquestion_indicate_if_yes" id="healthquestion_indicate_if_yes" class="form-control">
-                            <option value=""> Select Option </option>
-                            @if(!empty(isset($data->healthquestion_indicate_if_yes)))
-                            <option value="{{$data->healthquestion_indicate_if_yes}}" selected>{{$data->healthquestion_indicate_if_yes}}</option>
-                            @endif
-
-                            <option value="Yes"> Yes </option>
-                            <option value="No"> No </option>
-                        </select>
+                    <input type="text" name="healthquestion_indicate_if_yes" id="healthquestion_indicate_if_yes" @if(isset($data->healthquestion_indicate_if_yes)) value="{{$data->healthquestion_indicate_if_yes}}" @endif/> 
+                  
+                       
 
 
                     </td>
@@ -174,9 +186,25 @@
                 <tr>
                     <td> During their proposed visit to Australia or New Zealand, do
                         you expect to incur medical costs, or require treatment or
-                        medical follow up for: </td>
+                        medical follow up for: 
+                    <ul>
+                        <li> Blood disorder </li>
+                        <li> Cancer </li>
+                        <li> Heart disease </li>
+                        <li> Hepatitis B or C and/or liver disease </li>
+                        <li> HIV infection, including AIDS </li>
+                        <li> Kidney disease, including dialysis </li>
+                        <li> Mental illness </li>
+                        <li> Pregnancy </li>
+                        <li> Respiratory disease that has required hospital
+                        admission or oxygen therapy </li>
+                        <li> Do you require assistance with mobility or care
+                        due to a medical condition? </li>
+
+                    </ul>
+                    </td>
                     <td>
-                        <select name="healthquestion_medicalcosts" id="healthquestion_medicalcosts" class="form-control">
+                    <select name="healthquestion_medicalcosts" id="healthquestion_medicalcosts" class="form-control">
                             <option value=""> Select Option </option>
                             @if(!empty(isset($data->healthquestion_medicalcosts)))
                             <option value="{{$data->healthquestion_medicalcosts}}" selected>{{$data->healthquestion_medicalcosts}}</option>
@@ -185,11 +213,13 @@
                             <option value="Yes"> Yes </option>
                             <option value="No"> No </option>
                         </select>
+                   
+                       
                     </td>
                 </tr>
 
 
-                <tr>
+                <!-- <tr>
                     <td> 1) Blood disorder </td>
                     <td>
                         <select name="healthquestion_blood" id="healthquestion_blood" class="form-control">
@@ -379,7 +409,7 @@
                         </select>
 
                     </td>
-                </tr>
+                </tr> -->
 
 
                 <tr>
@@ -388,16 +418,8 @@
                         details in the following box:
                     </td>
                     <td>
-
-                        <select name="healthquestion_question_number_if_yes" id="healthquestion_question_number_if_yes" class="form-control">
-                            <option value=""> Select Option </option>
-                            @if(!empty(isset($data->healthquestion_question_number_if_yes)))
-                            <option value="{{$data->healthquestion_question_number_if_yes}}" selected>{{$data->healthquestion_question_number_if_yes}}</option>
-                            @endif
-
-                            <option value="Yes"> Yes </option>
-                            <option value="No"> No </option>
-                        </select>
+                    <input type="text" name="healthquestion_question_number_if_yes" id="healthquestion_question_number_if_yes" @if(isset($data->healthquestion_question_number_if_yes)) value="{{$data->healthquestion_question_number_if_yes}}" @endif/> 
+                   
                     </td>
                 </tr>
 

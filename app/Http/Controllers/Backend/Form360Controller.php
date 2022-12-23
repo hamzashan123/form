@@ -177,6 +177,7 @@ class Form360Controller extends Controller
                         'surname' => Auth::user()->surname,
                         'username' => Auth::user()->username,
                         'email' => Auth::user()->email,
+                        'subject' => 'New Application Recieved',
                         'messagetype' => 'A new application has been recieved!'
                     ];
                     Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($admindata));
@@ -187,6 +188,7 @@ class Form360Controller extends Controller
                         'surname' => Auth::user()->surname,
                         'username' => Auth::user()->username,
                         'email' => Auth::user()->email,
+                        'subject' => 'Your application has been submitted ',
                         'messagetype' => ' 
                             Your application has been correctly submitted and received on the Auslegal Info/Docs system.
                             What will happen next
@@ -290,6 +292,7 @@ class Form360Controller extends Controller
                 'surname' => Auth::user()->surname,
                 'username' => Auth::user()->username,
                 'email' => Auth::user()->email,
+                'subject' => 'Your application has been saved',
                 'messagetype' => ' 
                 Your application has been saved.You can login again and resume your application when needed.
                 Please note that until your form is not submitted for the first time, the application will not show as submitted. 
@@ -305,6 +308,7 @@ class Form360Controller extends Controller
                         'surname' => Auth::user()->surname,
                         'username' => Auth::user()->username,
                         'email' => Auth::user()->email,
+                        'subject' => 'New Application Recieved',
                         'messagetype' => 'A new application has been recieved!'
                     ];
                     Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($admindata));
@@ -315,6 +319,7 @@ class Form360Controller extends Controller
                         'surname' => Auth::user()->surname,
                         'username' => Auth::user()->username,
                         'email' => Auth::user()->email,
+                        'subject' => 'Your application has been submitted',
                         'messagetype' => ' 
                             Your application has been correctly submitted and received on the Auslegal Info/Docs system.
                             What will happen next

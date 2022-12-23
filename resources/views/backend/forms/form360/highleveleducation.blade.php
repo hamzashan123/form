@@ -76,7 +76,27 @@
                     <td> Course duration
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification1_course_duration" id="higher_level_qualification1_course_duration" @if(isset($data->higher_level_qualification1_course_duration)) value="{{$data->higher_level_qualification1_course_duration}}" @endif/>
+                    <td>
+                    <select name="higher_level_qualification1_course_duration" id="higher_level_qualification1_course_duration" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->higher_level_qualification1_course_duration)))
+                            <option value="{{$data->higher_level_qualification1_course_duration}}" selected>{{$data->higher_level_qualification1_course_duration}}</option>
+                            @endif
+
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>    
+                   
                     </td>
                 </tr>
 
@@ -145,7 +165,7 @@
                     <td> 
                       
                     <select id="higher_level_qualification1_country" name="higher_level_qualification1_country" class="form-control">
-                            <option value="">Select Nationality</option>
+                            <option value="">Select Country</option>
                             @if(!empty(isset($data->higher_level_qualification1_country)))
                             <option value="{{$data->higher_level_qualification1_country}}" selected>{{$data->higher_level_qualification1_country}}</option>
                             @endif
@@ -442,7 +462,69 @@
 
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification1_thesis_project_if" id="higher_level_qualification1_thesis_project_if" @if(isset($data->higher_level_qualification1_thesis_project_if)) value="{{$data->higher_level_qualification1_thesis_project_if}}" @endif/>
+                    <td> 
+                    <select name="higher_level_qualification1_thesis_project_if" id="higher_level_qualification1_thesis_project_if" class="form-control">
+
+                    <option value=""> Select Option </option>
+                    @if(!empty(isset($data->higher_level_qualification1_thesis_project_if)))
+                    <option value="{{$data->higher_level_qualification1_thesis_project_if}}" selected>{{$data->higher_level_qualification1_thesis_project_if}}</option>
+                    @endif
+                   
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                    <option value="43">43</option>
+                    <option value="44">44</option>
+                    <option value="45">45</option>
+                    <option value="46">46</option>
+                    <option value="47">47</option>
+                    <option value="48">48</option>
+                    <option value="49">49</option>
+                    <option value="50">50</option>
+                    <option value="51">51</option>
+                    <option value="52">52</option>
+
+                    </select>    
+                   
                     </td>
                 </tr>
 
@@ -451,9 +533,8 @@
 
         <h2 class="fs-title" style="margin-top: 10px;">DOCS FOR HIGHER QUALIFICATION 1
         </h2>
-        <p style="color:red">Attachments must be colour scans of the original document and uploaded in PDF format only. Please consolidate all
-            multipage files into one PDF document for each attachment type. Maximum PDF file size is 3MB per PDF.
-            Unnecessary additional documents will cause delays in processing. </p>
+        <p style="color:red">Attachments must be color scans of the original document and uploaded in PDF format only. Please consolidate all multipage files into one PDF document for each attachment type. Maximum PDF file size is 3MB per PDF. Unnecessary additional documents will cause delays in processing.
+        </p>
 
         <table>
             <tbody>
@@ -578,7 +659,27 @@
                     <td> Course duration
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification2_course_duration" id="higher_level_qualification2_course_duration" @if(isset($data->higher_level_qualification2_course_duration)) value="{{$data->higher_level_qualification2_course_duration}}" @endif/>
+                    <td>
+                    <select name="higher_level_qualification2_course_duration" id="higher_level_qualification2_course_duration" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->higher_level_qualification2_course_duration)))
+                            <option value="{{$data->higher_level_qualification2_course_duration}}" selected>{{$data->higher_level_qualification2_course_duration}}</option>
+                            @endif
+
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>      
+                   
                     </td>
                 </tr>
 
@@ -645,7 +746,7 @@
                     </td>
                     <td> 
                     <select id="higher_level_qualification2_country" name="higher_level_qualification2_country" class="form-control">
-                            <option value="">Select Nationality</option>
+                            <option value="">Select Country</option>
                             @if(!empty(isset($data->higher_level_qualification2_country)))
                             <option value="{{$data->higher_level_qualification2_country}}" selected>{{$data->higher_level_qualification2_country}}</option>
                             @endif
@@ -927,9 +1028,6 @@
                 <tr>
                     <td> Was a thesis or final project required to end the
                         course? If so, specify the title of the thesis/project
-
-
-
                     </td>
                     <td> <input type="text" name="higher_level_qualification2_thesis_project" id="higher_level_qualification2_thesis_project" @if(isset($data->higher_level_qualification2_thesis_project)) value="{{$data->higher_level_qualification2_thesis_project}}" @endif/>
                     </td>
@@ -943,7 +1041,70 @@
 
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification2_thesis_project_if" id="higher_level_qualification2_thesis_project_if" @if(isset($data->higher_level_qualification2_thesis_project_if)) value="{{$data->higher_level_qualification2_thesis_project_if}}" @endif/>
+                    <td>
+                    <select name="higher_level_qualification2_thesis_project_if" id="higher_level_qualification2_thesis_project_if" class="form-control">
+
+<option value=""> Select Option </option>
+@if(!empty(isset($data->higher_level_qualification2_thesis_project_if)))
+<option value="{{$data->higher_level_qualification2_thesis_project_if}}" selected>{{$data->higher_level_qualification2_thesis_project_if}}</option>
+@endif
+
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+<option value="32">32</option>
+<option value="33">33</option>
+<option value="34">34</option>
+<option value="35">35</option>
+<option value="36">36</option>
+<option value="37">37</option>
+<option value="38">38</option>
+<option value="39">39</option>
+<option value="40">40</option>
+<option value="41">41</option>
+<option value="42">42</option>
+<option value="43">43</option>
+<option value="44">44</option>
+<option value="45">45</option>
+<option value="46">46</option>
+<option value="47">47</option>
+<option value="48">48</option>
+<option value="49">49</option>
+<option value="50">50</option>
+<option value="51">51</option>
+<option value="52">52</option>
+
+</select>        
+                    
+                  
                     </td>
                 </tr>
 
@@ -1152,7 +1313,7 @@
                     </td>
                     <td>
                     <select id="higher_level_qualification3_country" name="higher_level_qualification3_country" class="form-control">
-                            <option value="">Select Nationality</option>
+                            <option value="">Select Country</option>
                             @if(!empty(isset($data->higher_level_qualification3_country)))
                             <option value="{{$data->higher_level_qualification3_country}}" selected>{{$data->higher_level_qualification3_country}}</option>
                             @endif
@@ -1450,7 +1611,69 @@
 
 
                     </td>
-                    <td> <input type="text" name="higher_level_qualification3_thesis_project_if" id="higher_level_qualification3_thesis_project_if" @if(isset($data->higher_level_qualification3_thesis_project_if)) value="{{$data->higher_level_qualification3_thesis_project_if}}" @endif/>
+                    <td>
+                    <select name="higher_level_qualification3_thesis_project_if" id="higher_level_qualification3_thesis_project_if" class="form-control">
+
+<option value=""> Select Option </option>
+@if(!empty(isset($data->higher_level_qualification3_thesis_project_if)))
+<option value="{{$data->higher_level_qualification3_thesis_project_if}}" selected>{{$data->higher_level_qualification3_thesis_project_if}}</option>
+@endif
+
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+<option value="32">32</option>
+<option value="33">33</option>
+<option value="34">34</option>
+<option value="35">35</option>
+<option value="36">36</option>
+<option value="37">37</option>
+<option value="38">38</option>
+<option value="39">39</option>
+<option value="40">40</option>
+<option value="41">41</option>
+<option value="42">42</option>
+<option value="43">43</option>
+<option value="44">44</option>
+<option value="45">45</option>
+<option value="46">46</option>
+<option value="47">47</option>
+<option value="48">48</option>
+<option value="49">49</option>
+<option value="50">50</option>
+<option value="51">51</option>
+<option value="52">52</option>
+
+</select>     
+                   
                     </td>
                 </tr>
 

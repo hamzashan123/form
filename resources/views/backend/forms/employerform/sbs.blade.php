@@ -401,7 +401,16 @@
 
                     </td>
                     <td>
-                        <input type="text" name="sbs_business_franchise" id="sbs_business_franchise" @if(isset($data->sbs_business_franchise)) value="{{$data->sbs_business_franchise}}" @endif/>
+                    <select name="sbs_business_franchise" id="sbs_business_franchise" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->sbs_business_franchise)))
+                            <option value="{{$data->sbs_business_franchise}}" selected>{{$data->sbs_business_franchise}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select> 
+                      
                     </td>
                 </tr>
 
@@ -412,7 +421,16 @@
 
                     </td>
                     <td>
-                        <input type="text" name="sbs_business_trustee" id="sbs_business_trustee" @if(isset($data->sbs_business_trustee)) value="{{$data->sbs_business_trustee}}" @endif/>
+                    <select name="sbs_business_trustee" id="sbs_business_trustee" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->sbs_business_trustee)))
+                            <option value="{{$data->sbs_business_trustee}}" selected>{{$data->sbs_business_trustee}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select> 
+                      
                     </td>
                 </tr>
 
@@ -453,7 +471,16 @@
                         Immigration approval letter
                     </td>
                     <td>
-                        <input type="text" name="sbs_business_sponsor_migration" id="sbs_business_sponsor_migration" @if(isset($data->sbs_business_sponsor_migration)) value="{{$data->sbs_business_sponsor_migration}}" @endif/>
+                    <select name="sbs_business_sponsor_migration" id="sbs_business_sponsor_migration" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->sbs_business_sponsor_migration)))
+                            <option value="{{$data->sbs_business_sponsor_migration}}" selected>{{$data->sbs_business_sponsor_migration}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select> 
+                       
                     </td>
                 </tr>
 
@@ -465,7 +492,16 @@
 
                     </td>
                     <td>
-                        <input type="text" name="sbs_business_ato" id="sbs_business_ato" @if(isset($data->sbs_business_ato)) value="{{$data->sbs_business_ato}}" @endif/>
+                    <select name="sbs_business_ato" id="sbs_business_ato" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->sbs_business_ato)))
+                            <option value="{{$data->sbs_business_ato}}" selected>{{$data->sbs_business_ato}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select> 
+                       
                     </td>
                 </tr>
 
@@ -479,7 +515,16 @@
 
                     </td>
                     <td>
-                        <input type="text" name="sbs_business_stock_exchange" id="sbs_business_stock_exchange" @if(isset($data->sbs_business_stock_exchange)) value="{{$data->sbs_business_stock_exchange}}" @endif/>
+                    <select name="sbs_business_stock_exchange" id="sbs_business_stock_exchange" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->sbs_business_stock_exchange)))
+                            <option value="{{$data->sbs_business_stock_exchange}}" selected>{{$data->sbs_business_stock_exchange}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>
+                       
                     </td>
                 </tr>
 
@@ -501,7 +546,7 @@
                         established?
                     </td>
                     <td>
-                        <input type="text" name="sbs_trading_established" id="sbs_trading_established" @if(isset($data->sbs_trading_established)) value="{{$data->sbs_trading_established}}" @endif/>
+                        <input type="date" name="sbs_trading_established" id="sbs_trading_established" @if(isset($data->sbs_trading_established)) value="{{$data->sbs_trading_established}}" @endif/>
                     </td>
                 </tr>
 
@@ -511,7 +556,7 @@
                         Australia? Indicate the month and year
                     </td>
                     <td>
-                        <input type="text" name="sbs_trading_business" id="sbs_trading_business" @if(isset($data->sbs_trading_business)) value="{{$data->sbs_trading_business}}" @endif/>
+                        <input type="date" name="sbs_trading_business" id="sbs_trading_business" @if(isset($data->sbs_trading_business)) value="{{$data->sbs_trading_business}}" @endif/>
                     </td>
                 </tr>
 

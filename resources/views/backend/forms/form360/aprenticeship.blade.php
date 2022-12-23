@@ -17,7 +17,7 @@
         <table>
             <tbody>
                 <tr>
-                    <td> Did you undergo a period of apprenticeship (apprendistato) either during your formal studies or after your finished you course of study?
+                    <td> Did you undergo a period of apprenticeship (apprendistato) either during your formal studies or after you finished your course of study?
                     </td>
                     <td> 
                     <select name="apprenticeship_formal_studies" id="apprenticeship_formal_studies" class="form-control">
@@ -39,12 +39,36 @@
 
                 <tr>
                     <td> Indicate the total duration of the apprenticeship </td>
-                    <td> <input type="text" name="apprenticeship_total_duration" id="apprenticeship_total_duration" @if(isset($data->apprenticeship_total_duration)) value="{{$data->apprenticeship_total_duration}}" @endif/> </td>
+                    <td> 
+                    <select name="apprenticeship_total_duration" id="apprenticeship_total_duration" class="form-control">
+                            <option value=""> Select Years </option>
+
+                            @if(!empty(isset($data->apprenticeship_total_duration)))
+                            <option value="{{$data->apprenticeship_total_duration}}" selected>{{$data->apprenticeship_total_duration}}</option>
+                            @endif
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>      
+                   </td>
                 </tr>
 
                 <tr>
                     <td> Was the apprenticeship completed? </td>
-                    <td> <input type="text" name="apprenticeship_completed" id="apprenticeship_completed" @if(isset($data->apprenticeship_completed)) value="{{$data->apprenticeship_completed}}" @endif/> </td>
+                    <td> 
+                    <select name="apprenticeship_completed" id="apprenticeship_completed" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->apprenticeship_completed)))
+                            <option value="{{$data->apprenticeship_completed}}" selected>{{$data->apprenticeship_completed}}</option>
+                            @endif
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
+                        </select>    
+                    </td>
                 </tr>
 
 
@@ -61,17 +85,27 @@
                 </tr>
 
                 <tr>
-                    <td> Address of the company </td>
+                    <td> Address of the company where you did your apprenticeship </td>
                     <td> <input type="text" name="apprenticeship_company_address" id="apprenticeship_company_address" @if(isset($data->apprenticeship_company_address)) value="{{$data->apprenticeship_company_address}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td> Did you need a visa to perform the work in this country? If so, please specify the visa you held </td>
-                    <td> <input type="text" name="apprenticeship_visa_country" id="apprenticeship_visa_country" @if(isset($data->apprenticeship_visa_country)) value="{{$data->apprenticeship_visa_country}}" @endif/> </td>
+                    <td>
+                    <select name="apprenticeship_visa_country" id="apprenticeship_visa_country" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->apprenticeship_visa_country)))
+                            <option value="{{$data->apprenticeship_visa_country}}" selected>{{$data->apprenticeship_visa_country}}</option>
+                            @endif
+                            <option value="Yes"> Yes </option>
+                            <option value="No"> No </option>
+                        </select>      
+                    </td>
                 </tr>
 
                 <tr>
-                    <td> Your position </td>
+                    <td> Please indicate your role </td>
                     <td> <input type="text" name="apprenticeship_position" id="apprenticeship_position" @if(isset($data->apprenticeship_position)) value="{{$data->apprenticeship_position}}" @endif/> </td>
                 </tr>
 
@@ -115,7 +149,18 @@
 
                 <tr>
                     <td>Did you complete the apprenticeship and obtain the formal qualification through the apprenticeship?</td>
-                    <td> <input type="text" name="apprenticeship_formal_qualification" id="apprenticeship_formal_qualification" @if(isset($data->apprenticeship_formal_qualification)) value="{{$data->apprenticeship_formal_qualification}}" @endif/> </td>
+                    <td>
+                    <select name="apprenticeship_formal_qualification" id="apprenticeship_formal_qualification" class="form-control">
+
+
+                        <option value=""> Select Option </option>
+                        @if(!empty(isset($data->apprenticeship_formal_qualification)))
+                        <option value="{{$data->apprenticeship_formal_qualification}}" selected>{{$data->apprenticeship_formal_qualification}}</option>
+                        @endif
+                        <option value="Yes"> Yes </option>
+                        <option value="No"> No </option>
+                    </select> 
+                    </td>
                 </tr>
 
                 <tr>
@@ -135,7 +180,7 @@
                 </tr>
 
                 <tr>
-                    <td>Can this work period be documented? </td>
+                    <td>Can this work period be documented with evidence of payment such as payslips, contracts, etc.? </td>
                     <td>
                         <select name="apprenticeship_period" id="apprenticeship_period" class="form-control">
                             <option value=""> Select Option </option>
@@ -299,8 +344,7 @@
                 </tr>
 
                 <tr>
-                    <td> Provide 1 payslip for your current or most recent
-                        apprenticeship experience here (current year)
+                    <td> Payslip for the first year of apprenticeship 
                     </td>
                     <td> <input type="file" name="apprenticeship_payslip_current_year" id="apprenticeship_payslip_current_year">
                 
@@ -320,8 +364,7 @@
                 </tr>
 
                 <tr>
-                    <td> Provide 1 payslip for the previous year of
-                        apprenticeship
+                    <td> Payslip for the second year of apprenticeship 
                     </td>
                     <td> <input type="file" name="apprenticeship_previous_year" id="apprenticeship_previous_year">
                 
@@ -342,8 +385,28 @@
                 </tr>
 
                 <tr>
-                    <td> Income tax return of the most the current or most
-                        recent year (in Italy CUD)
+                    <td> Payslip for the third year of apprenticeship  
+                    </td>
+                    <td> <input type="file" name="apprenticeship_third_year" id="apprenticeship_third_year">
+                
+                
+                    @if (array_key_exists('apprenticeship_third_year', $docdataForm360))
+                                                               
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/apprenticeship_third_year/'.$docdataForm360['apprenticeship_third_year'])  }}">
+                                                               @if(str_contains($docdataForm360['apprenticeship_third_year'] , '.pdf'))
+                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                                                               @else
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/apprenticeship_third_year/'.$docdataForm360['apprenticeship_third_year'])  }}"  />
+                                                               @endif
+                                                               </a>
+                                                             
+                                                               
+                                                           @endif   
+                </td>
+                </tr>
+
+                <tr>
+                    <td> Income tax return of the last year of work performed as an apprentice (in Italy this document is called CUD)
                     </td>
                     <td> <input type="file" name="apprenticeship_tax_return" id="apprenticeship_tax_return">
                     @if (array_key_exists('apprenticeship_tax_return', $docdataForm360))
@@ -363,10 +426,8 @@
                 </tr>
 
                 <tr>
-                    <td> Social Security payment evidence chart (such as
-                        Tabella INPS or any other equivalent document issued
-                        by the National Social Security Body or dedicated
-                        registration body)
+                    <td> Social Security payment evidence chart (such as Tabella INPS for Italy) or any other equivalent document issued by the National Social Security Body or dedicated
+registration body showing the payments that were made in your favor for the entire period of apprenticeship 
                     </td>
                     <td> <input type="file" name="apprenticeship_social_security" id="apprenticeship_social_security">
                 

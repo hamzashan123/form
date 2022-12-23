@@ -98,17 +98,37 @@
 
 
                     </td>
-                    <td> <input type="date" name="firstedu_background_legal_duration" id="firstedu_background_legal_duration" @if(isset($data->firstedu_background_legal_duration)) value="{{$data->firstedu_background_legal_duration}}" @endif/>
+                    <td>
+                    <select name="firstedu_background_legal_duration" id="firstedu_background_legal_duration" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->firstedu_background_legal_duration)))
+                            <option value="{{$data->firstedu_background_legal_duration}}" selected>{{$data->firstedu_background_legal_duration}}</option>
+                            @endif
+
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select> 
+                      
                     </td>
                 </tr>
 
                 <tr>
-                    <td> Qualification obtained
+                    <td> Name of the qualification obtained
 
 
 
                     </td>
-                    <td> <input type="date" name="firstedu_background_qualification_obtained" id="firstedu_background_qualification_obtained" @if(isset($data->firstedu_background_qualification_obtained)) value="{{$data->firstedu_background_qualification_obtained}}" @endif/>
+                    <td> <input type="text" name="firstedu_background_qualification_obtained" id="firstedu_background_qualification_obtained" @if(isset($data->firstedu_background_qualification_obtained)) value="{{$data->firstedu_background_qualification_obtained}}" @endif/>
                     </td>
                 </tr>
 
@@ -165,17 +185,37 @@
 
 
                     </td>
-                    <td> <input type="date" name="firstedu_middle_legal_duration" id="firstedu_middle_legal_duration" @if(isset($data->firstedu_middle_legal_duration)) value="{{$data->firstedu_middle_legal_duration}}" @endif/>
+                    <td> 
+                    <select name="firstedu_middle_legal_duration" id="firstedu_middle_legal_duration" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->firstedu_middle_legal_duration)))
+                            <option value="{{$data->firstedu_middle_legal_duration}}" selected>{{$data->firstedu_middle_legal_duration}}</option>
+                            @endif
+
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>     
+                   
                     </td>
                 </tr>
 
                 <tr>
-                    <td> Qualification obtained
+                    <td> Name of the qualification obtained
 
 
 
                     </td>
-                    <td> <input type="date" name="firstedu_middle_qualification_obtained" id="firstedu_middle_qualification_obtained" @if(isset($data->firstedu_middle_qualification_obtained)) value="{{$data->firstedu_middle_qualification_obtained}}" @endif/>
+                    <td> <input type="text" name="firstedu_middle_qualification_obtained" id="firstedu_middle_qualification_obtained" @if(isset($data->firstedu_middle_qualification_obtained)) value="{{$data->firstedu_middle_qualification_obtained}}" @endif/>
                     </td>
                 </tr>
 
@@ -234,17 +274,37 @@
 
 
                     </td>
-                    <td> <input type="date" name="firstedu_high_legal_duration" id="firstedu_high_legal_duration" @if(isset($data->firstedu_high_legal_duration)) value="{{$data->firstedu_high_legal_duration}}" @endif/>
+                    <td> 
+                    <select name="firstedu_high_legal_duration" id="firstedu_high_legal_duration" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->firstedu_high_legal_duration)))
+                            <option value="{{$data->firstedu_high_legal_duration}}" selected>{{$data->firstedu_high_legal_duration}}</option>
+                            @endif
+
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>     
+                   
                     </td>
                 </tr>
 
                 <tr>
-                    <td> Qualification obtained
+                    <td> Name of the qualification obtained
 
 
 
                     </td>
-                    <td> <input type="date" name="firstedu_high_qualification_obtained" id="firstedu_high_qualification_obtained" @if(isset($data->firstedu_high_qualification_obtained)) value="{{$data->firstedu_high_qualification_obtained}}" @endif/>
+                    <td> <input type="text" name="firstedu_high_qualification_obtained" id="firstedu_high_qualification_obtained" @if(isset($data->firstedu_high_qualification_obtained)) value="{{$data->firstedu_high_qualification_obtained}}" @endif/>
                     </td>
                 </tr>
 
