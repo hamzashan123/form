@@ -10,7 +10,7 @@
     var phoneInputField5 = document.querySelector('#personal_contactnumberusuallycountry');
     var phoneInputField6 = document.querySelector('#personal_whatsappcontact');
     var phoneInputField7 = document.querySelector('#apprenticeship_referee_contact');
-    var phoneInputField10 = document.querySelector('#workexp2_contact_details_work_period_phone');
+    var phoneInputField12 = document.querySelector('#workexp2_contact_details_work_period_phone');
     
   
     // const phoneInputField6 = document.querySelector('#work_referee_phone');
@@ -51,7 +51,7 @@
         utilsScript:
             'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js',
     })
-    var phoneInput10 = window.intlTelInput(phoneInputField10, {
+    var phoneInput12 = window.intlTelInput(phoneInputField12, {
         initialCountry: 'au',
         utilsScript:
             'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js',
