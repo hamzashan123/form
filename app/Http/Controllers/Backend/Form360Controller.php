@@ -396,28 +396,93 @@ class Form360Controller extends Controller
          'apprenticeship_social_security' => $request->file('apprenticeship_social_security'),
 
          'workexp1_employment_contract' => $request->file('workexp1_employment_contract'),
+         'workexp1_employment_reference_letter' => $request->file('workexp1_employment_reference_letter'),
          'workexp1_current_year_of_experience' => $request->file('workexp1_current_year_of_experience'),
          'workexp1_previous_year_of_experience1' => $request->file('workexp1_previous_year_of_experience1'),
          'workexp1_previous_year_of_experience2' => $request->file('workexp1_previous_year_of_experience2'),
          'workexp1_previous_year_of_experience3' => $request->file('workexp1_previous_year_of_experience3'),
 
+         'workexp2_employment_contract' => $request->file('workexp2_employment_contract'),
+         'workexp2_employment_reference_letter' => $request->file('workexp2_employment_reference_letter'),
+         'workexp2_current_year_of_experience' => $request->file('workexp2_current_year_of_experience'),
+         'workexp2_previous_year_of_experience1' => $request->file('workexp2_previous_year_of_experience1'),
+         'workexp2_previous_year_of_experience2' => $request->file('workexp2_previous_year_of_experience2'),
+         'workexp2_previous_year_of_experience3' => $request->file('workexp2_previous_year_of_experience3'),
+
+         'workexp1_payg_one' => $request->file('workexp1_payg_one'),
+         'workexp1_payg_two' => $request->file('workexp1_payg_two'),
+         'workexp1_payg_three' => $request->file('workexp1_payg_three'),
+         'workexp1_payg_four' => $request->file('workexp1_payg_four'),
+
+         'workexp2_payg_one' => $request->file('workexp2_payg_one'),
+         'workexp2_payg_two' => $request->file('workexp2_payg_two'),
+         'workexp2_payg_three' => $request->file('workexp2_payg_three'),
+         'workexp2_payg_four' => $request->file('workexp2_payg_four'),
+
+
          'workexp1_income_tax_return1' => $request->file('workexp1_income_tax_return1'),
          'workexp1_income_tax_return2' => $request->file('workexp1_income_tax_return2'),
          'workexp1_income_tax_return2_1' => $request->file('workexp1_income_tax_return2_1'),
          'workexp1_relevant_doc' => $request->file('workexp1_relevant_doc'),
+
          'workexp1_tabella_estratto' => $request->file('workexp1_tabella_estratto'),
+
+         'workexp2_income_tax_return1' => $request->file('workexp2_income_tax_return1'),
+         'workexp2_income_tax_return2' => $request->file('workexp2_income_tax_return2'),
+         'workexp2_income_tax_return2_1' => $request->file('workexp2_income_tax_return2_1'),
+         'workexp2_relevant_doc' => $request->file('workexp2_relevant_doc'),
+         'workexp2_tabella_estratto' => $request->file('workexp2_tabella_estratto'),   
+         
 
          'workexpintracompany_employment_contract' => $request->file('workexpintracompany_employment_contract'),
          'workexpintracompany_current_recent_payslip' => $request->file('workexpintracompany_current_recent_payslip'),
          'workexpintracompany_income_tax_return' => $request->file('workexpintracompany_income_tax_return'),
          'workexpintracompany_social_security' => $request->file('workexpintracompany_social_security'),
-         'workexpintracompany_perform_in_aus_nz' => $request->file('workexp1_tabella_estratto'),
+         'workexpintracompany_perform_in_aus_nz' => $request->file('workexpintracompany_perform_in_aus_nz'),
 
          'currentvisa_aus_naz_if_applicable' => $request->file('currentvisa_aus_naz_if_applicable'),
          'previous_visa_if_applicable1' => $request->file('previous_visa_if_applicable1'),
          'previous_visa_if_applicable2' => $request->file('previous_visa_if_applicable2'),
 
-  
+
+         //family members doc
+         'family_member_partner_passport' => $request->file('family_member_partner_passport'),
+         'family_member_partner_passport_photo' => $request->file('family_member_partner_passport_photo'),
+         'family_member_partner_driving_license' => $request->file('family_member_partner_driving_license'),
+         'family_member_partner_recent_visa' => $request->file('family_member_partner_recent_visa'),
+         'family_member_partner_ielts' => $request->file('family_member_partner_ielts'),
+         'family_member_partner_cv_resume' => $request->file('family_member_partner_cv_resume'),
+         'family_member_partner_reg_certificate' => $request->file('family_member_partner_reg_certificate'),
+         'family_member_partner_join_bank_account' => $request->file('family_member_partner_join_bank_account'),
+         'family_member_partner_rental_agreement' => $request->file('family_member_partner_rental_agreement'),
+         'family_member_partner_utility_bills' => $request->file('family_member_partner_utility_bills'),
+         'family_member_partner_utility_bills2' => $request->file('family_member_partner_utility_bills2'),
+         'family_member_partner_utility_bills3' => $request->file('family_member_partner_utility_bills3'),
+         'family_member_child1_passport_photo ' => $request->file('family_member_child1_passport_photo '),   
+
+         'family_member_child1_passport' => $request->file('family_member_child1_passport'),
+         'family_member_child1_passport_photo' => $request->file('family_member_child1_passport_photo'),
+         'family_member_child1_driving_license' => $request->file('family_member_child1_driving_license'),
+         'family_member_child1_recent_visa' => $request->file('family_member_child1_recent_visa'),
+         'family_member_child1_ielts' => $request->file('family_member_child1_ielts'),   
+         'family_member_child1_cv_resume' => $request->file('family_member_child1_cv_resume'),
+         'family_member_child1_birth_certificate' => $request->file('family_member_child1_birth_certificate'),
+
+         'family_member_child2_passport' => $request->file('family_member_child2_passport'),
+         'family_member_child2_passport_photo' => $request->file('family_member_child2_passport_photo'),
+         'family_member_child2_driving_license' => $request->file('family_member_child2_driving_license'),
+         'family_member_child2_recent_visa' => $request->file('family_member_child2_recent_visa'),
+         'family_member_child2_ielts' => $request->file('family_member_child2_ielts'),   
+         'family_member_child2_cv_resume' => $request->file('family_member_child2_cv_resume'),
+         'family_member_child2_birth_certificate' => $request->file('family_member_child2_birth_certificate'),
+
+         'family_member_child3_passport' => $request->file('family_member_child3_passport'),
+         'family_member_child3_passport_photo' => $request->file('family_member_child3_passport_photo'),
+         'family_member_child3_driving_license' => $request->file('family_member_child3_driving_license'),
+         'family_member_child3_recent_visa' => $request->file('family_member_child3_recent_visa'),
+         'family_member_child3_ielts' => $request->file('family_member_child3_ielts'),   
+         'family_member_child3_cv_resume' => $request->file('family_member_child3_cv_resume'),
+         'family_member_child3_birth_certificate' => $request->file('family_member_child3_birth_certificate'),
         
             //education docs
         //  'edu_info_university_diploma' => $request->file('edu_info_university_diploma'),
@@ -522,6 +587,7 @@ class Form360Controller extends Controller
             'personal_name_surname' => $request->personal_name_surname,
             'personal_civil_status' => $request->personal_civil_status,
             'personal_dob' => $request->personal_dob,
+            'personal_city_of_born' => $request->personal_city_of_born,
             'personal_pob' => $request->personal_pob,
             'personal_gender' => $request->personal_gender,
             'personal_nationality' => $request->personal_nationality,
@@ -682,10 +748,28 @@ class Form360Controller extends Controller
             'workexp1_contact_details_work_period_name' => $request->workexp1_contact_details_work_period_name,
             'workexp1_contact_details_work_period_position' => $request->workexp1_contact_details_work_period_position,
             'workexp1_contact_details_work_period_email' => $request->workexp1_contact_details_work_period_email,
-            'workexp1_contact_details_work_period_phone' => $request->workexp1_contact_details_work_period_phone
+            'workexp1_contact_details_work_period_phone' => $request->workexp1_contact_details_work_period_phone,
+            // work exp 2
+            'workexp2_your_position' => $request->workexp2_your_position,
+            'workexp2_your_position_type' => $request->workexp2_your_position_type,
+            'workexp2_employer_name' => $request->workexp2_employer_name,
+            'workexp2_business_country' => $request->workexp2_business_country,
+            'workexp2_date_work_started' => $request->workexp2_date_work_started,
+            'workexp2_date_work_ended' => $request->workexp2_date_work_ended,
+            'workexp2_description_duties' => $request->workexp2_description_duties,
+            'workexp2_nominated_position' => $request->workexp2_nominated_position,
+            'workexp2_performed_in_aus_nz' => $request->workexp2_performed_in_aus_nz,
+            'workexp2_visa_employer' => $request->workexp2_visa_employer,
+            'workexp2_payslips_for_this_week' => $request->workexp2_payslips_for_this_week,
+            'workexp2_contact_details_work_period' => $request->workexp2_contact_details_work_period,
+            'workexp2_contact_details_work_period_indicate' => $request->workexp2_contact_details_work_period_indicate,
+            'workexp2_contact_details_work_period_name' => $request->workexp2_contact_details_work_period_name,
+            'workexp2_contact_details_work_period_position' => $request->workexp2_contact_details_work_period_position,
+            'workexp2_contact_details_work_period_email' => $request->workexp2_contact_details_work_period_email,
+            'workexp2_contact_details_work_period_phone' => $request->workexp2_contact_details_work_period_phone,
         
         ];
-
+       
         $workExperienceIntraData = [
             'form360_id' => $form_id,
             'workexpintracompany_current_employed' => $request->workexpintracompany_current_employed,
@@ -707,10 +791,10 @@ class Form360Controller extends Controller
             'workexpintracompany_contact_details_work_period_name' => $request->workexpintracompany_contact_details_work_period_name,
             'workexpintracompany_contact_details_work_period_position' => $request->workexpintracompany_contact_details_work_period_position,
             'workexpintracompany_contact_details_work_period_email' => $request->workexpintracompany_contact_details_work_period_email,
-            //'workexpintracompany_contact_details_work_period_phone' => $request->workexpintracompany_contact_details_work_period_phone,
+            'workexpintracompany_contact_details_work_period_phone' => $request->workexpintracompany_contact_details_work_period_phone,
             'workexpintracompany_aus_nz_name_of_company' => $request->workexpintracompany_aus_nz_name_of_company,
             'workexpintracompany_aus_nz_reg_number' => $request->workexpintracompany_aus_nz_reg_number,
-            'workexpintracompany_aus_nz_address' => $request->workexpintracompany_aus_nz_address,
+            'workexpintracompany_aus_nz_address_company' => $request->workexpintracompany_aus_nz_address_company,
             'workexpintracompany_aus_nz_contact' => $request->workexpintracompany_aus_nz_contact,
             'workexpintracompany_aus_nz_name_surname' => $request->workexpintracompany_aus_nz_name_surname,
             'workexpintracompany_aus_nz_role' => $request->workexpintracompany_aus_nz_role,
@@ -747,6 +831,7 @@ class Form360Controller extends Controller
             'travelhistory_dateto1' => $request->travelhistory_dateto1,
             'travelhistory_purpose1' => $request->travelhistory_purpose1,
             'travelhistory_country4' => $request->travelhistory_country4,
+            'travelhistory_country5' => $request->travelhistory_country5,
             'travelhistory_datefrom2' => $request->travelhistory_datefrom2,
             'travelhistory_dateto2' => $request->travelhistory_dateto2,
             'travelhistory_purpose2' => $request->travelhistory_purpose2,
@@ -756,7 +841,12 @@ class Form360Controller extends Controller
             'travelhistory_purpose3' => $request->travelhistory_purpose3,
             'travelhistory_datefrom4' => $request->travelhistory_datefrom4,
             'travelhistory_dateto4' => $request->travelhistory_dateto4,
-            'travelhistory_purpose4' => $request->travelhistory_purpose4
+            'travelhistory_datefrom5' => $request->travelhistory_datefrom5,
+            'travelhistory_dateto5' => $request->travelhistory_dateto5,
+            'travelhistory_purpose4' => $request->travelhistory_purpose4,
+            'travelhistory_purpose5' => $request->travelhistory_purpose5,
+
+
         ];
 
         $countryofresidenceData = [
@@ -880,8 +970,18 @@ class Form360Controller extends Controller
             'fam_member_ever_suffered' => $request->fam_member_ever_suffered,
             'fam_member_legal_action' => $request->fam_member_legal_action,
             'fam_member_visa_application' => $request->fam_member_visa_application,
+            'fam_member_include_visa_application' => $request->fam_member_include_visa_application,
+            'fam_member_australiz_newzland' => $request->fam_member_australiz_newzland,
+            'fam_member_which_visa' => $request->fam_member_which_visa,
+            'fam_member_visa_partner_hold' => $request->fam_member_visa_partner_hold,
+            'fam_member_visa_expire' => $request->fam_member_visa_expire,
+            'fam_member_child_include_visa_application' => $request->fam_member_child_include_visa_application,
+            'fam_member_child_australiz_newzland' => $request->fam_member_child_australiz_newzland,
+            'fam_member_child_which_visa' => $request->fam_member_child_which_visa,
+            'fam_member_child_visa_partner_hold' => $request->fam_member_child_visa_partner_hold,
+            'fam_member_child_visa_expire' => $request->fam_member_child_visa_expire,
             'fam_member_currently_live' => $request->fam_member_currently_live,
-            'fam_member_child_nam1e' => $request->fam_member_child_nam1e,
+            'fam_member_child_name1' => $request->fam_member_child_name1,
             'fam_member_child_dob1' => $request->fam_member_child_dob1,
             'fam_member_child_pob1' => $request->fam_member_child_pob1,
             'fam_member_child_nationality1' => $request->fam_member_child_nationality1,
@@ -890,7 +990,7 @@ class Form360Controller extends Controller
             'fam_member_child_legal_action1' => $request->fam_member_child_legal_action1,
             'fam_member_child_visa_application1' => $request->fam_member_child_visa_application1,
             'fam_member_child_currently_live1' => $request->fam_member_child_currently_live1,
-            'fam_member_child_nam2e' => $request->fam_member_child_nam2e,
+            'fam_member_child_name2' => $request->fam_member_child_name2,
             'fam_member_child_dob2' => $request->fam_member_child_dob2,
             'fam_member_child_pob2' => $request->fam_member_child_pob2,
             'fam_member_child_nationality2' => $request->fam_member_child_nationality2,
@@ -953,6 +1053,19 @@ class Form360Controller extends Controller
             'fam_member_bro_sis_legal_action2' => $request->fam_member_bro_sis_legal_action2,
             'fam_member_bro_sis_visa_application2' => $request->fam_member_bro_sis_visa_application2,
             'fam_member_bro_sis_currently_live2' => $request->fam_member_bro_sis_currently_live2,
+
+            'fam_member_child2_include_visa_application' => $request->fam_member_child2_include_visa_application,
+            'fam_member_child2_australiz_newzland' => $request->fam_member_child2_australiz_newzland,
+            'fam_member_child2_which_visa' => $request->fam_member_child2_which_visa,
+            'fam_member_child2_visa_partner_hold' => $request->fam_member_child2_visa_partner_hold,
+            'fam_member_child2_visa_expire' => $request->fam_member_child2_visa_expire,
+
+            'fam_member_child3_include_visa_application' => $request->fam_member_child3_include_visa_application,
+            'fam_member_child3_australiz_newzland' => $request->fam_member_child3_australiz_newzland,
+            'fam_member_child3_which_visa' => $request->fam_member_child3_which_visa,
+            'fam_member_child3_visa_partner_hold' => $request->fam_member_child3_visa_partner_hold,
+            'fam_member_child3_visa_expire' => $request->fam_member_child3_visa_expire,
+            
             'fam_member_bro_sis_name3' => $request->fam_member_bro_sis_name3,
             'fam_member_bro_sis_dob3' => $request->fam_member_bro_sis_dob3,
             'fam_member_bro_sis_pob3' => $request->fam_member_bro_sis_pob3,

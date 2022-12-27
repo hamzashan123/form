@@ -577,15 +577,15 @@
                 </tr>
                 <tr>
                     <td> Reference letter (only if you have one already)  </td>
-                    <td> <input type="file" name="workexp1_employment_contract" id="workexp1_employment_contract">
+                    <td> <input type="file" name="workexp1_employment_reference_letter" id="workexp1_employment_reference_letter">
                 
-                    @if (array_key_exists('workexp1_employment_contract', $docdataForm360))
+                    @if (array_key_exists('workexp1_employment_reference_letter', $docdataForm360))
                                                                
-                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_employment_contract/'.$docdataForm360['workexp1_employment_contract'])  }}">
-                                                               @if(str_contains($docdataForm360['workexp1_employment_contract'] , '.pdf'))
+                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_employment_reference_letter/'.$docdataForm360['workexp1_employment_reference_letter'])  }}">
+                                                               @if(str_contains($docdataForm360['workexp1_employment_reference_letter'] , '.pdf'))
                                                                <img class="imgfile" src="{{asset('pdficon.png')}}"   />
                                                                @else
-                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_employment_contract/'.$docdataForm360['workexp1_employment_contract'])  }}"  />
+                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexp1_employment_reference_letter/'.$docdataForm360['workexp1_employment_reference_letter'])  }}"  />
                                                                @endif
                                                                </a>
                                                              

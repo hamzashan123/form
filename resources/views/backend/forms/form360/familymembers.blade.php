@@ -1263,7 +1263,7 @@
                 <tr>
                     <td> Name and surname
                     </td>
-                    <td> <input type="text" name="fam_member_child_nam1e" id="fam_member_child_name1" @if(isset($data->fam_member_child_name1)) value="{{$data->fam_member_child_name1}}" @endif/> </td>
+                    <td> <input type="text" name="fam_member_child_name1" id="fam_member_child_name1" @if(isset($data->fam_member_child_name1)) value="{{$data->fam_member_child_name1}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -2237,7 +2237,7 @@
                         <td> Passport photo  
                         </td>
                         <td> <input type="file" name="family_member_child1_passport_photo" id="family_member_child1_passport_photo">
-                            @if (array_key_exists('family_member_partner_passport_photo', $docdataForm360))
+                            @if (array_key_exists('family_member_child1_passport_photo', $docdataForm360))
 
                             <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_passport_photo/'.$docdataForm360['family_member_child1_passport_photo'])  }}">
                                 @if(str_contains($docdataForm360['family_member_child1_passport_photo'] , '.pdf'))
@@ -2364,7 +2364,7 @@
                 <tr>
                     <td> Name and surname
                     </td>
-                    <td> <input type="text" name="fam_member_child_nam2e" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -3038,7 +3038,7 @@
                                 <td> Passport photo  
                                 </td>
                                 <td> <input type="file" name="family_member_child2_passport_photo" id="family_member_child2_passport_photo">
-                                    @if (array_key_exists('family_member_partner_passport_photo', $docdataForm360))
+                                    @if (array_key_exists('family_member_child2_passport_photo', $docdataForm360))
 
                                     <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_passport_photo/'.$docdataForm360['family_member_child2_passport_photo'])  }}">
                                         @if(str_contains($docdataForm360['family_member_child2_passport_photo'] , '.pdf'))
@@ -4144,7 +4144,7 @@
                                 <td> Passport photo  
                                 </td>
                                 <td> <input type="file" name="family_member_child3_passport_photo" id="family_member_child3_passport_photo">
-                                    @if (array_key_exists('family_member_partner_passport_photo', $docdataForm360))
+                                    @if (array_key_exists('family_member_child3_passport_photo', $docdataForm360))
 
                                     <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_passport_photo/'.$docdataForm360['family_member_child3_passport_photo'])  }}">
                                         @if(str_contains($docdataForm360['family_member_child3_passport_photo'] , '.pdf'))

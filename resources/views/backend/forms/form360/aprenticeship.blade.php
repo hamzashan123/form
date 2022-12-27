@@ -285,10 +285,10 @@
                     <td> <input type="tel" name="apprenticeship_referee_contact" id="apprenticeship_referee_contact" @if(isset($data->apprenticeship_referee_contact)) value="{{$data->apprenticeship_referee_contact}}" @endif/> </td>
                 </tr>
 
-                <tr>
+                <!-- <tr>
                     <td>Contact number of your referee</td>
                     <td> <input type="tel" name="apprenticeship_referee_contact" id="apprenticeship_referee_contact" @if(isset($data->apprenticeship_referee_contact)) value="{{$data->apprenticeship_referee_contact}}" @endif/> </td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
 

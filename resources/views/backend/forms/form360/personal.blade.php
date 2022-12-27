@@ -370,7 +370,7 @@
                     <td> City where you were born 
 
                     </td>
-                    <td> <input type="text" name="personal_city_of_birth" id="personal_city_of_birth" @if(isset($data->personal_city_of_birth)) value="{{$data->personal_city_of_birth}}" @endif/>
+                    <td> <input type="text" name="personal_city_of_born" id="personal_city_of_born" @if(isset($data->personal_city_of_born)) value="{{$data->personal_city_of_born}}" @endif/>
                     </td>
                 </tr>
 

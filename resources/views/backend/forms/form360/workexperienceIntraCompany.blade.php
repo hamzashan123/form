@@ -628,7 +628,7 @@
                         Zealand
 
                     </td>
-                    <td> <input type="text" name="workexpintracompany_aus_nz_address" id="workexpintracompany_aus_nz_addresss" @if(isset($data->workexpintracompany_aus_nz_addresss)) value="{{$data->workexpintracompany_aus_nz_addresss}}" @endif /> </td>
+                    <td> <input type="text" name="workexpintracompany_aus_nz_address_company" id="workexpintracompany_aus_nz_address_company" @if(isset($data->workexpintracompany_aus_nz_address_company)) value="{{$data->workexpintracompany_aus_nz_address_company}}" @endif /> </td>
 
                 </tr>
 
