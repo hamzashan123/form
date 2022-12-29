@@ -8927,10 +8927,8 @@
 
     </div>
    
-   
-    
-        @if(!empty($data->is_email_sent) != true)
-        <button name="formsubmit" class="next action-button submitform360" > Submit</button>
+        @if(!empty($data->is_email_sent) == false)
+        <button name="formsubmit" class="action-button submitform360" > Submit</button>
         @else
         <input type="button" name="save" class="save action-button" value="Save" />
         @endif

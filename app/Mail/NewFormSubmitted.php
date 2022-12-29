@@ -31,7 +31,7 @@ class NewFormSubmitted extends Mailable
         $this->username = $data['username'];
         $this->surname = $data['surname'];
         $this->email = $data['email'];
-        $this->subject = $data['subject'];
+        $this->subject = isset($data['subject']) ? $data['subject'] : 'Application Form';
         $this->admin = $data['admin'];
         $this->consultant = $data['consultant'];
     }

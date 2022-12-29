@@ -267,4 +267,7 @@
     })
     
  </script>
+ <script>
+    $('.alert-success').fadeIn().delay(5000).fadeOut();
+  </script>
 @endsection()

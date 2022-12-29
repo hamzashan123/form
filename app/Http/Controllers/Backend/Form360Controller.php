@@ -85,12 +85,12 @@ class Form360Controller extends Controller
         
     }
 
-    public function save(Request $request){
-        
+    public function save(Request $request)
+    {
         $formExist = DB::table('form360')->where('user_id', Auth::user()->id)->first();
-        
-        if(empty($formExist->id)){
-        
+        //agar form ni ha 
+        if(empty($formExist)){
+
             $formid = DB::table('form360')->insertGetId([
                 'user_id' => auth()->user()->id,
                 'created_at' => date('m/d/Y h:i:s a'),
@@ -158,72 +158,87 @@ class Form360Controller extends Controller
 
             $this->saveDocuments($formid,$request);
             
-                
-           
-                $formdata = DB::table('form360')->where('user_id', Auth::user()->id)->first();
-                
-                $data = [
+
+            //if button is submiited
+            if($request->formsubmit == 'FORMSUBMIT'){
+                DB::table('form360')->where('user_id', Auth::user()->id)->update(['is_email_sent' => true]);
+
+                $admindata = [
+                    'admin' => true,
+                    'consultant' => false,
+                    'surname' => Auth::user()->surname,
                     'username' => Auth::user()->username,
                     'email' => Auth::user()->email,
+                    'subject' => 'New Application Recieved',
                     'messagetype' => 'A new application has been recieved!'
                 ];
-                
-                if($request->has('formsubmit') && $formdata->is_email_sent == false){
-                    DB::table('form360')->where('user_id', Auth::user()->id)->update(['is_email_sent' => true]);
+                Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($admindata));
 
-                    $admindata = [
-                        'admin' => true,
-                        'consultant' => false,
-                        'surname' => Auth::user()->surname,
-                        'username' => Auth::user()->username,
-                        'email' => Auth::user()->email,
-                        'subject' => 'New Application Recieved',
-                        'messagetype' => 'A new application has been recieved!'
-                    ];
-                    Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($admindata));
-    
-                    $userdata = [
-                        'admin' => false,
-                        'consultant' => false,
-                        'surname' => Auth::user()->surname,
-                        'username' => Auth::user()->username,
-                        'email' => Auth::user()->email,
-                        'subject' => 'Your application has been submitted ',
-                        'messagetype' => ' 
-                            Your application has been correctly submitted and received on the Auslegal Info/Docs system.
-                            What will happen next
-                            Australia Legal Admin Team will review the form and then assign it to an internal consultant.
-                            Once the consultant is assigned, he/she will check the information and documents you have provided and will either:
-                            ⦁	Inform you that the application will be lodged as no other information is needed
-                            Or 
-                            2) 
-                            You will receive an email from the consultant with a request of more information and/or specific comments about the information and documents you will have provided on the online form.
-                            '
-                    ];
-                    Mail::to(Auth::user()->email)->send(new NewFormSubmitted($userdata));
+                $userdata = [
+                    'admin' => false,
+                    'consultant' => false,
+                    'surname' => Auth::user()->surname,
+                    'username' => Auth::user()->username,
+                    'email' => Auth::user()->email,
+                    'subject' => 'Your application has been submitted ',
+                    'messagetype' => ' 
+                        Your application has been correctly submitted and received on the Auslegal Info/Docs system.
+                        What will happen next
+                        Australia Legal Admin Team will review the form and then assign it to an internal consultant.
+                        Once the consultant is assigned, he/she will check the information and documents you have provided and will either:
+                        ⦁	Inform you that the application will be lodged as no other information is needed
+                        Or 
+                        2) 
+                        You will receive an email from the consultant with a request of more information and/or specific comments about the information and documents you will have provided on the online form.
+                        '
+                ];
+                Mail::to(Auth::user()->email)->send(new NewFormSubmitted($userdata));
 
-                        // if this user has any consultant then email also be sent to consultant
-                        $consultants = ConsultantUser::where(['client_id'  => Auth::user()->id])->pluck('consultant_id');
-                        if(count($consultants) > 0){
-                            foreach($consultants as $consultant){
-                                $consultantUser = DB::table('users')->where('id',$consultant)->first();
-                                $consultantdata = [
-                                    'admin' => false,
-                                    'consultant' => true,
-                                    'surname' => $consultantUser->surname,
-                                    'username' => $consultantUser->username,
-                                    'email' => $consultantUser->email,
-                                    'messagetype' => 'A new application is submitted by your assigned user please check and make correction if you find any problem in the submitted application.'
-                                ];
-                                Mail::to($consultantUser->email)->send(new NewFormSubmitted($consultantdata));
-                            }
+                 // if this user has any consultant then email also be sent to consultant
+                 $consultants = ConsultantUser::where(['client_id'  => Auth::user()->id])->pluck('consultant_id');
+                 if(count($consultants) > 0){
+                     foreach($consultants as $consultant){
+                         $consultantUser = DB::table('users')->where('id',$consultant)->first();
+                         if($consultantUser !== null){
+                            $consultantdata = [
+                                'admin' => false,
+                                'consultant' => true,
+                                'surname' => $consultantUser->surname,
+                                'username' => $consultantUser->username,
+                                'email' => $consultantUser->email,
+                                'messagetype' => 'A new application is submitted by your assigned user please check and make correction if you find any problem in the submitted application.'
+                            ];
+                            Mail::to($consultantUser->email)->send(new NewFormSubmitted($consultantdata));
                         }
-                        return redirect()->back()->with('success', 'Application Submitted !');
-                }
-           
+                        
+                     }
+                 }
                 
-        }else{
-           $existingForm =  DB::table('form360')->where('user_id', Auth::user()->id)->first();
+                return redirect()->back()->with('success', 'Application Submitted !');
+            }// if button is saved
+            else{
+                 
+            //send email after everytime client saves the form
+                $saveEmail = [
+                    'admin' => false,
+                    'consultant' => false,
+                    'surname' => Auth::user()->surname,
+                    'username' => Auth::user()->username,
+                    'email' => Auth::user()->email,
+                    'subject' => 'Your application has been saved',
+                    'messagetype' => ' 
+                    Your application has been saved.You can login again and resume your application when needed.
+                    Please note that until your form is not submitted for the first time, the application will not show as submitted. 
+                    To submit your form you must get to the last page of the form and click on submit.'
+                ];
+                Mail::to(Auth::user()->email)->send(new NewFormSubmitted($saveEmail));    
+                return redirect()->back()->with('success', 'Application Saved !');
+            }
+        }
+        //agar form ha
+        else{
+
+            $existingForm =  DB::table('form360')->where('user_id', Auth::user()->id)->first();
 
             $fieldsets = $this->getFieldsetsData($existingForm->id,$request);
            
@@ -285,7 +300,66 @@ class Form360Controller extends Controller
             );
 
             $this->saveDocuments($existingForm->id,$request);
-             //send email after everytime client saves the form
+
+             //if button is submiited
+             if($request->formsubmit == 'FORMSUBMIT'){
+                DB::table('form360')->where('user_id', Auth::user()->id)->update(['is_email_sent' => true]);
+                
+                $admindata = [
+                    'admin' => true,
+                    'consultant' => false,
+                    'surname' => Auth::user()->surname,
+                    'username' => Auth::user()->username,
+                    'email' => Auth::user()->email,
+                    'subject' => 'New Application Recieved',
+                    'messagetype' => 'A new application has been recieved!'
+                ];
+                Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($admindata));
+
+                $userdata = [
+                    'admin' => false,
+                    'consultant' => false,
+                    'surname' => Auth::user()->surname,
+                    'username' => Auth::user()->username,
+                    'email' => Auth::user()->email,
+                    'subject' => 'Your application has been submitted ',
+                    'messagetype' => ' 
+                        Your application has been correctly submitted and received on the Auslegal Info/Docs system.
+                        What will happen next
+                        Australia Legal Admin Team will review the form and then assign it to an internal consultant.
+                        Once the consultant is assigned, he/she will check the information and documents you have provided and will either:
+                        ⦁	Inform you that the application will be lodged as no other information is needed
+                        Or 
+                        2) 
+                        You will receive an email from the consultant with a request of more information and/or specific comments about the information and documents you will have provided on the online form.
+                        '
+                ];
+                Mail::to(Auth::user()->email)->send(new NewFormSubmitted($userdata));
+
+                 // if this user has any consultant then email also be sent to consultant
+                 $consultants = ConsultantUser::where(['client_id'  => Auth::user()->id])->pluck('consultant_id');
+                 if(count($consultants) > 0){
+                     foreach($consultants as $consultant){
+                         $consultantUser = DB::table('users')->where('id',$consultant)->first();
+                         if($consultantUser !== null){
+                            $consultantdata = [
+                                'admin' => false,
+                                'consultant' => true,
+                                'surname' => $consultantUser->surname,
+                                'username' => $consultantUser->username,
+                                'email' => $consultantUser->email,
+                                'messagetype' => 'A new application is submitted by your assigned user please check and make correction if you find any problem in the submitted application.'
+                            ];
+                            Mail::to($consultantUser->email)->send(new NewFormSubmitted($consultantdata));
+                        }   
+                        
+                     }
+                 }
+
+                return redirect()->back()->with('success', 'Application Submitted !');
+            }// if button is saved
+            else{
+                 //send email after everytime client saves the form
              $saveEmail = [
                 'admin' => false,
                 'consultant' => false,
@@ -299,65 +373,11 @@ class Form360Controller extends Controller
                 To submit your form you must get to the last page of the form and click on submit.'
             ];
             Mail::to(Auth::user()->email)->send(new NewFormSubmitted($saveEmail));
-              //check if is_email_sent is false
-              if($request->has('formsubmit') && !empty($existingForm) && $existingForm->is_email_sent == false){
-                DB::table('form360')->where('user_id', Auth::user()->id)->update(['is_email_sent' => true]);
-                    $admindata = [
-                        'admin' => true,
-                        'consultant' => false,
-                        'surname' => Auth::user()->surname,
-                        'username' => Auth::user()->username,
-                        'email' => Auth::user()->email,
-                        'subject' => 'New Application Recieved',
-                        'messagetype' => 'A new application has been recieved!'
-                    ];
-                    Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($admindata));
-    
-                    $userdata = [
-                        'admin' => false,
-                        'consultant' => false,
-                        'surname' => Auth::user()->surname,
-                        'username' => Auth::user()->username,
-                        'email' => Auth::user()->email,
-                        'subject' => 'Your application has been submitted',
-                        'messagetype' => ' 
-                            Your application has been correctly submitted and received on the Auslegal Info/Docs system.
-                            What will happen next
-                            Australia Legal Admin Team will review the form and then assign it to an internal consultant.
-                            Once the consultant is assigned, he/she will check the information and documents you have provided and will either:
-                            ⦁	Inform you that the application will be lodged as no other information is needed
-                            Or 
-                            2) 
-                            You will receive an email from the consultant with a request of more information and/or specific comments about the information and documents you will have provided on the online form.
-                            '
-                    ];
-                    Mail::to(Auth::user()->email)->send(new NewFormSubmitted($userdata));
-                   
 
-                      // if this user has any consultant then email also be sent to consultant
-                      $consultants = ConsultantUser::where(['client_id'  => Auth::user()->id])->pluck('consultant_id');
-                      if(count($consultants) > 0){
-                          foreach($consultants as $consultant){
-                              $consultantUser = DB::table('users')->where('id',$consultant)->first();
-                              $consultantdata = [
-                                  'admin' => false,
-                                  'consultant' => true,
-                                  'surname' => $consultantUser->surname,
-                                  'username' => $consultantUser->username,
-                                  'email' => $consultantUser->email,
-                                  'messagetype' => 'A new application is submitted by your assigned user please check and make correction if you find any problem in the submitted application.'
-                              ];
-                              Mail::to($consultantUser->email)->send(new NewFormSubmitted($consultantdata));
-                          }
-                      }
-                      return redirect()->back()->with('success', 'Application Submitted !');
+                return redirect()->back()->with('success', 'Application Saved !');
             }
-           
+            
         }
-        
-        return redirect()->back()->with('success','Application Saved !');
-        
-        
     }
 
 

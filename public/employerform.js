@@ -94,6 +94,7 @@ jQuery(document).ready(function () {
             jQuery('html, body').animate({scrollTop:0}, 'slow');
 
             if (next_fs.attr("id") == "fieldsetfive") {
+                
                 $("#form360").submit();
             }
         }, 500);
@@ -151,6 +152,7 @@ jQuery(document).ready(function () {
     setProgressBar(current);
 
     $(".submitemployerform").on("click", function(){
+         $(this).val("FORMSUBMIT");
          localStorage.removeItem("fieldset");
      });
 

@@ -788,11 +788,9 @@
   
     
     
-    @if(!empty($data->is_email_sent) != true)
-    <input type="hidden" name="isFormSubmit" value="true">
-    <button name="formsubmit" class="next action-button submitemployerform" > Submit</button>
+    @if(!empty($data->is_email_sent) == false)
+    <button name="formsubmit" class="action-button submitemployerform" > Submit</button>
     @else
-    <input type="hidden" name="isFormSubmit" value="false">
     <input type="button" name="save" class="save action-button" value="Save" />
     @endif
  
