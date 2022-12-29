@@ -412,6 +412,7 @@ class Form360Controller extends Controller
          'apprenticeship_completion_letter' => $request->file('apprenticeship_completion_letter'),
          'apprenticeship_payslip_current_year' => $request->file('apprenticeship_payslip_current_year'),
          'apprenticeship_previous_year' => $request->file('apprenticeship_previous_year'),
+         'apprenticeship_third_year' => $request->file('apprenticeship_previous_year'),
          'apprenticeship_tax_return' => $request->file('apprenticeship_tax_return'),
          'apprenticeship_social_security' => $request->file('apprenticeship_social_security'),
 
