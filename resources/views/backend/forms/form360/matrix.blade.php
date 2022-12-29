@@ -246,7 +246,7 @@
                             @endif
                             <option value="Just myself"> Just myself </option>
                             <option value="Partner only"> Partner only </option>
-                            <option value="Partner and children  "> Partner and children </option>
+                            <option value="Partner and children">Partner and children</option>
                     </select>
 
                        
