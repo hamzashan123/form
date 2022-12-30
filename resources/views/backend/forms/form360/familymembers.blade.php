@@ -1,7 +1,7 @@
 <fieldset id="fieldsetfourteen">
-@if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('consultant'))
-                    <a id="pdffamilymember" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px;">Generate Pdf</a>
-                    @endif
+    @if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('consultant'))
+    <a id="pdffamilymember" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px;">Generate Pdf</a>
+    @endif
     <div class="form-card">
         <h2 class="fs-title" style="text-align: center;">SECTION 14:</h2>
 
@@ -23,7 +23,7 @@
                     <td> Do you have a partner?
                     </td>
                     <td>
-                    <select name="fam_member" id="fam_member" class="form-control">
+                        <select name="fam_member" id="fam_member" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member)))
@@ -31,7 +31,7 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>  
+                        </select>
                     </td>
                 </tr>
 
@@ -39,7 +39,7 @@
                     <td> Will your partner included in this visa application?
                     </td>
                     <td>
-                    <select name="fam_member_visa" id="fam_member_visa" class="form-control">
+                        <select name="fam_member_visa" id="fam_member_visa" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_visa)))
@@ -47,30 +47,25 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select> 
+                        </select>
                     </td>
                 </tr>
 
                 <tr>
-                    <td> Do you have children?</td>
-                    <td> 
-                    <select name="fam_member_children" id="fam_member_children" class="form-control">
-                            <option value=""> Select Option </option>
+                    <td> Do you have children? If yes, please indicate how many you have
+                    </td>
+                    <td>
+                        <input type="text" name="fam_member_children" id="fam_member_children" @if(isset($data->fam_member_children)) value="{{$data->fam_member_children}}" @endif/>
 
-                            @if(!empty(isset($data->fam_member_children)))
-                            <option value="{{$data->fam_member_children}}" selected>{{$data->fam_member_children}}</option>
-                            @endif
-                            <option value="Yes">Yes </option>
-                            <option value="No"> No </option>
-                        </select>    
                     </td>
                 </tr>
 
                 <tr>
-                    <td> Will your child including in your visa application?
+                    <td> Will your child/children be included in your visa application?
+
                     </td>
-                    <td> 
-                    <select name="fam_member_child_visa" id="fam_member_child_visa" class="form-control">
+                    <td>
+                        <select name="fam_member_child_visa" id="fam_member_child_visa" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_child_visa)))
@@ -78,8 +73,8 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>        
-                     </td>
+                        </select>
+                    </td>
                 </tr>
 
             </tbody>
@@ -94,7 +89,9 @@
                 <tr>
                     <td> Name and surname
                     </td>
-                    <td> <input type="text" name="fam_member_name" id="fam_member_name" @if(isset($data->fam_member_name)) value="{{$data->fam_member_name}}" @endif/> </td>
+                    <td>
+                        <input type="text" name="fam_member_name" id="fam_member_name" @if(isset($data->fam_member_name)) value="{{$data->fam_member_name}}" @endif/>
+                    </td>
                 </tr>
 
                 <tr>
@@ -105,8 +102,8 @@
 
                 <tr>
                     <td> Place of birth </td>
-                    <td> 
-                    <select id="fam_member_pob" name="fam_member_pob" class="form-control">
+                    <td>
+                        <select id="fam_member_pob" name="fam_member_pob" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->fam_member_pob)))
                             <option value="{{$data->fam_member_pob}}" selected>{{$data->fam_member_pob}}</option>
@@ -380,15 +377,15 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select>    
-                   </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Nationality
                     </td>
-                    <td> 
-                    <select id="fam_member_nationality" name="fam_member_nationality" class="form-control">
+                    <td>
+                        <select id="fam_member_nationality" name="fam_member_nationality" class="form-control">
                             <option value="">Select Nationality</option>
                             @if(!empty(isset($data->fam_member_nationality)))
                             <option value="{{$data->fam_member_nationality}}" selected>{{$data->fam_member_nationality}}</option>
@@ -662,16 +659,16 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                    </select>    
+                        </select>
                     </td>
                 </tr>
 
                 <tr>
                     <td> Other nationalities
                     </td>
-                    <td> 
+                    <td>
 
-                    <select id="fam_member_other_nationality" name="fam_member_other_nationality" class="form-control">
+                        <select id="fam_member_other_nationality" name="fam_member_other_nationality" class="form-control">
                             <option value="">Select Nationality</option>
                             @if(!empty(isset($data->fam_member_other_nationality)))
                             <option value="{{$data->fam_member_other_nationality}}" selected>{{$data->fam_member_other_nationality}}</option>
@@ -945,11 +942,11 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                    </select>
-                    
-                        
-                        
-                  </td>
+                        </select>
+
+
+
+                    </td>
                 </tr>
 
                 <tr>
@@ -957,9 +954,9 @@
                         take any prescribed medication? If so, please specify
                     </td>
                     <td>
-                    <input type="text" name="fam_member_ever_suffered" id="fam_member_ever_suffered" @if(isset($data->fam_member_ever_suffered)) value="{{$data->fam_member_ever_suffered}}" @endif/>
-                    
-                     </td>
+                        <input type="text" name="fam_member_ever_suffered" id="fam_member_ever_suffered" @if(isset($data->fam_member_ever_suffered)) value="{{$data->fam_member_ever_suffered}}" @endif/>
+
+                    </td>
                 </tr>
 
                 <tr>
@@ -974,12 +971,39 @@
                 <tr>
                     <td> Are you also included in the visa application?
                     </td>
-                    <td> <input type="text" name="fam_member_include_visa_application" id="fam_member_include_visa_application" @if(isset($data->fam_member_include_visa_application)) value="{{$data->fam_member_include_visa_application}}" @endif/> </td>
+                    <td>
+                        <select name="fam_member_include_visa_application" id="fam_member_include_visa_application" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_include_visa_application)))
+                            <option value="{{$data->fam_member_include_visa_application}}" selected>{{$data->fam_member_include_visa_application}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>
+
+
+
+                    </td>
                 </tr>
                 <tr>
-                    <td> Are you currently in Australia or NZ? 
+                    <td> Are you currently in Australia or NZ?
                     </td>
-                    <td> <input type="text" name="fam_member_australiz_newzland" id="fam_member_australiz_newzland" @if(isset($data->fam_member_australiz_newzland)) value="{{$data->fam_member_australiz_newzland}}" @endif/> </td>
+                    <td>
+
+                        <select name="fam_member_australiz_newzland" id="fam_member_australiz_newzland" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_australiz_newzland)))
+                            <option value="{{$data->fam_member_australiz_newzland}}" selected>{{$data->fam_member_australiz_newzland}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>
+
+
+
+                    </td>
                 </tr>
                 <tr>
                     <td> If either in Australia or NZ, please specify the country and with which visa
@@ -988,14 +1012,28 @@
                 </tr>
                 <tr>
                     <td> Do you hold the same visa that your partner holds?
+
                     </td>
-                    <td> <input type="text" name="fam_member_visa_partner_hold" id="fam_member_visa_partner_hold" @if(isset($data->fam_member_visa_partner_hold)) value="{{$data->fam_member_visa_partner_hold}}" @endif/> </td>
+                    <td>
+                        <select name="fam_member_visa_partner_hold" id="fam_member_visa_partner_hold" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_visa_partner_hold)))
+                            <option value="{{$data->fam_member_visa_partner_hold}}" selected>{{$data->fam_member_visa_partner_hold}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>
+
+
+
+                    </td>
                 </tr>
 
                 <tr>
                     <td> When does your visa expire?
                     </td>
-                    <td> <input type="text" name="fam_member_visa_expire" id="fam_member_visa_expire" @if(isset($data->fam_member_visa_expire)) value="{{$data->fam_member_visa_expire}}" @endif/> </td>
+                    <td> <input type="date" name="fam_member_visa_expire" id="fam_member_visa_expire" @if(isset($data->fam_member_visa_expire)) value="{{$data->fam_member_visa_expire}}" @endif/> </td>
                 </tr>
 
                 <!-- <tr>
@@ -1017,241 +1055,241 @@
 
         <table>
 
-<tbody>
+            <tbody>
 
-    <tr>
-        <td> Passport 
-        </td>
-        <td> <input type="file" name="family_member_partner_passport" id="family_member_partner_passport">
-            @if (array_key_exists('family_member_partner_passport', $docdataForm360))
+                <tr>
+                    <td> Passport
+                    </td>
+                    <td> <input type="file" name="family_member_partner_passport" id="family_member_partner_passport">
+                        @if (array_key_exists('family_member_partner_passport', $docdataForm360))
 
-            <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_passport/'.$docdataForm360['family_member_partner_passport'])  }}">
-                @if(str_contains($docdataForm360['family_member_partner_passport'] , '.pdf'))
-                <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                @else
-                <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_passport/'.$docdataForm360['family_member_partner_passport'])  }}" />
-                @endif
-            </a>
-
-
-            @endif
-        </td>
-    </tr>
-   
-    <tr>
-        <td> Passport photo  
-        </td>
-        <td> <input type="file" name="family_member_partner_passport_photo" id="family_member_partner_passport_photo">
-            @if (array_key_exists('family_member_partner_passport_photo', $docdataForm360))
-
-            <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_passport_photo/'.$docdataForm360['family_member_partner_passport_photo'])  }}">
-                @if(str_contains($docdataForm360['family_member_partner_passport_photo'] , '.pdf'))
-                <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                @else
-                <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_passport_photo/'.$docdataForm360['family_member_partner_passport_photo'])  }}" />
-                @endif
-            </a>
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_passport/'.$docdataForm360['family_member_partner_passport'])  }}">
+                            @if(str_contains($docdataForm360['family_member_partner_passport'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_passport/'.$docdataForm360['family_member_partner_passport'])  }}" />
+                            @endif
+                        </a>
 
 
-            @endif
-        </td>
-    </tr>
+                        @endif
+                    </td>
+                </tr>
 
-    <tr>
-        <td> ID Card or Driving license 
-        </td>
-        <td> <input type="file" name="family_member_partner_driving_license" id="family_member_partner_driving_license">
-            @if (array_key_exists('family_member_partner_driving_license', $docdataForm360))
+                <tr>
+                    <td> Passport photo
+                    </td>
+                    <td> <input type="file" name="family_member_partner_passport_photo" id="family_member_partner_passport_photo">
+                        @if (array_key_exists('family_member_partner_passport_photo', $docdataForm360))
 
-            <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_driving_license/'.$docdataForm360['family_member_partner_driving_license'])  }}">
-                @if(str_contains($docdataForm360['family_member_partner_driving_license'] , '.pdf'))
-                <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                @else
-                <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_driving_license/'.$docdataForm360['family_member_partner_driving_license'])  }}" />
-                @endif
-            </a>
-
-
-            @endif
-        </td>
-    </tr>
-
-    <tr>
-        <td> Current or most recent visa to Australia (if applicable) 
-        </td>
-        <td> <input type="file" name="family_member_partner_recent_visa" id="family_member_partner_recent_visa">
-            @if (array_key_exists('family_member_partner_recent_visa', $docdataForm360))
-
-            <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_recent_visa/'.$docdataForm360['family_member_partner_recent_visa'])  }}">
-                @if(str_contains($docdataForm360['family_member_partner_recent_visa'] , '.pdf'))
-                <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                @else
-                <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_recent_visa/'.$docdataForm360['family_member_partner_recent_visa'])  }}" />
-                @endif
-            </a>
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_passport_photo/'.$docdataForm360['family_member_partner_passport_photo'])  }}">
+                            @if(str_contains($docdataForm360['family_member_partner_passport_photo'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_passport_photo/'.$docdataForm360['family_member_partner_passport_photo'])  }}" />
+                            @endif
+                        </a>
 
 
-            @endif
-        </td>
-    </tr>
+                        @endif
+                    </td>
+                </tr>
 
-    <tr>
-        <td> IELTS Test or equivalent English test taken (if applicable) 
-        </td>
-        <td> <input type="file" name="family_member_partner_ielts" id="family_member_partner_ielts">
-            @if (array_key_exists('family_member_partner_ielts', $docdataForm360))
+                <tr>
+                    <td> ID Card or Driving license
+                    </td>
+                    <td> <input type="file" name="family_member_partner_driving_license" id="family_member_partner_driving_license">
+                        @if (array_key_exists('family_member_partner_driving_license', $docdataForm360))
 
-            <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_ielts/'.$docdataForm360['family_member_partner_ielts'])  }}">
-                @if(str_contains($docdataForm360['family_member_partner_ielts'] , '.pdf'))
-                <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                @else
-                <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_ielts/'.$docdataForm360['family_member_partner_ielts'])  }}" />
-                @endif
-            </a>
-
-
-            @endif
-        </td>
-    </tr>
-    <tr>
-        <td> Updated CV or Resume 
-        </td>
-        <td> <input type="file" name="family_member_partner_cv_resume" id="family_member_partner_cv_resume">
-            @if (array_key_exists('family_member_partner_cv_resume', $docdataForm360))
-
-            <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_cv_resume/'.$docdataForm360['family_member_partner_cv_resume'])  }}">
-                @if(str_contains($docdataForm360['family_member_partner_cv_resume'] , '.pdf'))
-                <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                @else
-                <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_cv_resume/'.$docdataForm360['family_member_partner_cv_resume'])  }}" />
-                @endif
-            </a>
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_driving_license/'.$docdataForm360['family_member_partner_driving_license'])  }}">
+                            @if(str_contains($docdataForm360['family_member_partner_driving_license'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_driving_license/'.$docdataForm360['family_member_partner_driving_license'])  }}" />
+                            @endif
+                        </a>
 
 
-            @endif
-        </td>
-    </tr>
+                        @endif
+                    </td>
+                </tr>
 
-    <tr>
-        <td> Marriage or De facto registration certificate 
-        </td>
-        <td> <input type="file" name="family_member_partner_reg_certificate" id="family_member_partner_reg_certificate">
-            @if (array_key_exists('family_member_partner_reg_certificate', $docdataForm360))
+                <tr>
+                    <td> Current or most recent visa to Australia (if applicable)
+                    </td>
+                    <td> <input type="file" name="family_member_partner_recent_visa" id="family_member_partner_recent_visa">
+                        @if (array_key_exists('family_member_partner_recent_visa', $docdataForm360))
 
-            <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_reg_certificate/'.$docdataForm360['family_member_partner_reg_certificate'])  }}">
-                @if(str_contains($docdataForm360['family_member_partner_reg_certificate'] , '.pdf'))
-                <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                @else
-                <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_reg_certificate/'.$docdataForm360['family_member_partner_reg_certificate'])  }}" />
-                @endif
-            </a>
-
-
-            @endif
-        </td>
-    </tr>
-
-    <tr>
-        <td> Joint bank account showing both names and last 3 months movements 
-        </td>
-        <td> <input type="file" name="family_member_partner_join_bank_account" id="family_member_partner_join_bank_account">
-            @if (array_key_exists('family_member_partner_join_bank_account', $docdataForm360))
-
-            <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_join_bank_account/'.$docdataForm360['family_member_partner_join_bank_account'])  }}">
-                @if(str_contains($docdataForm360['family_member_partner_join_bank_account'] , '.pdf'))
-                <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                @else
-                <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_join_bank_account/'.$docdataForm360['family_member_partner_join_bank_account'])  }}" />
-                @endif
-            </a>
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_recent_visa/'.$docdataForm360['family_member_partner_recent_visa'])  }}">
+                            @if(str_contains($docdataForm360['family_member_partner_recent_visa'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_recent_visa/'.$docdataForm360['family_member_partner_recent_visa'])  }}" />
+                            @endif
+                        </a>
 
 
-            @endif
-        </td>
-    </tr>
+                        @endif
+                    </td>
+                </tr>
 
-    <tr>
-        <td> Joint Rental Agreement 
-        </td>
-        <td> <input type="file" name="family_member_partner_rental_agreement" id="family_member_partner_rental_agreement">
-            @if (array_key_exists('family_member_partner_rental_agreement', $docdataForm360))
+                <tr>
+                    <td> IELTS Test or equivalent English test taken (if applicable)
+                    </td>
+                    <td> <input type="file" name="family_member_partner_ielts" id="family_member_partner_ielts">
+                        @if (array_key_exists('family_member_partner_ielts', $docdataForm360))
 
-            <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_rental_agreement/'.$docdataForm360['family_member_partner_rental_agreement'])  }}">
-                @if(str_contains($docdataForm360['family_member_partner_rental_agreement'] , '.pdf'))
-                <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                @else
-                <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_rental_agreement/'.$docdataForm360['family_member_partner_rental_agreement'])  }}" />
-                @endif
-            </a>
-
-
-            @endif
-        </td>
-    </tr>
-
-    <tr>
-        <td> A few utility bills in both names or in one person’s name but indicating the same address
-        </td>
-        <td> <input type="file" name="family_member_partner_utility_bills" id="family_member_partner_utility_bills">
-            @if (array_key_exists('family_member_partner_utility_bills', $docdataForm360))
-
-            <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_utility_bills/'.$docdataForm360['family_member_partner_utility_bills'])  }}">
-                @if(str_contains($docdataForm360['family_member_partner_utility_bills'] , '.pdf'))
-                <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                @else
-                <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_utility_bills/'.$docdataForm360['family_member_partner_utility_bills'])  }}" />
-                @endif
-            </a>
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_ielts/'.$docdataForm360['family_member_partner_ielts'])  }}">
+                            @if(str_contains($docdataForm360['family_member_partner_ielts'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_ielts/'.$docdataForm360['family_member_partner_ielts'])  }}" />
+                            @endif
+                        </a>
 
 
-            @endif
-        </td>
-    </tr>
+                        @endif
+                    </td>
+                </tr>
+                <tr>
+                    <td> Updated CV or Resume
+                    </td>
+                    <td> <input type="file" name="family_member_partner_cv_resume" id="family_member_partner_cv_resume">
+                        @if (array_key_exists('family_member_partner_cv_resume', $docdataForm360))
 
-    <tr>
-        <td> A few utility bills in both names or in one person’s name but indicating the same address
-        </td>
-        <td> <input type="file" name="family_member_partner_utility_bills2" id="family_member_partner_utility_bills2">
-            @if (array_key_exists('family_member_partner_utility_bills2', $docdataForm360))
-
-            <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_utility_bills2/'.$docdataForm360['family_member_partner_utility_bills2'])  }}">
-                @if(str_contains($docdataForm360['family_member_partner_utility_bills2'] , '.pdf'))
-                <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                @else
-                <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_utility_bills2/'.$docdataForm360['family_member_partner_utility_bills2'])  }}" />
-                @endif
-            </a>
-
-
-            @endif
-        </td>
-    </tr>
-
-    <tr>
-        <td> A few utility bills in both names or in one person’s name but indicating the same address
-        </td>
-        <td> <input type="file" name="family_member_partner_utility_bills3" id="family_member_partner_utility_bills3">
-            @if (array_key_exists('family_member_partner_utility_bills3', $docdataForm360))
-
-            <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_utility_bills3/'.$docdataForm360['family_member_partner_utility_bills3'])  }}">
-                @if(str_contains($docdataForm360['family_member_partner_utility_bills3'] , '.pdf'))
-                <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                @else
-                <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_utility_bills3/'.$docdataForm360['family_member_partner_utility_bills3'])  }}" />
-                @endif
-            </a>
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_cv_resume/'.$docdataForm360['family_member_partner_cv_resume'])  }}">
+                            @if(str_contains($docdataForm360['family_member_partner_cv_resume'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_cv_resume/'.$docdataForm360['family_member_partner_cv_resume'])  }}" />
+                            @endif
+                        </a>
 
 
-            @endif
-        </td>
-    </tr>
+                        @endif
+                    </td>
+                </tr>
 
-   
+                <tr>
+                    <td> Marriage or De facto registration certificate
+                    </td>
+                    <td> <input type="file" name="family_member_partner_reg_certificate" id="family_member_partner_reg_certificate">
+                        @if (array_key_exists('family_member_partner_reg_certificate', $docdataForm360))
 
-    
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_reg_certificate/'.$docdataForm360['family_member_partner_reg_certificate'])  }}">
+                            @if(str_contains($docdataForm360['family_member_partner_reg_certificate'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_reg_certificate/'.$docdataForm360['family_member_partner_reg_certificate'])  }}" />
+                            @endif
+                        </a>
 
-</tbody>
-</table>
+
+                        @endif
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Joint bank account showing both names and last 3 months movements
+                    </td>
+                    <td> <input type="file" name="family_member_partner_join_bank_account" id="family_member_partner_join_bank_account">
+                        @if (array_key_exists('family_member_partner_join_bank_account', $docdataForm360))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_join_bank_account/'.$docdataForm360['family_member_partner_join_bank_account'])  }}">
+                            @if(str_contains($docdataForm360['family_member_partner_join_bank_account'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_join_bank_account/'.$docdataForm360['family_member_partner_join_bank_account'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Joint Rental Agreement
+                    </td>
+                    <td> <input type="file" name="family_member_partner_rental_agreement" id="family_member_partner_rental_agreement">
+                        @if (array_key_exists('family_member_partner_rental_agreement', $docdataForm360))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_rental_agreement/'.$docdataForm360['family_member_partner_rental_agreement'])  }}">
+                            @if(str_contains($docdataForm360['family_member_partner_rental_agreement'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_rental_agreement/'.$docdataForm360['family_member_partner_rental_agreement'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> A few utility bills in both names or in one person’s name but indicating the same address
+                    </td>
+                    <td> <input type="file" name="family_member_partner_utility_bills" id="family_member_partner_utility_bills">
+                        @if (array_key_exists('family_member_partner_utility_bills', $docdataForm360))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_utility_bills/'.$docdataForm360['family_member_partner_utility_bills'])  }}">
+                            @if(str_contains($docdataForm360['family_member_partner_utility_bills'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_utility_bills/'.$docdataForm360['family_member_partner_utility_bills'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> A few utility bills in both names or in one person’s name but indicating the same address
+                    </td>
+                    <td> <input type="file" name="family_member_partner_utility_bills2" id="family_member_partner_utility_bills2">
+                        @if (array_key_exists('family_member_partner_utility_bills2', $docdataForm360))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_utility_bills2/'.$docdataForm360['family_member_partner_utility_bills2'])  }}">
+                            @if(str_contains($docdataForm360['family_member_partner_utility_bills2'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_utility_bills2/'.$docdataForm360['family_member_partner_utility_bills2'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> A few utility bills in both names or in one person’s name but indicating the same address
+                    </td>
+                    <td> <input type="file" name="family_member_partner_utility_bills3" id="family_member_partner_utility_bills3">
+                        @if (array_key_exists('family_member_partner_utility_bills3', $docdataForm360))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_utility_bills3/'.$docdataForm360['family_member_partner_utility_bills3'])  }}">
+                            @if(str_contains($docdataForm360['family_member_partner_utility_bills3'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_partner_utility_bills3/'.$docdataForm360['family_member_partner_utility_bills3'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+                    </td>
+                </tr>
+
+
+
+
+
+            </tbody>
+        </table>
 
 
         <h2 class="fs-title"> YOUR CHILD/CHILDREN </h2>
@@ -1269,15 +1307,15 @@
                 <tr>
                     <td> Date of birth
                     </td>
-                    <td>                
-                    <input type="date" name="fam_member_child_dob1" id="fam_member_child_dob1" @if(isset($data->fam_member_child_dob1)) value="{{$data->fam_member_child_dob1}}" @endif/>
+                    <td>
+                        <input type="date" name="fam_member_child_dob1" id="fam_member_child_dob1" @if(isset($data->fam_member_child_dob1)) value="{{$data->fam_member_child_dob1}}" @endif/>
                     </td>
                 </tr>
 
                 <tr>
                     <td> Place of birth </td>
-                    <td> 
-                    <select id="fam_member_child_pob1" name="fam_member_child_pob1" class="form-control">
+                    <td>
+                        <select id="fam_member_child_pob1" name="fam_member_child_pob1" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->fam_member_child_pob1)))
                             <option value="{{$data->fam_member_child_pob1}}" selected>{{$data->fam_member_child_pob1}}</option>
@@ -1551,15 +1589,15 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select>    
+                        </select>
                     </td>
                 </tr>
 
                 <tr>
                     <td> Nationality
                     </td>
-                    <td> 
-                    <select id="fam_member_child_nationality1" name="fam_member_child_nationality1" class="form-control">
+                    <td>
+                        <select id="fam_member_child_nationality1" name="fam_member_child_nationality1" class="form-control">
                             <option value="">Select Nationality</option>
                             @if(!empty(isset($data->fam_member_child_nationality1)))
                             <option value="{{$data->fam_member_child_nationality1}}" selected>{{$data->fam_member_child_nationality1}}</option>
@@ -1840,8 +1878,8 @@
                 <tr>
                     <td> Other nationalities
                     </td>
-                    <td>    
-                    <select name="fam_member_child_other_nationality1" id="fam_member_child_other_nationality1" class="form-control">
+                    <td>
+                        <select name="fam_member_child_other_nationality1" id="fam_member_child_other_nationality1" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_child_other_nationality1)))
@@ -1849,16 +1887,16 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>     
-                  </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Have you ever suffered of severe illness, or do you
                         take any prescribed medication? If so, please specify
                     </td>
-                    <td> 
-                    <select name="fam_member_child_ever_suffered1" id="fam_member_child_ever_suffered1" class="form-control">
+                    <td>
+                        <select name="fam_member_child_ever_suffered1" id="fam_member_child_ever_suffered1" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_child_ever_suffered1)))
@@ -1866,8 +1904,8 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select> 
-               </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
@@ -1885,7 +1923,7 @@
                     <td> <input type="text" name="fam_member_child_include_visa_application" id="fam_member_child_include_visa_application" @if(isset($data->fam_member_child_include_visa_application)) value="{{$data->fam_member_child_include_visa_application}}" @endif/> </td>
                 </tr>
                 <tr>
-                    <td> Are you currently in Australia or NZ? 
+                    <td> Are you currently in Australia or NZ?
                     </td>
                     <td> <input type="text" name="fam_member_child_australiz_newzland" id="fam_member_child_australiz_newzland" @if(isset($data->fam_member_child_australiz_newzland)) value="{{$data->fam_member_child_australiz_newzland}}" @endif/> </td>
                 </tr>
@@ -2210,152 +2248,152 @@
 
         <h2 class="fs-title">Child 1 - DOCS </h2>
 
-<table>
+        <table>
 
-   <tbody>
+            <tbody>
 
-                    <tr>
-                        <td> Passport 
-                        </td>
-                        <td> <input type="file" name="family_member_child1_passport" id="family_member_child1_passport">
-                            @if (array_key_exists('family_member_child1_passport', $docdataForm360))
+                <tr>
+                    <td> Passport
+                    </td>
+                    <td> <input type="file" name="family_member_child1_passport" id="family_member_child1_passport">
+                        @if (array_key_exists('family_member_child1_passport', $docdataForm360))
 
-                            <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_passport/'.$docdataForm360['family_member_child1_passport'])  }}">
-                                @if(str_contains($docdataForm360['family_member_child1_passport'] , '.pdf'))
-                                <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                                @else
-                                <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_passport/'.$docdataForm360['family_member_child1_passport'])  }}" />
-                                @endif
-                            </a>
-
-
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_passport/'.$docdataForm360['family_member_child1_passport'])  }}">
+                            @if(str_contains($docdataForm360['family_member_child1_passport'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_passport/'.$docdataForm360['family_member_child1_passport'])  }}" />
                             @endif
-                        </td>
-                    </tr>
-                
-                    <tr>
-                        <td> Passport photo  
-                        </td>
-                        <td> <input type="file" name="family_member_child1_passport_photo" id="family_member_child1_passport_photo">
-                            @if (array_key_exists('family_member_child1_passport_photo', $docdataForm360))
-
-                            <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_passport_photo/'.$docdataForm360['family_member_child1_passport_photo'])  }}">
-                                @if(str_contains($docdataForm360['family_member_child1_passport_photo'] , '.pdf'))
-                                <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                                @else
-                                <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_passport_photo/'.$docdataForm360['family_member_child1_passport_photo'])  }}" />
-                                @endif
-                            </a>
+                        </a>
 
 
+                        @endif
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Passport photo
+                    </td>
+                    <td> <input type="file" name="family_member_child1_passport_photo" id="family_member_child1_passport_photo">
+                        @if (array_key_exists('family_member_child1_passport_photo', $docdataForm360))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_passport_photo/'.$docdataForm360['family_member_child1_passport_photo'])  }}">
+                            @if(str_contains($docdataForm360['family_member_child1_passport_photo'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_passport_photo/'.$docdataForm360['family_member_child1_passport_photo'])  }}" />
                             @endif
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td> ID Card or Driving license 
-                        </td>
-                        <td> <input type="file" name="family_member_child1_driving_license" id="family_member_child1_driving_license">
-                            @if (array_key_exists('family_member_child1_driving_license', $docdataForm360))
-
-                            <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_driving_license/'.$docdataForm360['family_member_child1_driving_license'])  }}">
-                                @if(str_contains($docdataForm360['family_member_child1_driving_license'] , '.pdf'))
-                                <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                                @else
-                                <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_driving_license/'.$docdataForm360['family_member_child1_driving_license'])  }}" />
-                                @endif
-                            </a>
+                        </a>
 
 
+                        @endif
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> ID Card or Driving license
+                    </td>
+                    <td> <input type="file" name="family_member_child1_driving_license" id="family_member_child1_driving_license">
+                        @if (array_key_exists('family_member_child1_driving_license', $docdataForm360))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_driving_license/'.$docdataForm360['family_member_child1_driving_license'])  }}">
+                            @if(str_contains($docdataForm360['family_member_child1_driving_license'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_driving_license/'.$docdataForm360['family_member_child1_driving_license'])  }}" />
                             @endif
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td> Current or most recent visa to Australia (if applicable) 
-                        </td>
-                        <td> <input type="file" name="family_member_child1_recent_visa" id="family_member_child1_recent_visa">
-                            @if (array_key_exists('family_member_child1_recent_visa', $docdataForm360))
-
-                            <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_recent_visa/'.$docdataForm360['family_member_child1_recent_visa'])  }}">
-                                @if(str_contains($docdataForm360['family_member_child1_recent_visa'] , '.pdf'))
-                                <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                                @else
-                                <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_recent_visa/'.$docdataForm360['family_member_child1_recent_visa'])  }}" />
-                                @endif
-                            </a>
+                        </a>
 
 
+                        @endif
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Current or most recent visa to Australia (if applicable)
+                    </td>
+                    <td> <input type="file" name="family_member_child1_recent_visa" id="family_member_child1_recent_visa">
+                        @if (array_key_exists('family_member_child1_recent_visa', $docdataForm360))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_recent_visa/'.$docdataForm360['family_member_child1_recent_visa'])  }}">
+                            @if(str_contains($docdataForm360['family_member_child1_recent_visa'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_recent_visa/'.$docdataForm360['family_member_child1_recent_visa'])  }}" />
                             @endif
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td> IELTS Test or equivalent English test taken (if applicable) 
-                        </td>
-                        <td> <input type="file" name="family_member_child1_ielts" id="family_member_child1_ielts">
-                            @if (array_key_exists('family_member_child1_ielts', $docdataForm360))
-
-                            <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_ielts/'.$docdataForm360['family_member_child1_ielts'])  }}">
-                                @if(str_contains($docdataForm360['family_member_child1_ielts'] , '.pdf'))
-                                <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                                @else
-                                <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_ielts/'.$docdataForm360['family_member_child1_ielts'])  }}" />
-                                @endif
-                            </a>
+                        </a>
 
 
+                        @endif
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> IELTS Test or equivalent English test taken (if applicable)
+                    </td>
+                    <td> <input type="file" name="family_member_child1_ielts" id="family_member_child1_ielts">
+                        @if (array_key_exists('family_member_child1_ielts', $docdataForm360))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_ielts/'.$docdataForm360['family_member_child1_ielts'])  }}">
+                            @if(str_contains($docdataForm360['family_member_child1_ielts'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_ielts/'.$docdataForm360['family_member_child1_ielts'])  }}" />
                             @endif
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> Updated CV or Resume 
-                        </td>
-                        <td> <input type="file" name="family_member_child1_cv_resume" id="family_member_child1_cv_resume">
-                            @if (array_key_exists('family_member_child1_cv_resume', $docdataForm360))
-
-                            <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_cv_resume/'.$docdataForm360['family_member_child1_cv_resume'])  }}">
-                                @if(str_contains($docdataForm360['family_member_child1_cv_resume'] , '.pdf'))
-                                <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                                @else
-                                <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_cv_resume/'.$docdataForm360['family_member_child1_cv_resume'])  }}" />
-                                @endif
-                            </a>
+                        </a>
 
 
+                        @endif
+                    </td>
+                </tr>
+                <tr>
+                    <td> Updated CV or Resume
+                    </td>
+                    <td> <input type="file" name="family_member_child1_cv_resume" id="family_member_child1_cv_resume">
+                        @if (array_key_exists('family_member_child1_cv_resume', $docdataForm360))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_cv_resume/'.$docdataForm360['family_member_child1_cv_resume'])  }}">
+                            @if(str_contains($docdataForm360['family_member_child1_cv_resume'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_cv_resume/'.$docdataForm360['family_member_child1_cv_resume'])  }}" />
                             @endif
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td> Birth certificate indicating name of both parents 
-                        </td>
-                        <td> <input type="file" name="family_member_child1_birth_certificate" id="family_member_child1_birth_certificate">
-                            @if (array_key_exists('family_member_child1_birth_certificate', $docdataForm360))
-
-                            <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_birth_certificate/'.$docdataForm360['family_member_child1_birth_certificate'])  }}">
-                                @if(str_contains($docdataForm360['family_member_child1_birth_certificate'] , '.pdf'))
-                                <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                                @else
-                                <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_birth_certificate/'.$docdataForm360['family_member_child1_birth_certificate'])  }}" />
-                                @endif
-                            </a>
+                        </a>
 
 
+                        @endif
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Birth certificate indicating name of both parents
+                    </td>
+                    <td> <input type="file" name="family_member_child1_birth_certificate" id="family_member_child1_birth_certificate">
+                        @if (array_key_exists('family_member_child1_birth_certificate', $docdataForm360))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_birth_certificate/'.$docdataForm360['family_member_child1_birth_certificate'])  }}">
+                            @if(str_contains($docdataForm360['family_member_child1_birth_certificate'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child1_birth_certificate/'.$docdataForm360['family_member_child1_birth_certificate'])  }}" />
                             @endif
-                        </td>
-                    </tr>
+                        </a>
 
-                    
 
-                
+                        @endif
+                    </td>
+                </tr>
 
-                
 
-                    
 
-        </tbody>
-</table>
+
+
+
+
+
+
+            </tbody>
+        </table>
 
         <h2 class="fs-title">Child 2 - INFO</h2>
 
@@ -2376,7 +2414,7 @@
                 <tr>
                     <td> Place of birth </td>
                     <td>
-                    <select id="fam_member_child_pob2" name="fam_member_child_pob2" class="form-control">
+                        <select id="fam_member_child_pob2" name="fam_member_child_pob2" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->fam_member_child_pob2)))
                             <option value="{{$data->fam_member_child_pob2}}" selected>{{$data->fam_member_child_pob2}}</option>
@@ -2658,7 +2696,7 @@
                     <td> Nationality
                     </td>
                     <td>
-                    <select id="fam_member_child_nationality2" name="fam_member_child_nationality2" class="form-control">
+                        <select id="fam_member_child_nationality2" name="fam_member_child_nationality2" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->fam_member_child_nationality2)))
                             <option value="{{$data->fam_member_child_nationality2}}" selected>{{$data->fam_member_child_nationality2}}</option>
@@ -2932,15 +2970,15 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select> 
-                       </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Other nationalities
                     </td>
                     <td>
-                    <select name="fam_member_child_other_nationality2" id="fam_member_child_other_nationality2" class="form-control">
+                        <select name="fam_member_child_other_nationality2" id="fam_member_child_other_nationality2" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_child_other_nationality2)))
@@ -2948,7 +2986,7 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>     
+                        </select>
                     </td>
                 </tr>
 
@@ -2956,8 +2994,8 @@
                     <td> Have you ever suffered of severe illness, or do you
                         take any prescribed medication? If so, please specify
                     </td>
-                    <td> 
-                    <select name="fam_member_child_ever_suffered2" id="fam_member_child_ever_suffered2" class="form-control">
+                    <td>
+                        <select name="fam_member_child_ever_suffered2" id="fam_member_child_ever_suffered2" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_child_ever_suffered2)))
@@ -2965,8 +3003,8 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>     
-                  </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
@@ -2984,7 +3022,7 @@
                     <td> <input type="text" name="fam_member_child2_include_visa_application" id="fam_member_child2_include_visa_application" @if(isset($data->fam_member_child2_include_visa_application)) value="{{$data->fam_member_child2_include_visa_application}}" @endif/> </td>
                 </tr>
                 <tr>
-                    <td> Are you currently in Australia or NZ? 
+                    <td> Are you currently in Australia or NZ?
                     </td>
                     <td> <input type="text" name="fam_member_child2_australiz_newzland" id="fam_member_child2_australiz_newzland" @if(isset($data->fam_member_child2_australiz_newzland)) value="{{$data->fam_member_child2_australiz_newzland}}" @endif/> </td>
                 </tr>
@@ -3004,7 +3042,7 @@
                     </td>
                     <td> <input type="text" name="fam_member_child2_visa_expire" id="fam_member_child2_visa_expire" @if(isset($data->fam_member_child2_visa_expire)) value="{{$data->fam_member_child2_visa_expire}}" @endif/> </td>
                 </tr>
-                
+
 
             </tbody>
         </table>
@@ -3013,149 +3051,149 @@
 
         <table>
 
-        <tbody>
+            <tbody>
 
-                            <tr>
-                                <td> Passport 
-                                </td>
-                                <td> <input type="file" name="family_member_child2_passport" id="family_member_child2_passport">
-                                    @if (array_key_exists('family_member_child2_passport', $docdataForm360))
+                <tr>
+                    <td> Passport
+                    </td>
+                    <td> <input type="file" name="family_member_child2_passport" id="family_member_child2_passport">
+                        @if (array_key_exists('family_member_child2_passport', $docdataForm360))
 
-                                    <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_passport/'.$docdataForm360['family_member_child2_passport'])  }}">
-                                        @if(str_contains($docdataForm360['family_member_child2_passport'] , '.pdf'))
-                                        <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                                        @else
-                                        <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_passport/'.$docdataForm360['family_member_child2_passport'])  }}" />
-                                        @endif
-                                    </a>
-
-
-                                    @endif
-                                </td>
-                            </tr>
-                        
-                            <tr>
-                                <td> Passport photo  
-                                </td>
-                                <td> <input type="file" name="family_member_child2_passport_photo" id="family_member_child2_passport_photo">
-                                    @if (array_key_exists('family_member_child2_passport_photo', $docdataForm360))
-
-                                    <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_passport_photo/'.$docdataForm360['family_member_child2_passport_photo'])  }}">
-                                        @if(str_contains($docdataForm360['family_member_child2_passport_photo'] , '.pdf'))
-                                        <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                                        @else
-                                        <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_passport_photo/'.$docdataForm360['family_member_child2_passport_photo'])  }}" />
-                                        @endif
-                                    </a>
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_passport/'.$docdataForm360['family_member_child2_passport'])  }}">
+                            @if(str_contains($docdataForm360['family_member_child2_passport'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_passport/'.$docdataForm360['family_member_child2_passport'])  }}" />
+                            @endif
+                        </a>
 
 
-                                    @endif
-                                </td>
-                            </tr>
+                        @endif
+                    </td>
+                </tr>
 
-                            <tr>
-                                <td> ID Card or Driving license 
-                                </td>
-                                <td> <input type="file" name="family_member_child2_driving_license" id="family_member_child2_driving_license">
-                                    @if (array_key_exists('family_member_child2_driving_license', $docdataForm360))
+                <tr>
+                    <td> Passport photo
+                    </td>
+                    <td> <input type="file" name="family_member_child2_passport_photo" id="family_member_child2_passport_photo">
+                        @if (array_key_exists('family_member_child2_passport_photo', $docdataForm360))
 
-                                    <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_driving_license/'.$docdataForm360['family_member_child2_driving_license'])  }}">
-                                        @if(str_contains($docdataForm360['family_member_child2_driving_license'] , '.pdf'))
-                                        <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                                        @else
-                                        <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_driving_license/'.$docdataForm360['family_member_child2_driving_license'])  }}" />
-                                        @endif
-                                    </a>
-
-
-                                    @endif
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td> Current or most recent visa to Australia (if applicable) 
-                                </td>
-                                <td> <input type="file" name="family_member_child2_recent_visa" id="family_member_child2_recent_visa">
-                                    @if (array_key_exists('family_member_child2_recent_visa', $docdataForm360))
-
-                                    <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_recent_visa/'.$docdataForm360['family_member_child2_recent_visa'])  }}">
-                                        @if(str_contains($docdataForm360['family_member_child2_recent_visa'] , '.pdf'))
-                                        <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                                        @else
-                                        <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_recent_visa/'.$docdataForm360['family_member_child2_recent_visa'])  }}" />
-                                        @endif
-                                    </a>
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_passport_photo/'.$docdataForm360['family_member_child2_passport_photo'])  }}">
+                            @if(str_contains($docdataForm360['family_member_child2_passport_photo'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_passport_photo/'.$docdataForm360['family_member_child2_passport_photo'])  }}" />
+                            @endif
+                        </a>
 
 
-                                    @endif
-                                </td>
-                            </tr>
+                        @endif
+                    </td>
+                </tr>
 
-                            <tr>
-                                <td> IELTS Test or equivalent English test taken (if applicable) 
-                                </td>
-                                <td> <input type="file" name="family_member_child2_ielts" id="family_member_child2_ielts">
-                                    @if (array_key_exists('family_member_child2_ielts', $docdataForm360))
+                <tr>
+                    <td> ID Card or Driving license
+                    </td>
+                    <td> <input type="file" name="family_member_child2_driving_license" id="family_member_child2_driving_license">
+                        @if (array_key_exists('family_member_child2_driving_license', $docdataForm360))
 
-                                    <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_ielts/'.$docdataForm360['family_member_child2_ielts'])  }}">
-                                        @if(str_contains($docdataForm360['family_member_child2_ielts'] , '.pdf'))
-                                        <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                                        @else
-                                        <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_ielts/'.$docdataForm360['family_member_child2_ielts'])  }}" />
-                                        @endif
-                                    </a>
-
-
-                                    @endif
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> Updated CV or Resume 
-                                </td>
-                                <td> <input type="file" name="family_member_child2_cv_resume" id="family_member_child2_cv_resume">
-                                    @if (array_key_exists('family_member_child2_cv_resume', $docdataForm360))
-
-                                    <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_cv_resume/'.$docdataForm360['family_member_child2_cv_resume'])  }}">
-                                        @if(str_contains($docdataForm360['family_member_child2_cv_resume'] , '.pdf'))
-                                        <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                                        @else
-                                        <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_cv_resume/'.$docdataForm360['family_member_child2_cv_resume'])  }}" />
-                                        @endif
-                                    </a>
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_driving_license/'.$docdataForm360['family_member_child2_driving_license'])  }}">
+                            @if(str_contains($docdataForm360['family_member_child2_driving_license'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_driving_license/'.$docdataForm360['family_member_child2_driving_license'])  }}" />
+                            @endif
+                        </a>
 
 
-                                    @endif
-                                </td>
-                            </tr>
+                        @endif
+                    </td>
+                </tr>
 
-                            <tr>
-                                <td> Birth certificate indicating name of both parents 
-                                </td>
-                                <td> <input type="file" name="family_member_child2_birth_certificate" id="family_member_child2_birth_certificate">
-                                    @if (array_key_exists('family_member_child2_birth_certificate', $docdataForm360))
+                <tr>
+                    <td> Current or most recent visa to Australia (if applicable)
+                    </td>
+                    <td> <input type="file" name="family_member_child2_recent_visa" id="family_member_child2_recent_visa">
+                        @if (array_key_exists('family_member_child2_recent_visa', $docdataForm360))
 
-                                    <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_birth_certificate/'.$docdataForm360['family_member_child2_birth_certificate'])  }}">
-                                        @if(str_contains($docdataForm360['family_member_child2_birth_certificate'] , '.pdf'))
-                                        <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                                        @else
-                                        <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_birth_certificate/'.$docdataForm360['family_member_child2_birth_certificate'])  }}" />
-                                        @endif
-                                    </a>
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_recent_visa/'.$docdataForm360['family_member_child2_recent_visa'])  }}">
+                            @if(str_contains($docdataForm360['family_member_child2_recent_visa'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_recent_visa/'.$docdataForm360['family_member_child2_recent_visa'])  }}" />
+                            @endif
+                        </a>
 
 
-                                    @endif
-                                </td>
-                            </tr>
+                        @endif
+                    </td>
+                </tr>
 
-                            
+                <tr>
+                    <td> IELTS Test or equivalent English test taken (if applicable)
+                    </td>
+                    <td> <input type="file" name="family_member_child2_ielts" id="family_member_child2_ielts">
+                        @if (array_key_exists('family_member_child2_ielts', $docdataForm360))
 
-                        
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_ielts/'.$docdataForm360['family_member_child2_ielts'])  }}">
+                            @if(str_contains($docdataForm360['family_member_child2_ielts'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_ielts/'.$docdataForm360['family_member_child2_ielts'])  }}" />
+                            @endif
+                        </a>
 
-                        
 
-                            
+                        @endif
+                    </td>
+                </tr>
+                <tr>
+                    <td> Updated CV or Resume
+                    </td>
+                    <td> <input type="file" name="family_member_child2_cv_resume" id="family_member_child2_cv_resume">
+                        @if (array_key_exists('family_member_child2_cv_resume', $docdataForm360))
 
-                </tbody>
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_cv_resume/'.$docdataForm360['family_member_child2_cv_resume'])  }}">
+                            @if(str_contains($docdataForm360['family_member_child2_cv_resume'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_cv_resume/'.$docdataForm360['family_member_child2_cv_resume'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Birth certificate indicating name of both parents
+                    </td>
+                    <td> <input type="file" name="family_member_child2_birth_certificate" id="family_member_child2_birth_certificate">
+                        @if (array_key_exists('family_member_child2_birth_certificate', $docdataForm360))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_birth_certificate/'.$docdataForm360['family_member_child2_birth_certificate'])  }}">
+                            @if(str_contains($docdataForm360['family_member_child2_birth_certificate'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child2_birth_certificate/'.$docdataForm360['family_member_child2_birth_certificate'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+                    </td>
+                </tr>
+
+
+
+
+
+
+
+
+
+            </tbody>
         </table>
 
         <h2 class="fs-title">Child 3 - INFO </h2>
@@ -3176,8 +3214,8 @@
 
                 <tr>
                     <td> Place of birth </td>
-                    <td> 
-                    <select id="fam_member_child_pob3" name="fam_member_child_pob3" class="form-control">
+                    <td>
+                        <select id="fam_member_child_pob3" name="fam_member_child_pob3" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->fam_member_child_pob3)))
                             <option value="{{$data->fam_member_child_pob3}}" selected>{{$data->fam_member_child_pob3}}</option>
@@ -3451,15 +3489,15 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select>    
-                  </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Nationality
                     </td>
                     <td>
-                    <select id="fam_member_child_nationality3" name="fam_member_child_nationality3" class="form-control">
+                        <select id="fam_member_child_nationality3" name="fam_member_child_nationality3" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->fam_member_child_nationality3)))
                             <option value="{{$data->fam_member_child_nationality3}}" selected>{{$data->fam_member_child_nationality3}}</option>
@@ -3733,15 +3771,15 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select> 
-                       </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Other nationalities
                     </td>
-                    <td> 
-                    <select name="fam_member_child_other_nationality3" id="fam_member_child_other_nationality3" class="form-control">
+                    <td>
+                        <select name="fam_member_child_other_nationality3" id="fam_member_child_other_nationality3" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_child_other_nationality3)))
@@ -3749,8 +3787,8 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>     
-                     </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
@@ -3758,7 +3796,7 @@
                         take any prescribed medication? If so, please specify
                     </td>
                     <td>
-                    <select name="fam_member_child_ever_suffered3" id="fam_member_child_ever_suffered3" class="form-control">
+                        <select name="fam_member_child_ever_suffered3" id="fam_member_child_ever_suffered3" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_child_ever_suffered3)))
@@ -3766,8 +3804,8 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>     
-                   </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
@@ -3777,7 +3815,7 @@
                         equivalent documents? If so, please specify
                     </td>
                     <td>
-                    <select name="fam_member_child_legal_action3" id="fam_member_child_legal_action3" class="form-control">
+                        <select name="fam_member_child_legal_action3" id="fam_member_child_legal_action3" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_child_legal_action3)))
@@ -3786,7 +3824,7 @@
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
                         </select>
-                        </td>
+                    </td>
                 </tr>
 
                 <tr>
@@ -3795,7 +3833,7 @@
                     <td> <input type="text" name="fam_member_child3_include_visa_application" id="fam_member_child3_include_visa_application" @if(isset($data->fam_member_child3_include_visa_application)) value="{{$data->fam_member_child3_include_visa_application}}" @endif/> </td>
                 </tr>
                 <tr>
-                    <td> Are you currently in Australia or NZ? 
+                    <td> Are you currently in Australia or NZ?
                     </td>
                     <td> <input type="text" name="fam_member_child3_australiz_newzland" id="fam_member_child3_australiz_newzland" @if(isset($data->fam_member_child3_australiz_newzland)) value="{{$data->fam_member_child3_australiz_newzland}}" @endif/> </td>
                 </tr>
@@ -4119,149 +4157,149 @@
 
         <table>
 
-           <tbody>
+            <tbody>
 
-                            <tr>
-                                <td> Passport 
-                                </td>
-                                <td> <input type="file" name="family_member_child3_passport" id="family_member_child3_passport">
-                                    @if (array_key_exists('family_member_child3_passport', $docdataForm360))
+                <tr>
+                    <td> Passport
+                    </td>
+                    <td> <input type="file" name="family_member_child3_passport" id="family_member_child3_passport">
+                        @if (array_key_exists('family_member_child3_passport', $docdataForm360))
 
-                                    <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_passport/'.$docdataForm360['family_member_child3_passport'])  }}">
-                                        @if(str_contains($docdataForm360['family_member_child3_passport'] , '.pdf'))
-                                        <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                                        @else
-                                        <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_passport/'.$docdataForm360['family_member_child3_passport'])  }}" />
-                                        @endif
-                                    </a>
-
-
-                                    @endif
-                                </td>
-                            </tr>
-                        
-                            <tr>
-                                <td> Passport photo  
-                                </td>
-                                <td> <input type="file" name="family_member_child3_passport_photo" id="family_member_child3_passport_photo">
-                                    @if (array_key_exists('family_member_child3_passport_photo', $docdataForm360))
-
-                                    <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_passport_photo/'.$docdataForm360['family_member_child3_passport_photo'])  }}">
-                                        @if(str_contains($docdataForm360['family_member_child3_passport_photo'] , '.pdf'))
-                                        <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                                        @else
-                                        <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_passport_photo/'.$docdataForm360['family_member_child3_passport_photo'])  }}" />
-                                        @endif
-                                    </a>
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_passport/'.$docdataForm360['family_member_child3_passport'])  }}">
+                            @if(str_contains($docdataForm360['family_member_child3_passport'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_passport/'.$docdataForm360['family_member_child3_passport'])  }}" />
+                            @endif
+                        </a>
 
 
-                                    @endif
-                                </td>
-                            </tr>
+                        @endif
+                    </td>
+                </tr>
 
-                            <tr>
-                                <td> ID Card or Driving license 
-                                </td>
-                                <td> <input type="file" name="family_member_child3_driving_license" id="family_member_child3_driving_license">
-                                    @if (array_key_exists('family_member_child3_driving_license', $docdataForm360))
+                <tr>
+                    <td> Passport photo
+                    </td>
+                    <td> <input type="file" name="family_member_child3_passport_photo" id="family_member_child3_passport_photo">
+                        @if (array_key_exists('family_member_child3_passport_photo', $docdataForm360))
 
-                                    <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_driving_license/'.$docdataForm360['family_member_child3_driving_license'])  }}">
-                                        @if(str_contains($docdataForm360['family_member_child3_driving_license'] , '.pdf'))
-                                        <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                                        @else
-                                        <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_driving_license/'.$docdataForm360['family_member_child3_driving_license'])  }}" />
-                                        @endif
-                                    </a>
-
-
-                                    @endif
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td> Current or most recent visa to Australia (if applicable) 
-                                </td>
-                                <td> <input type="file" name="family_member_child3_recent_visa" id="family_member_child3_recent_visa">
-                                    @if (array_key_exists('family_member_child3_recent_visa', $docdataForm360))
-
-                                    <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_recent_visa/'.$docdataForm360['family_member_child3_recent_visa'])  }}">
-                                        @if(str_contains($docdataForm360['family_member_child3_recent_visa'] , '.pdf'))
-                                        <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                                        @else
-                                        <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_recent_visa/'.$docdataForm360['family_member_child3_recent_visa'])  }}" />
-                                        @endif
-                                    </a>
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_passport_photo/'.$docdataForm360['family_member_child3_passport_photo'])  }}">
+                            @if(str_contains($docdataForm360['family_member_child3_passport_photo'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_passport_photo/'.$docdataForm360['family_member_child3_passport_photo'])  }}" />
+                            @endif
+                        </a>
 
 
-                                    @endif
-                                </td>
-                            </tr>
+                        @endif
+                    </td>
+                </tr>
 
-                            <tr>
-                                <td> IELTS Test or equivalent English test taken (if applicable) 
-                                </td>
-                                <td> <input type="file" name="family_member_child3_ielts" id="family_member_child3_ielts">
-                                    @if (array_key_exists('family_member_child3_ielts', $docdataForm360))
+                <tr>
+                    <td> ID Card or Driving license
+                    </td>
+                    <td> <input type="file" name="family_member_child3_driving_license" id="family_member_child3_driving_license">
+                        @if (array_key_exists('family_member_child3_driving_license', $docdataForm360))
 
-                                    <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_ielts/'.$docdataForm360['family_member_child3_ielts'])  }}">
-                                        @if(str_contains($docdataForm360['family_member_child3_ielts'] , '.pdf'))
-                                        <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                                        @else
-                                        <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_ielts/'.$docdataForm360['family_member_child3_ielts'])  }}" />
-                                        @endif
-                                    </a>
-
-
-                                    @endif
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> Updated CV or Resume 
-                                </td>
-                                <td> <input type="file" name="family_member_child3_cv_resume" id="family_member_child3_cv_resume">
-                                    @if (array_key_exists('family_member_child3_cv_resume', $docdataForm360))
-
-                                    <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_cv_resume/'.$docdataForm360['family_member_child3_cv_resume'])  }}">
-                                        @if(str_contains($docdataForm360['family_member_child3_cv_resume'] , '.pdf'))
-                                        <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                                        @else
-                                        <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_cv_resume/'.$docdataForm360['family_member_child3_cv_resume'])  }}" />
-                                        @endif
-                                    </a>
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_driving_license/'.$docdataForm360['family_member_child3_driving_license'])  }}">
+                            @if(str_contains($docdataForm360['family_member_child3_driving_license'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_driving_license/'.$docdataForm360['family_member_child3_driving_license'])  }}" />
+                            @endif
+                        </a>
 
 
-                                    @endif
-                                </td>
-                            </tr>
+                        @endif
+                    </td>
+                </tr>
 
-                            <tr>
-                                <td> Birth certificate indicating name of both parents 
-                                </td>
-                                <td> <input type="file" name="family_member_child3_birth_certificate" id="family_member_child3_birth_certificate">
-                                    @if (array_key_exists('family_member_child3_birth_certificate', $docdataForm360))
+                <tr>
+                    <td> Current or most recent visa to Australia (if applicable)
+                    </td>
+                    <td> <input type="file" name="family_member_child3_recent_visa" id="family_member_child3_recent_visa">
+                        @if (array_key_exists('family_member_child3_recent_visa', $docdataForm360))
 
-                                    <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_birth_certificate/'.$docdataForm360['family_member_child3_birth_certificate'])  }}">
-                                        @if(str_contains($docdataForm360['family_member_child3_birth_certificate'] , '.pdf'))
-                                        <img class="imgfile" src="{{asset('pdficon.png')}}" />
-                                        @else
-                                        <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_birth_certificate/'.$docdataForm360['family_member_child3_birth_certificate'])  }}" />
-                                        @endif
-                                    </a>
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_recent_visa/'.$docdataForm360['family_member_child3_recent_visa'])  }}">
+                            @if(str_contains($docdataForm360['family_member_child3_recent_visa'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_recent_visa/'.$docdataForm360['family_member_child3_recent_visa'])  }}" />
+                            @endif
+                        </a>
 
 
-                                    @endif
-                                </td>
-                            </tr>
+                        @endif
+                    </td>
+                </tr>
 
-                            
+                <tr>
+                    <td> IELTS Test or equivalent English test taken (if applicable)
+                    </td>
+                    <td> <input type="file" name="family_member_child3_ielts" id="family_member_child3_ielts">
+                        @if (array_key_exists('family_member_child3_ielts', $docdataForm360))
 
-                        
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_ielts/'.$docdataForm360['family_member_child3_ielts'])  }}">
+                            @if(str_contains($docdataForm360['family_member_child3_ielts'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_ielts/'.$docdataForm360['family_member_child3_ielts'])  }}" />
+                            @endif
+                        </a>
 
-                        
 
-                            
+                        @endif
+                    </td>
+                </tr>
+                <tr>
+                    <td> Updated CV or Resume
+                    </td>
+                    <td> <input type="file" name="family_member_child3_cv_resume" id="family_member_child3_cv_resume">
+                        @if (array_key_exists('family_member_child3_cv_resume', $docdataForm360))
 
-                </tbody>
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_cv_resume/'.$docdataForm360['family_member_child3_cv_resume'])  }}">
+                            @if(str_contains($docdataForm360['family_member_child3_cv_resume'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_cv_resume/'.$docdataForm360['family_member_child3_cv_resume'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Birth certificate indicating name of both parents
+                    </td>
+                    <td> <input type="file" name="family_member_child3_birth_certificate" id="family_member_child3_birth_certificate">
+                        @if (array_key_exists('family_member_child3_birth_certificate', $docdataForm360))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_birth_certificate/'.$docdataForm360['family_member_child3_birth_certificate'])  }}">
+                            @if(str_contains($docdataForm360['family_member_child3_birth_certificate'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/family_member_child3_birth_certificate/'.$docdataForm360['family_member_child3_birth_certificate'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+                    </td>
+                </tr>
+
+
+
+
+
+
+
+
+
+            </tbody>
         </table>
 
         <h2 class="fs-title"> FATHER </h2>
@@ -4282,8 +4320,8 @@
 
                 <tr>
                     <td> Place of birth </td>
-                    <td> 
-                    <select id="fam_member_father_pob" name="fam_member_father_pob" class="form-control">
+                    <td>
+                        <select id="fam_member_father_pob" name="fam_member_father_pob" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->fam_member_father_pob)))
                             <option value="{{$data->fam_member_father_pob}}" selected>{{$data->fam_member_father_pob}}</option>
@@ -4557,15 +4595,15 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select>    
-                   </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Nationality
                     </td>
                     <td>
-                    <select id="fam_member_father_nationality" name="fam_member_father_nationality" class="form-control">
+                        <select id="fam_member_father_nationality" name="fam_member_father_nationality" class="form-control">
                             <option value="">Select Nationality</option>
                             @if(!empty(isset($data->fam_member_father_nationality)))
                             <option value="{{$data->fam_member_father_nationality}}" selected>{{$data->fam_member_father_nationality}}</option>
@@ -4840,14 +4878,14 @@
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
                         </select>
-                      </td>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Other nationalities
                     </td>
-                    <td> 
-                    <select name="fam_member_father_other_nationality" id="fam_member_father_other_nationality" class="form-control">
+                    <td>
+                        <select name="fam_member_father_other_nationality" id="fam_member_father_other_nationality" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_father_other_nationality)))
@@ -4855,7 +4893,7 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>     
+                        </select>
                     </td>
                 </tr>
 
@@ -4863,8 +4901,8 @@
                     <td> Have you ever suffered of severe illness, or do you
                         take any prescribed medication? If so, please specify
                     </td>
-                    <td> 
-                    <select name="fam_member_father_ever_suffered" id="fam_member_father_ever_suffered" class="form-control">
+                    <td>
+                        <select name="fam_member_father_ever_suffered" id="fam_member_father_ever_suffered" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_father_ever_suffered)))
@@ -4872,7 +4910,7 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>     
+                        </select>
                     </td>
                 </tr>
 
@@ -4883,7 +4921,7 @@
                         equivalent documents? If so, please specify
                     </td>
                     <td>
-                    <select name="fam_member_father_legal_action" id="fam_member_father_legal_action" class="form-control">
+                        <select name="fam_member_father_legal_action" id="fam_member_father_legal_action" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_father_legal_action)))
@@ -4891,15 +4929,15 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>      
-                  </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Is this person included in the visa application?
                     </td>
-                    <td> 
-                    <select name="fam_member_father_visa_application" id="fam_member_father_visa_application" class="form-control">
+                    <td>
+                        <select name="fam_member_father_visa_application" id="fam_member_father_visa_application" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_father_visa_application)))
@@ -4907,15 +4945,15 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>      
-                   </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Where does this person currently live?
                     </td>
-                    <td> 
-                    <select id="fam_member_father_currently_live" name="fam_member_father_currently_live" class="form-control">
+                    <td>
+                        <select id="fam_member_father_currently_live" name="fam_member_father_currently_live" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->fam_member_father_currently_live)))
                             <option value="{{$data->fam_member_father_currently_live}}" selected>{{$data->fam_member_father_currently_live}}</option>
@@ -5190,7 +5228,7 @@
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
                         </select>
-                        </td>
+                    </td>
                 </tr>
 
             </tbody>
@@ -5214,8 +5252,8 @@
 
                 <tr>
                     <td> Place of birth </td>
-                    <td> 
-                    <select id="fam_member_mother_pob" name="fam_member_mother_pob" class="form-control">
+                    <td>
+                        <select id="fam_member_mother_pob" name="fam_member_mother_pob" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->fam_member_mother_pob)))
                             <option value="{{$data->fam_member_mother_pob}}" selected>{{$data->fam_member_mother_pob}}</option>
@@ -5489,15 +5527,15 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select>    
-                 </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Nationality
                     </td>
-                    <td> 
-                    <select id="fam_member_mother_nationality" name="fam_member_mother_nationality" class="form-control">
+                    <td>
+                        <select id="fam_member_mother_nationality" name="fam_member_mother_nationality" class="form-control">
                             <option value="">Select Nationality</option>
                             @if(!empty(isset($data->fam_member_mother_nationality)))
                             <option value="{{$data->fam_member_mother_nationality}}" selected>{{$data->fam_member_mother_nationality}}</option>
@@ -5771,15 +5809,15 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select>    
-                  </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Other nationalities
                     </td>
                     <td>
-                    <select name="fam_member_mother_other_nationality" id="fam_member_mother_other_nationality" class="form-control">
+                        <select name="fam_member_mother_other_nationality" id="fam_member_mother_other_nationality" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_mother_other_nationality)))
@@ -5787,8 +5825,8 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>     
-                   </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
@@ -5796,7 +5834,7 @@
                         take any prescribed medication? If so, please specify
                     </td>
                     <td>
-                    <select name="fam_member_mother_ever_suffered" id="fam_member_mother_ever_suffered" class="form-control">
+                        <select name="fam_member_mother_ever_suffered" id="fam_member_mother_ever_suffered" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_mother_ever_suffered)))
@@ -5804,8 +5842,8 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>     
-                   </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
@@ -5815,7 +5853,7 @@
                         equivalent documents? If so, please specify
                     </td>
                     <td>
-                    <select name="fam_member_mother_legal_action" id="fam_member_mother_legal_action" class="form-control">
+                        <select name="fam_member_mother_legal_action" id="fam_member_mother_legal_action" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_mother_legal_action)))
@@ -5823,15 +5861,15 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>         
-                     </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Is this person included in the visa application?
                     </td>
                     <td>
-                    <select name="fam_member_mother_visa_application" id="fam_member_mother_visa_application" class="form-control">
+                        <select name="fam_member_mother_visa_application" id="fam_member_mother_visa_application" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_mother_visa_application)))
@@ -5839,15 +5877,15 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>    
-                   </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Where does this person currently live?
                     </td>
-                    <td> 
-                    <select id="fam_member_mother_currently_live" name="fam_member_mother_currently_live" class="form-control">
+                    <td>
+                        <select id="fam_member_mother_currently_live" name="fam_member_mother_currently_live" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->fam_member_mother_currently_live)))
                             <option value="{{$data->fam_member_mother_currently_live}}" selected>{{$data->fam_member_mother_currently_live}}</option>
@@ -6121,7 +6159,7 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select>    
+                        </select>
                     </td>
                 </tr>
 
@@ -6129,8 +6167,8 @@
         </table>
 
 
-        <h2 class="fs-title"> SIBLINGS  </h2>
-        <h2 class="fs-title">SIBLING  1 </h2>
+        <h2 class="fs-title"> SIBLINGS </h2>
+        <h2 class="fs-title">SIBLING 1 </h2>
         <table>
             <tbody>
                 <tr>
@@ -6148,7 +6186,7 @@
                 <tr>
                     <td> Place of birth </td>
                     <td>
-                    <select id="fam_member_bro_sis_pob1" name="fam_member_bro_sis_pob1" class="form-control">
+                        <select id="fam_member_bro_sis_pob1" name="fam_member_bro_sis_pob1" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->fam_member_bro_sis_pob1)))
                             <option value="{{$data->fam_member_bro_sis_pob1}}" selected>{{$data->fam_member_bro_sis_pob1}}</option>
@@ -6422,15 +6460,15 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select>    
-                     </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Nationality
                     </td>
-                    <td> 
-                    <select id="fam_member_bro_sis_nationality1" name="fam_member_bro_sis_nationality1" class="form-control">
+                    <td>
+                        <select id="fam_member_bro_sis_nationality1" name="fam_member_bro_sis_nationality1" class="form-control">
                             <option value="">Select Nationality</option>
                             @if(!empty(isset($data->fam_member_bro_sis_nationality1)))
                             <option value="{{$data->fam_member_bro_sis_nationality1}}" selected>{{$data->fam_member_bro_sis_nationality1}}</option>
@@ -6704,15 +6742,15 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select>    
+                        </select>
                     </td>
                 </tr>
 
                 <tr>
                     <td> Other nationalities
                     </td>
-                    <td> 
-                    <select name="fam_member_bro_sis_other_nationality1" id="fam_member_bro_sis_other_nationality1" class="form-control">
+                    <td>
+                        <select name="fam_member_bro_sis_other_nationality1" id="fam_member_bro_sis_other_nationality1" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_bro_sis_other_nationality1)))
@@ -6720,7 +6758,7 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>     
+                        </select>
                     </td>
                 </tr>
 
@@ -6729,7 +6767,7 @@
                         take any prescribed medication? If so, please specify
                     </td>
                     <td>
-                    <select name="fam_member_bro_sis_ever_suffered1" id="fam_member_bro_sis_ever_suffered1" class="form-control">
+                        <select name="fam_member_bro_sis_ever_suffered1" id="fam_member_bro_sis_ever_suffered1" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_bro_sis_ever_suffered1)))
@@ -6737,8 +6775,8 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>      
-                   </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
@@ -6748,7 +6786,7 @@
                         equivalent documents? If so, please specify
                     </td>
                     <td>
-                    <select name="fam_member_bro_sis_legal_action1" id="fam_member_bro_sis_legal_action1" class="form-control">
+                        <select name="fam_member_bro_sis_legal_action1" id="fam_member_bro_sis_legal_action1" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_bro_sis_legal_action1)))
@@ -6756,15 +6794,15 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>    
-                   </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Is this person included in the visa application?
                     </td>
-                    <td> 
-                    <select name="fam_member_bro_sis_visa_application1" id="fam_member_bro_sis_visa_application1" class="form-control">
+                    <td>
+                        <select name="fam_member_bro_sis_visa_application1" id="fam_member_bro_sis_visa_application1" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_bro_sis_visa_application1)))
@@ -6772,15 +6810,15 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>      
-                         </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Where does this person currently live?
                     </td>
-                    <td> 
-                    <select id="fam_member_bro_sis_currently_live1" name="fam_member_bro_sis_currently_live1" class="form-control">
+                    <td>
+                        <select id="fam_member_bro_sis_currently_live1" name="fam_member_bro_sis_currently_live1" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->fam_member_bro_sis_currently_live1)))
                             <option value="{{$data->fam_member_bro_sis_currently_live1}}" selected>{{$data->fam_member_bro_sis_currently_live1}}</option>
@@ -7054,14 +7092,14 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select>    
+                        </select>
                     </td>
                 </tr>
 
             </tbody>
         </table>
 
-        <h2 class="fs-title">SIBLING  2 </h2>
+        <h2 class="fs-title">SIBLING 2 </h2>
         <table>
             <tbody>
                 <tr>
@@ -7078,8 +7116,8 @@
 
                 <tr>
                     <td> Place of birth </td>
-                    <td> 
-                    <select id="fam_member_bro_sis_pob2" name="fam_member_bro_sis_pob2" class="form-control">
+                    <td>
+                        <select id="fam_member_bro_sis_pob2" name="fam_member_bro_sis_pob2" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->fam_member_bro_sis_pob2)))
                             <option value="{{$data->fam_member_bro_sis_pob2}}" selected>{{$data->fam_member_bro_sis_pob2}}</option>
@@ -7353,15 +7391,15 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select>    
-                   </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Nationality
                     </td>
                     <td>
-                    <select id="fam_member_bro_sis_nationality2" name="fam_member_bro_sis_nationality2" class="form-control">
+                        <select id="fam_member_bro_sis_nationality2" name="fam_member_bro_sis_nationality2" class="form-control">
                             <option value="">Select Nationality</option>
                             @if(!empty(isset($data->fam_member_bro_sis_nationality2)))
                             <option value="{{$data->fam_member_bro_sis_nationality2}}" selected>{{$data->fam_member_bro_sis_nationality2}}</option>
@@ -7635,15 +7673,15 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select>    
-                   </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Other nationalities
                     </td>
-                    <td> 
-                    <select name="fam_member_bro_sis_other_nationality2" id="fam_member_bro_sis_other_nationality2" class="form-control">
+                    <td>
+                        <select name="fam_member_bro_sis_other_nationality2" id="fam_member_bro_sis_other_nationality2" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_bro_sis_other_nationality2)))
@@ -7651,8 +7689,8 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>     
-                 </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
@@ -7660,7 +7698,7 @@
                         take any prescribed medication? If so, please specify
                     </td>
                     <td>
-                    <select name="fam_member_bro_sis_ever_suffered2" id="fam_member_bro_sis_ever_suffered2" class="form-control">
+                        <select name="fam_member_bro_sis_ever_suffered2" id="fam_member_bro_sis_ever_suffered2" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_bro_sis_ever_suffered2)))
@@ -7668,8 +7706,8 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>      
-                 </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
@@ -7678,8 +7716,8 @@
                         longer indicated on the police check or other
                         equivalent documents? If so, please specify
                     </td>
-                    <td> 
-                    <select name="fam_member_bro_sis_legal_action2" id="fam_member_bro_sis_legal_action2" class="form-control">
+                    <td>
+                        <select name="fam_member_bro_sis_legal_action2" id="fam_member_bro_sis_legal_action2" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_bro_sis_legal_action2)))
@@ -7687,15 +7725,15 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>     
-                   </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Is this person included in the visa application?
                     </td>
-                    <td> 
-                    <select name="fam_member_bro_sis_visa_application2" id="fam_member_bro_sis_visa_application2" class="form-control">
+                    <td>
+                        <select name="fam_member_bro_sis_visa_application2" id="fam_member_bro_sis_visa_application2" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_bro_sis_visa_application2)))
@@ -7703,15 +7741,15 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>     
-                   </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Where does this person currently live?
                     </td>
                     <td>
-                    <select id="fam_member_bro_sis_currently_live2" name="fam_member_bro_sis_currently_live2" class="form-control">
+                        <select id="fam_member_bro_sis_currently_live2" name="fam_member_bro_sis_currently_live2" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->fam_member_bro_sis_currently_live2)))
                             <option value="{{$data->fam_member_bro_sis_currently_live2}}" selected>{{$data->fam_member_bro_sis_currently_live2}}</option>
@@ -7985,13 +8023,13 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select>    
-                   </td>
+                        </select>
+                    </td>
                 </tr>
 
             </tbody>
         </table>
-         <h2 class="fs-title">SIBLING  3 </h2>
+        <h2 class="fs-title">SIBLING 3 </h2>
         <table>
             <tbody>
                 <tr>
@@ -8008,8 +8046,8 @@
 
                 <tr>
                     <td> Place of birth </td>
-                    <td> 
-                    <select id="fam_member_bro_sis_pob3" name="fam_member_bro_sis_pob3" class="form-control">
+                    <td>
+                        <select id="fam_member_bro_sis_pob3" name="fam_member_bro_sis_pob3" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->fam_member_bro_sis_pob3)))
                             <option value="{{$data->fam_member_bro_sis_pob3}}" selected>{{$data->fam_member_bro_sis_pob3}}</option>
@@ -8283,15 +8321,15 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select>    
-                   </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Nationality
                     </td>
-                    <td> 
-                    <select id="fam_member_bro_sis_nationality3" name="fam_member_bro_sis_nationality3" class="form-control">
+                    <td>
+                        <select id="fam_member_bro_sis_nationality3" name="fam_member_bro_sis_nationality3" class="form-control">
                             <option value="">Select Nationality</option>
                             @if(!empty(isset($data->fam_member_bro_sis_nationality3)))
                             <option value="{{$data->fam_member_bro_sis_nationality3}}" selected>{{$data->fam_member_bro_sis_nationality3}}</option>
@@ -8565,7 +8603,7 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select>    
+                        </select>
                     </td>
                 </tr>
 
@@ -8573,7 +8611,7 @@
                     <td> Other nationalities
                     </td>
                     <td>
-                    <select name="fam_member_bro_sis_other_nationality3" id="fam_member_bro_sis_other_nationality3" class="form-control">
+                        <select name="fam_member_bro_sis_other_nationality3" id="fam_member_bro_sis_other_nationality3" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_bro_sis_other_nationality3)))
@@ -8581,7 +8619,7 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>     
+                        </select>
                     </td>
                 </tr>
 
@@ -8589,8 +8627,8 @@
                     <td> Have you ever suffered of severe illness, or do you
                         take any prescribed medication? If so, please specify
                     </td>
-                    <td> 
-                    <select name="fam_member_bro_sis_ever_suffered3" id="fam_member_bro_sis_ever_suffered3" class="form-control">
+                    <td>
+                        <select name="fam_member_bro_sis_ever_suffered3" id="fam_member_bro_sis_ever_suffered3" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_bro_sis_ever_suffered3)))
@@ -8598,8 +8636,8 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>     
-                     </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
@@ -8608,8 +8646,8 @@
                         longer indicated on the police check or other
                         equivalent documents? If so, please specify
                     </td>
-                    <td> 
-                    <select name="fam_member_bro_sis_legal_action3" id="fam_member_bro_sis_legal_action3" class="form-control">
+                    <td>
+                        <select name="fam_member_bro_sis_legal_action3" id="fam_member_bro_sis_legal_action3" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_bro_sis_legal_action3)))
@@ -8617,15 +8655,15 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>      
-                   </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Is this person included in the visa application?
                     </td>
-                    <td> 
-                    <select name="fam_member_bro_sis_visa_application3" id="fam_member_bro_sis_visa_application3" class="form-control">
+                    <td>
+                        <select name="fam_member_bro_sis_visa_application3" id="fam_member_bro_sis_visa_application3" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->fam_member_bro_sis_visa_application3)))
@@ -8633,15 +8671,15 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
-                        </select>      
-                     </td>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
                     <td> Where does this person currently live?
                     </td>
-                    <td> 
-                    <select id="fam_member_bro_sis_currently_live3" name="fam_member_bro_sis_currently_live3" class="form-control">
+                    <td>
+                        <select id="fam_member_bro_sis_currently_live3" name="fam_member_bro_sis_currently_live3" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->fam_member_bro_sis_currently_live3)))
                             <option value="{{$data->fam_member_bro_sis_currently_live3}}" selected>{{$data->fam_member_bro_sis_currently_live3}}</option>
@@ -8915,24 +8953,24 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select>    
-                   </td>
+                        </select>
+                    </td>
                 </tr>
 
             </tbody>
         </table>
 
-      
+
 
 
     </div>
-   
-        @if(!empty($data->is_email_sent) == false)
-        <button name="formsubmit" class="action-button submitform360" > Submit</button>
-        @else
-        <input type="button" name="save" class="save action-button" value="Save" />
-        @endif
-    
+
+    @if(!empty($data->is_email_sent) == false)
+    <button name="formsubmit" class="action-button submitform360"> Submit</button>
+    @else
+    <input type="button" name="save" class="save action-button" value="Save" />
+    @endif
+
     <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-    
+
 </fieldset>
