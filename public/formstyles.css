@@ -270,8 +270,14 @@
   }
 
   h2.fs-title {
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 10px;
     text-transform: uppercase !important;
 }
-  
+table tr td:nth-child(1) {
+  font-size: 15px;
+}
+
+.form-card p {
+  font-size: 15px;
+}
