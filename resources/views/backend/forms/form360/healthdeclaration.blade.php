@@ -1,7 +1,7 @@
 <fieldset id="fieldseteleven">
-@if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('consultant'))
-                    <a id="pdfhealthdeclaration" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px;">Generate Pdf</a>
-                    @endif
+    @if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('consultant'))
+    <a id="pdfhealthdeclaration" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px;">Generate Pdf</a>
+    @endif
     <div class="form-card">
         <h2 class="fs-title" style="text-align: center;">SECTION 11:</h2>
 
@@ -16,7 +16,7 @@
 
 
 
-        <p style="color:red">For any country OTHER THAN AUSTRALIA OR NEW ZEALAND, that you visited, or lived, outside your country of
+        <p>For any country OTHER THAN AUSTRALIA OR NEW ZEALAND, that you visited, or lived, outside your country of
             passport, for more than 3 months (even if cumulatively) please indicate: </p>
 
 
@@ -28,7 +28,7 @@
                         <select id="healthdeclaration_country1" name="healthdeclaration_country1" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->healthdeclaration_country1)))
-                                <option value="{{$data->healthdeclaration_country1}}" selected>{{$data->healthdeclaration_country1}}</option>
+                            <option value="{{$data->healthdeclaration_country1}}" selected>{{$data->healthdeclaration_country1}}</option>
                             @endif
 
                             <option value="Afghanistan">Afghanistan</option>
@@ -331,7 +331,7 @@
                         <select id="healthdeclaration_country2" name="healthdeclaration_country2" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->healthdeclaration_country2)))
-                                <option value="{{$data->healthdeclaration_country2}}" selected>{{$data->healthdeclaration_country2}}</option>
+                            <option value="{{$data->healthdeclaration_country2}}" selected>{{$data->healthdeclaration_country2}}</option>
                             @endif
 
                             <option value="Afghanistan">Afghanistan</option>
@@ -633,7 +633,7 @@
                         <select id="healthdeclaration_country3" name="healthdeclaration_country3" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->healthdeclaration_country3)))
-                                <option value="{{$data->healthdeclaration_country3}}" selected>{{$data->healthdeclaration_country3}}</option>
+                            <option value="{{$data->healthdeclaration_country3}}" selected>{{$data->healthdeclaration_country3}}</option>
                             @endif
 
                             <option value="Afghanistan">Afghanistan</option>
@@ -936,7 +936,7 @@
                         <select id="healthdeclaration_country4" name="healthdeclaration_country4" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->healthdeclaration_country4)))
-                                <option value="{{$data->healthdeclaration_country4}}" selected>{{$data->healthdeclaration_country4}}</option>
+                            <option value="{{$data->healthdeclaration_country4}}" selected>{{$data->healthdeclaration_country4}}</option>
                             @endif
 
                             <option value="Afghanistan">Afghanistan</option>
@@ -1238,7 +1238,7 @@
                         <select id="healthdeclaration_country5" name="healthdeclaration_country5" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->healthdeclaration_country5)))
-                                <option value="{{$data->healthdeclaration_country5}}" selected>{{$data->healthdeclaration_country5}}</option>
+                            <option value="{{$data->healthdeclaration_country5}}" selected>{{$data->healthdeclaration_country5}}</option>
                             @endif
 
                             <option value="Afghanistan">Afghanistan</option>
