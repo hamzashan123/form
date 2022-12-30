@@ -1,7 +1,7 @@
 <fieldset id="fieldseteight">
-@if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('consultant'))
-                    <a id="pdfvisahistory" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px;">Generate Pdf</a>
-                    @endif
+    @if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('consultant'))
+    <a id="pdfvisahistory" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px;">Generate Pdf</a>
+    @endif
     <div class="form-card">
         <h2 class="fs-title" style="text-align: center;">SECTION 8:</h2>
 
@@ -104,20 +104,17 @@
 
                 <tr>
                     <td>Have you ever had a visa for Australia or New
-Zealand or any other country refused or cancelled? If so, please specify
+                        Zealand or any other country refused or cancelled? If so, please specify
                     </td>
                     <td>
-                    <input type="text" name="currentvisa_ever_had_visa" id="currentvisa_ever_had_visa" @if(isset($data->currentvisa_ever_had_visa)) value="{{$data->currentvisa_ever_had_visa}}" @endif/>    
-                  
+                        <input type="text" name="currentvisa_ever_had_visa" id="currentvisa_ever_had_visa" @if(isset($data->currentvisa_ever_had_visa)) value="{{$data->currentvisa_ever_had_visa}}" @endif/>
+
                     </td>
                 </tr>
 
 
                 <tr>
-                    <td>Do you hold or have you ever held a visa to any
-                        other country, other than Australia or New
-                        Zealand? sa to Australia or New Zealand or any
-                        other country?
+                    <td>Do you hold or have you ever held a visa to any other country, other than Australia or New Zealand?
 
                     </td>
                     <td>
@@ -144,8 +141,8 @@ Zealand or any other country refused or cancelled? If so, please specify
                 </tr>
 
                 <tr>
-                    <td>Have you ever had any  visa issues or have not complied with visa conditions or  have departed outside their authorized period of stay, in any country? <br>
-If yes, please specify the country and the type of issue
+                    <td>Have you ever had any visa issues or have not complied with visa conditions or have departed outside their authorized period of stay, in any country? <br>
+                        If yes, please specify the country and the type of issue
 
                     </td>
                     <td>
@@ -171,58 +168,58 @@ If yes, please specify the country and the type of issue
                         <tr>
                             <td> Current visa to Australia or New Zealand (if applicable)
                             </td>
-                            <td> <input type="file" name="currentvisa_aus_naz_if_applicable" id="currentvisa_aus_naz_if_applicable"  >
-                            @if (array_key_exists('currentvisa_aus_naz_if_applicable', $docdataForm360))
-                                                               
-                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/currentvisa_aus_naz_if_applicable/'.$docdataForm360['currentvisa_aus_naz_if_applicable'])  }}">
-                                                               @if(str_contains($docdataForm360['currentvisa_aus_naz_if_applicable'] , '.pdf'))
-                                                                <img class="imgfile" src="{{asset('pdficon.png')}}"   />
-                                                               @else
-                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/currentvisa_aus_naz_if_applicable/'.$docdataForm360['currentvisa_aus_naz_if_applicable'])  }}"  />
-                                                               @endif
-                                                               </a>
-                                                                                                    
-                                                                                                      
-                                                           @endif     
-                        </td>
+                            <td> <input type="file" name="currentvisa_aus_naz_if_applicable" id="currentvisa_aus_naz_if_applicable">
+                                @if (array_key_exists('currentvisa_aus_naz_if_applicable', $docdataForm360))
+
+                                <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/currentvisa_aus_naz_if_applicable/'.$docdataForm360['currentvisa_aus_naz_if_applicable'])  }}">
+                                    @if(str_contains($docdataForm360['currentvisa_aus_naz_if_applicable'] , '.pdf'))
+                                    <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                                    @else
+                                    <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/currentvisa_aus_naz_if_applicable/'.$docdataForm360['currentvisa_aus_naz_if_applicable'])  }}" />
+                                    @endif
+                                </a>
+
+
+                                @endif
+                            </td>
                         </tr>
 
                         <tr>
                             <td> Previous visas to Australia or New Zealand (if applicable)
                             </td>
-                            <td> <input type="file" name="previous_visa_if_applicable1" id="previous_visa_if_applicable1"  >
-                            @if (array_key_exists('previous_visa_if_applicable1', $docdataForm360))
-                                                               
-                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/previous_visa_if_applicable1/'.$docdataForm360['previous_visa_if_applicable1'])  }}">
-                                                               @if(str_contains($docdataForm360['previous_visa_if_applicable1'] , '.pdf'))
-                                                                <img class="imgfile" src="{{asset('pdficon.png')}}"   />
-                                                               @else
-                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/previous_visa_if_applicable1/'.$docdataForm360['previous_visa_if_applicable1'])  }}"  />
-                                                               @endif
-                                                               </a>
-                                                                                                    
-                                                                                                      
-                                                           @endif     
-                        </td>
+                            <td> <input type="file" name="previous_visa_if_applicable1" id="previous_visa_if_applicable1">
+                                @if (array_key_exists('previous_visa_if_applicable1', $docdataForm360))
+
+                                <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/previous_visa_if_applicable1/'.$docdataForm360['previous_visa_if_applicable1'])  }}">
+                                    @if(str_contains($docdataForm360['previous_visa_if_applicable1'] , '.pdf'))
+                                    <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                                    @else
+                                    <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/previous_visa_if_applicable1/'.$docdataForm360['previous_visa_if_applicable1'])  }}" />
+                                    @endif
+                                </a>
+
+
+                                @endif
+                            </td>
                         </tr>
 
                         <tr>
                             <td> Previous visas to Australia or New Zealand (if applicable)
                             </td>
-                            <td> <input type="file" name="previous_visa_if_applicable2" id="previous_visa_if_applicable2" >
-                            @if (array_key_exists('previous_visa_if_applicable2', $docdataForm360))
-                                                               
-                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/previous_visa_if_applicable2/'.$docdataForm360['previous_visa_if_applicable2'])  }}">
-                                                               @if(str_contains($docdataForm360['previous_visa_if_applicable2'] , '.pdf'))
-                                                                <img class="imgfile" src="{{asset('pdficon.png')}}"   />
-                                                               @else
-                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/previous_visa_if_applicable2/'.$docdataForm360['previous_visa_if_applicable2'])  }}"  />
-                                                               @endif
-                                                               </a>
-                                                                                                    
-                                                                                                      
-                                                           @endif     
-                        </td>
+                            <td> <input type="file" name="previous_visa_if_applicable2" id="previous_visa_if_applicable2">
+                                @if (array_key_exists('previous_visa_if_applicable2', $docdataForm360))
+
+                                <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/previous_visa_if_applicable2/'.$docdataForm360['previous_visa_if_applicable2'])  }}">
+                                    @if(str_contains($docdataForm360['previous_visa_if_applicable2'] , '.pdf'))
+                                    <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                                    @else
+                                    <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/previous_visa_if_applicable2/'.$docdataForm360['previous_visa_if_applicable2'])  }}" />
+                                    @endif
+                                </a>
+
+
+                                @endif
+                            </td>
                         </tr>
 
 
