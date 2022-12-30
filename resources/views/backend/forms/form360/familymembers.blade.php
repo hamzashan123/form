@@ -2995,15 +2995,8 @@
                         take any prescribed medication? If so, please specify
                     </td>
                     <td>
-                        <select name="fam_member_child_ever_suffered2" id="fam_member_child_ever_suffered2" class="form-control">
-                            <option value=""> Select Option </option>
+                        <input type="text" name="fam_member_child_ever_suffered2" id="fam_member_child_ever_suffered2" @if(isset($data->fam_member_child_ever_suffered2)) value="{{$data->fam_member_child_ever_suffered2}}" @endif/>
 
-                            @if(!empty(isset($data->fam_member_child_ever_suffered2)))
-                            <option value="{{$data->fam_member_child_ever_suffered2}}" selected>{{$data->fam_member_child_ever_suffered2}}</option>
-                            @endif
-                            <option value="Yes">Yes </option>
-                            <option value="No"> No </option>
-                        </select>
                     </td>
                 </tr>
 
@@ -3013,7 +3006,9 @@
                         longer indicated on the police check or other
                         equivalent documents? If so, please specify
                     </td>
-                    <td> <input type="text" name="fam_member_child_legal_action2" id="fam_member_child_legal_action2" @if(isset($data->fam_member_child_legal_action2)) value="{{$data->fam_member_child_legal_action2}}" @endif/> </td>
+                    <td>
+                        <input type="text" name="fam_member_child_legal_action2" id="fam_member_child_legal_action2" @if(isset($data->fam_member_child_legal_action2)) value="{{$data->fam_member_child_legal_action2}}" @endif/>
+                    </td>
                 </tr>
 
                 <tr>
@@ -3830,7 +3825,18 @@
                 <tr>
                     <td> Are you also included in the visa application?
                     </td>
-                    <td> <input type="text" name="fam_member_child3_include_visa_application" id="fam_member_child3_include_visa_application" @if(isset($data->fam_member_child3_include_visa_application)) value="{{$data->fam_member_child3_include_visa_application}}" @endif/> </td>
+                    <td>
+                        <select name="fam_member_child3_include_visa_application" id="fam_member_child3_include_visa_application" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_child3_include_visa_application)))
+                            <option value="{{$data->fam_member_child3_include_visa_application}}" selected>{{$data->fam_member_child3_include_visa_application}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>
+
+                    </td>
                 </tr>
                 <tr>
                     <td> Are you currently in Australia or NZ?
