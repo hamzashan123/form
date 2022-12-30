@@ -430,6 +430,13 @@ class Form360Controller extends Controller
          'workexp2_previous_year_of_experience2' => $request->file('workexp2_previous_year_of_experience2'),
          'workexp2_previous_year_of_experience3' => $request->file('workexp2_previous_year_of_experience3'),
 
+         'workexp3_employment_contract' => $request->file('workexp3_employment_contract'),
+            'workexp3_employment_reference_letter' => $request->file('workexp3_employment_reference_letter'),
+            'workexp3_current_year_of_experience' => $request->file('workexp3_current_year_of_experience'),
+            'workexp3_previous_year_of_experience1' => $request->file('workexp3_previous_year_of_experience1'),
+            'workexp3_previous_year_of_experience2' => $request->file('workexp3_previous_year_of_experience2'),
+            'workexp3_previous_year_of_experience3' => $request->file('workexp3_previous_year_of_experience3'),
+
          'workexp1_payg_one' => $request->file('workexp1_payg_one'),
          'workexp1_payg_two' => $request->file('workexp1_payg_two'),
          'workexp1_payg_three' => $request->file('workexp1_payg_three'),
@@ -440,6 +447,10 @@ class Form360Controller extends Controller
          'workexp2_payg_three' => $request->file('workexp2_payg_three'),
          'workexp2_payg_four' => $request->file('workexp2_payg_four'),
 
+         'workexp3_payg_one' => $request->file('workexp3_payg_one'),
+         'workexp3_payg_two' => $request->file('workexp3_payg_two'),
+         'workexp3_payg_three' => $request->file('workexp3_payg_three'),
+         'workexp3_payg_four' => $request->file('workexp3_payg_four'),   
 
          'workexp1_income_tax_return1' => $request->file('workexp1_income_tax_return1'),
          'workexp1_income_tax_return2' => $request->file('workexp1_income_tax_return2'),
@@ -454,6 +465,11 @@ class Form360Controller extends Controller
          'workexp2_relevant_doc' => $request->file('workexp2_relevant_doc'),
          'workexp2_tabella_estratto' => $request->file('workexp2_tabella_estratto'),   
          
+         'workexp3_income_tax_return1' => $request->file('workexp3_income_tax_return1'),
+         'workexp3_income_tax_return2' => $request->file('workexp3_income_tax_return2'),
+         'workexp3_income_tax_return2_1' => $request->file('workexp3_income_tax_return2_1'),
+         'workexp3_relevant_doc' => $request->file('workexp3_relevant_doc'),
+         'workexp3_tabella_estratto' => $request->file('workexp3_tabella_estratto'),  
 
          'workexpintracompany_employment_contract' => $request->file('workexpintracompany_employment_contract'),
          'workexpintracompany_current_recent_payslip' => $request->file('workexpintracompany_current_recent_payslip'),
@@ -788,6 +804,25 @@ class Form360Controller extends Controller
             'workexp2_contact_details_work_period_position' => $request->workexp2_contact_details_work_period_position,
             'workexp2_contact_details_work_period_email' => $request->workexp2_contact_details_work_period_email,
             'workexp2_contact_details_work_period_phone' => $request->workexp2_contact_details_work_period_phone,
+
+            // work exp 3
+            'workexp3_your_position' => $request->workexp3_your_position,
+            'workexp3_your_position_type' => $request->workexp3_your_position_type,
+            'workexp3_employer_name' => $request->workexp3_employer_name,
+            'workexp3_business_country' => $request->workexp3_business_country,
+            'workexp3_date_work_started' => $request->workexp3_date_work_started,
+            'workexp3_date_work_ended' => $request->workexp3_date_work_ended,
+            'workexp3_description_duties' => $request->workexp3_description_duties,
+            'workexp3_nominated_position' => $request->workexp3_nominated_position,
+            'workexp3_performed_in_aus_nz' => $request->workexp3_performed_in_aus_nz,
+            'workexp3_visa_employer' => $request->workexp3_visa_employer,
+            'workexp3_payslips_for_this_week' => $request->workexp3_payslips_for_this_week,
+            'workexp3_contact_details_work_period' => $request->workexp3_contact_details_work_period,
+            'workexp3_contact_details_work_period_indicate' => $request->workexp3_contact_details_work_period_indicate,
+            'workexp3_contact_details_work_period_name' => $request->workexp3_contact_details_work_period_name,
+            'workexp3_contact_details_work_period_position' => $request->workexp3_contact_details_work_period_position,
+            'workexp3_contact_details_work_period_email' => $request->workexp3_contact_details_work_period_email,
+            'workexp3_contact_details_work_period_phone' => $request->workexp3_contact_details_work_period_phone,
         
         ];
        

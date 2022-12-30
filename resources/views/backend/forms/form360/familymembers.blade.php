@@ -1925,7 +1925,17 @@
                 <tr>
                     <td> Are you currently in Australia or NZ?
                     </td>
-                    <td> <input type="text" name="fam_member_child_australiz_newzland" id="fam_member_child_australiz_newzland" @if(isset($data->fam_member_child_australiz_newzland)) value="{{$data->fam_member_child_australiz_newzland}}" @endif/> </td>
+                    <td> 
+                    <select name="fam_member_child_australiz_newzland" id="fam_member_child_australiz_newzland" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_child_australiz_newzland)))
+                            <option value="{{$data->fam_member_child_australiz_newzland}}" selected>{{$data->fam_member_child_australiz_newzland}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>    
+                     </td>
                 </tr>
                 <tr>
                     <td> If either in Australia or NZ, please specify the country and with which visa
@@ -1941,7 +1951,7 @@
                 <tr>
                     <td> When does your visa expire?
                     </td>
-                    <td> <input type="text" name="fam_member_child_visa_expire" id="fam_member_child_visa_expire" @if(isset($data->fam_member_child_visa_expire)) value="{{$data->fam_member_child_visa_expire}}" @endif/> </td>
+                    <td> <input type="date" name="fam_member_child_visa_expire" id="fam_member_child_visa_expire" @if(isset($data->fam_member_child_visa_expire)) value="{{$data->fam_member_child_visa_expire}}" @endif/> </td>
                 </tr>
 
 
@@ -4308,7 +4318,7 @@
             </tbody>
         </table>
 
-        <h2 class="fs-title"> FATHER </h2>
+        <h2 class="fs-title"> FATHER OF THE MAIN APPLICANT</h2>
 
         <table>
             <tbody>
@@ -5240,7 +5250,7 @@
             </tbody>
         </table>
 
-        <h2 class="fs-title"> MOTHER </h2>
+        <h2 class="fs-title"> MOTHER OF THE MAIN APPLICANT</h2>
 
         <table>
             <tbody>
@@ -6173,7 +6183,7 @@
         </table>
 
 
-        <h2 class="fs-title"> SIBLINGS </h2>
+        <h2 class="fs-title"> SIBLINGS OF THE MAIN APPLICANT</h2>
         <h2 class="fs-title">SIBLING 1 </h2>
         <table>
             <tbody>
