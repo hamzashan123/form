@@ -1,7 +1,7 @@
 <fieldset id="fieldsetfour">
-@if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('consultant'))
-                    <a id="pdfhighleveleducation" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px;">Generate Pdf</a>
-                    @endif
+    @if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('consultant'))
+    <a id="pdfhighleveleducation" class="btn btn-primary" style="text-align:center;color:white; margin-bottom:20px;">Generate Pdf</a>
+    @endif
 
     <div class="form-card">
         <h2 class="fs-title" style="text-align: center;">SECTION 4:</h2>
@@ -77,7 +77,7 @@
 
                     </td>
                     <td>
-                    <select name="higher_level_qualification1_course_duration" id="higher_level_qualification1_course_duration" class="form-control">
+                        <select name="higher_level_qualification1_course_duration" id="higher_level_qualification1_course_duration" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->higher_level_qualification1_course_duration)))
@@ -95,8 +95,8 @@
                             <option value="8">8</option>
                             <option value="9">9</option>
                             <option value="10">10</option>
-                        </select>    
-                   
+                        </select>
+
                     </td>
                 </tr>
 
@@ -123,7 +123,7 @@
 
                     </td>
                     <td>
-                    <select name="higher_level_qualification1_full_part" id="higher_level_qualification1_full_part" class="form-control">
+                        <select name="higher_level_qualification1_full_part" id="higher_level_qualification1_full_part" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->higher_level_qualification1_full_part)))
@@ -131,8 +131,8 @@
                             @endif
                             <option value="Part Time"> Part Time </option>
                             <option value="Full Time"> Full Time </option>
-                        </select>    
-                    
+                        </select>
+
                     </td>
                 </tr>
 
@@ -143,8 +143,8 @@
 
 
                     </td>
-                    <td> 
-                    <select name="higher_level_qualification1_courseofstudy" id="higher_level_qualification1_courseofstudy" class="form-control">
+                    <td>
+                        <select name="higher_level_qualification1_courseofstudy" id="higher_level_qualification1_courseofstudy" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->higher_level_qualification1_courseofstudy)))
@@ -152,8 +152,8 @@
                             @endif
                             <option value="Course of study"> Course of study </option>
                             <option value="RPL"> RPL </option>
-                        </select>     
-                    
+                        </select>
+
                     </td>
                 </tr>
 
@@ -162,9 +162,9 @@
 
 
                     </td>
-                    <td> 
-                      
-                    <select id="higher_level_qualification1_country" name="higher_level_qualification1_country" class="form-control">
+                    <td>
+
+                        <select id="higher_level_qualification1_country" name="higher_level_qualification1_country" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->higher_level_qualification1_country)))
                             <option value="{{$data->higher_level_qualification1_country}}" selected>{{$data->higher_level_qualification1_country}}</option>
@@ -462,69 +462,69 @@
 
 
                     </td>
-                    <td> 
-                    <select name="higher_level_qualification1_thesis_project_if" id="higher_level_qualification1_thesis_project_if" class="form-control">
+                    <td>
+                        <select name="higher_level_qualification1_thesis_project_if" id="higher_level_qualification1_thesis_project_if" class="form-control">
 
-                    <option value=""> Select Option </option>
-                    @if(!empty(isset($data->higher_level_qualification1_thesis_project_if)))
-                    <option value="{{$data->higher_level_qualification1_thesis_project_if}}" selected>{{$data->higher_level_qualification1_thesis_project_if}}</option>
-                    @endif
-                   
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                    <option value="26">26</option>
-                    <option value="27">27</option>
-                    <option value="28">28</option>
-                    <option value="29">29</option>
-                    <option value="30">30</option>
-                    <option value="31">31</option>
-                    <option value="32">32</option>
-                    <option value="33">33</option>
-                    <option value="34">34</option>
-                    <option value="35">35</option>
-                    <option value="36">36</option>
-                    <option value="37">37</option>
-                    <option value="38">38</option>
-                    <option value="39">39</option>
-                    <option value="40">40</option>
-                    <option value="41">41</option>
-                    <option value="42">42</option>
-                    <option value="43">43</option>
-                    <option value="44">44</option>
-                    <option value="45">45</option>
-                    <option value="46">46</option>
-                    <option value="47">47</option>
-                    <option value="48">48</option>
-                    <option value="49">49</option>
-                    <option value="50">50</option>
-                    <option value="51">51</option>
-                    <option value="52">52</option>
+                            <option value=""> Select Option </option>
+                            @if(!empty(isset($data->higher_level_qualification1_thesis_project_if)))
+                            <option value="{{$data->higher_level_qualification1_thesis_project_if}}" selected>{{$data->higher_level_qualification1_thesis_project_if}}</option>
+                            @endif
 
-                    </select>    
-                   
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                            <option value="33">33</option>
+                            <option value="34">34</option>
+                            <option value="35">35</option>
+                            <option value="36">36</option>
+                            <option value="37">37</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option>
+                            <option value="45">45</option>
+                            <option value="46">46</option>
+                            <option value="47">47</option>
+                            <option value="48">48</option>
+                            <option value="49">49</option>
+                            <option value="50">50</option>
+                            <option value="51">51</option>
+                            <option value="52">52</option>
+
+                        </select>
+
                     </td>
                 </tr>
 
@@ -542,21 +542,21 @@
                     <td> Qualification – Diploma/Award Certificate
                     </td>
                     <td> <input type="file" name="higher_level_qualification1_diploma_award" id="higher_level_qualification1_diploma_award">
-                    @if (array_key_exists('higher_level_qualification1_diploma_award', $docdataForm360))
-                                                               
-                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification1_diploma_award/'.$docdataForm360['higher_level_qualification1_diploma_award'])  }}">
-                                                               @if(str_contains($docdataForm360['higher_level_qualification1_diploma_award'] , '.pdf'))
-                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
-                                                               @else
-                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification1_diploma_award/'.$docdataForm360['higher_level_qualification1_diploma_award'])  }}"  />
-                                                               @endif
-                                                               </a>
-                                                             
-                                                               
-                                                           @endif
-                
-                
-                </td>
+                        @if (array_key_exists('higher_level_qualification1_diploma_award', $docdataForm360))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification1_diploma_award/'.$docdataForm360['higher_level_qualification1_diploma_award'])  }}">
+                            @if(str_contains($docdataForm360['higher_level_qualification1_diploma_award'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification1_diploma_award/'.$docdataForm360['higher_level_qualification1_diploma_award'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+
+                    </td>
                 </tr>
 
                 <tr>
@@ -564,20 +564,20 @@
 
                     </td>
                     <td> <input type="file" name="higher_level_qualification1_listofexams" id="higher_level_qualification1_listofexams">
-                
-                    @if (array_key_exists('higher_level_qualification1_listofexams', $docdataForm360))
-                                                               
-                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification1_listofexams/'.$docdataForm360['higher_level_qualification1_listofexams'])  }}">
-                                                               @if(str_contains($docdataForm360['higher_level_qualification1_listofexams'] , '.pdf'))
-                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
-                                                               @else
-                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification1_listofexams/'.$docdataForm360['higher_level_qualification1_listofexams'])  }}"  />
-                                                               @endif
-                                                               </a>
-                                                             
-                                                               
-                                                           @endif
-                </td>
+
+                        @if (array_key_exists('higher_level_qualification1_listofexams', $docdataForm360))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification1_listofexams/'.$docdataForm360['higher_level_qualification1_listofexams'])  }}">
+                            @if(str_contains($docdataForm360['higher_level_qualification1_listofexams'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification1_listofexams/'.$docdataForm360['higher_level_qualification1_listofexams'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+                    </td>
                 </tr>
 
                 <tr>
@@ -585,21 +585,21 @@
 
 
                     </td>
-                    <td> <input type="file" name="higher_level_qualification1_diploma_supplement" id="higher_level_qualification1_diploma_supplement" >
-                    @if (array_key_exists('higher_level_qualification1_diploma_supplement', $docdataForm360))
-                                                               
-                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification1_diploma_supplement/'.$docdataForm360['higher_level_qualification1_diploma_supplement'])  }}">
-                                                               @if(str_contains($docdataForm360['higher_level_qualification1_diploma_supplement'] , '.pdf'))
-                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
-                                                               @else
-                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification1_diploma_supplement/'.$docdataForm360['higher_level_qualification1_diploma_supplement'])  }}"  />
-                                                               @endif
-                                                               </a>
-                                                             
-                                                               
-                                                           @endif
-                
-                </td>
+                    <td> <input type="file" name="higher_level_qualification1_diploma_supplement" id="higher_level_qualification1_diploma_supplement">
+                        @if (array_key_exists('higher_level_qualification1_diploma_supplement', $docdataForm360))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification1_diploma_supplement/'.$docdataForm360['higher_level_qualification1_diploma_supplement'])  }}">
+                            @if(str_contains($docdataForm360['higher_level_qualification1_diploma_supplement'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification1_diploma_supplement/'.$docdataForm360['higher_level_qualification1_diploma_supplement'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -660,7 +660,7 @@
 
                     </td>
                     <td>
-                    <select name="higher_level_qualification2_course_duration" id="higher_level_qualification2_course_duration" class="form-control">
+                        <select name="higher_level_qualification2_course_duration" id="higher_level_qualification2_course_duration" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->higher_level_qualification2_course_duration)))
@@ -678,8 +678,8 @@
                             <option value="8">8</option>
                             <option value="9">9</option>
                             <option value="10">10</option>
-                        </select>      
-                   
+                        </select>
+
                     </td>
                 </tr>
 
@@ -693,7 +693,7 @@
                 </tr>
 
                 <tr>
-                    <td> Date course extension_loaded
+                    <td> Date course ended
 
                     </td>
                     <td> <input type="date" name="higher_level_qualification2_course_ended" id="higher_level_qualification2_course_ended" @if(isset($data->higher_level_qualification2_course_ended)) value="{{$data->higher_level_qualification2_course_ended}}" @endif/>
@@ -706,7 +706,7 @@
 
                     </td>
                     <td>
-                    <select name="higher_level_qualification2_full_part" id="higher_level_qualification2_full_part" class="form-control">
+                        <select name="higher_level_qualification2_full_part" id="higher_level_qualification2_full_part" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->higher_level_qualification2_full_part)))
@@ -714,8 +714,8 @@
                             @endif
                             <option value="Part Time"> Part Time </option>
                             <option value="Full Time"> Full Time </option>
-                        </select>  
-                        
+                        </select>
+
                     </td>
                 </tr>
 
@@ -727,7 +727,7 @@
 
                     </td>
                     <td>
-                    <select name="higher_level_qualification2_courseofstudy" id="higher_level_qualification2_courseofstudy" class="form-control">
+                        <select name="higher_level_qualification2_courseofstudy" id="higher_level_qualification2_courseofstudy" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->higher_level_qualification2_courseofstudy)))
@@ -735,7 +735,7 @@
                             @endif
                             <option value="Course of study"> Course of study </option>
                             <option value="RPL"> RPL </option>
-                        </select>       
+                        </select>
                     </td>
                 </tr>
 
@@ -744,8 +744,8 @@
 
 
                     </td>
-                    <td> 
-                    <select id="higher_level_qualification2_country" name="higher_level_qualification2_country" class="form-control">
+                    <td>
+                        <select id="higher_level_qualification2_country" name="higher_level_qualification2_country" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->higher_level_qualification2_country)))
                             <option value="{{$data->higher_level_qualification2_country}}" selected>{{$data->higher_level_qualification2_country}}</option>
@@ -1019,8 +1019,8 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select>    
-                  
+                        </select>
+
                     </td>
                 </tr>
 
@@ -1042,69 +1042,69 @@
 
                     </td>
                     <td>
-                    <select name="higher_level_qualification2_thesis_project_if" id="higher_level_qualification2_thesis_project_if" class="form-control">
+                        <select name="higher_level_qualification2_thesis_project_if" id="higher_level_qualification2_thesis_project_if" class="form-control">
 
-<option value=""> Select Option </option>
-@if(!empty(isset($data->higher_level_qualification2_thesis_project_if)))
-<option value="{{$data->higher_level_qualification2_thesis_project_if}}" selected>{{$data->higher_level_qualification2_thesis_project_if}}</option>
-@endif
+                            <option value=""> Select Option </option>
+                            @if(!empty(isset($data->higher_level_qualification2_thesis_project_if)))
+                            <option value="{{$data->higher_level_qualification2_thesis_project_if}}" selected>{{$data->higher_level_qualification2_thesis_project_if}}</option>
+                            @endif
 
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-<option value="13">13</option>
-<option value="14">14</option>
-<option value="15">15</option>
-<option value="16">16</option>
-<option value="17">17</option>
-<option value="18">18</option>
-<option value="19">19</option>
-<option value="20">20</option>
-<option value="21">21</option>
-<option value="22">22</option>
-<option value="23">23</option>
-<option value="24">24</option>
-<option value="25">25</option>
-<option value="26">26</option>
-<option value="27">27</option>
-<option value="28">28</option>
-<option value="29">29</option>
-<option value="30">30</option>
-<option value="31">31</option>
-<option value="32">32</option>
-<option value="33">33</option>
-<option value="34">34</option>
-<option value="35">35</option>
-<option value="36">36</option>
-<option value="37">37</option>
-<option value="38">38</option>
-<option value="39">39</option>
-<option value="40">40</option>
-<option value="41">41</option>
-<option value="42">42</option>
-<option value="43">43</option>
-<option value="44">44</option>
-<option value="45">45</option>
-<option value="46">46</option>
-<option value="47">47</option>
-<option value="48">48</option>
-<option value="49">49</option>
-<option value="50">50</option>
-<option value="51">51</option>
-<option value="52">52</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                            <option value="33">33</option>
+                            <option value="34">34</option>
+                            <option value="35">35</option>
+                            <option value="36">36</option>
+                            <option value="37">37</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option>
+                            <option value="45">45</option>
+                            <option value="46">46</option>
+                            <option value="47">47</option>
+                            <option value="48">48</option>
+                            <option value="49">49</option>
+                            <option value="50">50</option>
+                            <option value="51">51</option>
+                            <option value="52">52</option>
 
-</select>        
-                    
-                  
+                        </select>
+
+
                     </td>
                 </tr>
 
@@ -1123,20 +1123,20 @@
                     <td> Qualification – Diploma/Award Certificate
                     </td>
                     <td> <input type="file" name="higher_level_qualification2_diploma_award" id="higher_level_qualification2_diploma_award">
-                    @if (array_key_exists('higher_level_qualification2_diploma_award', $docdataForm360))
-                                                               
-                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification2_diploma_award/'.$docdataForm360['higher_level_qualification2_diploma_award'])  }}">
-                                                               @if(str_contains($docdataForm360['higher_level_qualification2_diploma_award'] , '.pdf'))
-                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
-                                                               @else
-                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification2_diploma_award/'.$docdataForm360['higher_level_qualification2_diploma_award'])  }}"  />
-                                                               @endif
-                                                               </a>
-                                                             
-                                                               
-                                                           @endif
-                
-                </td>
+                        @if (array_key_exists('higher_level_qualification2_diploma_award', $docdataForm360))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification2_diploma_award/'.$docdataForm360['higher_level_qualification2_diploma_award'])  }}">
+                            @if(str_contains($docdataForm360['higher_level_qualification2_diploma_award'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification2_diploma_award/'.$docdataForm360['higher_level_qualification2_diploma_award'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
 
                 <tr>
@@ -1144,20 +1144,20 @@
 
                     </td>
                     <td> <input type="file" name="higher_level_qualification2_listofexams" id="higher_level_qualification2_listofexams">
-                    @if (array_key_exists('higher_level_qualification2_listofexams', $docdataForm360))
-                                                               
-                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification2_listofexams/'.$docdataForm360['higher_level_qualification2_listofexams'])  }}">
-                                                               @if(str_contains($docdataForm360['higher_level_qualification2_listofexams'] , '.pdf'))
-                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
-                                                               @else
-                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification2_listofexams/'.$docdataForm360['higher_level_qualification2_listofexams'])  }}"  />
-                                                               @endif
-                                                               </a>
-                                                             
-                                                               
-                                                           @endif
-                
-                </td>
+                        @if (array_key_exists('higher_level_qualification2_listofexams', $docdataForm360))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification2_listofexams/'.$docdataForm360['higher_level_qualification2_listofexams'])  }}">
+                            @if(str_contains($docdataForm360['higher_level_qualification2_listofexams'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification2_listofexams/'.$docdataForm360['higher_level_qualification2_listofexams'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
 
                 <tr>
@@ -1166,21 +1166,21 @@
 
                     </td>
                     <td> <input type="file" name="higher_level_qualification2_diploma_supplement" id="higher_level_qualification2_diploma_supplement">
-                
-                    @if (array_key_exists('higher_level_qualification2_diploma_supplement', $docdataForm360))
-                                                               
-                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification2_diploma_supplement/'.$docdataForm360['higher_level_qualification2_diploma_supplement'])  }}">
-                                                               @if(str_contains($docdataForm360['higher_level_qualification2_diploma_supplement'] , '.pdf'))
-                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
-                                                               @else
-                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification2_diploma_supplement/'.$docdataForm360['higher_level_qualification2_diploma_supplement'])  }}"  />
-                                                               @endif
-                                                               </a>
-                                                             
-                                                               
-                                                           @endif
-                
-                </td>
+
+                        @if (array_key_exists('higher_level_qualification2_diploma_supplement', $docdataForm360))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification2_diploma_supplement/'.$docdataForm360['higher_level_qualification2_diploma_supplement'])  }}">
+                            @if(str_contains($docdataForm360['higher_level_qualification2_diploma_supplement'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification2_diploma_supplement/'.$docdataForm360['higher_level_qualification2_diploma_supplement'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -1270,8 +1270,8 @@
 
 
                     </td>
-                    <td> 
-                    <select name="higher_level_qualification3_full_part" id="higher_level_qualification3_full_part" class="form-control">
+                    <td>
+                        <select name="higher_level_qualification3_full_part" id="higher_level_qualification3_full_part" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->higher_level_qualification3_full_part)))
@@ -1279,9 +1279,9 @@
                             @endif
                             <option value="Part Time"> Part Time </option>
                             <option value="Full Time"> Full Time </option>
-                        </select> 
-                   
-                       
+                        </select>
+
+
                     </td>
                 </tr>
 
@@ -1292,8 +1292,8 @@
 
 
                     </td>
-                    <td> 
-                    <select name="higher_level_qualification3_courseofstudy" id="higher_level_qualification3_courseofstudy" class="form-control">
+                    <td>
+                        <select name="higher_level_qualification3_courseofstudy" id="higher_level_qualification3_courseofstudy" class="form-control">
                             <option value=""> Select Option </option>
 
                             @if(!empty(isset($data->higher_level_qualification3_courseofstudy)))
@@ -1301,8 +1301,8 @@
                             @endif
                             <option value="Course of study"> Course of study </option>
                             <option value="RPL"> RPL </option>
-                        </select> 
-                   
+                        </select>
+
                     </td>
                 </tr>
 
@@ -1312,7 +1312,7 @@
 
                     </td>
                     <td>
-                    <select id="higher_level_qualification3_country" name="higher_level_qualification3_country" class="form-control">
+                        <select id="higher_level_qualification3_country" name="higher_level_qualification3_country" class="form-control">
                             <option value="">Select Country</option>
                             @if(!empty(isset($data->higher_level_qualification3_country)))
                             <option value="{{$data->higher_level_qualification3_country}}" selected>{{$data->higher_level_qualification3_country}}</option>
@@ -1586,8 +1586,8 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select> 
-                       
+                        </select>
+
                     </td>
                 </tr>
 
@@ -1612,68 +1612,68 @@
 
                     </td>
                     <td>
-                    <select name="higher_level_qualification3_thesis_project_if" id="higher_level_qualification3_thesis_project_if" class="form-control">
+                        <select name="higher_level_qualification3_thesis_project_if" id="higher_level_qualification3_thesis_project_if" class="form-control">
 
-<option value=""> Select Option </option>
-@if(!empty(isset($data->higher_level_qualification3_thesis_project_if)))
-<option value="{{$data->higher_level_qualification3_thesis_project_if}}" selected>{{$data->higher_level_qualification3_thesis_project_if}}</option>
-@endif
+                            <option value=""> Select Option </option>
+                            @if(!empty(isset($data->higher_level_qualification3_thesis_project_if)))
+                            <option value="{{$data->higher_level_qualification3_thesis_project_if}}" selected>{{$data->higher_level_qualification3_thesis_project_if}}</option>
+                            @endif
 
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-<option value="13">13</option>
-<option value="14">14</option>
-<option value="15">15</option>
-<option value="16">16</option>
-<option value="17">17</option>
-<option value="18">18</option>
-<option value="19">19</option>
-<option value="20">20</option>
-<option value="21">21</option>
-<option value="22">22</option>
-<option value="23">23</option>
-<option value="24">24</option>
-<option value="25">25</option>
-<option value="26">26</option>
-<option value="27">27</option>
-<option value="28">28</option>
-<option value="29">29</option>
-<option value="30">30</option>
-<option value="31">31</option>
-<option value="32">32</option>
-<option value="33">33</option>
-<option value="34">34</option>
-<option value="35">35</option>
-<option value="36">36</option>
-<option value="37">37</option>
-<option value="38">38</option>
-<option value="39">39</option>
-<option value="40">40</option>
-<option value="41">41</option>
-<option value="42">42</option>
-<option value="43">43</option>
-<option value="44">44</option>
-<option value="45">45</option>
-<option value="46">46</option>
-<option value="47">47</option>
-<option value="48">48</option>
-<option value="49">49</option>
-<option value="50">50</option>
-<option value="51">51</option>
-<option value="52">52</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                            <option value="33">33</option>
+                            <option value="34">34</option>
+                            <option value="35">35</option>
+                            <option value="36">36</option>
+                            <option value="37">37</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option>
+                            <option value="45">45</option>
+                            <option value="46">46</option>
+                            <option value="47">47</option>
+                            <option value="48">48</option>
+                            <option value="49">49</option>
+                            <option value="50">50</option>
+                            <option value="51">51</option>
+                            <option value="52">52</option>
 
-</select>     
-                   
+                        </select>
+
                     </td>
                 </tr>
 
@@ -1692,21 +1692,21 @@
                     <td> Qualification – Diploma/Award Certificate
                     </td>
                     <td> <input type="file" name="higher_level_qualification3_diploma_award" id="higher_level_qualification3_diploma_award">
-                
-                    @if (array_key_exists('higher_level_qualification3_diploma_award', $docdataForm360))
-                                                               
-                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification3_diploma_award/'.$docdataForm360['higher_level_qualification3_diploma_award'])  }}">
-                                                               @if(str_contains($docdataForm360['higher_level_qualification3_diploma_award'] , '.pdf'))
-                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
-                                                               @else
-                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification3_diploma_award/'.$docdataForm360['higher_level_qualification3_diploma_award'])  }}"  />
-                                                               @endif
-                                                               </a>
-                                                             
-                                                               
-                                                           @endif
-                
-                </td>
+
+                        @if (array_key_exists('higher_level_qualification3_diploma_award', $docdataForm360))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification3_diploma_award/'.$docdataForm360['higher_level_qualification3_diploma_award'])  }}">
+                            @if(str_contains($docdataForm360['higher_level_qualification3_diploma_award'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification3_diploma_award/'.$docdataForm360['higher_level_qualification3_diploma_award'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
 
                 <tr>
@@ -1714,19 +1714,19 @@
 
                     </td>
                     <td> <input type="file" name="higher_level_qualification3_listofexams" id="higher_level_qualification3_listofexams">
-                    @if (array_key_exists('higher_level_qualification3_listofexams', $docdataForm360))
-                                                               
-                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification3_listofexams/'.$docdataForm360['higher_level_qualification3_listofexams'])  }}">
-                                                               @if(str_contains($docdataForm360['higher_level_qualification3_listofexams'] , '.pdf'))
-                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
-                                                               @else
-                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification3_listofexams/'.$docdataForm360['higher_level_qualification3_listofexams'])  }}"  />
-                                                               @endif
-                                                               </a>
-                                                             
-                                                               
-                                                           @endif               
-                </td>
+                        @if (array_key_exists('higher_level_qualification3_listofexams', $docdataForm360))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification3_listofexams/'.$docdataForm360['higher_level_qualification3_listofexams'])  }}">
+                            @if(str_contains($docdataForm360['higher_level_qualification3_listofexams'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification3_listofexams/'.$docdataForm360['higher_level_qualification3_listofexams'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+                    </td>
                 </tr>
 
                 <tr>
@@ -1735,20 +1735,20 @@
 
                     </td>
                     <td> <input type="file" name="higher_level_qualification3_diploma_supplement" id="higher_level_qualification3_diploma_supplement">
-                    @if (array_key_exists('higher_level_qualification3_diploma_supplement', $docdataForm360))
-                                                               
-                                                               <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification3_diploma_supplement/'.$docdataForm360['higher_level_qualification3_diploma_supplement'])  }}">
-                                                               @if(str_contains($docdataForm360['higher_level_qualification3_diploma_supplement'] , '.pdf'))
-                                                               <img class="imgfile" src="{{asset('pdficon.png')}}"   />
-                                                               @else
-                                                               <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification3_diploma_supplement/'.$docdataForm360['higher_level_qualification3_diploma_supplement'])  }}"  />
-                                                               @endif
-                                                               </a>
-                                                             
-                                                               
-                                                           @endif    
-                
-                </td>
+                        @if (array_key_exists('higher_level_qualification3_diploma_supplement', $docdataForm360))
+
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification3_diploma_supplement/'.$docdataForm360['higher_level_qualification3_diploma_supplement'])  }}">
+                            @if(str_contains($docdataForm360['higher_level_qualification3_diploma_supplement'] , '.pdf'))
+                            <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                            @else
+                            <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/higher_level_qualification3_diploma_supplement/'.$docdataForm360['higher_level_qualification3_diploma_supplement'])  }}" />
+                            @endif
+                        </a>
+
+
+                        @endif
+
+                    </td>
                 </tr>
             </tbody>
         </table>
