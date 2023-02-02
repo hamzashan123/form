@@ -48,7 +48,7 @@
                     <th>Application Status</th>
 
                     <th>Deadline</th>
-                    @if(Auth::user()->hasRole('admin')) <th>Consultant</th> @endif
+                    @if(Auth::user()->hasRole('admin') && $checkhide == true ) <th>Consultant</th> @endif
 
                     <th> Assign Forms</th>
                     <th class="text-center" style="width: 30px;">Action</th>
@@ -71,8 +71,8 @@
                         <td>@if($user->roles[0]->name == 'user')  <strong> Client </strong> @else <strong>{{$user->roles[0]->name}} </strong> @endif <br> 
                          <td>{{ $user->application_status }}</td> 
                          <td>{{ $user->deadline }}</td> 
-                         @if(Auth::user()->hasRole('admin'))  
-                         <td> {{ $user->ConsulantName }}</td> 
+                         @if(Auth::user()->hasRole('admin') && $checkhide == true )  
+                         <td> {{ isset($user->ConsulantName) ? $user->ConsulantName : 'N/A'}}</td> 
                          @endif
                         
                         <td>
