@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
+
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex">
             <h6 class="m-0 font-weight-bold text-primary">
@@ -121,8 +121,8 @@
             </table>
         </div>
     </div>
-    <script> 
-$(document).ready(function () {
+<script> 
+ $(document).ready(function () {
     // Setup - add a text input to each footer cell
     $('#clientconsultant thead tr')
         .clone(true)
@@ -138,6 +138,9 @@ $(document).ready(function () {
         "searching": false,
         orderCellsTop: true,
         fixedHeader: true,
+        columnDefs: [
+            { width: 200, targets: 0 }
+        ],
         initComplete: function () {
             var api = this.api();
  
@@ -188,7 +191,7 @@ $(document).ready(function () {
                 });
         },
     });
-});
+ });
 </script>
 @endsection
 

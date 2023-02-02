@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex">
             <h6 class="m-0 font-weight-bold text-primary">
@@ -20,7 +21,7 @@
         <!-- @include('partials.backend.filter', ['model' => route('admin.supervisors.index')]) -->
 
         <div class="table-responsive">
-            <table class="table table-hover">
+            <table id="consultantable" class="table table-hover">
                 <thead>
                 <tr>
                 <th>ID</th>
@@ -98,4 +99,76 @@
             </table>
         </div>
     </div>
+    <script> 
+ $(document).ready(function () {
+    // Setup - add a text input to each footer cell
+    $('#consultantable thead tr')
+        .clone(true)
+        .addClass('filters')
+        .appendTo('#consultantable thead');
+ 
+    var table = $('#consultantable').DataTable({
+        "bPaginate": false,
+        "bLengthChange": false,
+        "bFilter": true,
+        "bInfo": false,
+        "bAutoWidth": false ,
+        "searching": false,
+        orderCellsTop: true,
+        fixedHeader: true,
+        columnDefs: [
+            { width: 200, targets: 0 }
+        ],
+        initComplete: function () {
+            var api = this.api();
+ 
+            // For each column
+            api
+                .columns()
+                .eq(0)
+                .each(function (colIdx) {
+                    // Set the header cell to contain the input element
+                    var cell = $('.filters th').eq(
+                        $(api.column(colIdx).header()).index()
+                    );
+                    var title = $(cell).text();
+                    $(cell).html('<input type="text" placeholder="' + title + '" />');
+ 
+                    // On every keypress in this input
+                    $(
+                        'input',
+                        $('.filters th').eq($(api.column(colIdx).header()).index())
+                    )
+                        .off('keyup change')
+                        .on('change', function (e) {
+                            // Get the search value
+                            $(this).attr('title', $(this).val());
+                            var regexr = '({search})'; //$(this).parents('th').find('select').val();
+ 
+                            var cursorPosition = this.selectionStart;
+                            // Search the column for that value
+                            api
+                                .column(colIdx)
+                                .search(
+                                    this.value != ''
+                                        ? regexr.replace('{search}', '(((' + this.value + ')))')
+                                        : '',
+                                    this.value != '',
+                                    this.value == ''
+                                )
+                                .draw();
+                        })
+                        .on('keyup', function (e) {
+                            e.stopPropagation();
+ 
+                            $(this).trigger('change');
+                            $(this)
+                                .focus()[0]
+                                .setSelectionRange(cursorPosition, cursorPosition);
+                        });
+                });
+        },
+    });
+ });
+</script>
 @endsection
