@@ -15,6 +15,7 @@ use Auth;
 use App\Mail\UserActivatedByAdmin;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\RegisterUser;
+use DB;
 
 class UserController extends Controller
 {
@@ -59,13 +60,13 @@ class UserController extends Controller
             ->paginate(\request()->limitBy ?? 10);
         }
             
-       //dd($users);   
+        
         return view('backend.users.index', compact('users'));
     }
 
     public function create(): View
     {
-        $this->authorize('create_user');
+        //$this->authorize('create_user');
 
         return view('backend.users.create');
     }
@@ -73,7 +74,7 @@ class UserController extends Controller
     public function store(UserRequest $request): RedirectResponse
     {
         
-        $this->authorize('create_user');
+        //$this->authorize('create_user');
 
         if ($request->hasFile('user_image')) {
             $userImage = $this->imageService->storeUserImages($request->username, $request->user_image);
@@ -94,6 +95,7 @@ class UserController extends Controller
             'status' => $request->status,
             'application_status' => $request->application_status,
             'matter' => $request->matter ?? NULL,
+            'deadline' => $request->deadline ?? NULL,
             //for 1st 
             'currency' => $request->currency,
             'amount' => $request->amount,
@@ -160,14 +162,14 @@ class UserController extends Controller
 
     public function show(User $user): View
     {
-        $this->authorize('user_show');
+        //$this->authorize('user_show');
 
         return view('backend.users.show', compact('user'));
     }
 
     public function edit(User $user): View
     {
-        $this->authorize('edit_user');
+        //$this->authorize('edit_user');
 
         return view('backend.users.edit', compact('user'));
     }
@@ -175,7 +177,7 @@ class UserController extends Controller
     public function update(UserRequest $request, User $user): RedirectResponse
     {
        
-        $this->authorize('edit_user');
+       // $this->authorize('edit_user');
 
         if ($request->hasFile('user_image')) {
             if ($user->user_image) {
@@ -203,6 +205,7 @@ class UserController extends Controller
             'status' => $request->status,
             'application_status' => $request->application_status,
             'matter' => $request->matter ?? NULL,
+            'deadline' => $request->deadline ?? NULL,
             //for 1st 
             'currency' => $request->currency,
             'amount' => $request->amount,
@@ -300,6 +303,7 @@ class UserController extends Controller
             ->paginate(\request()->limitBy ?? 10);
         }
 
+       
         return view('backend.users.index', compact('users'));
     }
 
@@ -310,6 +314,17 @@ class UserController extends Controller
         $customers = $data->pluck('client_id');
         $myusers = User::whereIn('id',$customers)->get();
         
+        // $clientCosultant = User::role('user')
+        // ->join('consultant_users', 'users.id', '=', 'consultant_users.client_id')
+        // ->select('users.*', 'consultant_users.*',DB::raw('consultant_users.consultant_id as total'))
+        // ->groupBy('consultant_users.client_id');
+
+        // $clientCosultant = $clientCosultant->orWhereHas('clientConsultants', function($query) {
+        //     $query = $query->where('users.id','=',167);
+        //     return $query;
+        // });
+        // dd($clientCosultant->get());
+
         if(Auth::user()->hasRole('admin')){
             $users = User::where('id' ,'!=' , auth()->user()->id)->role('user')
             ->when(\request()->keyword != null, function ($query) {
@@ -321,7 +336,7 @@ class UserController extends Controller
             ->orderBy(\request()->sortBy ?? 'id', \request()->orderBy ?? 'desc')
             ->paginate(\request()->limitBy ?? 10);
         }
-        //dd($users);
+        
         return view('backend.users.index', compact('users'));
     }
 }

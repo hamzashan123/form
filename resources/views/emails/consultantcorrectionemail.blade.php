@@ -1,4 +1,4 @@
-@php 
+﻿@php 
     $missing = 'Field is missing';
     $incorrect = 'Incorrect field value';
 @endphp
@@ -6,7 +6,11 @@
 
 <h3 style="font-size: 20px;
     font-weight: normal;">Dear {{ucfirst($username)}}, </h3>
-<p> {!! $msg !!} </p>    
+<p>We have received the information and document provided on the info/docs system. 
+
+Please see below the comments of your consultant. 
+
+Please make sure to copy and paste and answer under each question in order to allow your consultant to finalize your application. </p>    
 <p>Form name : {{$formname}}</p>
 
 @if(!empty($fieldsname))
@@ -24,7 +28,7 @@
 @endif
 
 
-<!-- <h4 style="font-size: 20px;
-    font-weight: normal;">Once the form updated please send us an updated email.</h4> -->
+<h4 style="font-size: 20px;
+    font-weight: normal;">Once the form updated please send us an updated email.</h4>
 <h3 style="font-size: 20px;
     font-weight: normal;">Thanks </h3>

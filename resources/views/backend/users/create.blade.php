@@ -107,7 +107,7 @@
                                    >
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-6">
                         <div class="form-group">
                             <label for="status">Status</label>
                             <select name="status" id="status" class="form-control">
@@ -118,7 +118,7 @@
                             
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-6">
                             <div class="form-group">
                                 <label for="status">Application Status</label>
                                 <select name="application_status" id="application_status" class="form-control">
@@ -135,7 +135,13 @@
                                 
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="deadline">Deadline</label>
+                                <input type="date" name="deadline" id="deadline" class="form-control" >
+                            </div>
+                        </div>
+                        <div class="col-6">
                             <div class="form-group">
                                 <label for="status">Matter</label>
                                 <select name="matter" id="matter" class="form-control">

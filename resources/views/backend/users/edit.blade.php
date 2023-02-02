@@ -56,7 +56,7 @@
             </div>
             <div class="row">
               
-            <div class="col-4">
+            <div class="col-6">
                     <div class="form-group">
                         <label for="status">Status</label>
                         <select name="status" id="status" class="form-control">
@@ -66,7 +66,7 @@
                         @error('status')<span class="text-danger">{{ $message }}</span>@enderror
                     </div>
                 </div>    
-                <div class="col-4">
+                <div class="col-6">
                     <div class="form-group">
                         <label for="status">Application Status</label>
                         <select name="application_status" id="application_status" class="form-control">
@@ -86,7 +86,13 @@
                         @error('application_status')<span class="text-danger">{{ $message }}</span>@enderror
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-6">
+                            <div class="form-group">
+                                <label for="deadline">Deadline</label>
+                                <input type="date" name="deadline" id="deadline"  @if(!empty(isset($user->deadline))) value="{{$user->deadline}}" @endif class="form-control" >
+                            </div>
+                        </div>
+                <div class="col-6">
                     <div class="form-group">
                         <label for="status">Matter</label>
                         <select name="matter" id="matter" class="form-control">
@@ -195,7 +201,7 @@
    
                 </div>
             
-            
+    @if(Auth::user()->hasRole('admin'))  
             <h2 style="text-align:center;"><strong>Accounts</strong></h2>
                 <h4 ><strong>Professional Fees are :</strong></h4>
                 <div class="row">
@@ -570,7 +576,7 @@
                     <input type="file" name="user_image">
                 </div>
             </div>
-
+    @endif
             <div class="form-group pt-4">
                 <button class="btn btn-primary" type="submit" name="submit">Update</button>
             </div>

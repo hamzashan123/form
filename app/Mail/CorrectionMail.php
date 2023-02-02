@@ -19,6 +19,7 @@ class CorrectionMail extends Mailable
     //protected $surname;
     protected $fieldsvalue;
     protected $fieldscomments;
+    protected $msg;
     
     /**
      * Create a new message instance.
@@ -34,6 +35,7 @@ class CorrectionMail extends Mailable
         $this->fieldsname = $data['fieldsname'];
         $this->fieldsvalue = $data['fieldsvalue'];
         $this->fieldscomments = $data['fieldscomments'];
+        $this->msg = $data['msg'];
     }
 
     /**
@@ -52,7 +54,8 @@ class CorrectionMail extends Mailable
                         //'surname' => $this->surname,
                         'formname' => $this->formname,
                         'fieldsvalue' => $this->fieldsvalue,
-                        'fieldscomments' => $this->fieldscomments
+                        'fieldscomments' => $this->fieldscomments,
+                        'msg' => $this->msg
                     ]);
     }
 }

@@ -13,6 +13,7 @@ use App\Mail\CorrectionEmailAdmin;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use App\Models\ConsultantUser;
+use App\Models\User;
 
 class Form360Controller extends Controller
 {
@@ -1167,8 +1168,8 @@ class Form360Controller extends Controller
     public function correctFieldsEmail(Request $request){
         
         if(!empty($request->userid)){
-            $user = DB::table('users')->where('id',$request->userid)->first();
-           
+            $user = User::where('id',$request->userid)->first();
+            $consultant = User::where('id',Auth::user()->id)->first();
             if($request->has('fieldsname')){
                        $data = [
                            'email' => $user->email,
@@ -1176,11 +1177,22 @@ class Form360Controller extends Controller
                            'fieldsname' => $request->fieldsname,
                            'fieldsvalue' => $request->fieldsvalue,
                            'fieldscomments' => $request->fieldscomments,
-                           'formname' => $request->formName
+                           'formname' => $request->formName,
+                           'msg' => 'We have received the information and document provided on the info/docs system. Please see below the comments of your consultant. Please make sure to copy and paste and answer under each question in order to allow your consultant to finalize your application. Once the form updated please send us an updated email'
                        ];
+
+                       $consultantdata = [
+                        'email' => $consultant->email,
+                        'username' => $consultant->username,
+                        'fieldsname' => $request->fieldsname,
+                        'fieldsvalue' => $request->fieldsvalue,
+                        'fieldscomments' => $request->fieldscomments,
+                        'formname' => $request->formName,
+                        'msg' => 'An email of fields correction has been sent to the client.'
+                    ];
                        //dd($data);
                        Mail::to($user->email)->send(new CorrectionMail($data));
-                       //Mail::to('hamzashan123@gmail.com')->send(new CorrectionEmailAdmin($data));
+                       Mail::to($consultant->email)->send(new CorrectionMail($consultantdata));
                       //Mail::to('riccardo@australialegal.it')->send(new CorrectionEmailAdmin($data));
                        return response()->json(['success' => "true"]);
            }

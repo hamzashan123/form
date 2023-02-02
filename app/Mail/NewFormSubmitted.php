@@ -44,7 +44,7 @@ class NewFormSubmitted extends Mailable
     public function build()
     {
         return $this->view('emails.newformsubmitted')
-        ->subject(ucfirst($this->subject))
+        ->subject(ucfirst($this->surname) .' - '.ucfirst($this->subject))
             ->with([
                     'messagetype' => $this->messagetype,
                     'username' => $this->username,

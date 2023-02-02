@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+<link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex">
             <h6 class="m-0 font-weight-bold text-primary">
@@ -34,7 +35,7 @@
        
 
         <div class="table-responsive">
-            <table class="table table-hover">
+            <table id="clientconsultant" class="table table-hover">
                 <thead>
                 <tr>
                     <th>ID</th>
@@ -42,13 +43,13 @@
                     <th>Surname</th>
                     <th>Username</th>
                     <th>Matter</th>
-                    
-                    
-                    <th>Status</th>
+                    @if(Auth::user()->hasRole('admin'))<th>Status</th> @endif
                     <th>Role</th>
-                    @if(Auth::user()->hasRole('admin'))   <th>Application Status</th> @endif
-                    @if(Auth::user()->hasRole('admin'))   <th>Account Status</th> @endif
-                    <th>Created On</th>
+                   <th>Application Status</th> 
+                    
+                    <th>Deadline</th>
+                    @if(Auth::user()->hasRole('admin'))   <th>Consultant</th> @endif
+                    
                     <th> Assign Forms</th>
                     <th class="text-center" style="width: 30px;">Action</th>
                 </tr>
@@ -66,15 +67,14 @@
                         <td>{{ $user->username }}
                         </td>
                         <td>@if($user->roles[0]->name == 'user') {{$user->matter}} @else  <strong > -- </strong>  @endif</td>
-                        <td>{{ $user->status }}</td>
-                        <td>@if($user->roles[0]->name == 'user')  <strong> Client </strong> @else <strong>{{$user->roles[0]->name}} </strong> @endif <br>
-                        @if(Auth::user()->hasRole('admin'))  
+                        @if(Auth::user()->hasRole('admin')) <td>{{ $user->status }}</td> @endif
+                        <td>@if($user->roles[0]->name == 'user')  <strong> Client </strong> @else <strong>{{$user->roles[0]->name}} </strong> @endif <br> 
                          <td>{{ $user->application_status }}</td> 
-                         @endif
+                         <td>{{ $user->deadline }}</td> 
                          @if(Auth::user()->hasRole('admin'))  
-                         <td>{{ $user->account_status }}</td> 
+                         <td> ABC Consultant</td> 
                          @endif
-                        <td>{{ $user->created_at ? $user->created_at->format('Y-m-d') : '' }}</td>
+                        
                         <td>
                         <a href="{{ route('admin.user.formslist', $user->id) }}" class="btn btn-sm btn-primary">
                         <i class="fa fa-eye"> View Forms</i>
@@ -82,21 +82,18 @@
                         </td>
                         <td>
                             <div class="btn-group btn-group-sm">
-                                <!-- <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-sm btn-success">
-                                    Accept
-                                </a>
-                                <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-sm btn-danger">
-                                    Reject
-                                </a> -->
+                               
                                 <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-sm btn-primary">
                                     <i class="fa fa-edit"></i>
                                 </a>
+                                @if(Auth::user()->hasRole('admin'))
                                 <a href="javascript:void(0);"
                                    onclick="if (confirm('Are you sure to delete this record?'))
                                        {document.getElementById('delete-tag-{{ $user->id }}').submit();} else {return false;}"
                                    class="btn btn-sm btn-danger">
                                     <i class="fa fa-trash"></i>
                                 </a>
+                                @endif
                             </div>
                             <form action="{{ route('admin.users.destroy', $user) }}"
                                   method="POST"
@@ -124,4 +121,74 @@
             </table>
         </div>
     </div>
+    <script> 
+$(document).ready(function () {
+    // Setup - add a text input to each footer cell
+    $('#clientconsultant thead tr')
+        .clone(true)
+        .addClass('filters')
+        .appendTo('#clientconsultant thead');
+ 
+    var table = $('#clientconsultant').DataTable({
+        "bPaginate": false,
+        "bLengthChange": false,
+        "bFilter": true,
+        "bInfo": false,
+        "bAutoWidth": false ,
+        "searching": false,
+        orderCellsTop: true,
+        fixedHeader: true,
+        initComplete: function () {
+            var api = this.api();
+ 
+            // For each column
+            api
+                .columns()
+                .eq(0)
+                .each(function (colIdx) {
+                    // Set the header cell to contain the input element
+                    var cell = $('.filters th').eq(
+                        $(api.column(colIdx).header()).index()
+                    );
+                    var title = $(cell).text();
+                    $(cell).html('<input type="text" placeholder="' + title + '" />');
+ 
+                    // On every keypress in this input
+                    $(
+                        'input',
+                        $('.filters th').eq($(api.column(colIdx).header()).index())
+                    )
+                        .off('keyup change')
+                        .on('change', function (e) {
+                            // Get the search value
+                            $(this).attr('title', $(this).val());
+                            var regexr = '({search})'; //$(this).parents('th').find('select').val();
+ 
+                            var cursorPosition = this.selectionStart;
+                            // Search the column for that value
+                            api
+                                .column(colIdx)
+                                .search(
+                                    this.value != ''
+                                        ? regexr.replace('{search}', '(((' + this.value + ')))')
+                                        : '',
+                                    this.value != '',
+                                    this.value == ''
+                                )
+                                .draw();
+                        })
+                        .on('keyup', function (e) {
+                            e.stopPropagation();
+ 
+                            $(this).trigger('change');
+                            $(this)
+                                .focus()[0]
+                                .setSelectionRange(cursorPosition, cursorPosition);
+                        });
+                });
+        },
+    });
+});
+</script>
 @endsection
+
