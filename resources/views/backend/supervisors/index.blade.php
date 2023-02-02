@@ -113,12 +113,10 @@
         "bFilter": true,
         "bInfo": false,
         "bAutoWidth": false ,
-        "searching": false,
+        "searching": true,
         orderCellsTop: true,
         fixedHeader: true,
-        columnDefs: [
-            { width: 200, targets: 0 }
-        ],
+        
         initComplete: function () {
             var api = this.api();
  

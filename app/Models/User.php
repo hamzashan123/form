@@ -4,11 +4,13 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Nicolaslopezj\Searchable\SearchableTrait;
 use Spatie\Permission\Traits\HasRoles;
+use App\Models\ConsultantUser;
 
 
 class User extends Authenticatable implements MustVerifyEmail
@@ -116,8 +118,9 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(UserForms::class,'user_id');
     }
 
-    public function clientConsultants()
+    public function getConsultant(): BelongsTo
     {
-        return $this->hasMany(self::class,'id');
+        return $this->belongsTo(ConsultantUser::class, 'consultant_id', 'id');
     }
+
 }

@@ -314,29 +314,24 @@ class UserController extends Controller
         $customers = $data->pluck('client_id');
         $myusers = User::whereIn('id',$customers)->get();
         
-        // $clientCosultant = User::role('user')
-        // ->join('consultant_users', 'users.id', '=', 'consultant_users.client_id')
-        // ->select('users.*', 'consultant_users.*',DB::raw('consultant_users.consultant_id as total'))
-        // ->groupBy('consultant_users.client_id');
-
-        // $clientCosultant = $clientCosultant->orWhereHas('clientConsultants', function($query) {
-        //     $query = $query->where('users.id','=',167);
-        //     return $query;
-        // });
-        // dd($clientCosultant->get());
-
-        if(Auth::user()->hasRole('admin')){
-            $users = User::where('id' ,'!=' , auth()->user()->id)->role('user')
-            ->when(\request()->keyword != null, function ($query) {
-                $query->search(\request()->keyword);
-            })
-            ->when(\request()->status != null, function ($query) {
-                $query->whereStatus(\request()->status);
-            })
-            ->orderBy(\request()->sortBy ?? 'id', \request()->orderBy ?? 'desc')
-            ->paginate(\request()->limitBy ?? 10);
-        }
-        
+        $users = User::role('user')
+        ->select('Consultant.username as ConsulantName','Consultant.email as ConsulantEmail','users.*')
+        ->leftJoin('consultant_users', 'users.id', '=', 'consultant_users.client_id')
+        ->leftJoin('users as Consultant', 'consultant_users.consultant_id', '=', 'Consultant.id')
+        ->paginate(\request()->limitBy ?? 10);
+     
+        // if(Auth::user()->hasRole('admin')){
+        //     $users = User::where('id' ,'!=' , auth()->user()->id)->role('user')
+        //     ->when(\request()->keyword != null, function ($query) {
+        //         $query->search(\request()->keyword);
+        //     })
+        //     ->when(\request()->status != null, function ($query) {
+        //         $query->whereStatus(\request()->status);
+        //     })
+        //     ->orderBy(\request()->sortBy ?? 'id', \request()->orderBy ?? 'desc')
+        //     ->paginate(\request()->limitBy ?? 10);
+        // }
+       // dd($users);
         return view('backend.users.index', compact('users'));
     }
 }

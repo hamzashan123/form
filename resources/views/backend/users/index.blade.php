@@ -72,7 +72,7 @@
                          <td>{{ $user->application_status }}</td> 
                          <td>{{ $user->deadline }}</td> 
                          @if(Auth::user()->hasRole('admin'))  
-                         <td> ABC Consultant</td> 
+                         <td> {{ $user->ConsulantName }}</td> 
                          @endif
                         
                         <td>
@@ -121,6 +121,7 @@
             </table>
         </div>
     </div>
+@if(count($users) > 0 )    
 <script> 
  $(document).ready(function () {
     // Setup - add a text input to each footer cell
@@ -135,15 +136,14 @@
         "bFilter": true,
         "bInfo": false,
         "bAutoWidth": false ,
-        "searching": false,
+        "searching": true,
         orderCellsTop: true,
         fixedHeader: true,
-        columnDefs: [
-            { width: 200, targets: 0 }
-        ],
+        
         initComplete: function () {
             var api = this.api();
- 
+            
+           
             // For each column
             api
                 .columns()
@@ -190,8 +190,10 @@
                         });
                 });
         },
+    
     });
  });
 </script>
+@endif
 @endsection
 
