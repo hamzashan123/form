@@ -41,7 +41,7 @@
                     <!-- <th>ID</th>
                     <th>Name</th> -->
                     <th>Surname</th>
-                    <!-- <th>Username</th> -->
+                    @if(Auth::user()->hasRole('admin') && $usernameshow == true ) <th>Username</th> @endif
                     <th>Matter</th>
                     <!-- @if(Auth::user()->hasRole('admin'))<th>Status</th> @endif -->
                     @if(Auth::user()->hasRole('admin') && $roleshow == true ) <th>Role</th> @endif 
@@ -61,10 +61,9 @@
                             {{ $user->first_name }}
                         </td> -->
                         
-                        <td>{{ $user->surname }}
+                        <td>{{ strtoupper($user->surname) }}
                         </td>
-                        <!-- <td>{{ $user->username }}
-                        </td> -->
+                        @if(Auth::user()->hasRole('admin') && $usernameshow == true )<td>{{ $user->username }} </td> @endif
                         <td>@if($user->roles[0]->name == 'user') {{$user->matter}} @else  <strong > -- </strong>  @endif</td>
 
                         @if(Auth::user()->hasRole('admin') && $roleshow == true ) <td>@if($user->roles[0]->name == 'user')  <strong> Client </strong> @else <strong>{{$user->roles[0]->name}} </strong> @endif <br>  @endif 

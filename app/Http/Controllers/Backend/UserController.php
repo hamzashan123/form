@@ -67,8 +67,9 @@ class UserController extends Controller
             
         $consultantshow = false;
         $roleshow = true;
+        $usernameshow = false;
         
-        return view('backend.users.index', compact('users','consultantshow','roleshow'));
+        return view('backend.users.index', compact('users','consultantshow','roleshow','usernameshow'));
     }
 
     public function create(): View
@@ -319,7 +320,8 @@ class UserController extends Controller
 
         $consultantshow = false;
         $roleshow = true;
-        return view('backend.users.index', compact('users','consultantshow','roleshow'));
+        $usernameshow = true;
+        return view('backend.users.index', compact('users','consultantshow','roleshow','usernameshow'));
     }
 
     public function get_clients(){
@@ -348,6 +350,7 @@ class UserController extends Controller
         // }
         $consultantshow = true;
         $roleshow = false;
-        return view('backend.users.index', compact('users','consultantshow','roleshow'));
+        $usernameshow = false;
+        return view('backend.users.index', compact('users','consultantshow','roleshow','usernameshow'));
     }
 }
