@@ -60,8 +60,9 @@ class UserController extends Controller
             ->paginate(\request()->limitBy ?? 10);
         }
             
-        
-        return view('backend.users.index', compact('users'));
+        $consultantshow = false;
+        $roleshow = true;
+        return view('backend.users.index', compact('users','consultantshow','roleshow'));
     }
 
     public function create(): View
@@ -170,7 +171,7 @@ class UserController extends Controller
     public function edit(User $user): View
     {
         //$this->authorize('edit_user');
-
+        
         return view('backend.users.edit', compact('user'));
     }
 
@@ -248,11 +249,18 @@ class UserController extends Controller
 
     Mail::to($request->email)->send(new UserActivatedByAdmin($userData));
         }
-               
+              
+        
+        // $consultantshow = true;
+        // $roleshow = false;
 
+        
         return redirect()->route('admin.users.index')->with([
-            'message' => 'Updated successfully',
-            'alert-type' => 'success'
+                'message' => 'Updated successfully',
+                'alert-type' => 'success',
+                // 'consultantshow' => $consultantshow,
+                // 'roleshow' => $roleshow
+                
         ]);
     }
 
