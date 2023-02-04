@@ -14,9 +14,19 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use App\Models\ConsultantUser;
 use App\Models\User;
+use App\Models\Setting;
 
 class Form360Controller extends Controller
 {
+    protected $settings;
+    protected $siteEmail;
+
+    public function __construct()
+    {
+        $this->settings = Setting::all();
+        $this->siteEmail = $this->settings->where('key','site_email')->first()->value;
+    }
+
     public function index(Request $request){
 
         if(!empty($_GET['userid']) && !empty($_GET['form_id'])){
@@ -173,7 +183,7 @@ class Form360Controller extends Controller
                     'subject' => 'New Application Recieved',
                     'messagetype' => 'A new application has been recieved!'
                 ];
-                Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($admindata));
+                Mail::to($this->siteEmail)->send(new NewFormSubmitted($admindata));
 
                 $userdata = [
                     'admin' => false,
@@ -315,7 +325,7 @@ class Form360Controller extends Controller
                     'subject' => 'New Application Recieved',
                     'messagetype' => 'A new application has been recieved!'
                 ];
-                Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($admindata));
+                Mail::to($this->siteEmail)->send(new NewFormSubmitted($admindata));
 
                 $userdata = [
                     'admin' => false,
@@ -1193,7 +1203,7 @@ class Form360Controller extends Controller
                        //dd($data);
                        Mail::to($user->email)->send(new CorrectionMail($data));
                        Mail::to($consultant->email)->send(new CorrectionMail($consultantdata));
-                      //Mail::to('riccardo@australialegal.it')->send(new CorrectionEmailAdmin($data));
+                      //Mail::to($this->siteEmail)->send(new CorrectionEmailAdmin($data));
                        return response()->json(['success' => "true"]);
            }
        }

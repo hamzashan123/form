@@ -13,16 +13,21 @@ use Illuminate\Support\Facades\File;
 use Spatie\Permission\Models\Permission;
 use App\Mail\RegisterUser;
 use Illuminate\Support\Facades\Mail;
+use App\Models\Setting;
 
 class SupervisorController extends Controller
 {
     use ImageUploadTrait;
 
     protected $imageService;
+    protected $settings;
+    protected $siteEmail;
 
     public function __construct(ImageService $imageService)
     {
         $this->imageService = $imageService;
+        $this->settings = Setting::all();
+        $this->siteEmail = $this->settings->where('key','site_email')->first()->value;
     }
 
     public function index(): View
@@ -94,7 +99,7 @@ class SupervisorController extends Controller
             successfully add into the online system."
            
         ];
-        Mail::to('riccardo@australialegal.it')->send(new RegisterUser($adminData));
+        Mail::to($this->siteEmail)->send(new RegisterUser($adminData));
 
         $userData = [
             'admin' => false,

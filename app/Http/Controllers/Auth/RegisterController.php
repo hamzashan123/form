@@ -13,6 +13,7 @@ use Spatie\Permission\Models\Permission;
 use App\Mail\RegisterUser;
 use Illuminate\Support\Facades\Mail;
 use Config;
+use App\Models\Setting;
 
 
 
@@ -37,6 +38,7 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
+    protected $siteEmail;
 
     /**
      * Create a new controller instance.
@@ -46,6 +48,8 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        $this->settings = Setting::all();
+        $this->siteEmail = $this->settings->where('key','site_email')->first()->value;
     }
 
     /**
@@ -103,7 +107,7 @@ class RegisterController extends Controller
                 'messagetype' => "A new user has registered on your system please check the system and update the user status from Inactive to Active."
                
             ];
-            Mail::to('riccardo@australialegal.it')->send(new RegisterUser($adminData));
+            Mail::to($this->siteEmail)->send(new RegisterUser($adminData));
 
             $userData = [
                 'admin' => false,
@@ -129,7 +133,7 @@ class RegisterController extends Controller
                
             ];
             
-            Mail::to('riccardo@australialegal.it')->send(new RegisterUser($adminData));
+            Mail::to($this->siteEmail)->send(new RegisterUser($adminData));
 
             $userData = [
                 'admin' => false,

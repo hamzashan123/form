@@ -16,16 +16,21 @@ use App\Mail\UserActivatedByAdmin;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\RegisterUser;
 use DB;
+use App\Models\Setting;
 
 class UserController extends Controller
 {
     use ImageUploadTrait;
 
     protected $imageService;
+    protected $settings;
+    protected $siteEmail;
 
     public function __construct(ImageService $imageService)
     {
         $this->imageService = $imageService;
+        $this->settings = Setting::all();
+        $this->siteEmail = $this->settings->where('key','site_email')->first()->value;
     }
 
     public function index(): View
@@ -62,6 +67,7 @@ class UserController extends Controller
             
         $consultantshow = false;
         $roleshow = true;
+        
         return view('backend.users.index', compact('users','consultantshow','roleshow'));
     }
 
@@ -138,7 +144,7 @@ class UserController extends Controller
            
         ];
         
-        Mail::to('riccardo@australialegal.it')->send(new RegisterUser($adminData));
+        Mail::to($this->siteEmail)->send(new RegisterUser($adminData));
 
         $userData = [
             'admin' => false,

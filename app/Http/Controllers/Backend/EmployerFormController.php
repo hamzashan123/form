@@ -11,9 +11,19 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use App\Models\ConsultantUser;
+use App\Models\Setting;
 
 class EmployerFormController extends Controller
 {
+    protected $settings;
+    protected $siteEmail;
+
+    public function __construct()
+    {
+        $this->settings = Setting::all();
+        $this->siteEmail = $this->settings->where('key','site_email')->first()->value;
+    }
+
     public function index()
     {
         if (!empty($_GET['userid']) && !empty($_GET['form_id'])) {
@@ -102,7 +112,7 @@ class EmployerFormController extends Controller
                         'subject' => 'New Application Recieved',
                         'messagetype' => 'A new application has been recieved!'
                     ];
-                    Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($admindata));
+                    Mail::to($this->siteEmail)->send(new NewFormSubmitted($admindata));
                     //user email
                     $userdata = [
                         'admin' => false,
@@ -205,7 +215,7 @@ class EmployerFormController extends Controller
                     'subject' => 'New Application Recieved',
                     'messagetype' => 'A new application has been recieved!'
                 ];
-                Mail::to('riccardo@australialegal.it')->send(new NewFormSubmitted($admindata));
+                Mail::to($this->siteEmail)->send(new NewFormSubmitted($admindata));
                 //user email
                 $userdata = [
                     'admin' => false,
