@@ -38,17 +38,16 @@
         <table id="clientconsultant" class="table table-hover">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
+                    <!-- <th>ID</th>
+                    <th>Name</th> -->
                     <th>Surname</th>
-                    <th>Username</th>
+                    <!-- <th>Username</th> -->
                     <th>Matter</th>
-                    @if(Auth::user()->hasRole('admin'))<th>Status</th> @endif
-                    <th>Role</th>
-                    <th>Application Status</th>
-
+                    <!-- @if(Auth::user()->hasRole('admin'))<th>Status</th> @endif -->
+                    @if(Auth::user()->hasRole('admin') && $roleshow == true ) <th>Role</th> @endif 
                     <th>Deadline</th>
-                    @if(Auth::user()->hasRole('admin') && $checkhide == true ) <th>Consultant</th> @endif
+                    <th>Application Status</th>
+                    @if(Auth::user()->hasRole('admin') && $consultantshow == true ) <th>Consultant</th> @endif
 
                     <th> Assign Forms</th>
                     <th class="text-center" style="width: 30px;">Action</th>
@@ -57,21 +56,25 @@
             <tbody>
                 @forelse($users as $user)
                     <tr>
-                        <td>{{ $user->id }}</td>
+                        <!-- <td>{{ $user->id }}</td>
                         <td>
                             {{ $user->first_name }}
-                        </td>
+                        </td> -->
                         
                         <td>{{ $user->surname }}
                         </td>
-                        <td>{{ $user->username }}
-                        </td>
+                        <!-- <td>{{ $user->username }}
+                        </td> -->
                         <td>@if($user->roles[0]->name == 'user') {{$user->matter}} @else  <strong > -- </strong>  @endif</td>
-                        @if(Auth::user()->hasRole('admin')) <td>{{ $user->status }}</td> @endif
-                        <td>@if($user->roles[0]->name == 'user')  <strong> Client </strong> @else <strong>{{$user->roles[0]->name}} </strong> @endif <br> 
+
+                        @if(Auth::user()->hasRole('admin') && $roleshow == true ) <td>@if($user->roles[0]->name == 'user')  <strong> Client </strong> @else <strong>{{$user->roles[0]->name}} </strong> @endif <br>  @endif 
+                        <td>{{ $user->deadline }}</td> 
+                        
+                        <!-- @if(Auth::user()->hasRole('admin')) <td>{{ $user->status }}</td> @endif -->
+                        
                          <td>{{ $user->application_status }}</td> 
-                         <td>{{ $user->deadline }}</td> 
-                         @if(Auth::user()->hasRole('admin') && $checkhide == true )  
+                         
+                         @if(Auth::user()->hasRole('admin') && $consultantshow == true )  
                          <td> {{ isset($user->ConsulantName) ? $user->ConsulantName : 'N/A'}}</td> 
                          @endif
                         
