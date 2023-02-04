@@ -68,7 +68,7 @@
                         <td>@if($user->roles[0]->name == 'user') {{$user->matter}} @else  <strong > -- </strong>  @endif</td>
 
                         @if(Auth::user()->hasRole('admin') && $roleshow == true ) <td>@if($user->roles[0]->name == 'user')  <strong> Client </strong> @else <strong>{{$user->roles[0]->name}} </strong> @endif <br>  @endif 
-                        <td>{{ $user->deadline }}</td> 
+                        <td>{{Carbon\Carbon::parse($user->deadline)->format('d/M/Y') }}</td> 
                         
                         <!-- @if(Auth::user()->hasRole('admin')) <td>{{ $user->status }}</td> @endif -->
                         
