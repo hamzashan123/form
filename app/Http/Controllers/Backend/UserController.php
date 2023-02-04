@@ -303,8 +303,9 @@ class UserController extends Controller
             ->paginate(\request()->limitBy ?? 10);
         }
 
-        $checkhide = false;
-        return view('backend.users.index', compact('users','checkhide'));
+        $consultantshow = false;
+        $roleshow = true;
+        return view('backend.users.index', compact('users','consultantshow','roleshow'));
     }
 
     public function get_clients(){
@@ -331,7 +332,8 @@ class UserController extends Controller
         //     ->orderBy(\request()->sortBy ?? 'id', \request()->orderBy ?? 'desc')
         //     ->paginate(\request()->limitBy ?? 10);
         // }
-        $checkhide = true;
-        return view('backend.users.index', compact('users','checkhide'));
+        $consultantshow = true;
+        $roleshow = false;
+        return view('backend.users.index', compact('users','consultantshow','roleshow'));
     }
 }
