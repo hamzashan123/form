@@ -49,7 +49,7 @@
                     <th>Application Status</th>
                     @if(Auth::user()->hasRole('admin') && $consultantshow == true ) <th>Consultant</th> @endif
 
-                    <th> Assign Forms</th>
+                    <th> View Forms</th>
                     <th class="text-center" style="width: 30px;">Action</th>
                 </tr>
             </thead>
