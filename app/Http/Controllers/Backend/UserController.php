@@ -50,7 +50,7 @@ class UserController extends Controller
             ->when(\request()->status != null, function ($query) {
                 $query->whereStatus(\request()->status);
             })
-            ->orderBy(\request()->sortBy ?? 'id', \request()->orderBy ?? 'desc')
+            ->orderBy('created_at','desc')
             ->paginate(\request()->limitBy ?? 150); 
         }
         if(Auth::user()->hasRole('admin')){
@@ -61,7 +61,7 @@ class UserController extends Controller
             ->when(\request()->status != null, function ($query) {
                 $query->whereStatus(\request()->status);
             })
-            ->orderBy(\request()->sortBy ?? 'id', \request()->orderBy ?? 'desc')
+            ->orderBy('created_at','desc')
             ->paginate(\request()->limitBy ?? 150);
         }
             
@@ -303,7 +303,7 @@ class UserController extends Controller
             ->when(\request()->status != null, function ($query) {
                 $query->whereStatus(\request()->status);
             })
-            ->orderBy(\request()->sortBy ?? 'id', \request()->orderBy ?? 'desc')
+            ->orderBy('created_at','desc')
             ->paginate(\request()->limitBy ?? 150); 
         }
         if(Auth::user()->hasRole('admin')){
@@ -314,7 +314,7 @@ class UserController extends Controller
             ->when(\request()->status != null, function ($query) {
                 $query->whereStatus(\request()->status);
             })
-            ->orderBy(\request()->sortBy ?? 'id', \request()->orderBy ?? 'desc')
+            ->orderBy('created_at','desc')
             ->paginate(\request()->limitBy ?? 150);
         }
 
@@ -335,6 +335,7 @@ class UserController extends Controller
         ->select('Consultant.username as ConsulantName','Consultant.email as ConsulantEmail','users.*')
         ->leftJoin('consultant_users', 'users.id', '=', 'consultant_users.client_id')
         ->leftJoin('users as Consultant', 'consultant_users.consultant_id', '=', 'Consultant.id')
+        ->orderBy('created_at','desc')
         ->paginate(\request()->limitBy ?? 150);
      
         // if(Auth::user()->hasRole('admin')){
