@@ -24,6 +24,7 @@
         <table id="consultantable" class="table table-hover">
             <thead>
                 <tr>
+                    <th class="text-center" style="width: 30px;">Action</th>
                     <th>ID</th>
                     <th>Name</th>
                     <th>Surname</th>
@@ -34,12 +35,27 @@
                     <th>Status</th>
                     <th>Role</th>
                     <th>Created On</th>
-                    <th class="text-center" style="width: 30px;">Action</th>
+                   
                 </tr>
             </thead>
             <tbody>
                 @forelse($supervisors as $supervisor)
                 <tr>
+                    <td>
+                        <div class="btn-group btn-group-sm">
+                            <a href="{{ route('admin.supervisors.edit', $supervisor) }}" class="btn btn-sm btn-primary">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <a href="javascript:void(0);" onclick="if (confirm('Are you sure to delete this record?'))
+                                       {document.getElementById('delete-tag-{{ $supervisor->id }}').submit();} else {return false;}" class="btn btn-sm btn-danger">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        </div>
+                        <form action="{{ route('admin.supervisors.destroy', $supervisor) }}" method="POST" id="delete-tag-{{ $supervisor->id }}" class="d-none">
+                            @csrf
+                            @method('DELETE')
+                        </form>
+                    </td>
                     <td>{{ $supervisor->id }}</td>
                     <!-- <td>
                             @if($supervisor->user_image)
@@ -61,21 +77,7 @@
                     <td>{{ $supervisor->status }}</td>
                     <td>{{ $supervisor->roles[0]->name }}<br>
                     <td>{{ $supervisor->created_at }}<br>
-                    <td>
-                        <div class="btn-group btn-group-sm">
-                            <a href="{{ route('admin.supervisors.edit', $supervisor) }}" class="btn btn-sm btn-primary">
-                                <i class="fa fa-edit"></i>
-                            </a>
-                            <a href="javascript:void(0);" onclick="if (confirm('Are you sure to delete this record?'))
-                                       {document.getElementById('delete-tag-{{ $supervisor->id }}').submit();} else {return false;}" class="btn btn-sm btn-danger">
-                                <i class="fa fa-trash"></i>
-                            </a>
-                        </div>
-                        <form action="{{ route('admin.supervisors.destroy', $supervisor) }}" method="POST" id="delete-tag-{{ $supervisor->id }}" class="d-none">
-                            @csrf
-                            @method('DELETE')
-                        </form>
-                    </td>
+                   
                 </tr>
                 @empty
                 <tr>

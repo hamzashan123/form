@@ -40,6 +40,7 @@
                 <tr>
                     <!-- <th>ID</th>
                     <th>Name</th> -->
+                    <th class="text-center" style="width: 30px;">Action</th>
                     <th>Surname</th>
                     <th>Username</th>
                     <th>Matter</th>
@@ -50,7 +51,7 @@
                     @if(Auth::user()->hasRole('admin') && $consultantshow == true ) <th>Consultant</th> @endif
 
                     <th> View Forms</th>
-                    <th class="text-center" style="width: 30px;">Action</th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -60,7 +61,24 @@
                         <td>
                             {{ $user->first_name }}
                         </td> -->
-                        
+                        <td>
+                        <div class="btn-group btn-group-sm">
+
+                            <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-sm btn-primary">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            @if(Auth::user()->hasRole('admin'))
+                            <a href="javascript:void(0);" onclick="if (confirm('Are you sure to delete this record?'))
+                                       {document.getElementById('delete-tag-{{ $user->id }}').submit();} else {return false;}" class="btn btn-sm btn-danger">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                            @endif
+                        </div>
+                        <form action="{{ route('admin.users.destroy', $user) }}" method="POST" id="delete-tag-{{ $user->id }}" class="d-none">
+                            @csrf
+                            @method('DELETE')
+                        </form>
+                        </td>
                         <td>{{ strtoupper($user->surname) }}
                         </td>
                         <td>{{ $user->username }} </td> 
@@ -81,25 +99,8 @@
                         <a href="{{ route('admin.user.formslist', $user->id) }}" class="btn btn-sm btn-primary">
                             <i class="fa fa-eye"> View Forms</i>
                         </a>
-                    </td>
-                    <td>
-                        <div class="btn-group btn-group-sm">
-
-                            <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-sm btn-primary">
-                                <i class="fa fa-edit"></i>
-                            </a>
-                            @if(Auth::user()->hasRole('admin'))
-                            <a href="javascript:void(0);" onclick="if (confirm('Are you sure to delete this record?'))
-                                       {document.getElementById('delete-tag-{{ $user->id }}').submit();} else {return false;}" class="btn btn-sm btn-danger">
-                                <i class="fa fa-trash"></i>
-                            </a>
-                            @endif
-                        </div>
-                        <form action="{{ route('admin.users.destroy', $user) }}" method="POST" id="delete-tag-{{ $user->id }}" class="d-none">
-                            @csrf
-                            @method('DELETE')
-                        </form>
-                    </td>
+                        </td>
+                    
                 </tr>
                 @empty
                 <tr>
@@ -136,6 +137,7 @@
         "searching": true,
         orderCellsTop: true,
         fixedHeader: true,
+        // "order": [[ 3, "desc" ]],
         
         initComplete: function () {
             var api = this.api();

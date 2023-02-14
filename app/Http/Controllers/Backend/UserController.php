@@ -68,7 +68,7 @@ class UserController extends Controller
         $consultantshow = false;
         $roleshow = true;
         $usernameshow = false;
-        
+    
         return view('backend.users.index', compact('users','consultantshow','roleshow','usernameshow'));
     }
 
@@ -335,7 +335,7 @@ class UserController extends Controller
         ->select('Consultant.username as ConsulantName','Consultant.email as ConsulantEmail','users.*')
         ->leftJoin('consultant_users', 'users.id', '=', 'consultant_users.client_id')
         ->leftJoin('users as Consultant', 'consultant_users.consultant_id', '=', 'Consultant.id')
-        ->orderBy('created_at','desc')
+        ->orderBy('users.created_at','desc')
         ->paginate(\request()->limitBy ?? 150);
      
         // if(Auth::user()->hasRole('admin')){
@@ -352,6 +352,7 @@ class UserController extends Controller
         $consultantshow = true;
         $roleshow = false;
         $usernameshow = false;
+        
         return view('backend.users.index', compact('users','consultantshow','roleshow','usernameshow'));
     }
 }
