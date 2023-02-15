@@ -41,6 +41,7 @@
                     <!-- <th>ID</th>
                     <th>Name</th> -->
                     <th class="text-center" style="width: 30px;">Action</th>
+                    <th> View Forms</th>
                     <th>Surname</th>
                     <th>Username</th>
                     <th>Matter</th>
@@ -50,7 +51,7 @@
                     <th>Application Status</th>
                     @if(Auth::user()->hasRole('admin') && $consultantshow == true ) <th>Consultant</th> @endif
 
-                    <th> View Forms</th>
+                    
                     <th> Created On</th>
                     
                 </tr>
@@ -80,6 +81,11 @@
                             @method('DELETE')
                         </form>
                         </td>
+                        <td>
+                        <a href="{{ route('admin.user.formslist', $user->id) }}" class="btn btn-sm btn-primary">
+                            <i class="fa fa-eye"> View Forms</i>
+                        </a>
+                        </td>
                         <td>{{ strtoupper($user->surname) }}
                         </td>
                         <td>{{ $user->username }} </td> 
@@ -95,13 +101,6 @@
                          @if(Auth::user()->hasRole('admin') && $consultantshow == true )  
                          <td> {{ isset($user->ConsulantName) ? $user->ConsulantName : 'N/A'}}</td> 
                          @endif
-
-                        
-                        <td>
-                        <a href="{{ route('admin.user.formslist', $user->id) }}" class="btn btn-sm btn-primary">
-                            <i class="fa fa-eye"> View Forms</i>
-                        </a>
-                        </td>
                         <td>{{$user->created_at}}</td> 
                     
                 </tr>
