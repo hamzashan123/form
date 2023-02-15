@@ -113,6 +113,7 @@
         "searching": true,
         orderCellsTop: true,
         fixedHeader: true,
+        "order": [[ 7, "desc" ]],
         
         initComplete: function () {
             var api = this.api();

@@ -51,6 +51,7 @@
                     @if(Auth::user()->hasRole('admin') && $consultantshow == true ) <th>Consultant</th> @endif
 
                     <th> View Forms</th>
+                    <th> Created On</th>
                     
                 </tr>
             </thead>
@@ -94,12 +95,14 @@
                          @if(Auth::user()->hasRole('admin') && $consultantshow == true )  
                          <td> {{ isset($user->ConsulantName) ? $user->ConsulantName : 'N/A'}}</td> 
                          @endif
+
                         
                         <td>
                         <a href="{{ route('admin.user.formslist', $user->id) }}" class="btn btn-sm btn-primary">
                             <i class="fa fa-eye"> View Forms</i>
                         </a>
                         </td>
+                        <td>{{$user->created_at}}</td> 
                     
                 </tr>
                 @empty
@@ -137,7 +140,7 @@
         "searching": true,
         orderCellsTop: true,
         fixedHeader: true,
-        // "order": [[ 3, "desc" ]],
+        "order": [[ 8, "desc" ]],
         
         initComplete: function () {
             var api = this.api();
