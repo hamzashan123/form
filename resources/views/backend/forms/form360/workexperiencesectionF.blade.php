@@ -184,7 +184,41 @@
 
             
             <tr>
-                <td> WORK TO BE PERFORMED IN AUSTRALIA OR NEW ZEALAND – DOCS Invitation letter from the Australia or New Zealand company 
+                <td> Invitation letter from the university  
+                    </td>
+                    <td> <input type="file" name="workexp3_income_tax_return2" id="workexp3_income_tax_return2">
+                    @if (array_key_exists('workexp3_income_tax_return2', $docdataForm360))
+                                                            
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexp3_income_tax_return2/'.$docdataForm360['workexp3_income_tax_return2'])  }}">
+                        @if(str_contains($docdataForm360['workexp3_income_tax_return2'] , '.pdf'))
+                                <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                        @else
+                        <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexp3_income_tax_return2/'.$docdataForm360['workexp3_income_tax_return2'])  }}"  />
+                        @endif
+                        </a>
+                    @endif  
+                </td>
+            </tr>
+
+            <tr>
+                <td> Contract with the university   
+                    </td>
+                    <td> <input type="file" name="workexp3_income_tax_return2" id="workexp3_income_tax_return2">
+                    @if (array_key_exists('workexp3_income_tax_return2', $docdataForm360))
+                                                            
+                        <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexp3_income_tax_return2/'.$docdataForm360['workexp3_income_tax_return2'])  }}">
+                        @if(str_contains($docdataForm360['workexp3_income_tax_return2'] , '.pdf'))
+                                <img class="imgfile" src="{{asset('pdficon.png')}}"   />
+                        @else
+                        <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexp3_income_tax_return2/'.$docdataForm360['workexp3_income_tax_return2'])  }}"  />
+                        @endif
+                        </a>
+                    @endif  
+                </td>
+            </tr>
+
+            <tr>
+                <td> Any other document that may be relevant for this visa  
                     </td>
                     <td> <input type="file" name="workexp3_income_tax_return2" id="workexp3_income_tax_return2">
                     @if (array_key_exists('workexp3_income_tax_return2', $docdataForm360))
