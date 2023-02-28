@@ -23,6 +23,9 @@
         @include('backend.forms.form360.workexperiencesectionD')
         @include('backend.forms.form360.workexperiencesectionE')
         @include('backend.forms.form360.workexperiencesectionF')
+        @include('backend.forms.form360.workexperiencesectionG')
+        @include('backend.forms.form360.workexperiencesectionH')
+        @include('backend.forms.form360.workexperiencesectionI')
                 
            
 
