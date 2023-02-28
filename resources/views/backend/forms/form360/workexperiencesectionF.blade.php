@@ -23,6 +23,8 @@
                 </select>
             </td>
         </tr>
+
+
         <tr>
             <td> Name of the Organization where the training will take place
             </td>
@@ -39,6 +41,8 @@
             </td>
             <td> <input type="text" name="workexperience_abn_section_f" id="workexperience_abn_section_f" @if(isset($data->workexperience_abn_section_f)) value="{{$data->workexperience_abn_section_f}}" @endif/> </td>
         </tr>
+
+
         <tr>
             <td> Address of the organization
             </td>
@@ -77,15 +81,16 @@
         </tr>
 
 
+
         <tr>
             <td> Position of the person in the organization
             </td>
-            <td> <input type="text" name="workexperience_contact_position_section_f" id="workexperience_contact_position_section_f" @if(isset($data->workexperience_contact_position_section_f)) value="{{$data->workexperience_contact_position_section_f}}" @endif/> </td>
+            <td> <input type="text" name="workexperience_position_section_f" id="workexperience_position_section_f" @if(isset($data->workexperience_position_section_f)) value="{{$data->workexperience_position_section_f}}" @endif/> </td>
         </tr>
         <tr>
             <td> Business phone
             </td>
-            <td> <input type="tel" name="workexperience_business_phone_section_f" id="workexperience_business_phone_section_f" @if(isset($data->workexperience_business_phone_section_f)) value="{{$data->workexperience_business_phone_section_f}}" @endif/> </td>
+            <td> <input type="tel" name="workexperience_business_section_f" id="workexperience_business_section_f" @if(isset($data->workexperience_business_section_f)) value="{{$data->workexperience_business_section_f}}" @endif/> </td>
         </tr>
         <tr>
             <td> Mobile
@@ -95,7 +100,7 @@
         <tr>
             <td> Email address
             </td>
-            <td> <input type="text" name="workexperience_email_address_section_f" id="workexperience_email_address_section_f" @if(isset($data->workexperience_email_address_section_f)) value="{{$data->workexperience_email_address_section_f}}" @endif/> </td>
+            <td> <input type="text" name="workexperience_email_section_f" id="workexperience_email_section_f" @if(isset($data->workexperience_email_section_f)) value="{{$data->workexperience_email_section_f}}" @endif/> </td>
         </tr>
         <tr>
             <td> Position Activity Position details
@@ -105,12 +110,12 @@
         <tr>
             <td> Give details of the type of activity the applicant will be undertaking in Australia
             </td>
-            <td> <input type="text" name="workexperience_type_of_activity_section_f" id="workexperience_type_of_activity_section_f" @if(isset($data->workexperience_type_of_activity_section_f)) value="{{$data->workexperience_type_of_activity_section_f}}" @endif/> </td>
+            <td> <input type="text" name="workexperience_applicant_undertaking_section_f" id="workexperience_applicant_undertaking_section_f" @if(isset($data->workexperience_applicant_undertaking_section_f)) value="{{$data->workexperience_applicant_undertaking_section_f}}" @endif/> </td>
         </tr>
         <tr>
             <td> Your Position as the visa applicant during the training period
             </td>
-            <td> <input type="text" name="workexperience_applicant_position_section_f" id="workexperience_applicant_position_section_f" @if(isset($data->workexperience_applicant_position_section_f)) value="{{$data->workexperience_applicant_position_section_f}}" @endif/> </td>
+            <td> <input type="text" name="workexperience_visa_applicant_section_f" id="workexperience_visa_applicant_section_f" @if(isset($data->workexperience_visa_applicant_section_f)) value="{{$data->workexperience_visa_applicant_section_f}}" @endif/> </td>
         </tr>
         <tr>
             <td> Please indicate the main 5 Duties / activities you will be performing
@@ -120,34 +125,40 @@
         <tr>
             <td> Date when the activity will commence
             </td>
-            <td> <input type="date" name="workexperience_date_activity_section_f" id="workexperience_date_activity_section_f" @if(isset($data->workexperience_date_activity_section_f)) value="{{$data->workexperience_date_activity_section_f}}" @endif/> </td>
+            <td> <input type="date" name="workexperience_date_commence_section_f" id="workexperience_date_commence_section_f" @if(isset($data->workexperience_date_commence_section_f)) value="{{$data->workexperience_date_commence_section_f}}" @endif/> </td>
         </tr>
         <tr>
             <td> Date when the activity will end
             </td>
-            <td> <input type="date" name="workexperience_date_activity_end_section_f" id="workexperience_date_activity_end_section_f" @if(isset($data->workexperience_date_activity_end_section_f)) value="{{$data->workexperience_date_activity_end_section_f}}" @endif/> </td>
+            <td> <input type="date" name="workexperience_date_end_section_f" id="workexperience_date_end_section_f" @if(isset($data->workexperience_date_end_section_f)) value="{{$data->workexperience_date_end_section_f}}" @endif/> </td>
         </tr>
         <tr>
             <td> Give details of all street addresses where the activity will be undertaken
             </td>
-            <td> <input type="text" name="workexperience_street_address_section_f" id="workexperience_street_address_section_f" @if(isset($data->workexperience_street_address_section_f)) value="{{$data->workexperience_street_address_section_f}}" @endif/> </td>
+            <td> <input type="text" name="workexperience_street_addresses_section_f" id="workexperience_street_addresses_section_f" @if(isset($data->workexperience_street_addresses_section_f)) value="{{$data->workexperience_street_addresses_section_f}}" @endif/> </td>
         </tr>
         <tr>
             <td> Will you be paid for undertaking the activity in Australia?
 
             </td>
             <td>
-                <select name="workexperience_undertaking_activity_section_f" id="workexperience_undertaking_activity_section_f" class="form-control">
+                <select name="workexperience_will_paid_undertaking_section_f" id="workexperience_will_paid_undertaking_section_f" class="form-control">
                     <option value=""> Select Option </option>
 
-                    @if(!empty(isset($data->workexperience_undertaking_activity_section_f)))
-                    <option value="{{$data->workexperience_undertaking_activity_section_f}}" selected>{{$data->workexperience_undertaking_activity_section_f}}</option>
+                    @if(!empty(isset($data->workexperience_will_paid_undertaking_section_f)))
+                    <option value="{{$data->workexperience_will_paid_undertaking_section_f}}" selected>{{$data->workexperience_will_paid_undertaking_section_f}}</option>
                     @endif
                     <option value="Yes">Yes </option>
                     <option value="No"> No </option>
                 </select>
             </td>
         </tr>
+        <tr>
+
+
+
+
+
         <tr>
             <td> How much will you be paid for the entire period of stay
             </td>
@@ -182,18 +193,51 @@
     <tbody>
 
 
-
         <tr>
-            <td> WORK TO BE PERFORMED IN AUSTRALIA OR NEW ZEALAND – DOCS Invitation letter from the Australia or New Zealand company
+            <td> Invitation letter from the university
             </td>
-            <td> <input type="file" name="workexperience_work_performed_doc_section_f" id="workexperience_work_performed_doc_section_f">
-                @if (array_key_exists('workexperience_work_performed_doc_section_f', $docdataForm360))
+            <td> <input type="file" name="workexperience_invitation_letter_section_f" id="workexperience_invitation_letter_section_f">
+                @if (array_key_exists('workexperience_invitation_letter_section_f', $docdataForm360))
 
-                <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexperience_work_performed_doc_section_f/'.$docdataForm360['workexperience_work_performed_doc_section_f'])  }}">
-                    @if(str_contains($docdataForm360['workexperience_work_performed_doc_section_f'] , '.pdf'))
+                <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexperience_invitation_letter_section_f/'.$docdataForm360['workexperience_invitation_letter_section_f'])  }}">
+                    @if(str_contains($docdataForm360['workexperience_invitation_letter_section_f'] , '.pdf'))
                     <img class="imgfile" src="{{asset('pdficon.png')}}" />
                     @else
-                    <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexperience_work_performed_doc_section_f/'.$docdataForm360['workexperience_work_performed_doc_section_f'])  }}" />
+                    <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexperience_invitation_letter_section_f/'.$docdataForm360['workexperience_invitation_letter_section_f'])  }}" />
+                    @endif
+                </a>
+                @endif
+            </td>
+        </tr>
+
+        <tr>
+            <td> Contract with the university
+            </td>
+            <td> <input type="file" name="workexperience_contract_university_section_f" id="workexperience_contract_university_section_f">
+                @if (array_key_exists('workexperience_contract_university_section_f', $docdataForm360))
+
+                <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexperience_contract_university_section_f/'.$docdataForm360['workexperience_contract_university_section_f'])  }}">
+                    @if(str_contains($docdataForm360['workexperience_contract_university_section_f'] , '.pdf'))
+                    <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                    @else
+                    <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexperience_contract_university_section_f/'.$docdataForm360['workexperience_contract_university_section_f'])  }}" />
+                    @endif
+                </a>
+                @endif
+            </td>
+        </tr>
+
+        <tr>
+            <td> Any other document that may be relevant for this visa
+            </td>
+            <td> <input type="file" name="workexperience_anyother_document_section_f" id="workexperience_anyother_document_section_f">
+                @if (array_key_exists('workexperience_anyother_document_section_f', $docdataForm360))
+
+                <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexperience_anyother_document_section_f/'.$docdataForm360['workexperience_anyother_document_section_f'])  }}">
+                    @if(str_contains($docdataForm360['workexperience_anyother_document_section_f'] , '.pdf'))
+                    <img class="imgfile" src="{{asset('pdficon.png')}}" />
+                    @else
+                    <img class="imgfile" src="{{  asset('/storage/form360/'.$data->user_id.'/workexperience_anyother_document_section_f/'.$docdataForm360['workexperience_anyother_document_section_f'])  }}" />
                     @endif
                 </a>
                 @endif
