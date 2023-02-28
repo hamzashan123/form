@@ -47,6 +47,9 @@
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
+                            <option value="No visa needed for being AUS/NZ citizen or PR visa holder"> No visa needed for being AUS/NZ citizen or PR visa holder
+                            </option>
+                            
                         </select>
                     </td>
                 </tr>
@@ -8045,7 +8048,9 @@
 
             </tbody>
         </table>
+        
         <h2 class="fs-title">SIBLING 3 </h2>
+
         <table>
             <tbody>
                 <tr>
@@ -8700,275 +8705,7 @@
                             @if(!empty(isset($data->fam_member_bro_sis_currently_live3)))
                             <option value="{{$data->fam_member_bro_sis_currently_live3}}" selected>{{$data->fam_member_bro_sis_currently_live3}}</option>
                             @endif
-                            <option value="Afghanistan">Afghanistan</option>
-                            <option value="Åland Islands">Aland Islands</option>
-                            <option value="Albania">Albania</option>
-                            <option value="Algeria">Algeria</option>
-                            <option value="American Samoa">American Samoa</option>
-                            <option value="Andorra">Andorra</option>
-                            <option value="Angola">Angola</option>
-                            <option value="Anguilla">Anguilla</option>
-                            <option value="Antarctica">Antarctica</option>
-                            <option value="Antigua and Barbuda">Antigua and Barbuda</option>
-                            <option value="Argentina">Argentina</option>
-                            <option value="Armenia">Armenia</option>
-                            <option value="Aruba">Aruba</option>
-                            <option value="Australia">Australia</option>
-                            <option value="Austria">Austria</option>
-                            <option value="Azerbaijan">Azerbaijan</option>
-                            <option value="Bahamas">Bahamas</option>
-                            <option value="Bahrain">Bahrain</option>
-                            <option value="Bangladesh">Bangladesh</option>
-                            <option value="Barbados">Barbados</option>
-                            <option value="Belarus">Belarus</option>
-                            <option value="Belgium">Belgium</option>
-                            <option value="Belize">Belize</option>
-                            <option value="Benin">Benin</option>
-                            <option value="Bermuda">Bermuda</option>
-                            <option value="Bhutan">Bhutan</option>
-                            <option value="Bolivia">Bolivia</option>
-                            <option value="Bosnia and Herzegovina">Bosnia and Herzegovina
-                            </option>
-                            <option value="Botswana">Botswana</option>
-                            <option value="Bouvet Island">Bouvet Island</option>
-                            <option value="Brazil">Brazil</option>
-                            <option value="British Indian Ocean Territory">British Indian Ocean
-                                Territory</option>
-                            <option value="Brunei Darussalam">Brunei Darussalam</option>
-                            <option value="Bulgaria">Bulgaria</option>
-                            <option value="Burkina Faso">Burkina Faso</option>
-                            <option value="Burundi">Burundi</option>
-                            <option value="Cambodia">Cambodia</option>
-                            <option value="Cameroon">Cameroon</option>
-                            <option value="Canada">Canada</option>
-                            <option value="Cape Verde">Cape Verde</option>
-                            <option value="Cayman Islands">Cayman Islands</option>
-                            <option value="Central African Republic">Central African Republic
-                            </option>
-                            <option value="Chad">Chad</option>
-                            <option value="Chile">Chile</option>
-                            <option value="China">China</option>
-                            <option value="Christmas Island">Christmas Island</option>
-                            <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands
-                            </option>
-                            <option value="Colombia">Colombia</option>
-                            <option value="Comoros">Comoros</option>
-                            <option value="Congo">Congo</option>
-                            <option value="Congo, The Democratic Republic of The">Congo, The
-                                Democratic Republic of The</option>
-                            <option value="Cook Islands">Cook Islands</option>
-                            <option value="Costa Rica">Costa Rica</option>
-                            <option value="Cote D'ivoire">Cote D'ivoire</option>
-                            <option value="Croatia">Croatia</option>
-                            <option value="Cuba">Cuba</option>
-                            <option value="Cyprus">Cyprus</option>
-                            <option value="Czech Republic">Czech Republic</option>
-                            <option value="Denmark">Denmark</option>
-                            <option value="Djibouti">Djibouti</option>
-                            <option value="Dominica">Dominica</option>
-                            <option value="Dominican Republic">Dominican Republic</option>
-                            <option value="Ecuador">Ecuador</option>
-                            <option value="Egypt">Egypt</option>
-                            <option value="El Salvador">El Salvador</option>
-                            <option value="Equatorial Guinea">Equatorial Guinea</option>
-                            <option value="Eritrea">Eritrea</option>
-                            <option value="Estonia">Estonia</option>
-                            <option value="Ethiopia">Ethiopia</option>
-                            <option value="Falkland Islands (Malvinas)">Falkland Islands
-                                (Malvinas)</option>
-                            <option value="Faroe Islands">Faroe Islands</option>
-                            <option value="Fiji">Fiji</option>
-                            <option value="Finland">Finland</option>
-                            <option value="France">France</option>
-                            <option value="French Guiana">French Guiana</option>
-                            <option value="French Polynesia">French Polynesia</option>
-                            <option value="French Southern Territories">French Southern
-                                Territories</option>
-                            <option value="Gabon">Gabon</option>
-                            <option value="Gambia">Gambia</option>
-                            <option value="Georgia">Georgia</option>
-                            <option value="Germany">Germany</option>
-                            <option value="Ghana">Ghana</option>
-                            <option value="Gibraltar">Gibraltar</option>
-                            <option value="Greece">Greece</option>
-                            <option value="Greenland">Greenland</option>
-                            <option value="Grenada">Grenada</option>
-                            <option value="Guadeloupe">Guadeloupe</option>
-                            <option value="Guam">Guam</option>
-                            <option value="Guatemala">Guatemala</option>
-                            <option value="Guernsey">Guernsey</option>
-                            <option value="Guinea">Guinea</option>
-                            <option value="Guinea-bissau">Guinea-bissau</option>
-                            <option value="Guyana">Guyana</option>
-                            <option value="Haiti">Haiti</option>
-                            <option value="Heard Island and Mcdonald Islands">Heard Island and
-                                Mcdonald Islands</option>
-                            <option value="Holy See (Vatican City State)">Holy See (Vatican City
-                                State)</option>
-                            <option value="Honduras">Honduras</option>
-                            <option value="Hong Kong">Hong Kong</option>
-                            <option value="Hungary">Hungary</option>
-                            <option value="Iceland">Iceland</option>
-                            <option value="India">India</option>
-                            <option value="Indonesia">Indonesia</option>
-                            <option value="Iran, Islamic Republic of">Iran, Islamic Republic of
-                            </option>
-                            <option value="Iraq">Iraq</option>
-                            <option value="Ireland">Ireland</option>
-                            <option value="Isle of Man">Isle of Man</option>
-                            <option value="Israel">Israel</option>
-                            <option value="Italy">Italy</option>
-                            <option value="Jamaica">Jamaica</option>
-                            <option value="Japan">Japan</option>
-                            <option value="Jersey">Jersey</option>
-                            <option value="Jordan">Jordan</option>
-                            <option value="Kazakhstan">Kazakhstan</option>
-                            <option value="Kenya">Kenya</option>
-                            <option value="Kiribati">Kiribati</option>
-                            <option value="Korea, Democratic People's Republic of">Korea,
-                                Democratic People's Republic of</option>
-                            <option value="Korea, Republic of">Korea, Republic of</option>
-                            <option value="Kuwait">Kuwait</option>
-                            <option value="Kyrgyzstan">Kyrgyzstan</option>
-                            <option value="Lao People's Democratic Republic">Lao People's
-                                Democratic Republic</option>
-                            <option value="Latvia">Latvia</option>
-                            <option value="Lebanon">Lebanon</option>
-                            <option value="Lesotho">Lesotho</option>
-                            <option value="Liberia">Liberia</option>
-                            <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya
-                            </option>
-                            <option value="Liechtenstein">Liechtenstein</option>
-                            <option value="Lithuania">Lithuania</option>
-                            <option value="Luxembourg">Luxembourg</option>
-                            <option value="Macao">Macao</option>
-                            <option value="Macedonia, The Former Yugoslav Republic of">
-                                Macedonia, The Former Yugoslav Republic of</option>
-                            <option value="Madagascar">Madagascar</option>
-                            <option value="Malawi">Malawi</option>
-                            <option value="Malaysia">Malaysia</option>
-                            <option value="Maldives">Maldives</option>
-                            <option value="Mali">Mali</option>
-                            <option value="Malta">Malta</option>
-                            <option value="Marshall Islands">Marshall Islands</option>
-                            <option value="Martinique">Martinique</option>
-                            <option value="Mauritania">Mauritania</option>
-                            <option value="Mauritius">Mauritius</option>
-                            <option value="Mayotte">Mayotte</option>
-                            <option value="Mexico">Mexico</option>
-                            <option value="Micronesia, Federated States of">Micronesia,
-                                Federated States of</option>
-                            <option value="Moldova, Republic of">Moldova, Republic of</option>
-                            <option value="Monaco">Monaco</option>
-                            <option value="Mongolia">Mongolia</option>
-                            <option value="Montenegro">Montenegro</option>
-                            <option value="Montserrat">Montserrat</option>
-                            <option value="Morocco">Morocco</option>
-                            <option value="Mozambique">Mozambique</option>
-                            <option value="Myanmar">Myanmar</option>
-                            <option value="Namibia">Namibia</option>
-                            <option value="Nauru">Nauru</option>
-                            <option value="Nepal">Nepal</option>
-                            <option value="Netherlands">Netherlands</option>
-                            <option value="Netherlands Antilles">Netherlands Antilles</option>
-                            <option value="New Caledonia">New Caledonia</option>
-                            <option value="New Zealand">New Zealand</option>
-                            <option value="Nicaragua">Nicaragua</option>
-                            <option value="Niger">Niger</option>
-                            <option value="Nigeria">Nigeria</option>
-                            <option value="Niue">Niue</option>
-                            <option value="Norfolk Island">Norfolk Island</option>
-                            <option value="Northern Mariana Islands">Northern Mariana Islands
-                            </option>
-                            <option value="Norway">Norway</option>
-                            <option value="Oman">Oman</option>
-                            <option value="Pakistan">Pakistan</option>
-                            <option value="Palau">Palau</option>
-                            <option value="Palestinian Territory, Occupied">Palestinian
-                                Territory, Occupied</option>
-                            <option value="Panama">Panama</option>
-                            <option value="Papua New Guinea">Papua New Guinea</option>
-                            <option value="Paraguay">Paraguay</option>
-                            <option value="Peru">Peru</option>
-                            <option value="Philippines">Philippines</option>
-                            <option value="Pitcairn">Pitcairn</option>
-                            <option value="Poland">Poland</option>
-                            <option value="Portugal">Portugal</option>
-                            <option value="Puerto Rico">Puerto Rico</option>
-                            <option value="Qatar">Qatar</option>
-                            <option value="Reunion">Reunion</option>
-                            <option value="Romania">Romania</option>
-                            <option value="Russian Federation">Russian Federation</option>
-                            <option value="Rwanda">Rwanda</option>
-                            <option value="Saint Helena">Saint Helena</option>
-                            <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
-                            <option value="Saint Lucia">Saint Lucia</option>
-                            <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon
-                            </option>
-                            <option value="Saint Vincent and The Grenadines">Saint Vincent and
-                                The Grenadines</option>
-                            <option value="Samoa">Samoa</option>
-                            <option value="San Marino">San Marino</option>
-                            <option value="Sao Tome and Principe">Sao Tome and Principe</option>
-                            <option value="Saudi Arabia">Saudi Arabia</option>
-                            <option value="Senegal">Senegal</option>
-                            <option value="Serbia">Serbia</option>
-                            <option value="Seychelles">Seychelles</option>
-                            <option value="Sierra Leone">Sierra Leone</option>
-                            <option value="Singapore">Singapore</option>
-                            <option value="Slovakia">Slovakia</option>
-                            <option value="Slovenia">Slovenia</option>
-                            <option value="Solomon Islands">Solomon Islands</option>
-                            <option value="Somalia">Somalia</option>
-                            <option value="South Africa">South Africa</option>
-                            <option value="South Georgia and The South Sandwich Islands">South
-                                Georgia and The South Sandwich Islands</option>
-                            <option value="Spain">Spain</option>
-                            <option value="Sri Lanka">Sri Lanka</option>
-                            <option value="Sudan">Sudan</option>
-                            <option value="Suriname">Suriname</option>
-                            <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen
-                            </option>
-                            <option value="Swaziland">Swaziland</option>
-                            <option value="Sweden">Sweden</option>
-                            <option value="Switzerland">Switzerland</option>
-                            <option value="Syrian Arab Republic">Syrian Arab Republic</option>
-                            <option value="Taiwan">Taiwan</option>
-                            <option value="Tajikistan">Tajikistan</option>
-                            <option value="Tanzania, United Republic of">Tanzania, United
-                                Republic of</option>
-                            <option value="Thailand">Thailand</option>
-                            <option value="Timor-leste">Timor-leste</option>
-                            <option value="Togo">Togo</option>
-                            <option value="Tokelau">Tokelau</option>
-                            <option value="Tonga">Tonga</option>
-                            <option value="Trinidad and Tobago">Trinidad and Tobago</option>
-                            <option value="Tunisia">Tunisia</option>
-                            <option value="Turkey">Turkey</option>
-                            <option value="Turkmenistan">Turkmenistan</option>
-                            <option value="Turks and Caicos Islands">Turks and Caicos Islands
-                            </option>
-                            <option value="Tuvalu">Tuvalu</option>
-                            <option value="Uganda">Uganda</option>
-                            <option value="Ukraine">Ukraine</option>
-                            <option value="United Arab Emirates">United Arab Emirates</option>
-                            <option value="United Kingdom">United Kingdom</option>
-                            <option value="United States">United States</option>
-                            <option value="United States Minor Outlying Islands">United States
-                                Minor Outlying Islands</option>
-                            <option value="Uruguay">Uruguay</option>
-                            <option value="Uzbekistan">Uzbekistan</option>
-                            <option value="Vanuatu">Vanuatu</option>
-                            <option value="Venezuela">Venezuela</option>
-                            <option value="Viet Nam">Viet Nam</option>
-                            <option value="Virgin Islands, British">Virgin Islands, British
-                            </option>
-                            <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
-                            <option value="Wallis and Futuna">Wallis and Futuna</option>
-                            <option value="Western Sahara">Western Sahara</option>
-                            <option value="Yemen">Yemen</option>
-                            <option value="Zambia">Zambia</option>
-                            <option value="Zimbabwe">Zimbabwe</option>
+                            @include('backend.forms.countrielist')
                         </select>
                     </td>
                 </tr>
@@ -8976,7 +8713,678 @@
             </tbody>
         </table>
 
+        <h2 class="fs-title">Section B  </h2>
+        <p>Partner visa application only (To be filled out for who is in a relationship with an Australian/NZ citizen or PR visa holder)</p>
+        
+        <h3 class="fs-title">Common Details  </h3>
 
+        <table>
+            <tbody>
+                <tr>
+                    <td> Are you (visa applicant) in a relationship with your partner who is either: 
+                        An Australian citizen, 
+                        Permanent resident of Australia,
+                         New Zealand citizen ,
+                         NZ permanent resident
+                    </td>
+                    <td>
+                        <select name="fam_member_sectionb_relationship_partner" id="fam_member_sectionb_relationship_partner" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
+                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>
+                    </td>
+                </tr>
+
+          
+
+                <tr>
+                    <td> Who is your partner?
+
+                    </td>
+                    <td>
+                        <select name="fam_member_sectionb_who_is_partner" id="fam_member_sectionb_who_is_partner" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_sectionb_who_is_partner)))
+                            <option value="{{$data->fam_member_sectionb_who_is_partner}}" selected>{{$data->fam_member_sectionb_who_is_partner}}</option>
+                            @endif
+                            <option value="Australian citizen">Australian citizen </option>
+                            <option value="Permanent resident of Australia"> Permanent resident of Australia </option>
+                            <option value="New Zealand citizen "> New Zealand citizen  </option>
+                            <option value="NZ permanent resident"> NZ permanent resident </option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> How did your partner obtain Australian or NZ citizenship
+                        
+                    </td>
+                    <td>
+                        <select name="fam_member_sectionb_" id="fam_member_sectionb_" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_sectionb_)))
+                            <option value="{{$data->fam_member_sectionb_}}" selected>{{$data->fam_member_sectionb_}}</option>
+                            @endif
+                            <option value="Birth">Birth </option>
+                            <option value="Descent"> Descent </option>
+                            <option value="After obtaining PR visa"> After obtaining PR visa </option> 
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td> When did you first meet your partner?
+                    </td>
+                    <td> <input type="date" name="fam_member_sectionb_" id="fam_member_sectionb_" @if(isset($data->fam_member_sectionb_)) value="{{$data->fam_member_sectionb_}}" @endif/> </td>
+                </tr>
+
+                <tr>
+                    <td> How did you meet her exactly (Please indicate the circumstances)
+                    </td>
+                    <td> <input type="text" name="fam_member_sectionb_" id="fam_member_sectionb_" @if(isset($data->fam_member_sectionb_)) value="{{$data->fam_member_sectionb_}}" @endif/> </td>
+                </tr>
+
+                <tr>
+                    <td> When did you become a couple to the exclusion of all other?
+                    </td>
+                    <td> <input type="date" name="fam_member_sectionb_" id="fam_member_sectionb_" @if(isset($data->fam_member_sectionb_)) value="{{$data->fam_member_sectionb_}}" @endif/> </td>
+                </tr>
+
+                <tr>
+                    <td> What is your civil status?
+                        
+                    </td>
+                    <td>
+                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
+                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @endif
+                            <option value="Married">Married </option>
+                            <option value="In a de facto relationship with a formal certificate"> In a de facto relationship with a formal certificate </option>
+                            <option value="In a de facto relationship without a formal">In a de facto relationship without a formal certificate. </option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Indicate your date of marriage or date of when you registered your relationship
+                    </td>
+                    <td> <input type="date" name="fam_member_child_dob2" id="fam_member_child_dob2" @if(isset($data->fam_member_child_dob2)) value="{{$data->fam_member_child_dob2}}" @endif/> </td>
+                </tr>
+
+                <tr>
+                    <td> Do you currently live together? 
+                        
+                    </td>
+                    <td>
+                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
+                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td> If you live together, please indicate when you started living together
+                    </td>
+                    <td> <input type="date" name="fam_member_child_dob2" id="fam_member_child_dob2" @if(isset($data->fam_member_child_dob2)) value="{{$data->fam_member_child_dob2}}" @endif/> </td>
+                </tr>
+                <tr>
+                    <td> Ever since you became a couple, did you live apart for any period? If so, please indicate from when – to, the reason and if you maintained regular contact at all times
+                    </td>
+                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                </tr>
+                <tr>
+                    <td> Have you or your partner even been married or in a formal defacto relationship before?
+                        
+                    </td>
+                    <td>
+                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
+                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Do you have children from your relationship? 
+                        
+                    </td>
+                    <td>
+                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
+                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Do you have children from any previous relationship? If yes please specify
+                    </td>
+                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                </tr>
+                <tr>
+                    <td> Has your partner ever sponsored anyone on any type of visa before? If so, please specify 
+                    </td>
+                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                </tr>
+                <tr>
+                    <td> Has your partner ever been sponsored for any type of visa before?
+                    </td>
+                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                </tr>
+
+                <tr>
+                    <td> Do you have a joint bank account?  
+                        
+                    </td>
+                    <td>
+                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
+                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td> In which country is the bank account?
+                        
+                    </td>
+                    <td>
+                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                            <option value=""> Select Country </option>
+
+                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
+                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @endif
+                            @include('backend.forms.countrielist')
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td> If you have a joint bank account, when was it opened
+                    </td>
+                    <td> <input type="date" name="fam_member_child_dob2" id="fam_member_child_dob2" @if(isset($data->fam_member_child_dob2)) value="{{$data->fam_member_child_dob2}}" @endif/> </td>
+                </tr>
+
+                <tr>
+                    <td> Is this bank account used on a regular basis?
+                        
+                    </td>
+                    <td>
+                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
+                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Do you have joint rental agreement?
+                        
+                    </td>
+                    <td>
+                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
+                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> When is the start date of this rental agreement? 
+                    </td>
+                    <td> <input type="date" name="fam_member_child_dob2" id="fam_member_child_dob2" @if(isset($data->fam_member_child_dob2)) value="{{$data->fam_member_child_dob2}}" @endif/> </td>
+                </tr>
+
+                <tr>
+                    <td> Are you able to provide utility bills showing each person’s name and same address?
+                        
+                    </td>
+                    <td>
+                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
+                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Are you able to have at least 2 people (guarantor) to declare your relationship is genuine?
+                        
+                    </td>
+                    <td>
+                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
+                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <h3 class="fs-title">Details of your guarantors:</h3>
+        <h3 class="fs-title">Person N.1</h3>
+        <p>The person must know the visa applicant and the partner for at least 12 months</p>
+
+        <table>
+            <tbody>
+               
+                <tr>
+                    <td> Name 
+                    </td>
+                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                </tr>
+                <tr>
+                    <td> Surname
+                    </td>
+                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                </tr>
+                <tr>
+                    <td> Date of birth
+                    </td>
+                    <td> <input type="date" name="fam_member_child_dob2" id="fam_member_child_dob2" @if(isset($data->fam_member_child_dob2)) value="{{$data->fam_member_child_dob2}}" @endif/> </td>
+                </tr>
+                <tr>
+                    <td> Is this person a: Australian citizenship or hold permanent residency?
+                        
+                    </td>
+                    <td>
+                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
+                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Work-position 
+                    </td>
+                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                </tr>
+                <tr>
+                    <td> Phone contact 
+                    </td>
+                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                </tr>
+                <tr>
+                    <td> Email contact 
+                    </td>
+                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                </tr>
+                <tr>
+                    <td> How long has this person known the visa applicant for? 
+                        
+                    </td>
+                    <td>
+                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
+                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @endif
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                            <option value="33">33</option>
+                            <option value="34">34</option>
+                            <option value="35">35</option>
+                            <option value="36">36</option>
+                            <option value="37">37</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option>
+                            <option value="45">45</option>
+                            <option value="46">46</option>
+                            <option value="47">47</option>
+                            <option value="48">48</option>
+                            <option value="49">49</option>
+                            <option value="50">50</option>
+                            <option value="51">51</option>
+                            <option value="52">52</option>
+                            <option value="53">53</option>
+                            <option value="54">54</option>
+                            <option value="55">55</option>
+                            <option value="56">56</option>
+                            <option value="57">57</option>
+                            <option value="58">58</option>
+                            <option value="59">59</option>
+                            <option value="60">60</option>
+                            <option value="61">61</option>
+                            <option value="62">62</option>
+                            <option value="63">63</option>
+                            <option value="64">64</option>
+                            <option value="65">65</option>
+                            <option value="66">66</option>
+                            <option value="67">67</option>
+                            <option value="68">68</option>
+                            <option value="69">69</option>
+                            <option value="70">70</option>
+                            <option value="71">71</option>
+                            <option value="72">72</option>
+                            <option value="73">73</option>
+                            <option value="74">74</option>
+                            <option value="75">75</option>
+                            <option value="76">76</option>
+                            <option value="77">77</option>
+                            <option value="78">78</option>
+                            <option value="79">79</option>
+                            <option value="80">80</option>
+                            <option value="81">81</option>
+                            <option value="82">82</option>
+                            <option value="83">83</option>
+                            <option value="84">84</option>
+                            <option value="85">85</option>
+                            <option value="86">86</option>
+                            <option value="87">87</option>
+                            <option value="88">88</option>
+                            <option value="89">89</option>
+                            <option value="90">90</option>
+                            <option value="91">91</option>
+                            <option value="92">92</option>
+                            <option value="93">93</option>
+                            <option value="94">94</option>
+                            <option value="95">95</option>
+                            <option value="96">96</option>
+                            <option value="97">97</option>
+                            <option value="98">98</option>
+                            <option value="99">99</option>
+                            <option value="100">100</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Is this person willing to complete form 888?
+                        
+                    </td>
+                    <td>
+                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
+                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>
+                    </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+
+        <h3 class="fs-title">Person N.2</h3>
+
+        <table>
+            <tbody>
+               
+                <tr>
+                    <td> Name 
+                    </td>
+                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                </tr>
+                <tr>
+                    <td> Surname
+                    </td>
+                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                </tr>
+                <tr>
+                    <td> Date of birth
+                    </td>
+                    <td> <input type="date" name="fam_member_child_dob2" id="fam_member_child_dob2" @if(isset($data->fam_member_child_dob2)) value="{{$data->fam_member_child_dob2}}" @endif/> </td>
+                </tr>
+                <tr>
+                    <td> Is this person a: Australian citizenship or hold permanent residency?
+                        
+                    </td>
+                    <td>
+                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
+                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Work-position 
+                    </td>
+                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                </tr>
+                <tr>
+                    <td> Phone contact 
+                    </td>
+                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                </tr>
+                <tr>
+                    <td> Email contact 
+                    </td>
+                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                </tr>
+                <tr>
+                    <td> How long has this person known the visa applicant for? 
+                        
+                    </td>
+                    <td>
+                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
+                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @endif
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                            <option value="33">33</option>
+                            <option value="34">34</option>
+                            <option value="35">35</option>
+                            <option value="36">36</option>
+                            <option value="37">37</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option>
+                            <option value="45">45</option>
+                            <option value="46">46</option>
+                            <option value="47">47</option>
+                            <option value="48">48</option>
+                            <option value="49">49</option>
+                            <option value="50">50</option>
+                            <option value="51">51</option>
+                            <option value="52">52</option>
+                            <option value="53">53</option>
+                            <option value="54">54</option>
+                            <option value="55">55</option>
+                            <option value="56">56</option>
+                            <option value="57">57</option>
+                            <option value="58">58</option>
+                            <option value="59">59</option>
+                            <option value="60">60</option>
+                            <option value="61">61</option>
+                            <option value="62">62</option>
+                            <option value="63">63</option>
+                            <option value="64">64</option>
+                            <option value="65">65</option>
+                            <option value="66">66</option>
+                            <option value="67">67</option>
+                            <option value="68">68</option>
+                            <option value="69">69</option>
+                            <option value="70">70</option>
+                            <option value="71">71</option>
+                            <option value="72">72</option>
+                            <option value="73">73</option>
+                            <option value="74">74</option>
+                            <option value="75">75</option>
+                            <option value="76">76</option>
+                            <option value="77">77</option>
+                            <option value="78">78</option>
+                            <option value="79">79</option>
+                            <option value="80">80</option>
+                            <option value="81">81</option>
+                            <option value="82">82</option>
+                            <option value="83">83</option>
+                            <option value="84">84</option>
+                            <option value="85">85</option>
+                            <option value="86">86</option>
+                            <option value="87">87</option>
+                            <option value="88">88</option>
+                            <option value="89">89</option>
+                            <option value="90">90</option>
+                            <option value="91">91</option>
+                            <option value="92">92</option>
+                            <option value="93">93</option>
+                            <option value="94">94</option>
+                            <option value="95">95</option>
+                            <option value="96">96</option>
+                            <option value="97">97</option>
+                            <option value="98">98</option>
+                            <option value="99">99</option>
+                            <option value="100">100</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Is this person willing to complete form 888?
+                        
+                    </td>
+                    <td>
+                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
+                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @endif
+                            <option value="Yes">Yes </option>
+                            <option value="No"> No </option>
+                        </select>
+                    </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+        
+        
 
 
     </div>

@@ -1,8 +1,5 @@
 ﻿
-                            <option value="">Select Nationality</option>
-                            @if(!empty(isset($data->countryofresidence_country1)))
-                            <option value="{{$data->countryofresidence_country1}}" selected>{{$data->countryofresidence_country1}}</option>
-                            @endif
+                            <option value="">Select Country</option>
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Aland Islands</option>
                             <option value="Albania">Albania</option>
