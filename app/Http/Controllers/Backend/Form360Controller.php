@@ -98,6 +98,8 @@ class Form360Controller extends Controller
 
     public function save(Request $request)
     {
+        //dd($request);
+
         $formExist = DB::table('form360')->where('user_id', Auth::user()->id)->first();
         //agar form ni ha 
         if(empty($formExist)){
@@ -137,6 +139,19 @@ class Form360Controller extends Controller
             DB::table('form360_work_experience_intra_companies')->insert([
                 $fieldsets['workExperienceIntraData']
             ]);
+
+            DB::table('form360_workexperiencesection_a')->insert([
+                $fieldsets['workexperiencesectionA']
+            ]);
+
+            // DB::table('form360_workexperiencesection_b')->insert([
+            //     $fieldsets['workexperiencesectionB']
+            // ]);
+
+            // DB::table('form360_workexperiencesection_c')->insert([
+            //     $fieldsets['workexperiencesectionC']
+            // ]);
+
     
             DB::table('form360_visa_history')->insert([
                 $fieldsets['visahistoryData']
