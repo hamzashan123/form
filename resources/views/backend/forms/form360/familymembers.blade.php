@@ -8132,11 +8132,11 @@
                         NZ permanent resident
                     </td>
                     <td>
-                        <select name="fam_member_sectionb_relationship_partner" id="fam_member_sectionb_relationship_partner" class="form-control">
+                        <select name="fam_member_partner_visa_sectionb" id="fam_member_partner_visa_sectionb" class="form-control">
                             <option value=""> Select Option </option>
 
-                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
-                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @if(!empty(isset($data->fam_member_partner_visa_sectionb)))
+                            <option value="{{$data->fam_member_partner_visa_sectionb}}" selected>{{$data->fam_member_partner_visa_sectionb}}</option>
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
@@ -8151,11 +8151,11 @@
 
                     </td>
                     <td>
-                        <select name="fam_member_sectionb_who_is_partner" id="fam_member_sectionb_who_is_partner" class="form-control">
+                        <select name="fam_member_your_partner_visa_sectionb" id="fam_member_your_partner_visa_sectionb" class="form-control">
                             <option value=""> Select Option </option>
 
-                            @if(!empty(isset($data->fam_member_sectionb_who_is_partner)))
-                            <option value="{{$data->fam_member_sectionb_who_is_partner}}" selected>{{$data->fam_member_sectionb_who_is_partner}}</option>
+                            @if(!empty(isset($data->fam_member_your_partner_visa_sectionb)))
+                            <option value="{{$data->fam_member_your_partner_visa_sectionb}}" selected>{{$data->fam_member_your_partner_visa_sectionb}}</option>
                             @endif
                             <option value="Australian citizen">Australian citizen </option>
                             <option value="Permanent resident of Australia"> Permanent resident of Australia </option>
@@ -8170,11 +8170,11 @@
 
                     </td>
                     <td>
-                        <select name="fam_member_sectionb_" id="fam_member_sectionb_" class="form-control">
+                        <select name="fam_member_your_partner_obtain_visa_sectionb" id="fam_member_your_partner_obtain_visa_sectionb" class="form-control">
                             <option value=""> Select Option </option>
 
-                            @if(!empty(isset($data->fam_member_sectionb_)))
-                            <option value="{{$data->fam_member_sectionb_}}" selected>{{$data->fam_member_sectionb_}}</option>
+                            @if(!empty(isset($data->fam_member_your_partner_obtain_visa_sectionb)))
+                            <option value="{{$data->fam_member_your_partner_obtain_visa_sectionb}}" selected>{{$data->fam_member_your_partner_obtain_visa_sectionb}}</option>
                             @endif
                             <option value="Birth">Birth </option>
                             <option value="Descent"> Descent </option>
@@ -8185,19 +8185,19 @@
                 <tr>
                     <td> When did you first meet your partner?
                     </td>
-                    <td> <input type="date" name="fam_member_sectionb_" id="fam_member_sectionb_" @if(isset($data->fam_member_sectionb_)) value="{{$data->fam_member_sectionb_}}" @endif/> </td>
+                    <td> <input type="date" name="fam_member_your_partner_first_meet_visa_sectionb" id="fam_member_your_partner_first_meet_visa_sectionb" @if(isset($data->fam_member_your_partner_first_meet_visa_sectionb)) value="{{$data->fam_member_your_partner_first_meet_visa_sectionb}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td> How did you meet her exactly (Please indicate the circumstances)
                     </td>
-                    <td> <input type="text" name="fam_member_sectionb_" id="fam_member_sectionb_" @if(isset($data->fam_member_sectionb_)) value="{{$data->fam_member_sectionb_}}" @endif/> </td>
+                    <td> <input type="text" name="fam_member_your_partner_first_meet_exactly_visa_sectionb" id="fam_member_your_partner_first_meet_exactly_visa_sectionb" @if(isset($data->fam_member_your_partner_first_meet_exactly_visa_sectionb)) value="{{$data->fam_member_your_partner_first_meet_exactly_visa_sectionb}}" @endif/> </td>
                 </tr>
 
                 <tr>
                     <td> When did you become a couple to the exclusion of all other?
                     </td>
-                    <td> <input type="date" name="fam_member_sectionb_" id="fam_member_sectionb_" @if(isset($data->fam_member_sectionb_)) value="{{$data->fam_member_sectionb_}}" @endif/> </td>
+                    <td> <input type="date" name="fam_member_your_partner_couple_sectionb" id="fam_member_your_partner_couple_sectionb" @if(isset($data->fam_member_your_partner_couple_sectionb)) value="{{$data->fam_member_your_partner_couple_sectionb}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -8205,11 +8205,11 @@
 
                     </td>
                     <td>
-                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                        <select name="fam_member_your_partner_civil_status_sectionb" id="fam_member_your_partner_civil_status_sectionb" class="form-control">
                             <option value=""> Select Option </option>
 
-                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
-                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @if(!empty(isset($data->fam_member_your_partner_civil_status_sectionb)))
+                            <option value="{{$data->fam_member_your_partner_civil_status_sectionb}}" selected>{{$data->fam_member_your_partner_civil_status_sectionb}}</option>
                             @endif
                             <option value="Married">Married </option>
                             <option value="In a de facto relationship with a formal certificate"> In a de facto relationship with a formal certificate </option>
@@ -8221,7 +8221,7 @@
                 <tr>
                     <td> Indicate your date of marriage or date of when you registered your relationship
                     </td>
-                    <td> <input type="date" name="fam_member_child_dob2" id="fam_member_child_dob2" @if(isset($data->fam_member_child_dob2)) value="{{$data->fam_member_child_dob2}}" @endif/> </td>
+                    <td> <input type="date" name="fam_member_your_partner_date_marriage_sectionb" id="fam_member_your_partner_date_marriage_sectionb" @if(isset($data->fam_member_your_partner_date_marriage_sectionb)) value="{{$data->fam_member_your_partner_date_marriage_sectionb}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -8229,11 +8229,11 @@
 
                     </td>
                     <td>
-                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                        <select name="fam_member_your_partner_live_together_sectionb" id="fam_member_your_partner_live_together_sectionb" class="form-control">
                             <option value=""> Select Option </option>
 
-                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
-                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @if(!empty(isset($data->fam_member_your_partner_live_together_sectionb)))
+                            <option value="{{$data->fam_member_your_partner_live_together_sectionb}}" selected>{{$data->fam_member_your_partner_live_together_sectionb}}</option>
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
@@ -8243,23 +8243,23 @@
                 <tr>
                     <td> If you live together, please indicate when you started living together
                     </td>
-                    <td> <input type="date" name="fam_member_child_dob2" id="fam_member_child_dob2" @if(isset($data->fam_member_child_dob2)) value="{{$data->fam_member_child_dob2}}" @endif/> </td>
+                    <td> <input type="date" name="fam_member_your_partner_started_live_together_sectionb" id="fam_member_your_partner_started_live_together_sectionb" @if(isset($data->fam_member_your_partner_started_live_together_sectionb)) value="{{$data->fam_member_your_partner_started_live_together_sectionb}}" @endif/> </td>
                 </tr>
                 <tr>
                     <td> Ever since you became a couple, did you live apart for any period? If so, please indicate from when – to, the reason and if you maintained regular contact at all times
                     </td>
-                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                    <td> <input type="text" name="fam_member_your_partner_became_a_couple_sectionb" id="fam_member_your_partner_became_a_couple_sectionb" @if(isset($data->fam_member_your_partner_became_a_couple_sectionb)) value="{{$data->fam_member_your_partner_became_a_couple_sectionb}}" @endif/> </td>
                 </tr>
                 <tr>
                     <td> Have you or your partner even been married or in a formal defacto relationship before?
 
                     </td>
                     <td>
-                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                        <select name="fam_member_your_partner_even_been_married_sectionb" id="fam_member_your_partner_even_been_married_sectionb" class="form-control">
                             <option value=""> Select Option </option>
 
-                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
-                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @if(!empty(isset($data->fam_member_your_partner_even_been_married_sectionb)))
+                            <option value="{{$data->fam_member_your_partner_even_been_married_sectionb}}" selected>{{$data->fam_member_your_partner_even_been_married_sectionb}}</option>
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
@@ -8271,11 +8271,11 @@
 
                     </td>
                     <td>
-                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                        <select name="fam_member_your_partner_children_sectionb" id="fam_member_your_partner_children_sectionb" class="form-control">
                             <option value=""> Select Option </option>
 
-                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
-                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @if(!empty(isset($data->fam_member_your_partner_children_sectionb)))
+                            <option value="{{$data->fam_member_your_partner_children_sectionb}}" selected>{{$data->fam_member_your_partner_children_sectionb}}</option>
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
@@ -8285,17 +8285,17 @@
                 <tr>
                     <td>Do you have children from any previous relationship? If yes please specify
                     </td>
-                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                    <td> <input type="text" name="fam_member_your_partner_have_children_sectionb" id="fam_member_your_partner_have_children_sectionb" @if(isset($data->fam_member_your_partner_have_children_sectionb)) value="{{$data->fam_member_your_partner_have_children_sectionb}}" @endif/> </td>
                 </tr>
                 <tr>
                     <td> Has your partner ever sponsored anyone on any type of visa before? If so, please specify
                     </td>
-                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                    <td> <input type="text" name="fam_member_your_partner_sponsored_sectionb" id="fam_member_your_partner_sponsored_sectionb" @if(isset($data->fam_member_your_partner_sponsored_sectionb)) value="{{$data->fam_member_your_partner_sponsored_sectionb}}" @endif/> </td>
                 </tr>
                 <tr>
                     <td> Has your partner ever been sponsored for any type of visa before?
                     </td>
-                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                    <td> <input type="text" name="fam_member_your_partner_type_of_visa_sectionb" id="fam_member_your_partner_type_of_visa_sectionb" @if(isset($data->fam_member_your_partner_type_of_visa_sectionb)) value="{{$data->fam_member_your_partner_type_of_visa_sectionb}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -8303,11 +8303,11 @@
 
                     </td>
                     <td>
-                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                        <select name="fam_member_your_partner_joint_bank_sectionb" id="fam_member_your_partner_joint_bank_sectionb" class="form-control">
                             <option value=""> Select Option </option>
 
-                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
-                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @if(!empty(isset($data->fam_member_your_partner_joint_bank_sectionb)))
+                            <option value="{{$data->fam_member_your_partner_joint_bank_sectionb}}" selected>{{$data->fam_member_your_partner_joint_bank_sectionb}}</option>
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
@@ -8319,11 +8319,11 @@
 
                     </td>
                     <td>
-                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                        <select name="fam_member_your_partner_bank_account_sectionb" id="fam_member_your_partner_bank_account_sectionb" class="form-control">
                             <option value=""> Select Country </option>
 
-                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
-                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @if(!empty(isset($data->fam_member_your_partner_bank_account_sectionb)))
+                            <option value="{{$data->fam_member_your_partner_bank_account_sectionb}}" selected>{{$data->fam_member_your_partner_bank_account_sectionb}}</option>
                             @endif
                             @include('backend.forms.countrielist')
                         </select>
@@ -8332,7 +8332,7 @@
                 <tr>
                     <td> If you have a joint bank account, when was it opened
                     </td>
-                    <td> <input type="date" name="fam_member_child_dob2" id="fam_member_child_dob2" @if(isset($data->fam_member_child_dob2)) value="{{$data->fam_member_child_dob2}}" @endif/> </td>
+                    <td> <input type="date" name="fam_member_your_partner_joint_bank_account_sectionb" id="fam_member_your_partner_joint_bank_account_sectionb" @if(isset($data->fam_member_your_partner_joint_bank_account_sectionb)) value="{{$data->fam_member_your_partner_joint_bank_account_sectionb}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -8340,11 +8340,11 @@
 
                     </td>
                     <td>
-                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                        <select name="fam_member_your_partner_regular_basis_sectionb" id="fam_member_your_partner_regular_basis_sectionb" class="form-control">
                             <option value=""> Select Option </option>
 
-                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
-                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @if(!empty(isset($data->fam_member_your_partner_regular_basis_sectionb)))
+                            <option value="{{$data->fam_member_your_partner_regular_basis_sectionb}}" selected>{{$data->fam_member_your_partner_regular_basis_sectionb}}</option>
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
@@ -8357,11 +8357,11 @@
 
                     </td>
                     <td>
-                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                        <select name="fam_member_your_partner_rental_agreement_sectionb" id="fam_member_your_partner_rental_agreement_sectionb" class="form-control">
                             <option value=""> Select Option </option>
 
-                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
-                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @if(!empty(isset($data->fam_member_your_partner_rental_agreement_sectionb)))
+                            <option value="{{$data->fam_member_your_partner_rental_agreement_sectionb}}" selected>{{$data->fam_member_your_partner_rental_agreement_sectionb}}</option>
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
@@ -8372,7 +8372,7 @@
                 <tr>
                     <td> When is the start date of this rental agreement?
                     </td>
-                    <td> <input type="date" name="fam_member_child_dob2" id="fam_member_child_dob2" @if(isset($data->fam_member_child_dob2)) value="{{$data->fam_member_child_dob2}}" @endif/> </td>
+                    <td> <input type="date" name="fam_member_your_partner_rental_agreement_startDate_sectionb" id="fam_member_your_partner_rental_agreement_startDate_sectionb" @if(isset($data->fam_member_your_partner_rental_agreement_startDate_sectionb)) value="{{$data->fam_member_your_partner_rental_agreement_startDate_sectionb}}" @endif/> </td>
                 </tr>
 
                 <tr>
@@ -8380,11 +8380,11 @@
 
                     </td>
                     <td>
-                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                        <select name="fam_member_your_partner_utilityBill_sectionb" id="fam_member_your_partner_utilityBill_sectionb" class="form-control">
                             <option value=""> Select Option </option>
 
-                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
-                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @if(!empty(isset($data->fam_member_your_partner_utilityBill_sectionb)))
+                            <option value="{{$data->fam_member_your_partner_utilityBill_sectionb}}" selected>{{$data->fam_member_your_partner_utilityBill_sectionb}}</option>
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
@@ -8397,11 +8397,11 @@
 
                     </td>
                     <td>
-                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                        <select name="fam_member_your_partner_guarantor_sectionb" id="fam_member_your_partner_guarantor_sectionb" class="form-control">
                             <option value=""> Select Option </option>
 
-                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
-                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @if(!empty(isset($data->fam_member_your_partner_guarantor_sectionb)))
+                            <option value="{{$data->fam_member_your_partner_guarantor_sectionb}}" selected>{{$data->fam_member_your_partner_guarantor_sectionb}}</option>
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
@@ -8422,28 +8422,28 @@
                 <tr>
                     <td> Name
                     </td>
-                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                    <td> <input type="text" name="fam_member_guarantor_name_p1_sectionb" id="fam_member_guarantor_name_p1_sectionb" @if(isset($data->fam_member_guarantor_name_p1_sectionb)) value="{{$data->fam_member_guarantor_name_p1_sectionb}}" @endif/> </td>
                 </tr>
                 <tr>
                     <td> Surname
                     </td>
-                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                    <td> <input type="text" name="fam_member_guarantor_surname_p1_sectionb" id="fam_member_guarantor_surname_p1_sectionb" @if(isset($data->fam_member_guarantor_surname_p1_sectionb)) value="{{$data->fam_member_guarantor_surname_p1_sectionb}}" @endif/> </td>
                 </tr>
                 <tr>
                     <td> Date of birth
                     </td>
-                    <td> <input type="date" name="fam_member_child_dob2" id="fam_member_child_dob2" @if(isset($data->fam_member_child_dob2)) value="{{$data->fam_member_child_dob2}}" @endif/> </td>
+                    <td> <input type="date" name="fam_member_guarantor_dob_p1_sectionb" id="fam_member_guarantor_dob_p1_sectionb" @if(isset($data->fam_member_guarantor_dob_p1_sectionb)) value="{{$data->fam_member_guarantor_dob_p1_sectionb}}" @endif/> </td>
                 </tr>
                 <tr>
                     <td> Is this person a: Australian citizenship or hold permanent residency?
 
                     </td>
                     <td>
-                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                        <select name="fam_member_guarantor_permanent_p1_sectionb" id="fam_member_guarantor_permanent_p1_sectionb" class="form-control">
                             <option value=""> Select Option </option>
 
-                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
-                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @if(!empty(isset($data->fam_member_guarantor_permanent_p1_sectionb)))
+                            <option value="{{$data->fam_member_guarantor_permanent_p1_sectionb}}" selected>{{$data->fam_member_guarantor_permanent_p1_sectionb}}</option>
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
@@ -8453,28 +8453,28 @@
                 <tr>
                     <td> Work-position
                     </td>
-                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                    <td> <input type="text" name="fam_member_guarantor_position_p1_sectionb" id="fam_member_guarantor_position_p1_sectionb" @if(isset($data->fam_member_guarantor_position_p1_sectionb)) value="{{$data->fam_member_guarantor_position_p1_sectionb}}" @endif/> </td>
                 </tr>
                 <tr>
                     <td> Phone contact
                     </td>
-                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                    <td> <input type="text" name="fam_member_guarantor_phone_p1_sectionb" id="fam_member_guarantor_phone_p1_sectionb" @if(isset($data->fam_member_guarantor_phone_p1_sectionb)) value="{{$data->fam_member_guarantor_phone_p1_sectionb}}" @endif/> </td>
                 </tr>
                 <tr>
                     <td> Email contact
                     </td>
-                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                    <td> <input type="text" name="fam_member_guarantor_email_p1_sectionb" id="fam_member_guarantor_email_p1_sectionb" @if(isset($data->fam_member_guarantor_email_p1_sectionb)) value="{{$data->fam_member_guarantor_email_p1_sectionb}}" @endif/> </td>
                 </tr>
                 <tr>
                     <td> How long has this person known the visa applicant for?
 
                     </td>
                     <td>
-                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                        <select name="fam_member_guarantor_applicant_p1_sectionb" id="fam_member_guarantor_applicant_p1_sectionb" class="form-control">
                             <option value=""> Select Option </option>
 
-                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
-                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @if(!empty(isset($data->fam_member_guarantor_applicant_p1_sectionb)))
+                            <option value="{{$data->fam_member_guarantor_applicant_p1_sectionb}}" selected>{{$data->fam_member_guarantor_applicant_p1_sectionb}}</option>
                             @endif
                             <option value="0">0</option>
                             <option value="1">1</option>
@@ -8585,11 +8585,11 @@
 
                     </td>
                     <td>
-                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                        <select name="fam_member_guarantor_willing_p1_sectionb" id="fam_member_guarantor_willing_p1_sectionb" class="form-control">
                             <option value=""> Select Option </option>
 
-                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
-                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @if(!empty(isset($data->fam_member_guarantor_willing_p1_sectionb)))
+                            <option value="{{$data->fam_member_guarantor_willing_p1_sectionb}}" selected>{{$data->fam_member_guarantor_willing_p1_sectionb}}</option>
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
@@ -8609,28 +8609,28 @@
                 <tr>
                     <td> Name
                     </td>
-                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                    <td> <input type="text" name="fam_member_guarantor_name_p2_sectionb" id="fam_member_guarantor_name_p2_sectionb" @if(isset($data->fam_member_guarantor_name_p2_sectionb)) value="{{$data->fam_member_guarantor_name_p2_sectionb}}" @endif/> </td>
                 </tr>
                 <tr>
                     <td> Surname
                     </td>
-                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                    <td> <input type="text" name="fam_member_guarantor_surname_p2_sectionb" id="fam_member_guarantor_surname_p2_sectionb" @if(isset($data->fam_member_guarantor_surname_p2_sectionb)) value="{{$data->fam_member_guarantor_surname_p2_sectionb}}" @endif/> </td>
                 </tr>
                 <tr>
                     <td> Date of birth
                     </td>
-                    <td> <input type="date" name="fam_member_child_dob2" id="fam_member_child_dob2" @if(isset($data->fam_member_child_dob2)) value="{{$data->fam_member_child_dob2}}" @endif/> </td>
+                    <td> <input type="date" name="fam_member_guarantor_dob_p2_sectionb" id="fam_member_guarantor_dob_p2_sectionb" @if(isset($data->fam_member_guarantor_dob_p2_sectionb)) value="{{$data->fam_member_guarantor_dob_p2_sectionb}}" @endif/> </td>
                 </tr>
                 <tr>
                     <td> Is this person a: Australian citizenship or hold permanent residency?
 
                     </td>
                     <td>
-                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                        <select name="fam_member_guarantor_permanent_p2_sectionb" id="fam_member_guarantor_permanent_p2_sectionb" class="form-control">
                             <option value=""> Select Option </option>
 
-                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
-                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @if(!empty(isset($data->fam_member_guarantor_permanent_p2_sectionb)))
+                            <option value="{{$data->fam_member_guarantor_permanent_p2_sectionb}}" selected>{{$data->fam_member_guarantor_permanent_p2_sectionb}}</option>
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
@@ -8640,28 +8640,28 @@
                 <tr>
                     <td> Work-position
                     </td>
-                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                    <td> <input type="text" name="fam_member_guarantor_position_p2_sectionb" id="fam_member_guarantor_position_p2_sectionb" @if(isset($data->fam_member_guarantor_position_p2_sectionb)) value="{{$data->fam_member_guarantor_position_p2_sectionb}}" @endif/> </td>
                 </tr>
                 <tr>
                     <td> Phone contact
                     </td>
-                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                    <td> <input type="text" name="fam_member_guarantor_phone_p2_sectionb" id="fam_member_guarantor_phone_p2_sectionb" @if(isset($data->fam_member_guarantor_phone_p2_sectionb)) value="{{$data->fam_member_guarantor_phone_p2_sectionb}}" @endif/> </td>
                 </tr>
                 <tr>
                     <td> Email contact
                     </td>
-                    <td> <input type="text" name="fam_member_child_name2" id="fam_member_child_name2" @if(isset($data->fam_member_child_name2)) value="{{$data->fam_member_child_name2}}" @endif/> </td>
+                    <td> <input type="text" name="fam_member_guarantor_email_p2_sectionb" id="fam_member_guarantor_email_p2_sectionb" @if(isset($data->fam_member_guarantor_email_p2_sectionb)) value="{{$data->fam_member_guarantor_email_p2_sectionb}}" @endif/> </td>
                 </tr>
                 <tr>
                     <td> How long has this person known the visa applicant for?
 
                     </td>
                     <td>
-                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                        <select name="fam_member_guarantor_applicant_p2_sectionb" id="fam_member_guarantor_applicant_p2_sectionb" class="form-control">
                             <option value=""> Select Option </option>
 
-                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
-                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @if(!empty(isset($data->fam_member_guarantor_applicant_p2_sectionb)))
+                            <option value="{{$data->fam_member_guarantor_applicant_p2_sectionb}}" selected>{{$data->fam_member_guarantor_applicant_p2_sectionb}}</option>
                             @endif
                             <option value="0">0</option>
                             <option value="1">1</option>
@@ -8772,11 +8772,11 @@
 
                     </td>
                     <td>
-                        <select name="fam_member_sectionb_" id="fam_member_sectionb_relationship_partner" class="form-control">
+                        <select name="fam_member_guarantor_willing_p2_sectionb" id="fam_member_guarantor_willing_p2_sectionb" class="form-control">
                             <option value=""> Select Option </option>
 
-                            @if(!empty(isset($data->fam_member_sectionb_relationship_partner)))
-                            <option value="{{$data->fam_member_sectionb_relationship_partner}}" selected>{{$data->fam_member_sectionb_relationship_partner}}</option>
+                            @if(!empty(isset($data->fam_member_guarantor_willing_p2_sectionb)))
+                            <option value="{{$data->fam_member_guarantor_willing_p2_sectionb}}" selected>{{$data->fam_member_guarantor_willing_p2_sectionb}}</option>
                             @endif
                             <option value="Yes">Yes </option>
                             <option value="No"> No </option>
@@ -8787,9 +8787,6 @@
 
             </tbody>
         </table>
-
-
-
 
     </div>
 
