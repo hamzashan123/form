@@ -26,7 +26,7 @@
         @include('backend.forms.form360.workexperiencesectionG')
         @include('backend.forms.form360.workexperiencesectionH')
         @include('backend.forms.form360.workexperiencesectionI')
-                
+        @include('backend.forms.form360.workexperiencesectionJ')        
            
 
     </div>
