@@ -42,11 +42,22 @@
             </td>
             <td> <input type="text" name="workexperience_employer_name_section_c" id="workexperience_employer_name_section_c" @if(isset($data->workexperience_employer_name_section_c)) value="{{$data->workexperience_employer_name_section_c}}" @endif/> </td>
         </tr>
+        
         <tr>
-            <td> Country where the business you are working for is located
-            </td>
-            <td> <input type="text" name="workexperience_business_located_section_c" id="workexperience_business_located_section_c" @if(isset($data->workexperience_business_located_section_c)) value="{{$data->workexperience_business_located_section_c}}" @endif/> </td>
-        </tr>
+                    <td> Country where the business you are working for is located
+                        
+                    </td>
+                    <td>
+                        <select name="workexperience_business_located_section_c" id="workexperience_business_located_section_c" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->workexperience_business_located_section_c)))
+                            <option value="{{$data->workexperience_business_located_section_c}}" selected>{{$data->workexperience_business_located_section_c}}</option>
+                            @endif
+                            @include('backend.forms.countrielist')
+                        </select>
+                    </td>
+                </tr>
         <tr>
             <td> Address of the business in the country where you are working for
             </td>
