@@ -1,5 +1,5 @@
 ﻿        <h2 class="fs-title" style="margin-top: 10px;"> </h2>
-        <h2 class="fs-title" style="margin-top: 10px;"> Section B ( 482– For intra-company transfer visa)</h2>
+        <h2 class="fs-title" style="margin-top: 10px;"> PART B ( 482– For intra-company transfer visa)</h2>
         <p>INFO</p>
 
         <table>
@@ -41,10 +41,21 @@
                     </td>
                     <td> <input type="text" name="workexperience_employer_name_section_b" id="workexperience_employer_name_section_b" @if(isset($data->workexperience_employer_name_section_b)) value="{{$data->workexperience_employer_name_section_b}}" @endif/> </td>
                 </tr>
+
                 <tr>
                     <td> Country where the business you are working for is located
+                        
                     </td>
-                    <td> <input type="text" name="workexperience_business_country_section_b" id="workexperience_business_country_section_b" @if(isset($data->workexperience_business_country_section_b)) value="{{$data->workexperience_business_country_section_b}}" @endif/> </td>
+                    <td>
+                        <select name="workexperience_business_country_section_b" id="workexperience_business_country_section_b" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->workexperience_business_country_section_b)))
+                            <option value="{{$data->workexperience_business_country_section_b}}" selected>{{$data->workexperience_business_country_section_b}}</option>
+                            @endif
+                            @include('backend.forms.countrielist')
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td> Address of the business in the country where you are working for at the moment
@@ -94,7 +105,7 @@
                     <td>Phone contact
 
                     </td>
-                    <td> <input type="text" name="workexperience_phone_of_the_person_section_b" id="workexperience_phone_of_the_person_section_b" @if(isset($data->workexperience_phone_of_the_person_section_b)) value="{{$data->workexperience_phone_of_the_person_section_b}}" @endif/> </td>
+                    <td> <input type="tel" name="workexperience_phone_of_the_person_section_b" id="workexperience_phone_of_the_person_section_b" @if(isset($data->workexperience_phone_of_the_person_section_b)) value="{{$data->workexperience_phone_of_the_person_section_b}}" @endif/> </td>
                 </tr>
                 <tr>
                     <td>What is your current annual gross salary with the offshore company?

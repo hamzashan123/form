@@ -1,5 +1,5 @@
 ﻿<h2 class="fs-title" style="margin-top: 10px;"> </h2>
-<h2 class="fs-title" style="margin-top: 10px;"> Section G 407 training visa </h2>
+<h2 class="fs-title" style="margin-top: 10px;"> PART G 407 training visa </h2>
 <p>INFO</p>
 
 <table>

@@ -1,5 +1,5 @@
 ﻿<h2 class="fs-title" style="margin-top: 10px;"> </h2>
-<h2 class="fs-title" style="margin-top: 10px;"> Section F 408 Academic Training (University) </h2>
+<h2 class="fs-title" style="margin-top: 10px;"> PART F 408 Academic Training (University) </h2>
 <p>INFO</p>
 
 <table>

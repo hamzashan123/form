@@ -1,4 +1,4 @@
-﻿<h2 class="fs-title" style="margin-top: 10px;"> Section I 417 visa renewal </h2>
+﻿<h2 class="fs-title" style="margin-top: 10px;"> PART I 417 visa renewal </h2>
 <p>2nd or 3rd WHV visa</p>
 <p>INFO</p>
 <p>TYPE OF WHV VISA APPLYING FOR</p>
@@ -155,7 +155,7 @@
         <tr>
             <td> Email address
             </td>
-            <td> <input type="tel" name="workexperience_email_n1_section_i" id="workexperience_email_n1_section_i" @if(isset($data->workexperience_email_n1_section_i)) value="{{$data->workexperience_email_n1_section_i}}" @endif/> </td>
+            <td> <input type="text" name="workexperience_email_n1_section_i" id="workexperience_email_n1_section_i" @if(isset($data->workexperience_email_n1_section_i)) value="{{$data->workexperience_email_n1_section_i}}" @endif/> </td>
         </tr>
 
 
@@ -169,12 +169,23 @@
     <tbody>
 
 
-
         <tr>
-            <td> Country
-            </td>
-            <td> <input type="text" name="workexperience_business_country_n1_section_i" id="workexperience_business_country_n1_section_i" @if(isset($data->workexperience_business_country_n1_section_i)) value="{{$data->workexperience_business_country_n1_section_i}}" @endif/> </td>
-        </tr>
+                    <td> Country
+                        
+                    </td>
+                    <td>
+                        <select name="workexperience_business_country_n1_section_i" id="workexperience_business_country_n1_section_i" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->workexperience_business_country_n1_section_i)))
+                            <option value="{{$data->workexperience_business_country_n1_section_i}}" selected>{{$data->workexperience_business_country_n1_section_i}}</option>
+                            @endif
+                            @include('backend.forms.countrielist')
+                        </select>
+                    </td>
+                </tr>
+
+        
 
         <tr>
             <td> Address
@@ -243,7 +254,7 @@
         <tr>
             <td> Description of duties
             </td>
-            <td> <input type="tel" name="workexperience_work_duties_n1_section_i" id="workexperience_work_duties_n1_section_i" @if(isset($data->workexperience_work_duties_n1_section_i)) value="{{$data->workexperience_work_duties_n1_section_i}}" @endif/> </td>
+            <td> <input type="text" name="workexperience_work_duties_n1_section_i" id="workexperience_work_duties_n1_section_i" @if(isset($data->workexperience_work_duties_n1_section_i)) value="{{$data->workexperience_work_duties_n1_section_i}}" @endif/> </td>
         </tr>
         <tr>
             <td> Date from
@@ -258,17 +269,17 @@
         <tr>
             <td> Total hours worked
             </td>
-            <td> <input type="date" name="workexperience_work_total_hours_n1_section_i" id="workexperience_work_total_hours_n1_section_i" @if(isset($data->workexperience_work_total_hours_n1_section_i)) value="{{$data->workexperience_work_total_hours_n1_section_i}}" @endif/> </td>
+            <td> <input type="text" name="workexperience_work_total_hours_n1_section_i" id="workexperience_work_total_hours_n1_section_i" @if(isset($data->workexperience_work_total_hours_n1_section_i)) value="{{$data->workexperience_work_total_hours_n1_section_i}}" @endif/> </td>
         </tr>
         <tr>
             <td> Total days worked
             </td>
-            <td> <input type="date" name="workexperience_work_total_days_n1_section_i" id="workexperience_work_total_days_n1_section_i" @if(isset($data->workexperience_work_total_days_n1_section_i)) value="{{$data->workexperience_work_total_days_n1_section_i}}" @endif/> </td>
+            <td> <input type="text" name="workexperience_work_total_days_n1_section_i" id="workexperience_work_total_days_n1_section_i" @if(isset($data->workexperience_work_total_days_n1_section_i)) value="{{$data->workexperience_work_total_days_n1_section_i}}" @endif/> </td>
         </tr>
         <tr>
             <td> Was the applicant employed under a piece rate agreement?
             </td>
-            <td> <input type="date" name="workexperience_work_agreement_n1_section_i" id="workexperience_work_agreement_n1_section_i" @if(isset($data->workexperience_work_agreement_n1_section_i)) value="{{$data->workexperience_work_agreement_n1_section_i}}" @endif/> </td>
+            <td> <input type="text" name="workexperience_work_agreement_n1_section_i" id="workexperience_work_agreement_n1_section_i" @if(isset($data->workexperience_work_agreement_n1_section_i)) value="{{$data->workexperience_work_agreement_n1_section_i}}" @endif/> </td>
         </tr>
 
 
@@ -386,7 +397,7 @@
         <tr>
             <td> Email address
             </td>
-            <td> <input type="tel" name="workexperience_email_n2_section_i" id="workexperience_email_n2_section_i" @if(isset($data->workexperience_email_n2_section_i)) value="{{$data->workexperience_email_n2_section_i}}" @endif/> </td>
+            <td> <input type="text" name="workexperience_email_n2_section_i" id="workexperience_email_n2_section_i" @if(isset($data->workexperience_email_n2_section_i)) value="{{$data->workexperience_email_n2_section_i}}" @endif/> </td>
         </tr>
 
 
@@ -399,13 +410,21 @@
 <table>
     <tbody>
 
-
-
         <tr>
-            <td> Country
-            </td>
-            <td> <input type="text" name="workexperience_business_country_n2_section_i" id="workexperience_business_country_n2_section_i" @if(isset($data->workexperience_business_country_n2_section_i)) value="{{$data->workexperience_business_country_n2_section_i}}" @endif/> </td>
-        </tr>
+                    <td> Country
+                        
+                    </td>
+                    <td>
+                        <select name="workexperience_business_country_n2_section_i" id="workexperience_business_country_n2_section_i" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->workexperience_business_country_n2_section_i)))
+                            <option value="{{$data->workexperience_business_country_n2_section_i}}" selected>{{$data->workexperience_business_country_n2_section_i}}</option>
+                            @endif
+                            @include('backend.forms.countrielist')
+                        </select>
+                    </td>
+                </tr>
 
         <tr>
             <td> Address
@@ -420,12 +439,12 @@
         <tr>
             <td> State / Territory
             </td>
-            <td> <input type="tel" name="workexperience_business_state_n2_section_i" id="workexperience_business_state_n2_section_i" @if(isset($data->workexperience_business_state_n2_section_i)) value="{{$data->workexperience_business_state_n2_section_i}}" @endif/> </td>
+            <td> <input type="text" name="workexperience_business_state_n2_section_i" id="workexperience_business_state_n2_section_i" @if(isset($data->workexperience_business_state_n2_section_i)) value="{{$data->workexperience_business_state_n2_section_i}}" @endif/> </td>
         </tr>
         <tr>
             <td> Postcode
             </td>
-            <td> <input type="tel" name="workexperience_business_postcode_n2_section_i" id="workexperience_business_postcode_n2_section_i" @if(isset($data->workexperience_business_postcode_n2_section_i)) value="{{$data->workexperience_business_postcode_n2_section_i}}" @endif/> </td>
+            <td> <input type="text" name="workexperience_business_postcode_n2_section_i" id="workexperience_business_postcode_n2_section_i" @if(isset($data->workexperience_business_postcode_n2_section_i)) value="{{$data->workexperience_business_postcode_n2_section_i}}" @endif/> </td>
         </tr>
         <tr>
             <td> Is the work address the same as the employer business address?
@@ -474,7 +493,7 @@
         <tr>
             <td> Description of duties
             </td>
-            <td> <input type="tel" name="workexperience_work_duties_n2_section_i" id="workexperience_work_duties_n2_section_i" @if(isset($data->workexperience_work_duties_n2_section_i)) value="{{$data->workexperience_work_duties_n2_section_i}}" @endif/> </td>
+            <td> <input type="text" name="workexperience_work_duties_n2_section_i" id="workexperience_work_duties_n2_section_i" @if(isset($data->workexperience_work_duties_n2_section_i)) value="{{$data->workexperience_work_duties_n2_section_i}}" @endif/> </td>
         </tr>
         <tr>
             <td> Date from
@@ -489,17 +508,17 @@
         <tr>
             <td> Total hours worked
             </td>
-            <td> <input type="date" name="workexperience_work_total_hours_n2_section_i" id="workexperience_work_total_hours_n2_section_i" @if(isset($data->workexperience_work_total_hours_n2_section_i)) value="{{$data->workexperience_work_total_hours_n2_section_i}}" @endif/> </td>
+            <td> <input type="text" name="workexperience_work_total_hours_n2_section_i" id="workexperience_work_total_hours_n2_section_i" @if(isset($data->workexperience_work_total_hours_n2_section_i)) value="{{$data->workexperience_work_total_hours_n2_section_i}}" @endif/> </td>
         </tr>
         <tr>
             <td> Total days worked
             </td>
-            <td> <input type="date" name="workexperience_work_total_days_n2_section_i" id="workexperience_work_total_days_n2_section_i" @if(isset($data->workexperience_work_total_days_n2_section_i)) value="{{$data->workexperience_work_total_days_n2_section_i}}" @endif/> </td>
+            <td> <input type="text" name="workexperience_work_total_days_n2_section_i" id="workexperience_work_total_days_n2_section_i" @if(isset($data->workexperience_work_total_days_n2_section_i)) value="{{$data->workexperience_work_total_days_n2_section_i}}" @endif/> </td>
         </tr>
         <tr>
             <td> Was the applicant employed under a piece rate agreement?
             </td>
-            <td> <input type="date" name="workexperience_work_agreement_n2_section_i" id="workexperience_work_agreement_n2_section_i" @if(isset($data->workexperience_work_agreement_n2_section_i)) value="{{$data->workexperience_work_agreement_n2_section_i}}" @endif/> </td>
+            <td> <input type="text" name="workexperience_work_agreement_n2_section_i" id="workexperience_work_agreement_n2_section_i" @if(isset($data->workexperience_work_agreement_n2_section_i)) value="{{$data->workexperience_work_agreement_n2_section_i}}" @endif/> </td>
         </tr>
 
 

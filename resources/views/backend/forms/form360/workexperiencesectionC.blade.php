@@ -1,5 +1,5 @@
 ﻿<h2 class="fs-title" style="margin-top: 10px;"> </h2>
-<h2 class="fs-title" style="margin-top: 10px;"> Section C ( 186 Visa - Transition stream )</h2>
+<h2 class="fs-title" style="margin-top: 10px;"> PART C ( 186 Visa - Transition stream )</h2>
 <p>INFO</p>
 
 <table>
