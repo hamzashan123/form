@@ -1,5 +1,5 @@
 ﻿<h2 class="fs-title" style="margin-top: 10px;"> </h2>
-<h2 class="fs-title" style="margin-top: 10px;"> Section D ( 186 Visa – Direct Entry )</h2>
+<h2 class="fs-title" style="margin-top: 10px;"> PART D ( 186 Visa – Direct Entry )</h2>
 <p>INFO</p>
 
 <table>

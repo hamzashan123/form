@@ -1,5 +1,5 @@
 ﻿        <h2 class="fs-title" style="margin-top: 10px;"> </h2>
-        <h2 class="fs-title" style="margin-top: 10px;"> Section B ( 482– For intra-company transfer visa)</h2>
+        <h2 class="fs-title" style="margin-top: 10px;"> PART B ( 482– For intra-company transfer visa)</h2>
         <p>INFO</p>
 
         <table>

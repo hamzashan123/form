@@ -1,4 +1,4 @@
-﻿<h2 class="fs-title" style="margin-top: 10px;"> Section I 417 visa renewal </h2>
+﻿<h2 class="fs-title" style="margin-top: 10px;"> PART I 417 visa renewal </h2>
 <p>2nd or 3rd WHV visa</p>
 <p>INFO</p>
 <p>TYPE OF WHV VISA APPLYING FOR</p>

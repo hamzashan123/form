@@ -1,5 +1,5 @@
 ﻿<h2 class="fs-title" style="margin-top: 10px;"> </h2>
-<h2 class="fs-title" style="margin-top: 10px;"> Section E 400 Visa (Short term for a maximum of 3 or 6 months duration visa)</h2>
+<h2 class="fs-title" style="margin-top: 10px;"> PART E 400 Visa (Short term for a maximum of 3 or 6 months duration visa)</h2>
 <p>INFO</p>
 
 <table>

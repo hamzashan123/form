@@ -1,4 +1,4 @@
-﻿<h2 class="fs-title" style="margin-top: 10px;"> Section J Visitor visa </h2>
+﻿<h2 class="fs-title" style="margin-top: 10px;"> PART J Visitor visa </h2>
 <p>Onshore or Offshore</p>
 <p>INFO</p>
 

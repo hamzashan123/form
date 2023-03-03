@@ -1,5 +1,5 @@
 ﻿<h2 class="fs-title" style="margin-top: 10px;"> </h2>
-<h2 class="fs-title" style="margin-top: 10px;"> Section A ( 482 visa )</h2>
+<h2 class="fs-title" style="margin-top: 10px;"> PART A ( 482 visa )</h2>
 <p>INFO</p>
 
 <table>
