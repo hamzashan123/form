@@ -1220,6 +1220,14 @@ class Form360Controller extends Controller
             "workexperience_accomo_agreement_n2_section_i" => $request->workexperience_accomo_agreement_n2_section_i,
             "workexperience_accomo_method_n2_section_i" => $request->workexperience_accomo_method_n2_section_i,
             "workexperience_accomo_timeTaken_n2_section_i" => $request->workexperience_accomo_timeTaken_n2_section_i,
+            
+            "workexperience_visa_applicant_2nd_section_i" => $request->workexperience_visa_applicant_2nd_section_i,
+            "workexperience_granted_2nd_section_i" => $request->workexperience_granted_2nd_section_i,
+            "workexperience_specify_2nd_section_i" => $request->workexperience_specify_2nd_section_i,
+            "workexperience_subclass_2nd_section_i" => $request->workexperience_subclass_2nd_section_i,
+            "workexperience_subclass_specify_2nd_section_i" => $request->workexperience_subclass_specify_2nd_section_i,
+            "workexperience_undertaken_2nd_section_i" => $request->workexperience_undertaken_2nd_section_i,
+            "workexperience_undertaken_specify_2nd_section_i" => $request->workexperience_undertaken_specify_2nd_section_i
         ];
 
         $workexperiencesectionJ = [
