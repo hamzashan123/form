@@ -4,14 +4,14 @@ $(function () {
     })
 
     const phone = document.querySelector('#phone');
-    const phoneInput1 = window.intlTelInput(phone, {
+    const phoneInp = window.intlTelInput(phone, {
         initialCountry: 'au',
         utilsScript:
             'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js',
     })
 
     const phonereg = document.querySelector('#phonereg');
-    const phoneInput2 = window.intlTelInput(phonereg, {
+    const phoneInpreg = window.intlTelInput(phonereg, {
         initialCountry: 'au',
         utilsScript:
             'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js',

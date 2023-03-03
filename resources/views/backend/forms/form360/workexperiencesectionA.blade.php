@@ -55,7 +55,7 @@
         <tr>
             <td> Date when you will start working on the sponsorship visa (if already working with the sponsorship business please leave blank)
             </td>
-            <td> <input type="text" name="workexperience_sponsorship_visa_section_a" id="workexperience_sponsorship_visa_section_a" @if(isset($data->workexperience_sponsorship_visa_section_a)) value="{{$data->workexperience_sponsorship_visa_section_a}}" @endif/> </td>
+            <td> <input type="date" name="workexperience_sponsorship_visa_section_a" id="workexperience_sponsorship_visa_section_a" @if(isset($data->workexperience_sponsorship_visa_section_a)) value="{{$data->workexperience_sponsorship_visa_section_a}}" @endif/> </td>
         </tr>
         <tr>
             <td> How many years are you planning to work for your sponsor

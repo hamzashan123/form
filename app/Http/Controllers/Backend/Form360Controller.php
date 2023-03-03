@@ -48,6 +48,13 @@ class Form360Controller extends Controller
                         ->join('form360_workexperiencesection_a', 'form360.id', '=', 'form360_workexperiencesection_a.form360_id') 
                         ->join('form360_workexperiencesection_b', 'form360.id', '=', 'form360_workexperiencesection_b.form360_id') 
                         ->join('form360_workexperiencesection_c', 'form360.id', '=', 'form360_workexperiencesection_c.form360_id') 
+                        ->join('form360_workexperiencesection_d', 'form360.id', '=', 'form360_workexperiencesection_d.form360_id') 
+                        ->join('form360_workexperiencesection_e', 'form360.id', '=', 'form360_workexperiencesection_e.form360_id') 
+                        ->join('form360_workexperiencesection_f', 'form360.id', '=', 'form360_workexperiencesection_f.form360_id') 
+                        ->join('form360_workexperiencesection_g', 'form360.id', '=', 'form360_workexperiencesection_g.form360_id') 
+                        ->join('form360_workexperiencesection_h', 'form360.id', '=', 'form360_workexperiencesection_h.form360_id') 
+                        ->join('form360_workexperiencesection_i', 'form360.id', '=', 'form360_workexperiencesection_i.form360_id')
+                        ->join('form360_workexperiencesection_j', 'form360.id', '=', 'form360_workexperiencesection_j.form360_id') 
                         ->join('form360_visa_history', 'form360.id', '=', 'form360_visa_history.form360_id')
                         ->join('form360_travel_history', 'form360.id', '=', 'form360_travel_history.form360_id')
                         ->join('form360_countries_of_residence', 'form360.id', '=', 'form360_countries_of_residence.form360_id')
@@ -55,6 +62,7 @@ class Form360Controller extends Controller
                         ->join('form360_health_questions', 'form360.id', '=', 'form360_health_questions.form360_id')
                         ->join('form360_character', 'form360.id', '=', 'form360_character.form360_id')
                         ->join('form360_family_members', 'form360.id', '=', 'form360_family_members.form360_id')
+                        ->join('form360_family_members_section_b', 'form360.id', '=', 'form360_family_members_section_b.form360_id')
                         
                         ->where('form360.user_id',$userid)->select(
                             'form360.*',
@@ -68,13 +76,21 @@ class Form360Controller extends Controller
                             'form360_workexperiencesection_a.*',
                             'form360_workexperiencesection_b.*',
                             'form360_workexperiencesection_c.*',
+                            'form360_workexperiencesection_d.*',
+                            'form360_workexperiencesection_e.*',
+                            'form360_workexperiencesection_f.*',
+                            'form360_workexperiencesection_g.*',
+                            'form360_workexperiencesection_h.*',
+                            'form360_workexperiencesection_i.*',
+                            'form360_workexperiencesection_j.*',
                             'form360_visa_history.*',
                             'form360_travel_history.*',
                             'form360_countries_of_residence.*',
                             'form360_health_declaration.*',
                             'form360_health_questions.*',
                             'form360_character.*',
-                            'form360_family_members.*'
+                            'form360_family_members.*',
+                            'form360_family_members_section_b.*'
                             )->get();
          
         
@@ -104,7 +120,7 @@ class Form360Controller extends Controller
 
     public function save(Request $request)
     {
-        dd($request);
+        //dd($request);
 
         $formExist = DB::table('form360')->where('user_id', Auth::user()->id)->first();
         //agar form ni ha 
@@ -158,6 +174,34 @@ class Form360Controller extends Controller
                 $fieldsets['workexperiencesectionC']
             ]);
 
+            DB::table('form360_workexperiencesection_d')->insert([
+                $fieldsets['workexperiencesectionD']
+            ]);
+
+            DB::table('form360_workexperiencesection_e')->insert([
+                $fieldsets['workexperiencesectionE']
+            ]);
+
+            DB::table('form360_workexperiencesection_f')->insert([
+                $fieldsets['workexperiencesectionF']
+            ]);
+
+            DB::table('form360_workexperiencesection_g')->insert([
+                $fieldsets['workexperiencesectionG']
+            ]);
+
+            DB::table('form360_workexperiencesection_h')->insert([
+                $fieldsets['workexperiencesectionH']
+            ]);
+
+            DB::table('form360_workexperiencesection_i')->insert([
+                $fieldsets['workexperiencesectionI']
+            ]);
+
+            DB::table('form360_workexperiencesection_j')->insert([
+                $fieldsets['workexperiencesectionJ']
+            ]);
+
     
             DB::table('form360_visa_history')->insert([
                 $fieldsets['visahistoryData']
@@ -186,6 +230,10 @@ class Form360Controller extends Controller
     
             DB::table('form360_family_members')->insert([
                 $fieldsets['familymember']
+            ]);
+
+            DB::table('form360_family_members_section_b')->insert([
+                $fieldsets['familymemberSectionB']
             ]);
 
             $this->saveDocuments($formid,$request);
@@ -314,6 +362,34 @@ class Form360Controller extends Controller
                 $fieldsets['workexperiencesectionC']
             );
 
+            DB::table('form360_workexperiencesection_d')->where('form360_id',$existingForm->id)->update(
+                $fieldsets['workexperiencesectionD']
+            );
+
+            DB::table('form360_workexperiencesection_e')->where('form360_id',$existingForm->id)->update(
+                $fieldsets['workexperiencesectionE']
+            );
+
+            DB::table('form360_workexperiencesection_f')->where('form360_id',$existingForm->id)->update(
+                $fieldsets['workexperiencesectionF']
+            );
+
+            DB::table('form360_workexperiencesection_g')->where('form360_id',$existingForm->id)->update(
+                $fieldsets['workexperiencesectionG']
+            );
+
+            DB::table('form360_workexperiencesection_h')->where('form360_id',$existingForm->id)->update(
+                $fieldsets['workexperiencesectionH']
+            );
+
+            DB::table('form360_workexperiencesection_i')->where('form360_id',$existingForm->id)->update(
+                $fieldsets['workexperiencesectionI']
+            );
+
+            DB::table('form360_workexperiencesection_j')->where('form360_id',$existingForm->id)->update(
+                $fieldsets['workexperiencesectionJ']
+            );
+
             DB::table('form360_visa_history')->where('form360_id',$existingForm->id)->update(
                 $fieldsets['visahistoryData']
             );
@@ -343,6 +419,10 @@ class Form360Controller extends Controller
                 $fieldsets['familymember']
             );
 
+            DB::table('form360_family_members_section_b')->where('form360_id',$existingForm->id)->update(
+                $fieldsets['familymemberSectionB']
+            );
+            
             $this->saveDocuments($existingForm->id,$request);
 
              //if button is submiited
@@ -475,11 +555,11 @@ class Form360Controller extends Controller
          'workexp2_previous_year_of_experience3' => $request->file('workexp2_previous_year_of_experience3'),
 
          'workexp3_employment_contract' => $request->file('workexp3_employment_contract'),
-            'workexp3_employment_reference_letter' => $request->file('workexp3_employment_reference_letter'),
-            'workexp3_current_year_of_experience' => $request->file('workexp3_current_year_of_experience'),
-            'workexp3_previous_year_of_experience1' => $request->file('workexp3_previous_year_of_experience1'),
-            'workexp3_previous_year_of_experience2' => $request->file('workexp3_previous_year_of_experience2'),
-            'workexp3_previous_year_of_experience3' => $request->file('workexp3_previous_year_of_experience3'),
+         'workexp3_employment_reference_letter' => $request->file('workexp3_employment_reference_letter'),
+         'workexp3_current_year_of_experience' => $request->file('workexp3_current_year_of_experience'),
+         'workexp3_previous_year_of_experience1' => $request->file('workexp3_previous_year_of_experience1'),
+         'workexp3_previous_year_of_experience2' => $request->file('workexp3_previous_year_of_experience2'),
+         'workexp3_previous_year_of_experience3' => $request->file('workexp3_previous_year_of_experience3'),
 
          'workexp1_payg_one' => $request->file('workexp1_payg_one'),
          'workexp1_payg_two' => $request->file('workexp1_payg_two'),
@@ -520,6 +600,16 @@ class Form360Controller extends Controller
          'workexpintracompany_income_tax_return' => $request->file('workexpintracompany_income_tax_return'),
          'workexpintracompany_social_security' => $request->file('workexpintracompany_social_security'),
          'workexpintracompany_perform_in_aus_nz' => $request->file('workexpintracompany_perform_in_aus_nz'),
+         'workexperience_employment_contract_section_b' => $request->file('workexperience_employment_contract_section_b'),
+         'workexperience_recent_payslip_section_b' => $request->file('workexperience_recent_payslip_section_b'),  
+         'workexperience_work_performed_section_e' => $request->file('workexperience_work_performed_section_e'), 
+         'workexperience_invitation_letter_section_f' => $request->file('workexperience_invitation_letter_section_f'),
+         'workexperience_contract_university_section_f' => $request->file('workexperience_contract_university_section_f'),
+         'workexperience_anyother_document_section_f' => $request->file('workexperience_anyother_document_section_f'),
+         'workexperience_completion_letter_section_h' => $request->file('workexperience_completion_letter_section_h'),
+         'workexperience_exams_list_section_h' => $request->file('workexperience_exams_list_section_h'),
+         'workexperience_completion_letter2_section_h' => $request->file('workexperience_completion_letter2_section_h'),
+         'workexperience_exams_list2_section_h' => $request->file('workexperience_exams_list2_section_h'),
 
          'currentvisa_aus_naz_if_applicable' => $request->file('currentvisa_aus_naz_if_applicable'),
          'previous_visa_if_applicable1' => $request->file('previous_visa_if_applicable1'),
@@ -991,7 +1081,6 @@ class Form360Controller extends Controller
 
         $workexperiencesectionE = [
             'form360_id' => $form_id,
-            "workexperience_current_holder_section_d" =>  $request->workexperience_current_holder_section_d,
             "workexperience_company_name_section_e" => $request->workexperience_company_name_section_e,
             "workexperience_registration_number_section_e" => $request->workexperience_registration_number_section_e,
             "workexperience_company_address_section_e" => $request->workexperience_company_address_section_e,
@@ -1131,6 +1220,89 @@ class Form360Controller extends Controller
             "workexperience_accomo_agreement_n2_section_i" => $request->workexperience_accomo_agreement_n2_section_i,
             "workexperience_accomo_method_n2_section_i" => $request->workexperience_accomo_method_n2_section_i,
             "workexperience_accomo_timeTaken_n2_section_i" => $request->workexperience_accomo_timeTaken_n2_section_i,
+        ];
+
+        $workexperiencesectionJ = [
+            'form360_id' => $form_id,
+            "workexperience_stay_length_remain_section_j" => $request->workexperience_stay_length_remain_section_j,
+            "workexperience_stay_length_further_section_j" => $request->workexperience_stay_length_further_section_j,
+            "workexperience_stay_length_reason_section_j" => $request->workexperience_stay_length_reason_section_j,
+            "workexperience_stay_length_travelling_section_j" => $request->workexperience_stay_length_travelling_section_j,
+            "workexperience_travelling_companies_visa_remain_section_j" => $request->workexperience_travelling_companies_visa_remain_section_j,
+            "workexperience_relationship_person1_section_j" => $request->workexperience_relationship_person1_section_j,
+            "workexperience_familyname_person1_section_j" => $request->workexperience_familyname_person1_section_j,
+            "workexperience_givenname_person1_section_j" => $request->workexperience_givenname_person1_section_j,
+            "workexperience_sex_person1_section_j" => $request->workexperience_sex_person1_section_j,
+            "workexperience_dob_person1_section_j" => $request->workexperience_dob_person1_section_j,
+            "workexperience_nationality_person1_section_j" => $request->workexperience_nationality_person1_section_j,
+            "workexperience_relationship_person2_section_j" => $request->workexperience_relationship_person2_section_j,
+            "workexperience_familyname_person2_section_j" => $request->workexperience_familyname_person2_section_j,
+            "workexperience_givenname_person2_section_j" => $request->workexperience_givenname_person2_section_j,
+            "workexperience_sex_person2_section_j" => $request->workexperience_sex_person2_section_j,
+            "workexperience_dob_person2_section_j" => $request->workexperience_dob_person2_section_j,
+            "workexperience_nationality_person2_section_j" => $request->workexperience_nationality_person2_section_j,
+            "workexperience_relationship_person3_section_j" => $request->workexperience_relationship_person3_section_j,
+            "workexperience_familyname_person3_section_j" => $request->workexperience_familyname_person3_section_j,
+            "workexperience_givenname_person3_section_j" => $request->workexperience_givenname_person3_section_j,
+            "workexperience_sex_person3_section_j" => $request->workexperience_sex_person3_section_j,
+            "workexperience_dob_person3_section_j" => $request->workexperience_dob_person3_section_j,
+            "workexperience_nationality_person3_section_j" => $request->workexperience_nationality_person3_section_j,
+            "workexperience_relatives_friends_section_j" => $request->workexperience_relatives_friends_section_j,
+            "workexperience_relationship_familyname_person1_section_j" => $request->workexperience_relationship_familyname_person1_section_j,
+            "workexperience_relationship_givenname_person1_section_j" => $request->workexperience_relationship_givenname_person1_section_j,
+            "workexperience_relationship_person_person1_section_j" => $request->workexperience_relationship_person_person1_section_j,
+            "workexperience_relationship_sex_person1_section_j" => $request->workexperience_relationship_sex_person1_section_j,
+            "workexperience_relationship_dob_person1_section_j" => $request->workexperience_relationship_dob_person1_section_j,
+            "workexperience_relationship_address_person1_section_j" => $request->workexperience_relationship_address_person1_section_j,
+            "workexperience_relationship_town_person1_section_j" => $request->workexperience_relationship_town_person1_section_j,
+            "workexperience_relationship_state_person1_section_j" => $request->workexperience_relationship_state_person1_section_j,
+            "workexperience_relationship_postcode_person1_section_j" => $request->workexperience_relationship_postcode_person1_section_j,
+            "workexperience_relationship_nospaces_person1_section_j" => $request->workexperience_relationship_nospaces_person1_section_j,
+            "workexperience_relationship_home_person1_section_j" => $request->workexperience_relationship_home_person1_section_j,
+            "workexperience_relationship_business_person1_section_j" => $request->workexperience_relationship_business_person1_section_j,
+            "workexperience_relationship_mobile_person1_section_j" => $request->workexperience_relationship_mobile_person1_section_j,
+            "workexperience_relationship_status_person1_section_j" => $request->workexperience_relationship_status_person1_section_j,
+            "workexperience_relationship_familyname_person2_section_j" => $request->workexperience_relationship_familyname_person2_section_j,
+            "workexperience_relationship_givenname_person2_section_j" => $request->workexperience_relationship_givenname_person2_section_j,
+            "workexperience_relationship_person_person2_section_j" => $request->workexperience_relationship_person_person2_section_j,
+            "workexperience_relationship_sex_person2_section_j" => $request->workexperience_relationship_sex_person2_section_j,
+            "workexperience_relationship_dob_person2_section_j" => $request->workexperience_relationship_dob_person2_section_j,
+            "workexperience_relationship_address_person2_section_j" => $request->workexperience_relationship_address_person2_section_j,
+            "workexperience_relationship_town_person2_section_j" => $request->workexperience_relationship_town_person2_section_j,
+            "workexperience_relationship_state_person2_section_j" => $request->workexperience_relationship_state_person2_section_j,
+            "workexperience_relationship_postcode_person2_section_j" => $request->workexperience_relationship_postcode_person2_section_j,
+            "workexperience_relationship_nospaces_person2_section_j" => $request->workexperience_relationship_nospaces_person2_section_j,
+            "workexperience_relationship_home_person2_section_j" => $request->workexperience_relationship_home_person2_section_j,
+            "workexperience_relationship_business_person2_section_j" => $request->workexperience_relationship_business_person2_section_j,
+            "workexperience_relationship_mobile_person2_section_j" => $request->workexperience_relationship_mobile_person2_section_j,
+            "workexperience_relationship_status_person2_section_j" => $request->workexperience_relationship_status_person2_section_j,
+            "workexperience_currentStatus_employment_status_section_j" => $request->workexperience_currentStatus_employment_status_section_j,
+            "workexperience_currentlyWorking_most_recent_section_j" => $request->workexperience_currentlyWorking_most_recent_section_j,
+            "workexperience_your_position_section_j" => $request->workexperience_your_position_section_j,
+            "workexperienc_position_type_section_j" => $request->workexperienc_position_type_section_j,
+            "workexperienc_employer_name_business_section_j" => $request->workexperienc_employer_name_business_section_j,
+            "workexperienc_business_located_section_j" => $request->workexperienc_business_located_section_j,
+            "workexperienc_business_started_date_section_j" => $request->workexperienc_business_started_date_section_j,
+            "workexperienc_business_ended_date_section_j" => $request->workexperienc_business_ended_date_section_j,
+            "workexperienc_business_detail_person_section_j" => $request->workexperienc_business_detail_person_section_j,
+            "workexperienc_business_ifyes_indicate_section_j" => $request->workexperienc_business_ifyes_indicate_section_j,
+            "workexperienc_business_name_surname_section_j" => $request->workexperienc_business_name_surname_section_j,
+            "workexperienc_business_position_section_j" => $request->workexperienc_business_position_section_j,
+            "workexperienc_business_email_section_j" => $request->workexperienc_business_email_section_j,
+            "workexperienc_business_phone_section_j" => $request->workexperienc_business_phone_section_j,
+            "workexperienc_exact_qualification_option2_section_j" => $request->workexperienc_exact_qualification_option2_section_j,
+            "workexperienc_qualification_obtain_option2_section_j" => $request->workexperienc_qualification_obtain_option2_section_j,
+            "workexperienc_school_institue_option2_section_j" => $request->workexperienc_school_institue_option2_section_j,
+            "workexperienc_year_obtained_option2_section_j" => $request->workexperienc_year_obtained_option2_section_j,
+            "workexperienc_date_course_option2_section_j" => $request->workexperienc_date_course_option2_section_j,
+            "workexperienc_date_course_end_option2_section_j" => $request->workexperienc_date_course_end_option2_section_j,
+            "workexperienc_legal_duration_option2_section_j" => $request->workexperienc_legal_duration_option2_section_j,
+            "workexperienc_qualification_country_option2_section_j" => $request->workexperienc_qualification_country_option2_section_j,
+            "workexperienc_last_occuption_option3_section_j" => $request->workexperienc_last_occuption_option3_section_j,
+            "workexperienc_retired_option4_section_j" => $request->workexperienc_retired_option4_section_j,
+            "workexperienc_funding_option4_section_j" => $request->workexperienc_funding_option4_section_j,
+            "workexperienc_funds_option4_section_j" => $request->workexperienc_funds_option4_section_j,
+          
         ];
 
         $visahistoryData =  [
@@ -1410,6 +1582,52 @@ class Form360Controller extends Controller
             'fam_member_bro_sis_currently_live4' => $request->fam_member_bro_sis_currently_live4,
 
         ];
+
+        $familymemberSectionB =  [
+            'form360_id' => $form_id,
+            "fam_member_partner_visa_sectionb" => $request->fam_member_partner_visa_sectionb,
+            "fam_member_your_partner_visa_sectionb" => $request->fam_member_your_partner_visa_sectionb,
+            "fam_member_your_partner_obtain_visa_sectionb" => $request->fam_member_your_partner_obtain_visa_sectionb,
+            "fam_member_your_partner_first_meet_visa_sectionb" => $request->fam_member_your_partner_first_meet_visa_sectionb,
+            "fam_member_your_partner_first_meet_exactly_visa_sectionb" => $request->fam_member_your_partner_first_meet_exactly_visa_sectionb,
+            "fam_member_your_partner_couple_sectionb" => $request->fam_member_your_partner_couple_sectionb,
+            "fam_member_your_partner_civil_status_sectionb" => $request->fam_member_your_partner_civil_status_sectionb,
+            "fam_member_your_partner_date_marriage_sectionb" => $request->fam_member_your_partner_date_marriage_sectionb,
+            "fam_member_your_partner_live_together_sectionb" => $request->fam_member_your_partner_live_together_sectionb,
+            "fam_member_your_partner_started_live_together_sectionb" => $request->fam_member_your_partner_started_live_together_sectionb,
+            "fam_member_your_partner_became_a_couple_sectionb" => $request->fam_member_your_partner_became_a_couple_sectionb,
+            "fam_member_your_partner_even_been_married_sectionb" => $request->fam_member_your_partner_even_been_married_sectionb,
+            "fam_member_your_partner_children_sectionb" => $request->fam_member_your_partner_children_sectionb,
+            "fam_member_your_partner_have_children_sectionb" => $request->fam_member_your_partner_have_children_sectionb,
+            "fam_member_your_partner_sponsored_sectionb" => $request->fam_member_your_partner_sponsored_sectionb,
+            "fam_member_your_partner_type_of_visa_sectionb" => $request->fam_member_your_partner_type_of_visa_sectionb,
+            "fam_member_your_partner_joint_bank_sectionb" => $request->fam_member_your_partner_joint_bank_sectionb,
+            "fam_member_your_partner_bank_account_sectionb" => $request->fam_member_your_partner_bank_account_sectionb,
+            "fam_member_your_partner_joint_bank_account_sectionb" => $request->fam_member_your_partner_joint_bank_account_sectionb,
+            "fam_member_your_partner_regular_basis_sectionb" => $request->fam_member_your_partner_regular_basis_sectionb,
+            "fam_member_your_partner_rental_agreement_sectionb" => $request->fam_member_your_partner_rental_agreement_sectionb,
+            "fam_member_your_partner_rental_agreement_startDate_sectionb" => $request->fam_member_your_partner_rental_agreement_startDate_sectionb,
+            "fam_member_your_partner_utilityBill_sectionb" => $request->fam_member_your_partner_utilityBill_sectionb,
+            "fam_member_your_partner_guarantor_sectionb" => $request->fam_member_your_partner_guarantor_sectionb,
+            "fam_member_guarantor_name_p1_sectionb" => $request->fam_member_guarantor_name_p1_sectionb,
+            "fam_member_guarantor_surname_p1_sectionb" => $request->fam_member_guarantor_surname_p1_sectionb,
+            "fam_member_guarantor_dob_p1_sectionb" => $request->fam_member_guarantor_dob_p1_sectionb,
+            "fam_member_guarantor_permanent_p1_sectionb" => $request->fam_member_guarantor_permanent_p1_sectionb,
+            "fam_member_guarantor_position_p1_sectionb" => $request->fam_member_guarantor_position_p1_sectionb,
+            "fam_member_guarantor_phone_p1_sectionb" => $request->fam_member_guarantor_phone_p1_sectionb,
+            "fam_member_guarantor_email_p1_sectionb" => $request->fam_member_guarantor_email_p1_sectionb,
+            "fam_member_guarantor_applicant_p1_sectionb" => $request->fam_member_guarantor_applicant_p1_sectionb,
+            "fam_member_guarantor_willing_p1_sectionb" => $request->fam_member_guarantor_willing_p1_sectionb,
+            "fam_member_guarantor_name_p2_sectionb" => $request->fam_member_guarantor_name_p2_sectionb,
+            "fam_member_guarantor_surname_p2_sectionb" => $request->fam_member_guarantor_surname_p2_sectionb,
+            "fam_member_guarantor_dob_p2_sectionb" => $request->fam_member_guarantor_dob_p2_sectionb,
+            "fam_member_guarantor_permanent_p2_sectionb" => $request->fam_member_guarantor_permanent_p2_sectionb,
+            "fam_member_guarantor_position_p2_sectionb" => $request->fam_member_guarantor_position_p2_sectionb,
+            "fam_member_guarantor_phone_p2_sectionb" => $request->fam_member_guarantor_phone_p2_sectionb,
+            "fam_member_guarantor_email_p2_sectionb" => $request->fam_member_guarantor_email_p2_sectionb,
+            "fam_member_guarantor_applicant_p2_sectionb" => $request->fam_member_guarantor_applicant_p2_sectionb,
+            "fam_member_guarantor_willing_p2_sectionb" => $request->fam_member_guarantor_willing_p2_sectionb,
+        ];
         
 
         $fieldsetsData = [
@@ -1429,13 +1647,15 @@ class Form360Controller extends Controller
             'workexperiencesectionG' => $workexperiencesectionG,
             'workexperiencesectionH' => $workexperiencesectionH,
             'workexperiencesectionI' => $workexperiencesectionI,
+            'workexperiencesectionJ' => $workexperiencesectionJ,
             'visahistoryData' => $visahistoryData,
             'travelhistoryData' => $travelhistoryData,
             'countryofresidenceData' => $countryofresidenceData,
             'healthdeclaration' => $healthDeclaration,
             'healthQuestion' => $healthQuestion,
             'character' => $character,
-            'familymember' => $familymember
+            'familymember' => $familymember,
+            'familymemberSectionB' => $familymemberSectionB
         ];
         
         return $fieldsetsData;

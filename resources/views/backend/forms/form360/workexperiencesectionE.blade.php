@@ -25,7 +25,7 @@
         <tr>
             <td> Contact number in Australia or New Zealand
             </td>
-            <td> <input type="text" name="workexperience_contact_number_section_e" id="workexperience_contact_number_section_e" @if(isset($data->workexperience_contact_number_section_e)) value="{{$data->workexperience_contact_number_section_e}}" @endif/> </td>
+            <td> <input type="tel" name="workexperience_contact_number_section_e" id="workexperience_contact_number_section_e" @if(isset($data->workexperience_contact_number_section_e)) value="{{$data->workexperience_contact_number_section_e}}" @endif/> </td>
         </tr>
         <tr>
             <td> Contact person in Australia or New Zealand (name and surname)
@@ -69,7 +69,7 @@
         <tr>
             <td>Date you are planning to leave Australia or New Zealand (maximum 6 months stay)
             </td>
-            <td> <input type="text" name="workexperience_date_planing_leave_section_e" id="workexperience_date_planing_leave_section_e" @if(isset($data->workexperience_date_planing_leave_section_e)) value="{{$data->workexperience_date_planing_leave_section_e}}" @endif/> </td>
+            <td> <input type="date" name="workexperience_date_planing_leave_section_e" id="workexperience_date_planing_leave_section_e" @if(isset($data->workexperience_date_planing_leave_section_e)) value="{{$data->workexperience_date_planing_leave_section_e}}" @endif/> </td>
         </tr>
         <tr>
             <td>Will it be necessary to enter Australia or New Zealand more than one time in order to carry out the job?
@@ -96,7 +96,7 @@
             <td> WORK TO BE PERFORMED IN AUSTRALIA OR NEW ZEALAND – DOCS Invitation letter from the Australia or New Zealand company
             </td>
             <td> <input type="file" name="workexperience_work_performed_section_e" id="workexperience_work_performed_section_e">
-                @if (array_key_exists('workexperience_current_holder_section_e', $docdataForm360))
+                @if (array_key_exists('workexperience_work_performed_section_e', $docdataForm360))
 
                 <a class="imgfileAnchor" target="_blank" href="{{  asset('/storage/form360/'.$data->user_id.'/workexperience_work_performed_section_e/'.$docdataForm360['workexperience_work_performed_section_e'])  }}">
                     @if(str_contains($docdataForm360['workexperience_work_performed_section_e'] , '.pdf'))

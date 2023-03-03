@@ -202,10 +202,22 @@
             <td> <input type="date" name="workexperience_dob_person2_section_j" id="workexperience_dob_person2_section_j" @if(isset($data->workexperience_dob_person2_section_j)) value="{{$data->workexperience_dob_person2_section_j}}" @endif/> </td>
         </tr>
         <tr>
-            <td> Nationality
-            </td>
-            <td> <input type="text" name="workexperience_nationality_person2_section_j" id="workexperience_nationality_person2_section_j" @if(isset($data->workexperience_nationality_person2_section_j)) value="{{$data->workexperience_nationality_person2_section_j}}" @endif/> </td>
+                    <td> Nationality
+                        
+                    </td>
+                    <td>
+                        <select name="workexperience_nationality_person2_section_j" id="workexperience_nationality_person2_section_j" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->workexperience_nationality_person2_section_j)))
+                            <option value="{{$data->workexperience_nationality_person2_section_j}}" selected>{{$data->workexperience_nationality_person2_section_j}}</option>
+                            @endif
+                            @include('backend.forms.countrielist')
+                        </select>
+                    </td>
         </tr>
+
+      
 
     </tbody>
 </table>
@@ -263,15 +275,28 @@
                 </select>
             </td>
         </tr>
+
         <tr>
             <td> Date of birth
             </td>
             <td> <input type="date" name="workexperience_dob_person3_section_j" id="workexperience_dob_person3_section_j" @if(isset($data->workexperience_dob_person3_section_j)) value="{{$data->workexperience_dob_person3_section_j}}" @endif/> </td>
         </tr>
+        
+
         <tr>
-            <td> Nationality
-            </td>
-            <td> <input type="text" name="workexperience_nationality_person3_section_j" id="workexperience_nationality_person3_section_j" @if(isset($data->workexperience_nationality_person3_section_j)) value="{{$data->workexperience_nationality_person3_section_j}}" @endif/> </td>
+                    <td> Nationality
+                        
+                    </td>
+                    <td>
+                        <select name="workexperience_nationality_person3_section_j" id="workexperience_nationality_person3_section_j" class="form-control">
+                            <option value=""> Select Option </option>
+
+                            @if(!empty(isset($data->workexperience_nationality_person3_section_j)))
+                            <option value="{{$data->workexperience_nationality_person3_section_j}}" selected>{{$data->workexperience_nationality_person3_section_j}}</option>
+                            @endif
+                            @include('backend.forms.countrielist')
+                        </select>
+                    </td>
         </tr>
 
     </tbody>
