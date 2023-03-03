@@ -11,11 +11,11 @@
 
             </td>
             <td>
-                <select name="workexperience_exams_list2_section_h" id="workexperience_exams_list2_section_h" class="form-control">
+                <select name="workexperience_visa_applicant_2nd_section_i" id="workexperience_visa_applicant_2nd_section_i" class="form-control">
                     <option value=""> Select Option </option>
 
-                    @if(!empty(isset($data->workexperience_exams_list2_section_h)))
-                    <option value="{{$data->workexperience_exams_list2_section_h}}" selected>{{$data->workexperience_exams_list2_section_h}}</option>
+                    @if(!empty(isset($data->workexperience_visa_applicant_2nd_section_i)))
+                    <option value="{{$data->workexperience_visa_applicant_2nd_section_i}}" selected>{{$data->workexperience_visa_applicant_2nd_section_i}}</option>
                     @endif
                     <option value="SECOND WHV">SECOND WHV</option>
                     <option value="THIRD WHV">THIRD WHV </option>
@@ -27,11 +27,11 @@
 
             </td>
             <td>
-                <select name="workexperience_exams_list2_section_h" id="workexperience_exams_list2_section_h" class="form-control">
+                <select name="workexperience_granted_2nd_section_i" id="workexperience_granted_2nd_section_i" class="form-control">
                     <option value=""> Select Option </option>
 
-                    @if(!empty(isset($data->workexperience_exams_list2_section_h)))
-                    <option value="{{$data->workexperience_exams_list2_section_h}}" selected>{{$data->workexperience_exams_list2_section_h}}</option>
+                    @if(!empty(isset($data->workexperience_granted_2nd_section_i)))
+                    <option value="{{$data->workexperience_granted_2nd_section_i}}" selected>{{$data->workexperience_granted_2nd_section_i}}</option>
                     @endif
                     <option value="YES">YES</option>
                     <option value="NO">NO</option>
@@ -41,30 +41,30 @@
         <tr>
             <td> If yes, please specify
             </td>
-            <td> <input type="text" name="workexperience_exams_list2_section_h" id="workexperience_exams_list2_section_h" @if(isset($data->workexperience_exams_list2_section_h)) value="{{$data->workexperience_exams_list2_section_h}}" @endif/> </td>
+            <td> <input type="text" name="workexperience_specify_2nd_section_i" id="workexperience_specify_2nd_section_i" @if(isset($data->workexperience_specify_2nd_section_i)) value="{{$data->workexperience_legal_n1_section_i}}" @endif/> </td>
         </tr>
 
         <tr>
             <td> Have you been granted and been in Australia as the holder of a second Working Holiday visa (subclass 417) before?
             </td>
-            <td> <input type="text" name="workexperience_exams_list2_section_h" id="workexperience_exams_list2_section_h" @if(isset($data->workexperience_exams_list2_section_h)) value="{{$data->workexperience_exams_list2_section_h}}" @endif/> </td>
+            <td> <input type="text" name="workexperience_subclass_2nd_section_i" id="workexperience_subclass_2nd_section_i" @if(isset($data->workexperience_subclass_2nd_section_i)) value="{{$data->workexperience_subclass_2nd_section_i}}" @endif/> </td>
         </tr>
         <tr>
             <td> If yes, please specify
             </td>
-            <td> <input type="text" name="workexperience_exams_list2_section_h" id="workexperience_exams_list2_section_h" @if(isset($data->workexperience_exams_list2_section_h)) value="{{$data->workexperience_exams_list2_section_h}}" @endif/> </td>
+            <td> <input type="text" name="workexperience_subclass_specify_2nd_section_i" id="workexperience_subclass_specify_2nd_section_i" @if(isset($data->workexperience_subclass_specify_2nd_section_i)) value="{{$data->workexperience_subclass_specify_2nd_section_i}}" @endif/> </td>
         </tr>
         <tr>
             <td> Have you undertaken 3 months of specified work as the holder of a first Working Holiday visa (subclass 417)?
             </td>
-            <td> <input type="text" name="workexperience_exams_list2_section_h" id="workexperience_exams_list2_section_h" @if(isset($data->workexperience_exams_list2_section_h)) value="{{$data->workexperience_exams_list2_section_h}}" @endif/> </td>
+            <td> <input type="text" name="workexperience_undertaken_2nd_section_i" id="workexperience_undertaken_2nd_section_i" @if(isset($data->workexperience_undertaken_2nd_section_i)) value="{{$data->workexperience_undertaken_2nd_section_i}}" @endif/> </td>
         </tr>
 
 
         <tr>
             <td> If yes, please specify
             </td>
-            <td> <input type="text" name="workexperience_exams_list2_section_h" id="workexperience_exams_list2_section_h" @if(isset($data->workexperience_exams_list2_section_h)) value="{{$data->workexperience_exams_list2_section_h}}" @endif/> </td>
+            <td> <input type="text" name="workexperience_undertaken_specify_2nd_section_i" id="workexperience_undertaken_specify_2nd_section_i" @if(isset($data->workexperience_undertaken_specify_2nd_section_i)) value="{{$data->workexperience_undertaken_specify_2nd_section_i}}" @endif/> </td>
         </tr>
 
     </tbody>
