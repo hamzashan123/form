@@ -8117,7 +8117,7 @@
             </tbody>
         </table>
 
-        <h2 class="fs-title">Section B </h2>
+        <h2 class="fs-title">PART B </h2>
         <p>Partner visa application only (To be filled out for who is in a relationship with an Australian/NZ citizen or PR visa holder)</p>
 
         <h3 class="fs-title">Common Details </h3>
