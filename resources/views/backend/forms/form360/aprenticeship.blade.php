@@ -427,7 +427,7 @@
 
                 <tr>
                     <td> Social Security payment evidence chart (such as Tabella INPS for Italy) or any other equivalent document issued by the National Social Security Body or dedicated
-registration body showing the payments that were made in your favor for the entire period of apprenticeship 
+                        registration body showing the payments that were made in your favor for the entire period of apprenticeship 
                     </td>
                     <td> <input type="file" name="apprenticeship_social_security" id="apprenticeship_social_security">
                 

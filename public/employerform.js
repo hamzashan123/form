@@ -178,4 +178,45 @@ jQuery(document).ready(function () {
         console.log(localStorage.getItem("fieldset"));
         $("#form360").submit();
     });
+
+    jQuery('#section_selection_employeform').on('change', function(e){
+      
+        if (jQuery(this).val() == "Section_1") {
+
+            jQuery("#fieldsetone").show();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
+            current = 1;
+
+        } else if (jQuery(this).val() == "Section_2") {
+            
+             jQuery("#fieldsetone").hide();
+             jQuery("#fieldsettwo").show();
+             jQuery("#fieldsetthree").hide();
+             jQuery("#fieldsetfour").hide();
+             current = 2;
+
+        } else if (jQuery(this).val() == "Section_3") {
+             
+             jQuery("#fieldsetone").hide();
+             jQuery("#fieldsettwo").hide();
+             jQuery("#fieldsetthree").show();
+             jQuery("#fieldsetfour").hide();
+             current = 3;
+
+        } else if (jQuery(this).val() == "Section_4") {
+            
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").show();
+            current = 4;
+
+        }
+        
+ 
+        setProgressBar(current);
+        // alert('selction changed to ', current_fs);
+     });
 });

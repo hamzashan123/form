@@ -614,4 +614,308 @@ jQuery(document).ready(function () {
         $(this).text("Saving...");
         $("#form360").submit();
     });
+
+    jQuery('#section_selection').on('change', function(e){
+       // console.log('currentfs' ,jQuery(this).closest("fieldset").attr("id"));
+    
+        if (jQuery(this).val() == "Section_1") {
+            jQuery("#fieldsetone").show();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
+
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
+
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
+
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
+
+            current = 1;
+        } else if (jQuery(this).val() == "Section_2") {
+            //jQuery('#fieldsetone').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").show();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
+
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
+
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
+
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
+
+            current = 2;
+        } else if (jQuery(this).val() == "Section_3") {
+            //jQuery('#fieldsetone').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").show();
+            jQuery("#fieldsetfour").hide();
+
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
+
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
+
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
+
+            current = 3;
+        } else if (jQuery(this).val() == "Section_4") {
+            //jQuery('#fieldsetone').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").show();
+
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
+
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
+
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
+
+            current = 4;
+        } else if (jQuery(this).val() == "Section_5") {
+            //jQuery('#fieldsetone').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
+
+            jQuery("#fieldsetfive").show();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
+
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
+
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
+
+            current = 5;
+        } else if (jQuery(this).val() == "Section_6") {
+            //jQuery('#fieldsetone').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
+
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").show();
+            jQuery("#fieldsetseven").hide();
+
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
+
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
+
+            current = 6;
+        } else if (jQuery(this).val() == "Section_7") {
+            //jQuery('#fieldsetone').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
+
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").show();
+
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
+
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
+
+            current = 7;
+        } else if (jQuery(this).val() == "Section_8") {
+            //jQuery('#fieldsetone').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
+
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
+
+            jQuery("#fieldseteight").show();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
+
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
+
+            current = 8;
+        } else if (jQuery(this).val() == "Section_9") {
+            //jQuery('#fieldsetone').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
+
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
+
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").show();
+            jQuery("#fieldsetten").hide();
+
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
+
+            current = 9;
+        } else if (jQuery(this).val() == "Section_10") {
+            //jQuery('#fieldsetone').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
+
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
+
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").show();
+
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
+
+            current = 10;
+        } else if (jQuery(this).val() == "Section_11") {
+            //jQuery('#fieldsetone').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
+
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
+
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
+
+            jQuery("#fieldseteleven").show();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
+
+            current = 11;
+        } else if (jQuery(this).val() == "Section_12") {
+            //jQuery('#fieldsetone').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
+
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
+
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
+
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").show();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").hide();
+
+            current = 12;
+        } else if (jQuery(this).val() == "Section_13") {
+            //jQuery('#fieldsetone').hide();
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
+
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
+
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
+
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").show();
+            jQuery("#fieldsetfourteen").hide();
+
+            current = 13;
+        } else if (jQuery(this).val() == "Section_14") {
+            //localStorage.removeItem('form360fieldset')
+            //window.location.href = '/admin';
+            jQuery("#fieldsetone").hide();
+            jQuery("#fieldsettwo").hide();
+            jQuery("#fieldsetthree").hide();
+            jQuery("#fieldsetfour").hide();
+
+            jQuery("#fieldsetfive").hide();
+            jQuery("#fieldsetsix").hide();
+            jQuery("#fieldsetseven").hide();
+
+            jQuery("#fieldseteight").hide();
+            jQuery("#fieldsetnine").hide();
+            jQuery("#fieldsetten").hide();
+
+            jQuery("#fieldseteleven").hide();
+            jQuery("#fieldsettwelve").hide();
+            jQuery("#fieldsetthirteen").hide();
+            jQuery("#fieldsetfourteen").show();
+
+            current = 14;
+        }
+
+        setProgressBar(current);
+       // alert('selction changed to ', current_fs);
+    });
+
 });

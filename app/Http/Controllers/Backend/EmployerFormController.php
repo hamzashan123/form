@@ -63,8 +63,15 @@ class EmployerFormController extends Controller
             }
         }
 
+        if(!empty($_GET['complete']) && $_GET['complete'] == true ) {
+
+            return view('backend.forms.employerform.completeform', compact('data', 'docdataemployerform'));
+            
+        }else{
         
-        return view('backend.forms.employerform.index', compact('data', 'docdataemployerform'));
+            return view('backend.forms.employerform.index', compact('data', 'docdataemployerform'));
+        }
+        
     }
 
     public function save(Request $request)

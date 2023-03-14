@@ -112,7 +112,15 @@ class Form360Controller extends Controller
   
         
         // dd($data);
-        return view('backend.forms.form360.index',compact('data','docdataForm360'));
+        if(!empty($_GET['complete']) && $_GET['complete'] == true ) {
+
+            return view('backend.forms.form360.completeform',compact('data','docdataForm360'));
+            
+        }else{
+        
+            return view('backend.forms.form360.index',compact('data','docdataForm360'));
+        }
+        
                
         
         

@@ -22,6 +22,24 @@
                     {{ session()->get('error') }}
                 </div>
                 @endif
+                <select name="section_selection" id="section_selection" class="form-control">
+                    <option value="" disabled> Select Section </option>
+                    <option value="Section_1"> Section 1</option>
+                    <option value="Section_2"> Section 2</option>
+                    <option value="Section_3"> Section 3</option>
+                    <option value="Section_4"> Section 4</option>
+                    <option value="Section_5"> Section 5</option>
+                    <option value="Section_6"> Section 6</option>
+                    <option value="Section_7"> Section 7</option>
+                    <option value="Section_8"> Section 8</option>
+                    <option value="Section_9"> Section 9</option>
+                    <option value="Section_10"> Section 10</option>
+                    <option value="Section_11"> Section 11</option>
+                    <option value="Section_12"> Section 12</option>
+                    <option value="Section_13"> Section 13</option>
+                    <option value="Section_14"> Section 14</option>
+                    
+                </select>
                 <form id="form360" class="form360side" action="{{route('admin.form360.save')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <!-- progressbar -->

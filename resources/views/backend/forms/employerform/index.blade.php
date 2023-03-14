@@ -24,7 +24,14 @@
                     {{ session()->get('success') }}
                 </div>
                 @endif
-
+                <select name="section_selection_employeform" id="section_selection_employeform" class="form-control">
+                    <option value="" disabled> Select Section </option>
+                    <option value="Section_1"> Section 1</option>
+                    <option value="Section_2"> Section 2</option>
+                    <option value="Section_3"> Section 3</option>
+                    <option value="Section_4"> Section 4</option>
+                    
+                </select>
                 <form id="form360" class="employerformside" action="{{route('admin.employerform.save')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <!-- progressbar -->

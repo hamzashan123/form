@@ -26,25 +26,25 @@
                         <li>Has any applicant ever been the subject of an arrest warrant or Interpol notice? </li>
                         <li>Has any applicant ever been the subject of an arrest warrant or Interpol notice? </li>
                         <li>Has any applicant ever been found guilty of a sexually based offence involving a child (including where no conviction was recorded)?
- </li>
+                        </li>
                         <li>Has any applicant ever been named on a sex offender register?
- </li>
+                        </li>
                         <li>Has any applicant ever been acquitted of any offence on the grounds of unsoundness of mind or insanity?
- </li>
+                        </li>
                         <li>Has any applicant ever been found by a court not fit to plead?
- </li>
+                        </li>
                         <li>Has any applicant ever been found by a court not fit to plead? </li>
                         <li>Has any applicant ever been directly or indirectly involved in, or associated with, activities which would represent a risk to national security in Australia or New Zealand or any other country?
- </li>
+                        </li>
                         <li>Has any applicant ever been charged with, or indicted for: genocide, war crimes, crimes against humanity, torture, slavery, or any other crime that is otherwise of a serious international concern?
- </li>
+                        </li>
                         <li>acts of violence (including war, insurgency, freedom fighting, terrorism, protest) either overseas or in Australia or New Zealand? </li>
                         <li>Has any applicant ever served in a military force, police force, state sponsored / private militia or intelligence agency (including secret police)? </li>
                         <li>explosives or in the manufacture of chemical/biological products?
- </li>
+                        </li>
                         <li>Has any applicant ever undergone any military/paramilitary training, been trained in weapons/ </li>
                         <li>Has any applicant ever been involved in people smuggling or people trafficking offences?
- </li>
+                        </li>
                         <li>Has any applicant ever been removed, deported or excluded from any country (including Australia or New Zealand)? </li>
                         <li>Has any applicant ever overstayed a visa in any country (including Australia or New Zealand)? </li>
                         <li>Has any applicant ever had any outstanding debts to the Australia or New Zealandn Government or any public authority in Australia or New Zealand? </li>
