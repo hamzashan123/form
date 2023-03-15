@@ -49,10 +49,10 @@
                                 <td><div class="btn-group btn-group-toggle">
                                         @if($form->id == 1)
                                         <a href="{{route('admin.form360.index', ['userid' => $id ,'form_id' => $form->id])}}" title="Show" class="btn-primary btn btn-sm"><i class="fa fa-eye"> View Form</i></a>
-                                        <a href="{{route('admin.form360.index', ['userid' => $id ,'form_id' => $form->id ,'complete' => true])}}" title="Show" class="btn-primary btn btn-sm"><i class="fa fa-eye"> View Complete Form</i></a>
+                                        <a href="{{route('admin.form360.index', ['userid' => $id ,'form_id' => $form->id ,'complete' => true])}}" title="Show" class="btn-primary btn btn-sm" style="margin-left:10px;" ><i class="fa fa-eye"> View Complete Form</i></a>
                                         @elseif($form->id == 2) 
                                         <a href="{{route('admin.employerform.index', ['userid' => $id ,'form_id' => $form->id])}}" title="Show" class="btn-primary btn btn-sm"><i class="fa fa-eye"> View Form</i></a>
-                                        <a href="{{route('admin.employerform.index', ['userid' => $id ,'form_id' => $form->id ,'complete' => true])}}" title="Show" class="btn-primary btn btn-sm"><i class="fa fa-eye"> View Complete Form</i></a>
+                                        <a href="{{route('admin.employerform.index', ['userid' => $id ,'form_id' => $form->id ,'complete' => true])}}" title="Show" class="btn-primary btn btn-sm" style="margin-left:10px;" ><i class="fa fa-eye"> View Complete Form</i></a>
                                         @endif
                                     </div>
                                 </td>

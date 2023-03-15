@@ -8159,6 +8159,13 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
  <script>
+    
+    jQuery('.accordion-item table tr input, .accordion-item table tr select').each(function() {
+
+    var thisValue = jQuery(this).val();
+                jQuery(this).replaceWith(jQuery('<p>' + thisValue + '</p>'))
+
+    })
     $('.alert-success').fadeIn().delay(5000).fadeOut();
   </script>
 @endsection()
