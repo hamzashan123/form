@@ -26,6 +26,8 @@
         const phoneInputField25 = document.querySelector('#workexperience_relationship_home_person2_section_j');
         const phoneInputField26 = document.querySelector('#workexperience_relationship_business_person2_section_j');
         const phoneInputField27 = document.querySelector('#workexperience_relationship_mobile_person2_section_j');
+        const phoneInputField28 = document.querySelector('#workexp3_contact_details_work_period_phone');
+        
         
         
         
@@ -184,6 +186,14 @@
             utilsScript:
                 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js',
         })
+        const phoneInputFieldtwentyeight = window.intlTelInput(phoneInputField28, {
+            initialCountry: 'au',
+            utilsScript:
+                'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js',
+        })
+
+
+        
 
 
 

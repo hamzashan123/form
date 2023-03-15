@@ -4876,18 +4876,18 @@
 
                                     <tr>
                                         <td> Date From </td>
-                                        <td> <input type="date" name="healthdeclaration_from4" id="healthdeclaration_from4" @if(isset($data->healthdeclaration_from4)) value="{{$data->healthdeclaration_from4}}" @endif/> </td>
+                                        <td>  @if(isset($data->healthdeclaration_from4)) {{$data->healthdeclaration_from4}} @endif </td>
                                     </tr>
 
                                     <tr>
                                         <td> Date to </td>
-                                        <td> <input type="date" name="healthdeclaration_to4" id="healthdeclaration_to4" @if(isset($data->healthdeclaration_to4)) value="{{$data->healthdeclaration_to4}}" @endif/> </td>
+                                        <td>  @if(isset($data->healthdeclaration_to4)) {{$data->healthdeclaration_to4}} @endif </td>
                                     </tr>
 
                                     <tr>
                                         <td>Purpose of your travel
                                         </td>
-                                        <td> <input type="text" name="healthdeclaration_purpose4" id="healthdeclaration_purpose4" @if(isset($data->healthdeclaration_purpose4)) value="{{$data->healthdeclaration_purpose4}}" @endif/> </td>
+                                        <td>  @if(isset($data->healthdeclaration_purpose4)) {{$data->healthdeclaration_purpose4}} @endif </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -5178,18 +5178,18 @@
 
                                     <tr>
                                         <td> Date From </td>
-                                        <td> <input type="date" name="healthdeclaration_from5" id="healthdeclaration_from5" @if(isset($data->healthdeclaration_from5)) value="{{$data->healthdeclaration_from5}}" @endif/> </td>
+                                        <td>  @if(isset($data->healthdeclaration_from5)) {{$data->healthdeclaration_from5}} @endif </td>
                                     </tr>
 
                                     <tr>
                                         <td> Date to </td>
-                                        <td> <input type="date" name="healthdeclaration_to5" id="healthdeclaration_to5" @if(isset($data->healthdeclaration_to5)) value="{{$data->healthdeclaration_to5}}" @endif/> </td>
+                                        <td>  @if(isset($data->healthdeclaration_to5)) {{$data->healthdeclaration_to5}} @endif </td>
                                     </tr>
 
                                     <tr>
                                         <td>Purpose of your travel
                                         </td>
-                                        <td> <input type="text" name="healthdeclaration_purpose5" id="healthdeclaration_purpose5" @if(isset($data->healthdeclaration_purpose5)) value="{{$data->healthdeclaration_purpose5}}" @endif/> </td>
+                                        <td>  @if(isset($data->healthdeclaration_purpose5)) {{$data->healthdeclaration_purpose5}} @endif </td>
                                     </tr>
                                 </tbody>
                             </table>
