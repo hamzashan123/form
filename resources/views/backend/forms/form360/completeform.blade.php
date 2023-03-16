@@ -8,7 +8,7 @@
 
 <script src="{{asset('countrycode.js')}}"></script>
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid completeform360">
     <div class="row justify-content-center">
         <div class="box-shadow padding-20 col-11 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-center   mt-3 mb-2">
             <div class=" px-0 pt-4 pb-0 mt-3 mb-3">
@@ -8166,6 +8166,14 @@
                 jQuery(this).replaceWith(jQuery('<p>' + thisValue + '</p>'))
 
     })
+
+    var counter = 0;
+        jQuery('.completeform360 tr td:nth-child(1)').each(function (){
+            counter++;
+            
+            jQuery(this).prepend(' ( '+counter+' ) ');
+    })
+
     $('.alert-success').fadeIn().delay(5000).fadeOut();
   </script>
 @endsection()

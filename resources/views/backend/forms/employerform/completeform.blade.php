@@ -8,7 +8,7 @@
 
 <script src="{{asset('countrycode.js')}}"></script>
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid completeformEmployer">
     <div class="row justify-content-center">
         <div class="box-shadow padding-20 col-11 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-center   mt-3 mb-2">
             <div class=" px-0 pt-4 pb-0 mt-3 mb-3">
@@ -2526,6 +2526,12 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
  <script>
+    var counter = 0;
+        jQuery('.completeformEmployer tr td:nth-child(1)').each(function (){
+            counter++;
+            
+            jQuery(this).prepend(' ( '+counter+' ) ');
+    })
     $('.alert-success').fadeIn().delay(5000).fadeOut();
   </script>
 @endsection()
