@@ -5,7 +5,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="{{asset('countrycode.js')}}"></script>
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid completeform360">
     <div class="row justify-content-center">
         <div class="box-shadow padding-20 col-11 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-center   mt-3 mb-2">
             <div class=" px-0 pt-4 pb-0 mt-3 mb-3">

@@ -12,7 +12,7 @@
 @section('content')
 <!-- <img src="{{ asset('loader.gif') }}" id="gif" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);"> -->
 
-<div class="container-fluid">
+<div class="container-fluid completeformEmployer">
     <div class="row justify-content-center">
         <div class="box-shadow padding-20 col-11 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-center   mt-3 mb-2">
             <div class=" px-0 pt-4 pb-0 mt-3 mb-3">

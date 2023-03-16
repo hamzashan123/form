@@ -23,3 +23,22 @@ a.imgfileAnchor img {
     height: 100px;
     margin-bottom: 20px;
 }
+
+.container-fluid.completeform360  tr td:nth-child(1) {
+    font-weight: 700;
+    font-size: 15px;
+    color: black !important;
+}
+.container-fluid.completeform360  tr td:nth-child(2) {
+    font-weight: 500;
+    padding-left: 15px;
+}
+.container-fluid.completeformEmployer  tr td:nth-child(1) {
+    font-weight: 700;
+    font-size: 15px;
+    color: black !important;
+}
+.container-fluid.completeformEmployer  tr td:nth-child(2) {
+    font-weight: 500;
+    padding-left: 15px;
+}
