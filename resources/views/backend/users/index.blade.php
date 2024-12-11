@@ -41,7 +41,7 @@
                     <!-- <th>ID</th>
                     <th>Name</th> -->
                     <th class="text-center" style="width: 30px;">Action</th>
-                    <th> View Forms</th>
+                    <th> View Formss</th>
                     <th>Surname</th>
                     <th>Username</th>
                     <th>Matter</th>
