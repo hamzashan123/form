@@ -53,6 +53,9 @@
                     @if(Auth::user()->hasRole('admin') && $consultantshow == true ) 
                     <th>Visa Expiry</th>
                     @endif
+                    @if(Auth::user()->hasRole('consultant')) 
+                    <th>Visa Expiry</th>
+                    @endif
                     <th>Deadline</th>
                     
                     
@@ -91,6 +94,9 @@
                         @if(Auth::user()->hasRole('admin') && $roleshow == true ) <td>@if($user->roles[0]->name == 'user')  <strong> Client </strong> @else <strong>{{$user->roles[0]->name}} </strong> @endif <br>  @endif 
                         <td>{{ $user->application_status }}</td> 
                         @if(Auth::user()->hasRole('admin') && $consultantshow == true ) 
+                        <td>{{ $user->visa_expiry }}</td> 
+                        @endif
+                        @if(Auth::user()->hasRole('consultant') ) 
                         <td>{{ $user->visa_expiry }}</td> 
                         @endif
                         
