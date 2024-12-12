@@ -57,7 +57,10 @@
                     
                     
 
-                    @if(Auth::user()->hasRole('admin') && $consultantshow == false ) 
+                    @if(Auth::user()->hasRole('admin') && $consultantshow == false  ) 
+                    <th> Created On</th>
+                    @endif
+                    @if(Auth::user()->hasRole('consultant')) 
                     <th> Created On</th>
                     @endif
                     <th class="text-center" style="width: 30px;">Action</th>
@@ -99,6 +102,10 @@
                          
                         @if(Auth::user()->hasRole('admin') && $consultantshow == false ) 
                         <td>{{$user->created_at}}</td> 
+                        @endif
+
+                        @if(Auth::user()->hasRole('consultant')) 
+                        <td>{{$user->created_at}}</td>
                         @endif
                         <td>
                             <div class="btn-group btn-group-sm">
