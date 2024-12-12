@@ -40,20 +40,27 @@
                 <tr>
                     <!-- <th>ID</th>
                     <th>Name</th> -->
-                    <th class="text-center" style="width: 30px;">Action</th>
-                    <th> View Formss</th>
+                    <th> View Forms</th>
+                    @if(Auth::user()->hasRole('admin') && $consultantshow == true ) <th>Consultant</th> @endif
+                   
+                   
                     <th>Surname</th>
-                    <th>Username</th>
+                    {{-- <th>Username</th> --}}
                     <th>Matter</th>
                     <!-- @if(Auth::user()->hasRole('admin'))<th>Status</th> @endif -->
                     @if(Auth::user()->hasRole('admin') && $roleshow == true ) <th>Role</th> @endif 
-                    <th>Deadline</th>
                     <th>Application Status</th>
-                    @if(Auth::user()->hasRole('admin') && $consultantshow == true ) <th>Consultant</th> @endif
+                    @if(Auth::user()->hasRole('admin') && $consultantshow == true ) 
+                    <th>Visa Expiry</th>
+                    @endif
+                    <th>Deadline</th>
+                    
+                    
 
-                    
+                    @if(Auth::user()->hasRole('admin') && $consultantshow == false ) 
                     <th> Created On</th>
-                    
+                    @endif
+                    <th class="text-center" style="width: 30px;">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -64,45 +71,53 @@
                             {{ $user->first_name }}
                         </td> -->
                         <td>
-                        <div class="btn-group btn-group-sm">
+                            <a href="{{ route('admin.user.formslist', $user->id) }}" class="btn btn-sm btn-primary">
+                                <i class="fa fa-eye"> View Forms</i>
+                            </a>
+                        </td>
 
-                            <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-sm btn-primary">
-                                <i class="fa fa-edit"></i>
-                            </a>
-                            @if(Auth::user()->hasRole('admin'))
-                            <a href="javascript:void(0);" onclick="if (confirm('Are you sure to delete this record?'))
-                                       {document.getElementById('delete-tag-{{ $user->id }}').submit();} else {return false;}" class="btn btn-sm btn-danger">
-                                <i class="fa fa-trash"></i>
-                            </a>
-                            @endif
-                        </div>
-                        <form action="{{ route('admin.users.destroy', $user) }}" method="POST" id="delete-tag-{{ $user->id }}" class="d-none">
-                            @csrf
-                            @method('DELETE')
-                        </form>
-                        </td>
-                        <td>
-                        <a href="{{ route('admin.user.formslist', $user->id) }}" class="btn btn-sm btn-primary">
-                            <i class="fa fa-eye"> View Forms</i>
-                        </a>
-                        </td>
-                        <td>{{ strtoupper($user->surname) }}
-                        </td>
-                        <td>{{ $user->username }} </td> 
+                        @if(Auth::user()->hasRole('admin') && $consultantshow == true )  
+                        <td> {{ isset($user->ConsulantName) ? $user->ConsulantName : 'N/A'}}</td> 
+                        @endif
+
+                        
+                        
+                        <td>{{ strtoupper($user->surname) }}</td>
+                        {{-- <td>{{ $user->username }} </td>  --}}
                         <td>@if($user->roles[0]->name == 'user') {{$user->matter}} @else  <strong > -- </strong>  @endif</td>
-
                         @if(Auth::user()->hasRole('admin') && $roleshow == true ) <td>@if($user->roles[0]->name == 'user')  <strong> Client </strong> @else <strong>{{$user->roles[0]->name}} </strong> @endif <br>  @endif 
+                        <td>{{ $user->application_status }}</td> 
+                        @if(Auth::user()->hasRole('admin') && $consultantshow == true ) 
+                        <td>{{ $user->visa_expiry }}</td> 
+                        @endif
+                        
                         <td>{{Carbon\Carbon::parse($user->deadline)->format('d/M/Y') }}</td> 
                         
                         <!-- @if(Auth::user()->hasRole('admin')) <td>{{ $user->status }}</td> @endif -->
                         
-                         <td>{{ $user->application_status }}</td> 
+                        
                          
-                         @if(Auth::user()->hasRole('admin') && $consultantshow == true )  
-                         <td> {{ isset($user->ConsulantName) ? $user->ConsulantName : 'N/A'}}</td> 
-                         @endif
+                        @if(Auth::user()->hasRole('admin') && $consultantshow == false ) 
                         <td>{{$user->created_at}}</td> 
-                    
+                        @endif
+                        <td>
+                            <div class="btn-group btn-group-sm">
+    
+                                <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-sm btn-primary">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                @if(Auth::user()->hasRole('admin'))
+                                <a href="javascript:void(0);" onclick="if (confirm('Are you sure to delete this record?'))
+                                           {document.getElementById('delete-tag-{{ $user->id }}').submit();} else {return false;}" class="btn btn-sm btn-danger">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                                @endif
+                            </div>
+                            <form action="{{ route('admin.users.destroy', $user) }}" method="POST" id="delete-tag-{{ $user->id }}" class="d-none">
+                                @csrf
+                                @method('DELETE')
+                            </form>
+                        </td>    
                 </tr>
                 @empty
                 <tr>
@@ -139,7 +154,7 @@
         "searching": true,
         orderCellsTop: true,
         fixedHeader: true,
-        "order": [[ 8, "desc" ]],
+        "order": [[ 7, "desc" ]],
         
         initComplete: function () {
             var api = this.api();
